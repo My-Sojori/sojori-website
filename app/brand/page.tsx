@@ -303,9 +303,9 @@ export default function BrandPage() {
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(6, 1fr)', gap: 12, marginBottom: 32 }}>
             {[
-              { name: 'BG · 0', hex: '#08080B', bg: '#08080b' },
-              { name: 'BG · 1', hex: '#0F0F14', bg: '#0f0f14' },
-              { name: 'BG · 2', hex: '#16161E', bg: '#16161e' },
+              { name: 'BG · 0', hex: '#FBFAF6', bg: '#fbfaf6' },
+              { name: 'BG · 1', hex: '#FFFFFF', bg: '#ffffff' },
+              { name: 'BG · 2', hex: '#F5F3EC', bg: '#f5f3ec' },
               { name: 'BG · 3', hex: '#1F1F2A', bg: '#1f1f2a' },
               { name: 'Glass', hex: 'white/4%', bg: 'rgba(255,255,255,0.04)', border: 'rgba(255,255,255,0.08)' },
               { name: 'Glass+', hex: 'white/7%', bg: 'rgba(255,255,255,0.07)', border: 'rgba(255,255,255,0.14)' },

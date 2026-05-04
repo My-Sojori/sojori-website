@@ -101,14 +101,14 @@ export function PageHeader({ pageTitle }: { pageTitle?: string }) {
                 top: 'calc(100% + 12px)',
                 right: 0,
                 width: 720,
-                background: 'rgba(15,15,22,0.96)',
-                border: '1px solid var(--glass-border)',
+                background: 'rgba(255,255,255,0.94)',
+                border: '1px solid rgba(26,20,8,0.10)',
                 borderRadius: 14,
                 padding: 24,
                 display: 'grid',
                 gridTemplateColumns: 'repeat(2, 1fr)',
                 gap: 24,
-                boxShadow: '0 30px 80px rgba(0,0,0,0.5)',
+                boxShadow: '0 1px 0 rgba(255,255,255,0.9) inset, 0 30px 60px -20px rgba(26,20,8,0.18)',
                 backdropFilter: 'blur(20px)',
               }}
             >
@@ -116,7 +116,7 @@ export function PageHeader({ pageTitle }: { pageTitle?: string }) {
                 <div key={g.group}>
                   <div style={{
                     fontSize: 10,
-                    color: '#f4cf5e',
+                    color: '#b8881a',
                     fontWeight: 700,
                     letterSpacing: 1,
                     textTransform: 'uppercase',
@@ -137,7 +137,7 @@ export function PageHeader({ pageTitle }: { pageTitle?: string }) {
                           display: 'block',
                           transition: 'background 0.15s',
                         }}
-                        onMouseEnter={(e) => (e.currentTarget.style.background = 'rgba(255,255,255,0.04)')}
+                        onMouseEnter={(e) => (e.currentTarget.style.background = 'rgba(230,176,34,0.08)')}
                         onMouseLeave={(e) => (e.currentTarget.style.background = 'transparent')}
                       >
                         <div style={{ fontSize: 13, fontWeight: 600, color: 'var(--text-1)' }}>{it.l}</div>

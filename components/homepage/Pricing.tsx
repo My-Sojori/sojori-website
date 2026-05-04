@@ -34,9 +34,20 @@ export function Pricing() {
   ];
 
   return (
-    <section style={{ padding: '110px 32px', background: 'rgba(15,15,20,0.6)' }} id="pricing">
+    <section
+      style={{
+        padding: '110px 32px',
+        // Aurora Soft : remplace l'ancien fond dark `rgba(15,15,20,0.6)`
+        background: 'linear-gradient(180deg, transparent, rgba(245,243,236,0.6) 30%, rgba(245,243,236,0.6) 70%, transparent)',
+      }}
+      id="pricing"
+    >
       <div style={{ maxWidth: 1280, margin: '0 auto' }}>
-        <SectionHead badge="Tarification" title="Transparente. Sans surprises." subtitle="Pas de frais cachés. Annulation facile à tout moment. 14 jours d'essai gratuit." />
+        <SectionHead
+          badge="Tarification"
+          title="Transparente. Sans surprises."
+          subtitle="Pas de frais cachés. Annulation facile à tout moment. 14 jours d'essai gratuit."
+        />
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 20, marginTop: 56, alignItems: 'stretch' }} className="grid-resp">
           {tiers.map((t, i) => (
@@ -47,47 +58,41 @@ export function Pricing() {
                 padding: '36px 30px',
                 borderRadius: 20,
                 position: 'relative',
-                borderColor: t.popular ? 'var(--primary)' : undefined,
+                borderColor: t.popular ? 'rgba(230,176,34,0.55)' : undefined,
                 borderWidth: t.popular ? 2 : 1,
-                background: t.popular ? 'linear-gradient(180deg, rgba(230,176,34,0.10) 0%, rgba(230,176,34,0.03) 100%)' : undefined,
+                background: t.popular
+                  ? 'linear-gradient(180deg, rgba(244,207,94,0.18) 0%, rgba(255,255,255,0.85) 100%)'
+                  : undefined,
                 transform: t.popular ? 'scale(1.03)' : 'none',
                 zIndex: t.popular ? 2 : 1,
                 display: 'flex',
                 flexDirection: 'column',
+                boxShadow: t.popular
+                  ? '0 1px 0 rgba(255,255,255,.9) inset, 0 30px 60px -20px rgba(230,176,34,0.30)'
+                  : undefined,
               }}
             >
               {t.popular && (
-                <span
-                  style={{
-                    position: 'absolute',
-                    top: -14,
-                    left: '50%',
-                    transform: 'translateX(-50%)',
-                    padding: '5px 14px',
-                    borderRadius: 999,
-                    background: 'linear-gradient(135deg, #f4cf5e, #e6b022)',
-                    color: '#1a1408',
-                    fontSize: 11,
-                    fontWeight: 700,
-                    letterSpacing: 0.6,
-                    whiteSpace: 'nowrap',
-                    boxShadow: '0 6px 16px rgba(230,176,34,0.4)',
-                  }}
-                >
-                  ★ POPULAR
-                </span>
+                <span style={{
+                  position: 'absolute', top: -14, left: '50%', transform: 'translateX(-50%)',
+                  padding: '5px 14px', borderRadius: 999,
+                  background: 'linear-gradient(135deg, #f4cf5e, #e6b022)',
+                  color: '#1a1408', fontSize: 11, fontWeight: 700, letterSpacing: 0.6,
+                  whiteSpace: 'nowrap',
+                  boxShadow: '0 6px 16px rgba(230,176,34,0.4)',
+                }}>★ POPULAR</span>
               )}
-              <div className="uppercase-sm" style={{ color: t.popular ? 'var(--primary)' : 'var(--text-3)', marginBottom: 8 }}>
+              <div className="uppercase-sm" style={{ color: t.popular ? 'var(--primary-deep)' : 'var(--text-3)', marginBottom: 8 }}>
                 {t.name}
               </div>
               <div style={{ fontSize: 14, color: 'var(--text-2)', marginBottom: 20 }}>{t.range}</div>
               <div style={{ marginBottom: 28, display: 'flex', alignItems: 'baseline', gap: 4 }}>
                 {t.price === 'Sur mesure' ? (
-                  <span style={{ fontSize: 32, fontWeight: 800, letterSpacing: '-0.03em' }}>{t.price}</span>
+                  <span style={{ fontSize: 32, fontWeight: 800, letterSpacing: '-0.03em', color: 'var(--text)' }}>{t.price}</span>
                 ) : (
                   <>
                     <span style={{ fontSize: 18, color: 'var(--text-3)' }}>€</span>
-                    <span style={{ fontSize: 48, fontWeight: 800, letterSpacing: '-0.04em', lineHeight: 1 }}>{t.price}</span>
+                    <span style={{ fontSize: 48, fontWeight: 800, letterSpacing: '-0.04em', lineHeight: 1, color: 'var(--text)' }}>{t.price}</span>
                     <span style={{ fontSize: 13, color: 'var(--text-3)', marginLeft: 4 }}>{t.period}</span>
                   </>
                 )}
@@ -108,7 +113,7 @@ export function Pricing() {
         </div>
 
         <div style={{ textAlign: 'center', marginTop: 32, fontSize: 13, color: 'var(--text-3)' }}>
-          ✓ 14 jours d'essai gratuit · ✓ Annulation facile · ✓ Setup en moins de 7 jours
+          ✓ 14 jours d&apos;essai gratuit · ✓ Annulation facile · ✓ Setup en moins de 7 jours
         </div>
       </div>
     </section>
