@@ -1,18 +1,18 @@
 # Sojori Website - Theme Variants
 
-Ce projet contient deux variantes de thème, toutes deux versionées avec Git pour un basculement facile.
+Ce projet contient trois variantes de thème, toutes versionées avec Git pour un basculement facile.
 
 ## 🎨 Variantes Disponibles
 
-### v1.0 - Dark Theme (Version Originale)
+### v1.0 - Dark Theme
 - Background noir solide (#08080b)
 - Cards avec glass effect sombre
 - Bordures blanches subtiles
-- Couleur jaune/or préservée
+- Couleur jaune/or (#e6b022)
 
 **Tag:** `v1.0-dark-theme`
 
-### v1.1 - Transparent Theme (Version Actuelle) ✨
+### v1.1 - Transparent Theme
 - Background transparent
 - Glass cards ultra-légers avec accents dorés
 - Bordures dorées (rgba(230,176,34,0.15))
@@ -22,45 +22,72 @@ Ce projet contient deux variantes de thème, toutes deux versionées avec Git po
 
 **Tag:** `v1.1-transparent-theme`
 
+### v2.0 - Orange Theme (Version Actuelle) 🍊 ✨
+- **Background blanc éclatant** (#ffffff)
+- **Couleur Sojori Orange** (#ff6b35) - vibrant et énergique
+- Cards blanches avec bordures orange (2px)
+- Texte sombre sur fond clair
+- Boutons orange dégradés avec texte blanc
+- Shadows orange pour effet glow
+- **Très visible et moderne** ⭐
+
+**Tag:** `v2.0-orange-theme`
+
 ## 🔄 Basculer Entre les Versions
+
+### Version Orange (actuelle - recommandée) 🍊
+```bash
+git checkout v2.0-orange-theme
+# ou simplement
+git checkout main
+```
 
 ### Revenir au Dark Theme
 ```bash
 git checkout v1.0-dark-theme
-# Le serveur dev se rechargera automatiquement
 ```
 
 ### Revenir au Transparent Theme
 ```bash
 git checkout v1.1-transparent-theme
-# ou simplement
-git checkout main
 ```
 
 ### Voir les différences entre les versions
 ```bash
-git diff v1.0-dark-theme v1.1-transparent-theme -- app/globals.css
+# Comparer dark vs orange
+git diff v1.0-dark-theme v2.0-orange-theme -- app/globals.css
+
+# Comparer transparent vs orange
+git diff v1.1-transparent-theme v2.0-orange-theme -- app/globals.css
 ```
 
-## 📝 Modifications Principales
+## 📝 Modifications Principales (v2.0 Orange Theme)
 
 Les changements se trouvent principalement dans `/app/globals.css` :
 
-1. **Backgrounds** : transparent au lieu de #08080b
-2. **Glass cards** : rgba(255,255,255,0.02) avec bordures dorées
-3. **Backdrop filter** : blur(40px) au lieu de blur(20px)
-4. **Grid** : rgba(230,176,34,0.04) au lieu de rgba(255,255,255,0.025)
-5. **Badges & buttons** : accents dorés plus prononcés
+1. **Couleur principale** : #ff6b35 (orange Sojori) au lieu de #e6b022 (or)
+2. **Backgrounds** : blanc (#ffffff, #fafafa) au lieu de noir
+3. **Texte** : sombre (#1a1a1a) au lieu de blanc
+4. **Glass cards** : rgba(255,255,255,0.95) avec bordures orange 2px
+5. **Boutons** : orange gradient avec texte blanc
+6. **Grid & shadows** : teinte orange au lieu de dorée
+7. **Badges** : fond orange avec bordures renforcées
 
 ## 💡 Recommandation
 
-Le **Transparent Theme** (v1.1) est recommandé pour :
-- Look plus moderne et premium
-- Meilleure mise en valeur des couleurs dorées
-- Interface moins lourde visuellement
-- Meilleure compatibilité avec futurs overlays/modals
+Le **🍊 Orange Theme** (v2.0) est **fortement recommandé** pour :
+- ✅ Identité visuelle Sojori originale
+- ✅ Visibilité maximale sur tous les écrans
+- ✅ Look frais, moderne et énergique
+- ✅ Contraste élevé (texte sombre sur fond blanc)
+- ✅ Excellent pour conversions (CTA très visible)
 
-Le **Dark Theme** (v1.0) peut être préféré pour :
-- Sites avec beaucoup de contenu dense
-- Meilleure lisibilité dans environnements sombres
-- Look plus classique et solide
+Le **Transparent Theme** (v1.1) pour :
+- Look premium et subtil
+- Sites minimalistes
+- Overlays et modals
+
+Le **Dark Theme** (v1.0) pour :
+- Applications internes
+- Environnements sombres
+- Look classique tech
