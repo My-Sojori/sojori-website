@@ -55,9 +55,9 @@ export function PageHeader({ pageTitle }: { pageTitle?: string }) {
     <header style={{
       position: 'sticky', top: 0, zIndex: 50,
       padding: '14px 32px',
-      background: 'rgba(8,8,11,0.78)',
-      backdropFilter: 'blur(20px) saturate(140%)',
-      borderBottom: '1px solid var(--glass-border)',
+      background: 'rgba(251,250,246,0.78)',
+      backdropFilter: 'blur(20px) saturate(150%)',
+      borderBottom: '1px solid rgba(26,20,8,0.06)',
     }}>
       <div style={{ maxWidth: 1400, margin: '0 auto', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: 16 }}>
@@ -157,7 +157,11 @@ export function PageHeader({ pageTitle }: { pageTitle?: string }) {
 
 export function PageFooter() {
   return (
-    <footer style={{ padding: '60px 32px 30px', borderTop: '1px solid var(--glass-border)', background: 'rgba(0,0,0,0.3)' }}>
+    <footer style={{
+      padding: '60px 32px 30px',
+      borderTop: '1px solid var(--border)',
+      background: 'linear-gradient(180deg, transparent, rgba(245,243,236,0.6))'
+    }}>
       <div style={{ maxWidth: 1400, margin: '0 auto' }}>
         <div style={{
           display: 'grid',
@@ -178,7 +182,7 @@ export function PageFooter() {
             <div key={g.group}>
               <div style={{
                 fontSize: 11,
-                color: '#f4cf5e',
+                color: 'var(--primary)',
                 fontWeight: 700,
                 letterSpacing: 1.2,
                 textTransform: 'uppercase',
