@@ -8,7 +8,7 @@ function PriceCalendar() {
   return (
     <div className="card" style={{ padding: 20, background: 'rgba(255,255,255,0.03)' }}>
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 16 }}>
-        <div style={{ fontSize: 16, fontWeight: 600 }}>Mars 2025 · Riad El Fenn</div>
+        <div style={{ fontSize: 16, fontWeight: 600 }}>Mars 2025 · Appartement Paris 15</div>
         <div style={{ display: 'flex', gap: 6, fontSize: 11 }}>
           <span style={{ padding: '4px 8px', borderRadius: 5, background: 'rgba(239,68,68,0.15)', color: '#fca5a5' }}>● Événement</span>
           <span style={{ padding: '4px 8px', borderRadius: 5, background: 'rgba(230,176,34,0.15)', color: '#f4cf5e' }}>● Forte demande</span>

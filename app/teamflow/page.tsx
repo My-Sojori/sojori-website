@@ -23,17 +23,17 @@ interface Column {
 function StaffBoard() {
   const cols: Column[] = [
     { t: 'À FAIRE', c: '#94a3b8', cards: [
-      { who: 'Yasmine', avatar: '#f59e0b', task: 'Ménage Riad El Fenn', time: '14:00', urgent: false },
-      { who: 'Hassan', avatar: '#06b6d4', task: 'Check-in Marco · Dar Sojori', time: '17:30', urgent: true },
+      { who: 'Sophie', avatar: '#f59e0b', task: 'Ménage Appartement Paris 15', time: '14:00', urgent: false },
+      { who: 'Lucas', avatar: '#06b6d4', task: 'Check-in Marco · Loft Montmartre', time: '17:30', urgent: true },
     ] },
     { t: 'EN COURS', c: '#f4cf5e', cards: [
-      { who: 'Mehdi', avatar: '#8b5cf6', task: 'Maintenance AC · Villa Atlas', time: '13:42 · 18 min', progress: 68, urgent: false },
-      { who: 'Fatima', avatar: '#ec4899', task: 'Ménage Atlas Loft', time: '11:30 · 1h22', progress: 84, urgent: false },
+      { who: 'Marc', avatar: '#8b5cf6', task: 'Maintenance AC · Villa Barcelona', time: '13:42 · 18 min', progress: 68, urgent: false },
+      { who: 'Julie', avatar: '#ec4899', task: 'Ménage Studio Marais', time: '11:30 · 1h22', progress: 84, urgent: false },
     ] },
     { t: 'TERMINÉ', c: '#10b981', cards: [
-      { who: 'Yasmine', avatar: '#f59e0b', task: 'Ménage Médina House', time: '✓ 10:48', photos: 12 },
-      { who: 'Hassan', avatar: '#06b6d4', task: 'Check-out James P.', time: '✓ 11:00', photos: 8 },
-      { who: 'Mehdi', avatar: '#8b5cf6', task: 'Course produits · Riad', time: '✓ 09:30', photos: 4 },
+      { who: 'Sophie', avatar: '#f59e0b', task: 'Ménage Duplex Lyon', time: '✓ 10:48', photos: 12 },
+      { who: 'Lucas', avatar: '#06b6d4', task: 'Check-out James P.', time: '✓ 11:00', photos: 8 },
+      { who: 'Marc', avatar: '#8b5cf6', task: 'Course produits · Appartement', time: '✓ 09:30', photos: 4 },
     ] },
   ];
   return (
@@ -86,10 +86,10 @@ interface StaffMember {
 
 function StaffKPIs() {
   const staff: StaffMember[] = [
-    { name: 'Yasmine', role: 'Ménage', avatar: '#f59e0b', tasks: 47, rating: '4.9★', time: '52 min', color: '#10b981' },
-    { name: 'Hassan', role: 'Check-in', avatar: '#06b6d4', tasks: 38, rating: '4.8★', time: '12 min', color: '#10b981' },
-    { name: 'Mehdi', role: 'Maintenance', avatar: '#8b5cf6', tasks: 22, rating: '4.7★', time: '34 min', color: '#f4cf5e' },
-    { name: 'Fatima', role: 'Ménage', avatar: '#ec4899', tasks: 41, rating: '4.9★', time: '48 min', color: '#10b981' },
+    { name: 'Sophie', role: 'Ménage', avatar: '#f59e0b', tasks: 47, rating: '4.9★', time: '52 min', color: '#10b981' },
+    { name: 'Lucas', role: 'Check-in', avatar: '#06b6d4', tasks: 38, rating: '4.8★', time: '12 min', color: '#10b981' },
+    { name: 'Marc', role: 'Maintenance', avatar: '#8b5cf6', tasks: 22, rating: '4.7★', time: '34 min', color: '#f4cf5e' },
+    { name: 'Julie', role: 'Ménage', avatar: '#ec4899', tasks: 41, rating: '4.9★', time: '48 min', color: '#10b981' },
   ];
 
   return (

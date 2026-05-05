@@ -7,11 +7,11 @@ import { SectionHead } from '../SharedComponents';
 export function WhatsAppCase() {
   const [step, setStep] = useState(0);
   const messages = [
-    { from: 'sojori', t: 'J-7', text: "👋 Hi Sarah! Welcome to Riad El Fenn. I'm Sojori, your AI concierge. I'll help you check in." },
+    { from: 'sojori', t: 'J-7', text: "👋 Hi Sarah! Welcome to Paris Montmartre. I'm Sojori, your AI concierge. I'll help you check in." },
     { from: 'guest', t: 'J-7', text: 'Hi! Thanks. Do I need to send anything?' },
     { from: 'sojori', t: 'J-3', text: "Just snap a photo of your passport — I'll handle the rest. KYC takes ~30s ✨" },
     { from: 'guest', t: 'J+2', text: "AC isn't cooling well, can you help?" },
-    { from: 'sojori', t: 'J+2', text: "On it. Yasmine (maintenance) ETA 25 min. I'll notify you when she's 5 min away 🛠️" },
+    { from: 'sojori', t: 'J+2', text: "On it. Sophie (maintenance) ETA 25 min. I'll notify you when she's 5 min away 🛠️" },
     { from: 'sojori', t: 'J+1', text: 'Hope you had an amazing stay! Mind dropping a quick review? ⭐' },
   ];
 
@@ -32,7 +32,7 @@ export function WhatsAppCase() {
               Vos guests parlent. <span className="gradient-text">Sojori répond.</span>
             </>
           }
-          subtitle="Sarah (USA) réserve via Airbnb pour un Riad à Marrakech. Sojori AI gère tout, 24/7, en anglais."
+          subtitle="Sarah (USA) réserve via Airbnb pour un appartement à Paris. Sojori AI gère tout, 24/7, en anglais."
         />
 
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 48, marginTop: 56, alignItems: 'center' }} className="grid-resp">

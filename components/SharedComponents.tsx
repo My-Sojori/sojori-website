@@ -175,7 +175,7 @@ export function PageFooter() {
               L&apos;orchestrateur intelligent des locations courte durée. PMS + Channel Manager + AI, dans une seule plateforme.
             </p>
             <div style={{ marginTop: 16, fontSize: 11, color: 'var(--text-3)', fontFamily: 'var(--font-mono)' }}>
-              📍 Marrakech · Paris · Lisbonne
+              📍 Paris · Barcelona · Miami
             </div>
           </div>
           {PRODUCT_MENU.map(g => (

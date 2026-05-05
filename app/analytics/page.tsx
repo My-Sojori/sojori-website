@@ -72,8 +72,8 @@ function MainChart() {
 
 function PropertyTable() {
   const props: Property[] = [
-    { name: "Riad El Fenn", rev: "€18,420", occ: "94%", adr: "€1,450", revpar: "€1,365", rating: "4.92", delta: "+18%" },
-    { name: "Dar Sojori", rev: "€14,200", occ: "87%", adr: "€1,180", revpar: "€1,027", rating: "4.85", delta: "+12%" },
+    { name: "Appartement Paris 15", rev: "€18,420", occ: "94%", adr: "€1,450", revpar: "€1,365", rating: "4.92", delta: "+18%" },
+    { name: "Loft Montmartre", rev: "€14,200", occ: "87%", adr: "€1,180", revpar: "€1,027", rating: "4.85", delta: "+12%" },
     { name: "Villa Atlas", rev: "€22,890", occ: "91%", adr: "€1,890", revpar: "€1,720", rating: "4.95", delta: "+24%" },
     { name: "Atlas Loft", rev: "€8,640", occ: "78%", adr: "€820", revpar: "€640", rating: "4.78", delta: "+8%" },
     { name: "Médina House", rev: "€11,250", occ: "83%", adr: "€980", revpar: "€814", rating: "4.88", delta: "+15%" },

@@ -10,12 +10,12 @@ interface BookingData {
 }
 
 function Calendar() {
-  const props = ['Riad El Fenn', 'Dar Sojori', 'Villa Atlas', 'Atlas Loft', 'Médina House'];
+  const props = ['Appartement Paris 15', 'Villa Barcelona', 'Loft Montmartre', 'Studio Marais', 'Duplex Lyon'];
   const days = Array.from({ length: 21 }, (_, i) => i + 5);
   const bookings: BookingData[] = [
     [0, 5, 4, '#FF5A5F', 'Sarah J. · Airbnb'],
     [0, 11, 6, '#003580', 'Marco R. · Booking'],
-    [0, 19, 3, '#0E64A4', 'Aisha · Vrbo'],
+    [0, 19, 3, '#0E64A4', 'Emma · Vrbo'],
     [1, 6, 5, '#FF5A5F', 'James P. · Airbnb'],
     [1, 14, 8, '#003580', 'Wei L. · Booking'],
     [2, 5, 9, '#FF5A5F', 'Carlos · Airbnb'],

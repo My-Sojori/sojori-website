@@ -1,6 +1,6 @@
 "use client";
 
-import { HeroAnimation } from './HeroAnimation';
+import { HeroAnimationJourney } from './HeroAnimationJourney';
 
 export function Hero() {
   return (
@@ -26,7 +26,7 @@ export function Hero() {
         </div>
 
         <div id="animation">
-          <HeroAnimation />
+          <HeroAnimationJourney />
         </div>
 
         <div style={{ textAlign: 'center', marginTop: 18 }} className="mono">

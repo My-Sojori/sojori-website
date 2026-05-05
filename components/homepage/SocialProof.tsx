@@ -18,9 +18,9 @@ export function SocialProof() {
     {
       stars: 5,
       quote: 'Le seul PMS qui parle vraiment aux guests. Mes 5★ sont passés de 78% à 94% en 3 mois.',
-      name: 'Karim T.',
-      role: 'Riad owner · 7 propriétés',
-      loc: 'Marrakech',
+      name: 'Thomas D.',
+      role: 'Property owner · 7 propriétés',
+      loc: 'Paris',
       initials: 'KT',
       color: 'linear-gradient(135deg, #8b5cf6, #6d28d9)',
     },

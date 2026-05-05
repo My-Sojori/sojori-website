@@ -17,117 +17,135 @@ const TABS: Tab[] = [
   { id: "help", l: "Aide", icon: "💬" },
 ];
 
-function Phone({ tab }: { tab: string }) {
+function WhatsAppPhone({ tab }: { tab: string }) {
   return (
     <div style={{ width: 360, background: "#0a0a0a", borderRadius: 38, padding: 10, boxShadow: "0 30px 80px rgba(0,0,0,0.6), 0 0 0 1px rgba(255,255,255,0.06) inset", flexShrink: 0 }}>
-      <div style={{ background: "linear-gradient(180deg, #faf6ed, #fff)", borderRadius: 28, minHeight: 700, position: "relative", overflow: "hidden", display: "flex", flexDirection: "column" }}>
+      <div style={{ background: "#0b141a", borderRadius: 28, minHeight: 700, position: "relative", overflow: "hidden", display: "flex", flexDirection: "column" }}>
         {/* Status bar */}
-        <div style={{ padding: "10px 22px 4px", display: "flex", justifyContent: "space-between", fontSize: 11, fontWeight: 700, color: "#1a1408" }}>
+        <div style={{ padding: "10px 22px 4px", display: "flex", justifyContent: "space-between", fontSize: 11, fontWeight: 700, color: "#fff" }}>
           <span>9:41</span><span>● ● ● ●</span>
         </div>
-        {/* Header */}
-        {tab === "home" && (
-          <div style={{ padding: "12px 22px 16px" }}>
-            <div style={{ fontSize: 11, color: "#f59e0b", fontWeight: 700, letterSpacing: 1, fontFamily: "Geist Mono" }}>RIAD EL FENN · MARRAKECH</div>
-            <div style={{ fontSize: 24, fontWeight: 700, color: "#1a1408", marginTop: 4, letterSpacing: "-0.02em" }}>Bonjour Sarah 👋</div>
-            <div style={{ fontSize: 13, color: "#665a45", marginTop: 4 }}>Check-out demain · 11:00</div>
+        {/* WhatsApp Header */}
+        <div style={{ background: "#202c33", padding: "12px 16px", display: "flex", alignItems: "center", gap: 12, borderBottom: "1px solid rgba(255,255,255,0.05)" }}>
+          <div style={{ width: 40, height: 40, borderRadius: "50%", background: "linear-gradient(135deg, #25D366, #128C7E)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 18, fontWeight: 700, color: "#fff" }}>S</div>
+          <div style={{ flex: 1 }}>
+            <div style={{ fontSize: 15, fontWeight: 600, color: "#fff" }}>Sojori · Riad El Fenn</div>
+            <div style={{ fontSize: 11, color: "#8696a0" }}>en ligne</div>
           </div>
-        )}
-        {tab === "guide" && <div style={{ padding: "12px 22px 16px" }}><div style={{ fontSize: 24, fontWeight: 700, color: "#1a1408", letterSpacing: "-0.02em" }}>Le guide Marrakech</div><div style={{ fontSize: 12, color: "#665a45", marginTop: 4 }}>Curated by Sojori · 47 spots</div></div>}
-        {tab === "experiences" && <div style={{ padding: "12px 22px 16px" }}><div style={{ fontSize: 24, fontWeight: 700, color: "#1a1408", letterSpacing: "-0.02em" }}>Vos réservations</div><div style={{ fontSize: 12, color: "#665a45", marginTop: 4 }}>3 expériences à venir</div></div>}
-        {tab === "help" && <div style={{ padding: "12px 22px 16px" }}><div style={{ fontSize: 24, fontWeight: 700, color: "#1a1408", letterSpacing: "-0.02em" }}>Besoin d&apos;aide ?</div><div style={{ fontSize: 12, color: "#665a45", marginTop: 4 }}>Réponse en moins de 2 min</div></div>}
+          <div style={{ fontSize: 20, color: "#8696a0" }}>⋮</div>
+        </div>
 
-        {/* Body */}
-        <div style={{ padding: "0 16px 80px", flex: 1, overflow: "auto" }}>
+        {/* WhatsApp Messages */}
+        <div style={{ padding: "16px 12px 80px", flex: 1, overflow: "auto", background: "#0b141a" }}>
           {tab === "home" && (
             <>
-              <div style={{ background: "linear-gradient(135deg, #f4cf5e, #e6b022)", borderRadius: 16, padding: 16, color: "#1a1408", marginBottom: 12 }}>
-                <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: 1, fontFamily: "Geist Mono" }}>WIFI</div>
-                <div style={{ fontSize: 18, fontWeight: 700, marginTop: 4 }}>RiadElFenn_Guest</div>
-                <div style={{ fontSize: 12, marginTop: 2 }}>mdp: marrakech2025 · <span style={{ textDecoration: "underline" }}>copier</span></div>
-              </div>
-              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 8, marginBottom: 12 }}>
-                {[
-                  { i: "🔑", l: "Code porte", v: "4729" },
-                  { i: "📍", l: "Adresse", v: "Voir GPS" },
-                  { i: "🚖", l: "Taxi", v: "Réserver" },
-                  { i: "🍳", l: "Petit-déj", v: "8h-10h" },
-                ].map(b => (
-                  <div key={b.l} style={{ background: "#fff", border: "1px solid #f0e9d8", borderRadius: 12, padding: 12 }}>
-                    <div style={{ fontSize: 18 }}>{b.i}</div>
-                    <div style={{ fontSize: 10, color: "#998669", marginTop: 4, letterSpacing: 0.5, textTransform: "uppercase", fontWeight: 700 }}>{b.l}</div>
-                    <div style={{ fontSize: 13, fontWeight: 700, color: "#1a1408", marginTop: 2 }}>{b.v}</div>
+              {/* Bot message */}
+              <div style={{ marginBottom: 12 }}>
+                <div style={{ background: "#202c33", borderRadius: "0 12px 12px 12px", padding: "10px 14px", maxWidth: "85%", display: "inline-block" }}>
+                  <div style={{ fontSize: 13, color: "#e9edef", lineHeight: 1.5 }}>
+                    Bonjour Sarah ! 👋 Bienvenue au Riad El Fenn à Marrakech.<br/><br/>
+                    Votre séjour : 3-5 avril (2 nuits)<br/>
+                    Check-out demain à 11h00
                   </div>
-                ))}
-              </div>
-              <div style={{ fontSize: 11, color: "#998669", fontWeight: 700, letterSpacing: 1, textTransform: "uppercase", margin: "14px 4px 8px" }}>Recommandations IA</div>
-              {[
-                { e: "🍽️", t: "Nomad — dîner", d: "5 min à pied · vue sur place", tag: "Suggéré pour vous" },
-                { e: "🧘", t: "Hammam La Maison Arabe", d: "15 min · réservation requise", tag: "4.9 ★" },
-              ].map(c => (
-                <div key={c.t} style={{ background: "#fff", border: "1px solid #f0e9d8", borderRadius: 12, padding: 14, marginBottom: 8, display: "flex", gap: 12, alignItems: "center" }}>
-                  <div style={{ width: 40, height: 40, borderRadius: 10, background: "#fdf6e3", fontSize: 20, display: "flex", alignItems: "center", justifyContent: "center" }}>{c.e}</div>
-                  <div style={{ flex: 1 }}>
-                    <div style={{ fontSize: 13, fontWeight: 700, color: "#1a1408" }}>{c.t}</div>
-                    <div style={{ fontSize: 11, color: "#998669" }}>{c.d}</div>
-                  </div>
-                  <div style={{ fontSize: 9, padding: "3px 7px", background: "#fdf6e3", color: "#b8881a", borderRadius: 4, fontWeight: 700 }}>{c.tag}</div>
+                  <div style={{ fontSize: 10, color: "#8696a0", marginTop: 4, textAlign: "right" }}>14:23</div>
                 </div>
-              ))}
+              </div>
+              {/* Code & WiFi card */}
+              <div style={{ marginBottom: 12 }}>
+                <div style={{ background: "#202c33", borderRadius: "0 12px 12px 12px", padding: "12px", maxWidth: "90%", display: "inline-block" }}>
+                  <div style={{ background: "#2a3942", borderRadius: 8, padding: 12, marginBottom: 8 }}>
+                    <div style={{ fontSize: 11, color: "#8696a0", fontWeight: 700, letterSpacing: 0.5 }}>🔑 CODE PORTE</div>
+                    <div style={{ fontSize: 24, fontWeight: 700, color: "#25D366", marginTop: 4, fontFamily: "Geist Mono" }}>4729</div>
+                  </div>
+                  <div style={{ background: "#2a3942", borderRadius: 8, padding: 12 }}>
+                    <div style={{ fontSize: 11, color: "#8696a0", fontWeight: 700, letterSpacing: 0.5 }}>📶 WIFI</div>
+                    <div style={{ fontSize: 14, fontWeight: 600, color: "#e9edef", marginTop: 4 }}>RiadElFenn_Guest</div>
+                    <div style={{ fontSize: 12, color: "#8696a0", marginTop: 2 }}>mdp: marrakech2025</div>
+                  </div>
+                  <div style={{ fontSize: 10, color: "#8696a0", marginTop: 8, textAlign: "right" }}>14:23</div>
+                </div>
+              </div>
+              {/* AI recommendations */}
+              <div style={{ marginBottom: 12 }}>
+                <div style={{ background: "#202c33", borderRadius: "0 12px 12px 12px", padding: "12px", maxWidth: "90%", display: "inline-block" }}>
+                  <div style={{ fontSize: 13, color: "#e9edef", marginBottom: 8 }}>🤖 Mes recommandations pour vous :</div>
+                  <div style={{ background: "#2a3942", borderRadius: 8, padding: 10, marginBottom: 6 }}>
+                    <div style={{ fontSize: 13, fontWeight: 600, color: "#e9edef" }}>🍽️ Nomad — dîner</div>
+                    <div style={{ fontSize: 11, color: "#8696a0" }}>5 min à pied · vue sur place Jemaa el-Fna</div>
+                  </div>
+                  <div style={{ background: "#2a3942", borderRadius: 8, padding: 10 }}>
+                    <div style={{ fontSize: 13, fontWeight: 600, color: "#e9edef" }}>🧘 Hammam La Maison Arabe</div>
+                    <div style={{ fontSize: 11, color: "#8696a0" }}>15 min · réservation requise · 4.9★</div>
+                  </div>
+                  <div style={{ fontSize: 10, color: "#8696a0", marginTop: 8, textAlign: "right" }}>14:24</div>
+                </div>
+              </div>
             </>
           )}
           {tab === "guide" && (
             <>
-              {[
-                { c: "#fcd34d", e: "🌅", t: "Lever de soleil", n: "4 spots" },
-                { c: "#a78bfa", e: "🌙", t: "Vie nocturne", n: "6 spots" },
-                { c: "#34d399", e: "🍵", t: "Cafés cosy", n: "8 spots" },
-                { c: "#fb7185", e: "🛍️", t: "Souks à voir", n: "5 spots" },
-              ].map(g => (
-                <div key={g.t} style={{ background: g.c, borderRadius: 14, padding: 16, marginBottom: 8, color: "#1a1408", display: "flex", alignItems: "center", gap: 12 }}>
-                  <div style={{ fontSize: 26 }}>{g.e}</div>
-                  <div><div style={{ fontWeight: 700, fontSize: 15 }}>{g.t}</div><div style={{ fontSize: 11 }}>{g.n}</div></div>
+              <div style={{ marginBottom: 12 }}>
+                <div style={{ background: "#202c33", borderRadius: "0 12px 12px 12px", padding: "12px", maxWidth: "90%", display: "inline-block" }}>
+                  <div style={{ fontSize: 13, color: "#e9edef", marginBottom: 8 }}>📖 Votre guide Marrakech (47 spots) :</div>
+                  {[
+                    { e: "🌅", t: "Lever de soleil", n: "4 spots" },
+                    { e: "🌙", t: "Vie nocturne", n: "6 spots" },
+                    { e: "🍵", t: "Cafés cosy", n: "8 spots" },
+                    { e: "🛍️", t: "Souks à voir", n: "5 spots" },
+                  ].map(g => (
+                    <div key={g.t} style={{ background: "#2a3942", borderRadius: 8, padding: 10, marginBottom: 6 }}>
+                      <div style={{ fontSize: 13, fontWeight: 600, color: "#e9edef" }}>{g.e} {g.t}</div>
+                      <div style={{ fontSize: 11, color: "#8696a0" }}>{g.n}</div>
+                    </div>
+                  ))}
+                  <div style={{ fontSize: 10, color: "#8696a0", marginTop: 8, textAlign: "right" }}>14:24</div>
                 </div>
-              ))}
+              </div>
             </>
           )}
           {tab === "experiences" && (
             <>
-              {[
-                { d: "Aujourd'hui · 19:30", t: "Dîner Nomad", s: "Confirmé", sc: "#10b981" },
-                { d: "Demain · 10:00", t: "Cours de cuisine", s: "En attente", sc: "#f59e0b" },
-                { d: "Demain · 14:00", t: "Hammam", s: "Confirmé", sc: "#10b981" },
-              ].map(r => (
-                <div key={r.t} style={{ background: "#fff", border: "1px solid #f0e9d8", borderRadius: 12, padding: 14, marginBottom: 8 }}>
-                  <div style={{ fontSize: 10, color: "#998669", fontFamily: "Geist Mono", fontWeight: 700, letterSpacing: 0.5 }}>{r.d}</div>
-                  <div style={{ fontSize: 14, fontWeight: 700, color: "#1a1408", marginTop: 4 }}>{r.t}</div>
-                  <div style={{ marginTop: 6, fontSize: 10, padding: "2px 8px", background: r.sc + "20", color: r.sc, borderRadius: 4, display: "inline-block", fontWeight: 700 }}>{r.s}</div>
+              <div style={{ marginBottom: 12 }}>
+                <div style={{ background: "#202c33", borderRadius: "0 12px 12px 12px", padding: "12px", maxWidth: "90%", display: "inline-block" }}>
+                  <div style={{ fontSize: 13, color: "#e9edef", marginBottom: 8 }}>✨ Vos réservations :</div>
+                  {[
+                    { d: "Aujourd'hui 19:30", t: "Dîner Nomad", s: "✓ Confirmé" },
+                    { d: "Demain 10:00", t: "Cours de cuisine", s: "⏳ En attente" },
+                    { d: "Demain 14:00", t: "Hammam", s: "✓ Confirmé" },
+                  ].map(r => (
+                    <div key={r.t} style={{ background: "#2a3942", borderRadius: 8, padding: 10, marginBottom: 6 }}>
+                      <div style={{ fontSize: 11, color: "#8696a0" }}>{r.d}</div>
+                      <div style={{ fontSize: 13, fontWeight: 600, color: "#e9edef", marginTop: 2 }}>{r.t}</div>
+                      <div style={{ fontSize: 11, color: "#25D366", marginTop: 2 }}>{r.s}</div>
+                    </div>
+                  ))}
+                  <div style={{ fontSize: 10, color: "#8696a0", marginTop: 8, textAlign: "right" }}>14:25</div>
                 </div>
-              ))}
-              <button style={{ width: "100%", padding: 14, background: "#f4cf5e", border: "none", borderRadius: 12, fontSize: 14, fontWeight: 700, color: "#1a1408", marginTop: 8 }}>+ Réserver une expérience</button>
+              </div>
             </>
           )}
           {tab === "help" && (
             <>
-              {["Mon code ne marche pas", "WiFi ne fonctionne pas", "Demander check-out tardif", "Parler à l'équipe"].map(h => (
-                <button key={h} style={{ width: "100%", padding: 14, background: "#fff", border: "1px solid #f0e9d8", borderRadius: 12, fontSize: 13, color: "#1a1408", marginBottom: 8, textAlign: "left", fontWeight: 600 }}>{h}<span style={{ float: "right", color: "#998669" }}>›</span></button>
-              ))}
-              <div style={{ background: "linear-gradient(135deg, #25D366, #128C7E)", borderRadius: 14, padding: 18, color: "#fff", marginTop: 8, textAlign: "center" }}>
-                <div style={{ fontSize: 28 }}>💬</div>
-                <div style={{ fontSize: 14, fontWeight: 700, marginTop: 6 }}>Discuter sur WhatsApp</div>
-                <div style={{ fontSize: 11, opacity: 0.9, marginTop: 2 }}>Réponse en moins de 2 min</div>
+              <div style={{ marginBottom: 12 }}>
+                <div style={{ background: "#202c33", borderRadius: "0 12px 12px 12px", padding: "12px", maxWidth: "90%", display: "inline-block" }}>
+                  <div style={{ fontSize: 13, color: "#e9edef", marginBottom: 8 }}>💬 Comment puis-je vous aider ?</div>
+                  {["Mon code ne marche pas", "WiFi ne fonctionne pas", "Check-out tardif", "Parler à l'équipe"].map((h, i) => (
+                    <div key={h} style={{ background: "#2a3942", borderRadius: 8, padding: 10, marginBottom: 6, fontSize: 13, color: "#e9edef" }}>
+                      {i + 1}. {h}
+                    </div>
+                  ))}
+                  <div style={{ fontSize: 11, color: "#8696a0", marginTop: 8 }}>Tapez un numéro ou écrivez votre question</div>
+                  <div style={{ fontSize: 10, color: "#8696a0", marginTop: 8, textAlign: "right" }}>14:26</div>
+                </div>
               </div>
             </>
           )}
         </div>
-        {/* Tab bar */}
-        <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, background: "rgba(255,255,255,0.95)", backdropFilter: "blur(12px)", borderTop: "1px solid #f0e9d8", padding: "10px 8px 22px", display: "flex", justifyContent: "space-around" }}>
-          {TABS.map(t => (
-            <div key={t.id} style={{ textAlign: "center", color: t.id === tab ? "#f59e0b" : "#998669", fontSize: 9, fontWeight: 700 }}>
-              <div style={{ fontSize: 18 }}>{t.icon}</div>
-              <div style={{ marginTop: 2 }}>{t.l}</div>
-            </div>
-          ))}
+
+        {/* WhatsApp Input */}
+        <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, background: "#202c33", padding: "8px 12px 22px", display: "flex", gap: 8, alignItems: "center" }}>
+          <div style={{ flex: 1, background: "#2a3942", borderRadius: 20, padding: "8px 14px", fontSize: 13, color: "#8696a0" }}>Message...</div>
+          <div style={{ width: 40, height: 40, borderRadius: "50%", background: "#25D366", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 18 }}>🎤</div>
         </div>
       </div>
     </div>
@@ -143,19 +161,19 @@ export default function GuestExperiencePage() {
       <div style={{ position: "relative", zIndex: 1 }}>
         <PageHeader pageTitle="Guest Experience" />
         <PageHero
-          badge="📱 Guest Experience · L'app du voyageur"
-          title={<>Une app web. <span className="gradient-text">Zéro download.</span><br />Toute votre expérience.</>}
-          subtitle="Vos voyageurs reçoivent un lien personnalisé. WiFi, code porte, GPS, guidebook curé par IA, réservations d'expériences. Multi-langue, marque blanche."
+          badge="💬 Guest Experience · 100% WhatsApp"
+          title={<>Zéro app. <span className="gradient-text">Zéro téléchargement.</span><br />100% WhatsApp.</>}
+          subtitle="Vos voyageurs reçoivent tout par WhatsApp : code porte, WiFi, guidebook IA, réservations. Pas d'app à télécharger, pas de compte à créer. Juste leur numéro de téléphone."
           cta1="Voir la démo"
-          cta2="Personnaliser"
+          cta2="Tester WhatsApp"
         />
         <section style={{ padding: "20px 32px 80px" }}>
           <div style={{ maxWidth: 1280, margin: "0 auto", display: "grid", gridTemplateColumns: "380px 1fr", gap: 60, alignItems: "center" }}>
-            <div style={{ display: "flex", justifyContent: "center" }}><Phone tab={tab} /></div>
+            <div style={{ display: "flex", justifyContent: "center" }}><WhatsAppPhone tab={tab} /></div>
             <div>
               <div style={{ fontSize: 11, color: "#f4cf5e", fontWeight: 700, letterSpacing: 1.5, fontFamily: "Geist Mono", marginBottom: 14 }}>● VUE INTERACTIVE</div>
-              <h2 style={{ fontSize: 36, marginBottom: 18, letterSpacing: "-0.02em" }}>L&apos;expérience voyageur, <span className="gradient-text">sans friction.</span></h2>
-              <p style={{ color: "var(--text-3)", lineHeight: 1.7, fontSize: 15, marginBottom: 30 }}>Cliquez sur un onglet pour explorer. C&apos;est exactement ce que vos voyageurs voient sur leur téléphone.</p>
+              <h2 style={{ fontSize: 36, marginBottom: 18, letterSpacing: "-0.02em" }}>L&apos;expérience voyageur, <span className="gradient-text">100% WhatsApp.</span></h2>
+              <p style={{ color: "var(--text-3)", lineHeight: 1.7, fontSize: 15, marginBottom: 30 }}>Pas d&apos;app web à développer. Tout se passe dans WhatsApp. Vos guests ont déjà WhatsApp sur leur téléphone. C&apos;est là qu&apos;ils reçoivent tout.</p>
               <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
                 {TABS.map(t => (
                   <button key={t.id} onClick={() => setTab(t.id)} style={{
@@ -168,10 +186,10 @@ export default function GuestExperiencePage() {
                     <div>
                       <div style={{ fontSize: 14, fontWeight: 600 }}>{t.l}</div>
                       <div style={{ fontSize: 12, color: "var(--text-3)" }}>
-                        {t.id === "home" && "WiFi, code porte, recos IA"}
-                        {t.id === "guide" && "Guidebook curé par votre équipe"}
-                        {t.id === "experiences" && "Upsell expériences locales"}
-                        {t.id === "help" && "WhatsApp 24/7 + self-service"}
+                        {t.id === "home" && "Code porte, WiFi, infos pratiques"}
+                        {t.id === "guide" && "Recommandations locales par IA"}
+                        {t.id === "experiences" && "Réservation d'expériences"}
+                        {t.id === "help" && "Support instantané 24/7"}
                       </div>
                     </div>
                   </button>
@@ -185,17 +203,17 @@ export default function GuestExperiencePage() {
         <section style={{ padding: "60px 32px" }}>
           <div style={{ maxWidth: 1280, margin: "0 auto" }}>
             <div className="uppercase-sm" style={{ color: "var(--text-3)", marginBottom: 12 }}>● Tout inclus</div>
-            <h2 style={{ fontSize: 36, marginBottom: 32, maxWidth: 700 }}>Tout ce dont un <span className="gradient-text">voyageur a besoin.</span></h2>
+            <h2 style={{ fontSize: 36, marginBottom: 32, maxWidth: 700 }}>Tout ce dont un voyageur a besoin. <span className="gradient-text">Dans WhatsApp.</span></h2>
             <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 16 }}>
               {[
-                { i: "🌍", t: "12 langues", d: "Détection auto + traduction native" },
-                { i: "🎨", t: "Marque blanche", d: "Logo, couleurs, domaine perso" },
-                { i: "📍", t: "Guidebook IA", d: "Recos générées selon préférences" },
+                { i: "💬", t: "100% WhatsApp", d: "Pas d'app à télécharger, pas de compte" },
+                { i: "🔑", t: "Code porte auto", d: "Envoyé le jour J, expire au check-out" },
+                { i: "📶", t: "WiFi instantané", d: "Réseau + mot de passe dans la conversation" },
+                { i: "🤖", t: "Bot IA 24/7", d: "Répond aux questions en 12 langues" },
+                { i: "📍", t: "Guidebook personnalisé", d: "Recommandations générées par IA" },
                 { i: "🎁", t: "Upsell intégré", d: "Late check-out, expériences, transferts" },
-                { i: "🔐", t: "Code porte temporaire", d: "Généré auto, expire au check-out" },
-                { i: "📞", t: "Support 1-tap", d: "WhatsApp, appel, message" },
-                { i: "⭐", t: "Avis post-séjour", d: "Demande automatique + redirection" },
-                { i: "📊", t: "Analytics guests", d: "Engagement, langue, parcours" },
+                { i: "📞", t: "Support humain", d: "Escalade vers votre équipe en 1 clic" },
+                { i: "⭐", t: "Avis automatiques", d: "Demande post-séjour + redirection OTA" },
               ].map(c => (
                 <div key={c.t} className="card" style={{ padding: 20 }}>
                   <div style={{ fontSize: 28, marginBottom: 10 }}>{c.i}</div>
@@ -207,8 +225,8 @@ export default function GuestExperiencePage() {
           </div>
         </section>
 
-        <StatsBar stats={[{k:"94%",l:"taux d'ouverture"},{k:"2.4×",l:"upsell vs avant"},{k:"12 langues",l:"support natif"},{k:"4.9★",l:"satisfaction guest"}]} />
-        <FinalCTA title={<>Activez votre app guest. <span className="gradient-text">Aujourd&apos;hui.</span></>} subtitle="Inclus dès le plan Pro. Setup automatique avec vos biens. Marque blanche en option." />
+        <StatsBar stats={[{k:"98%",l:"taux d'ouverture WhatsApp"},{k:"2.4×",l:"upsell vs email"},{k:"<2min",l:"temps de réponse moyen"},{k:"4.9★",l:"satisfaction guest"}]} />
+        <FinalCTA title={<>Lancez WhatsApp pour vos guests. <span className="gradient-text">En 5 minutes.</span></>} subtitle="Inclus dès le plan Pro. Aucun développement requis. Vos guests ont déjà WhatsApp." />
         <PageFooter />
       </div>
     </>

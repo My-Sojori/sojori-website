@@ -1,9 +1,13 @@
 "use client";
 
 import { useState } from "react";
-import { Metadata } from "next";
 import { BackgroundEffects } from "@/components/BackgroundEffects";
-import { PageHeader, PageFooter, PageHero, StatsBar, FinalCTA } from "@/components/SharedComponents";
+import { PageHeader, PageFooter, PageHero, StatsBar, FinalCTA, SectionHead } from "@/components/SharedComponents";
+import Link from "next/link";
+
+// ========================================
+// WhatsApp Phone Component (Réutilisable)
+// ========================================
 
 interface Message {
   from: "user" | "sojori" | "system";
@@ -12,16 +16,6 @@ interface Message {
   type?: "text" | "date" | "system";
   ext?: string;
   status?: "read" | "sent";
-}
-
-interface Scenario {
-  id: string;
-  label: string;
-  desc: string;
-  title: string;
-  subtitle: string;
-  time?: string;
-  messages: Message[];
 }
 
 interface WhatsAppPhoneProps {
@@ -34,47 +28,56 @@ interface WhatsAppPhoneProps {
 function WhatsAppPhone({ title, subtitle, messages, time = "14:32" }: WhatsAppPhoneProps) {
   return (
     <div style={{
-      width: 320, height: 640, borderRadius: 38, padding: 8,
+      width: 340, height: 680, borderRadius: 38, padding: 10,
       background: "linear-gradient(180deg, #1a1a1f, #0a0a0d)",
-      boxShadow: "0 30px 60px -10px rgba(0,0,0,0.7), 0 0 0 1px rgba(255,255,255,0.1) inset",
+      boxShadow: "0 40px 80px -10px rgba(0,0,0,0.8), 0 0 0 1px rgba(255,255,255,0.1) inset",
       flexShrink: 0,
     }}>
       <div style={{width: "100%", height: "100%", borderRadius: 32, background: "#0b1418", overflow: "hidden", display: "flex", flexDirection: "column", position: "relative"}}>
-        <div style={{position: "absolute", top: 8, left: "50%", transform: "translateX(-50%)", width: 110, height: 26, borderRadius: 13, background: "#000", zIndex: 10}} />
+        {/* Dynamic Island */}
+        <div style={{position: "absolute", top: 8, left: "50%", transform: "translateX(-50%)", width: 110, height: 28, borderRadius: 14, background: "#000", zIndex: 10}} />
+
+        {/* Status Bar */}
         <div style={{display: "flex", justifyContent: "space-between", padding: "14px 24px 8px", fontSize: 11, color: "#fff", fontWeight: 600, fontFamily: "var(--font-mono)"}}>
           <span>{time}</span>
-          <span>📶 5G ⚡</span>
+          <span>📶 5G ⚡ 87%</span>
         </div>
+
+        {/* WhatsApp Header */}
         <div style={{background: "#075e54", padding: "14px 14px 12px", display: "flex", alignItems: "center", gap: 10, borderBottom: "1px solid rgba(0,0,0,0.2)"}}>
           <span style={{color: "#fff", fontSize: 18}}>‹</span>
-          <div style={{width: 36, height: 36, borderRadius: "50%", background: "linear-gradient(135deg, #f4cf5e, #e6b022)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 14, fontWeight: 700, color: "#1a1408", position: "relative"}}>
+          <div style={{width: 38, height: 38, borderRadius: "50%", background: "linear-gradient(135deg, #f4cf5e, #e6b022)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 15, fontWeight: 700, color: "#1a1408", position: "relative"}}>
             S
-            <span style={{position: "absolute", bottom: 0, right: 0, width: 10, height: 10, borderRadius: "50%", background: "#10b981", border: "2px solid #075e54"}} />
+            <span style={{position: "absolute", bottom: 0, right: 0, width: 11, height: 11, borderRadius: "50%", background: "#10b981", border: "2px solid #075e54"}} />
           </div>
           <div style={{flex: 1, lineHeight: 1.2}}>
-            <div style={{color: "#fff", fontSize: 13, fontWeight: 600}}>{title}</div>
-            <div style={{color: "rgba(255,255,255,0.75)", fontSize: 10}}>{subtitle}</div>
+            <div style={{color: "#fff", fontSize: 13.5, fontWeight: 600}}>{title}</div>
+            <div style={{color: "rgba(255,255,255,0.8)", fontSize: 10.5}}>{subtitle}</div>
           </div>
-          <span style={{color: "#fff", fontSize: 14, opacity: 0.9}}>📞</span>
-          <span style={{color: "#fff", fontSize: 14, opacity: 0.9}}>⋮</span>
+          <span style={{color: "#fff", fontSize: 15, opacity: 0.9}}>📞</span>
+          <span style={{color: "#fff", fontSize: 15, opacity: 0.9}}>⋮</span>
         </div>
+
+        {/* Messages Area */}
         <div style={{
           flex: 1,
           background: "#0b1418",
           backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 60 60'%3E%3Cg fill='%23173a3f' opacity='0.35'%3E%3Cpath d='M30 5 L35 15 L30 25 L25 15 Z'/%3E%3Ccircle cx='10' cy='40' r='3'/%3E%3Ccircle cx='50' cy='30' r='2'/%3E%3C/g%3E%3C/svg%3E")`,
           padding: "12px 10px",
           overflowY: "auto",
-          display: "flex", flexDirection: "column", gap: 5,
+          display: "flex", flexDirection: "column", gap: 6,
         }}>
           {messages.map((m, i) => <Bubble key={i} {...m} />)}
         </div>
+
+        {/* Input Area */}
         <div style={{background: "#0b1418", padding: "8px 10px", display: "flex", alignItems: "center", gap: 6, borderTop: "1px solid rgba(255,255,255,0.05)"}}>
-          <div style={{flex: 1, background: "#1f2c33", borderRadius: 22, padding: "8px 14px", color: "rgba(255,255,255,0.5)", fontSize: 12, display: "flex", alignItems: "center", gap: 8}}>
+          <div style={{flex: 1, background: "#1f2c33", borderRadius: 22, padding: "9px 14px", color: "rgba(255,255,255,0.5)", fontSize: 12.5, display: "flex", alignItems: "center", gap: 8}}>
             <span>😊</span>
             <span>Message</span>
             <span style={{marginLeft: "auto", opacity: 0.7}}>📎 📷</span>
           </div>
-          <div style={{width: 36, height: 36, borderRadius: "50%", background: "#00a884", display: "flex", alignItems: "center", justifyContent: "center", color: "#fff"}}>🎤</div>
+          <div style={{width: 38, height: 38, borderRadius: "50%", background: "#00a884", display: "flex", alignItems: "center", justifyContent: "center", color: "#fff", fontSize: 16}}>🎤</div>
         </div>
       </div>
     </div>
@@ -84,24 +87,25 @@ function WhatsAppPhone({ title, subtitle, messages, time = "14:32" }: WhatsAppPh
 function Bubble({ from, text, time, type = "text", ext, status }: Message) {
   const isUser = from === "user";
   const isAI = from === "sojori";
-  if (type === "date") return <div style={{alignSelf: "center", background: "rgba(15,30,38,0.8)", color: "rgba(255,255,255,0.6)", fontSize: 10, padding: "3px 10px", borderRadius: 10, margin: "6px 0"}}>{text}</div>;
-  if (type === "system") return <div style={{alignSelf: "center", background: "rgba(255,217,90,0.15)", color: "#f4cf5e", fontSize: 10, padding: "4px 10px", borderRadius: 10, margin: "4px 0", display: "flex", alignItems: "center", gap: 5}}>🔒 {text}</div>;
+
+  if (type === "date") return <div style={{alignSelf: "center", background: "rgba(15,30,38,0.8)", color: "rgba(255,255,255,0.6)", fontSize: 10, padding: "4px 11px", borderRadius: 11, margin: "6px 0", fontWeight: 500}}>{text}</div>;
+  if (type === "system") return <div style={{alignSelf: "center", background: "rgba(255,217,90,0.15)", color: "#f4cf5e", fontSize: 10, padding: "5px 12px", borderRadius: 11, margin: "4px 0", display: "flex", alignItems: "center", gap: 5, fontWeight: 500}}>🔒 {text}</div>;
 
   return (
     <div style={{
       alignSelf: isUser ? "flex-end" : "flex-start",
-      maxWidth: "78%",
+      maxWidth: "80%",
       background: isUser ? "#005c4b" : (isAI ? "linear-gradient(135deg, #1f2c33, #243038)" : "#1f2c33"),
-      borderRadius: isUser ? "12px 12px 2px 12px" : "12px 12px 12px 2px",
-      padding: "7px 10px 4px",
+      borderRadius: isUser ? "13px 13px 2px 13px" : "13px 13px 13px 2px",
+      padding: "8px 11px 5px",
       position: "relative",
-      boxShadow: "0 1px 1px rgba(0,0,0,0.15)",
-      border: isAI ? "1px solid rgba(244,207,94,0.18)" : "none",
+      boxShadow: "0 1px 2px rgba(0,0,0,0.2)",
+      border: isAI ? "1px solid rgba(244,207,94,0.2)" : "none",
     }}>
-      {isAI && <div style={{display: "flex", alignItems: "center", gap: 4, marginBottom: 3, color: "#f4cf5e", fontSize: 9, fontWeight: 600, fontFamily: "var(--font-mono)", letterSpacing: "0.5px"}}>✨ SOJORI AI</div>}
-      <div style={{color: "#e9edef", fontSize: 12.5, lineHeight: 1.4, whiteSpace: "pre-wrap"}}>{text}</div>
-      {ext && <div style={{marginTop: 6, padding: 8, background: "rgba(0,0,0,0.25)", borderRadius: 6, fontSize: 11, color: "rgba(255,255,255,0.85)"}}>{ext}</div>}
-      <div style={{display: "flex", justifyContent: "flex-end", alignItems: "center", gap: 3, marginTop: 2, fontSize: 9, color: "rgba(255,255,255,0.55)"}}>
+      {isAI && <div style={{display: "flex", alignItems: "center", gap: 4, marginBottom: 4, color: "#f4cf5e", fontSize: 9, fontWeight: 600, fontFamily: "var(--font-mono)", letterSpacing: "0.6px"}}>✨ SOJORI AI</div>}
+      <div style={{color: "#e9edef", fontSize: 13, lineHeight: 1.45, whiteSpace: "pre-wrap"}}>{text}</div>
+      {ext && <div style={{marginTop: 7, padding: 9, background: "rgba(0,0,0,0.3)", borderRadius: 7, fontSize: 11.5, color: "rgba(255,255,255,0.9)", lineHeight: 1.4}}>{ext}</div>}
+      <div style={{display: "flex", justifyContent: "flex-end", alignItems: "center", gap: 3, marginTop: 3, fontSize: 9.5, color: "rgba(255,255,255,0.55)"}}>
         <span>{time}</span>
         {isUser && <span style={{color: status === "read" ? "#53bdeb" : "rgba(255,255,255,0.55)"}}>✓✓</span>}
       </div>
@@ -109,173 +113,500 @@ function Bubble({ from, text, time, type = "text", ext, status }: Message) {
   );
 }
 
-const SCENARIOS: Scenario[] = [
+// ========================================
+// System Data
+// ========================================
+
+const SYSTEMS = [
   {
-    id: "checkin",
-    label: "🛬 Check-in autonome",
-    desc: "Le voyageur arrive, scanne le QR, accède au logement.",
-    title: "Sarah Johnson",
-    subtitle: "Riad El Fenn · 15:00",
-    messages: [
-      { from: "system", type: "date", text: "Aujourd'hui", time: "" },
-      { from: "sojori", text: "Bonjour Sarah ! 👋 Bienvenue à Marrakech.\n\nVotre check-in est dans 1h à Riad El Fenn. Voici votre code d'arrivée:", time: "14:00" },
-      { from: "sojori", text: "🔑 Code: 4729", ext: "📍 47 Derb El Hammam\nGPS: 31.6295, -7.9811", time: "14:00" },
-      { from: "user", text: "Merci ! Je suis dans le taxi 🚕", time: "14:55", status: "read" },
-      { from: "sojori", text: "Parfait ✓ J'ai informé l'équipe. Mehdi vous attend devant le riad.\n\nBesoin d'aide pour vos bagages ?", time: "14:55" },
-      { from: "user", text: "Non c'est bon merci 🙏", time: "14:56", status: "read" },
-      { from: "system", type: "system", text: "Identité vérifiée · QR scanné", time: "" },
-      { from: "sojori", text: "Vous êtes enregistrée ✅\n\nVotre WiFi: SOJORI_FENN / wifi2024\nClimatisation: réglée 22°C\n\nBon séjour à Marrakech ✨", time: "15:02" },
-    ],
+    id: "guest",
+    label: "WhatsApp Guest",
+    badge: "💬 Voyageurs",
+    icon: "🌟",
+    color: "#25D366",
+    stat: "87% autonome"
   },
   {
-    id: "support",
-    label: "🆘 Support 24/7",
-    desc: "Problème AC à 3h du matin. AI répond instantanément.",
-    title: "Marco Rossi",
-    subtitle: "Dar Sojori",
-    time: "03:14",
-    messages: [
-      { from: "system", type: "date", text: "03:14 — Aujourd'hui", time: "" },
-      { from: "user", text: "Bonsoir, la climatisation ne marche plus 😓 il fait très chaud", time: "03:14", status: "read" },
-      { from: "sojori", text: "Bonsoir Marco, je suis désolé pour ce désagrément 😔\n\nJe vais résoudre ça immédiatement. Pouvez-vous vérifier 2 choses pour moi ?", time: "03:14" },
-      { from: "sojori", text: "1️⃣ Le tableau électrique (entrée) — un disjoncteur est-il en bas ?\n2️⃣ La télécommande affiche-t-elle quelque chose ?", time: "03:14" },
-      { from: "user", text: "Oui ! Un disjoncteur est tombé", time: "03:16", status: "read" },
-      { from: "sojori", text: "Parfait ✨ Remontez-le simplement. La climatisation devrait redémarrer dans 30 sec.", time: "03:16" },
-      { from: "user", text: "Ça marche !! Merci beaucoup 🙏❄️", time: "03:18", status: "read" },
-      { from: "sojori", text: "Avec plaisir 😊 Bonne nuit Marco.\n\nJe note pour qu'un technicien passe demain vérifier le tableau (sans vous déranger).", time: "03:18" },
-      { from: "system", type: "system", text: "Ticket #4928 résolu en 4 min · 0 escalade humaine", time: "" },
-    ],
+    id: "staff",
+    label: "WhatsApp Staff",
+    badge: "👷 Équipe",
+    icon: "🔧",
+    color: "#34d399",
+    stat: "Real-time"
   },
   {
-    id: "upsell",
-    label: "✨ Upsell intelligent",
-    desc: "AI détecte une opportunité, propose un service additionnel.",
-    title: "Aisha Khalil",
-    subtitle: "Villa Atlas · 6 invités",
-    messages: [
-      { from: "system", type: "date", text: "Hier", time: "" },
-      { from: "sojori", text: "Bonjour Aisha ! J'espère que vous profitez de Villa Atlas 🌴\n\nVotre séjour se passe bien ?", time: "11:00" },
-      { from: "user", text: "Oui c'est magnifique ! On adore la piscine 🏊", time: "11:08", status: "read" },
-      { from: "sojori", text: "Génial ! 🥹\n\nJ'ai vu que vous restez 3 jours de plus. Petite suggestion: notre chef peut préparer un dîner privé sur la terrasse vendredi soir.\n\nEnvie d'en savoir plus ?", time: "11:09" },
-      { from: "user", text: "Oh oui ça nous intéresse !", time: "11:12", status: "read" },
-      { from: "sojori", text: "🍽️ Dîner privé · Chef Karim", ext: "✨ Menu 4 services · produits locaux\n👥 Jusqu'à 8 personnes\n💰 €45/personne · vins inclus\n📅 Vendredi 19:30", time: "11:12" },
-      { from: "user", text: "On prend pour 6 ! 🙌", time: "11:14", status: "read" },
-      { from: "system", type: "system", text: "Réservation confirmée · €270 ajoutés au séjour", time: "" },
-      { from: "sojori", text: "Parfait ✓ Karim prépare quelque chose de spécial pour vous.\n\nÀ vendredi 19:30 ! 🌙", time: "11:14" },
-    ],
+    id: "admin",
+    label: "WhatsApp Admin",
+    badge: "🎯 PMS Light",
+    icon: "📊",
+    color: "#a78bfa",
+    stat: "6 fonctions"
   },
   {
-    id: "review",
-    label: "⭐ Avis post-séjour",
-    desc: "Demande naturelle d'avis qui convertit (4.9/5 moyenne).",
-    title: "James Park",
-    subtitle: "Séjour terminé",
-    messages: [
-      { from: "system", type: "date", text: "Aujourd'hui · 12:00", time: "" },
-      { from: "sojori", text: "James, j'espère que votre vol s'est bien passé ✈️\n\nMerci d'avoir choisi Sojori 🙏", time: "12:00" },
-      { from: "user", text: "Merci à vous ! Séjour incroyable, tout était parfait", time: "14:23", status: "read" },
-      { from: "sojori", text: "Ça nous touche beaucoup 🥺\n\nSi vous avez 30 secondes, votre avis Airbnb fait toute la différence pour nous (et les voyageurs après vous).", time: "14:24" },
-      { from: "sojori", text: "⭐ Laisser un avis Airbnb", ext: "🔗 Lien direct (pré-rempli avec vos dates)\n⏱️ 30 secondes", time: "14:24" },
-      { from: "user", text: "Avec plaisir, je le fais maintenant ⭐⭐⭐⭐⭐", time: "14:25", status: "read" },
-      { from: "system", type: "system", text: "5 étoiles reçues · publié sur Airbnb", time: "" },
-      { from: "sojori", text: "Vous êtes adorable 💛 Merci infiniment !\n\nJ'ai gardé votre profil. Si vous revenez à Marrakech (ou ailleurs au Maroc), -10% sur votre prochain séjour 🎁", time: "14:30" },
-    ],
+    id: "booking",
+    label: "Direct Booking",
+    badge: "💰 Sans OTA",
+    icon: "🎫",
+    color: "#f59e0b",
+    stat: "0% commission"
   },
 ];
 
-interface ScenarioPickerProps {
-  active: string;
-  onChange: (id: string) => void;
-}
+const GUEST_MESSAGES: Message[] = [
+  { from: "system", type: "date", text: "Aujourd'hui", time: "" },
+  { from: "sojori", text: "Bonjour Sarah ! 👋 Bienvenue à Paris.\n\nVotre check-in est dans 2h à l'appartement Montmartre. Voici vos accès :", time: "13:00" },
+  { from: "sojori", text: "🔑 Code porte : 4729\n📍 47 Rue des Abbesses\n🚇 Métro : Abbesses (ligne 12)", ext: "WiFi : SOJORI_PARIS\nMot de passe : paris2024", time: "13:00" },
+  { from: "user", text: "Merci ! Je peux arriver plus tôt vers 14h ?", time: "13:15", status: "read" },
+  { from: "sojori", text: "Parfait ✓ L'appartement sera prêt à 14h.\n\nJ'ai prévenu l'équipe. Lucas vous attendra devant l'immeuble pour vous accueillir 🙂", time: "13:16" },
+  { from: "user", text: "Super, merci beaucoup ! 🙏", time: "13:17", status: "read" },
+  { from: "system", type: "system", text: "Check-in effectué · QR code scanné", time: "" },
+];
 
-function ScenarioPicker({ active, onChange }: ScenarioPickerProps) {
-  return (
-    <div style={{display: "flex", flexWrap: "wrap", gap: 8, justifyContent: "center", marginBottom: 36}}>
-      {SCENARIOS.map(s => (
-        <button key={s.id} onClick={() => onChange(s.id)} style={{
-          padding: "11px 18px", borderRadius: 10, fontSize: 13, fontWeight: 500, cursor: "pointer",
-          background: active === s.id ? "linear-gradient(180deg, #f4cf5e, #e6b022)" : "rgba(255,255,255,0.04)",
-          color: active === s.id ? "#1a1408" : "var(--text-2)",
-          border: active === s.id ? "1px solid rgba(244,207,94,0.5)" : "1px solid var(--glass-border)",
-          transition: "all 0.2s",
-        }}>{s.label}</button>
-      ))}
-    </div>
-  );
-}
+const STAFF_MESSAGES: Message[] = [
+  { from: "system", type: "date", text: "Aujourd'hui · 08:30", time: "" },
+  { from: "sojori", text: "Bonjour Sophie 👋\n\n*📋 Vos tâches du jour (3)*\n\n1️⃣ Ménage · Appt Montmartre\n   Check-out 11h · Arrivée 15h\n   ⏱️ 2h estimées\n\n2️⃣ Maintenance · Appt Marais\n   AC à vérifier · Guest signalement\n   ⏱️ 30 min\n\n3️⃣ Linge · Studio Bastille\n   Changement draps · Avant 14h\n   ⏱️ 45 min", time: "08:30" },
+  { from: "user", text: "Reçu ! Je commence par Montmartre ✓", time: "08:45", status: "read" },
+  { from: "sojori", text: "Parfait 🙌 J'ai mis la tâche en cours.\n\nN'oublie pas de scanner le QR à l'arrivée pour démarrer le chrono.", time: "08:45" },
+  { from: "system", type: "system", text: "Tâche #1 démarrée · Géolocalisation OK", time: "" },
+  { from: "user", text: "Ménage terminé ! Photos envoyées 📸", time: "10:20", status: "read" },
+  { from: "sojori", text: "Super Sophie ! ⭐\n\nTâche validée · 1h50 (10 min d'avance)\nProchaine tâche : Appt Marais à 11h", time: "10:21" },
+];
 
-export default function WhatsappPage() {
-  const [active, setActive] = useState("checkin");
-  const scenario = SCENARIOS.find(s => s.id === active)!;
+const ADMIN_MESSAGES: Message[] = [
+  { from: "system", type: "date", text: "Lundi 15:00", time: "" },
+  { from: "sojori", text: "Bonjour Marc 👋\n\n*🎯 Tableau de bord*\n\nTapez la lettre correspondante :\n\n*T* - Tâches en attente (3)\n*D* - Déclarations arrivée/départ (2)\n*R* - Réservations check-in/out (5)\n*M* - Messages guests (7)\n*V* - Avis à répondre (2)\n*L* - Demandes réservation (4)", time: "15:00" },
+  { from: "user", text: "M", time: "15:05", status: "read" },
+  { from: "sojori", text: "💬 *Messages en attente (7)*\n\n1. Sarah · Appt Montmartre\n   « WiFi code ? » · il y a 15 min\n   [Répondre]\n\n2. Marco · Villa Barcelona\n   « AC doesn't work » · il y a 32 min\n   [URGENT]\n\n3. Emma · Studio Marais\n   « Late checkout possible? » · il y a 1h\n   [Répondre]", time: "15:05" },
+  { from: "user", text: "Je prends Marco en priorité", time: "15:06", status: "read" },
+  { from: "sojori", text: "Conversation transférée ✓\n\nVous pouvez maintenant échanger directement avec Marco.\n\nL'IA a déjà proposé : vérifier disjoncteur + envoi technicien si besoin.", time: "15:06" },
+];
+
+const BOOKING_MESSAGES: Message[] = [
+  { from: "system", type: "date", text: "Mardi 10:00", time: "" },
+  { from: "user", text: "Bonjour, je cherche un appartement à Paris du 15 au 20 juin pour 2 personnes", time: "10:00", status: "read" },
+  { from: "sojori", text: "Bonjour ! 👋\n\nJ'ai trouvé *3 appartements disponibles* pour vos dates :\n\n🏠 *Appt Montmartre* · 65m²\n   €120/nuit · 2 personnes\n   ⭐ 4.9 (47 avis)\n   [Voir photos]\n\n🏠 *Studio Marais* · 45m²\n   €95/nuit · 2 personnes\n   ⭐ 4.8 (32 avis)\n   [Voir photos]\n\n🏠 *Loft République* · 80m²\n   €150/nuit · 4 personnes\n   ⭐ 5.0 (12 avis)\n   [Voir photos]", time: "10:01" },
+  { from: "user", text: "L'appartement Montmartre m'intéresse ! C'est combien au total ?", time: "10:03", status: "read" },
+  { from: "sojori", text: "🏠 *Appartement Montmartre*\n5 nuits · 15-20 juin 2025\n\n💰 *Tarif*\n€120 × 5 nuits = €600\nFrais ménage = €40\n*Total = €640*\n\n✨ Réservation directe :\n❌ Pas de commission Airbnb\n💳 Paiement sécurisé\n🎁 Check-in flexible\n\n[Réserver maintenant]", time: "10:03" },
+  { from: "user", text: "Parfait, je réserve !", time: "10:05", status: "read" },
+  { from: "system", type: "system", text: "Paiement reçu €640 · Réservation confirmée", time: "" },
+  { from: "sojori", text: "🎉 *Réservation confirmée !*\n\nVous recevrez sous 5 min :\n✉️ Email de confirmation\n📱 Accès guest app\n📍 Guidebook Paris\n\nHâte de vous accueillir Sarah ! 🙂", time: "10:06" },
+];
+
+// ========================================
+// Main Component
+// ========================================
+
+export default function WhatsAppPage() {
+  const [activeSystem, setActiveSystem] = useState("guest");
+
+  const currentMessages =
+    activeSystem === "guest" ? GUEST_MESSAGES :
+    activeSystem === "staff" ? STAFF_MESSAGES :
+    activeSystem === "admin" ? ADMIN_MESSAGES :
+    BOOKING_MESSAGES;
+
+  const currentTitle =
+    activeSystem === "guest" ? "Sojori AI" :
+    activeSystem === "staff" ? "Sojori Staff" :
+    activeSystem === "admin" ? "Sojori Admin" :
+    "Sojori Booking";
+
+  const currentSubtitle =
+    activeSystem === "guest" ? "Online · répond en quelques secondes" :
+    activeSystem === "staff" ? "Planning & tâches temps réel" :
+    activeSystem === "admin" ? "PMS Light via WhatsApp" :
+    "Réservation directe sans OTA";
 
   return (
     <>
       <BackgroundEffects />
       <div style={{position: "relative", zIndex: 1}}>
-        <PageHeader pageTitle="WhatsApp Bot" />
+        <PageHeader pageTitle="WhatsApp Systems" />
+
+        {/* Hero */}
         <PageHero
-          badge="💬 WhatsApp · Le canal #1 au Maroc"
-          title={<>L'IA Sojori,<br /><span className="gradient-text">disponible 24/7 sur WhatsApp.</span></>}
-          subtitle="Pas d'app à télécharger. Pas de friction. Vos voyageurs écrivent, l'IA répond en 2 secondes en 12 langues — check-in, support, upsell, avis. Tout sur WhatsApp."
-          cta1="Voir une démo"
-          cta2="Brancher mon WhatsApp"
+          badge="💬 WhatsApp · Au cœur de Sojori"
+          title={<>4 systèmes WhatsApp.<br /><span className="gradient-text">Une plateforme unifiée.</span></>}
+          subtitle="Sojori utilise WhatsApp comme canal principal pour communiquer avec vos voyageurs, votre équipe, et vous permettre de gérer votre activité depuis votre téléphone. Pas d'app à télécharger. Juste WhatsApp."
         />
 
-        <section style={{padding: "20px 32px 80px"}}>
+        {/* System Badges */}
+        <section style={{padding: "0 32px 60px"}}>
           <div style={{maxWidth: 1100, margin: "0 auto"}}>
-            <div className="uppercase-sm" style={{color: "var(--text-3)", textAlign: "center", marginBottom: 14}}>● 4 scénarios concrets</div>
-            <ScenarioPicker active={active} onChange={setActive} />
+            <div style={{display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 12}}>
+              {SYSTEMS.map(sys => (
+                <button
+                  key={sys.id}
+                  onClick={() => setActiveSystem(sys.id)}
+                  style={{
+                    padding: "18px 16px",
+                    borderRadius: 14,
+                    background: activeSystem === sys.id ?
+                      `linear-gradient(135deg, ${sys.color}15, ${sys.color}08)` :
+                      "rgba(255,255,255,0.02)",
+                    border: activeSystem === sys.id ?
+                      `1.5px solid ${sys.color}40` :
+                      "1.5px solid var(--glass-border)",
+                    cursor: "pointer",
+                    transition: "all 0.25s",
+                    textAlign: "center",
+                  }}
+                >
+                  <div style={{fontSize: 32, marginBottom: 8}}>{sys.icon}</div>
+                  <div style={{fontSize: 13, fontWeight: 600, color: "var(--text-1)", marginBottom: 4}}>{sys.label}</div>
+                  <div style={{fontSize: 11, color: "var(--text-3)"}}>{sys.stat}</div>
+                </button>
+              ))}
+            </div>
+          </div>
+        </section>
 
-            <div style={{display: "grid", gridTemplateColumns: "1fr 1.4fr", gap: 60, alignItems: "center", maxWidth: 980, margin: "0 auto"}}>
-              <div style={{display: "flex", flexDirection: "column", gap: 16}}>
-                <div style={{fontSize: 28, fontWeight: 700, letterSpacing: "-0.02em", lineHeight: 1.15}}>{scenario.label}</div>
-                <div style={{fontSize: 16, color: "var(--text-2)", lineHeight: 1.55}}>{scenario.desc}</div>
-                <div style={{height: 1, background: "var(--glass-border)", margin: "8px 0"}} />
-                {[
-                  { l: "Temps réponse", v: "2 sec" },
-                  { l: "Langue détectée", v: "Auto · 12 langues" },
-                  { l: "Escalade humaine", v: "Si nécessaire" },
-                  { l: "Coût par message", v: "€0.04" },
-                ].map(s => (
-                  <div key={s.l} style={{display: "flex", justifyContent: "space-between", fontSize: 13}}>
-                    <span style={{color: "var(--text-3)"}}>{s.l}</span>
-                    <span style={{color: "var(--text-1)", fontWeight: 500}}>{s.v}</span>
-                  </div>
-                ))}
-              </div>
+        {/* Interactive Demo Section */}
+        <section style={{padding: "20px 32px 80px", background: "linear-gradient(180deg, transparent, rgba(139,92,246,0.03) 50%, transparent)"}}>
+          <div style={{maxWidth: 1150, margin: "0 auto"}}>
+            <div className="uppercase-sm" style={{color: "var(--text-3)", textAlign: "center", marginBottom: 28}}>
+              ● {SYSTEMS.find(s => s.id === activeSystem)?.badge}
+            </div>
+
+            <div style={{display: "grid", gridTemplateColumns: "380px 1fr", gap: 70, alignItems: "center"}}>
+              {/* Phone Mockup */}
               <div style={{display: "flex", justifyContent: "center", position: "relative"}}>
-                <div style={{position: "absolute", inset: "-40px", background: "radial-gradient(circle, rgba(230,176,34,0.18), transparent 65%)", pointerEvents: "none"}} />
-                <WhatsAppPhone {...scenario} />
+                <div style={{position: "absolute", inset: "-50px", background: `radial-gradient(circle, ${SYSTEMS.find(s => s.id === activeSystem)?.color}20, transparent 70%)`, pointerEvents: "none", filter: "blur(40px)"}} />
+                <WhatsAppPhone
+                  title={currentTitle}
+                  subtitle={currentSubtitle}
+                  messages={currentMessages}
+                />
+              </div>
+
+              {/* Details */}
+              <div>
+                {activeSystem === "guest" && (
+                  <>
+                    <h2 style={{fontSize: 38, fontWeight: 700, letterSpacing: "-0.03em", marginBottom: 16, lineHeight: 1.15}}>
+                      WhatsApp Guest <span className="gradient-text">Intelligence</span>
+                    </h2>
+                    <p style={{fontSize: 16, color: "var(--text-2)", lineHeight: 1.65, marginBottom: 28}}>
+                      L'IA Sojori répond à vos voyageurs 24/7 sur WhatsApp. Check-in autonome, support instantané, upsell intelligent, demande d'avis. Le tout en 12 langues.
+                    </p>
+
+                    <div style={{marginBottom: 28}}>
+                      <div className="uppercase-sm" style={{color: "var(--text-3)", marginBottom: 14}}>Menu principal</div>
+                      <div style={{display: "flex", flexDirection: "column", gap: 10}}>
+                        {[
+                          { l: "A", t: "Menu principal", i: "📋" },
+                          { l: "B", t: "Changer langue", i: "🌍" },
+                          { l: "C", t: "Ma réservation", i: "📅" },
+                          { l: "E", t: "Enregistrement voyageurs", i: "👥" },
+                          { l: "F", t: "Accès & codes", i: "🔐" },
+                          { l: "G", t: "Propriété & WiFi", i: "🏠" },
+                          { l: "H", t: "Règles & à propos", i: "📋" },
+                          { l: "I", t: "Demande ménage", i: "🧹" },
+                          { l: "J", t: "Services conciergerie", i: "🛎️" },
+                          { l: "K", t: "Support", i: "🆘" },
+                        ].map(item => (
+                          <div key={item.l} style={{display: "flex", alignItems: "center", gap: 12, padding: "10px 14px", background: "rgba(255,255,255,0.02)", border: "1px solid var(--glass-border)", borderRadius: 10}}>
+                            <div className="mono" style={{fontSize: 12, fontWeight: 700, color: "#25D366", width: 20}}>{item.l}</div>
+                            <div style={{fontSize: 16}}>{item.i}</div>
+                            <div style={{fontSize: 13.5, color: "var(--text-2)"}}>{item.t}</div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+
+                    <div className="glass" style={{padding: 18, borderRadius: 12}}>
+                      <div style={{display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 14}}>
+                        {[
+                          { k: "<2 sec", l: "Temps réponse" },
+                          { k: "12", l: "Langues" },
+                          { k: "87%", l: "Autonome" },
+                        ].map(s => (
+                          <div key={s.l} style={{textAlign: "center"}}>
+                            <div style={{fontSize: 26, fontWeight: 700}} className="gradient-text">{s.k}</div>
+                            <div style={{fontSize: 11, color: "var(--text-3)", marginTop: 3}}>{s.l}</div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </>
+                )}
+
+                {activeSystem === "staff" && (
+                  <>
+                    <h2 style={{fontSize: 38, fontWeight: 700, letterSpacing: "-0.03em", marginBottom: 16, lineHeight: 1.15}}>
+                      WhatsApp Staff <span className="gradient-text">Coordination</span>
+                    </h2>
+                    <p style={{fontSize: 16, color: "var(--text-2)", lineHeight: 1.65, marginBottom: 28}}>
+                      Votre équipe (ménage, maintenance, conciergerie) reçoit ses tâches, planning et notifications en temps réel sur WhatsApp. Plus besoin d'app ou de formation.
+                    </p>
+
+                    <div style={{marginBottom: 28}}>
+                      <div className="uppercase-sm" style={{color: "var(--text-3)", marginBottom: 14}}>Fonctionnalités</div>
+                      <div style={{display: "flex", flexDirection: "column", gap: 10}}>
+                        {[
+                          { i: "📋", t: "Tâches assignées en temps réel", d: "Check-in, ménage, maintenance" },
+                          { i: "📅", t: "Planning visuel du jour", d: "Vue chronologique avec estimations" },
+                          { i: "📍", t: "Navigation GPS intégrée", d: "Itinéraire vers chaque bien" },
+                          { i: "✅", t: "Validation avec QR code", d: "Scan à l'arrivée + photos de fin" },
+                          { i: "⏱️", t: "Chrono automatique", d: "Temps réel vs estimé · analytics" },
+                          { i: "🔔", t: "Alertes urgentes", d: "Guest bloqué, problème signalé" },
+                        ].map(item => (
+                          <div key={item.t} style={{display: "flex", gap: 12, padding: "12px 14px", background: "rgba(52,211,153,0.05)", border: "1px solid rgba(52,211,153,0.2)", borderRadius: 10}}>
+                            <div style={{fontSize: 18}}>{item.i}</div>
+                            <div>
+                              <div style={{fontSize: 14, fontWeight: 600, color: "var(--text-1)", marginBottom: 2}}>{item.t}</div>
+                              <div style={{fontSize: 12, color: "var(--text-3)"}}>{item.d}</div>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+
+                    <div className="glass" style={{padding: 18, borderRadius: 12}}>
+                      <div style={{display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 14}}>
+                        {[
+                          { k: "0€", l: "Par staff" },
+                          { k: "Real-time", l: "Notifications" },
+                          { k: "QR", l: "Validation" },
+                        ].map(s => (
+                          <div key={s.l} style={{textAlign: "center"}}>
+                            <div style={{fontSize: 26, fontWeight: 700}} className="gradient-text">{s.k}</div>
+                            <div style={{fontSize: 11, color: "var(--text-3)", marginTop: 3}}>{s.l}</div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </>
+                )}
+
+                {activeSystem === "admin" && (
+                  <>
+                    <h2 style={{fontSize: 38, fontWeight: 700, letterSpacing: "-0.03em", marginBottom: 16, lineHeight: 1.15}}>
+                      WhatsApp Admin <span className="gradient-text">PMS Light</span>
+                    </h2>
+                    <p style={{fontSize: 16, color: "var(--text-2)", lineHeight: 1.65, marginBottom: 28}}>
+                      Gérez votre activité depuis votre téléphone. Tâches, déclarations, réservations, messages, avis, leads. Tout sur WhatsApp, sans ouvrir le dashboard.
+                    </p>
+
+                    <div style={{marginBottom: 28}}>
+                      <div className="uppercase-sm" style={{color: "var(--text-3)", marginBottom: 14}}>Menu admin</div>
+                      <div style={{display: "flex", flexDirection: "column", gap: 10}}>
+                        {[
+                          { l: "T", t: "Tâches à gérer", i: "✅", c: "#10b981" },
+                          { l: "D", t: "Déclarations arrivée/départ", i: "📋", c: "#3b82f6" },
+                          { l: "R", t: "Réservations (check-in/out)", i: "📅", c: "#8b5cf6" },
+                          { l: "M", t: "Messages en attente", i: "💬", c: "#f59e0b" },
+                          { l: "V", t: "Avis à répondre", i: "⭐", c: "#f4cf5e" },
+                          { l: "L", t: "Demandes réservation (Leads)", i: "🎯", c: "#ec4899" },
+                        ].map(item => (
+                          <div key={item.l} style={{display: "flex", alignItems: "center", gap: 12, padding: "12px 14px", background: `${item.c}08`, border: `1px solid ${item.c}30`, borderRadius: 10}}>
+                            <div className="mono" style={{fontSize: 13, fontWeight: 700, color: item.c, width: 20}}>{item.l}</div>
+                            <div style={{fontSize: 18}}>{item.i}</div>
+                            <div style={{fontSize: 14, color: "var(--text-2)", flex: 1}}>{item.t}</div>
+                            <div style={{width: 8, height: 8, borderRadius: "50%", background: item.c, boxShadow: `0 0 10px ${item.c}`}} />
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+
+                    <div className="glass" style={{padding: 18, borderRadius: 12}}>
+                      <div style={{display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 14}}>
+                        {[
+                          { k: "6", l: "Fonctions" },
+                          { k: "Mobile", l: "PMS" },
+                          { k: "Instant", l: "Notifications" },
+                        ].map(s => (
+                          <div key={s.l} style={{textAlign: "center"}}>
+                            <div style={{fontSize: 26, fontWeight: 700}} className="gradient-text">{s.k}</div>
+                            <div style={{fontSize: 11, color: "var(--text-3)", marginTop: 3}}>{s.l}</div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </>
+                )}
+
+                {activeSystem === "booking" && (
+                  <>
+                    <h2 style={{fontSize: 38, fontWeight: 700, letterSpacing: "-0.03em", marginBottom: 16, lineHeight: 1.15}}>
+                      WhatsApp Direct <span className="gradient-text">Booking</span>
+                    </h2>
+                    <p style={{fontSize: 16, color: "var(--text-2)", lineHeight: 1.65, marginBottom: 28}}>
+                      Vos anciens voyageurs peuvent réserver directement via WhatsApp. Plus de commission OTA. Paiement sécurisé. Confirmation instantanée.
+                    </p>
+
+                    <div style={{marginBottom: 28}}>
+                      <div className="uppercase-sm" style={{color: "var(--text-3)", marginBottom: 14}}>Avantages</div>
+                      <div style={{display: "flex", flexDirection: "column", gap: 10}}>
+                        {[
+                          { i: "💰", t: "0% commission", d: "Gardez 100% du chiffre d'affaires", c: "#10b981" },
+                          { i: "🔄", t: "Fidélisation guests", d: "Retour direct sans passer par OTA", c: "#3b82f6" },
+                          { i: "💳", t: "Paiement sécurisé", d: "Stripe intégré · PCI compliant", c: "#8b5cf6" },
+                          { i: "⚡", t: "Confirmation instant", d: "Disponibilités en temps réel", c: "#f59e0b" },
+                          { i: "📊", t: "Tarifs dynamiques", d: "Dynamic pricing automatique", c: "#ec4899" },
+                          { i: "🎁", t: "Upsell intégré", d: "Services additionnels dans le flow", c: "#f4cf5e" },
+                        ].map(item => (
+                          <div key={item.t} style={{display: "flex", gap: 12, padding: "12px 14px", background: `${item.c}08`, border: `1px solid ${item.c}30`, borderRadius: 10}}>
+                            <div style={{fontSize: 18}}>{item.i}</div>
+                            <div>
+                              <div style={{fontSize: 14, fontWeight: 600, color: "var(--text-1)", marginBottom: 2}}>{item.t}</div>
+                              <div style={{fontSize: 12, color: "var(--text-3)"}}>{item.d}</div>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+
+                    <div className="glass" style={{padding: 18, borderRadius: 12}}>
+                      <div style={{display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 14}}>
+                        {[
+                          { k: "0%", l: "Commission" },
+                          { k: "€0", l: "Setup" },
+                          { k: "24/7", l: "Disponible" },
+                        ].map(s => (
+                          <div key={s.l} style={{textAlign: "center"}}>
+                            <div style={{fontSize: 26, fontWeight: 700}} className="gradient-text">{s.k}</div>
+                            <div style={{fontSize: 11, color: "var(--text-3)", marginTop: 3}}>{s.l}</div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </>
+                )}
               </div>
             </div>
           </div>
         </section>
 
-        <section style={{padding: "40px 32px 80px", borderTop: "1px solid var(--glass-border)"}}>
+        {/* Benefits Section */}
+        <section style={{padding: "70px 32px", borderTop: "1px solid var(--glass-border)"}}>
           <div style={{maxWidth: 1200, margin: "0 auto"}}>
-            <div className="uppercase-sm" style={{color: "var(--text-3)", marginBottom: 12}}>● Capacités</div>
-            <div style={{fontSize: 36, fontWeight: 700, letterSpacing: "-0.02em", marginBottom: 36, maxWidth: 700}}>Tout ce qu'un concierge fait. <span style={{color: "var(--text-3)"}}>Sauf qu'il ne dort jamais.</span></div>
-            <div style={{display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 16}}>
+            <SectionHead
+              badge="💎 Avantages"
+              title={<>Tout depuis WhatsApp. <span className="gradient-text">Zéro complexité.</span></>}
+              subtitle="Une seule app que tout le monde connaît. Pas de formation, pas de nouveau logiciel à installer."
+            />
+
+            <div style={{display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 16, marginTop: 40}}>
               {[
-                { i: "🌍", t: "12 langues natives", d: "FR, EN, AR, ES, IT, DE, NL, PT, RU, ZH, JP, KO. Détection auto." },
-                { i: "🧠", t: "Mémoire contextuelle", d: "Connaît le voyageur, son séjour, ses préférences." },
-                { i: "🔐", t: "Check-in autonome", d: "QR + GPS + vérif identité. Sans intervention humaine." },
-                { i: "🎫", t: "Réservations services", d: "Transport, courses, dîner, spa. Confirmées en chat." },
-                { i: "🚨", t: "Escalade intelligente", d: "Si urgent → notifie staff humain en 30 sec." },
-                { i: "⭐", t: "Demande d'avis", d: "Au bon moment. Lien pré-rempli. +47% de conversions." },
-              ].map(c => (
-                <div key={c.t} className="card" style={{padding: 20}}>
-                  <div style={{fontSize: 28, marginBottom: 10}}>{c.i}</div>
-                  <div style={{fontSize: 16, fontWeight: 600, marginBottom: 4}}>{c.t}</div>
-                  <div style={{fontSize: 13, color: "var(--text-3)", lineHeight: 1.5}}>{c.d}</div>
+                { i: "🤖", t: "Intelligence Artificielle", d: "Conversation naturelle · 12 langues · Disponible 24/7" },
+                { i: "⚡", t: "Réponse Instantanée", d: "Moins de 2 secondes · Pas d'attente · Satisfaction garantie" },
+                { i: "🔄", t: "Synchronisation Auto", d: "Mises à jour en temps réel · Notifications instantanées" },
+                { i: "📊", t: "Analytics Intégrés", d: "Historique complet · Performance tracking · Insights clients" },
+                { i: "🔐", t: "Sécurité Maximum", d: "Données chiffrées · Conformité RGPD · Hébergement France" },
+                { i: "📈", t: "Monitoring 24/7", d: "Supervision continue · Alertes automatiques · Uptime 99.9%" },
+              ].map(benefit => (
+                <div key={benefit.t} className="card" style={{padding: 22}}>
+                  <div style={{fontSize: 32, marginBottom: 12}}>{benefit.i}</div>
+                  <div style={{fontSize: 16, fontWeight: 600, marginBottom: 6}}>{benefit.t}</div>
+                  <div style={{fontSize: 13, color: "var(--text-3)", lineHeight: 1.5}}>{benefit.d}</div>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        <StatsBar stats={[{k:"<2 sec",l:"Temps de réponse"},{k:"12 langues",l:"Support natif"},{k:"87%",l:"Résolu sans humain"},{k:"24/7",l:"Toujours dispo"}]} />
-        <FinalCTA title={<>Activez WhatsApp. <span className="gradient-text">En 5 minutes.</span></>} subtitle="Connectez votre numéro. L'IA prend le relais sur tous vos voyageurs, instantanément." />
+        {/* Use Cases */}
+        <section style={{padding: "70px 32px", background: "linear-gradient(180deg, transparent, rgba(139,92,246,0.03) 50%, transparent)"}}>
+          <div style={{maxWidth: 1200, margin: "0 auto"}}>
+            <SectionHead
+              badge="✨ Cas d'usage"
+              title={<>Ce que Sojori fait <span className="gradient-text">automatiquement.</span></>}
+              subtitle="Des workflows complexes orchestrés par l'IA, sans intervention humaine."
+            />
+
+            <div style={{display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 20, marginTop: 40}}>
+              {[
+                {
+                  title: "Check-in autonome J-7 → J+1",
+                  steps: [
+                    "J-7 : Message bienvenue + langue détectée",
+                    "J-3 : Demande passeport · OCR + KYC en 30 sec",
+                    "J-1 : Code porte + WiFi + GPS",
+                    "J : Vérification arrivée · QR scan",
+                    "J+1 : Demande d'avis · lien pré-rempli",
+                  ],
+                  color: "#25D366"
+                },
+                {
+                  title: "Support 24/7 multilingue",
+                  steps: [
+                    "Guest envoie message (n'importe quelle langue)",
+                    "AI détecte langue + catégorie (WiFi, AC, code...)",
+                    "Répond en <2 sec avec solution",
+                    "Si urgent → escalade staff humain",
+                    "Ticket créé + tracking jusqu'à résolution",
+                  ],
+                  color: "#3b82f6"
+                },
+                {
+                  title: "Upsell intelligent",
+                  steps: [
+                    "AI analyse profil + séjour en cours",
+                    "Détecte opportunités (late checkout, services...)",
+                    "Propose au bon moment (non intrusif)",
+                    "Paiement intégré dans WhatsApp",
+                    "Confirmation + sync avec équipe",
+                  ],
+                  color: "#f59e0b"
+                },
+                {
+                  title: "Staff task management",
+                  steps: [
+                    "Check-out détecté → tâche ménage créée",
+                    "Staff reçoit notif WhatsApp avec détails",
+                    "Navigation GPS vers le bien",
+                    "QR scan arrivée → chrono démarre",
+                    "Photos + validation → paiement auto",
+                  ],
+                  color: "#10b981"
+                },
+              ].map(useCase => (
+                <div key={useCase.title} className="glass" style={{padding: 24, borderRadius: 14, border: `1px solid ${useCase.color}30`}}>
+                  <div style={{fontSize: 18, fontWeight: 700, marginBottom: 16, color: "var(--text-1)"}}>{useCase.title}</div>
+                  <div style={{display: "flex", flexDirection: "column", gap: 10}}>
+                    {useCase.steps.map((step, i) => (
+                      <div key={i} style={{display: "flex", gap: 10, alignItems: "flex-start"}}>
+                        <div style={{
+                          minWidth: 22,
+                          height: 22,
+                          borderRadius: "50%",
+                          background: `${useCase.color}20`,
+                          border: `1.5px solid ${useCase.color}`,
+                          display: "flex",
+                          alignItems: "center",
+                          justifyContent: "center",
+                          fontSize: 11,
+                          fontWeight: 700,
+                          color: useCase.color,
+                          marginTop: 2
+                        }}>
+                          {i + 1}
+                        </div>
+                        <div style={{fontSize: 13.5, color: "var(--text-2)", lineHeight: 1.5, flex: 1}}>{step}</div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Stats */}
+        <StatsBar stats={[
+          {k:"4 systèmes",l:"WhatsApp"},
+          {k:"87%",l:"Autonome AI"},
+          {k:"<2 sec",l:"Temps réponse"},
+          {k:"12 langues",l:"Support natif"}
+        ]} />
+
+        {/* Final CTA */}
+        <FinalCTA
+          title={<>Activez WhatsApp. <span className="gradient-text">Dès aujourd'hui.</span></>}
+          subtitle="4 systèmes WhatsApp inclus dès le plan Pro. Setup en 5 minutes. Support technique illimité."
+        />
+
         <PageFooter />
       </div>
     </>

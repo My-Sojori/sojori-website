@@ -4,7 +4,7 @@ import { PageHeader, PageFooter, PageHero, StatsBar, FinalCTA } from '@/componen
 
 export const metadata: Metadata = {
   title: 'Sojori — About',
-  description: "L'équipe Sojori. Notre mission, nos valeurs, notre histoire. Basés à Marrakech, Paris, Lisbonne.",
+  description: "L'équipe Sojori. Notre mission, nos valeurs, notre histoire. Basés à Paris, Barcelona, Lisbon.",
 };
 
 interface TeamMember {
@@ -17,7 +17,7 @@ interface TeamMember {
 const TEAM: TeamMember[] = [
   { n: 'Yassine Bennani', r: 'CEO & Co-founder', b: 'Ex-Booking · 12 ans hospitality tech', c: '#f4cf5e' },
   { n: 'Léa Marchand', r: 'CTO & Co-founder', b: 'Ex-Stripe · ex-Datadog · YC W19', c: '#a78bfa' },
-  { n: 'Karim El-Idrissi', r: 'Head of Product', b: 'Ex-Airbnb · 8 ans UX hospitality', c: '#06b6d4' },
+  { n: 'Thomas Dubois', r: 'Head of Product', b: 'Ex-Airbnb · 8 ans UX hospitality', c: '#06b6d4' },
   { n: 'Sofia Costa', r: 'Head of Operations', b: 'Ex-Sonder · scale ops 200→2k biens', c: '#10b981' },
   { n: 'David Park', r: 'Head of AI', b: 'Ex-Anthropic · PhD NLP Stanford', c: '#ec4899' },
   { n: 'Amina Tazi', r: 'Head of Customer', b: 'Ex-Hostfully · 10 ans CS hospitality', c: '#f59e0b' },
@@ -32,7 +32,7 @@ interface Value {
 const VALUES: Value[] = [
   { i: '🎯', t: "Hosts d'abord", d: "On construit pour ceux qui se lèvent à 6h pour gérer un check-in. Pas pour les VC slides." },
   { i: '🔬', t: 'Mesurer, pas deviner', d: 'Chaque feature est validée sur du vrai portfolio avant ship. Pas de hype produit.' },
-  { i: '🌍', t: 'Local, pas générique', d: 'Marrakech ≠ Lisbonne ≠ Paris. Notre produit s\'adapte aux règles, langues, usages locaux.' },
+  { i: '🌍', t: 'Local, pas générique', d: 'Paris ≠ Lisbonne ≠ Barcelona. Notre produit s\'adapte aux règles, langues, usages locaux.' },
   { i: '🛡️', t: 'Vos données sont à vous', d: "Pas de revente, pas d'AI training sur vos messages voyageurs. Export en 1 clic." },
 ];
 
@@ -43,8 +43,8 @@ interface TimelineItem {
 }
 
 const TIMELINE: TimelineItem[] = [
-  { y: '2022', t: 'Idée', d: 'Yassine gère 12 riads à Marrakech. Excel + WhatsApp + 3 PMS différents. Il y a mieux à faire.' },
-  { y: '2023', t: 'Premiers clients', d: 'YC W23. 50 hosts pilotes au Maroc. Le PMS et le WhatsApp Bot prennent forme.' },
+  { y: '2022', t: 'Idée', d: 'Yassine gère 12 appartements à Paris. Excel + WhatsApp + 3 PMS différents. Il y a mieux à faire.' },
+  { y: '2023', t: 'Premiers clients', d: 'YC W23. 50 hosts pilotes en France. Le PMS et le WhatsApp Bot prennent forme.' },
   { y: '2024', t: 'Expansion EU', d: "Lisbonne et Paris. 800 biens. Series A · 12M€. L'équipe passe à 35." },
   { y: '2025', t: "Aujourd'hui", d: '2 400 biens, 14 pays, 80 personnes. Lancement TeamFlow et Smart Pricing AI.' },
 ];
@@ -70,7 +70,7 @@ export default function AboutPage() {
         <PageHero
           badge="✨ About Sojori · Notre mission"
           title={<>On construit l'<span className="gradient-text">opérateur intelligent</span> que les hosts méritent.</>}
-          subtitle="Sojori est né à Marrakech en 2022, dans un riad où Yassine jonglait entre Excel, 3 PMS et 200 messages WhatsApp par jour. Aujourd'hui, on aide 2 400 hosts à reprendre leur vie."
+          subtitle="Sojori est né à Paris en 2022, où Yassine jonglait entre Excel, 3 PMS et 200 messages WhatsApp par jour pour gérer ses appartements. Aujourd'hui, on aide 2 400 hosts à reprendre leur vie."
           cta1="Voir nos offres" cta2="Rejoindre l'équipe"
         />
 
@@ -105,7 +105,7 @@ export default function AboutPage() {
         <section style={{ padding: '70px 32px', borderTop: '1px solid var(--glass-border)' }}>
           <div style={{ maxWidth: 1100, margin: '0 auto' }}>
             <div className="uppercase-sm" style={{ color: 'var(--text-3)', marginBottom: 12 }}>● Notre histoire</div>
-            <h2 style={{ fontSize: 36, marginBottom: 40, letterSpacing: '-0.02em' }}>De Marrakech à <span className="gradient-text">14 pays.</span></h2>
+            <h2 style={{ fontSize: 36, marginBottom: 40, letterSpacing: '-0.02em' }}>De Paris à <span className="gradient-text">14 pays.</span></h2>
             <div style={{ position: 'relative' }}>
               <div style={{ position: 'absolute', left: 60, top: 0, bottom: 0, width: 2, background: 'linear-gradient(180deg, #f4cf5e, transparent)' }}></div>
               {TIMELINE.map((t, i) => (
@@ -139,7 +139,7 @@ export default function AboutPage() {
                 </div>
               ))}
             </div>
-            <div style={{ textAlign: 'center', marginTop: 30, fontSize: 13, color: 'var(--text-3)' }}>+ 74 personnes en France, Maroc, Portugal, Espagne</div>
+            <div style={{ textAlign: 'center', marginTop: 30, fontSize: 13, color: 'var(--text-3)' }}>+ 74 personnes en France, Espagne, Portugal, Italie</div>
           </div>
         </section>
 

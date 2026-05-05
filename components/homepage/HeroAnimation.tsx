@@ -34,13 +34,13 @@ export function HeroAnimation() {
     { t: 0.20, lane: 1, icon: '🔔', title: 'Push admin & client',     tag: 'Notif',     tone: 'info'    as const },
     { t: 0.26, lane: 0, icon: '🏨', title: 'Check-in OK',             tag: 'Done',      tone: 'success' as const },
     { t: 0.34, lane: 0, icon: '💬', title: '« Tout est parfait ! »',  tag: 'Message',   tone: 'info'    as const },
-    { t: 0.40, lane: 2, icon: '🧹', title: 'Ménage J+2',              tag: 'Yasmine',   tone: 'success' as const },
+    { t: 0.40, lane: 2, icon: '🧹', title: 'Ménage J+2',              tag: 'Sophie',   tone: 'success' as const },
     { t: 0.48, lane: 0, icon: '🚗', title: 'Transport aéroport',      tag: 'Extra',     tone: 'info'    as const },
     { t: 0.56, lane: 1, icon: '✨', title: 'Support AI 24/7',         tag: 'GPT-4',     tone: 'primary' as const },
     { t: 0.62, lane: 3, icon: '⚠️',  title: 'Conflit détecté',         tag: 'Auto',      tone: 'warn'    as const },
     { t: 0.68, lane: 3, icon: '👨‍💼', title: 'Résolution OK',           tag: 'Resolved',  tone: 'success' as const },
     { t: 0.74, lane: 0, icon: '🎫', title: 'Départ déclaré',          tag: '11:00',     tone: 'info'    as const },
-    { t: 0.80, lane: 2, icon: '🧹', title: 'Ménage final',            tag: 'Karim',     tone: 'success' as const },
+    { t: 0.80, lane: 2, icon: '🧹', title: 'Ménage final',            tag: 'Marc',     tone: 'success' as const },
     { t: 0.86, lane: 0, icon: '⭐', title: 'Avis 5 étoiles',           tag: 'J+1',       tone: 'success' as const },
     { t: 0.92, lane: 1, icon: '📊', title: 'Analytics live',          tag: 'Dashboard', tone: 'primary' as const },
   ];
@@ -127,7 +127,7 @@ export function HeroAnimation() {
                 }}>SJ</div>
                 <div style={{ textAlign: 'left' }}>
                   <div style={{ fontWeight: 600, fontSize: 15, color: 'var(--text)' }}>Sarah Johnson</div>
-                  <div style={{ fontSize: 12, color: 'var(--text-3)' }}>USA → Marrakech, Riad El Fenn</div>
+                  <div style={{ fontSize: 12, color: 'var(--text-3)' }}>USA → Paris, Appartement Montmartre</div>
                 </div>
               </div>
               <div style={{ display: 'flex', gap: 8, fontSize: 12, color: 'var(--text-2)', justifyContent: 'space-between' }}>

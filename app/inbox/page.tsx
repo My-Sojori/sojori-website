@@ -42,7 +42,7 @@ const CHANNELS: Channel[] = [
 const THREADS: Thread[] = [
   { id: 1, name: "Sarah Johnson", ch: "wa", color: "#25D366", preview: "Merci ! Je suis dans le taxi 🚕", time: "2 min", unread: 0, avatar: "#f59e0b", active: true },
   { id: 2, name: "Marco Rossi", ch: "ab", color: "#FF5A5F", preview: "Question about the AC unit, it stopped...", time: "8 min", unread: 2, avatar: "#06b6d4" },
-  { id: 3, name: "Aisha Khalil", ch: "wa", color: "#25D366", preview: "On prend pour 6 ! 🙌", time: "14 min", unread: 0, avatar: "#a78bfa" },
+  { id: 3, name: "Emma Rodriguez", ch: "wa", color: "#25D366", preview: "On prend pour 6 ! 🙌", time: "14 min", unread: 0, avatar: "#a78bfa" },
   { id: 4, name: "James Park", ch: "ab", color: "#FF5A5F", preview: "Thanks again, amazing stay!", time: "34 min", unread: 0, avatar: "#10b981" },
   { id: 5, name: "Linh Nguyen", ch: "bk", color: "#003580", preview: "Need to extend my stay by 2 nights", time: "1h", unread: 1, avatar: "#ec4899" },
   { id: 6, name: "Carlos M.", ch: "wa", color: "#25D366", preview: "Could you arrange airport pickup?", time: "2h", unread: 0, avatar: "#f97316" },
@@ -102,7 +102,7 @@ function Inbox() {
             <div style={{width: 36, height: 36, borderRadius: "50%", background: "#f59e0b", fontSize: 13, fontWeight: 700, color: "#fff", display: "flex", alignItems: "center", justifyContent: "center"}}>SJ</div>
             <div>
               <div style={{fontSize: 14, fontWeight: 600}}>Sarah Johnson</div>
-              <div style={{fontSize: 11, color: "var(--text-3)"}}>WhatsApp · Riad El Fenn · check-in 15:00</div>
+              <div style={{fontSize: 11, color: "var(--text-3)"}}>WhatsApp · Appartement Paris 15 · check-in 15:00</div>
             </div>
           </div>
           <div style={{display: "flex", gap: 6}}>
@@ -113,9 +113,9 @@ function Inbox() {
         <div style={{flex: 1, padding: 22, display: "flex", flexDirection: "column", gap: 10, overflow: "auto"}}>
           {[
             { from: "them", t: "Bonjour ! Je suis Sarah, j'arrive à 15h pour le check-in.", time: "14:00" },
-            { from: "sojori", t: "Bonjour Sarah ! 👋 Bienvenue à Marrakech. Voici votre code: 4729. 47 Derb El Hammam.", time: "14:00" },
+            { from: "sojori", t: "Bonjour Sarah ! 👋 Bienvenue à Paris. Voici votre code: 4729. 47 Rue des Abbesses.", time: "14:00" },
             { from: "them", t: "Merci ! Je suis dans le taxi 🚕", time: "14:55" },
-            { from: "sojori", t: "Parfait ✓ J'ai informé l'équipe. Mehdi vous attend devant le riad.", time: "14:55" },
+            { from: "sojori", t: "Parfait ✓ J'ai informé l'équipe. Lucas vous attend devant l'immeuble.", time: "14:55" },
           ].map((m, i) => (
             <div key={i} style={{alignSelf: m.from === "them" ? "flex-start" : "flex-end", maxWidth: "70%"}}>
               <div style={{background: m.from === "them" ? "rgba(255,255,255,0.06)" : "linear-gradient(135deg, rgba(244,207,94,0.18), rgba(244,207,94,0.08))", border: m.from === "sojori" ? "1px solid rgba(244,207,94,0.3)" : "1px solid var(--glass-border)", borderRadius: m.from === "them" ? "12px 12px 12px 2px" : "12px 12px 2px 12px", padding: "10px 14px", fontSize: 13, color: "var(--text-1)", lineHeight: 1.45}}>

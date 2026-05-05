@@ -12,10 +12,10 @@ export default function DemoPage() {
     countryCode: '+33',
     email: '',
     phone: '',
+    numberOfProperties: '',
     // Step 2
     fullName: '',
     company: '',
-    numberOfProperties: '',
     propertyTypes: [] as string[],
     currentPMS: '',
     currentChannelManager: '',
@@ -40,27 +40,49 @@ export default function DemoPage() {
     setError('');
 
     try {
-      // Call backend API to create demo request
-      const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'https://sojori.com';
-      const response = await fetch(`${apiUrl}/api/v1/demo/request`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
+      // TEMPORARY: Mock mode for testing (replace with real API call later)
+      const USE_MOCK = false; // Set to false when backend is ready
+
+      if (USE_MOCK) {
+        // Simulate API delay
+        await new Promise(resolve => setTimeout(resolve, 800));
+
+        // Generate mock ID
+        const mockId = `demo-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`;
+        setDemoRequestId(mockId);
+
+        // Log the data that would be sent to backend
+        console.log('Demo request (mock):', {
           email: formData.email,
           phone: formData.phone,
-          countryCode: formData.countryCode
-        })
-      });
+          countryCode: formData.countryCode,
+          numberOfProperties: formData.numberOfProperties
+        });
 
-      const data = await response.json();
+        setStep(2);
+      } else {
+        // Direct API call to production backend (using /user/demo route for now)
+        const API_URL = process.env.NEXT_PUBLIC_API_URL || 'https://dev.sojori.com';
+        const response = await fetch(`${API_URL}/api/v1/user/demo/request`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            email: formData.email,
+            phone: formData.phone,
+            countryCode: formData.countryCode,
+            numberOfProperties: formData.numberOfProperties
+          })
+        });
 
-      if (!data.success) {
-        throw new Error(data.error || 'Failed to submit demo request');
+        const data = await response.json();
+
+        if (!data.success) {
+          throw new Error(data.error || 'Failed to submit demo request');
+        }
+
+        setDemoRequestId(data.data.id);
+        setStep(2);
       }
-
-      // Save the demo request ID for step 2
-      setDemoRequestId(data.data.id);
-      setStep(2);
     } catch (err: any) {
       setError(err.message || 'Une erreur est survenue. Veuillez réessayer.');
       console.error('Error submitting step 1:', err);
@@ -75,12 +97,16 @@ export default function DemoPage() {
     setError('');
 
     try {
-      // Call backend API to update qualification
-      const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'https://sojori.com';
-      const response = await fetch(`${apiUrl}/api/v1/demo/request/${demoRequestId}/qualify`, {
-        method: 'PATCH',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
+      // TEMPORARY: Mock mode for testing (replace with real API call later)
+      const USE_MOCK = false; // Set to false when backend is ready
+
+      if (USE_MOCK) {
+        // Simulate API delay
+        await new Promise(resolve => setTimeout(resolve, 1000));
+
+        // Log the full qualification data
+        console.log('Demo qualification (mock):', {
+          demoRequestId: demoRequestId,
           fullName: formData.fullName,
           company: formData.company,
           numberOfProperties: formData.numberOfProperties,
@@ -96,16 +122,41 @@ export default function DemoPage() {
           hearAboutUs: formData.hearAboutUs,
           promoCode: formData.promoCode,
           roleType: formData.roleType
-        })
-      });
+        });
 
-      const data = await response.json();
+        // Move to success step
+        setStep(3);
+      } else {
+        // Real API call via Next.js API route (proxies to srv-user backend)
+        const response = await fetch(`/api/v1/demo/request/${demoRequestId}/qualify`, {
+          method: 'PATCH',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            fullName: formData.fullName,
+            company: formData.company,
+            propertyTypes: formData.propertyTypes,
+            currentPMS: formData.currentPMS,
+            currentChannelManager: formData.currentChannelManager,
+            currentDynamicPricing: formData.currentDynamicPricing,
+            currentWhatsApp: formData.currentWhatsApp,
+            timeline: formData.timeline,
+            biggestChallenges: formData.biggestChallenges,
+            expectations: formData.expectations,
+            newPropertiesNext12Months: parseInt(formData.newPropertiesNext12Months) || 0,
+            hearAboutUs: formData.hearAboutUs,
+            promoCode: formData.promoCode,
+            roleType: formData.roleType
+          })
+        });
 
-      if (!data.success) {
-        throw new Error(data.error || 'Failed to submit qualification');
+        const data = await response.json();
+
+        if (!data.success) {
+          throw new Error(data.error || 'Failed to submit qualification');
+        }
+
+        setStep(3);
       }
-
-      setStep(3);
     } catch (err: any) {
       setError(err.message || 'Une erreur est survenue. Veuillez réessayer.');
       console.error('Error submitting step 2:', err);
@@ -216,6 +267,25 @@ export default function DemoPage() {
                       </div>
                     </div>
 
+                    <div style={{ marginBottom: 28 }}>
+                      <label style={labelStyle as React.CSSProperties}>Nombre de biens *</label>
+                      <select
+                        name="numberOfProperties"
+                        value={formData.numberOfProperties}
+                        onChange={handleChange}
+                        required
+                        style={inputStyle}
+                      >
+                        <option value="">Sélectionnez...</option>
+                        <option value="1">1 bien</option>
+                        <option value="2-5">2-5 biens</option>
+                        <option value="6-10">6-10 biens</option>
+                        <option value="11-20">11-20 biens</option>
+                        <option value="21-50">21-50 biens</option>
+                        <option value="51+">51+ biens</option>
+                      </select>
+                    </div>
+
                     <button type="submit" disabled={loading} className="btn btn-primary" style={{ width: '100%', padding: '16px', fontSize: 15, fontWeight: 600, opacity: loading ? 0.6 : 1, cursor: loading ? 'not-allowed' : 'pointer' }}>
                       {loading ? 'Envoi en cours...' : 'Réserver ma démo →'}
                     </button>
@@ -278,21 +348,10 @@ export default function DemoPage() {
                         </select>
                       </div>
 
-                      <div style={{ marginBottom: 16 }}>
-                        <label style={labelStyle as React.CSSProperties}>Nombre de propriétés actuellement gérées *</label>
-                        <select name="numberOfProperties" required value={formData.numberOfProperties} onChange={handleChange} style={inputStyle}>
-                          <option value="">Sélectionnez...</option>
-                          <option value="1-5">1-5 propriétés</option>
-                          <option value="6-15">6-15 propriétés</option>
-                          <option value="16-50">16-50 propriétés</option>
-                          <option value="50+">50+ propriétés</option>
-                        </select>
-                      </div>
-
                       <div>
                         <label style={labelStyle as React.CSSProperties}>Types de propriétés (plusieurs choix possibles)</label>
                         <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8, marginTop: 8 }}>
-                          {['Appartement', 'Villa', 'Riad', 'Chambre d\'hôtel', 'Résidence', 'Autre'].map(type => (
+                          {['Appartement', 'Villa', 'Maison', 'Chambre d\'hôtel', 'Résidence', 'Autre'].map(type => (
                             <label key={type} style={{ display: 'flex', alignItems: 'center', gap: 6, padding: '8px 12px', borderRadius: 8, border: '1px solid var(--glass-border)', background: formData.propertyTypes.includes(type) ? 'rgba(230,176,34,0.15)' : 'rgba(255,255,255,0.02)', cursor: 'pointer', fontSize: 13 }}>
                               <input type="checkbox" checked={formData.propertyTypes.includes(type)} onChange={() => togglePropertyType(type)} style={{ cursor: 'pointer' }} />
                               {type}

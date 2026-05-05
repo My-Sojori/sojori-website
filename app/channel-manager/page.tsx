@@ -107,7 +107,7 @@ function SyncDemo() {
   return (
     <div className="card" style={{ padding: 0, overflow: 'hidden' }}>
       <div style={{ padding: '14px 18px', borderBottom: '1px solid var(--glass-border)', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-        <div style={{ fontSize: 14, fontWeight: 600 }}>Sync status — Riad El Fenn · 47 Derb El Hammam</div>
+        <div style={{ fontSize: 14, fontWeight: 600 }}>Sync status — Appartement Paris 15 · 47 Rue des Abbesses</div>
         <div style={{ fontSize: 11, color: '#10b981', display: 'flex', alignItems: 'center', gap: 6 }}>
           <span style={{ width: 6, height: 6, borderRadius: '50%', background: '#10b981', boxShadow: '0 0 8px #10b981' }} />
           All synced · last sync 2 sec ago

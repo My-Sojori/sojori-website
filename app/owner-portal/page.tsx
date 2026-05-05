@@ -28,8 +28,8 @@ function OwnerPhone() {
           <div style={{ width: 30, height: 30, borderRadius: "50%", background: "linear-gradient(135deg, #8b5cf6, #6366f1)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 11, fontWeight: 700, color: "#fff" }}>HM</div>
         </div>
         <div style={{ padding: "4px 16px 12px" }}>
-          <div style={{ fontSize: 11, color: "rgba(255,255,255,0.5)" }}>Bonjour Hassan 👋</div>
-          <div style={{ fontSize: 18, fontWeight: 700, color: "#fff", marginTop: 2 }}>Riad El Fenn</div>
+          <div style={{ fontSize: 11, color: "rgba(255,255,255,0.5)" }}>Bonjour Antoine 👋</div>
+          <div style={{ fontSize: 18, fontWeight: 700, color: "#fff", marginTop: 2 }}>Appartement Paris 15</div>
         </div>
 
         {/* Revenue card */}
@@ -73,7 +73,7 @@ function OwnerPhone() {
           {[
             { name: "Sarah J.", date: "Auj. 15:00", n: "€1,450" },
             { name: "Marco R.", date: "Mer. 14:00", n: "€2,100" },
-            { name: "Aisha K.", date: "Sam. 16:00", n: "€2,850" },
+            { name: "Emma R.", date: "Sam. 16:00", n: "€2,850" },
           ].map((b, i) => (
             <div key={i} style={{ display: "flex", alignItems: "center", gap: 10, padding: "8px 10px", background: "rgba(255,255,255,0.03)", borderRadius: 8, marginBottom: 6 }}>
               <div style={{ width: 28, height: 28, borderRadius: "50%", background: `linear-gradient(135deg, hsl(${i*70},60%,55%), hsl(${i*70+30},60%,40%))`, fontSize: 10, fontWeight: 700, color: "#fff", display: "flex", alignItems: "center", justifyContent: "center" }}>{b.name.split(" ").map(p => p[0]).join("")}</div>
@@ -106,7 +106,7 @@ function MonthlyStatement() {
       <div style={{ padding: "18px 22px", borderBottom: "1px solid var(--glass-border)", display: "flex", justifyContent: "space-between", alignItems: "center", background: "rgba(244,207,94,0.05)" }}>
         <div>
           <div style={{ fontSize: 11, color: "var(--text-3)", textTransform: "uppercase", letterSpacing: 1 }}>Statement</div>
-          <div style={{ fontSize: 18, fontWeight: 700, marginTop: 2 }}>Mars 2025 · Riad El Fenn</div>
+          <div style={{ fontSize: 18, fontWeight: 700, marginTop: 2 }}>Mars 2025 · Appartement Paris 15</div>
         </div>
         <button style={{ background: "transparent", border: "1px solid var(--glass-border)", color: "var(--text-1)", padding: "7px 14px", borderRadius: 7, fontSize: 12, cursor: "pointer" }}>📥 PDF</button>
       </div>
