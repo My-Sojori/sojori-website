@@ -16,12 +16,12 @@ export function Hero() {
             <span className="gradient-text">Orchestrée de A à Z.</span>
           </h1>
           <p style={{ fontSize: 19, lineHeight: 1.55, color: 'var(--text-2)', maxWidth: 680, margin: '0 auto', textWrap: 'pretty' }}>
-            De la réservation Airbnb au checkout final, Sojori orchestre automatiquement <strong style={{ color: 'var(--text)' }}>23 tâches</strong>.
+            De la réservation Airbnb au checkout final, Sojori orchestre automatiquement <strong style={{ color: 'var(--text)' }}>+20 tâches</strong>.
             PMS complet · Channel Manager · WhatsApp AI.
           </p>
           <div style={{ display: 'flex', gap: 12, justifyContent: 'center', marginTop: 32, flexWrap: 'wrap' }}>
             <a href="#animation" className="btn btn-primary btn-lg">Voir l'orchestration →</a>
-            <a href="#demo" className="btn btn-ghost btn-lg">Demander une démo</a>
+            <a href="/demo?source=homepage-hero" className="btn btn-ghost btn-lg">Demander une démo</a>
           </div>
         </div>
 

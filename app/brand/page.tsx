@@ -76,7 +76,7 @@ export default function BrandPage() {
           </h1>
           <p style={{ fontSize: 18, maxWidth: 640, lineHeight: 1.55 }}>
             Un langage visuel construit autour de l'orchestration : précision, fluidité, prestige.
-            Tout part d'une métaphore — un chef d'orchestre invisible qui coordonne 23 tâches sans qu'on le voie.
+            Tout part d'une métaphore — un chef d'orchestre invisible qui coordonne +20 tâches sans qu'on le voie.
           </p>
         </section>
 
@@ -560,7 +560,7 @@ export default function BrandPage() {
               </div>
               <h3>Orchestration AI</h3>
               <p style={{ marginTop: 8, fontSize: 14 }}>
-                23 tâches automatisées. Zéro oubli. WhatsApp 24/7.
+                +20 tâches automatisées. Zéro oubli. WhatsApp 24/7.
               </p>
             </div>
 

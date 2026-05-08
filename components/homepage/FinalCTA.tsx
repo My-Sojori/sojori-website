@@ -17,10 +17,10 @@ export function FinalCTA() {
           Rejoignez des centaines de property managers qui automatisent leurs opérations avec Sojori.
         </p>
         <div style={{ display: 'flex', gap: 12, justifyContent: 'center', flexWrap: 'wrap' }}>
-          <a href="#demo" className="btn btn-primary btn-xl">
+          <a href="/demo?source=homepage-cta" className="btn btn-primary btn-xl">
             Demander une démo gratuite →
           </a>
-          <a href="#pricing" className="btn btn-ghost btn-xl">
+          <a href="/pricing" className="btn btn-ghost btn-xl">
             Voir le pricing
           </a>
         </div>

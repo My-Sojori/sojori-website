@@ -28,7 +28,7 @@ export function ValueProp() {
       accentRgb: '230, 176, 34',
       title: 'Orchestration AI',
       sub: 'Notre signature.',
-      items: ['WhatsApp AI 24/7 (GPT-4)', 'Coordination staff automatique', '23 tâches orchestrées', 'Zéro oubli, zéro retard', 'Analytics live temps réel'],
+      items: ['WhatsApp AI 24/7 (GPT-4)', 'Coordination staff automatique', '+20 tâches orchestrées', 'Zéro oubli, zéro retard', 'Analytics live temps réel'],
       cta: 'Voir la démo live',
       featured: true,
     },

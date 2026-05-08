@@ -1,12 +1,16 @@
 "use client";
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useSearchParams } from 'next/navigation';
 import { BackgroundEffects } from '@/components/BackgroundEffects';
 import { PageHeader, PageFooter } from '@/components/SharedComponents';
 import Link from 'next/link';
 
 export default function DemoPage() {
+  const searchParams = useSearchParams();
   const [step, setStep] = useState(1);
+  const [source, setSource] = useState<string>('website'); // Default source
+
   const [formData, setFormData] = useState({
     // Step 1
     countryCode: '+33',
@@ -29,6 +33,15 @@ export default function DemoPage() {
     promoCode: '',
     roleType: '',
   });
+
+  // Capture source from URL on component mount
+  useEffect(() => {
+    const sourceParam = searchParams.get('source');
+    if (sourceParam) {
+      setSource(sourceParam);
+      console.log('📍 Source captured:', sourceParam);
+    }
+  }, [searchParams]);
 
   const [loading, setLoading] = useState(false);
   const [demoRequestId, setDemoRequestId] = useState<string>('');
@@ -61,16 +74,17 @@ export default function DemoPage() {
 
         setStep(2);
       } else {
-        // Direct API call to production backend (using /user/demo route for now)
+        // Direct API call to production backend
         const API_URL = process.env.NEXT_PUBLIC_API_URL || 'https://dev.sojori.com';
-        const response = await fetch(`${API_URL}/api/v1/user/demo/request`, {
+        const response = await fetch(`${API_URL}/api/v1/demo/request`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
             email: formData.email,
             phone: formData.phone,
             countryCode: formData.countryCode,
-            numberOfProperties: formData.numberOfProperties
+            numberOfProperties: formData.numberOfProperties,
+            source: source // Include source tracking
           })
         });
 
@@ -127,8 +141,9 @@ export default function DemoPage() {
         // Move to success step
         setStep(3);
       } else {
-        // Real API call via Next.js API route (proxies to srv-user backend)
-        const response = await fetch(`/api/v1/demo/request/${demoRequestId}/qualify`, {
+        // Direct API call to production backend
+        const API_URL = process.env.NEXT_PUBLIC_API_URL || 'https://dev.sojori.com';
+        const response = await fetch(`${API_URL}/api/v1/demo/request/${demoRequestId}/qualify`, {
           method: 'PATCH',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
@@ -216,7 +231,7 @@ export default function DemoPage() {
                     Réservez votre <span className="gradient-text">démo gratuite</span>
                   </h1>
                   <p style={{ fontSize: 18, lineHeight: 1.6, color: 'var(--text-2)', maxWidth: 600, margin: '0 auto' }}>
-                    Découvrez comment Sojori orchestre automatiquement 23 tâches de la réservation au checkout.
+                    Découvrez comment Sojori orchestre automatiquement +20 tâches de la réservation au checkout.
                   </p>
                 </div>
 

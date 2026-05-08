@@ -43,7 +43,6 @@ const PRODUCT_MENU = [
   { group: 'Entreprise', items: [
     { l: 'Pricing', h: '/pricing', d: 'Plans & tarifs' },
     { l: 'Integrations', h: '/integrations', d: '60+ intégrations' },
-    { l: 'Security', h: '/security', d: 'RGPD & compliance' },
     { l: 'About', h: '/about', d: 'L\'équipe Sojori' },
   ]},
 ];
@@ -91,7 +90,7 @@ export function PageHeader({ pageTitle }: { pageTitle?: string }) {
           <Link href="/integrations" className="btn btn-ghost" style={{ padding: '8px 14px', fontSize: 13 }}>Integrations</Link>
           <Link href="/about" className="btn btn-ghost" style={{ padding: '8px 14px', fontSize: 13 }}>About</Link>
           <a href="#login" className="btn btn-ghost" style={{ padding: '8px 14px', fontSize: 13 }}>Login</a>
-          <Link href="/demo" className="btn btn-primary" style={{ padding: '9px 16px', fontSize: 13 }}>Get demo</Link>
+          <Link href="/demo?source=navbar-demo" className="btn btn-primary" style={{ padding: '9px 16px', fontSize: 13 }}>Get demo</Link>
 
           {open && (
             <div
@@ -215,7 +214,6 @@ export function PageFooter() {
             © 2025 Sojori SAS · Tous droits réservés
           </div>
           <div style={{ display: 'flex', gap: 18, fontSize: 11, color: 'var(--text-3)' }}>
-            <Link href="/security" style={{ color: 'inherit', textDecoration: 'none' }}>Sécurité & RGPD</Link>
             <a href="#" style={{ color: 'inherit', textDecoration: 'none' }}>Mentions légales</a>
             <a href="#" style={{ color: 'inherit', textDecoration: 'none' }}>CGU/CGV</a>
             <a href="#" style={{ color: 'inherit', textDecoration: 'none' }}>Status</a>
@@ -243,7 +241,7 @@ export function PageHero({ badge, title, subtitle, cta1, cta2, children }: {
           {subtitle && <p style={{ fontSize: 18, lineHeight: 1.6, color: 'var(--text-2)', maxWidth: 660, margin: '0 auto', textWrap: 'pretty' }}>{subtitle}</p>}
           {(cta1 || cta2) && (
             <div style={{ display: 'flex', gap: 12, justifyContent: 'center', marginTop: 30, flexWrap: 'wrap' }}>
-              {cta1 && <Link href="/demo" className="btn btn-primary btn-lg">{cta1} →</Link>}
+              {cta1 && <Link href="/demo?source=page-hero" className="btn btn-primary btn-lg">{cta1} →</Link>}
               {cta2 && <a href="#more" className="btn btn-ghost btn-lg">{cta2}</a>}
             </div>
           )}
@@ -280,7 +278,7 @@ export function FinalCTA({ title, subtitle }: { title: ReactNode; subtitle: stri
         <h2 style={{ fontSize: 'clamp(32px, 4.4vw, 48px)', marginBottom: 14, textWrap: 'balance' }}>{title}</h2>
         <p style={{ fontSize: 17, color: 'var(--text-2)', marginBottom: 30 }}>{subtitle}</p>
         <div style={{ display: 'flex', gap: 12, justifyContent: 'center', flexWrap: 'wrap' }}>
-          <Link href="/demo" className="btn btn-primary btn-lg">Demander une démo →</Link>
+          <Link href="/demo?source=footer-cta" className="btn btn-primary btn-lg">Demander une démo →</Link>
           <Link href="/" className="btn btn-ghost btn-lg">← Retour homepage</Link>
         </div>
       </div>

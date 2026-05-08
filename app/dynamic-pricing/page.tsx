@@ -47,30 +47,39 @@ function PriceCalendar() {
 
 function PriceFactors() {
   const factors = [
-    { i: '📅', l: 'Saisonnalité', desc: 'Haute / basse saison, vacances scolaires (FR, UK, DE, ES)', impact: '+/- 35%' },
-    { i: '🎉', l: 'Événements', desc: 'Festivals, concerts, congrès, matchs — détection auto', impact: '+50% à +200%' },
-    { i: '🌤️', l: 'Météo', desc: 'Prévisions 14j — pluie/soleil ajuste demande', impact: '+/- 12%' },
-    { i: '✈️', l: 'Vols + occupation hôtels', desc: 'Volume vols entrants, taux occupation région', impact: '+/- 25%' },
-    { i: '🏆', l: 'Concurrence', desc: 'Scrape Booking/Airbnb temps réel · 2km radius', impact: '+/- 15%' },
-    { i: '⏱️', l: 'Lead time', desc: "Plus on approche, plus l'algo ajuste agressivement", impact: 'Last-min -20% / Early +8%' },
-    { i: '⭐', l: 'Performance logement', desc: 'Note, taux conversion, photos performantes', impact: '+/- 18%' },
-    { i: '🛏️', l: 'Durée séjour', desc: 'Discount nuités multiples, premium courts séjours', impact: '-5% à -25%' },
+    { i: '📅', l: 'Saisonnalité mensuelle', desc: 'Coefficient par mois · Haute/basse saison configurée', impact: 'Variable' },
+    { i: '📆', l: 'Jour de la semaine', desc: 'Coefficient par jour · Lun-Dim personnalisable', impact: 'Variable' },
+    { i: '🎉', l: 'Événements configurés', desc: 'Vacances scolaires, événements spéciaux · Config manuelle', impact: 'Configurable' },
+    { i: '📊', l: "Taux d'occupation", desc: 'Prix ajusté selon remplissage du calendrier', impact: 'Variable' },
+    { i: '🛏️', l: 'Durée de séjour', desc: 'Coefficient selon nombre de nuits réservées', impact: 'Configurable' },
+    { i: '⏱️', l: 'Dernière minute', desc: 'Ajustement pour réservations proche du check-in', impact: 'En développement' },
   ];
 
   return (
-    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 12 }}>
-      {factors.map(f => (
-        <div key={f.l} className="card" style={{ padding: 18, display: 'flex', gap: 14, alignItems: 'flex-start' }}>
-          <div style={{ fontSize: 28, flexShrink: 0 }}>{f.i}</div>
-          <div style={{ flex: 1 }}>
-            <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 4 }}>
-              <div style={{ fontSize: 15, fontWeight: 600 }}>{f.l}</div>
-              <div style={{ fontSize: 11, color: '#f4cf5e', fontFamily: 'var(--font-mono)', fontWeight: 600 }}>{f.impact}</div>
+    <div>
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 12 }}>
+        {factors.map(f => (
+          <div key={f.l} className="card" style={{ padding: 18, display: 'flex', gap: 14, alignItems: 'flex-start' }}>
+            <div style={{ fontSize: 28, flexShrink: 0 }}>{f.i}</div>
+            <div style={{ flex: 1 }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 4 }}>
+                <div style={{ fontSize: 15, fontWeight: 600 }}>{f.l}</div>
+                <div style={{ fontSize: 11, color: '#f4cf5e', fontFamily: 'var(--font-mono)', fontWeight: 600 }}>{f.impact}</div>
+              </div>
+              <div style={{ fontSize: 12, color: 'var(--text-3)', lineHeight: 1.5 }}>{f.desc}</div>
             </div>
-            <div style={{ fontSize: 12, color: 'var(--text-3)', lineHeight: 1.5 }}>{f.desc}</div>
+          </div>
+        ))}
+      </div>
+      <div className="card" style={{ padding: 20, marginTop: 16, background: 'rgba(139,92,246,0.08)', border: '1px solid rgba(139,92,246,0.25)' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+          <div style={{ fontSize: 24 }}>🚀</div>
+          <div style={{ flex: 1 }}>
+            <div style={{ fontSize: 14, fontWeight: 600, marginBottom: 2 }}>Bientôt : Offre & Demande automatique</div>
+            <div style={{ fontSize: 12, color: 'var(--text-3)' }}>Ajustement dynamique basé sur l'analyse du marché en temps réel</div>
           </div>
         </div>
-      ))}
+      </div>
     </div>
   );
 }
@@ -142,11 +151,11 @@ export default function DynamicPricingPage() {
       <div style={{ position: 'relative', zIndex: 1 }}>
         <PageHeader pageTitle="Dynamic Pricing" />
         <PageHero
-          badge="📈 Dynamic Pricing · Optimisation continue"
-          title={<>Le bon prix.<br /><span className="gradient-text">Au bon moment. Toujours.</span></>}
-          subtitle="L'IA Sojori analyse 47 signaux par jour et ajuste vos tarifs sur les 18 OTAs en simultané. +32% de revenu en moyenne — sans baisser vos prix."
-          cta1="Voir la démo"
-          cta2="Audit pricing gratuit"
+          badge="📈 Dynamic Pricing · Tarification intelligente"
+          title={<>Le bon prix.<br /><span className="gradient-text">Au bon moment.</span></>}
+          subtitle="Sojori ajuste vos tarifs selon la saisonnalité, les jours, les événements, le taux d'occupation et la durée de séjour. Configuration flexible pour maximiser vos revenus."
+          cta1="Demander une démo"
+          cta2="Nous contacter"
         />
 
         <section style={{ padding: '20px 32px 80px' }}>
@@ -159,8 +168,8 @@ export default function DynamicPricingPage() {
 
         <section style={{ padding: '40px 32px 80px', borderTop: '1px solid var(--glass-border)' }}>
           <div style={{ maxWidth: 1200, margin: '0 auto' }}>
-            <div className="uppercase-sm" style={{ color: 'var(--text-3)', marginBottom: 12 }}>● 47 signaux analysés</div>
-            <div style={{ fontSize: 32, fontWeight: 700, letterSpacing: '-0.02em', marginBottom: 32, maxWidth: 700 }}>L'algo regarde ce que vous <span style={{ color: 'var(--text-3)' }}>ne pouvez pas regarder</span>.</div>
+            <div className="uppercase-sm" style={{ color: 'var(--text-3)', marginBottom: 12 }}>● Facteurs de pricing</div>
+            <div style={{ fontSize: 32, fontWeight: 700, letterSpacing: '-0.02em', marginBottom: 32, maxWidth: 700 }}>Configuration flexible pour <span className="gradient-text">maximiser vos revenus</span>.</div>
             <PriceFactors />
           </div>
         </section>
@@ -186,8 +195,8 @@ export default function DynamicPricingPage() {
           </div>
         </section>
 
-        <StatsBar stats={[{k:'+32%',l:'Revenu net moyen'},{k:'47 signaux',l:'Analysés en continu'},{k:'18 OTAs',l:'Sync simultanée'},{k:'1h',l:"Fréquence d'ajustement"}]} />
-        <FinalCTA title={<>Audit pricing <span className="gradient-text">gratuit</span>.</>} subtitle="On analyse vos prix actuels vs marché et on vous montre votre potentiel. Aucun engagement." />
+        <StatsBar stats={[{k:'6 facteurs',l:'Configurables'},{k:'Mensuel + Jour',l:'Double coefficient'},{k:'Événements',l:'Configurables'},{k:'Occupancy-based',l:'Ajustement auto'}]} />
+        <FinalCTA title={<>Optimisez vos <span className="gradient-text">revenus</span>.</>} subtitle="Découvrez comment le dynamic pricing Sojori peut maximiser vos revenus locatifs." />
         <PageFooter />
       </div>
     </>

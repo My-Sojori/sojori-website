@@ -2,11 +2,23 @@ import { Metadata } from "next";
 import { BackgroundEffects } from "@/components/BackgroundEffects";
 import { PageHeader, PageFooter, PageHero, StatsBar, FinalCTA } from "@/components/SharedComponents";
 import { SojoriMark } from "@/components/Logo";
+import { generateSEO, moroccanKeywords, frenchKeywords } from '@/lib/seo';
 
-export const metadata: Metadata = {
-  title: "Sojori — Owner Portal",
-  description: "Portail propriétaire multi-devise. Dashboard revenus, statements automatiques, virements sous 48h, app mobile native.",
-};
+export const metadata: Metadata = generateSEO({
+  title: 'Portail Propriétaire Marrakech | Owner Portal Multi-Devise Maroc',
+  description: 'Portail propriétaire transparent pour co-hosts à Marrakech. Dashboard revenus temps réel, statements automatiques, virements rapides MAD/EUR. App mobile native pour propriétaires riads, villas.',
+  keywords: [
+    ...moroccanKeywords,
+    ...frenchKeywords,
+    'portail propriétaire Marrakech',
+    'owner portal Maroc',
+    'co-hosting Marrakech',
+    'gestion revenus propriétaire',
+    'statements automatiques',
+    'transparence financière location',
+  ],
+  path: '/owner-portal',
+});
 
 function OwnerPhone() {
   return (

@@ -223,7 +223,7 @@ export default function IntegrationsPage() {
   https://api.sojori.com/v1/bookings \\
   -H "Authorization: Bearer $KEY" \\
   -d '{
-    "property_id": "riad-elfenn",
+    "property_id": "villa-belvedere",
     "guest": { "email": "..." },
     "check_in": "2025-04-12",
     "nights": 3

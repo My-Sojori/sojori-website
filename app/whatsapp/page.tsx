@@ -593,6 +593,299 @@ export default function WhatsAppPage() {
           </div>
         </section>
 
+        {/* WhatsApp AI Admin Flow - Full Cycle */}
+        <section style={{padding: "80px 32px", borderTop: "1px solid var(--glass-border)", background: "linear-gradient(180deg, rgba(139,92,246,0.02), transparent)"}}>
+          <div style={{maxWidth: 1400, margin: "0 auto"}}>
+            <SectionHead
+              badge="🔄 Cycle complet"
+              title={<>Airbnb → Sojori → WhatsApp + AI → <span className="gradient-text">Réponse automatique</span></>}
+              subtitle="Le message arrive d'Airbnb ou Booking.com, passe par l'AI WhatsApp avec traduction, validation PM, puis retourne automatiquement sur la plateforme d'origine. Tout le cycle en quelques secondes."
+            />
+
+            {/* Flow en 7 étapes - Cycle complet */}
+            <div style={{marginTop: 50, display: "grid", gridTemplateColumns: "repeat(7, 1fr)", gap: 10, position: "relative"}}>
+              {/* Connecting gradient line */}
+              <div style={{
+                position: "absolute",
+                top: "30px",
+                left: "5%",
+                right: "5%",
+                height: 3,
+                background: "linear-gradient(90deg, #FF5A5F, #8b5cf6, #25D366, #f4cf5e, #06b6d4, #8b5cf6, #FF5A5F)",
+                opacity: 0.3,
+                zIndex: 0,
+                borderRadius: 2
+              }} />
+
+              {/* Step 1: Message from Airbnb/Booking */}
+              <div style={{position: "relative", zIndex: 1}}>
+                <div className="card" style={{
+                  padding: 16,
+                  textAlign: "center",
+                  background: "linear-gradient(135deg, rgba(255,90,95,0.1), rgba(255,255,255,0.03))",
+                  border: "2px solid rgba(255,90,95,0.3)"
+                }}>
+                  <div style={{
+                    width: 50,
+                    height: 50,
+                    margin: "0 auto 12px",
+                    borderRadius: "50%",
+                    background: "linear-gradient(135deg, #FF5A5F, #E0484D)",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    fontSize: 22,
+                    boxShadow: "0 6px 16px rgba(255,90,95,0.3)"
+                  }}>🏠</div>
+                  <div style={{fontSize: 13, fontWeight: 700, marginBottom: 6, color: "var(--text-1)"}}>Airbnb</div>
+                  <div style={{fontSize: 11, color: "var(--text-3)", lineHeight: 1.4, marginBottom: 10}}>
+                    Message guest<br/>sur la plateforme
+                  </div>
+                  <div className="glass" style={{padding: 8, fontSize: 10, fontStyle: "italic", color: "var(--text-2)", borderRadius: 6, lineHeight: 1.3}}>
+                    "Where is WiFi?"
+                  </div>
+                </div>
+              </div>
+
+              {/* Step 2: Sojori ingests */}
+              <div style={{position: "relative", zIndex: 1}}>
+                <div className="card" style={{
+                  padding: 16,
+                  textAlign: "center",
+                  background: "linear-gradient(135deg, rgba(139,92,246,0.1), rgba(255,255,255,0.03))",
+                  border: "2px solid rgba(139,92,246,0.3)"
+                }}>
+                  <div style={{
+                    width: 50,
+                    height: 50,
+                    margin: "0 auto 12px",
+                    borderRadius: "50%",
+                    background: "linear-gradient(135deg, #8b5cf6, #7c3aed)",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    fontSize: 22,
+                    boxShadow: "0 6px 16px rgba(139,92,246,0.3)"
+                  }}>📥</div>
+                  <div style={{fontSize: 13, fontWeight: 700, marginBottom: 6, color: "var(--text-1)"}}>Sojori</div>
+                  <div style={{fontSize: 11, color: "var(--text-3)", lineHeight: 1.4, marginBottom: 10}}>
+                    Ingestion<br/>centralisée
+                  </div>
+                  <div className="glass" style={{padding: 8, fontSize: 10, fontFamily: "var(--font-mono)", color: "#8b5cf6", borderRadius: 6}}>
+                    &lt;1 sec<br/>API sync
+                  </div>
+                </div>
+              </div>
+
+              {/* Step 3: WhatsApp routing */}
+              <div style={{position: "relative", zIndex: 1}}>
+                <div className="card" style={{
+                  padding: 16,
+                  textAlign: "center",
+                  background: "linear-gradient(135deg, rgba(37,211,102,0.1), rgba(255,255,255,0.03))",
+                  border: "2px solid rgba(37,211,102,0.3)"
+                }}>
+                  <div style={{
+                    width: 50,
+                    height: 50,
+                    margin: "0 auto 12px",
+                    borderRadius: "50%",
+                    background: "linear-gradient(135deg, #25D366, #20BA5A)",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    fontSize: 22,
+                    boxShadow: "0 6px 16px rgba(37,211,102,0.3)"
+                  }}>💬</div>
+                  <div style={{fontSize: 13, fontWeight: 700, marginBottom: 6, color: "var(--text-1)"}}>WhatsApp</div>
+                  <div style={{fontSize: 11, color: "var(--text-3)", lineHeight: 1.4, marginBottom: 10}}>
+                    Flow affiché<br/>sur mobile
+                  </div>
+                  <div className="glass" style={{padding: 8, fontSize: 10, fontStyle: "italic", color: "var(--text-2)", borderRadius: 6, lineHeight: 1.3}}>
+                    Interface PM
+                  </div>
+                </div>
+              </div>
+
+              {/* Step 4: AI analysis + translation */}
+              <div style={{position: "relative", zIndex: 1}}>
+                <div className="card" style={{
+                  padding: 16,
+                  textAlign: "center",
+                  background: "linear-gradient(135deg, rgba(244,207,94,0.1), rgba(255,255,255,0.03))",
+                  border: "2px solid rgba(244,207,94,0.3)"
+                }}>
+                  <div style={{
+                    width: 50,
+                    height: 50,
+                    margin: "0 auto 12px",
+                    borderRadius: "50%",
+                    background: "linear-gradient(135deg, #f4cf5e, #e6b022)",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    fontSize: 22,
+                    boxShadow: "0 6px 16px rgba(244,207,94,0.3)"
+                  }}>🧠</div>
+                  <div style={{fontSize: 13, fontWeight: 700, marginBottom: 6, color: "var(--text-1)"}}>AI + 🌍</div>
+                  <div style={{fontSize: 11, color: "var(--text-3)", lineHeight: 1.4, marginBottom: 10}}>
+                    Analyse + Trad.<br/>vers votre langue
+                  </div>
+                  <div className="glass" style={{padding: 8, fontSize: 10, color: "var(--text-2)", borderRadius: 6, lineHeight: 1.3}}>
+                    FR: "Où WiFi?"<br/><span style={{color: "#10b981"}}>→ "Code: XXX"</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Step 5: PM validation */}
+              <div style={{position: "relative", zIndex: 1}}>
+                <div className="card" style={{
+                  padding: 16,
+                  textAlign: "center",
+                  background: "linear-gradient(135deg, rgba(6,182,212,0.1), rgba(255,255,255,0.03))",
+                  border: "2px solid rgba(6,182,212,0.3)"
+                }}>
+                  <div style={{
+                    width: 50,
+                    height: 50,
+                    margin: "0 auto 12px",
+                    borderRadius: "50%",
+                    background: "linear-gradient(135deg, #06b6d4, #0891b2)",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    fontSize: 22,
+                    boxShadow: "0 6px 16px rgba(6,182,212,0.3)"
+                  }}>✅</div>
+                  <div style={{fontSize: 13, fontWeight: 700, marginBottom: 6, color: "var(--text-1)"}}>Validation</div>
+                  <div style={{fontSize: 11, color: "var(--text-3)", lineHeight: 1.4, marginBottom: 10}}>
+                    PM valide<br/>ou modifie
+                  </div>
+                  <div className="glass" style={{padding: 6, fontSize: 10, borderRadius: 6, display: "flex", gap: 4}}>
+                    <button style={{flex: 1, padding: "4px 0", background: "#10b981", color: "#fff", border: "none", borderRadius: 4, fontSize: 9, fontWeight: 600}}>✓</button>
+                    <button style={{flex: 1, padding: "4px 0", background: "#3b82f6", color: "#fff", border: "none", borderRadius: 4, fontSize: 9, fontWeight: 600}}>✏️</button>
+                  </div>
+                </div>
+              </div>
+
+              {/* Step 6: Sojori sends back */}
+              <div style={{position: "relative", zIndex: 1}}>
+                <div className="card" style={{
+                  padding: 16,
+                  textAlign: "center",
+                  background: "linear-gradient(135deg, rgba(139,92,246,0.1), rgba(255,255,255,0.03))",
+                  border: "2px solid rgba(139,92,246,0.3)"
+                }}>
+                  <div style={{
+                    width: 50,
+                    height: 50,
+                    margin: "0 auto 12px",
+                    borderRadius: "50%",
+                    background: "linear-gradient(135deg, #8b5cf6, #7c3aed)",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    fontSize: 22,
+                    boxShadow: "0 6px 16px rgba(139,92,246,0.3)"
+                  }}>📤</div>
+                  <div style={{fontSize: 13, fontWeight: 700, marginBottom: 6, color: "var(--text-1)"}}>Sojori</div>
+                  <div style={{fontSize: 11, color: "var(--text-3)", lineHeight: 1.4, marginBottom: 10}}>
+                    Réponse<br/>API auto
+                  </div>
+                  <div className="glass" style={{padding: 8, fontSize: 10, fontFamily: "var(--font-mono)", color: "#8b5cf6", borderRadius: 6}}>
+                    Traduit EN<br/>→ Airbnb
+                  </div>
+                </div>
+              </div>
+
+              {/* Step 7: Back to Airbnb */}
+              <div style={{position: "relative", zIndex: 1}}>
+                <div className="card" style={{
+                  padding: 16,
+                  textAlign: "center",
+                  background: "linear-gradient(135deg, rgba(255,90,95,0.1), rgba(255,255,255,0.03))",
+                  border: "2px solid rgba(255,90,95,0.3)"
+                }}>
+                  <div style={{
+                    width: 50,
+                    height: 50,
+                    margin: "0 auto 12px",
+                    borderRadius: "50%",
+                    background: "linear-gradient(135deg, #FF5A5F, #E0484D)",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    fontSize: 22,
+                    boxShadow: "0 6px 16px rgba(255,90,95,0.3)"
+                  }}>✈️</div>
+                  <div style={{fontSize: 13, fontWeight: 700, marginBottom: 6, color: "var(--text-1)"}}>Airbnb</div>
+                  <div style={{fontSize: 11, color: "var(--text-3)", lineHeight: 1.4, marginBottom: 10}}>
+                    Réponse<br/>au guest
+                  </div>
+                  <div className="glass" style={{padding: 8, fontSize: 10, fontStyle: "italic", color: "var(--text-2)", borderRadius: 6, lineHeight: 1.3}}>
+                    "WiFi: XXX"
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Mode Pilote Automatique */}
+            <div className="card" style={{
+              marginTop: 50,
+              padding: 32,
+              background: "linear-gradient(135deg, rgba(139,92,246,0.15), rgba(6,182,212,0.1))",
+              border: "2px solid rgba(139,92,246,0.4)",
+              borderRadius: 16
+            }}>
+              <div style={{display: "flex", alignItems: "center", gap: 20}}>
+                <div style={{
+                  width: 70,
+                  height: 70,
+                  borderRadius: "50%",
+                  background: "linear-gradient(135deg, #8b5cf6, #06b6d4)",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  fontSize: 36,
+                  flexShrink: 0,
+                  boxShadow: "0 12px 30px rgba(139,92,246,0.4)"
+                }}>🤖</div>
+                <div style={{flex: 1}}>
+                  <div style={{fontSize: 24, fontWeight: 800, marginBottom: 8, letterSpacing: "-0.02em"}}>
+                    Mode <span className="gradient-text">Pilote Automatique</span>
+                  </div>
+                  <div style={{fontSize: 15, color: "var(--text-2)", lineHeight: 1.6, marginBottom: 12}}>
+                    Pour les questions simples (WiFi, codes, horaires...), activez le mode automatique. L'AI répond directement sans validation. Vous supervisez en arrière-plan et intervenez si nécessaire.
+                  </div>
+                  <div style={{display: "flex", gap: 12, flexWrap: "wrap"}}>
+                    {[
+                      { i: "⚡", t: "Réponse instantanée", c: "#f59e0b" },
+                      { i: "🌙", t: "Fonctionne 24/7", c: "#8b5cf6" },
+                      { i: "👁️", t: "Supervision active", c: "#06b6d4" },
+                      { i: "🔔", t: "Alerte si urgence", c: "#ef4444" },
+                    ].map(item => (
+                      <div key={item.t} style={{
+                        display: "flex",
+                        alignItems: "center",
+                        gap: 8,
+                        padding: "8px 14px",
+                        background: "rgba(255,255,255,0.6)",
+                        borderRadius: 999,
+                        fontSize: 12,
+                        fontWeight: 600,
+                        border: `1px solid ${item.c}40`
+                      }}>
+                        <span>{item.i}</span>
+                        <span style={{color: "var(--text-2)"}}>{item.t}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Stats */}
         <StatsBar stats={[
           {k:"4 systèmes",l:"WhatsApp"},

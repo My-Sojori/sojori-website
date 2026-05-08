@@ -188,7 +188,7 @@ export function JourneyCard({ event, progress, onHover, hovered, focused }: Jour
         position: 'relative',
         minWidth: 230,
         maxWidth: 270,
-        padding: '11px 13px',
+        padding: '8px 10px',
         borderLeft: `3px solid ${typeColor}`,
         borderRadius: 14,
         background: 'linear-gradient(180deg, rgba(255,255,255,0.85) 0%, rgba(255,255,255,0.75) 100%)',
@@ -216,7 +216,7 @@ export function JourneyCard({ event, progress, onHover, hovered, focused }: Jour
       <StarsBurst active={showStars} />
 
       {/* Header row */}
-      <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 6 }}>
+      <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 4 }}>
         <div style={{
           width: 28, height: 28, borderRadius: 8,
           background: `linear-gradient(135deg, ${typeColor}30, ${typeColor}10)`,
@@ -236,7 +236,7 @@ export function JourneyCard({ event, progress, onHover, hovered, focused }: Jour
       </div>
 
       {/* Body */}
-      <div style={{ fontSize: 11.5, color: 'var(--text-2)', lineHeight: 1.4, marginBottom: 8 }}>
+      <div style={{ fontSize: 11.5, color: 'var(--text-2)', lineHeight: 1.4, marginBottom: 6 }}>
         {state.sub}
       </div>
 

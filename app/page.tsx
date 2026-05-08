@@ -11,7 +11,7 @@ import { FinalCTA } from '@/components/homepage/FinalCTA';
 
 export const metadata: Metadata = {
   title: `Sojori — L'Orchestrateur Intelligent des Locations Courte Durée`,
-  description: 'PMS complet + Channel Manager + Orchestration AI. Automatisez 23 tâches de la réservation au checkout. WhatsApp AI 24/7, Staff Management, Analytics.',
+  description: 'PMS complet + Channel Manager + Orchestration AI. Automatisez +20 tâches de la réservation au checkout. WhatsApp AI 24/7, Staff Management, Analytics.',
 };
 
 export default function Home() {

@@ -67,7 +67,7 @@ function PriceCard({ plan, annual }: PriceCardProps) {
         )}
       </div>
       <div style={{ fontSize: 12, color: 'var(--text-3)', marginBottom: 24 }}>par bien · {plan.prop} biens</div>
-      <a href="/pricing#demo" className={plan.popular ? 'btn btn-primary' : 'btn btn-ghost'} style={{ display: 'block', textAlign: 'center', marginBottom: 28 }}>{typeof plan.price === 'number' ? 'Démarrer' : 'Nous contacter'} →</a>
+      <a href={`/demo?source=pricing-${plan.name.toLowerCase()}`} className={plan.popular ? 'btn btn-primary' : 'btn btn-ghost'} style={{ display: 'block', textAlign: 'center', marginBottom: 28 }}>{typeof plan.price === 'number' ? 'Démarrer' : 'Nous contacter'} →</a>
       <div style={{ display: 'flex', flexDirection: 'column', gap: 11 }}>
         {plan.features.map(f => (
           <div key={f} style={{ display: 'flex', gap: 10, fontSize: 13, color: 'var(--text-2)', alignItems: 'flex-start' }}>

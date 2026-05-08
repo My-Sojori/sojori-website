@@ -1,5 +1,22 @@
 import { BackgroundEffects } from '@/components/BackgroundEffects';
 import { PageHeader, PageFooter, PageHero, StatsBar, FinalCTA } from '@/components/SharedComponents';
+import { Metadata } from 'next';
+import { generateSEO, moroccanKeywords, frenchKeywords } from '@/lib/seo';
+
+export const metadata: Metadata = generateSEO({
+  title: 'PMS Marrakech & Casablanca | Logiciel Property Management Maroc',
+  description: 'Logiciel PMS complet pour property managers à Marrakech, Casablanca et Paris. Gestion réservations, calendrier unifié, multi-propriétés. Solution tout-en-un locations saisonnières.',
+  keywords: [
+    ...moroccanKeywords,
+    ...frenchKeywords,
+    'logiciel PMS',
+    'property management system',
+    'gestion multi-propriétés',
+    'calendrier unifié',
+    'gestion réservations Marrakech',
+  ],
+  path: '/pms',
+});
 
 interface BookingData {
   propIdx: number;

@@ -1,11 +1,23 @@
 import { Metadata } from "next";
 import { BackgroundEffects } from "@/components/BackgroundEffects";
 import { PageHeader, PageFooter, PageHero, StatsBar, FinalCTA } from "@/components/SharedComponents";
+import { generateSEO, moroccanKeywords, frenchKeywords } from '@/lib/seo';
 
-export const metadata: Metadata = {
-  title: "Sojori — Smart Analytics",
-  description: "Revenue, Occupation, ADR, RevPAR par propriété. Performance staff. Alertes intelligentes. Export comptable. Le pilotage de votre activité — sans tableur Excel.",
-};
+export const metadata: Metadata = generateSEO({
+  title: 'Analytics Marrakech | Business Intelligence Location Saisonnière Maroc',
+  description: 'Analytics avancés pour property managers à Marrakech. Revenue, Occupation, ADR, RevPAR par propriété. Tableaux de bord temps réel, export comptable, alertes intelligentes. Pilotez votre activité data-driven.',
+  keywords: [
+    ...moroccanKeywords,
+    ...frenchKeywords,
+    'analytics location Marrakech',
+    'business intelligence Maroc',
+    'RevPAR Marrakech',
+    'ADR location saisonnière',
+    'KPI property management',
+    'tableaux de bord location',
+  ],
+  path: '/analytics',
+});
 
 interface ChartDataPoint {
   d: number;
