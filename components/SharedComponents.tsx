@@ -1,8 +1,12 @@
 "use client";
 
 import React, { ReactNode } from 'react';
-import Link from 'next/link';
+import { Link, routing } from '@/i18n/routing';
+import { useTranslations } from 'next-intl';
+
+type AppPathname = keyof typeof routing.pathnames;
 import { SojoriLogo, SojoriMark } from './Logo';
+import { LanguageSwitcher } from './LanguageSwitcher';
 
 export function Check() {
   return (
@@ -23,32 +27,41 @@ export function SectionHead({ badge, title, subtitle, center = true }: { badge?:
   );
 }
 
-const PRODUCT_MENU = [
+const PRODUCT_MENU: { group: string; items: { l: string; h: AppPathname; d: string }[] }[] = [
   { group: 'Plateforme', items: [
-    { l: 'PMS', h: '/pms', d: 'Property Management' },
-    { l: 'Channel Manager', h: '/channel-manager', d: 'Multi-OTA sync' },
-    { l: 'Dynamic Pricing', h: '/dynamic-pricing', d: 'Yield management AI' },
-    { l: 'Smart Analytics', h: '/analytics', d: 'BI temps réel' },
+    { l: 'PMS', h: '/pms', d: 'Gestion multi-bien' },
+    { l: 'Channel Manager', h: '/channel-manager', d: 'Sync multi-OTA' },
+    { l: 'Tarification dynamique', h: '/dynamic-pricing', d: 'Règles & calendrier' },
+    { l: 'Smart Analytics', h: '/analytics', d: 'Indicateurs temps réel' },
   ]},
   { group: 'Guest', items: [
-    { l: 'WhatsApp Bot', h: '/whatsapp', d: 'IA 24/7' },
-    { l: 'Unified Inbox', h: '/inbox', d: 'Tous les canaux' },
-    { l: 'Guest Experience', h: '/guest-experience', d: 'Guidebook digital' },
+    { l: 'WhatsApp Bot', h: '/whatsapp', d: 'IA & parcours invité' },
+    { l: 'Inbox unifiée', h: '/inbox', d: 'Tous les canaux' },
+    { l: 'Guest Experience', h: '/guest-experience', d: 'Parcours voyageur' },
   ]},
   { group: 'Operations', items: [
     { l: 'TeamFlow', h: '/teamflow', d: 'Staff & ménage' },
     { l: 'Owner Portal', h: '/owner-portal', d: 'Portail propriétaire' },
-    { l: 'Dashboard App', h: '/dashboard-app', d: 'Mobile manager' },
+    { l: 'Dashboard App', h: '/dashboard-app', d: 'Pilotage gestionnaire' },
   ]},
   { group: 'Entreprise', items: [
-    { l: 'Pricing', h: '/pricing', d: 'Plans & tarifs' },
-    { l: 'Integrations', h: '/integrations', d: '60+ intégrations' },
-    { l: 'About', h: '/about', d: 'L\'équipe Sojori' },
+    { l: 'Tarifs', h: '/pricing', d: 'Plans & contrats' },
+    { l: 'Intégrations', h: '/integrations', d: 'Connecteurs & API' },
+    { l: 'À propos', h: '/about', d: 'L\'équipe Sojori' },
   ]},
 ];
 
 export function PageHeader({ pageTitle }: { pageTitle?: string }) {
   const [open, setOpen] = React.useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = React.useState(false);
+  const [mobileProductOpen, setMobileProductOpen] = React.useState(false);
+  const t = useTranslations('common.nav');
+
+  // Close mobile menu when clicking a link
+  const handleMobileLinkClick = () => {
+    setMobileMenuOpen(false);
+    setMobileProductOpen(false);
+  };
 
   return (
     <header style={{
@@ -70,7 +83,21 @@ export function PageHeader({ pageTitle }: { pageTitle?: string }) {
             </>
           )}
         </div>
-        <nav style={{ display: 'flex', gap: 6, alignItems: 'center', position: 'relative' }}>
+
+        {/* Desktop Navigation */}
+        <nav style={{
+          display: 'flex',
+          gap: 6,
+          alignItems: 'center',
+          position: 'relative',
+        }}>
+          <style jsx>{`
+            @media (max-width: 768px) {
+              nav {
+                display: none !important;
+              }
+            }
+          `}</style>
           <button
             onClick={() => setOpen(!open)}
             className="btn btn-ghost"
@@ -83,15 +110,22 @@ export function PageHeader({ pageTitle }: { pageTitle?: string }) {
               cursor: 'pointer'
             }}
           >
-            Produit <span style={{ fontSize: 9, marginLeft: 4, opacity: 0.7 }}>▼</span>
+            {t('product')} <span style={{ fontSize: 9, marginLeft: 4, opacity: 0.7 }}>▼</span>
           </button>
-          <Link href="/whatsapp" className="btn btn-ghost" style={{ padding: '8px 14px', fontSize: 13 }}>WhatsApp AI</Link>
-          <Link href="/pricing" className="btn btn-ghost" style={{ padding: '8px 14px', fontSize: 13 }}>Pricing</Link>
-          <Link href="/integrations" className="btn btn-ghost" style={{ padding: '8px 14px', fontSize: 13 }}>Integrations</Link>
-          <Link href="/about" className="btn btn-ghost" style={{ padding: '8px 14px', fontSize: 13 }}>About</Link>
-          <a href="#login" className="btn btn-ghost" style={{ padding: '8px 14px', fontSize: 13 }}>Login</a>
-          <Link href="/demo?source=navbar-demo" className="btn btn-primary" style={{ padding: '9px 16px', fontSize: 13 }}>Get demo</Link>
+          <Link href="/whatsapp" className="btn btn-ghost" style={{ padding: '8px 14px', fontSize: 13 }}>{t('whatsapp')}</Link>
+          <Link href="/pricing" className="btn btn-ghost" style={{ padding: '8px 14px', fontSize: 13 }}>{t('pricing')}</Link>
+          <Link href="/integrations" className="btn btn-ghost" style={{ padding: '8px 14px', fontSize: 13 }}>{t('integrations')}</Link>
+          <Link href="/about" className="btn btn-ghost" style={{ padding: '8px 14px', fontSize: 13 }}>{t('about')}</Link>
+          <LanguageSwitcher />
+          <Link
+            href={{ pathname: '/demo', query: { source: 'navbar-demo' } }}
+            className="btn btn-primary"
+            style={{ padding: '9px 16px', fontSize: 13 }}
+          >
+            {t('getDemo')}
+          </Link>
 
+          {/* Desktop Product Dropdown */}
           {open && (
             <div
               onClick={() => setOpen(false)}
@@ -149,6 +183,283 @@ export function PageHeader({ pageTitle }: { pageTitle?: string }) {
             </div>
           )}
         </nav>
+
+        {/* Mobile Hamburger Button */}
+        <button
+          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          aria-label="Toggle mobile menu"
+          aria-expanded={mobileMenuOpen}
+          style={{
+            display: 'none',
+            flexDirection: 'column',
+            justifyContent: 'center',
+            alignItems: 'center',
+            width: 44,
+            height: 44,
+            background: 'transparent',
+            border: 'none',
+            cursor: 'pointer',
+            padding: 0,
+            zIndex: 60,
+          }}
+        >
+          <style jsx>{`
+            @media (max-width: 768px) {
+              button[aria-label="Toggle mobile menu"] {
+                display: flex !important;
+              }
+            }
+          `}</style>
+          <span style={{
+            width: 24,
+            height: 2,
+            background: 'var(--text-1)',
+            borderRadius: 2,
+            transition: 'transform 0.3s, opacity 0.3s',
+            transform: mobileMenuOpen ? 'translateY(7px) rotate(45deg)' : 'translateY(0) rotate(0)',
+          }} />
+          <span style={{
+            width: 24,
+            height: 2,
+            background: 'var(--text-1)',
+            borderRadius: 2,
+            marginTop: 5,
+            transition: 'opacity 0.3s',
+            opacity: mobileMenuOpen ? 0 : 1,
+          }} />
+          <span style={{
+            width: 24,
+            height: 2,
+            background: 'var(--text-1)',
+            borderRadius: 2,
+            marginTop: 5,
+            transition: 'transform 0.3s, opacity 0.3s',
+            transform: mobileMenuOpen ? 'translateY(-7px) rotate(-45deg)' : 'translateY(0) rotate(0)',
+          }} />
+        </button>
+
+        {/* Mobile Menu Overlay */}
+        {mobileMenuOpen && (
+          <>
+            {/* Backdrop */}
+            <div
+              onClick={handleMobileLinkClick}
+              style={{
+                position: 'fixed',
+                top: 0,
+                left: 0,
+                right: 0,
+                bottom: 0,
+                background: 'rgba(26,20,8,0.5)',
+                backdropFilter: 'blur(4px)',
+                zIndex: 55,
+                animation: 'fadeIn 0.3s',
+              }}
+            />
+            <style jsx>{`
+              @keyframes fadeIn {
+                from { opacity: 0; }
+                to { opacity: 1; }
+              }
+              @keyframes slideIn {
+                from { transform: translateX(100%); }
+                to { transform: translateX(0); }
+              }
+            `}</style>
+
+            {/* Mobile Menu Panel */}
+            <div
+              style={{
+                position: 'fixed',
+                top: 0,
+                right: 0,
+                bottom: 0,
+                width: '85vw',
+                maxWidth: 400,
+                background: 'rgba(251,250,246,0.98)',
+                backdropFilter: 'blur(20px)',
+                zIndex: 60,
+                padding: '80px 24px 24px',
+                overflowY: 'auto',
+                boxShadow: '-4px 0 24px rgba(26,20,8,0.12)',
+                animation: 'slideIn 0.3s ease-out',
+                display: 'flex',
+                flexDirection: 'column',
+              }}
+            >
+              {/* Product Menu (Expandable) */}
+              <div style={{ marginBottom: 8 }}>
+                <button
+                  onClick={() => setMobileProductOpen(!mobileProductOpen)}
+                  style={{
+                    width: '100%',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'space-between',
+                    padding: '14px 16px',
+                    background: mobileProductOpen ? 'rgba(244,207,94,0.08)' : 'transparent',
+                    border: 'none',
+                    borderRadius: 10,
+                    fontSize: 15,
+                    fontWeight: 600,
+                    color: 'var(--text-1)',
+                    cursor: 'pointer',
+                    textAlign: 'left',
+                    transition: 'background 0.2s',
+                    minHeight: 44,
+                  }}
+                >
+                  {t('product')}
+                  <span style={{
+                    fontSize: 10,
+                    transition: 'transform 0.3s',
+                    transform: mobileProductOpen ? 'rotate(180deg)' : 'rotate(0)',
+                  }}>▼</span>
+                </button>
+
+                {mobileProductOpen && (
+                  <div style={{ paddingLeft: 12, marginTop: 8 }}>
+                    {PRODUCT_MENU.map(g => (
+                      <div key={g.group} style={{ marginBottom: 16 }}>
+                        <div style={{
+                          fontSize: 10,
+                          color: '#b8881a',
+                          fontWeight: 700,
+                          letterSpacing: 1,
+                          textTransform: 'uppercase',
+                          marginBottom: 8,
+                          fontFamily: 'var(--font-mono)',
+                          paddingLeft: 8,
+                        }}>
+                          {g.group}
+                        </div>
+                        <div style={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
+                          {g.items.map(it => (
+                            <Link
+                              key={it.l}
+                              href={it.h}
+                              onClick={handleMobileLinkClick}
+                              style={{
+                                textDecoration: 'none',
+                                padding: '10px 12px',
+                                borderRadius: 8,
+                                display: 'block',
+                                background: 'transparent',
+                                minHeight: 44,
+                              }}
+                            >
+                              <div style={{ fontSize: 14, fontWeight: 600, color: 'var(--text-1)' }}>{it.l}</div>
+                              <div style={{ fontSize: 11, color: 'var(--text-3)', marginTop: 2 }}>{it.d}</div>
+                            </Link>
+                          ))}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
+
+              {/* Other Navigation Links */}
+              <Link
+                href="/whatsapp"
+                onClick={handleMobileLinkClick}
+                style={{
+                  padding: '14px 16px',
+                  fontSize: 15,
+                  fontWeight: 600,
+                  color: 'var(--text-1)',
+                  textDecoration: 'none',
+                  borderRadius: 10,
+                  display: 'block',
+                  marginBottom: 8,
+                  minHeight: 44,
+                }}
+              >
+                {t('whatsapp')}
+              </Link>
+
+              <Link
+                href="/pricing"
+                onClick={handleMobileLinkClick}
+                style={{
+                  padding: '14px 16px',
+                  fontSize: 15,
+                  fontWeight: 600,
+                  color: 'var(--text-1)',
+                  textDecoration: 'none',
+                  borderRadius: 10,
+                  display: 'block',
+                  marginBottom: 8,
+                  minHeight: 44,
+                }}
+              >
+                {t('pricing')}
+              </Link>
+
+              <Link
+                href="/integrations"
+                onClick={handleMobileLinkClick}
+                style={{
+                  padding: '14px 16px',
+                  fontSize: 15,
+                  fontWeight: 600,
+                  color: 'var(--text-1)',
+                  textDecoration: 'none',
+                  borderRadius: 10,
+                  display: 'block',
+                  marginBottom: 8,
+                  minHeight: 44,
+                }}
+              >
+                {t('integrations')}
+              </Link>
+
+              <Link
+                href="/about"
+                onClick={handleMobileLinkClick}
+                style={{
+                  padding: '14px 16px',
+                  fontSize: 15,
+                  fontWeight: 600,
+                  color: 'var(--text-1)',
+                  textDecoration: 'none',
+                  borderRadius: 10,
+                  display: 'block',
+                  marginBottom: 8,
+                  minHeight: 44,
+                }}
+              >
+                {t('about')}
+              </Link>
+
+              {/* Language Switcher */}
+              <div style={{ marginBottom: 24 }}>
+                <LanguageSwitcher />
+              </div>
+
+              {/* Demo Button - Prominent */}
+              <Link
+                href={{ pathname: '/demo', query: { source: 'mobile-menu' } }}
+                onClick={handleMobileLinkClick}
+                className="btn btn-primary"
+                style={{
+                  padding: '16px 24px',
+                  fontSize: 15,
+                  fontWeight: 600,
+                  textAlign: 'center',
+                  borderRadius: 10,
+                  marginTop: 'auto',
+                  minHeight: 52,
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                }}
+              >
+                {t('getDemo')} →
+              </Link>
+            </div>
+          </>
+        )}
       </div>
     </header>
   );
@@ -216,7 +527,7 @@ export function PageFooter() {
           <div style={{ display: 'flex', gap: 18, fontSize: 11, color: 'var(--text-3)' }}>
             <a href="#" style={{ color: 'inherit', textDecoration: 'none' }}>Mentions légales</a>
             <a href="#" style={{ color: 'inherit', textDecoration: 'none' }}>CGU/CGV</a>
-            <a href="#" style={{ color: 'inherit', textDecoration: 'none' }}>Status</a>
+            <a href="#" style={{ color: 'inherit', textDecoration: 'none' }}>Statut</a>
           </div>
         </div>
       </div>
@@ -241,7 +552,14 @@ export function PageHero({ badge, title, subtitle, cta1, cta2, children }: {
           {subtitle && <p style={{ fontSize: 18, lineHeight: 1.6, color: 'var(--text-2)', maxWidth: 660, margin: '0 auto', textWrap: 'pretty' }}>{subtitle}</p>}
           {(cta1 || cta2) && (
             <div style={{ display: 'flex', gap: 12, justifyContent: 'center', marginTop: 30, flexWrap: 'wrap' }}>
-              {cta1 && <Link href="/demo?source=page-hero" className="btn btn-primary btn-lg">{cta1} →</Link>}
+              {cta1 && (
+                <Link
+                  href={{ pathname: '/demo', query: { source: 'page-hero' } }}
+                  className="btn btn-primary btn-lg"
+                >
+                  {cta1} →
+                </Link>
+              )}
               {cta2 && <a href="#more" className="btn btn-ghost btn-lg">{cta2}</a>}
             </div>
           )}
@@ -278,7 +596,9 @@ export function FinalCTA({ title, subtitle }: { title: ReactNode; subtitle: stri
         <h2 style={{ fontSize: 'clamp(32px, 4.4vw, 48px)', marginBottom: 14, textWrap: 'balance' }}>{title}</h2>
         <p style={{ fontSize: 17, color: 'var(--text-2)', marginBottom: 30 }}>{subtitle}</p>
         <div style={{ display: 'flex', gap: 12, justifyContent: 'center', flexWrap: 'wrap' }}>
-          <Link href="/demo?source=footer-cta" className="btn btn-primary btn-lg">Demander une démo →</Link>
+          <Link href={{ pathname: '/demo', query: { source: 'footer-cta' } }} className="btn btn-primary btn-lg">
+            Demander une démo →
+          </Link>
           <Link href="/" className="btn btn-ghost btn-lg">← Retour homepage</Link>
         </div>
       </div>

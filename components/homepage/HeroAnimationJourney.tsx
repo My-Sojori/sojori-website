@@ -1,18 +1,28 @@
 "use client";
 
-import { useState, useEffect, useRef, useCallback } from 'react';
+import { useState, useEffect, useRef } from 'react';
+import { useLocale } from 'next-intl';
 import { SojoriMark } from '../Logo';
 import { JourneyCard } from '../journey/JourneyCard';
-import { PHASES, EVENTS, LANES, type Phase, resolveEvent } from '@/lib/journey-data';
+import { type Phase, type JourneyEvent, type Lane, resolveEvent } from '@/lib/journey-data';
+import { getHeroAnimUi } from '@/lib/hero-anim-ui';
+import { getJourneyForLocale } from '@/lib/journey-for-locale';
 
 const LOOP_DURATION = 44; // seconds
 
 // ─── Timeline scrubber ─────────────────────────────────────────
-function TimelineBar({ progress, phases, focusPhase, onPhaseClick }: {
+function TimelineBar({
+  progress,
+  phases,
+  focusPhase,
+  onPhaseClick,
+  rangeDir,
+}: {
   progress: number;
   phases: Phase[];
   focusPhase: string | null;
   onPhaseClick: (phase: Phase) => void;
+  rangeDir?: 'ltr';
 }) {
   return (
     <div style={{ position: 'relative', width: '100%', userSelect: 'none' }}>
@@ -53,7 +63,13 @@ function TimelineBar({ progress, phases, focusPhase, onPhaseClick }: {
               }}
             >
               <span style={{ fontSize: 11 }}>{p.label}</span>
-              <span className="mono" style={{ fontSize: 9, opacity: 0.65, fontWeight: 400, letterSpacing: 0.6 }}>{p.range}</span>
+              <span
+                className="mono"
+                dir={rangeDir}
+                style={{ fontSize: 9, opacity: 0.65, fontWeight: 400, letterSpacing: 0.6 }}
+              >
+                {p.range}
+              </span>
             </button>
           );
         })}
@@ -89,7 +105,20 @@ function TimelineBar({ progress, phases, focusPhase, onPhaseClick }: {
 }
 
 // ─── Sojori core (central pulsing node) ─────────────────────────
-function SojoriCore({ progress, activeCount }: { progress: number; activeCount: number }) {
+function SojoriCore({
+  progress,
+  activeCount,
+  activeEventsWord,
+  coreTitle,
+  monoDir,
+}: {
+  progress: number;
+  activeCount: number;
+  activeEventsWord: string;
+  coreTitle: string;
+  /** Force LTR for counts in RTL locales (e.g. ar). */
+  monoDir?: 'ltr';
+}) {
   return (
     <div style={{
       position: 'relative',
@@ -121,9 +150,13 @@ function SojoriCore({ progress, activeCount }: { progress: number; activeCount: 
         }} />
       </div>
       <div style={{ display: 'flex', flexDirection: 'column', lineHeight: 1.1, whiteSpace: 'nowrap' }}>
-        <span style={{ fontSize: 11, fontWeight: 700, letterSpacing: 1.5, color: 'var(--text)' }}>SOJORI · CORE</span>
-        <span className="mono" style={{ fontSize: 9.5, color: 'var(--text-3)', letterSpacing: 0.6 }}>
-          {activeCount} actives · {Math.round(progress * 100)}%
+        <span style={{ fontSize: 11, fontWeight: 700, letterSpacing: 1.5, color: 'var(--text)' }}>{coreTitle}</span>
+        <span
+          className="mono"
+          dir={monoDir}
+          style={{ fontSize: 9.5, color: 'var(--text-3)', letterSpacing: 0.6 }}
+        >
+          {activeCount} {activeEventsWord} · {Math.round(progress * 100)}%
         </span>
       </div>
     </div>
@@ -132,7 +165,7 @@ function SojoriCore({ progress, activeCount }: { progress: number; activeCount: 
 
 // ─── Scrollable lane row (accumulation puis défilement) ──────────
 function ScrollableLane({ visibleEvents, progress, hoveredId, setHoveredId, focusPhase }: {
-  visibleEvents: typeof EVENTS;
+  visibleEvents: JourneyEvent[];
   progress: number;
   hoveredId: string | null;
   setHoveredId: (id: string | null) => void;
@@ -207,8 +240,8 @@ function ScrollableLane({ visibleEvents, progress, hoveredId, setHoveredId, focu
 
 // ─── Lane row with cards ───────────────────────────────────────
 function Lane({ lane, events, progress, hoveredId, setHoveredId, focusPhase }: {
-  lane: typeof LANES[0];
-  events: typeof EVENTS;
+  lane: Lane;
+  events: JourneyEvent[];
   progress: number;
   hoveredId: string | null;
   setHoveredId: (id: string | null) => void;
@@ -274,6 +307,10 @@ function Lane({ lane, events, progress, hoveredId, setHoveredId, focusPhase }: {
 
 // ─── Hero Animation Journey (light theme) ──────────────────────
 export function HeroAnimationJourney() {
+  const locale = useLocale();
+  const ui = getHeroAnimUi(locale);
+  const { phases, lanes, events } = getJourneyForLocale(locale);
+
   const [progress, setProgress] = useState(0);
   const [playing, setPlaying] = useState(true);
   const [hoveredId, setHoveredId] = useState<string | null>(null);
@@ -316,11 +353,12 @@ export function HeroAnimationJourney() {
   const ingestProg = phase === 'ingest' ? (progress - 0.09) / 0.09 : (phase === 'timeline' ? 1 : 0);
   const timelineProg = phase === 'timeline' ? (progress - 0.18) / 0.82 : 0;
 
-  const activeCount = EVENTS.filter(e => timelineProg >= e.t && timelineProg < e.t + 0.15).length;
-  const currentPhase = PHASES.find(p => timelineProg >= p.from && timelineProg < p.to) || PHASES[PHASES.length - 1];
+  const activeCount = events.filter(e => timelineProg >= e.t && timelineProg < e.t + 0.15).length;
+  const currentPhase = phases.find(p => timelineProg >= p.from && timelineProg < p.to) || phases[phases.length - 1];
 
   return (
     <div
+      className="hero-animation-wrapper"
       style={{
         position: 'relative',
         padding: '18px 20px 16px',
@@ -342,14 +380,28 @@ export function HeroAnimationJourney() {
 
       {/* Top stage row: core + current phase */}
       <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 18, position: 'relative', zIndex: 2 }}>
-        <SojoriCore progress={phase === 'timeline' ? timelineProg : 0} activeCount={activeCount} />
+        <SojoriCore
+          progress={phase === 'timeline' ? timelineProg : 0}
+          activeCount={activeCount}
+          activeEventsWord={ui.sojoriCoreActiveWord}
+          coreTitle={ui.coreTitle}
+          monoDir={locale === 'ar' ? 'ltr' : undefined}
+        />
         <div style={{ display: 'flex', alignItems: 'center', gap: 14 }}>
           <div style={{ textAlign: 'right' }}>
-            <div className="mono" style={{ fontSize: 9.5, letterSpacing: 1.4, color: 'var(--text-3)' }}>
-              {phase === 'incoming' ? '🟡 INCOMING BOOKING' : phase === 'ingest' ? '⚡ INGESTING' : '🟢 ORCHESTRATING'}
+            <div
+              className="mono"
+              dir={locale === 'ar' ? 'ltr' : undefined}
+              style={{ fontSize: 9.5, letterSpacing: 1.4, color: 'var(--text-3)' }}
+            >
+              {phase === 'incoming' ? ui.stageIncoming : phase === 'ingest' ? ui.stageIngest : ui.stageTimeline}
             </div>
             <div style={{ fontSize: 14, fontWeight: 600, color: 'var(--text)', letterSpacing: -0.2 }}>
-              {phase === 'timeline' ? `${currentPhase.label} · ${currentPhase.range}` : phase === 'incoming' ? 'Réservation entrante' : 'Ingestion en cours'}
+              {phase === 'timeline'
+                ? `${currentPhase.label} · ${currentPhase.range}`
+                : phase === 'incoming'
+                  ? ui.headerIncoming
+                  : ui.headerIngest}
             </div>
           </div>
         </div>
@@ -361,7 +413,7 @@ export function HeroAnimationJourney() {
           { id: 'airbnb',  name: 'Airbnb',  color: '#ff5a5f', mark: 'A', activeAt: 0.15 },
           { id: 'booking', name: 'Booking', color: '#0066ff', mark: 'B', activeAt: 0.95 },
           { id: 'vrbo',    name: 'Vrbo',    color: '#0d6df0', mark: 'V', activeAt: 0.95 },
-          { id: 'direct',  name: 'Direct',  color: '#10b981', mark: 'D', activeAt: 0.95 },
+          { id: 'direct',  name: ui.channelDirect,  color: '#10b981', mark: 'D', activeAt: 0.95 },
         ];
         return (
           <div style={{ position: 'relative', height: 330, zIndex: 2, overflow: 'hidden',
@@ -370,10 +422,11 @@ export function HeroAnimationJourney() {
             {/* LEFT — OTA channels listening */}
             <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
               <div className="mono" style={{ fontSize: 9.5, color: 'var(--text-3)',
-                    letterSpacing: 1.2, marginBottom: 2 }}>● CHANNELS · LIVE</div>
+                    letterSpacing: 1.2, marginBottom: 2 }}>{ui.channelsLive}</div>
               {channels.map(c => {
                 const active = incomingProg >= c.activeAt;
                 const justFired = c.id === 'airbnb' && incomingProg > 0.1 && incomingProg < 0.4;
+                const channelMonoDir = locale === 'ar' ? 'ltr' : undefined;
                 return (
                   <div key={c.id} style={{
                     display: 'flex', alignItems: 'center', gap: 10,
@@ -392,9 +445,12 @@ export function HeroAnimationJourney() {
                     <div style={{ flex: 1, lineHeight: 1.1 }}>
                       <div style={{ fontSize: 12, fontWeight: 600,
                         color: active ? '#fff' : 'var(--text)' }}>{c.name}</div>
-                      <div className="mono" style={{ fontSize: 9, color: 'var(--text-3)',
-                        letterSpacing: 0.3 }}>
-                        {active ? '✓ webhook reçu' : 'idle · sync'}
+                      <div
+                        className="mono"
+                        dir={channelMonoDir}
+                        style={{ fontSize: 9, color: 'var(--text-3)', letterSpacing: 0.3 }}
+                      >
+                        {active ? ui.webhookOk : ui.webhookIdle}
                       </div>
                     </div>
                     <div style={{ width: 6, height: 6, borderRadius: 3,
@@ -421,7 +477,7 @@ export function HeroAnimationJourney() {
               </svg>
 
               {/* Property header */}
-              <div style={{ position: 'absolute', top: 8, left: 0, right: 0,
+              <div dir={locale === 'ar' ? 'rtl' : undefined} style={{ position: 'absolute', top: 8, left: 0, right: 0,
                 display: 'flex', alignItems: 'center', gap: 10,
                 opacity: incomingProg > 0.05 ? 1 : 0, transition: 'opacity 0.4s' }}>
                 <div style={{ width: 56, height: 40, borderRadius: 8,
@@ -433,9 +489,14 @@ export function HeroAnimationJourney() {
                     color: '#fff', fontWeight: 700 }}>★ 4.92</div>
                 </div>
                 <div>
-                  <div style={{ fontSize: 13, fontWeight: 700, color: '#fff' }}>Villa Belvédère</div>
-                  <div className="mono" style={{ fontSize: 9.5, color: 'var(--text-3)',
-                    letterSpacing: 0.4 }}>NICE · CÔTE D'AZUR · 4ch · piscine</div>
+                  <div style={{ fontSize: 13, fontWeight: 700, color: '#fff' }}>{ui.demoPropertyName}</div>
+                  <div
+                    className="mono"
+                    dir={locale === 'ar' ? 'rtl' : 'ltr'}
+                    style={{ fontSize: 9.5, color: 'var(--text-3)', letterSpacing: 0.4 }}
+                  >
+                    {ui.demoPropertyTagline}
+                  </div>
                 </div>
               </div>
 
@@ -458,10 +519,10 @@ export function HeroAnimationJourney() {
                       letterSpacing: 0.6, textTransform: 'uppercase' }}>
                       <span style={{ width: 5, height: 5, borderRadius: 3, background: '#ff5a5f',
                         animation: 'pulse-soft 0.8s ease-in-out infinite' }}/>
-                      Nouvelle résa · Airbnb
+                      {ui.badgeNewBooking}
                     </span>
                     <span className="mono" style={{ marginLeft: 'auto', fontSize: 9,
-                      color: 'var(--text-3)' }}>il y a 2s</span>
+                      color: 'var(--text-3)' }}>{ui.timeAgo}</span>
                   </div>
                   <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
                     <div style={{ width: 38, height: 38, borderRadius: 19,
@@ -469,32 +530,63 @@ export function HeroAnimationJourney() {
                       display: 'flex', alignItems: 'center', justifyContent: 'center',
                       fontSize: 13, fontWeight: 700, color: '#fff' }}>SJ</div>
                     <div style={{ flex: 1, lineHeight: 1.2 }}>
-                      <div style={{ fontWeight: 600, fontSize: 14, color: '#fff' }}>
-                        Sarah Johnson <span style={{ fontSize: 11, color: 'var(--text-3)',
-                          fontWeight: 500 }}>· 🇺🇸 New York</span>
+                      <div dir={locale === 'ar' ? 'ltr' : undefined} style={{ fontWeight: 600, fontSize: 14, color: '#fff' }}>
+                        {ui.demoGuestName}{' '}
+                        <span style={{ fontSize: 11, color: 'var(--text-3)', fontWeight: 500 }}>
+                          {ui.demoGuestOrigin}
+                        </span>
                       </div>
-                      <div className="mono" style={{ fontSize: 10, color: 'var(--text-3)',
-                        letterSpacing: 0.4, marginTop: 2 }}>EN · 1<sup>er</sup> séjour · vérifiée</div>
+                      <div
+                        className="mono"
+                        dir={locale === 'ar' ? 'ltr' : undefined}
+                        style={{ fontSize: 10, color: 'var(--text-3)', letterSpacing: 0.4, marginTop: 2 }}
+                      >
+                        {locale === 'fr' ? (
+                          <>EN · 1<sup>er</sup> séjour · vérifiée</>
+                        ) : (
+                          ui.guestMetaPlain
+                        )}
+                      </div>
                     </div>
                     <div style={{ textAlign: 'right' }}>
-                      <div className="mono" style={{ fontSize: 15, fontWeight: 700,
-                        color: 'var(--primary)' }}>€1,840</div>
-                      <div className="mono" style={{ fontSize: 9, color: 'var(--text-3)' }}>7 nuits</div>
+                      <div
+                        className="mono"
+                        dir={locale === 'ar' ? 'ltr' : undefined}
+                        style={{ fontSize: 15, fontWeight: 700, color: 'var(--primary)' }}
+                      >
+                        {ui.demoTotalPrice}
+                      </div>
+                      <div
+                        className="mono"
+                        dir={locale === 'ar' ? 'ltr' : undefined}
+                        style={{ fontSize: 9, color: 'var(--text-3)' }}
+                      >
+                        {ui.nightsLabel}
+                      </div>
                     </div>
                   </div>
-                  <div style={{ display: 'flex', gap: 10, fontSize: 10.5,
-                    color: 'var(--text-2)', marginTop: 12, paddingTop: 12,
-                    borderTop: '1px dashed rgba(255,255,255,0.08)',
-                    justifyContent: 'space-between' }}>
-                    <span>📅 15 → 22 juin</span>
-                    <span>👥 2 voyageurs</span>
-                    <span style={{ color: 'var(--primary)' }}>✓ confirmée</span>
+                  <div
+                    dir={locale === 'ar' ? 'ltr' : undefined}
+                    style={{
+                      display: 'flex',
+                      gap: 10,
+                      fontSize: 10.5,
+                      color: 'var(--text-2)',
+                      marginTop: 12,
+                      paddingTop: 12,
+                      borderTop: '1px dashed rgba(255,255,255,0.08)',
+                      justifyContent: 'space-between',
+                    }}
+                  >
+                    <span>{ui.footerDate}</span>
+                    <span>{ui.footerGuests}</span>
+                    <span style={{ color: 'var(--primary)' }}>{ui.footerConfirmed}</span>
                   </div>
                 </div>
                 <div style={{ marginTop: 12, textAlign: 'center', fontSize: 11,
                   fontFamily: 'var(--mono)', color: 'var(--primary)', letterSpacing: 0.4,
                   opacity: incomingProg > 0.6 ? 1 : 0, transition: 'opacity 0.4s' }}>
-                  ↓ Sojori prend le relai
+                  {ui.handoff}
                 </div>
               </div>
             </div>
@@ -524,9 +616,13 @@ export function HeroAnimationJourney() {
                   display: 'flex', alignItems: 'center', justifyContent: 'center',
                   fontWeight: 700, color: '#fff', fontSize: 13 }}>SJ</div>
                 <div style={{ textAlign: 'left' }}>
-                  <div style={{ fontSize: 13, fontWeight: 600, color: '#fff' }}>Sarah Johnson</div>
-                  <div className="mono" style={{ fontSize: 9, color: 'var(--text-3)' }}>
-                    NYC → Nice · €1,840
+                  <div style={{ fontSize: 13, fontWeight: 600, color: '#fff' }}>{ui.demoGuestName}</div>
+                  <div
+                    className="mono"
+                    dir={locale === 'ar' ? 'ltr' : undefined}
+                    style={{ fontSize: 9, color: 'var(--text-3)' }}
+                  >
+                    {ui.demoIngestSummary}
                   </div>
                 </div>
               </div>
@@ -560,20 +656,20 @@ export function HeroAnimationJourney() {
           {/* Lane labels — appear in a circle around the core */}
           {ingestProg > 0.5 && (
             <>
-              {['GUEST', 'SOJORI', 'STAFF', 'ADMIN'].map((l, i) => {
+              {lanes.map((lane, i) => {
                 const angle = (i / 4) * 2 * Math.PI - Math.PI / 2;
                 const r = 140 + (1 - ingestProg) * 60;
                 return (
-                  <div key={l} style={{
+                  <div key={lane.id} style={{
                     position: 'absolute',
                     left: `calc(50% + ${Math.cos(angle) * r}px)`,
                     top:  `calc(50% + ${Math.sin(angle) * r}px)`,
                     transform: 'translate(-50%, -50%)',
                     fontSize: 10, fontWeight: 700, letterSpacing: 1.6,
-                    color: ['#06b6d4', '#e6b022', '#10b981', '#8b5cf6'][i],
+                    color: lane.color,
                     opacity: (ingestProg - 0.5) * 2,
                     transition: 'all 0.4s ease',
-                  }}>{l}</div>
+                  }}>{lane.label}</div>
                 );
               })}
             </>
@@ -589,7 +685,7 @@ export function HeroAnimationJourney() {
             <span style={{ display: 'inline-block', width: 6, height: 6, borderRadius: 3,
               background: 'var(--primary)', boxShadow: '0 0 8px var(--primary)',
               animation: 'pulse-soft 0.8s ease-in-out infinite' }}/>
-            Ingestion · génération de +20 tâches orchestrées…
+            {ui.ingestCaption}
           </div>
         </div>
       )}
@@ -597,11 +693,11 @@ export function HeroAnimationJourney() {
       {/* ACT 3 — TIMELINE (existing orchestration) */}
       {phase === 'timeline' && (
         <div style={{ position: 'relative', height: 330, overflow: 'visible' }}>
-          {LANES.map(lane => (
+          {lanes.map(lane => (
             <Lane
               key={lane.id}
               lane={lane}
-              events={EVENTS}
+              events={events}
               progress={timelineProg}
               hoveredId={hoveredId}
               setHoveredId={setHoveredId}
@@ -616,9 +712,10 @@ export function HeroAnimationJourney() {
         <div style={{ marginTop: 18, position: 'relative', zIndex: 2 }}>
           <TimelineBar
             progress={timelineProg}
-            phases={PHASES}
+            phases={phases}
             focusPhase={focusPhase}
             onPhaseClick={onPhaseClick}
+            rangeDir={locale === 'ar' ? 'ltr' : undefined}
           />
         </div>
       )}
@@ -726,6 +823,39 @@ export function HeroAnimationJourney() {
         }
         .mono {
           font-family: 'Geist Mono', ui-monospace, 'SF Mono', Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono', 'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro', 'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace;
+        }
+
+        /* Mobile responsive - Réduction drastique pour visibilité */
+        @media (max-width: 768px) {
+          .hero-animation-wrapper {
+            transform: scale(0.55) !important;
+            transform-origin: top center;
+            margin: -90px -20px -60px !important;
+            padding: 10px 12px 8px !important;
+            min-height: 260px !important;
+            border-radius: 12px !important;
+            width: calc(100vw - 40px) !important;
+            max-width: 100% !important;
+          }
+
+          /* Scroll horizontal pour les lanes sur mobile */
+          .lane-scroll {
+            overflow-x: auto !important;
+            -webkit-overflow-scrolling: touch !important;
+          }
+
+          /* Réduire les espacements internes */
+          .hero-animation-wrapper > div {
+            margin-bottom: 8px !important;
+          }
+        }
+
+        @media (max-width: 480px) {
+          .hero-animation-wrapper {
+            transform: scale(0.45) !important;
+            margin: -110px -25px -80px !important;
+            min-height: 220px !important;
+          }
         }
       `}</style>
     </div>

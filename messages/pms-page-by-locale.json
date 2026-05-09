@@ -1,0 +1,89 @@
+{
+  "fr": {
+    "pageTitle": "PMS",
+    "hero": {
+      "badge": "📋 PMS · Property Management System",
+      "titleLine1": "Toutes vos propriétés.",
+      "titleGradient": "Un seul calendrier.",
+      "subtitle": "Réservations multi-propriétés, paiements automatisés, facturation, contrats digitaux. Le système nerveux de votre activité — propre, rapide, sans bruit.",
+      "cta1": "Voir la démo",
+      "cta2": "Importer mon PMS"
+    },
+    "calendar": { "header": "Propriété · Mars 2025" },
+    "properties": ["Appartement Paris 15", "Villa Barcelona", "Loft Montmartre", "Studio Marais", "Duplex Lyon"],
+    "sectionCalendar": {
+      "eyebrow": "● Calendrier multi-propriétés temps réel",
+      "title": "Vue d'ensemble.",
+      "titleGradient": "D'un seul coup d'œil."
+    },
+    "sectionModules": {
+      "eyebrow": "● Modules PMS",
+      "title": "Tout.",
+      "titleMuted": "Vraiment tout."
+    },
+    "modules": [
+      { "title": "Calendrier unifié", "desc": "Toutes vos propriétés, un calendrier. Drag-and-drop, vue mois/sem/jour." },
+      { "title": "Paiements automatisés", "desc": "Stripe + virements bancaires. Encaissement à la résa, remboursement en 1 clic." },
+      { "title": "Factures & contrats", "desc": "Générés automatiquement. Signés digitalement. Archivés conformes." },
+      { "title": "Tableau de bord financier", "desc": "Revenus, dépenses, marge par propriété. Export comptable mensuel." },
+      { "title": "Taxe de séjour auto", "desc": "Calculée, collectée, déclarée. Multi-villes, multi-pays." },
+      { "title": "Sync 2-way iCal", "desc": "Avec votre channel manager + Airbnb/Booking direct. Zéro double-saisie." }
+    ],
+    "stats": [
+      { "k": "1 calendrier", "l": "Toutes propriétés" },
+      { "k": "<3 sec", "l": "Création résa" },
+      { "k": "100%", "l": "Auto facturation" },
+      { "k": "42k+", "l": "Résas gérées" }
+    ],
+    "finalCTA": {
+      "titleBefore": "Migrez votre PMS.",
+      "titleGradient": "En 7 jours.",
+      "subtitle": "Migration depuis Hostfully, Smoobu, Lodgify offerte. Onboarding guidé. 14 jours d'essai."
+    }
+  },
+  "en": {
+    "pageTitle": "PMS",
+    "hero": {
+      "badge": "📋 PMS · Property management system",
+      "titleLine1": "All your properties.",
+      "titleGradient": "One calendar.",
+      "subtitle": "Multi-property bookings, automated payments, invoicing, digital contracts. The nerve centre of your operations — clean, fast, quiet.",
+      "cta1": "Book a demo",
+      "cta2": "Import my PMS"
+    },
+    "calendar": { "header": "Property · March 2025" },
+    "properties": ["Paris 15 apartment", "Barcelona villa", "Montmartre loft", "Marais studio", "Lyon duplex"],
+    "sectionCalendar": {
+      "eyebrow": "● Multi-property calendar in real time",
+      "title": "Overview.",
+      "titleGradient": "At a glance."
+    },
+    "sectionModules": {
+      "eyebrow": "● PMS modules",
+      "title": "Everything.",
+      "titleMuted": "Really everything."
+    },
+    "modules": [
+      { "title": "Unified calendar", "desc": "All your properties, one calendar. Drag-and-drop, month/week/day views." },
+      { "title": "Automated payments", "desc": "Stripe + bank transfers. Charge on booking, one-click refunds." },
+      { "title": "Invoices & contracts", "desc": "Generated automatically. E-signed. Compliant archiving." },
+      { "title": "Financial dashboard", "desc": "Revenue, costs, margin per property. Monthly accounting export." },
+      { "title": "Tourist tax automation", "desc": "Calculated, collected, filed. Multi-city, multi-country." },
+      { "title": "2-way iCal sync", "desc": "With your channel manager + direct Airbnb/Booking. No double entry." }
+    ],
+    "stats": [
+      { "k": "1 calendar", "l": "All properties" },
+      { "k": "<3 sec", "l": "Create booking" },
+      { "k": "100%", "l": "Auto invoicing" },
+      { "k": "42k+", "l": "Bookings handled" }
+    ],
+    "finalCTA": {
+      "titleBefore": "Migrate your PMS.",
+      "titleGradient": "In 7 days.",
+      "subtitle": "Migration from Hostfully, Smoobu, Lodgify included. Guided onboarding. 14-day trial."
+    }
+  },
+  "es": {},
+  "pt": {},
+  "ar": {}
+}

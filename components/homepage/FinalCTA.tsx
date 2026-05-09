@@ -1,4 +1,10 @@
+"use client";
+
+import { useTranslations } from 'next-intl';
+
 export function FinalCTA() {
+  const t = useTranslations('home.finalCTA');
+
   return (
     <section
       style={{
@@ -9,23 +15,23 @@ export function FinalCTA() {
     >
       <div style={{ maxWidth: 760, margin: '0 auto' }}>
         <h2 style={{ fontSize: 'clamp(36px, 5vw, 56px)', marginBottom: 18, textWrap: 'balance' }}>
-          Prêt à <span className="gradient-text">orchestrer</span>
+          {t('title')} <span className="gradient-text">{t('titleGradient')}</span>
           <br />
-          vos locations ?
+          {t('titleEnd')}
         </h2>
         <p style={{ fontSize: 18, color: 'var(--text-2)', marginBottom: 36, maxWidth: 540, margin: '0 auto 36px' }}>
-          Rejoignez des centaines de property managers qui automatisent leurs opérations avec Sojori.
+          {t('subtitle')}
         </p>
         <div style={{ display: 'flex', gap: 12, justifyContent: 'center', flexWrap: 'wrap' }}>
           <a href="/demo?source=homepage-cta" className="btn btn-primary btn-xl">
-            Demander une démo gratuite →
+            {t('ctaPrimary')}
           </a>
           <a href="/pricing" className="btn btn-ghost btn-xl">
-            Voir le pricing
+            {t('ctaSecondary')}
           </a>
         </div>
         <div style={{ marginTop: 24, fontSize: 13, color: 'var(--text-3)' }}>
-          ✓ Démo personnalisée · ✓ Sans engagement · ✓ Setup en &lt;7 jours
+          {t('footer')}
         </div>
       </div>
     </section>

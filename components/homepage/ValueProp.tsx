@@ -1,59 +1,78 @@
 "use client";
 
+import { useTranslations } from 'next-intl';
 import { Check, SectionHead } from '../SharedComponents';
 
 export function ValueProp() {
+  const t = useTranslations('home.valueProp');
   const pillars = [
     {
-      icon: '⚙️',
+      icon: t('modules.icon'),
       accent: 'var(--accent)',
       accentRgb: '6, 182, 212',
-      title: 'Modules d\'opération',
-      sub: 'Le socle.',
-      items: ['PMS · calendrier multi-bien', 'Channel Manager · 20+ OTAs', 'Pricing dynamique', 'Owner Portal', 'Analytics temps réel'],
-      cta: 'Voir les modules',
+      title: t('modules.title'),
+      sub: t('modules.sub'),
+      items: [
+        t('modules.items.0'),
+        t('modules.items.1'),
+        t('modules.items.2'),
+        t('modules.items.3'),
+        t('modules.items.4')
+      ],
+      cta: t('modules.cta'),
     },
     {
-      icon: '🧠',
+      icon: t('orchestration.icon'),
       accent: 'var(--primary)',
       accentRgb: '230, 176, 34',
-      title: 'Orchestration IA',
-      sub: 'Le moteur.',
-      items: ['Comprend chaque réservation', 'Décide qui fait quoi, quand, pourquoi', 'Coordonne voyageur, staff, propriétaire', 'Apprend de chaque séjour', '+20 décisions par séjour, sans intervention'],
-      cta: 'Voir le moteur en action',
+      title: t('orchestration.title'),
+      sub: t('orchestration.sub'),
+      items: [
+        t('orchestration.items.0'),
+        t('orchestration.items.1'),
+        t('orchestration.items.2'),
+        t('orchestration.items.3'),
+        t('orchestration.items.4')
+      ],
+      cta: t('orchestration.cta'),
       featured: true,
     },
     {
-      icon: '💬',
+      icon: t('whatsapp.icon'),
       accent: 'var(--secondary)',
       accentRgb: '139, 92, 246',
-      title: 'WhatsApp · 4 apps',
-      sub: 'Les surfaces.',
-      items: ['Guest — le voyageur, en 12 langues', 'Staff — l\'équipe terrain', 'Admin — votre PMS dans la poche', 'Booking Direct — la résa sans intermédiaire'],
-      cta: 'Voir les 4 surfaces',
+      title: t('whatsapp.title'),
+      sub: t('whatsapp.sub'),
+      items: [
+        t('whatsapp.items.0'),
+        t('whatsapp.items.1'),
+        t('whatsapp.items.2'),
+        t('whatsapp.items.3')
+      ],
+      cta: t('whatsapp.cta'),
     },
   ];
 
   return (
-    <section style={{ padding: '110px 32px' }} id="features">
+    <section style={{ padding: '110px 32px' }} id="features" className="value-prop-section">
       <div style={{ maxWidth: 1280, margin: '0 auto' }}>
         <SectionHead
-          badge="Architecture"
+          badge={t('badge')}
           title={
             <>
-              Trois couches.
+              {t('title')}
               <br />
-              <span style={{ color: 'var(--text-3)', fontWeight: 600 }}>Une seule conversation.</span>
+              <span style={{ color: 'var(--text-3)', fontWeight: 600 }}>{t('titleSub')}</span>
             </>
           }
-          subtitle="Le moteur d'orchestration au centre. Les surfaces WhatsApp en façade. Les modules d'opération en fondation."
+          subtitle={t('subtitle')}
         />
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 20, marginTop: 56 }} className="grid-resp">
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 20, marginTop: 56 }} className="grid-resp value-prop-grid">
           {pillars.map((p, i) => (
             <div
               key={i}
-              className="glass"
+              className="glass value-prop-card"
               style={{
                 padding: 32,
                 borderRadius: 20,
@@ -88,7 +107,7 @@ export function ValueProp() {
                     letterSpacing: 0.5,
                   }}
                 >
-                  SIGNATURE
+                  {t('orchestration.badge')}
                 </span>
               )}
               <div
@@ -124,7 +143,33 @@ export function ValueProp() {
           ))}
         </div>
       </div>
-      <style>{`@media (max-width: 900px) { .grid-resp { grid-template-columns: 1fr !important; } }`}</style>
+      <style jsx>{`
+        @media (max-width: 900px) {
+          .grid-resp {
+            display: flex !important;
+            overflow-x: auto !important;
+            scroll-snap-type: x mandatory !important;
+            -webkit-overflow-scrolling: touch !important;
+            gap: 16px !important;
+            padding-bottom: 20px !important;
+          }
+          .grid-resp > * {
+            min-width: 300px !important;
+            max-width: 320px !important;
+            flex-shrink: 0 !important;
+            scroll-snap-align: start !important;
+          }
+        }
+        @media (max-width: 768px) {
+          .value-prop-section { padding: 70px 20px !important; }
+          .value-prop-grid { gap: 16px !important; margin-top: 40px !important; }
+          .value-prop-card { padding: 24px !important; }
+          .value-prop-card:hover { transform: none !important; }
+        }
+        ::-webkit-scrollbar { height: 8px; }
+        ::-webkit-scrollbar-track { background: rgba(255,255,255,0.05); border-radius: 4px; }
+        ::-webkit-scrollbar-thumb { background: rgba(244,207,94,0.3); border-radius: 4px; }
+      `}</style>
     </section>
   );
 }

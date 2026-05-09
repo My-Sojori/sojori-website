@@ -29,14 +29,15 @@ export async function POST(request: NextRequest) {
     // Return backend response
     return NextResponse.json(data, { status: response.status });
 
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error('Error proxying demo request:', error);
+    const SRV_USER_URL = process.env.SRV_USER_URL || 'http://localhost:4005';
     return NextResponse.json(
       {
         success: false,
-        error: 'Failed to connect to backend service'
+        error: `Connexion au service démo impossible (${SRV_USER_URL}). En local : démarrez srv-user et vérifiez SRV_USER_URL dans .env.local.`,
       },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }

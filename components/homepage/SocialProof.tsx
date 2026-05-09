@@ -1,35 +1,37 @@
 "use client";
 
 import { useState, useEffect } from 'react';
+import { useTranslations } from 'next-intl';
 import { SectionHead } from '../SharedComponents';
 
 export function SocialProof() {
+  const t = useTranslations('home.socialProof');
   const [active, setActive] = useState(0);
   const testimonials = [
     {
       stars: 5,
-      quote: 'Avant Sojori : 4h/jour sur les messages WhatsApp. Après Sojori : 20 min/jour. Le reste est automatique.',
-      name: 'Marie L.',
-      role: 'Property Manager · 12 propriétés',
-      loc: 'Paris',
+      quote: t('testimonials.0.quote'),
+      name: t('testimonials.0.name'),
+      role: t('testimonials.0.role'),
+      loc: t('testimonials.0.loc'),
       initials: 'ML',
       color: 'linear-gradient(135deg, #f4cf5e, #e6b022)',
     },
     {
       stars: 5,
-      quote: 'Le seul PMS qui parle vraiment aux guests. Mes 5★ sont passés de 78% à 94% en 3 mois.',
-      name: 'Thomas D.',
-      role: 'Property owner · 7 propriétés',
-      loc: 'Paris',
-      initials: 'KT',
+      quote: t('testimonials.1.quote'),
+      name: t('testimonials.1.name'),
+      role: t('testimonials.1.role'),
+      loc: t('testimonials.1.loc'),
+      initials: 'TD',
       color: 'linear-gradient(135deg, #8b5cf6, #6d28d9)',
     },
     {
       stars: 5,
-      quote: 'Channel Manager, AI, staff coordination… on a remplacé 4 outils par Sojori. Et ça marche mieux.',
-      name: 'Thomas R.',
-      role: 'CEO · 84 propriétés',
-      loc: 'Lisbonne',
+      quote: t('testimonials.2.quote'),
+      name: t('testimonials.2.name'),
+      role: t('testimonials.2.role'),
+      loc: t('testimonials.2.loc'),
       initials: 'TR',
       color: 'linear-gradient(135deg, #06b6d4, #0891b2)',
     },
@@ -41,15 +43,15 @@ export function SocialProof() {
   }, []);
 
   return (
-    <section style={{ padding: '110px 32px' }}>
+    <section style={{ padding: '110px 32px' }} className="social-proof-section">
       <div style={{ maxWidth: 1280, margin: '0 auto' }}>
-        <SectionHead badge="⭐ Ils nous font confiance" title="Des property managers qui automatisent déjà." />
+        <SectionHead badge={t('badge')} title={t('title')} />
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 20, marginTop: 56 }} className="grid-resp">
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 20, marginTop: 56 }} className="grid-resp testimonials-grid">
           {testimonials.map((t, i) => (
             <div
               key={i}
-              className="glass"
+              className="glass testimonial-card"
               style={{
                 padding: 32,
                 borderRadius: 20,
@@ -70,7 +72,7 @@ export function SocialProof() {
                 ))}
               </div>
               <p style={{ fontSize: 16, lineHeight: 1.55, color: 'var(--text)', marginBottom: 24, flex: 1 }}>« {t.quote} »</p>
-              <div style={{ display: 'flex', alignItems: 'center', gap: 12, paddingTop: 18, borderTop: '1px solid var(--glass-border)' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: 12, paddingTop: 18, borderTop: '1px solid var(--glass-border)' }} className="testimonial-author">
                 <div
                   style={{
                     width: 42,
@@ -91,7 +93,7 @@ export function SocialProof() {
                   <div style={{ fontWeight: 600, fontSize: 14 }}>{t.name}</div>
                   <div style={{ fontSize: 12, color: 'var(--text-3)' }}>{t.role}</div>
                 </div>
-                <div className="mono" style={{ fontSize: 10, color: 'var(--text-3)', letterSpacing: 0.6 }}>
+                <div className="mono testimonial-loc" style={{ fontSize: 10, color: 'var(--text-3)', letterSpacing: 0.6 }}>
                   {t.loc}
                 </div>
               </div>
@@ -100,7 +102,7 @@ export function SocialProof() {
         </div>
 
         {/* Dots */}
-        <div style={{ display: 'flex', justifyContent: 'center', gap: 8, marginTop: 28 }}>
+        <div style={{ display: 'flex', justifyContent: 'center', gap: 8, marginTop: 28 }} className="testimonial-dots">
           {testimonials.map((_, i) => (
             <button
               key={i}
@@ -108,26 +110,29 @@ export function SocialProof() {
               style={{
                 width: active === i ? 24 : 8,
                 height: 8,
+                minHeight: 44,
+                minWidth: 44,
                 borderRadius: 4,
                 background: active === i ? 'var(--primary)' : 'rgba(255,255,255,0.18)',
                 border: 'none',
                 cursor: 'pointer',
                 transition: 'all 0.3s ease',
               }}
+              aria-label={`View testimonial ${i + 1}`}
             />
           ))}
         </div>
 
         {/* Metrics */}
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 20, marginTop: 64 }} className="grid-resp">
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 20, marginTop: 64 }} className="grid-resp metrics-grid">
           {[
-            { k: '94%', l: 'Tâches automatisées' },
-            { k: '<30s', l: 'Réponse moyenne' },
-            { k: '4.9/5', l: 'Rating guests' },
-            { k: '850+', l: 'Property Managers' },
+            { k: t('metrics.0.k'), l: t('metrics.0.l') },
+            { k: t('metrics.1.k'), l: t('metrics.1.l') },
+            { k: t('metrics.2.k'), l: t('metrics.2.l') },
+            { k: t('metrics.3.k'), l: t('metrics.3.l') },
           ].map((s, i) => (
-            <div key={i} style={{ textAlign: 'center', padding: '20px 12px', borderLeft: i ? '1px solid var(--glass-border)' : 'none' }}>
-              <div style={{ fontSize: 48, fontWeight: 800, letterSpacing: '-0.04em', lineHeight: 1 }} className="gradient-text">
+            <div key={i} style={{ textAlign: 'center', padding: '20px 12px', borderLeft: i ? '1px solid var(--glass-border)' : 'none' }} className="metric-item">
+              <div style={{ fontSize: 48, fontWeight: 800, letterSpacing: '-0.04em', lineHeight: 1 }} className="gradient-text metric-value">
                 {s.k}
               </div>
               <div style={{ fontSize: 13, color: 'var(--text-3)', marginTop: 8 }}>{s.l}</div>
@@ -135,6 +140,61 @@ export function SocialProof() {
           ))}
         </div>
       </div>
+      <style jsx>{`
+        @media (max-width: 900px) {
+          .testimonials-grid {
+            display: flex !important;
+            overflow-x: auto !important;
+            scroll-snap-type: x mandatory !important;
+            -webkit-overflow-scrolling: touch !important;
+            gap: 16px !important;
+            padding-bottom: 20px !important;
+          }
+          .testimonials-grid > * {
+            min-width: 300px !important;
+            max-width: 320px !important;
+            flex-shrink: 0 !important;
+            scroll-snap-align: start !important;
+          }
+          .metrics-grid {
+            display: flex !important;
+            overflow-x: auto !important;
+            scroll-snap-type: x mandatory !important;
+            -webkit-overflow-scrolling: touch !important;
+            gap: 16px !important;
+            padding-bottom: 20px !important;
+          }
+          .metrics-grid > * {
+            min-width: 160px !important;
+            max-width: 180px !important;
+            flex-shrink: 0 !important;
+            scroll-snap-align: start !important;
+          }
+        }
+        @media (max-width: 768px) {
+          .social-proof-section { padding: 70px 20px !important; }
+          .testimonials-grid { gap: 16px !important; margin-top: 40px !important; }
+          .testimonial-card {
+            padding: 24px !important;
+            min-height: auto !important;
+            transform: none !important;
+          }
+          .testimonial-loc { display: none !important; }
+          .testimonial-dots button {
+            min-height: 44px !important;
+            min-width: 44px !important;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
+          .metrics-grid { gap: 16px !important; margin-top: 48px !important; }
+          .metric-item { border-left: none !important; border-top: none !important; padding: 16px 8px !important; }
+          .metric-value { font-size: 36px !important; }
+        }
+        ::-webkit-scrollbar { height: 8px; }
+        ::-webkit-scrollbar-track { background: rgba(255,255,255,0.05); border-radius: 4px; }
+        ::-webkit-scrollbar-thumb { background: rgba(244,207,94,0.3); border-radius: 4px; }
+      `}</style>
     </section>
   );
 }

@@ -1,11 +1,21 @@
 import { Metadata } from 'next';
 
+const OG_LOCALE: Record<string, string> = {
+  fr: 'fr_FR',
+  en: 'en_US',
+  es: 'es_ES',
+  pt: 'pt_PT',
+  ar: 'ar_MA',
+};
+
 interface SEOProps {
   title: string;
   description: string;
   keywords?: string[];
   path?: string;
   image?: string;
+  /** Langue pour Open Graph (défaut : français) */
+  locale?: string;
 }
 
 export function generateSEO({
@@ -14,8 +24,10 @@ export function generateSEO({
   keywords = [],
   path = '',
   image = '/og-image.jpg',
+  locale = 'fr',
 }: SEOProps): Metadata {
   const url = `https://sojori.com${path}`;
+  const ogLocale = OG_LOCALE[locale] || OG_LOCALE.fr;
 
   return {
     title,
@@ -37,7 +49,7 @@ export function generateSEO({
           alt: title,
         },
       ],
-      locale: 'fr_FR',
+      locale: ogLocale,
       type: 'website',
     },
     twitter: {

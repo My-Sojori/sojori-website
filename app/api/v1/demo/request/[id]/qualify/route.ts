@@ -17,7 +17,7 @@ export async function PATCH(
     const SRV_USER_URL = process.env.SRV_USER_URL || 'http://localhost:4005';
 
     // Forward request to srv-user backend
-    const response = await fetch(`${SRV_USER_URL}/api/v1/user/demo/request/${id}/qualify`, {
+    const response = await fetch(`${SRV_USER_URL}/api/v1/demo/request/${id}/qualify`, {
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json',
