@@ -22,8 +22,8 @@ interface Integration {
 }
 
 const CATEGORIES: Category[] = [
-  { id: 'all', l: 'Toutes', n: 16 },
-  { id: 'core', l: 'Intégrations natives', n: 5, c: '#f4cf5e' },
+  { id: 'all', l: 'Toutes', n: 17 },
+  { id: 'core', l: 'Intégrations natives', n: 6, c: '#f4cf5e' },
   { id: 'msg', l: 'Messagerie', n: 3, c: '#25D366' },
   { id: 'pay', l: 'Paiements', n: 1, c: '#10b981' },
   { id: 'data', l: 'Automation & API', n: 3, c: '#8b5cf6' },
@@ -33,6 +33,7 @@ const CATEGORIES: Category[] = [
 const INTEGRATIONS: Integration[] = [
   // Intégrations natives (vraies)
   { n: 'Rentals United', cat: 'core', s: 'Channel distribution', logo: 'R', color: '#6c5ce7', popular: true },
+  { n: 'Channex', cat: 'core', s: 'Channel Manager API', logo: 'C', color: '#0052cc', popular: true },
   { n: 'Minut', cat: 'core', s: 'Noise & occupancy sensors', logo: 'M', color: '#00c9a7', popular: true },
   { n: 'Chekin', cat: 'core', s: 'Online check-in', logo: 'C', color: '#0ea5e9', popular: true },
   { n: 'TTLock', cat: 'core', s: 'Smart locks & codes', logo: 'T', color: '#ff6b35', popular: true },

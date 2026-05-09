@@ -1,12 +1,12 @@
 "use client";
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { BackgroundEffects } from '@/components/BackgroundEffects';
 import { PageHeader, PageFooter } from '@/components/SharedComponents';
 import Link from 'next/link';
 
-export default function DemoPage() {
+function DemoPageContent() {
   const searchParams = useSearchParams();
   const [step, setStep] = useState(1);
   const [source, setSource] = useState<string>('website'); // Default source
@@ -535,5 +535,13 @@ export default function DemoPage() {
         <PageFooter />
       </div>
     </>
+  );
+}
+
+export default function DemoPage() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <DemoPageContent />
+    </Suspense>
   );
 }

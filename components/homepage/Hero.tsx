@@ -9,15 +9,15 @@ export function Hero() {
         <div style={{ textAlign: 'center', maxWidth: 880, margin: '0 auto 48px' }}>
           <span className="badge" style={{ marginBottom: 22 }}>
             <span className="badge-dot"></span>
-            ✨ L'Orchestrateur Intelligent
+            ● Orchestrateur · Location courte durée
           </span>
           <h1 style={{ marginBottom: 20, textWrap: 'balance' }}>
-            Chaque réservation.<br />
-            <span className="gradient-text">Orchestrée de A à Z.</span>
+            Pas un logiciel qu'on opère.<br />
+            <span className="gradient-text">Un logiciel qui orchestre.</span>
           </h1>
           <p style={{ fontSize: 19, lineHeight: 1.55, color: 'var(--text-2)', maxWidth: 680, margin: '0 auto', textWrap: 'pretty' }}>
-            De la réservation Airbnb au checkout final, Sojori orchestre automatiquement <strong style={{ color: 'var(--text)' }}>+20 tâches</strong>.
-            PMS complet · Channel Manager · WhatsApp AI.
+            Sojori coordonne votre activité de location courte durée comme un humain le ferait — réservation, voyageur, staff, propriétaire. Sauf qu'il ne dort jamais.
+            <strong style={{ color: 'var(--text)' }}> Et qu'il ne vous demande pas de piloter.</strong>
           </p>
           <div style={{ display: 'flex', gap: 12, justifyContent: 'center', marginTop: 32, flexWrap: 'wrap' }}>
             <a href="#animation" className="btn btn-primary btn-lg">Voir l'orchestration →</a>
@@ -31,7 +31,7 @@ export function Hero() {
 
         <div style={{ textAlign: 'center', marginTop: 18 }} className="mono">
           <span style={{ fontSize: 11, color: 'var(--text-3)', letterSpacing: 1.2 }}>
-            23 TÂCHES ORCHESTRÉES · 0 OUBLIS · 100% AUTOMATISÉ
+            RÉSERVATION → VOYAGEUR → STAFF → PROPRIÉTAIRE · UN SEUL FIL CONDUCTEUR
           </span>
         </div>
       </div>

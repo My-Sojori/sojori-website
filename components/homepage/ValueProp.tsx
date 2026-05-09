@@ -5,32 +5,32 @@ import { Check, SectionHead } from '../SharedComponents';
 export function ValueProp() {
   const pillars = [
     {
-      icon: '🏠',
+      icon: '⚙️',
       accent: 'var(--accent)',
       accentRgb: '6, 182, 212',
-      title: 'PMS Complet',
-      sub: 'La base. Solide.',
-      items: ['Calendrier unifié multi-propriétés', 'Réservations & paiements', 'Facturation automatique', 'Contrats digitaux signés', 'Inbox unifiée'],
-      cta: 'Découvrir le PMS',
+      title: 'Modules d\'opération',
+      sub: 'Le socle.',
+      items: ['PMS · calendrier multi-bien', 'Channel Manager · 20+ OTAs', 'Pricing dynamique', 'Owner Portal', 'Analytics temps réel'],
+      cta: 'Voir les modules',
     },
     {
-      icon: '📡',
-      accent: 'var(--secondary)',
-      accentRgb: '139, 92, 246',
-      title: 'Channel Manager',
-      sub: 'Sync 20+ OTAs.',
-      items: ['Sync temps réel Airbnb, Booking, Expedia', 'iCal 2-way sync', 'Pricing dynamique', 'Anti-overbooking garanti', 'Messaging unifié'],
-      cta: 'Voir les intégrations',
-    },
-    {
-      icon: '🤖',
+      icon: '🧠',
       accent: 'var(--primary)',
       accentRgb: '230, 176, 34',
-      title: 'Orchestration AI',
-      sub: 'Notre signature.',
-      items: ['WhatsApp AI 24/7 (GPT-4)', 'Coordination staff automatique', '+20 tâches orchestrées', 'Zéro oubli, zéro retard', 'Analytics live temps réel'],
-      cta: 'Voir la démo live',
+      title: 'Orchestration IA',
+      sub: 'Le moteur.',
+      items: ['Comprend chaque réservation', 'Décide qui fait quoi, quand, pourquoi', 'Coordonne voyageur, staff, propriétaire', 'Apprend de chaque séjour', '+20 décisions par séjour, sans intervention'],
+      cta: 'Voir le moteur en action',
       featured: true,
+    },
+    {
+      icon: '💬',
+      accent: 'var(--secondary)',
+      accentRgb: '139, 92, 246',
+      title: 'WhatsApp · 4 apps',
+      sub: 'Les surfaces.',
+      items: ['Guest — le voyageur, en 12 langues', 'Staff — l\'équipe terrain', 'Admin — votre PMS dans la poche', 'Booking Direct — la résa sans intermédiaire'],
+      cta: 'Voir les 4 surfaces',
     },
   ];
 
@@ -38,15 +38,15 @@ export function ValueProp() {
     <section style={{ padding: '110px 32px' }} id="features">
       <div style={{ maxWidth: 1280, margin: '0 auto' }}>
         <SectionHead
-          badge="Tout-en-un"
+          badge="Architecture"
           title={
             <>
-              Tout ce dont vous avez besoin.
+              Trois couches.
               <br />
-              <span style={{ color: 'var(--text-3)', fontWeight: 600 }}>En une plateforme.</span>
+              <span style={{ color: 'var(--text-3)', fontWeight: 600 }}>Une seule conversation.</span>
             </>
           }
-          subtitle="PMS complet, Channel Manager certifié, et Orchestration AI. Sans oublier WhatsApp, Staff Management, Analytics."
+          subtitle="Le moteur d'orchestration au centre. Les surfaces WhatsApp en façade. Les modules d'opération en fondation."
         />
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 20, marginTop: 56 }} className="grid-resp">

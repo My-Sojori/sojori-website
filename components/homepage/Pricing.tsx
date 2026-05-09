@@ -6,15 +6,17 @@ export function Pricing() {
   const tiers = [
     {
       name: 'STARTER',
+      tagline: 'Pour démarrer.',
       range: '2-10 propriétés',
       price: '49',
       period: '/propriété/mois',
-      items: ['PMS complet', 'Channel Manager (5 OTAs)', 'WhatsApp AI basique', 'Support email', '1 utilisateur staff'],
+      items: ['Module PMS', 'Channel Manager (5 OTAs)', 'WhatsApp AI basique', 'Support email', '1 utilisateur staff'],
       cta: 'Essayer gratuitement',
       popular: false,
     },
     {
       name: 'GROWTH',
+      tagline: 'Pour orchestrer.',
       range: '11-50 propriétés',
       price: '39',
       period: '/propriété/mois',
@@ -24,6 +26,7 @@ export function Pricing() {
     },
     {
       name: 'SCALE',
+      tagline: 'Pour piloter à l\'échelle.',
       range: '51-2000+ propriétés',
       price: 'Sur mesure',
       period: '',
@@ -85,6 +88,7 @@ export function Pricing() {
               <div className="uppercase-sm" style={{ color: t.popular ? 'var(--primary-deep)' : 'var(--text-3)', marginBottom: 8 }}>
                 {t.name}
               </div>
+              <div style={{ fontSize: 13, color: 'var(--text-3)', fontStyle: 'italic', marginBottom: 8 }}>{t.tagline}</div>
               <div style={{ fontSize: 14, color: 'var(--text-2)', marginBottom: 20 }}>{t.range}</div>
               <div style={{ marginBottom: 28, display: 'flex', alignItems: 'baseline', gap: 4 }}>
                 {t.price === 'Sur mesure' ? (

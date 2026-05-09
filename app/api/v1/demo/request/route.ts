@@ -18,7 +18,7 @@ export async function POST(request: NextRequest) {
       headers: {
         'Content-Type': 'application/json',
         // Forward client IP for tracking
-        'x-forwarded-for': request.headers.get('x-forwarded-for') || request.ip || '',
+        'x-forwarded-for': request.headers.get('x-forwarded-for') || '',
         'user-agent': request.headers.get('user-agent') || '',
       },
       body: JSON.stringify(body),

@@ -10,8 +10,8 @@ import { Pricing } from '@/components/homepage/Pricing';
 import { FinalCTA } from '@/components/homepage/FinalCTA';
 
 export const metadata: Metadata = {
-  title: `Sojori — L'Orchestrateur Intelligent des Locations Courte Durée`,
-  description: 'PMS complet + Channel Manager + Orchestration AI. Automatisez +20 tâches de la réservation au checkout. WhatsApp AI 24/7, Staff Management, Analytics.',
+  title: `Sojori — L'orchestrateur de la location courte durée`,
+  description: "Software d'orchestration pour gestionnaires de locations courte durée. Réservation, voyageur, staff, propriétaire — coordonnés par IA, pilotés depuis WhatsApp. Lancement Maroc.",
 };
 
 export default function Home() {

@@ -171,10 +171,10 @@ export function PageFooter() {
           <div>
             <SojoriLogo size={32} />
             <p style={{ fontSize: 13, color: 'var(--text-3)', marginTop: 16, lineHeight: 1.6, maxWidth: 280 }}>
-              L&apos;orchestrateur intelligent des locations courte durée. PMS + Channel Manager + AI, dans une seule plateforme.
+              L&apos;orchestrateur de la location courte durée.
             </p>
             <div style={{ marginTop: 16, fontSize: 11, color: 'var(--text-3)', fontFamily: 'var(--font-mono)' }}>
-              📍 Paris · Barcelona · Miami
+              📍 Paris · Casablanca
             </div>
           </div>
           {PRODUCT_MENU.map(g => (
@@ -211,7 +211,7 @@ export function PageFooter() {
         </div>
         <div style={{ borderTop: '1px solid var(--glass-border)', paddingTop: 20, display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 12 }}>
           <div style={{ fontSize: 11, color: 'var(--text-3)', fontFamily: 'var(--font-mono)' }}>
-            © 2025 Sojori SAS · Tous droits réservés
+            © 2026 Sojori SAS · Tous droits réservés
           </div>
           <div style={{ display: 'flex', gap: 18, fontSize: 11, color: 'var(--text-3)' }}>
             <a href="#" style={{ color: 'inherit', textDecoration: 'none' }}>Mentions légales</a>
