@@ -1,19 +1,12 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { normalizeDemoBackendResponse } from '@/lib/demoApiResponse';
-import {
-  getDemoServiceBaseUrl,
-  getDemoProxyFailureMessage,
-} from '@/lib/getDemoServiceBaseUrl';
+import { getDemoServiceBaseUrl, getDemoProxyFailureMessage } from '@/lib/getDemoServiceBaseUrl';
 import { demoProxyFetch, devFetchDetailForDemo } from '@/lib/demoProxyFetch';
 
 /**
- * PATCH /api/v1/demo/request/:id/qualify — proxy → srv-crm.
+ * POST /api/v1/demo/appointment/cancel-by-token — proxy public → srv-crm.
  */
-export async function PATCH(
-  request: NextRequest,
-  { params }: { params: Promise<{ id: string }> }
-) {
-  const { id } = await params;
+export async function POST(request: NextRequest) {
   let body: unknown;
   try {
     body = await request.json();
@@ -23,15 +16,11 @@ export async function PATCH(
 
   try {
     const backendBase = getDemoServiceBaseUrl();
-
-    const response = await demoProxyFetch(`${backendBase}/api/v1/demo/request/${id}/qualify`, {
-      method: 'PATCH',
-      headers: {
-        'Content-Type': 'application/json',
-      },
+    const response = await demoProxyFetch(`${backendBase}/api/v1/demo/appointment/cancel-by-token`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(body),
     });
-
     let raw: unknown;
     try {
       raw = await response.json();
@@ -40,14 +29,10 @@ export async function PATCH(
     }
     const data = normalizeDemoBackendResponse(raw);
     return NextResponse.json(data, { status: response.status });
-
   } catch (error: unknown) {
-    console.error('Error proxying demo qualification:', error);
+    console.error('Error proxying cancel-by-token:', error);
     return NextResponse.json(
-      {
-        success: false,
-        error: `${getDemoProxyFailureMessage()}${devFetchDetailForDemo(error)}`,
-      },
+      { success: false, error: `${getDemoProxyFailureMessage()}${devFetchDetailForDemo(error)}` },
       { status: 500 },
     );
   }

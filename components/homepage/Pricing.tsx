@@ -1,7 +1,9 @@
 "use client";
 
 import { useTranslations } from 'next-intl';
+import { Link } from '@/i18n/routing';
 import { Check, SectionHead } from '../SharedComponents';
+import { ScrollPaginationDots } from '@/components/shared/ScrollPaginationDots';
 
 export function Pricing() {
   const t = useTranslations('home.pricingPreview');
@@ -70,15 +72,20 @@ export function Pricing() {
       id="pricing"
       className="pricing-section"
     >
-      <div style={{ maxWidth: 1280, margin: '0 auto' }}>
+      <div style={{ maxWidth: 1280, margin: '0 auto', width: '100%' }}>
         <SectionHead
           badge={t('badge')}
           title={t('title')}
           subtitle={t('subtitle')}
         />
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 20, marginTop: 56, alignItems: 'stretch' }} className="grid-resp pricing-grid">
-          {tiers.map((t, i) => (
+        <ScrollPaginationDots
+          itemCount={3}
+          gap={20}
+          style={{ marginTop: 56 }}
+          className="pricing-grid"
+        >
+          {tiers.map((tier, i) => (
             <div
               key={i}
               className="glass pricing-card"
@@ -86,21 +93,23 @@ export function Pricing() {
                 padding: '36px 30px',
                 borderRadius: 20,
                 position: 'relative',
-                borderColor: t.popular ? 'rgba(230,176,34,0.55)' : undefined,
-                borderWidth: t.popular ? 2 : 1,
-                background: t.popular
+                borderColor: tier.popular ? 'rgba(230,176,34,0.55)' : undefined,
+                borderWidth: tier.popular ? 2 : 1,
+                background: tier.popular
                   ? 'linear-gradient(180deg, rgba(244,207,94,0.18) 0%, rgba(255,255,255,0.85) 100%)'
                   : undefined,
-                transform: t.popular ? 'scale(1.03)' : 'none',
-                zIndex: t.popular ? 2 : 1,
+                transform: tier.popular ? 'scale(1.03)' : 'none',
+                zIndex: tier.popular ? 2 : 1,
                 display: 'flex',
                 flexDirection: 'column',
-                boxShadow: t.popular
+                alignItems: 'center',
+                textAlign: 'center',
+                boxShadow: tier.popular
                   ? '0 1px 0 rgba(255,255,255,.9) inset, 0 30px 60px -20px rgba(230,176,34,0.30)'
                   : undefined,
               }}
             >
-              {t.popular && (
+              {tier.popular && (
                 <span style={{
                   position: 'absolute', top: -14, left: '50%', transform: 'translateX(-50%)',
                   padding: '5px 14px', borderRadius: 999,
@@ -108,56 +117,97 @@ export function Pricing() {
                   color: '#1a1408', fontSize: 11, fontWeight: 700, letterSpacing: 0.6,
                   whiteSpace: 'nowrap',
                   boxShadow: '0 6px 16px rgba(230,176,34,0.4)',
-                }}>{t.badge}</span>
+                }}>{tier.badge}</span>
               )}
-              <div className="uppercase-sm" style={{ color: t.popular ? 'var(--primary-deep)' : 'var(--text-3)', marginBottom: 8 }}>
-                {t.name}
+              <div className="uppercase-sm" style={{ color: tier.popular ? 'var(--primary-deep)' : 'var(--text-3)', marginBottom: 8 }}>
+                {tier.name}
               </div>
-              <div style={{ fontSize: 13, color: 'var(--text-3)', fontStyle: 'italic', marginBottom: 8 }}>{t.tagline}</div>
-              <div style={{ fontSize: 14, color: 'var(--text-2)', marginBottom: 20 }}>{t.range}</div>
-              <div style={{ marginBottom: 28, display: 'flex', alignItems: 'baseline', gap: 4 }} className="pricing-amount">
-                {t.price === 'Sur mesure' ? (
-                  <span style={{ fontSize: 32, fontWeight: 800, letterSpacing: '-0.03em', color: 'var(--text)' }}>{t.price}</span>
+              <div style={{ fontSize: 13, color: 'var(--text-3)', fontStyle: 'italic', marginBottom: 8 }}>{tier.tagline}</div>
+              <div style={{ fontSize: 14, color: 'var(--text-2)', marginBottom: 20 }}>{tier.range}</div>
+              <div
+                style={{ marginBottom: 28, display: 'flex', alignItems: 'baseline', justifyContent: 'center', gap: 4, flexWrap: 'wrap' }}
+                className="pricing-amount"
+              >
+                {tier.price === 'Sur mesure' ? (
+                  <span style={{ fontSize: 32, fontWeight: 800, letterSpacing: '-0.03em', color: 'var(--text)' }}>{tier.price}</span>
                 ) : (
                   <>
                     <span style={{ fontSize: 18, color: 'var(--text-3)' }}>€</span>
-                    <span style={{ fontSize: 48, fontWeight: 800, letterSpacing: '-0.04em', lineHeight: 1, color: 'var(--text)' }}>{t.price}</span>
-                    <span style={{ fontSize: 13, color: 'var(--text-3)', marginLeft: 4 }}>{t.period}</span>
+                    <span style={{ fontSize: 48, fontWeight: 800, letterSpacing: '-0.04em', lineHeight: 1, color: 'var(--text)' }}>{tier.price}</span>
+                    <span style={{ fontSize: 13, color: 'var(--text-3)', marginLeft: 4 }}>{tier.period}</span>
                   </>
                 )}
               </div>
-              <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 28px', flex: 1, display: 'flex', flexDirection: 'column', gap: 10 }}>
-                {t.items.map((it) => (
-                  <li key={it} style={{ display: 'flex', alignItems: 'flex-start', gap: 10, fontSize: 14, color: 'var(--text-2)', lineHeight: 1.5 }}>
+              <ul
+                style={{
+                  listStyle: 'none',
+                  padding: 0,
+                  margin: '0 0 28px',
+                  flex: 1,
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: 10,
+                  width: '100%',
+                  maxWidth: 340,
+                  alignSelf: 'center',
+                }}
+              >
+                {tier.items.map((it) => (
+                  <li
+                    key={it}
+                    style={{
+                      display: 'flex',
+                      alignItems: 'flex-start',
+                      justifyContent: 'center',
+                      gap: 10,
+                      fontSize: 14,
+                      color: 'var(--text-2)',
+                      lineHeight: 1.5,
+                      textAlign: 'left',
+                    }}
+                  >
                     <Check />
-                    <span style={{ flex: 1, minWidth: 0 }}>{it}</span>
+                    <span style={{ flex: '0 1 auto', minWidth: 0, maxWidth: '100%' }}>{it}</span>
                   </li>
                 ))}
               </ul>
-              <a href="#" className={`btn ${t.popular ? 'btn-primary' : 'btn-ghost'}`} style={{ width: '100%', justifyContent: 'center' }}>
-                {t.cta} →
-              </a>
+              <Link
+                href={{ pathname: '/pricing', query: { source: `homepage-pricing-tier-${i}` } }}
+                className={`btn ${tier.popular ? 'btn-primary' : 'btn-ghost'}`}
+                style={{ width: '100%', justifyContent: 'center' }}
+              >
+                {tier.cta} →
+              </Link>
             </div>
           ))}
-        </div>
+        </ScrollPaginationDots>
 
         <div style={{ textAlign: 'center', marginTop: 32, fontSize: 13, color: 'var(--text-3)' }}>
           {t('footer')}
         </div>
       </div>
       <style jsx>{`
-        @media (max-width: 900px) {
-          .pricing-grid { grid-template-columns: 1fr !important; }
+        .pricing-grid {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          justify-items: stretch;
         }
+
+        .pricing-card {
+          width: 100%;
+        }
+
         @media (max-width: 768px) {
           .pricing-section { padding: 70px 20px !important; }
-          .pricing-grid { gap: 24px !important; margin-top: 40px !important; }
+
+          .pricing-grid {
+            display: flex !important;
+            grid-template-columns: none !important;
+          }
+
           .pricing-card {
             padding: 28px 24px !important;
             transform: none !important;
-            width: 100%;
-            max-width: 420px;
-            margin: 0 auto;
           }
           .pricing-amount span:nth-child(2) { font-size: 40px !important; }
         }

@@ -1,4 +1,5 @@
 import { BackgroundEffects } from '@/components/BackgroundEffects';
+import { Link } from '@/i18n/routing';
 
 function SojoriLogo({ size = 36, variant = 'color' }: { size?: number; variant?: 'color' | 'mono' }) {
   const gradientId = `logoGrad-${variant}`;
@@ -57,7 +58,7 @@ export default function BrandPage() {
               </div>
             </div>
           </div>
-          <a href="/" className="btn btn-ghost">Voir la homepage →</a>
+          <Link href="/" className="btn btn-ghost">Voir la homepage →</Link>
         </header>
 
         {/* Hero of brand page */}

@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 48" width="220" height="48" role="img" aria-label="Sojori">
+  <defs>
+    <linearGradient id="sojoriGold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f4cf5e"/>
+      <stop offset="50%" stop-color="#e6b022"/>
+      <stop offset="100%" stop-color="#b8881a"/>
+    </linearGradient>
+  </defs>
+  <g transform="translate(2,6) scale(0.9)">
+    <circle cx="20" cy="20" r="17" stroke="url(#sojoriGold)" stroke-width="2" fill="none" stroke-dasharray="3 4" opacity="0.55"/>
+    <circle cx="20" cy="20" r="11" stroke="url(#sojoriGold)" stroke-width="1.5" fill="none" opacity="0.65"/>
+    <path d="M 12 26 Q 20 26 20 20 Q 20 14 28 14" stroke="url(#sojoriGold)" stroke-width="3" stroke-linecap="round" fill="none"/>
+    <circle cx="20" cy="20" r="2.5" fill="#f4cf5e"/>
+  </g>
+    <text x="46" y="32" fill="#1f1d19" font-family="system-ui,-apple-system,BlinkMacSystemFont,&quot;Segoe UI&quot;,Roboto,sans-serif" font-size="22" font-weight="800" letter-spacing="-0.03em">sojori</text>
+</svg>

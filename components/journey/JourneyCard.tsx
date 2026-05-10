@@ -18,7 +18,7 @@ function StatusPill({ status, children }: { status: EventStatus; children: React
   const s = styles[status];
 
   return (
-    <span style={{
+    <span className="journey-status-pill" style={{
       display: 'inline-flex', alignItems: 'center', gap: 5,
       padding: '2px 8px', borderRadius: 999,
       fontSize: 10, fontWeight: 600, letterSpacing: 0.4,
@@ -182,6 +182,7 @@ export function JourneyCard({ event, progress, onHover, hovered, focused }: Jour
 
   return (
     <div
+      className="journey-event-card"
       onMouseEnter={() => onHover?.(event.id)}
       onMouseLeave={() => onHover?.(null)}
       style={{
@@ -216,7 +217,7 @@ export function JourneyCard({ event, progress, onHover, hovered, focused }: Jour
       <StarsBurst active={showStars} />
 
       {/* Header row */}
-      <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 4 }}>
+      <div className="journey-event-card-header" style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 4 }}>
         <div style={{
           width: 28, height: 28, borderRadius: 8,
           background: `linear-gradient(135deg, ${typeColor}30, ${typeColor}10)`,
@@ -229,22 +230,113 @@ export function JourneyCard({ event, progress, onHover, hovered, focused }: Jour
           {state.icon}
         </div>
         <div style={{ flex: 1, minWidth: 0 }}>
-          <div style={{ fontSize: 12.5, fontWeight: 600, color: 'var(--text)', lineHeight: 1.3 }}>
+          <div className="journey-event-card-title" style={{ fontSize: 12.5, fontWeight: 600, color: 'var(--text)', lineHeight: 1.3 }}>
             {state.title}
           </div>
         </div>
       </div>
 
       {/* Body */}
-      <div style={{ fontSize: 11.5, color: 'var(--text-2)', lineHeight: 1.4, marginBottom: 6 }}>
+      <div className="journey-event-card-body" style={{ fontSize: 11.5, color: 'var(--text-2)', lineHeight: 1.4, marginBottom: 6 }}>
         {state.sub}
       </div>
 
       {/* Footer: status + avatar/tag */}
-      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 6 }}>
+      <div className="journey-event-card-footer" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 6 }}>
         <StatusPill status={state.status}>{state.tag}</StatusPill>
-        {state.avatar && <Avatar letter={state.avatar} animate={entryAge < 0.08} />}
+        {state.avatar && (
+          <span className="journey-event-card-avatar-wrap">
+            <Avatar letter={state.avatar} animate={entryAge < 0.08} />
+          </span>
+        )}
       </div>
+
+      {/* Mobile optimizations - ULTRA COMPACT pour afficher 4-5 cartes */}
+      <style jsx>{`
+        @media (max-width: 768px) {
+          .journey-event-card {
+            min-width: 105px !important;
+            max-width: 115px !important;
+            padding: 4px 5px !important;
+            border-left-width: 2px !important;
+            border-radius: 8px !important;
+          }
+
+          .journey-event-card-header {
+            gap: 4px !important;
+            margin-bottom: 2px !important;
+          }
+
+          .journey-event-card-header > div:first-child {
+            width: 18px !important;
+            height: 18px !important;
+            border-radius: 5px !important;
+            font-size: 10px !important;
+          }
+
+          .journey-event-card-title {
+            font-size: 8.5px !important;
+            line-height: 1.2 !important;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+          }
+
+          .journey-event-card-body {
+            font-size: 7.5px !important;
+            line-height: 1.25 !important;
+            margin-bottom: 3px !important;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 1;
+            -webkit-box-orient: vertical;
+          }
+
+          .journey-event-card-footer {
+            gap: 3px !important;
+          }
+
+          .journey-status-pill {
+            padding: 1px 4px !important;
+            font-size: 6.5px !important;
+            gap: 2px !important;
+          }
+
+          .journey-status-pill > span {
+            width: 3px !important;
+            height: 3px !important;
+          }
+
+          .journey-event-card-avatar-wrap > div {
+            width: 14px !important;
+            height: 14px !important;
+            font-size: 7px !important;
+          }
+        }
+
+        @media (max-width: 480px) {
+          .journey-event-card {
+            min-width: 95px !important;
+            max-width: 105px !important;
+            padding: 3px 4px !important;
+          }
+
+          .journey-event-card-title {
+            font-size: 7.5px !important;
+          }
+
+          .journey-event-card-body {
+            font-size: 7px !important;
+          }
+
+          .journey-status-pill {
+            font-size: 6px !important;
+          }
+        }
+      `}</style>
     </div>
   );
 }

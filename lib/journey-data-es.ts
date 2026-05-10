@@ -3,7 +3,7 @@ import type { JourneyEvent, Lane, Phase } from '@/lib/journey-data';
 
 export const PHASES_ES: Phase[] = [
   { id: 'before', label: 'Antes de la llegada', range: 'D-7 → D-1', from: 0.0, to: 0.22 },
-  { id: 'arrival', label: 'Llegada', range: 'Día del check-in', from: 0.22, to: 0.36 },
+  { id: 'arrival', label: 'Llegada', range: 'Check-in', from: 0.22, to: 0.36 },
   { id: 'stay', label: 'Durante la estancia', range: 'D+1 → D+n', from: 0.36, to: 0.66 },
   { id: 'departure', label: 'Salida', range: 'D+n', from: 0.66, to: 0.86 },
   { id: 'after', label: 'Después de la estancia', range: 'D+1 → D+2', from: 0.86, to: 1.0 },

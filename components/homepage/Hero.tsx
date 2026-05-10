@@ -1,6 +1,7 @@
 "use client";
 
 import { useTranslations } from 'next-intl';
+import { Link } from '@/i18n/routing';
 import { HeroAnimationJourney } from './HeroAnimationJourney';
 
 export function Hero() {
@@ -24,11 +25,11 @@ export function Hero() {
           </p>
           <div style={{ display: 'flex', gap: 12, justifyContent: 'center', marginTop: 32, flexWrap: 'wrap' }} className="hero-cta-buttons">
             <a href="#animation" className="btn btn-primary btn-lg">{t('ctaPrimary')}</a>
-            <a href="/demo?source=homepage-hero" className="btn btn-ghost btn-lg">{t('ctaSecondary')}</a>
+            <Link href={{ pathname: '/demo', query: { source: 'homepage-hero' } }} className="btn btn-ghost btn-lg">{t('ctaSecondary')}</Link>
           </div>
         </div>
 
-        <div id="animation">
+        <div id="animation" className="hero-journey-bleed">
           <HeroAnimationJourney />
         </div>
 
@@ -74,6 +75,17 @@ export function Hero() {
           .hero-section .badge {
             font-size: 11px !important;
             padding: 6px 12px !important;
+          }
+
+          /* Orchestration graph: pleine largeur viewport (centrage via calc) */
+          .hero-journey-bleed {
+            width: 100vw;
+            max-width: 100vw;
+            margin-left: calc(50% - 50vw);
+            margin-right: calc(50% - 50vw);
+            position: relative;
+            left: auto;
+            right: auto;
           }
         }
       `}</style>

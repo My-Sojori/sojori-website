@@ -3,6 +3,7 @@
 import { useTranslations } from 'next-intl';
 import { BackgroundEffects } from '@/components/BackgroundEffects';
 import { PageHeader, PageFooter, PageHero, StatsBar, FinalCTA } from '@/components/SharedComponents';
+import { ScrollPaginationDots } from '@/components/shared/ScrollPaginationDots';
 
 interface Card {
   who: string;
@@ -40,9 +41,9 @@ function StaffBoard() {
   ];
 
   return (
-    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 14 }}>
+    <ScrollPaginationDots itemCount={3} gap={14} peekCarousel>
       {cols.map(col => (
-        <div key={col.t} style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid var(--glass-border)', borderRadius: 14, padding: 14 }}>
+        <div key={col.t} data-carousel-slide style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid var(--glass-border)', borderRadius: 14, padding: 14, flexShrink: 0 }}>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 12, padding: '4px 6px' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
               <span style={{ width: 8, height: 8, borderRadius: '50%', background: col.c, boxShadow: `0 0 8px ${col.c}` }} />
@@ -73,7 +74,7 @@ function StaffBoard() {
           </div>
         </div>
       ))}
-    </div>
+    </ScrollPaginationDots>
   );
 }
 
@@ -98,9 +99,9 @@ function StaffKPIs() {
   ];
 
   return (
-    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 12 }}>
+    <ScrollPaginationDots itemCount={4} gap={12} peekCarousel className="sj-peek-sm">
       {staff.map(s => (
-        <div key={s.name} className="card" style={{ padding: 18 }}>
+        <div key={s.name} data-carousel-slide className="card" style={{ padding: 18, flexShrink: 0 }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 14 }}>
             <div style={{ width: 36, height: 36, borderRadius: '50%', background: s.avatar, fontSize: 13, fontWeight: 700, color: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>{s.name[0]}</div>
             <div>
@@ -124,7 +125,7 @@ function StaffKPIs() {
           </div>
         </div>
       ))}
-    </div>
+    </ScrollPaginationDots>
   );
 }
 
@@ -168,10 +169,8 @@ export default function TeamflowPage() {
           }
 
           div[style*="gridTemplateColumns: 'repeat(3, 1fr)'"] > * {
-            min-width: 280px !important;
-            max-width: 300px !important;
             flex-shrink: 0 !important;
-            scroll-snap-align: start !important;
+            scroll-snap-align: center !important;
           }
 
           div[style*="gridTemplateColumns: 'repeat(4, 1fr)'"] {
@@ -184,20 +183,14 @@ export default function TeamflowPage() {
           }
 
           div[style*="gridTemplateColumns: 'repeat(4, 1fr)'"] > * {
-            min-width: 160px !important;
-            max-width: 180px !important;
             flex-shrink: 0 !important;
-            scroll-snap-align: start !important;
+            scroll-snap-align: center !important;
           }
 
           .btn {
             min-height: 44px !important;
             padding: 12px 20px !important;
           }
-
-          ::-webkit-scrollbar { height: 8px; }
-          ::-webkit-scrollbar-track { background: rgba(255,255,255,0.05); border-radius: 4px; }
-          ::-webkit-scrollbar-thumb { background: rgba(244,207,94,0.3); border-radius: 4px; }
         }
       `}</style>
       <BackgroundEffects />
@@ -232,15 +225,17 @@ export default function TeamflowPage() {
           <div style={{ maxWidth: 1200, margin: '0 auto' }}>
             <div className="uppercase-sm" style={{ color: 'var(--text-3)', marginBottom: 12 }}>{t('capabilities.sectionBadge')}</div>
             <div style={{ fontSize: 32, fontWeight: 700, letterSpacing: '-0.02em', marginBottom: 32, maxWidth: 700 }}>{t('capabilities.sectionTitle')}</div>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 16 }}>
-              {capabilities.map(c => (
-                <div key={c.title} className="card" style={{ padding: 22 }}>
-                  <div style={{ fontSize: 28, marginBottom: 10 }}>{c.icon}</div>
-                  <div style={{ fontSize: 16, fontWeight: 600, marginBottom: 4 }}>{c.title}</div>
-                  <div style={{ fontSize: 13, color: 'var(--text-3)', lineHeight: 1.55 }}>{c.description}</div>
-                </div>
-              ))}
-            </div>
+            <ScrollPaginationDots itemCount={capabilities.length} gap={14} peekCarousel>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, minmax(0, 1fr))', gap: 16 }}>
+                {capabilities.map(c => (
+                  <div key={c.title} data-carousel-slide className="card" style={{ padding: 22 }}>
+                    <div style={{ fontSize: 28, marginBottom: 10 }}>{c.icon}</div>
+                    <div style={{ fontSize: 16, fontWeight: 600, marginBottom: 4 }}>{c.title}</div>
+                    <div style={{ fontSize: 13, color: 'var(--text-3)', lineHeight: 1.55 }}>{c.description}</div>
+                  </div>
+                ))}
+              </div>
+            </ScrollPaginationDots>
           </div>
         </section>
         <StatsBar stats={stats.map(s => ({ k: s.key, l: s.label }))} />

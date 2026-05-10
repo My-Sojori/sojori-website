@@ -161,7 +161,7 @@ export default function OwnerPortalPage() {
 
         <section style={{ padding: "20px 32px 80px" }}>
           <div style={{ maxWidth: 1100, margin: "0 auto" }}>
-            <div style={{ display: "grid", gridTemplateColumns: "1fr 1.2fr", gap: 60, alignItems: "center" }}>
+            <div className="owner-portal-showcase" style={{ display: "grid", gridTemplateColumns: "1fr 1.2fr", gap: 60, alignItems: "center" }}>
               <div>
                 <div className="uppercase-sm" style={{ color: "var(--text-3)", marginBottom: 14 }}>● App mobile dédiée</div>
                 <div style={{ fontSize: 36, fontWeight: 700, letterSpacing: "-0.02em", marginBottom: 16, lineHeight: 1.1 }}>Tout ce que vous voulez savoir. <span className="gradient-text">À portée de pouce.</span></div>
@@ -183,9 +183,11 @@ export default function OwnerPortalPage() {
                   ))}
                 </div>
               </div>
-              <div style={{ display: "flex", justifyContent: "center", position: "relative" }}>
-                <div style={{ position: "absolute", inset: "-50px", background: "radial-gradient(circle, rgba(230,176,34,0.18), transparent 65%)", pointerEvents: "none" }} />
-                <OwnerPhone />
+              <div className="owner-portal-phone-wrap" style={{ display: "flex", justifyContent: "center", position: "relative" }}>
+                <div className="owner-portal-phone-glow" style={{ position: "absolute", inset: "-50px", background: "radial-gradient(circle, rgba(230,176,34,0.18), transparent 65%)", pointerEvents: "none" }} />
+                <div className="owner-portal-phone-device">
+                  <OwnerPhone />
+                </div>
               </div>
             </div>
           </div>

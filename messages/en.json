@@ -17,7 +17,10 @@
       "integrations": "Integrations",
       "about": "About",
       "login": "Login",
-      "getDemo": "Get demo"
+      "getDemo": "Get demo",
+      "openMenu": "Open navigation menu",
+      "closeMenu": "Close menu",
+      "menuTitle": "Navigation menu"
     },
     "cta": {
       "getStarted": "Get Started",
@@ -37,9 +40,12 @@
     "toggles": {
       "monthly": "Monthly",
       "annual": "Annual",
-      "annualSave": "−20%",
-      "foundingMember": "🇲🇦 Morocco Founding Member",
-      "foundingDiscount": "−30% / 24 months"
+      "annualSave": "−20%"
+    },
+    "carousel": {
+      "hint": "Swipe · 3 plans",
+      "navLabel": "Choose a plan",
+      "goToTier": "Show {name}"
     },
     "calculator": {
       "yourProperties": "Your properties",
@@ -110,12 +116,7 @@
     },
     "onboarding": {
       "title": "€300 one-time onboarding",
-      "description": "on all tiers · migration from your current tool + WhatsApp setup + 2h Zoom training ·",
-      "foundingFree": "free for Founding Members 🇲🇦"
-    },
-    "foundingBanner": {
-      "text": "🇲🇦 {highlight} — reserved for the first 50 Moroccan property managers. Price locked for 24 months. Annual commitment required. €300 onboarding included.",
-      "highlight": "Morocco Founding Member"
+      "description": "on all tiers · migration from your current tool + WhatsApp setup + 2h Zoom training."
     },
     "faq": {
       "title": "Frequently asked",
@@ -124,7 +125,7 @@
       "questions": {
         "engagement": {
           "q": "Is there a commitment?",
-          "a": "Monthly: no commitment, cancel anytime. Annual: 12 months in exchange for −20%. Founding Member: 24 months in exchange for −30% + free onboarding."
+          "a": "Monthly: no commitment, cancel anytime. Annual: 12 months in exchange for −20%."
         },
         "onboarding": {
           "q": "How does onboarding work?",
@@ -141,10 +142,6 @@
         "changeTier": {
           "q": "Can I change tiers during the year?",
           "a": "Yes. Upgrade anytime (prorated). Downgrade at the end of the billing cycle."
-        },
-        "foundingEnd": {
-          "q": "What happens at the end of the 24-month Founding Member period?",
-          "a": "You return to the standard rate for your chosen tier (with 60 days notice). You keep your data, configuration, and WhatsApp number without interruption."
         },
         "freeTrial": {
           "q": "Is there a free trial?",
@@ -176,12 +173,13 @@
     },
     "valueProp": {
       "badge": "Architecture",
-      "title": "Three layers.",
-      "titleSub": "One single conversation.",
-      "subtitle": "The orchestration engine at the center. WhatsApp surfaces in front. Operation modules at the foundation.",
+      "title": "Three layers of architecture.",
+      "titleSub": "Zero layers of complexity.",
+      "subtitle": "The modules work. The AI decides. WhatsApp simplifies.",
+      "closing": "You pilot.",
       "modules": {
         "icon": "⚙️",
-        "title": "Operation Modules",
+        "title": "The modules work",
         "sub": "The foundation.",
         "items": [
           "PMS · multi-property calendar",
@@ -194,7 +192,7 @@
       },
       "orchestration": {
         "icon": "🧠",
-        "title": "AI Orchestration",
+        "title": "The AI decides",
         "sub": "The engine.",
         "badge": "SIGNATURE",
         "items": [
@@ -208,8 +206,8 @@
       },
       "whatsapp": {
         "icon": "💬",
-        "title": "WhatsApp · 4 apps",
-        "sub": "The surfaces.",
+        "title": "WhatsApp simplifies",
+        "sub": "The surface.",
         "items": [
           "Guest — the traveler, in 12 languages",
           "Staff — the field team",
@@ -404,58 +402,61 @@
     "pricingPreview": {
       "badge": "Pricing",
       "title": "Transparent. No surprises.",
-      "subtitle": "No hidden fees. Easy cancellation anytime. 14-day free trial.",
+      "subtitle": "No hidden fees. Easy cancellation anytime. 1-month free trial.",
       "tiers": [
         {
-          "name": "STARTER",
+          "name": "SOLO",
           "tagline": "To get started.",
-          "range": "2-10 properties",
-          "price": "49",
+          "range": "1-10 properties",
+          "price": "15",
           "period": "/property/month",
           "items": [
             "PMS module",
-            "Channel Manager (5 OTAs)",
-            "Basic WhatsApp AI",
-            "Email support",
-            "1 staff user"
+            "Channel Manager",
+            "Unified Inbox",
+            "Task management",
+            "Guest WhatsApp (limited)",
+            "Owner Portal (limited)"
           ],
           "cta": "Try for free"
         },
         {
-          "name": "GROWTH",
+          "name": "ORCHESTRE",
           "tagline": "To orchestrate.",
-          "range": "11-50 properties",
-          "price": "39",
+          "range": "11-100 properties",
+          "price": "35",
           "period": "/property/month",
           "badge": "★ POPULAR",
           "items": [
-            "Everything in Starter +",
+            "Everything in Solo +",
+            "Full WhatsApp AI (guest + admin + staff)",
             "Unlimited Channel Manager (20+ OTAs)",
-            "Advanced WhatsApp AI",
-            "API access",
-            "White label",
-            "Multi-users",
+            "Dynamic pricing",
+            "Advanced TeamFlow",
+            "Real-time analytics",
             "24/7 priority support"
           ],
           "cta": "Try for free"
         },
         {
-          "name": "SCALE",
+          "name": "SYMPHONIE",
           "tagline": "To scale.",
-          "range": "51-2000+ properties",
-          "price": "Custom",
+          "range": "100-2000+ properties",
+          "price": "59",
+          "period": "/property/month",
           "items": [
-            "Everything in Growth +",
+            "Everything in Orchestre +",
+            "WhatsApp direct booking",
+            "Multi-brand",
+            "Full orchestration",
+            "API & webhooks",
             "Dedicated account manager",
-            "99.99% premium SLA",
-            "Custom integrations",
-            "On-site onboarding",
-            "Team training"
+            "99.99% premium SLA"
           ],
           "cta": "Contact sales"
         }
       ],
-      "footer": "✓ 14-day free trial · ✓ Easy cancellation · ✓ Setup in less than 7 days"
+      "footer": "✓ 1-month free trial · ✓ Easy cancellation · ✓ Setup in less than 7 days"
     },
     "finalCTA": {
       "title": "Ready to",
@@ -474,6 +475,13 @@
       "title": "4 WhatsApp systems.",
       "titleGradient": "One unified platform.",
       "subtitle": "Sojori uses WhatsApp as the main channel to communicate with your guests, your team, and to let you manage your business from your phone. No app to download. Just WhatsApp."
+    },
+    "sectionNav": {
+      "hint": "Scroll the chips to jump to each flow — every use case is on this page."
+    },
+    "guestMenu": {
+      "more": "More menu options",
+      "less": "Hide extra options"
     },
     "systems": {
       "guest": {
@@ -636,8 +644,8 @@
             "detail": "Route to each property"
           },
           {
-            "label": "QR code validation",
-            "detail": "Scan on arrival + completion photos"
+            "label": "WhatsApp location sharing",
+            "detail": "Auto-verify arrival + damage photos"
           },
           {
             "label": "Automatic timer",
@@ -1115,7 +1123,7 @@
     "finalCTA": {
       "title": "Invite your team.",
       "titleGradient": "In 60 seconds.",
-      "subtitle": "One SMS, they accept, they're operational. No app, no training."
+      "subtitle": "One WhatsApp message, they accept, they're operational. No app, no training."
     }
   },
   "guestExperience": {
@@ -1731,14 +1739,23 @@
   },
   "demo": {
     "pageTitle": "Request a demo",
+    "errors": {
+      "submitStep1": "We couldn't save your request. Try again or email contact@sojori.com.",
+      "invalidResponse": "Unexpected server response. Please try again.",
+      "availability": "Could not load availability.",
+      "bookSlot": "Could not book this time slot.",
+      "qualify": "Could not submit the questionnaire."
+    },
     "step1": {
       "badge": "Free demo · 30 minutes",
       "title": "Book your ",
       "titleGradient": "free demo",
       "subtitle": "Discover how Sojori automatically orchestrates +20 tasks from booking to checkout.",
-      "emailLabel": "Professional email *",
+      "emailLabel": "Email *",
       "emailPlaceholder": "you@company.com",
-      "dialLabel": "Country code",
+      "dialLabel": "Country / dial code *",
+      "dialSearchPlaceholder": "Search country or +33…",
+      "dialNoResults": "No matches",
       "phoneLabel": "Phone *",
       "phonePlaceholder": "6 12 34 56 78",
       "propertiesLabel": "Number of properties *",
@@ -1882,7 +1899,7 @@
         "feature1Desc": "Data import included",
         "feature2Title": "Personalized demo",
         "feature2Desc": "Tailored to your PMS and channels",
-        "feature3Title": "14 days free",
+        "feature3Title": "1 month free",
         "feature3Desc": "No commitment"
       },
       "trustIndicators": {
@@ -1895,7 +1912,7 @@
           "description": "Based on your context"
         },
         "trial": {
-          "title": "14 days free",
+          "title": "1 month free",
           "description": "No commitment"
         }
       }
@@ -1911,7 +1928,7 @@
       },
       "trial": {
         "title": "No commitment",
-        "description": "14-day free trial"
+        "description": "1-month free trial"
       }
     }
   },
@@ -2046,7 +2063,7 @@
     "finalCTA": {
       "titleBefore": "Migrate your PMS.",
       "titleGradient": "In 7 days.",
-      "subtitle": "Migration from Hostfully, Smoobu, Lodgify included. Guided onboarding. 14-day trial."
+      "subtitle": "Migration from Hostfully, Smoobu, Lodgify included. Guided onboarding. 1-month free trial."
     }
   }
 }

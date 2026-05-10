@@ -1,23 +1,35 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { normalizeDemoBackendResponse } from '@/lib/demoApiResponse';
+import {
+  getDemoServiceBaseUrl,
+  getDemoProxyFailureMessage,
+} from '@/lib/getDemoServiceBaseUrl';
+import { demoProxyFetch, devFetchDetailForDemo } from '@/lib/demoProxyFetch';
 
 /**
- * GET /api/v1/demo/booking-week — proxy vers srv-user (créneaux publics, 7 jours).
+ * GET /api/v1/demo/booking-week — proxy → srv-crm (créneaux publics, 7 jours).
  */
 export async function GET(request: NextRequest) {
   try {
-    const SRV_USER_URL = process.env.SRV_USER_URL || 'http://localhost:4005';
+    const backendBase = getDemoServiceBaseUrl();
     const q = request.nextUrl.searchParams.toString();
-    const url = `${SRV_USER_URL}/api/v1/demo/booking-week${q ? `?${q}` : ''}`;
-    const response = await fetch(url, {
+    const url = `${backendBase}/api/v1/demo/booking-week${q ? `?${q}` : ''}`;
+    const response = await demoProxyFetch(url, {
       method: 'GET',
       headers: { 'cache-control': 'no-store' },
     });
-    const data = await response.json();
+    let raw: unknown;
+    try {
+      raw = await response.json();
+    } catch {
+      return NextResponse.json({ success: false, error: 'Invalid JSON from demo service' }, { status: 502 });
+    }
+    const data = normalizeDemoBackendResponse(raw);
     return NextResponse.json(data, { status: response.status });
   } catch (error: unknown) {
     console.error('Error proxying booking-week:', error);
     return NextResponse.json(
-      { success: false, error: 'Failed to connect to backend service' },
+      { success: false, error: `${getDemoProxyFailureMessage()}${devFetchDetailForDemo(error)}` },
       { status: 500 },
     );
   }

@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { getTranslations } from 'next-intl/server';
+import { Link } from '@/i18n/routing';
 import { BackgroundEffects } from '@/components/BackgroundEffects';
 import { PageHeader, PageFooter, PageHero, StatsBar, FinalCTA } from '@/components/SharedComponents';
 
@@ -57,18 +58,18 @@ export default function GestionLocativeMarrakechPage() {
             </div>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 16 }}>
               {[
-                { i: '📋', t: 'PMS Multi-Propriétés', d: 'Calendrier unifié riads/villas. Réservations, paiements MAD/EUR, facturation automatique, contrats digitaux. Taxe de séjour Marrakech intégrée.', link: '/pms' },
-                { i: '🔄', t: 'Channel Manager Temps Réel', d: 'Synchronisation Airbnb, Booking.com, Expedia. Évitez surréservations, gérez calendrier depuis un dashboard. API 2-way temps réel.', link: '/channel-manager' },
-                { i: '💬', t: 'WhatsApp Conciergerie 24/7', d: 'WhatsApp Business API. Conciergerie automatique FR/AR/EN. Check-in digital, réservation transport, épicerie, expériences. Guests satisfaits = reviews 5★.', link: '/whatsapp' },
-                { i: '💰', t: 'Dynamic Pricing Local', d: 'Yield management adapté Marrakech : événements (Marathon, festivals), saisons touristiques, jours fériés marocains. Optimisez RevPAR automatiquement.', link: '/dynamic-pricing' },
-                { i: '👥', t: 'Gestion Équipe Locale', d: 'Planification ménage, attribution tâches conciergerie, suivi performances. Coordonnez femmes de ménage, gardiens, maintenance — zéro WhatsApp perso.', link: '/teamflow' },
-                { i: '📊', t: 'Analytics & Reporting', d: 'Revenue par propriété, occupation, ADR, RevPAR. Export comptable mensuel. Dashboards temps réel pour pilotage data-driven.', link: '/analytics' },
+                { i: '📋', t: 'PMS Multi-Propriétés', d: 'Calendrier unifié riads/villas. Réservations, paiements MAD/EUR, facturation automatique, contrats digitaux. Taxe de séjour Marrakech intégrée.', link: '/pms' as const },
+                { i: '🔄', t: 'Channel Manager Temps Réel', d: 'Synchronisation Airbnb, Booking.com, Expedia. Évitez surréservations, gérez calendrier depuis un dashboard. API 2-way temps réel.', link: '/channel-manager' as const },
+                { i: '💬', t: 'WhatsApp Conciergerie 24/7', d: 'WhatsApp Business API. Conciergerie automatique FR/AR/EN. Check-in digital, réservation transport, épicerie, expériences. Guests satisfaits = reviews 5★.', link: '/whatsapp' as const },
+                { i: '💰', t: 'Dynamic Pricing Local', d: 'Yield management adapté Marrakech : événements (Marathon, festivals), saisons touristiques, jours fériés marocains. Optimisez RevPAR automatiquement.', link: '/dynamic-pricing' as const },
+                { i: '👥', t: 'Gestion Équipe Locale', d: 'Planification ménage, attribution tâches conciergerie, suivi performances. Coordonnez femmes de ménage, gardiens, maintenance — zéro WhatsApp perso.', link: '/teamflow' as const },
+                { i: '📊', t: 'Analytics & Reporting', d: 'Revenue par propriété, occupation, ADR, RevPAR. Export comptable mensuel. Dashboards temps réel pour pilotage data-driven.', link: '/analytics' as const },
               ].map(c => (
                 <div key={c.t} className="card" style={{ padding: 22 }}>
                   <div style={{ fontSize: 28, marginBottom: 10 }}>{c.i}</div>
                   <div style={{ fontSize: 16, fontWeight: 600, marginBottom: 4 }}>{c.t}</div>
                   <div style={{ fontSize: 13, color: 'var(--text-3)', lineHeight: 1.55, marginBottom: 12 }}>{c.d}</div>
-                  <a href={c.link} style={{ fontSize: 12, color: '#f4cf5e', textDecoration: 'none', fontWeight: 600 }}>En savoir plus →</a>
+                  <Link href={{ pathname: c.link, query: { source: 'seo-gestion-locative-marrakech' } }} style={{ fontSize: 12, color: '#f4cf5e', textDecoration: 'none', fontWeight: 600 }}>En savoir plus →</Link>
                 </div>
               ))}
             </div>
@@ -113,7 +114,7 @@ export default function GestionLocativeMarrakechPage() {
         ]} />
 
         <FinalCTA
-          title={<>Rejoignez les property managers de Marrakech. <span className="gradient-text">Essai 14 jours gratuit.</span></>}
+          title={<>Rejoignez les property managers de Marrakech. <span className="gradient-text">1 mois d&apos;essai gratuit.</span></>}
           subtitle="Onboarding guidé en français. Migration depuis Hostfully, Smoobu, Lodgify offerte. Support dédié Marrakech."
         />
 

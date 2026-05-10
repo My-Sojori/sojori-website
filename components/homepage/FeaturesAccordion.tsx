@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { useTranslations } from 'next-intl';
+import { Link } from '@/i18n/routing';
 import { Check, SectionHead } from '../SharedComponents';
 
 export function FeaturesAccordion() {
@@ -19,7 +20,7 @@ export function FeaturesAccordion() {
         t('features.0.items.3'),
         t('features.0.items.4')
       ],
-      link: '/dashboard-app',
+      link: '/dashboard-app' as const,
     },
     {
       icon: t('features.1.icon'),
@@ -31,7 +32,7 @@ export function FeaturesAccordion() {
         t('features.1.items.3'),
         t('features.1.items.4')
       ],
-      link: '/channel-manager',
+      link: '/channel-manager' as const,
     },
     {
       icon: t('features.2.icon'),
@@ -43,7 +44,7 @@ export function FeaturesAccordion() {
         t('features.2.items.3'),
         t('features.2.items.4')
       ],
-      link: '/whatsapp',
+      link: '/whatsapp' as const,
     },
     {
       icon: t('features.3.icon'),
@@ -55,7 +56,7 @@ export function FeaturesAccordion() {
         t('features.3.items.3'),
         t('features.3.items.4')
       ],
-      link: '/dynamic-pricing',
+      link: '/dynamic-pricing' as const,
     },
     {
       icon: t('features.4.icon'),
@@ -67,7 +68,7 @@ export function FeaturesAccordion() {
         t('features.4.items.3'),
         t('features.4.items.4')
       ],
-      link: '/owner-portal',
+      link: '/owner-portal' as const,
     },
     {
       icon: t('features.5.icon'),
@@ -146,7 +147,7 @@ export function FeaturesAccordion() {
                 </button>
                 {isOpen && (
                   <div style={{ padding: '0 28px 24px 68px', animation: 'fade-up 0.4s ease' }} className="accordion-content">
-                    <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8px 24px' }} className="accordion-items">
+                    <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8px 24px' }} className="accordion-items sj-mobile-hscroll">
                       {f.items.map((it) => (
                         <li key={it} style={{ display: 'flex', alignItems: 'flex-start', gap: 8, fontSize: 14, color: 'var(--text-2)' }}>
                           <Check />
@@ -155,8 +156,8 @@ export function FeaturesAccordion() {
                       ))}
                     </ul>
                     {f.link ? (
-                      <a
-                        href={f.link}
+                      <Link
+                        href={{ pathname: f.link, query: { source: 'homepage-features-accordion' } }}
                         style={{
                           color: 'var(--primary)',
                           textDecoration: 'none',
@@ -173,7 +174,7 @@ export function FeaturesAccordion() {
                         }}
                       >
                         {t('features.0.cta')}
-                      </a>
+                      </Link>
                     ) : (
                       <span style={{ color: 'var(--text-3)', fontSize: 13, fontWeight: 500, marginTop: 16, display: 'inline-block', fontStyle: 'italic' }}>
                         {t('features.0.comingSoon')}
@@ -187,12 +188,7 @@ export function FeaturesAccordion() {
         </div>
       </div>
       <style jsx>{`
-        @media (max-width: 768px) {
-          .features-accordion-section { padding: 70px 20px !important; }
-          .accordion-button { padding: 16px 20px !important; gap: 12px !important; }
-          .accordion-icon { font-size: 20px !important; }
-          .accordion-title { font-size: 15px !important; }
-          .accordion-content { padding: 0 20px 20px 20px !important; }
+        @media (max-width: 900px) {
           .accordion-items {
             display: flex !important;
             overflow-x: auto !important;
@@ -202,15 +198,19 @@ export function FeaturesAccordion() {
             padding-bottom: 20px !important;
           }
           .accordion-items > * {
-            min-width: 280px !important;
-            max-width: 300px !important;
+            min-width: min(280px, 85vw) !important;
+            max-width: min(300px, 90vw) !important;
             flex-shrink: 0 !important;
-            scroll-snap-align: start !important;
+            scroll-snap-align: center !important;
           }
         }
-        ::-webkit-scrollbar { height: 8px; }
-        ::-webkit-scrollbar-track { background: rgba(255,255,255,0.05); border-radius: 4px; }
-        ::-webkit-scrollbar-thumb { background: rgba(244,207,94,0.3); border-radius: 4px; }
+        @media (max-width: 768px) {
+          .features-accordion-section { padding: 70px 20px !important; }
+          .accordion-button { padding: 16px 20px !important; gap: 12px !important; }
+          .accordion-icon { font-size: 20px !important; }
+          .accordion-title { font-size: 15px !important; }
+          .accordion-content { padding: 0 20px 20px 20px !important; }
+        }
       `}</style>
     </section>
   );

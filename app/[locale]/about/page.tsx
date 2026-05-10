@@ -2,9 +2,10 @@
 
 import { BackgroundEffects } from '@/components/BackgroundEffects';
 import { PageHeader, PageFooter } from '@/components/SharedComponents';
-import Link from 'next/link';
+import { Link } from '@/i18n/routing';
 import React from 'react';
 import { useTranslations } from 'next-intl';
+import { ScrollPaginationDots } from '@/components/shared/ScrollPaginationDots';
 
 export default function AboutPage() {
   const t = useTranslations('about');
@@ -20,11 +21,14 @@ export default function AboutPage() {
           to { transform: translateX(-50%); }
         }
 
+        .hero-stats-scroll {
+          display: grid;
+          grid-template-columns: repeat(3, minmax(0, 1fr));
+          gap: 12px;
+        }
+
         @media (max-width: 920px) {
           .hero-grid { grid-template-columns: 1fr !important; }
-          .values-grid { grid-template-columns: 1fr !important; }
-          .timeline-track { grid-template-columns: 1fr !important; }
-          .timeline-track::before { display: none !important; }
           .team-grid { grid-template-columns: 1fr !important; }
           .founder-card { grid-template-columns: 1fr !important; text-align: center !important; }
         }
@@ -48,74 +52,9 @@ export default function AboutPage() {
             grid-template-columns: 1fr !important;
           }
 
-          div[style*="gridTemplateColumns: '1fr 1fr'"] {
-            display: flex !important;
-            overflow-x: auto !important;
-            scroll-snap-type: x mandatory !important;
-            -webkit-overflow-scrolling: touch !important;
-            gap: 16px !important;
-            padding-bottom: 20px !important;
-          }
-
-          div[style*="gridTemplateColumns: '1fr 1fr'"] > * {
-            min-width: 300px !important;
-            max-width: 320px !important;
-            flex-shrink: 0 !important;
-            scroll-snap-align: start !important;
-          }
-
-          div[style*="gridTemplateColumns: 'repeat(3, 1fr)'"] {
-            display: flex !important;
-            overflow-x: auto !important;
-            scroll-snap-type: x mandatory !important;
-            -webkit-overflow-scrolling: touch !important;
-            gap: 16px !important;
-            padding-bottom: 20px !important;
-          }
-
-          div[style*="gridTemplateColumns: 'repeat(3, 1fr)'"] > * {
-            min-width: 280px !important;
-            max-width: 300px !important;
-            flex-shrink: 0 !important;
-            scroll-snap-align: start !important;
-          }
-
-          .values-grid {
-            display: flex !important;
-            overflow-x: auto !important;
-            scroll-snap-type: x mandatory !important;
-            -webkit-overflow-scrolling: touch !important;
-            gap: 16px !important;
-            padding-bottom: 20px !important;
-          }
-
-          .values-grid > div {
-            min-width: 300px !important;
-            max-width: 320px !important;
-            flex-shrink: 0 !important;
-            scroll-snap-align: start !important;
-            grid-column: auto !important;
-          }
-
           div[style*="gridTemplateColumns: '80px 1fr'"] {
             grid-template-columns: 1fr !important;
             gap: 16px !important;
-          }
-
-          .timeline-track {
-            display: flex !important;
-            overflow-x: auto !important;
-            scroll-snap-type: x mandatory !important;
-            -webkit-overflow-scrolling: touch !important;
-            gap: 16px !important;
-            padding-bottom: 20px !important;
-          }
-
-          .timeline-track > * {
-            min-width: 280px !important;
-            max-width: 300px !important;
-            flex-shrink: 0 !important;
-            scroll-snap-align: start !important;
           }
 
           .team-grid {
@@ -128,30 +67,15 @@ export default function AboutPage() {
             padding: 32px 20px !important;
           }
 
-          div[style*="gridTemplateColumns: 'repeat(3, 1fr)'"][style*="gap: 4"] {
-            display: flex !important;
-            overflow-x: auto !important;
-            scroll-snap-type: x mandatory !important;
-            -webkit-overflow-scrolling: touch !important;
-            gap: 16px !important;
-            padding-bottom: 20px !important;
-          }
-
-          div[style*="gridTemplateColumns: 'repeat(3, 1fr)'"][style*="gap: 4"] > * {
-            min-width: 120px !important;
-            max-width: 140px !important;
-            flex-shrink: 0 !important;
-            scroll-snap-align: start !important;
-          }
-
           .btn {
             min-height: 44px !important;
             padding: 12px 20px !important;
           }
 
-          ::-webkit-scrollbar { height: 8px; }
-          ::-webkit-scrollbar-track { background: rgba(255,255,255,0.05); border-radius: 4px; }
-          ::-webkit-scrollbar-thumb { background: rgba(244,207,94,0.3); border-radius: 4px; }
+          .about-origin-chapter-grid {
+            grid-template-columns: 52px 1fr !important;
+            gap: 16px !important;
+          }
         }
       `}</style>
 
@@ -201,34 +125,30 @@ export default function AboutPage() {
                 </p>
                 <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', marginBottom: 24 }}>
                   <Link href="/demo" className="btn btn-primary btn-lg">{t('hero.ctaDemo')}</Link>
-                  <Link href="#contact" className="btn btn-ghost btn-lg">{t('hero.ctaContact')}</Link>
+                  <a href="#contact" className="btn btn-ghost btn-lg">{t('hero.ctaContact')}</a>
                 </div>
-                <div style={{
-                  display: 'grid',
-                  gridTemplateColumns: 'repeat(3, 1fr)',
-                  gap: 4,
-                  borderTop: '1px solid var(--border)',
-                  paddingTop: 24
-                }}>
-                  <div style={{ paddingRight: 12 }}>
-                    <div style={{ fontSize: 28, fontWeight: 600, lineHeight: 1, letterSpacing: '-0.03em' }}>{t('hero.stats.launch.value')}</div>
-                    <div className="mono" style={{ fontSize: 11, color: 'var(--text-3)', marginTop: 6, fontFamily: 'var(--font-mono)', letterSpacing: 0.3, textTransform: 'uppercase' }}>
-                      {t('hero.stats.launch.label')}
+                <ScrollPaginationDots itemCount={3} gap={12} peekCarousel className="about-hero-stats-peek hero-stats-grid" style={{ borderTop: '1px solid var(--border)', paddingTop: 24 }}>
+                  <div className="hero-stats-scroll" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, minmax(0, 1fr))', gap: 12 }}>
+                    <div data-carousel-slide className="about-hero-stat-slide" style={{ padding: '16px 14px', borderRadius: 14, background: 'var(--glass)', border: '1px solid var(--glass-border)' }}>
+                      <div style={{ fontSize: 'clamp(26px, 5vw, 32px)', fontWeight: 600, lineHeight: 1.1, letterSpacing: '-0.03em' }}>{t('hero.stats.launch.value')}</div>
+                      <div className="mono" style={{ fontSize: 11, color: 'var(--text-3)', marginTop: 8, fontFamily: 'var(--font-mono)', letterSpacing: 0.3, textTransform: 'uppercase' }}>
+                        {t('hero.stats.launch.label')}
+                      </div>
+                    </div>
+                    <div data-carousel-slide className="about-hero-stat-slide" style={{ padding: '16px 14px', borderRadius: 14, background: 'var(--glass)', border: '1px solid var(--glass-border)' }}>
+                      <div style={{ fontSize: 'clamp(26px, 5vw, 32px)', fontWeight: 600, lineHeight: 1.1, letterSpacing: '-0.03em' }}>{t('hero.stats.cities.value')}</div>
+                      <div className="mono" style={{ fontSize: 11, color: 'var(--text-3)', marginTop: 8, fontFamily: 'var(--font-mono)', letterSpacing: 0.3, textTransform: 'uppercase' }}>
+                        {t('hero.stats.cities.label')}
+                      </div>
+                    </div>
+                    <div data-carousel-slide className="about-hero-stat-slide" style={{ padding: '16px 14px', borderRadius: 14, background: 'var(--glass)', border: '1px solid var(--glass-border)' }}>
+                      <div style={{ fontSize: 'clamp(17px, 3.8vw, 22px)', fontWeight: 600, lineHeight: 1.2, letterSpacing: '-0.02em', textWrap: 'balance' }}>{t('hero.stats.multiCountry.value')}</div>
+                      <div className="mono" style={{ fontSize: 11, color: 'var(--text-3)', marginTop: 8, fontFamily: 'var(--font-mono)', letterSpacing: 0.3, textTransform: 'uppercase', lineHeight: 1.45, textWrap: 'balance' }}>
+                        {t('hero.stats.multiCountry.label')}
+                      </div>
                     </div>
                   </div>
-                  <div style={{ paddingRight: 12 }}>
-                    <div style={{ fontSize: 28, fontWeight: 600, lineHeight: 1, letterSpacing: '-0.03em' }}>{t('hero.stats.cities.value')}</div>
-                    <div className="mono" style={{ fontSize: 11, color: 'var(--text-3)', marginTop: 6, fontFamily: 'var(--font-mono)', letterSpacing: 0.3, textTransform: 'uppercase' }}>
-                      {t('hero.stats.cities.label')}
-                    </div>
-                  </div>
-                  <div style={{ paddingRight: 12 }}>
-                    <div style={{ fontSize: 22, fontWeight: 600, lineHeight: 1, letterSpacing: '-0.03em', whiteSpace: 'nowrap' }}>{t('hero.stats.multiCountry.value')}</div>
-                    <div className="mono" style={{ fontSize: 11, color: 'var(--text-3)', marginTop: 6, fontFamily: 'var(--font-mono)', letterSpacing: 0.3, textTransform: 'uppercase', whiteSpace: 'nowrap' }}>
-                      {t('hero.stats.multiCountry.label')}
-                    </div>
-                  </div>
-                </div>
+                </ScrollPaginationDots>
               </div>
             </div>
           </div>
@@ -360,130 +280,150 @@ export default function AboutPage() {
               </h2>
             </div>
 
-            <div style={{ display: 'flex', flexDirection: 'column', gap: 56 }}>
-              {/* Chapter i */}
-              <div style={{ display: 'grid', gridTemplateColumns: '80px 1fr', gap: 32, alignItems: 'start' }}>
-                <div style={{
-                  color: 'var(--primary)',
-                  letterSpacing: '-0.04em'
-                }}>{t('origin.chapters.ch1.number')}</div>
-                <div>
-                  <h3 style={{
-                    fontWeight: 700,
-                    fontSize: 30,
-                    lineHeight: 1.15,
-                    letterSpacing: '-0.02em',
-                    margin: '0 0 16px'
-                  }}>
-                    {t('origin.chapters.ch1.title')}
-                  </h3>
-                  <p style={{ fontSize: 19, lineHeight: 1.6, color: 'var(--text-2)', margin: '0 0 14px', textWrap: 'pretty' }}>
-                    {t('origin.chapters.ch1.p1')}<strong style={{ color: 'var(--text)', fontWeight: 600 }}>{t('origin.chapters.ch1.p1Strong')}</strong>{t('origin.chapters.ch1.p1End')}
-                  </p>
-                  <p style={{ fontSize: 19, lineHeight: 1.6, color: 'var(--text-2)', margin: 0, textWrap: 'pretty' }}>
-                    {t('origin.chapters.ch1.p2')}<strong style={{ color: 'var(--text)' }}>{t('origin.chapters.ch1.p2Strong')}</strong>{t('origin.chapters.ch1.p2End')}
-                  </p>
+            <ScrollPaginationDots itemCount={3} gap={14} peekCarousel className="about-origin-chapters">
+              <div className="about-origin-chapters-track" style={{ display: 'flex', flexDirection: 'column', gap: 56 }}>
+                {/* Chapter i */}
+                <div data-carousel-slide className="about-origin-chapter-slide">
+                  <div className="about-origin-chapter-grid" style={{ display: 'grid', gridTemplateColumns: '80px 1fr', gap: 32, alignItems: 'start' }}>
+                    <div style={{
+                      color: 'var(--primary)',
+                      letterSpacing: '-0.04em',
+                      fontSize: 'clamp(28px, 6vw, 40px)',
+                      fontWeight: 600,
+                      lineHeight: 1
+                    }}>{t('origin.chapters.ch1.number')}</div>
+                    <div>
+                      <h3 style={{
+                        fontWeight: 700,
+                        fontSize: 'clamp(22px, 4vw, 30px)',
+                        lineHeight: 1.15,
+                        letterSpacing: '-0.02em',
+                        margin: '0 0 16px'
+                      }}>
+                        {t('origin.chapters.ch1.title')}
+                      </h3>
+                      <p style={{ fontSize: 'clamp(16px, 3.5vw, 19px)', lineHeight: 1.6, color: 'var(--text-2)', margin: '0 0 14px', textWrap: 'pretty' }}>
+                        {t('origin.chapters.ch1.p1')}<strong style={{ color: 'var(--text)', fontWeight: 600 }}>{t('origin.chapters.ch1.p1Strong')}</strong>{t('origin.chapters.ch1.p1End')}
+                      </p>
+                      <p style={{ fontSize: 'clamp(16px, 3.5vw, 19px)', lineHeight: 1.6, color: 'var(--text-2)', margin: 0, textWrap: 'pretty' }}>
+                        {t('origin.chapters.ch1.p2')}<strong style={{ color: 'var(--text)' }}>{t('origin.chapters.ch1.p2Strong')}</strong>{t('origin.chapters.ch1.p2End')}
+                      </p>
+                    </div>
+                  </div>
                 </div>
-              </div>
 
-              {/* Chapter ii */}
-              <div style={{ display: 'grid', gridTemplateColumns: '80px 1fr', gap: 32, alignItems: 'start' }}>
-                <div style={{
-                  color: 'var(--primary)',
-                  letterSpacing: '-0.04em'
-                }}>{t('origin.chapters.ch2.number')}</div>
-                <div>
-                  <h3 style={{
-                    fontWeight: 700,
-                    fontSize: 30,
-                    lineHeight: 1.15,
-                    letterSpacing: '-0.02em',
-                    margin: '0 0 16px'
-                  }}>
-                    {t('origin.chapters.ch2.title')}
-                  </h3>
-                  <p style={{ fontSize: 19, lineHeight: 1.6, color: 'var(--text-2)', margin: '0 0 14px', textWrap: 'pretty' }}>
-                    {t('origin.chapters.ch2.p1')}<strong style={{ color: 'var(--text)', fontWeight: 600 }}>{t('origin.chapters.ch2.p1Strong')}</strong>{t('origin.chapters.ch2.p1End')}
-                  </p>
-                  <p style={{ fontSize: 19, lineHeight: 1.6, color: 'var(--text-2)', margin: 0, textWrap: 'pretty' }}>
-                    {t('origin.chapters.ch2.p2')}
-                  </p>
+                {/* Chapter ii */}
+                <div data-carousel-slide className="about-origin-chapter-slide">
+                  <div className="about-origin-chapter-grid" style={{ display: 'grid', gridTemplateColumns: '80px 1fr', gap: 32, alignItems: 'start' }}>
+                    <div style={{
+                      color: 'var(--primary)',
+                      letterSpacing: '-0.04em',
+                      fontSize: 'clamp(28px, 6vw, 40px)',
+                      fontWeight: 600,
+                      lineHeight: 1
+                    }}>{t('origin.chapters.ch2.number')}</div>
+                    <div>
+                      <h3 style={{
+                        fontWeight: 700,
+                        fontSize: 'clamp(22px, 4vw, 30px)',
+                        lineHeight: 1.15,
+                        letterSpacing: '-0.02em',
+                        margin: '0 0 16px'
+                      }}>
+                        {t('origin.chapters.ch2.title')}
+                      </h3>
+                      <p style={{ fontSize: 'clamp(16px, 3.5vw, 19px)', lineHeight: 1.6, color: 'var(--text-2)', margin: '0 0 14px', textWrap: 'pretty' }}>
+                        {t('origin.chapters.ch2.p1')}<strong style={{ color: 'var(--text)', fontWeight: 600 }}>{t('origin.chapters.ch2.p1Strong')}</strong>{t('origin.chapters.ch2.p1End')}
+                      </p>
+                      <p style={{ fontSize: 'clamp(16px, 3.5vw, 19px)', lineHeight: 1.6, color: 'var(--text-2)', margin: 0, textWrap: 'pretty' }}>
+                        {t('origin.chapters.ch2.p2')}
+                      </p>
+                    </div>
+                  </div>
                 </div>
-              </div>
 
-              {/* Chapter iii */}
-              <div style={{ display: 'grid', gridTemplateColumns: '80px 1fr', gap: 32, alignItems: 'start' }}>
-                <div style={{
-                  color: 'var(--primary)',
-                  letterSpacing: '-0.04em'
-                }}>{t('origin.chapters.ch3.number')}</div>
-                <div>
-                  <h3 style={{
-                    fontWeight: 700,
-                    fontSize: 30,
-                    lineHeight: 1.15,
-                    letterSpacing: '-0.02em',
-                    margin: '0 0 16px'
-                  }}>
-                    {t('origin.chapters.ch3.title')}<span className="gradient-text">{t('origin.chapters.ch3.titleGradient')}</span>{t('origin.chapters.ch3.titleEnd')}
-                  </h3>
-                  <p style={{ fontSize: 19, lineHeight: 1.6, color: 'var(--text-2)', margin: '0 0 18px', textWrap: 'pretty' }}>
-                    {t('origin.chapters.ch3.p1')}<strong style={{ color: 'var(--text)', fontWeight: 600 }}>{t('origin.chapters.ch3.p1Strong')}</strong>{t('origin.chapters.ch3.p1End')}
-                  </p>
-                  <div style={{
-                    marginTop: 18,
-                    padding: '18px 22px',
-                    background: 'linear-gradient(135deg, rgba(230,176,34,0.10), rgba(139,92,246,0.06))',
-                    borderLeft: '3px solid var(--primary)',
-                    borderRadius: '0 12px 12px 0',
-                    fontSize: 14.5,
-                    color: 'var(--text-2)',
-                    lineHeight: 1.55
-                  }}>
-                    <strong style={{ color: 'var(--text)' }}>{t('origin.chapters.ch3.commitmentLabel')}</strong>{t('origin.chapters.ch3.commitment')}
+                {/* Chapter iii */}
+                <div data-carousel-slide className="about-origin-chapter-slide">
+                  <div className="about-origin-chapter-grid" style={{ display: 'grid', gridTemplateColumns: '80px 1fr', gap: 32, alignItems: 'start' }}>
+                    <div style={{
+                      color: 'var(--primary)',
+                      letterSpacing: '-0.04em',
+                      fontSize: 'clamp(28px, 6vw, 40px)',
+                      fontWeight: 600,
+                      lineHeight: 1
+                    }}>{t('origin.chapters.ch3.number')}</div>
+                    <div>
+                      <h3 style={{
+                        fontWeight: 700,
+                        fontSize: 'clamp(22px, 4vw, 30px)',
+                        lineHeight: 1.15,
+                        letterSpacing: '-0.02em',
+                        margin: '0 0 16px'
+                      }}>
+                        {t('origin.chapters.ch3.title')}<span className="gradient-text">{t('origin.chapters.ch3.titleGradient')}</span>{t('origin.chapters.ch3.titleEnd')}
+                      </h3>
+                      <p style={{ fontSize: 'clamp(16px, 3.5vw, 19px)', lineHeight: 1.6, color: 'var(--text-2)', margin: '0 0 18px', textWrap: 'pretty' }}>
+                        {t('origin.chapters.ch3.p1')}<strong style={{ color: 'var(--text)', fontWeight: 600 }}>{t('origin.chapters.ch3.p1Strong')}</strong>{t('origin.chapters.ch3.p1End')}
+                      </p>
+                      <div style={{
+                        marginTop: 18,
+                        padding: '18px 22px',
+                        background: 'linear-gradient(135deg, rgba(230,176,34,0.10), rgba(139,92,246,0.06))',
+                        borderLeft: '3px solid var(--primary)',
+                        borderRadius: '0 12px 12px 0',
+                        fontSize: 'clamp(14px, 3.2vw, 14.5px)',
+                        color: 'var(--text-2)',
+                        lineHeight: 1.55
+                      }}>
+                        <strong style={{ color: 'var(--text)' }}>{t('origin.chapters.ch3.commitmentLabel')}</strong>{t('origin.chapters.ch3.commitment')}
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
+            </ScrollPaginationDots>
           </div>
         </section>
 
         {/* VALUES — Asymmetric grid */}
         <section style={{ padding: '100px 32px' }}>
           <div style={{ maxWidth: 1280, margin: '0 auto' }}>
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 60, alignItems: 'end', marginBottom: 56 }}>
-              <div>
-                <div style={{
-                  fontFamily: 'var(--font-mono)',
-                  fontSize: 11,
-                  fontWeight: 600,
-                  letterSpacing: 1.6,
-                  textTransform: 'uppercase',
-                  color: 'var(--text-3)',
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  gap: 8,
-                  marginBottom: 20
-                }}>
-                  <span style={{ width: 24, height: 1, background: 'var(--text-3)' }} />
-                  {t('values.badge')}
+            <ScrollPaginationDots itemCount={2} gap={14} peekCarousel style={{ marginBottom: 56 }}>
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 60, alignItems: 'end' }}>
+                <div data-carousel-slide>
+                  <div style={{
+                    fontFamily: 'var(--font-mono)',
+                    fontSize: 11,
+                    fontWeight: 600,
+                    letterSpacing: 1.6,
+                    textTransform: 'uppercase',
+                    color: 'var(--text-3)',
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: 8,
+                    marginBottom: 20
+                  }}>
+                    <span style={{ width: 24, height: 1, background: 'var(--text-3)' }} />
+                    {t('values.badge')}
+                  </div>
+                  <h2 style={{
+                    fontWeight: 700,
+                    fontSize: 'clamp(36px, 4.4vw, 56px)',
+                    lineHeight: 1.05,
+                    letterSpacing: '-0.02em',
+                    margin: 0,
+                    textWrap: 'balance'
+                  }}>
+                    {t('values.title')}<strong style={{ color: 'var(--text)' }}>{t('values.titleStrong')}</strong>{t('values.titleEnd')}
+                  </h2>
                 </div>
-                <h2 style={{
-                  fontWeight: 700,
-                  fontSize: 'clamp(36px, 4.4vw, 56px)',
-                  lineHeight: 1.05,
-                  letterSpacing: '-0.02em',
-                  margin: 0,
-                  textWrap: 'balance'
-                }}>
-                  {t('values.title')}<strong style={{ color: 'var(--text)' }}>{t('values.titleStrong')}</strong>{t('values.titleEnd')}
-                </h2>
+                <p data-carousel-slide style={{ fontSize: 16, color: 'var(--text-2)', lineHeight: 1.6, margin: 0, textWrap: 'pretty' }}>
+                  {t('values.subtitle')}
+                </p>
               </div>
-              <p style={{ fontSize: 16, color: 'var(--text-2)', lineHeight: 1.6, margin: 0, textWrap: 'pretty' }}>
-                {t('values.subtitle')}
-              </p>
-            </div>
+            </ScrollPaginationDots>
 
+            <ScrollPaginationDots itemCount={4} gap={14} peekCarousel>
             <div className="values-grid" style={{
               display: 'grid',
               gridTemplateColumns: 'repeat(12, 1fr)',
@@ -491,7 +431,7 @@ export default function AboutPage() {
               gridAutoRows: 'minmax(200px, auto)'
             }}>
               {/* Value 1 - span 7 */}
-              <div style={{
+              <div data-carousel-slide style={{
                 gridColumn: 'span 7',
                 background: 'linear-gradient(135deg, rgba(230,176,34,0.10), rgba(255,255,255,0.78))',
                 backdropFilter: 'blur(20px) saturate(150%)',
@@ -528,7 +468,7 @@ export default function AboutPage() {
               </div>
 
               {/* Value 2 - span 5 */}
-              <div style={{
+              <div data-carousel-slide style={{
                 gridColumn: 'span 5',
                 background: 'var(--glass)',
                 backdropFilter: 'blur(20px) saturate(150%)',
@@ -566,7 +506,7 @@ export default function AboutPage() {
               </div>
 
               {/* Value 3 - span 5 */}
-              <div style={{
+              <div data-carousel-slide style={{
                 gridColumn: 'span 5',
                 background: 'var(--glass)',
                 backdropFilter: 'blur(20px) saturate(150%)',
@@ -604,7 +544,7 @@ export default function AboutPage() {
               </div>
 
               {/* Value 4 - span 7 */}
-              <div style={{
+              <div data-carousel-slide style={{
                 gridColumn: 'span 7',
                 background: 'linear-gradient(135deg, rgba(139,92,246,0.08), rgba(255,255,255,0.78))',
                 backdropFilter: 'blur(20px) saturate(150%)',
@@ -640,6 +580,7 @@ export default function AboutPage() {
                 <div style={{ position: 'absolute', top: 24, right: 24, fontSize: 32, opacity: 0.4 }}>⚡</div>
               </div>
             </div>
+            </ScrollPaginationDots>
           </div>
         </section>
 
@@ -650,46 +591,47 @@ export default function AboutPage() {
           borderTop: '1px solid var(--border)'
         }}>
           <div style={{ maxWidth: 1280, margin: '0 auto 48px', padding: '0 32px' }}>
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 60, alignItems: 'end' }}>
-              <div>
-                <div style={{
-                  fontFamily: 'var(--font-mono)',
-                  fontSize: 11,
-                  fontWeight: 600,
-                  letterSpacing: 1.6,
-                  textTransform: 'uppercase',
-                  color: 'var(--text-3)',
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  gap: 8,
-                  marginBottom: 20
-                }}>
-                  <span style={{ width: 24, height: 1, background: 'var(--text-3)' }} />
-                  {t('timeline.badge')}
+            <ScrollPaginationDots itemCount={2} gap={14} peekCarousel>
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 60, alignItems: 'end' }}>
+                <div data-carousel-slide>
+                  <div style={{
+                    fontFamily: 'var(--font-mono)',
+                    fontSize: 11,
+                    fontWeight: 600,
+                    letterSpacing: 1.6,
+                    textTransform: 'uppercase',
+                    color: 'var(--text-3)',
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: 8,
+                    marginBottom: 20
+                  }}>
+                    <span style={{ width: 24, height: 1, background: 'var(--text-3)' }} />
+                    {t('timeline.badge')}
+                  </div>
+                  <h2 style={{
+                    fontWeight: 700,
+                    fontSize: 'clamp(36px, 4.4vw, 56px)',
+                    lineHeight: 1.05,
+                    letterSpacing: '-0.02em',
+                    margin: 0
+                  }}>
+                    {t('timeline.title')}<strong style={{ color: 'var(--text)' }}>{t('timeline.titleStrong')}</strong>{t('timeline.titleEnd')}
+                  </h2>
                 </div>
-                <h2 style={{
-                  fontWeight: 700,
-                  fontSize: 'clamp(36px, 4.4vw, 56px)',
-                  lineHeight: 1.05,
-                  letterSpacing: '-0.02em',
-                  margin: 0
-                }}>
-                  {t('timeline.title')}<strong style={{ color: 'var(--text)' }}>{t('timeline.titleStrong')}</strong>{t('timeline.titleEnd')}
-                </h2>
+                <p data-carousel-slide style={{ color: 'var(--text-2)', fontSize: 16, margin: 0, lineHeight: 1.6 }}>
+                  {t('timeline.subtitle')}
+                </p>
               </div>
-              <p style={{ color: 'var(--text-2)', fontSize: 16, margin: 0, lineHeight: 1.6 }}>
-                {t('timeline.subtitle')}
-              </p>
-            </div>
+            </ScrollPaginationDots>
           </div>
 
+          <div style={{ padding: '0 32px', maxWidth: 1280, margin: '0 auto' }}>
+          <ScrollPaginationDots itemCount={3} gap={14} peekCarousel>
           <div className="timeline-track" style={{
-            padding: '0 32px',
             display: 'grid',
-            gridTemplateColumns: 'repeat(3, minmax(280px, 1fr))',
+            gridTemplateColumns: 'repeat(3, minmax(260px, 1fr))',
             gap: 24,
-            maxWidth: 1280,
-            margin: '0 auto',
             position: 'relative'
           }}>
             {/* Connecting line */}
@@ -706,7 +648,7 @@ export default function AboutPage() {
             }} />
 
             {/* 2024 */}
-            <div style={{ position: 'relative', zIndex: 1, paddingTop: 60 }}>
+            <div data-carousel-slide style={{ position: 'relative', zIndex: 1, paddingTop: 60 }}>
               <div style={{
                 position: 'absolute',
                 top: 28,
@@ -741,7 +683,7 @@ export default function AboutPage() {
             </div>
 
             {/* 2025 */}
-            <div style={{ position: 'relative', zIndex: 1, paddingTop: 60 }}>
+            <div data-carousel-slide style={{ position: 'relative', zIndex: 1, paddingTop: 60 }}>
               <div style={{
                 position: 'absolute',
                 top: 28,
@@ -776,7 +718,7 @@ export default function AboutPage() {
             </div>
 
             {/* Today - Active */}
-            <div style={{ position: 'relative', zIndex: 1, paddingTop: 60 }}>
+            <div data-carousel-slide style={{ position: 'relative', zIndex: 1, paddingTop: 60 }}>
               <div style={{
                 position: 'absolute',
                 top: 28,
@@ -810,42 +752,46 @@ export default function AboutPage() {
               </div>
             </div>
           </div>
+          </ScrollPaginationDots>
+          </div>
         </section>
 
         {/* FOUNDER */}
         <section style={{ padding: '110px 32px' }}>
           <div style={{ maxWidth: 1100, margin: '0 auto' }}>
-            <div className="team-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 60, alignItems: 'end', marginBottom: 48 }}>
-              <div>
-                <div style={{
-                  fontFamily: 'var(--font-mono)',
-                  fontSize: 11,
-                  fontWeight: 600,
-                  letterSpacing: 1.6,
-                  textTransform: 'uppercase',
-                  color: 'var(--text-3)',
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  gap: 8,
-                  marginBottom: 20
-                }}>
-                  <span style={{ width: 24, height: 1, background: 'var(--text-3)' }} />
-                  {t('founder.badge')}
+            <ScrollPaginationDots itemCount={2} gap={14} peekCarousel style={{ marginBottom: 48 }}>
+              <div className="team-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 60, alignItems: 'end' }}>
+                <div data-carousel-slide>
+                  <div style={{
+                    fontFamily: 'var(--font-mono)',
+                    fontSize: 11,
+                    fontWeight: 600,
+                    letterSpacing: 1.6,
+                    textTransform: 'uppercase',
+                    color: 'var(--text-3)',
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: 8,
+                    marginBottom: 20
+                  }}>
+                    <span style={{ width: 24, height: 1, background: 'var(--text-3)' }} />
+                    {t('founder.badge')}
+                  </div>
+                  <h2 style={{
+                    fontWeight: 700,
+                    fontSize: 'clamp(36px, 4.4vw, 56px)',
+                    lineHeight: 1.05,
+                    letterSpacing: '-0.02em',
+                    margin: 0
+                  }}>
+                    {t('founder.title')}<strong style={{ color: 'var(--text)' }}>{t('founder.titleStrong')}</strong>{t('founder.titleEnd')}
+                  </h2>
                 </div>
-                <h2 style={{
-                  fontWeight: 700,
-                  fontSize: 'clamp(36px, 4.4vw, 56px)',
-                  lineHeight: 1.05,
-                  letterSpacing: '-0.02em',
-                  margin: 0
-                }}>
-                  {t('founder.title')}<strong style={{ color: 'var(--text)' }}>{t('founder.titleStrong')}</strong>{t('founder.titleEnd')}
-                </h2>
+                <p data-carousel-slide style={{ color: 'var(--text-2)', fontSize: 16, margin: 0, lineHeight: 1.6 }}>
+                  {t('founder.subtitle')}
+                </p>
               </div>
-              <p style={{ color: 'var(--text-2)', fontSize: 16, margin: 0, lineHeight: 1.6 }}>
-                {t('founder.subtitle')}
-              </p>
-            </div>
+            </ScrollPaginationDots>
 
             <div className="founder-card" style={{
               background: 'var(--bg-1)',
@@ -887,7 +833,7 @@ export default function AboutPage() {
                 <div style={{ fontSize: 18, lineHeight: 1.55, color: 'var(--text-2)', marginBottom: 22, textWrap: 'pretty' }}>
                   {t('founder.bio')}<strong style={{ color: 'var(--text)' }}>{t('founder.bioStrong')}</strong>{t('founder.bioEnd')}
                 </div>
-                <Link href="https://www.linkedin.com/in/tawfiq-gouach-77158a21/" target="_blank" rel="noopener noreferrer" style={{
+                <a href="https://www.linkedin.com/in/tawfiq-gouach-77158a21/" target="_blank" rel="noopener noreferrer" style={{
                   display: 'inline-flex',
                   alignItems: 'center',
                   gap: 8,
@@ -904,7 +850,7 @@ export default function AboutPage() {
                 onMouseEnter={(e) => { e.currentTarget.style.background = 'rgba(230,176,34,0.18)'; }}
                 onMouseLeave={(e) => { e.currentTarget.style.background = 'rgba(230,176,34,0.10)'; }}>
                   {t('founder.linkedinCta')}
-                </Link>
+                </a>
               </div>
             </div>
           </div>
@@ -942,8 +888,9 @@ export default function AboutPage() {
             }}>
               {t('social.title')}<strong style={{ color: 'var(--text)' }}>{t('social.titleStrong')}</strong>{t('social.titleEnd')}
             </h2>
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 18 }}>
-              <Link href="https://www.linkedin.com/company/108488739" target="_blank" rel="noopener noreferrer" style={{
+            <ScrollPaginationDots itemCount={2} gap={14} peekCarousel>
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 18 }}>
+              <a data-carousel-slide href="https://www.linkedin.com/company/108488739" target="_blank" rel="noopener noreferrer" style={{
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'space-between',
@@ -982,9 +929,9 @@ export default function AboutPage() {
                   <div style={{ fontSize: 13, color: 'var(--text-3)' }}>{t('social.linkedin.description')}</div>
                 </div>
                 <div style={{ fontSize: 18, color: 'var(--primary-deep)' }}>→</div>
-              </Link>
+              </a>
 
-              <Link href="https://instagram.com/sojoriapp" target="_blank" rel="noopener noreferrer" style={{
+              <a data-carousel-slide href="https://instagram.com/sojoriapp" target="_blank" rel="noopener noreferrer" style={{
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'space-between',
@@ -1023,8 +970,9 @@ export default function AboutPage() {
                   <div style={{ fontSize: 13, color: 'var(--text-3)' }}>{t('social.instagram.description')}</div>
                 </div>
                 <div style={{ fontSize: 18, color: 'var(--primary-deep)' }}>→</div>
-              </Link>
-            </div>
+              </a>
+              </div>
+            </ScrollPaginationDots>
           </div>
         </section>
 
@@ -1049,14 +997,15 @@ export default function AboutPage() {
               {t('bigStats.badge')}
             </div>
           </div>
+          <ScrollPaginationDots itemCount={3} gap={14} peekCarousel>
           <div style={{
             maxWidth: 1100,
             margin: '0 auto',
             display: 'grid',
-            gridTemplateColumns: 'repeat(3, 1fr)',
+            gridTemplateColumns: 'repeat(3, minmax(0, 1fr))',
             gap: 0
           }}>
-            <div style={{ textAlign: 'center', padding: '0 16px', borderLeft: 'none' }}>
+            <div data-carousel-slide style={{ textAlign: 'center', padding: '0 16px', borderLeft: 'none' }}>
               <div style={{
                 fontWeight: 600,
                 fontSize: 'clamp(48px, 6vw, 84px)',
@@ -1076,7 +1025,7 @@ export default function AboutPage() {
                 marginTop: 14
               }}>{t('bigStats.stat1.label')}</div>
             </div>
-            <div style={{ textAlign: 'center', padding: '0 16px', borderLeft: '1px solid var(--border)' }}>
+            <div data-carousel-slide style={{ textAlign: 'center', padding: '0 16px', borderLeft: '1px solid var(--border)' }}>
               <div style={{
                 fontWeight: 600,
                 fontSize: 'clamp(48px, 6vw, 84px)',
@@ -1096,7 +1045,7 @@ export default function AboutPage() {
                 marginTop: 14
               }}>{t('bigStats.stat2.label')}</div>
             </div>
-            <div style={{ textAlign: 'center', padding: '0 16px', borderLeft: '1px solid var(--border)' }}>
+            <div data-carousel-slide style={{ textAlign: 'center', padding: '0 16px', borderLeft: '1px solid var(--border)' }}>
               <div style={{
                 fontWeight: 600,
                 fontSize: 'clamp(38px, 5vw, 68px)',
@@ -1118,6 +1067,7 @@ export default function AboutPage() {
               }}>{t('bigStats.stat3.label')}</div>
             </div>
           </div>
+          </ScrollPaginationDots>
         </section>
 
         {/* CTA */}

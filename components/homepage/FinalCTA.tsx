@@ -1,6 +1,7 @@
 "use client";
 
 import { useTranslations } from 'next-intl';
+import { Link } from '@/i18n/routing';
 
 export function FinalCTA() {
   const t = useTranslations('home.finalCTA');
@@ -23,12 +24,12 @@ export function FinalCTA() {
           {t('subtitle')}
         </p>
         <div style={{ display: 'flex', gap: 12, justifyContent: 'center', flexWrap: 'wrap' }}>
-          <a href="/demo?source=homepage-cta" className="btn btn-primary btn-xl">
+          <Link href={{ pathname: '/demo', query: { source: 'homepage-cta' } }} className="btn btn-primary btn-xl">
             {t('ctaPrimary')}
-          </a>
-          <a href="/pricing" className="btn btn-ghost btn-xl">
+          </Link>
+          <Link href="/pricing" className="btn btn-ghost btn-xl">
             {t('ctaSecondary')}
-          </a>
+          </Link>
         </div>
         <div style={{ marginTop: 24, fontSize: 13, color: 'var(--text-3)' }}>
           {t('footer')}

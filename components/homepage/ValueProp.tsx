@@ -1,7 +1,9 @@
 "use client";
 
 import { useTranslations } from 'next-intl';
+import { Link } from '@/i18n/routing';
 import { Check, SectionHead } from '../SharedComponents';
+import { ScrollPaginationDots } from '@/components/shared/ScrollPaginationDots';
 
 export function ValueProp() {
   const t = useTranslations('home.valueProp');
@@ -20,6 +22,7 @@ export function ValueProp() {
         t('modules.items.4')
       ],
       cta: t('modules.cta'),
+      href: '/pms' as const,
     },
     {
       icon: t('orchestration.icon'),
@@ -36,6 +39,7 @@ export function ValueProp() {
       ],
       cta: t('orchestration.cta'),
       featured: true,
+      href: '/inbox' as const,
     },
     {
       icon: t('whatsapp.icon'),
@@ -50,6 +54,7 @@ export function ValueProp() {
         t('whatsapp.items.3')
       ],
       cta: t('whatsapp.cta'),
+      href: '/whatsapp' as const,
     },
   ];
 
@@ -68,10 +73,18 @@ export function ValueProp() {
           subtitle={t('subtitle')}
         />
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 20, marginTop: 56 }} className="grid-resp value-prop-grid">
+        <ScrollPaginationDots
+          itemCount={pillars.length}
+          gap={16}
+          peekCarousel
+          className="value-prop-carousel"
+          style={{ marginTop: 56 }}
+        >
+          <div className="value-prop-slides-row">
           {pillars.map((p, i) => (
             <div
               key={i}
+              data-carousel-slide
               className="glass value-prop-card"
               style={{
                 padding: 32,
@@ -136,39 +149,33 @@ export function ValueProp() {
                   </li>
                 ))}
               </ul>
-              <a href="#" style={{ color: p.accent, textDecoration: 'none', fontSize: 13, fontWeight: 500 }}>
+              <Link
+                href={{ pathname: p.href, query: { source: 'homepage-value-prop' } }}
+                style={{ color: p.accent, textDecoration: 'none', fontSize: 13, fontWeight: 500 }}
+              >
                 {p.cta} →
-              </a>
+              </Link>
             </div>
           ))}
-        </div>
+          </div>
+        </ScrollPaginationDots>
       </div>
       <style jsx>{`
-        @media (max-width: 900px) {
-          .grid-resp {
-            display: flex !important;
-            overflow-x: auto !important;
-            scroll-snap-type: x mandatory !important;
-            -webkit-overflow-scrolling: touch !important;
-            gap: 16px !important;
-            padding-bottom: 20px !important;
-          }
-          .grid-resp > * {
-            min-width: 300px !important;
-            max-width: 320px !important;
-            flex-shrink: 0 !important;
-            scroll-snap-align: start !important;
-          }
+        .value-prop-slides-row {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 20px;
+          width: 100%;
         }
+
         @media (max-width: 768px) {
-          .value-prop-section { padding: 70px 20px !important; }
-          .value-prop-grid { gap: 16px !important; margin-top: 40px !important; }
+          .value-prop-section { padding: 48px 20px 20px !important; }
+          .value-prop-carousel {
+            margin-top: 32px !important;
+          }
           .value-prop-card { padding: 24px !important; }
           .value-prop-card:hover { transform: none !important; }
         }
-        ::-webkit-scrollbar { height: 8px; }
-        ::-webkit-scrollbar-track { background: rgba(255,255,255,0.05); border-radius: 4px; }
-        ::-webkit-scrollbar-thumb { background: rgba(244,207,94,0.3); border-radius: 4px; }
       `}</style>
     </section>
   );

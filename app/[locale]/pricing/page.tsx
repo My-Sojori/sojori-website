@@ -1,9 +1,11 @@
 'use client';
 
 import { useState } from 'react';
+import { Link } from '@/i18n/routing';
 import { useTranslations } from 'next-intl';
 import { BackgroundEffects } from '@/components/BackgroundEffects';
 import { PageHeader, PageFooter, PageHero, FinalCTA } from '@/components/SharedComponents';
+import { ScrollPaginationDots } from '@/components/shared/ScrollPaginationDots';
 
 interface Tier {
   name: string;
@@ -20,11 +22,9 @@ const MAD_RATE = 10.7;
 
 export default function PricingPage() {
   const t = useTranslations('pricing');
-  const tCommon = useTranslations('common');
 
   const [listings, setListings] = useState(15);
   const [annual, setAnnual] = useState(false);
-  const [founder, setFounder] = useState(false);
 
   // Build tiers from translations
   // Prices are constants (same across all languages)
@@ -94,7 +94,6 @@ export default function PricingPage() {
 
   const computeUnitPrice = (basePrice: number) => {
     let price = basePrice;
-    if (founder) price = price * 0.7;
     if (annual) price = price * 0.8;
     return price;
   };
@@ -114,22 +113,23 @@ export default function PricingPage() {
           subtitle={t('hero.subtitle')}
         />
 
-        {/* Toggles : annuel + founding member */}
-        <section style={{ padding: '20px 32px 30px' }}>
-          <div style={{ maxWidth: 1280, margin: '0 auto', display: 'flex', justifyContent: 'center', gap: 12, flexWrap: 'wrap' }}>
-            <div style={{ display: 'inline-flex', background: 'rgba(255,255,255,0.04)', border: '1px solid var(--glass-border)', borderRadius: 999, padding: 4 }}>
+        {/* Toggle mensuel / annuel */}
+        <section className="pricing-toggle-section" style={{ padding: '16px 32px 22px' }}>
+          <div style={{ maxWidth: 1280, margin: '0 auto', display: 'flex', justifyContent: 'center' }}>
+            <div style={{ display: 'inline-flex', background: 'rgba(255,255,255,0.04)', border: '1px solid var(--glass-border)', borderRadius: 999, padding: 3 }}>
               {[
                 { k: false, l: t('toggles.monthly') },
-                { k: true, l: t('toggles.annual') }
+                { k: true, l: t('toggles.annual') },
               ].map(o => (
                 <button
                   key={o.l}
+                  type="button"
                   onClick={() => setAnnual(o.k)}
                   style={{
-                    padding: '8px 20px',
+                    padding: '7px 16px',
                     borderRadius: 999,
                     border: 'none',
-                    fontSize: 13,
+                    fontSize: 12,
                     fontWeight: 600,
                     cursor: 'pointer',
                     background: annual === o.k ? 'rgba(244,207,94,0.18)' : 'transparent',
@@ -138,39 +138,18 @@ export default function PricingPage() {
                 >
                   {o.l}
                   {o.k && (
-                    <span style={{ marginLeft: 6, fontSize: 10, padding: '2px 6px', background: 'rgba(16,185,129,0.2)', color: '#10b981', borderRadius: 4 }}>
+                    <span style={{ marginLeft: 5, fontSize: 9, padding: '2px 5px', background: 'rgba(16,185,129,0.2)', color: '#10b981', borderRadius: 4 }}>
                       {t('toggles.annualSave')}
                     </span>
                   )}
                 </button>
               ))}
             </div>
-
-            <button
-              onClick={() => setFounder(!founder)}
-              style={{
-                padding: '8px 16px',
-                borderRadius: 999,
-                fontSize: 13,
-                fontWeight: 600,
-                cursor: 'pointer',
-                background: founder ? 'linear-gradient(90deg, rgba(244,207,94,0.25), rgba(139,92,246,0.18))' : 'rgba(255,255,255,0.04)',
-                border: founder ? '1px solid rgba(244,207,94,0.5)' : '1px solid var(--glass-border)',
-                color: founder ? '#f4cf5e' : 'var(--text-2)',
-              }}
-            >
-              {t('toggles.foundingMember')}
-              {founder && (
-                <span style={{ marginLeft: 6, fontSize: 10, padding: '2px 6px', background: 'rgba(244,207,94,0.2)', color: '#f4cf5e', borderRadius: 4 }}>
-                  {t('toggles.foundingDiscount')}
-                </span>
-              )}
-            </button>
           </div>
         </section>
 
         {/* Listings input */}
-        <section style={{ padding: '0 32px 40px' }}>
+        <section className="pricing-calculator-section" style={{ padding: '0 32px 40px' }}>
           <div style={{ maxWidth: 720, margin: '0 auto', textAlign: 'center' }}>
             <div style={{ marginBottom: 16, color: 'var(--text-3)', fontSize: 13, fontFamily: 'var(--font-mono)', letterSpacing: '0.1em', textTransform: 'uppercase' }}>
               {t('calculator.yourProperties')}
@@ -207,10 +186,10 @@ export default function PricingPage() {
           </div>
         </section>
 
-        {/* Tier cards */}
-        <section style={{ padding: '0 32px 40px' }}>
-          <div style={{ maxWidth: 1280, margin: '0 auto' }}>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 24, alignItems: 'start' }} className="grid-resp">
+        {/* Tier cards — 3 slides directes (pattern ScrollPaginationDots + peek mobile, grille desktop) */}
+        <section className="pricing-carousel-section" style={{ padding: '0 0 32px' }}>
+          <div className="pricing-tier-row-cap" style={{ maxWidth: 1280, margin: '0 auto', width: '100%' }}>
+            <ScrollPaginationDots itemCount={3} gap={14} peekCarousel className="pricing-tier-carousel-scroll">
               {TIERS.map((tier, idx) => {
                 const unitPrice = computeUnitPrice(tier.price);
                 const totalMonth = computeTotal(tier.price);
@@ -224,16 +203,18 @@ export default function PricingPage() {
                 return (
                   <div
                     key={tier.name}
+                    data-carousel-slide
+                    data-pricing-tier-card
                     style={{
                       position: 'relative',
-                      padding: 32,
-                      borderRadius: 16,
+                      padding: '22px 20px',
+                      borderRadius: 14,
                       background: tier.popular
                         ? 'linear-gradient(180deg, rgba(244,207,94,0.08), rgba(244,207,94,0.02))'
                         : 'rgba(255,255,255,0.02)',
                       border: tier.popular ? '1px solid rgba(244,207,94,0.4)' : '1px solid var(--glass-border)',
-                      boxShadow: tier.popular ? '0 30px 80px rgba(244,207,94,0.12)' : 'none',
-                      transform: tier.popular ? 'scale(1.02)' : 'none',
+                      boxShadow: tier.popular ? '0 20px 56px rgba(244,207,94,0.1)' : 'none',
+                      transform: tier.popular ? 'scale(1.01)' : 'none',
                       transition: 'all 0.2s ease',
                     }}
                   >
@@ -241,12 +222,12 @@ export default function PricingPage() {
                       <div
                         style={{
                           position: 'absolute',
-                          top: -12,
+                          top: -10,
                           left: '50%',
                           transform: 'translateX(-50%)',
-                          padding: '4px 14px',
+                          padding: '3px 11px',
                           borderRadius: 999,
-                          fontSize: 10,
+                          fontSize: 9,
                           fontWeight: 700,
                           background: 'linear-gradient(180deg, #f4cf5e, #e6b022)',
                           color: '#1a1408',
@@ -258,60 +239,60 @@ export default function PricingPage() {
                       </div>
                     )}
 
-                    <div style={{ marginBottom: 4, fontSize: 26, fontWeight: 800, letterSpacing: '-0.02em' }}>{tier.name}</div>
-                    <div style={{ marginBottom: 20, color: tier.accent, fontSize: 13, fontWeight: 600 }}>{tier.tagline}</div>
+                    <div style={{ marginBottom: 3, fontSize: 21, fontWeight: 800, letterSpacing: '-0.02em' }}>{tier.name}</div>
+                    <div style={{ marginBottom: 14, color: tier.accent, fontSize: 12, fontWeight: 600 }}>{tier.tagline}</div>
 
-                    {(founder || annual) && (
-                      <div style={{ marginBottom: 6, fontSize: 12, color: 'var(--text-3)', textDecoration: 'line-through' }}>
+                    {annual && (
+                      <div style={{ marginBottom: 5, fontSize: 11, color: 'var(--text-3)', textDecoration: 'line-through' }}>
                         {tier.price}€/listing
                       </div>
                     )}
-                    <div style={{ marginBottom: 4 }}>
-                      <span style={{ fontSize: 48, fontWeight: 800, letterSpacing: '-0.03em' }}>{unitDisplay}€</span>
-                      <span style={{ fontSize: 14, color: 'var(--text-3)', marginLeft: 6 }}>{t('calculator.perListing')}</span>
+                    <div style={{ marginBottom: 3 }}>
+                      <span className="pricing-unit-price" style={{ fontSize: 38, fontWeight: 800, letterSpacing: '-0.03em' }}>{unitDisplay}€</span>
+                      <span style={{ fontSize: 12, color: 'var(--text-3)', marginLeft: 5 }}>{t('calculator.perListing')}</span>
                     </div>
-                    <div style={{ marginBottom: 20, fontSize: 12, color: 'var(--text-3)' }}>
+                    <div style={{ marginBottom: 14, fontSize: 11, color: 'var(--text-3)' }}>
                       ≈ {Math.round(unitPrice * MAD_RATE)} MAD · {t('calculator.billing', { period: annual ? 'annuelle' : 'mensuelle' })}
                     </div>
 
                     {/* Total computed */}
                     <div
                       style={{
-                        padding: '14px 16px',
-                        marginBottom: 20,
+                        padding: '11px 13px',
+                        marginBottom: 14,
                         background: 'rgba(255,255,255,0.03)',
-                        borderRadius: 10,
+                        borderRadius: 9,
                         border: '1px solid var(--glass-border)',
                       }}
                     >
-                      <div style={{ fontSize: 11, color: 'var(--text-3)', marginBottom: 4, letterSpacing: '0.05em', textTransform: 'uppercase' }}>
+                      <div style={{ fontSize: 10, color: 'var(--text-3)', marginBottom: 3, letterSpacing: '0.05em', textTransform: 'uppercase' }}>
                         {t('calculator.forListings', { count: listings, plural: listings > 1 ? 's' : '' })}
                       </div>
-                      <div style={{ fontSize: 22, fontWeight: 700 }}>
+                      <div style={{ fontSize: 18, fontWeight: 700 }}>
                         {totalMonth.toLocaleString('fr-FR')}{t('calculator.perMonth')}
                       </div>
                       {annual && (
-                        <div style={{ fontSize: 11, color: 'var(--text-3)', marginTop: 2 }}>
+                        <div style={{ fontSize: 10, color: 'var(--text-3)', marginTop: 2 }}>
                           {t('calculator.perYear', { amount: (totalMonth * 12).toLocaleString('fr-FR') })}
                         </div>
                       )}
                     </div>
 
-                    <p style={{ fontSize: 13, color: 'var(--text-2)', lineHeight: 1.5, marginBottom: 20 }}>
+                    <p style={{ fontSize: 12, color: 'var(--text-2)', lineHeight: 1.45, marginBottom: 14 }}>
                       {tier.description}
                     </p>
 
-                    <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 28px', display: 'flex', flexDirection: 'column', gap: 10 }}>
+                    <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 18px', display: 'flex', flexDirection: 'column', gap: 8 }}>
                       {tier.features.map(f => (
-                        <li key={f.key} style={{ display: 'flex', alignItems: 'flex-start', gap: 10, fontSize: 13, color: 'var(--text-2)' }}>
-                          <svg width={16} height={16} viewBox="0 0 24 24" fill="none" style={{ flexShrink: 0, marginTop: 2 }}>
+                        <li key={f.key} style={{ display: 'flex', alignItems: 'flex-start', gap: 8, fontSize: 12, color: 'var(--text-2)' }}>
+                          <svg width={14} height={14} viewBox="0 0 24 24" fill="none" style={{ flexShrink: 0, marginTop: 2 }}>
                             <circle cx="12" cy="12" r="10" fill={`rgba(${tier.accentRgb}, 0.15)`} />
                             <path d="M8 12l3 3 5-6" stroke={tier.accent} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                           </svg>
                           <span>
                             {t(`tiers.${tierKey}.features.${f.key}`)}
                             {typeof f.included === 'string' && (
-                              <span style={{ marginLeft: 6, fontSize: 10, padding: '1px 6px', background: 'rgba(255,255,255,0.06)', color: 'var(--text-3)', borderRadius: 4, fontWeight: 600 }}>
+                              <span style={{ marginLeft: 5, fontSize: 9, padding: '1px 5px', background: 'rgba(255,255,255,0.06)', color: 'var(--text-3)', borderRadius: 4, fontWeight: 600 }}>
                                 {f.included}
                               </span>
                             )}
@@ -320,57 +301,38 @@ export default function PricingPage() {
                       ))}
                     </ul>
 
-                    <a
+                    <Link
                       href="/demo"
-                      className={tier.popular ? 'btn btn-primary btn-lg' : 'btn btn-ghost btn-lg'}
-                      style={{ width: '100%', justifyContent: 'center' }}
+                      className={tier.popular ? 'btn btn-primary' : 'btn btn-ghost'}
+                      style={{ width: '100%', justifyContent: 'center', padding: '11px 18px', fontSize: 13 }}
                     >
                       {t(`tiers.${tierKey}.cta`)}
-                    </a>
+                    </Link>
                   </div>
                 );
               })}
-            </div>
+            </ScrollPaginationDots>
+          </div>
 
-            {/* Onboarding fee notice */}
+          <div style={{ maxWidth: 1280, margin: '0 auto', padding: '0 32px', marginTop: 16 }}>
             <div
               style={{
-                marginTop: 32,
-                padding: '16px 24px',
-                borderRadius: 12,
+                padding: '12px 18px',
+                borderRadius: 11,
                 background: 'rgba(255,255,255,0.02)',
                 border: '1px solid var(--glass-border)',
                 textAlign: 'center',
-                fontSize: 13,
+                fontSize: 12,
                 color: 'var(--text-2)',
               }}
             >
               <strong style={{ color: 'var(--text)' }}>{t('onboarding.title')}</strong> {t('onboarding.description')}
-              <strong style={{ color: '#10b981', marginLeft: 6 }}>{t('onboarding.foundingFree')}</strong>
             </div>
-
-            {/* Founding Member banner */}
-            {founder && (
-              <div
-                style={{
-                  marginTop: 24,
-                  padding: '20px 28px',
-                  borderRadius: 12,
-                  background: 'linear-gradient(90deg, rgba(244,207,94,0.08), rgba(139,92,246,0.05))',
-                  border: '1px solid rgba(244,207,94,0.3)',
-                  textAlign: 'center',
-                }}
-              >
-                <div style={{ fontSize: 13, color: 'var(--text-2)', lineHeight: 1.6 }}>
-                  {t('foundingBanner.text', { highlight: t('foundingBanner.highlight') })}
-                </div>
-              </div>
-            )}
           </div>
         </section>
 
         {/* FAQ */}
-        <section style={{ padding: '60px 32px', borderTop: '1px solid var(--glass-border)' }}>
+        <section className="pricing-faq-section" style={{ padding: '60px 32px', borderTop: '1px solid var(--glass-border)' }}>
           <div style={{ maxWidth: 800, margin: '0 auto' }}>
             <div className="uppercase-sm" style={{ color: 'var(--text-3)', textAlign: 'center', marginBottom: 12 }}>
               {t('faq.badge')}
@@ -379,7 +341,7 @@ export default function PricingPage() {
               {t('faq.title', { gradient: '' })} <span className="gradient-text">{t('faq.titleGradient')}</span>
             </h2>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
-              {['engagement', 'onboarding', 'whatsappCost', 'webVsWhatsappBooking', 'changeTier', 'foundingEnd', 'freeTrial'].map(key => (
+              {['engagement', 'onboarding', 'whatsappCost', 'webVsWhatsappBooking', 'changeTier', 'freeTrial'].map(key => (
                 <details key={key} className="card" style={{ padding: 20 }}>
                   <summary style={{ cursor: 'pointer', fontSize: 15, fontWeight: 600, color: 'var(--text)' }}>
                     {t(`faq.questions.${key}.q`)}
@@ -401,51 +363,31 @@ export default function PricingPage() {
       </div>
 
       <style jsx>{`
-        @media (max-width: 900px) {
-          /* Scroll horizontal pour les tier cards */
-          .grid-resp {
-            display: flex !important;
-            overflow-x: auto !important;
-            scroll-snap-type: x mandatory !important;
-            -webkit-overflow-scrolling: touch !important;
-            gap: 16px !important;
-            padding-bottom: 20px !important;
-          }
-
-          .grid-resp > div {
-            min-width: 320px !important;
-            max-width: 340px !important;
-            flex-shrink: 0 !important;
-            scroll-snap-align: start !important;
-          }
-
-          /* Smooth scrollbar */
-          .grid-resp::-webkit-scrollbar {
-            height: 8px;
-          }
-          .grid-resp::-webkit-scrollbar-track {
-            background: rgba(255,255,255,0.05);
-            border-radius: 4px;
-          }
-          .grid-resp::-webkit-scrollbar-thumb {
-            background: rgba(244,207,94,0.3);
-            border-radius: 4px;
-          }
+        .pricing-tier-row-cap {
+          box-sizing: border-box;
         }
 
         @media (max-width: 768px) {
-          /* Reduce section padding */
-          section {
-            padding-left: 20px !important;
-            padding-right: 20px !important;
+          .pricing-tier-row-cap {
+            max-width: none !important;
           }
 
-          /* Price display - slightly smaller on mobile */
-          .grid-resp > div > div:nth-child(4) span:first-child {
-            font-size: 40px !important;
+          .pricing-toggle-section,
+          .pricing-calculator-section,
+          .pricing-faq-section {
+            padding-left: 18px !important;
+            padding-right: 18px !important;
           }
 
-          /* Stack calculator inputs on very small screens */
+          .pricing-carousel-section {
+            padding-left: 0 !important;
+            padding-right: 0 !important;
+          }
+
+          .pricing-unit-price {
+            font-size: 34px !important;
+          }
+
           @media (max-width: 480px) {
             .calculator-wrapper {
               flex-direction: column !important;

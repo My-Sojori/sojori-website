@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useTranslations } from "next-intl";
 import { BackgroundEffects } from "@/components/BackgroundEffects";
 import { PageHeader, PageFooter, PageHero, StatsBar, FinalCTA } from "@/components/SharedComponents";
+import { ScrollPaginationDots } from "@/components/shared/ScrollPaginationDots";
 
 interface Tab {
   id: string;
@@ -184,10 +185,8 @@ export default function GuestExperiencePage() {
           }
 
           div[style*="gridTemplateColumns: 'repeat(4, 1fr)'"] > * {
-            min-width: 160px !important;
-            max-width: 180px !important;
             flex-shrink: 0 !important;
-            scroll-snap-align: start !important;
+            scroll-snap-align: center !important;
           }
 
           div[style*="width: 360"] {
@@ -200,10 +199,6 @@ export default function GuestExperiencePage() {
             min-height: 44px !important;
             padding: 12px 20px !important;
           }
-
-          ::-webkit-scrollbar { height: 8px; }
-          ::-webkit-scrollbar-track { background: rgba(255,255,255,0.05); border-radius: 4px; }
-          ::-webkit-scrollbar-thumb { background: rgba(244,207,94,0.3); border-radius: 4px; }
         }
       `}</style>
       <BackgroundEffects />
@@ -256,18 +251,18 @@ export default function GuestExperiencePage() {
               {t("features.title").split("Dans WhatsApp")[0]}
               <span className="gradient-text">{t("features.title").includes("Dans WhatsApp") ? "Dans WhatsApp." : t("features.title").includes("In WhatsApp") ? "In WhatsApp." : t("features.title").includes("En WhatsApp") ? "En WhatsApp." : t("features.title").includes("No WhatsApp") ? "No WhatsApp." : "في واتساب."}</span>
             </h2>
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 16 }}>
+            <ScrollPaginationDots itemCount={8} gap={16} peekCarousel className="sj-peek-sm">
               {Array.from({ length: 8 }).map((_, i) => {
                 const item = t.raw(`features.items.${i}`);
                 return (
-                  <div key={i} className="card" style={{ padding: 20 }}>
+                  <div key={i} data-carousel-slide className="card" style={{ padding: 20, flexShrink: 0 }}>
                     <div style={{ fontSize: 28, marginBottom: 10 }}>{item.icon}</div>
                     <div style={{ fontSize: 15, fontWeight: 600, marginBottom: 4 }}>{item.title}</div>
                     <div style={{ fontSize: 12.5, color: "var(--text-3)", lineHeight: 1.5 }}>{item.description}</div>
                   </div>
                 );
               })}
-            </div>
+            </ScrollPaginationDots>
           </div>
         </section>
 

@@ -1,19 +1,27 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { normalizeDemoBackendResponse } from '@/lib/demoApiResponse';
+import {
+  getDemoServiceBaseUrl,
+  getDemoProxyFailureMessage,
+} from '@/lib/getDemoServiceBaseUrl';
+import { demoProxyFetch, devFetchDetailForDemo } from '@/lib/demoProxyFetch';
 
 /**
  * POST /api/v1/demo/request
- * Proxy to srv-user backend service
- * Creates a new demo request in MongoDB via srv-user service
+ * Proxy → srv-crm (`/api/v1/demo/request`).
  */
 export async function POST(request: NextRequest) {
+  let body: unknown;
   try {
-    const body = await request.json();
+    body = await request.json();
+  } catch {
+    return NextResponse.json({ success: false, error: 'Corps JSON invalide' }, { status: 400 });
+  }
 
-    // Get srv-user backend URL from environment
-    const SRV_USER_URL = process.env.SRV_USER_URL || 'http://localhost:4005';
+  try {
+    const backendBase = getDemoServiceBaseUrl();
 
-    // Forward request to srv-user backend
-    const response = await fetch(`${SRV_USER_URL}/api/v1/demo/request`, {
+    const response = await demoProxyFetch(`${backendBase}/api/v1/demo/request`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -24,18 +32,24 @@ export async function POST(request: NextRequest) {
       body: JSON.stringify(body),
     });
 
-    const data = await response.json();
-
-    // Return backend response
+    let raw: unknown;
+    try {
+      raw = await response.json();
+    } catch {
+      return NextResponse.json(
+        { success: false, error: 'Invalid JSON from demo service' },
+        { status: 502 },
+      );
+    }
+    const data = normalizeDemoBackendResponse(raw);
     return NextResponse.json(data, { status: response.status });
 
   } catch (error: unknown) {
     console.error('Error proxying demo request:', error);
-    const SRV_USER_URL = process.env.SRV_USER_URL || 'http://localhost:4005';
     return NextResponse.json(
       {
         success: false,
-        error: `Connexion au service démo impossible (${SRV_USER_URL}). En local : démarrez srv-user et vérifiez SRV_USER_URL dans .env.local.`,
+        error: `${getDemoProxyFailureMessage()}${devFetchDetailForDemo(error)}`,
       },
       { status: 500 },
     );

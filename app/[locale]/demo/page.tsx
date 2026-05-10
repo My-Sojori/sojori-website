@@ -5,10 +5,11 @@ import { useSearchParams } from 'next/navigation';
 import { useTranslations, useMessages, useLocale } from 'next-intl';
 import { BackgroundEffects } from '@/components/BackgroundEffects';
 import { PageHeader, PageFooter } from '@/components/SharedComponents';
-import Link from 'next/link';
+import { Link } from '@/i18n/routing';
 import { PhoneDialSelect } from '@/components/demo/PhoneDialSelect';
+import { normalizeDemoBackendResponse, demoResponseErrorMessage } from '@/lib/demoApiResponse';
 
-/** API démo via routes Next.js → srv-user (même origine que le site). */
+/** API démo via routes Next.js → srv-crm (même origine que le site). */
 const DEMO_API = '/api/v1/demo';
 
 /** Tag BCP 47 pour `Intl` (aligné sur les locales du site). */
@@ -156,15 +157,21 @@ function DemoPageContent() {
           ? `?demoRequestId=${encodeURIComponent(demoRequestId)}`
           : '';
         const res = await fetch(`${DEMO_API}/booking-week${qs}`);
-        const data = await res.json();
-        if (cancelled) return;
-        if (!data.success) {
-          throw new Error(data.error || 'Impossible de charger les disponibilités');
+        let raw: unknown;
+        try {
+          raw = await res.json();
+        } catch {
+          throw new Error(t('errors.availability'));
         }
-        const raw = data.data as BookingWeekApiData;
-        if ('noAgent' in raw && raw.noAgent) {
+        const data = normalizeDemoBackendResponse(raw) as { success?: boolean; error?: string; data?: unknown };
+        if (cancelled) return;
+        if (data.success !== true) {
+          throw new Error(demoResponseErrorMessage(data) || t('errors.availability'));
+        }
+        const rawWeek = data.data as BookingWeekApiData;
+        if ('noAgent' in rawWeek && rawWeek.noAgent) {
           setBookingWeek(null);
-          setBookingNoAgentMessage(raw.message || t('step2.noAgentNotice'));
+          setBookingNoAgentMessage(rawWeek.message || t('step2.noAgentNotice'));
           setCalendarSkippedAlreadyBooked(false);
           const elapsed = Date.now() - t0;
           const MIN_MS = 5000;
@@ -175,8 +182,8 @@ function DemoPageContent() {
           setBookingChecking(false);
           return;
         }
-        if ('alreadyBooked' in raw && raw.alreadyBooked && raw.appointment) {
-          const a = raw.appointment;
+        if ('alreadyBooked' in rawWeek && rawWeek.alreadyBooked && rawWeek.appointment) {
+          const a = rawWeek.appointment;
           setSelectedSlot({
             id: a.appointmentId,
             date: a.date,
@@ -197,7 +204,7 @@ function DemoPageContent() {
           await new Promise((r) => setTimeout(r, MIN_MS - elapsed));
         }
         if (cancelled) return;
-        const payload = raw as BookingWeekData;
+        const payload = rawWeek as BookingWeekData;
         setBookingWeek(payload);
         /* Pas de jour présélectionné : on n’affiche les créneaux qu’après clic sur un jour. */
         setSelectedDateYmd(null);
@@ -252,13 +259,27 @@ function DemoPageContent() {
           }),
         });
 
-        const data = await response.json();
+        let rawBody: unknown;
+        try {
+          rawBody = await response.json();
+        } catch {
+          throw new Error(t('errors.invalidResponse'));
+        }
+        const data = normalizeDemoBackendResponse(rawBody) as {
+          success?: boolean;
+          error?: string;
+          data?: { id?: string };
+        };
 
-        if (!data.success) {
-          throw new Error(data.error || 'Failed to submit demo request');
+        if (data.success !== true) {
+          throw new Error(demoResponseErrorMessage(data) || t('errors.submitStep1'));
+        }
+        const newId = data.data?.id;
+        if (!newId) {
+          throw new Error(demoResponseErrorMessage(data) || t('errors.invalidResponse'));
         }
 
-        setDemoRequestId(data.data.id);
+        setDemoRequestId(String(newId));
         setCalendarSkippedAlreadyBooked(false);
         await waitRemainingMin();
         setStep(2);
@@ -269,7 +290,7 @@ function DemoPageContent() {
       const hint =
         typeof msg === 'string' &&
         (msg.includes('connect') || msg.includes('Failed to fetch') || msg.includes('backend'))
-          ? ' En local : lancez srv-user et définissez SRV_USER_URL dans .env.local (ex. http://localhost:4005).'
+          ? ' Sans `SRV_CRM_URL`, `next dev` utilise https://dev.sojori.com. Si vous voyez 127.0.0.1:4013, supprimez ou corrigez `SRV_CRM_URL` dans `.env.local` et redémarrez Next. Pour srv-crm local : `SRV_CRM_URL=http://127.0.0.1:4013` + `pnpm --filter srv-crm dev`. Sur Vercel : définir `SRV_CRM_URL` en HTTPS public.'
           : '';
       setError(`${msg}${hint}`);
       console.error('Error submitting step 1:', err);
@@ -301,9 +322,15 @@ function DemoPageContent() {
           clientName: provisionalClientName(),
         }),
       });
-      const bookData = await bookRes.json();
-      if (!bookData.success) {
-        throw new Error(bookData.error || 'Impossible de réserver ce créneau');
+      let bookRaw: unknown;
+      try {
+        bookRaw = await bookRes.json();
+      } catch {
+        throw new Error(t('errors.invalidResponse'));
+      }
+      const bookData = normalizeDemoBackendResponse(bookRaw) as { success?: boolean; error?: string };
+      if (bookData.success !== true) {
+        throw new Error(demoResponseErrorMessage(bookData) || t('errors.bookSlot'));
       }
       setError('');
       setCalendarSkippedAlreadyBooked(false);
@@ -346,9 +373,15 @@ function DemoPageContent() {
           roleType: formData.roleType,
         }),
       });
-      const qualData = await qualRes.json();
-      if (!qualData.success) {
-        throw new Error(qualData.error || 'Échec de l’envoi du questionnaire');
+      let qualRaw: unknown;
+      try {
+        qualRaw = await qualRes.json();
+      } catch {
+        throw new Error(t('errors.invalidResponse'));
+      }
+      const qualData = normalizeDemoBackendResponse(qualRaw) as { success?: boolean; error?: string };
+      if (qualData.success !== true) {
+        throw new Error(demoResponseErrorMessage(qualData) || t('errors.qualify'));
       }
 
       setStep(4);
@@ -395,9 +428,9 @@ function DemoPageContent() {
     <>
       <BackgroundEffects />
       <div style={{ position: 'relative', zIndex: 1 }}>
-        <PageHeader pageTitle="Demander une démo" />
+        <PageHeader pageTitle={t('pageTitle')} />
 
-        <section style={{ padding: '80px 32px 100px', minHeight: '80vh' }}>
+        <section className="demo-page-section" style={{ padding: '80px 32px 100px', minHeight: '80vh' }}>
           <div style={{ maxWidth: 800, margin: '0 auto' }}>
 
             {/* STEP 1: Simple Form (Email + Phone) */}
@@ -415,7 +448,7 @@ function DemoPageContent() {
                   </p>
                 </div>
 
-                <div className="glass" style={{ padding: 40, borderRadius: 16, position: 'relative' }}>
+                <div className="glass demo-glass-panel" style={{ padding: 40, borderRadius: 16, position: 'relative' }}>
                   {error && !loading && (
                     <div style={{ padding: 16, borderRadius: 8, background: 'rgba(239,68,68,0.15)', border: '1px solid rgba(239,68,68,0.3)', marginBottom: 20, color: '#fca5a5', fontSize: 14 }}>
                       {error}
@@ -500,6 +533,9 @@ function DemoPageContent() {
                           }
                           inputStyle={inputStyle}
                           labelStyle={labelStyle as React.CSSProperties}
+                          dialLabel={t('step1.dialLabel')}
+                          dialSearchPlaceholder={t('step1.dialSearchPlaceholder')}
+                          dialNoResults={t('step1.dialNoResults')}
                         />
                       </div>
                       <div style={{ flex: '2 1 220px', minWidth: 180 }}>
@@ -563,7 +599,7 @@ function DemoPageContent() {
                 </div>
 
                 <div
-                  className="glass"
+                  className="glass demo-glass-panel"
                   style={{
                     padding: 36,
                     borderRadius: 16,
@@ -690,6 +726,7 @@ function DemoPageContent() {
                         {t('step2.chooseDayLabel')}
                       </p>
                       <div
+                        className="demo-cal-days"
                         style={{
                           display: 'grid',
                           gridTemplateColumns: 'repeat(auto-fill, minmax(112px, 1fr))',
@@ -785,6 +822,7 @@ function DemoPageContent() {
                             }
                             return (
                               <div
+                                className="demo-cal-slots"
                                 style={{
                                   display: 'grid',
                                   gridTemplateColumns: 'repeat(auto-fill, minmax(128px, 1fr))',
@@ -886,7 +924,7 @@ function DemoPageContent() {
                   )}
                 </div>
 
-                <div className="glass" style={{ padding: 40, borderRadius: 16 }}>
+                <div className="glass demo-glass-panel" style={{ padding: 40, borderRadius: 16 }}>
                   {error && (
                     <div style={{ padding: 16, borderRadius: 8, background: 'rgba(239,68,68,0.15)', border: '1px solid rgba(239,68,68,0.3)', marginBottom: 20, color: '#fca5a5', fontSize: 14 }}>
                       {error}
@@ -899,7 +937,7 @@ function DemoPageContent() {
                     <div style={{ marginBottom: 32 }}>
                       <h3 style={{ fontSize: 18, marginBottom: 20, color: '#f4cf5e' }}>{t('step3.basicInfoTitle')}</h3>
 
-                      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 16 }}>
+                      <div className="demo-form-grid-2" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 16 }}>
                         <div>
                           <label style={labelStyle as React.CSSProperties}>{t('step3.fullNameLabel')}</label>
                           <input type="text" name="fullName" required value={formData.fullName} onChange={handleChange} placeholder={t('step3.fullNamePlaceholder')} style={inputStyle} />
@@ -938,7 +976,7 @@ function DemoPageContent() {
                     <div style={{ marginBottom: 32 }}>
                       <h3 style={{ fontSize: 18, marginBottom: 20, color: '#f4cf5e' }}>{t('step3.currentToolsTitle')}</h3>
 
-                      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
+                      <div className="demo-form-grid-2" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
                         <div>
                           <label style={labelStyle as React.CSSProperties}>{t('step3.currentPMSLabel')}</label>
                           <input type="text" name="currentPMS" value={formData.currentPMS} onChange={handleChange} placeholder={t('step3.currentPMSPlaceholder')} style={inputStyle} />
@@ -1027,7 +1065,7 @@ function DemoPageContent() {
 
             {/* STEP 4: Confirmation (parcours complet ou RDV déjà en place sans questionnaire) */}
             {step === 4 && (
-              <div className="glass" style={{ padding: 60, borderRadius: 16, textAlign: 'center' }}>
+              <div className="glass demo-glass-panel demo-step4-glass" style={{ padding: 60, borderRadius: 16, textAlign: 'center' }}>
                 {calendarSkippedAlreadyBooked ? (
                   <>
                     <div style={{ fontSize: 56, marginBottom: 24 }} aria-hidden>
@@ -1062,7 +1100,7 @@ function DemoPageContent() {
                       {t('step4.alreadyBooked.noFormNeeded')}{' '}
                       <strong>{formData.email}</strong>.
                     </p>
-                    <div style={{ display: 'flex', gap: 12, justifyContent: 'center', flexWrap: 'wrap', marginBottom: 40 }}>
+                    <div className="demo-cta-stack" style={{ display: 'flex', gap: 12, justifyContent: 'center', flexWrap: 'wrap', marginBottom: 40 }}>
                       <Link href="/" className="btn btn-primary btn-lg">
                         {t('step4.alreadyBooked.backToHome')}
                       </Link>
@@ -1092,7 +1130,7 @@ function DemoPageContent() {
                       {t('step4.confirmed.emailSent')} <strong>{formData.email}</strong>
                     </p>
 
-                    <div style={{ display: 'flex', gap: 12, justifyContent: 'center', marginBottom: 50 }}>
+                    <div className="demo-cta-stack" style={{ display: 'flex', gap: 12, justifyContent: 'center', marginBottom: 50 }}>
                       <Link href="/" className="btn btn-primary btn-lg">
                         {t('step4.confirmed.backToHome')}
                       </Link>
@@ -1102,6 +1140,7 @@ function DemoPageContent() {
                     </div>
 
                     <div
+                      className="demo-feature-grid-3"
                       style={{
                         borderTop: '1px solid var(--glass-border)',
                         paddingTop: 30,
@@ -1133,7 +1172,7 @@ function DemoPageContent() {
 
             {/* Trust indicators */}
             {(step === 1 || step === 2 || step === 3 || (step === 4 && calendarSkippedAlreadyBooked)) && (
-              <div style={{ marginTop: 50, display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 24 }}>
+              <div className="demo-trust-grid-3" style={{ marginTop: 50, display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 24 }}>
                 <div style={{ textAlign: 'center' }}>
                   <div style={{ fontSize: 28, marginBottom: 8 }}>⚡</div>
                   <div style={{ fontSize: 14, fontWeight: 600, marginBottom: 4 }}>{t('trustCards.setup.title')}</div>
@@ -1158,55 +1197,24 @@ function DemoPageContent() {
         <PageFooter />
       </div>
 
-      <style jsx>{`
-        @media (max-width: 768px) {
-          /* Reduce section padding */
-          section {
-            padding: 60px 20px 80px !important;
-          }
-
-          /* Glass cards - reduce padding */
-          .glass {
-            padding: 28px !important;
-          }
-
-          /* 2-column grids → single column */
-          .glass form > div > div[style*="grid-template-columns: 1fr 1fr"] {
-            grid-template-columns: 1fr !important;
-            gap: 14px !important;
-          }
-
-          /* Trust indicators and feature grids → single column */
-          div[style*="grid-template-columns: repeat(3, 1fr)"] {
-            grid-template-columns: 1fr !important;
-            gap: 20px !important;
-          }
-
-          /* Calendar day buttons - 2 columns on mobile */
-          div[style*="grid-template-columns: repeat(auto-fill, minmax(112px, 1fr))"] {
-            grid-template-columns: repeat(2, 1fr) !important;
-          }
-
-          /* Time slot buttons - 2 columns on mobile */
-          div[style*="grid-template-columns: repeat(auto-fill, minmax(128px, 1fr))"] {
-            grid-template-columns: repeat(2, 1fr) !important;
-          }
-
-          /* Button groups - stack on small screens */
-          @media (max-width: 480px) {
-            div[style*="display: flex"][style*="gap: 12"] button {
-              width: 100%;
-            }
-          }
-        }
-      `}</style>
     </>
   );
 }
 
 export default function DemoPage() {
   return (
-    <Suspense fallback={<div>Loading...</div>}>
+    <Suspense
+      fallback={
+        <div
+          className="demo-page-suspense"
+          role="status"
+          aria-live="polite"
+          style={{ minHeight: '50vh', padding: '48px 24px', textAlign: 'center', color: 'var(--text-3)', fontSize: 14 }}
+        >
+          …
+        </div>
+      }
+    >
       <DemoPageContent />
     </Suspense>
   );

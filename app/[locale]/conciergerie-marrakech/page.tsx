@@ -144,7 +144,7 @@ export default function ConciergerieMarrakechPage() {
         ]} />
 
         <FinalCTA
-          title={<>Testez la conciergerie WhatsApp AI. <span className="gradient-text">14 jours gratuit.</span></>}
+          title={<>Testez la conciergerie WhatsApp AI. <span className="gradient-text">1 mois gratuit.</span></>}
           subtitle="Onboarding 1 semaine. Guidebook Marrakech pré-rempli. Formation équipe incluse. Support FR/AR."
         />
 

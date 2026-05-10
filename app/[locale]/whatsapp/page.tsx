@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useTranslations } from "next-intl";
 import { BackgroundEffects } from "@/components/BackgroundEffects";
 import { PageHeader, PageFooter, PageHero, StatsBar, FinalCTA, SectionHead } from "@/components/SharedComponents";
+import { ScrollPaginationDots } from "@/components/shared/ScrollPaginationDots";
 
 // ========================================
 // WhatsApp Phone Component (Réutilisable)
@@ -113,13 +114,251 @@ function Bubble({ from, text, time, type = "text", ext, status }: Message) {
   );
 }
 
+type WaSystemId = "guest" | "staff" | "admin" | "booking";
+
+const WA_SECTION_ORDER: WaSystemId[] = ["staff", "admin", "booking", "guest"];
+
+function GuestMenuBlock() {
+  const t = useTranslations("whatsapp");
+  const [more, setMore] = useState(false);
+  const icons = ["📋", "🌍", "📅", "👥", "🔐", "🏠", "📋", "🧹", "🛎️", "🆘"];
+  const keys = ["A", "B", "C", "E", "F", "G", "H", "I", "J", "K"];
+
+  return (
+    <>
+      <h2 style={{ fontSize: 38, fontWeight: 700, letterSpacing: "-0.03em", marginBottom: 16, lineHeight: 1.15 }}>
+        {t("details.guest.title")} <span className="gradient-text">{t("details.guest.titleGradient")}</span>
+      </h2>
+      <p style={{ fontSize: 16, color: "var(--text-2)", lineHeight: 1.65, marginBottom: 28 }}>
+        {t("details.guest.description")}
+      </p>
+
+      <div style={{ marginBottom: 12 }}>
+        <div className="uppercase-sm" style={{ color: "var(--text-3)", marginBottom: 14 }}>{t("details.guest.menuTitle")}</div>
+        <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
+          {keys.slice(0, 5).map((key, idx) => {
+            const menuItem = t.raw(`details.guest.menu.${idx}`) as { key: string; label: string };
+            return (
+              <div key={key} style={{ display: "flex", alignItems: "center", gap: 12, padding: "10px 14px", background: "rgba(255,255,255,0.02)", border: "1px solid var(--glass-border)", borderRadius: 10 }}>
+                <div className="mono" style={{ fontSize: 12, fontWeight: 700, color: "#25D366", width: 20 }}>{menuItem.key}</div>
+                <div style={{ fontSize: 16 }}>{icons[idx]}</div>
+                <div style={{ fontSize: 13.5, color: "var(--text-2)" }}>{menuItem.label}</div>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+
+      <button type="button" className="btn btn-ghost" onClick={() => setMore((v) => !v)} style={{ marginBottom: more ? 16 : 8, alignSelf: "flex-start" }}>
+        {more ? t("guestMenu.less") : t("guestMenu.more")}
+      </button>
+
+      {more && (
+        <div
+          className="wa-guest-menu-more-row"
+          style={{
+            display: "flex",
+            gap: 12,
+            overflowX: "auto",
+            paddingBottom: 10,
+            marginBottom: 24,
+            WebkitOverflowScrolling: "touch",
+            scrollSnapType: "x mandatory",
+          }}
+        >
+          {keys.slice(5).map((key, idx) => {
+            const realIdx = idx + 5;
+            const menuItem = t.raw(`details.guest.menu.${realIdx}`) as { key: string; label: string };
+            return (
+              <div
+                key={key}
+                style={{
+                  flex: "0 0 auto",
+                  minWidth: "min(288px, 88vw)",
+                  maxWidth: 320,
+                  scrollSnapAlign: "start",
+                  display: "flex",
+                  alignItems: "center",
+                  gap: 12,
+                  padding: "12px 14px",
+                  background: "rgba(37,211,102,0.07)",
+                  border: "1px solid rgba(37,211,102,0.28)",
+                  borderRadius: 12,
+                }}
+              >
+                <div className="mono" style={{ fontSize: 12, fontWeight: 700, color: "#25D366", width: 20 }}>{menuItem.key}</div>
+                <div style={{ fontSize: 16 }}>{icons[realIdx]}</div>
+                <div style={{ fontSize: 13.5, color: "var(--text-2)" }}>{menuItem.label}</div>
+              </div>
+            );
+          })}
+        </div>
+      )}
+
+      <div className="glass" style={{ padding: 18, borderRadius: 12 }}>
+        <ScrollPaginationDots itemCount={3} gap={14} peekCarousel className="sj-peek-sm wa-stats-row">
+          {[0, 1, 2].map((idx) => {
+            const stat = t.raw(`details.guest.stats.${idx}`) as { key: string; label: string };
+            return (
+              <div key={idx} data-carousel-slide className="wa-stat-metric" style={{ textAlign: "center", flexShrink: 0 }}>
+                <div style={{ fontSize: 26, fontWeight: 700 }} className="gradient-text">{stat.key}</div>
+                <div className="wa-stat-label" style={{ fontSize: 11, color: "var(--text-3)", marginTop: 3 }}>{stat.label}</div>
+              </div>
+            );
+          })}
+        </ScrollPaginationDots>
+      </div>
+    </>
+  );
+}
+
+function NonGuestDetails({ systemId }: { systemId: "staff" | "admin" | "booking" }) {
+  const t = useTranslations("whatsapp");
+
+  if (systemId === "staff") {
+    return (
+      <>
+        <h2 style={{ fontSize: 38, fontWeight: 700, letterSpacing: "-0.03em", marginBottom: 16, lineHeight: 1.15 }}>
+          {t("details.staff.title")} <span className="gradient-text">{t("details.staff.titleGradient")}</span>
+        </h2>
+        <p style={{ fontSize: 16, color: "var(--text-2)", lineHeight: 1.65, marginBottom: 28 }}>
+          {t("details.staff.description")}
+        </p>
+
+        <div style={{ marginBottom: 28 }}>
+          <div className="uppercase-sm" style={{ color: "var(--text-3)", marginBottom: 14 }}>{t("details.staff.featuresTitle")}</div>
+          <div className="wa-flow-menu-strip">
+            {[0, 1, 2, 3, 4, 5].map((idx) => {
+              const feature = t.raw(`details.staff.features.${idx}`) as { label: string; detail: string };
+              const icons = ["📋", "📅", "📍", "✅", "⏱️", "🔔"];
+              return (
+                <div key={idx} style={{ display: "flex", gap: 12, padding: "12px 14px", background: "rgba(52,211,153,0.05)", border: "1px solid rgba(52,211,153,0.2)", borderRadius: 10 }}>
+                  <div style={{ fontSize: 18 }}>{icons[idx]}</div>
+                  <div>
+                    <div style={{ fontSize: 14, fontWeight: 600, color: "var(--text-1)", marginBottom: 2 }}>{feature.label}</div>
+                    <div style={{ fontSize: 12, color: "var(--text-3)" }}>{feature.detail}</div>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+
+        <div className="glass" style={{ padding: 18, borderRadius: 12 }}>
+          <ScrollPaginationDots itemCount={3} gap={14} peekCarousel className="sj-peek-sm wa-stats-row">
+            {[0, 1, 2].map((idx) => {
+              const stat = t.raw(`details.staff.stats.${idx}`) as { key: string; label: string };
+              return (
+                <div key={idx} data-carousel-slide className="wa-stat-metric" style={{ textAlign: "center", flexShrink: 0 }}>
+                  <div style={{ fontSize: 26, fontWeight: 700 }} className="gradient-text">{stat.key}</div>
+                  <div className="wa-stat-label" style={{ fontSize: 11, color: "var(--text-3)", marginTop: 3 }}>{stat.label}</div>
+                </div>
+              );
+            })}
+          </ScrollPaginationDots>
+        </div>
+      </>
+    );
+  }
+
+  if (systemId === "admin") {
+    return (
+      <>
+        <h2 style={{ fontSize: 38, fontWeight: 700, letterSpacing: "-0.03em", marginBottom: 16, lineHeight: 1.15 }}>
+          {t("details.admin.title")} <span className="gradient-text">{t("details.admin.titleGradient")}</span>
+        </h2>
+        <p style={{ fontSize: 16, color: "var(--text-2)", lineHeight: 1.65, marginBottom: 28 }}>
+          {t("details.admin.description")}
+        </p>
+
+        <div style={{ marginBottom: 28 }}>
+          <div className="uppercase-sm" style={{ color: "var(--text-3)", marginBottom: 14 }}>{t("details.admin.menuTitle")}</div>
+          <div className="wa-flow-menu-strip">
+            {["T", "D", "R", "M", "V", "L"].map((key, idx) => {
+              const menuItem = t.raw(`details.admin.menu.${idx}`) as { key: string; label: string };
+              const icons = ["✅", "📋", "📅", "💬", "⭐", "🎯"];
+              const colors = ["#10b981", "#3b82f6", "#8b5cf6", "#f59e0b", "#f4cf5e", "#ec4899"];
+              return (
+                <div key={key} style={{ display: "flex", alignItems: "center", gap: 12, padding: "12px 14px", background: `${colors[idx]}08`, border: `1px solid ${colors[idx]}30`, borderRadius: 10 }}>
+                  <div className="mono" style={{ fontSize: 13, fontWeight: 700, color: colors[idx], width: 20 }}>{menuItem.key}</div>
+                  <div style={{ fontSize: 18 }}>{icons[idx]}</div>
+                  <div style={{ fontSize: 14, color: "var(--text-2)", flex: 1 }}>{menuItem.label}</div>
+                  <div style={{ width: 8, height: 8, borderRadius: "50%", background: colors[idx], boxShadow: `0 0 10px ${colors[idx]}` }} />
+                </div>
+              );
+            })}
+          </div>
+        </div>
+
+        <div className="glass" style={{ padding: 18, borderRadius: 12 }}>
+          <ScrollPaginationDots itemCount={3} gap={14} peekCarousel className="sj-peek-sm wa-stats-row">
+            {[0, 1, 2].map((idx) => {
+              const stat = t.raw(`details.admin.stats.${idx}`) as { key: string; label: string };
+              return (
+                <div key={idx} data-carousel-slide className="wa-stat-metric" style={{ textAlign: "center", flexShrink: 0 }}>
+                  <div style={{ fontSize: 26, fontWeight: 700 }} className="gradient-text">{stat.key}</div>
+                  <div className="wa-stat-label" style={{ fontSize: 11, color: "var(--text-3)", marginTop: 3 }}>{stat.label}</div>
+                </div>
+              );
+            })}
+          </ScrollPaginationDots>
+        </div>
+      </>
+    );
+  }
+
+  return (
+    <>
+      <h2 style={{ fontSize: 38, fontWeight: 700, letterSpacing: "-0.03em", marginBottom: 16, lineHeight: 1.15 }}>
+        {t("details.booking.title")} <span className="gradient-text">{t("details.booking.titleGradient")}</span>
+      </h2>
+      <p style={{ fontSize: 16, color: "var(--text-2)", lineHeight: 1.65, marginBottom: 28 }}>
+        {t("details.booking.description")}
+      </p>
+
+      <div style={{ marginBottom: 28 }}>
+        <div className="uppercase-sm" style={{ color: "var(--text-3)", marginBottom: 14 }}>{t("details.booking.advantagesTitle")}</div>
+        <div className="wa-flow-menu-strip">
+          {[0, 1, 2, 3, 4, 5].map((idx) => {
+            const advantage = t.raw(`details.booking.advantages.${idx}`) as { label: string; detail: string };
+            const icons = ["💰", "🔄", "💳", "⚡", "📊", "🎁"];
+            const colors = ["#10b981", "#3b82f6", "#8b5cf6", "#f59e0b", "#ec4899", "#f4cf5e"];
+            return (
+              <div key={idx} style={{ display: "flex", gap: 12, padding: "12px 14px", background: `${colors[idx]}08`, border: `1px solid ${colors[idx]}30`, borderRadius: 10 }}>
+                <div style={{ fontSize: 18 }}>{icons[idx]}</div>
+                <div>
+                  <div style={{ fontSize: 14, fontWeight: 600, color: "var(--text-1)", marginBottom: 2 }}>{advantage.label}</div>
+                  <div style={{ fontSize: 12, color: "var(--text-3)" }}>{advantage.detail}</div>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+
+      <div className="glass" style={{ padding: 18, borderRadius: 12 }}>
+        <ScrollPaginationDots itemCount={3} gap={14} peekCarousel className="sj-peek-sm wa-stats-row">
+          {[0, 1, 2].map((idx) => {
+            const stat = t.raw(`details.booking.stats.${idx}`) as { key: string; label: string };
+            return (
+              <div key={idx} data-carousel-slide className="wa-stat-metric" style={{ textAlign: "center", flexShrink: 0 }}>
+                <div style={{ fontSize: 26, fontWeight: 700 }} className="gradient-text">{stat.key}</div>
+                <div className="wa-stat-label" style={{ fontSize: 11, color: "var(--text-3)", marginTop: 3 }}>{stat.label}</div>
+              </div>
+            );
+          })}
+        </ScrollPaginationDots>
+      </div>
+    </>
+  );
+}
+
 // ========================================
 // Main Component
 // ========================================
 
 export default function WhatsAppPage() {
   const t = useTranslations("whatsapp");
-  const [activeSystem, setActiveSystem] = useState("guest");
 
   // Build SYSTEMS array from translations
   const SYSTEMS = [
@@ -198,14 +437,12 @@ export default function WhatsAppPage() {
     { from: "sojori", text: t("messages.booking.confirmed"), time: "10:06" },
   ];
 
-  const currentMessages =
-    activeSystem === "guest" ? GUEST_MESSAGES :
-    activeSystem === "staff" ? STAFF_MESSAGES :
-    activeSystem === "admin" ? ADMIN_MESSAGES :
-    BOOKING_MESSAGES;
-
-  const currentTitle = t(`phone.${activeSystem}.title`);
-  const currentSubtitle = t(`phone.${activeSystem}.subtitle`);
+  function messagesFor(sid: WaSystemId): Message[] {
+    if (sid === "guest") return GUEST_MESSAGES;
+    if (sid === "staff") return STAFF_MESSAGES;
+    if (sid === "admin") return ADMIN_MESSAGES;
+    return BOOKING_MESSAGES;
+  }
 
   return (
     <>
@@ -228,10 +465,8 @@ export default function WhatsAppPage() {
           }
 
           div[style*="gridTemplateColumns: 'repeat(4, 1fr)'"] > * {
-            min-width: 160px !important;
-            max-width: 180px !important;
             flex-shrink: 0 !important;
-            scroll-snap-align: start !important;
+            scroll-snap-align: center !important;
           }
 
           div[style*="gridTemplateColumns: '380px 1fr'"] {
@@ -249,10 +484,8 @@ export default function WhatsAppPage() {
           }
 
           div[style*="gridTemplateColumns: 'repeat(3, 1fr)'"] > * {
-            min-width: 280px !important;
-            max-width: 300px !important;
             flex-shrink: 0 !important;
-            scroll-snap-align: start !important;
+            scroll-snap-align: center !important;
           }
 
           div[style*="gridTemplateColumns: 'repeat(2, 1fr)'"] {
@@ -265,10 +498,8 @@ export default function WhatsAppPage() {
           }
 
           div[style*="gridTemplateColumns: 'repeat(2, 1fr)'"] > * {
-            min-width: 300px !important;
-            max-width: 320px !important;
             flex-shrink: 0 !important;
-            scroll-snap-align: start !important;
+            scroll-snap-align: center !important;
           }
 
           div[style*="gridTemplateColumns: 'repeat(7, 1fr)'"] {
@@ -281,10 +512,8 @@ export default function WhatsAppPage() {
           }
 
           div[style*="gridTemplateColumns: 'repeat(7, 1fr)'"] > * {
-            min-width: 200px !important;
-            max-width: 220px !important;
             flex-shrink: 0 !important;
-            scroll-snap-align: start !important;
+            scroll-snap-align: center !important;
           }
 
           div[style*="width: 340"] {
@@ -298,9 +527,23 @@ export default function WhatsAppPage() {
             padding: 12px 20px !important;
           }
 
-          ::-webkit-scrollbar { height: 8px; }
-          ::-webkit-scrollbar-track { background: rgba(255,255,255,0.05); border-radius: 4px; }
-          ::-webkit-scrollbar-thumb { background: rgba(244,207,94,0.3); border-radius: 4px; }
+          .wa-anchor-section {
+            scroll-margin-top: 88px;
+          }
+
+          .wa-section-nav {
+            display: flex;
+            gap: 10px;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            padding-bottom: 6px;
+            scroll-snap-type: x proximity;
+          }
+
+          .wa-section-nav a {
+            scroll-snap-align: start;
+            flex: 0 0 auto;
+          }
         }
       `}</style>
       <BackgroundEffects />
@@ -314,235 +557,91 @@ export default function WhatsAppPage() {
           subtitle={t("hero.subtitle")}
         />
 
-        {/* System Badges */}
-        <section style={{padding: "0 32px 60px"}}>
-          <div style={{maxWidth: 1100, margin: "0 auto"}}>
-            <div style={{display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 12}}>
-              {SYSTEMS.map(sys => (
-                <button
-                  key={sys.id}
-                  onClick={() => setActiveSystem(sys.id)}
-                  style={{
-                    padding: "18px 16px",
-                    borderRadius: 14,
-                    background: activeSystem === sys.id ?
-                      `linear-gradient(135deg, ${sys.color}15, ${sys.color}08)` :
-                      "rgba(255,255,255,0.02)",
-                    border: activeSystem === sys.id ?
-                      `1.5px solid ${sys.color}40` :
-                      "1.5px solid var(--glass-border)",
-                    cursor: "pointer",
-                    transition: "all 0.25s",
-                    textAlign: "center",
-                  }}
-                >
-                  <div style={{fontSize: 32, marginBottom: 8}}>{sys.icon}</div>
-                  <div style={{fontSize: 13, fontWeight: 600, color: "var(--text-1)", marginBottom: 4}}>{sys.label}</div>
-                  <div style={{fontSize: 11, color: "var(--text-3)"}}>{sys.stat}</div>
-                </button>
-              ))}
-            </div>
+        {/* Jump nav — les 4 flux visibles (scroll horizontal), sans onglet caché */}
+        <section style={{ padding: "0 32px 28px" }}>
+          <div style={{ maxWidth: 1100, margin: "0 auto" }}>
+            <nav className="wa-section-nav" aria-label="WhatsApp flows">
+              {WA_SECTION_ORDER.map((sid) => {
+                const sys = SYSTEMS.find((s) => s.id === sid)!;
+                return (
+                  <a
+                    key={sid}
+                    href={`#wa-${sid}`}
+                    style={{
+                      padding: "12px 18px",
+                      borderRadius: 999,
+                      border: `1.5px solid ${sys.color}45`,
+                      background: `linear-gradient(135deg, ${sys.color}14, rgba(255,255,255,0.02))`,
+                      textDecoration: "none",
+                      color: "var(--text-1)",
+                      fontWeight: 600,
+                      fontSize: 13,
+                      whiteSpace: "nowrap",
+                      display: "inline-flex",
+                      alignItems: "center",
+                      gap: 8,
+                    }}
+                  >
+                    <span aria-hidden>{sys.icon}</span>
+                    {sys.label}
+                  </a>
+                );
+              })}
+            </nav>
+            <p className="uppercase-sm" style={{ marginTop: 14, color: "var(--text-3)", lineHeight: 1.5 }}>
+              {t("sectionNav.hint")}
+            </p>
           </div>
         </section>
 
-        {/* Interactive Demo Section */}
-        <section style={{padding: "20px 32px 80px", background: "linear-gradient(180deg, transparent, rgba(139,92,246,0.03) 50%, transparent)"}}>
-          <div style={{maxWidth: 1150, margin: "0 auto"}}>
-            <div className="uppercase-sm" style={{color: "var(--text-3)", textAlign: "center", marginBottom: 28}}>
-              ● {SYSTEMS.find(s => s.id === activeSystem)?.badge}
-            </div>
+        {/* 4 blocs écran + texte : Staff → Admin → Booking → Guest (en bas) */}
+        {WA_SECTION_ORDER.map((sid, sectionIdx) => {
+          const sys = SYSTEMS.find((s) => s.id === sid)!;
+          const msgs = messagesFor(sid);
+          const title = t(`phone.${sid}.title`);
+          const subtitle = t(`phone.${sid}.subtitle`);
+          return (
+            <section
+              key={sid}
+              id={`wa-${sid}`}
+              className="wa-anchor-section"
+              style={{
+                padding: "36px 32px 72px",
+                borderTop: sectionIdx === 0 ? "1px solid var(--glass-border)" : "1px solid var(--glass-border)",
+                background: sid === "guest"
+                  ? "linear-gradient(180deg, rgba(37,211,102,0.04), transparent 55%)"
+                  : sectionIdx % 2 === 1
+                    ? "linear-gradient(180deg, transparent, rgba(139,92,246,0.03) 45%, transparent)"
+                    : undefined,
+              }}
+            >
+              <div style={{ maxWidth: 1150, margin: "0 auto" }}>
+                <div className="uppercase-sm" style={{ color: "var(--text-3)", textAlign: "center", marginBottom: 24 }}>
+                  ● {sys.badge}
+                </div>
 
-            <div style={{display: "grid", gridTemplateColumns: "380px 1fr", gap: 70, alignItems: "center"}}>
-              {/* Phone Mockup */}
-              <div style={{display: "flex", justifyContent: "center", position: "relative"}}>
-                <div style={{position: "absolute", inset: "-50px", background: `radial-gradient(circle, ${SYSTEMS.find(s => s.id === activeSystem)?.color}20, transparent 70%)`, pointerEvents: "none", filter: "blur(40px)"}} />
-                <WhatsAppPhone
-                  title={currentTitle}
-                  subtitle={currentSubtitle}
-                  messages={currentMessages}
-                />
+                <div className="sj-mobile-hscroll" style={{ display: "grid", gridTemplateColumns: "380px 1fr", gap: 70, alignItems: "center" }}>
+                  <div style={{ display: "flex", justifyContent: "center", position: "relative" }}>
+                    <div
+                      style={{
+                        position: "absolute",
+                        inset: "-50px",
+                        background: `radial-gradient(circle, ${sys.color}22, transparent 70%)`,
+                        pointerEvents: "none",
+                        filter: "blur(40px)",
+                      }}
+                    />
+                    <WhatsAppPhone title={title} subtitle={subtitle} messages={msgs} />
+                  </div>
+
+                  <div>
+                    {sid === "guest" ? <GuestMenuBlock /> : <NonGuestDetails systemId={sid} />}
+                  </div>
+                </div>
               </div>
-
-              {/* Details */}
-              <div>
-                {activeSystem === "guest" && (
-                  <>
-                    <h2 style={{fontSize: 38, fontWeight: 700, letterSpacing: "-0.03em", marginBottom: 16, lineHeight: 1.15}}>
-                      {t("details.guest.title")} <span className="gradient-text">{t("details.guest.titleGradient")}</span>
-                    </h2>
-                    <p style={{fontSize: 16, color: "var(--text-2)", lineHeight: 1.65, marginBottom: 28}}>
-                      {t("details.guest.description")}
-                    </p>
-
-                    <div style={{marginBottom: 28}}>
-                      <div className="uppercase-sm" style={{color: "var(--text-3)", marginBottom: 14}}>{t("details.guest.menuTitle")}</div>
-                      <div style={{display: "flex", flexDirection: "column", gap: 10}}>
-                        {["A", "B", "C", "E", "F", "G", "H", "I", "J", "K"].map((key, idx) => {
-                          const menuItem = t.raw(`details.guest.menu.${idx}`);
-                          const icons = ["📋", "🌍", "📅", "👥", "🔐", "🏠", "📋", "🧹", "🛎️", "🆘"];
-                          return (
-                            <div key={key} style={{display: "flex", alignItems: "center", gap: 12, padding: "10px 14px", background: "rgba(255,255,255,0.02)", border: "1px solid var(--glass-border)", borderRadius: 10}}>
-                              <div className="mono" style={{fontSize: 12, fontWeight: 700, color: "#25D366", width: 20}}>{menuItem.key}</div>
-                              <div style={{fontSize: 16}}>{icons[idx]}</div>
-                              <div style={{fontSize: 13.5, color: "var(--text-2)"}}>{menuItem.label}</div>
-                            </div>
-                          );
-                        })}
-                      </div>
-                    </div>
-
-                    <div className="glass" style={{padding: 18, borderRadius: 12}}>
-                      <div style={{display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 14}}>
-                        {[0, 1, 2].map(idx => {
-                          const stat = t.raw(`details.guest.stats.${idx}`);
-                          return (
-                            <div key={idx} style={{textAlign: "center"}}>
-                              <div style={{fontSize: 26, fontWeight: 700}} className="gradient-text">{stat.key}</div>
-                              <div style={{fontSize: 11, color: "var(--text-3)", marginTop: 3}}>{stat.label}</div>
-                            </div>
-                          );
-                        })}
-                      </div>
-                    </div>
-                  </>
-                )}
-
-                {activeSystem === "staff" && (
-                  <>
-                    <h2 style={{fontSize: 38, fontWeight: 700, letterSpacing: "-0.03em", marginBottom: 16, lineHeight: 1.15}}>
-                      {t("details.staff.title")} <span className="gradient-text">{t("details.staff.titleGradient")}</span>
-                    </h2>
-                    <p style={{fontSize: 16, color: "var(--text-2)", lineHeight: 1.65, marginBottom: 28}}>
-                      {t("details.staff.description")}
-                    </p>
-
-                    <div style={{marginBottom: 28}}>
-                      <div className="uppercase-sm" style={{color: "var(--text-3)", marginBottom: 14}}>{t("details.staff.featuresTitle")}</div>
-                      <div style={{display: "flex", flexDirection: "column", gap: 10}}>
-                        {[0, 1, 2, 3, 4, 5].map(idx => {
-                          const feature = t.raw(`details.staff.features.${idx}`);
-                          const icons = ["📋", "📅", "📍", "✅", "⏱️", "🔔"];
-                          return (
-                            <div key={idx} style={{display: "flex", gap: 12, padding: "12px 14px", background: "rgba(52,211,153,0.05)", border: "1px solid rgba(52,211,153,0.2)", borderRadius: 10}}>
-                              <div style={{fontSize: 18}}>{icons[idx]}</div>
-                              <div>
-                                <div style={{fontSize: 14, fontWeight: 600, color: "var(--text-1)", marginBottom: 2}}>{feature.label}</div>
-                                <div style={{fontSize: 12, color: "var(--text-3)"}}>{feature.detail}</div>
-                              </div>
-                            </div>
-                          );
-                        })}
-                      </div>
-                    </div>
-
-                    <div className="glass" style={{padding: 18, borderRadius: 12}}>
-                      <div style={{display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 14}}>
-                        {[0, 1, 2].map(idx => {
-                          const stat = t.raw(`details.staff.stats.${idx}`);
-                          return (
-                            <div key={idx} style={{textAlign: "center"}}>
-                              <div style={{fontSize: 26, fontWeight: 700}} className="gradient-text">{stat.key}</div>
-                              <div style={{fontSize: 11, color: "var(--text-3)", marginTop: 3}}>{stat.label}</div>
-                            </div>
-                          );
-                        })}
-                      </div>
-                    </div>
-                  </>
-                )}
-
-                {activeSystem === "admin" && (
-                  <>
-                    <h2 style={{fontSize: 38, fontWeight: 700, letterSpacing: "-0.03em", marginBottom: 16, lineHeight: 1.15}}>
-                      {t("details.admin.title")} <span className="gradient-text">{t("details.admin.titleGradient")}</span>
-                    </h2>
-                    <p style={{fontSize: 16, color: "var(--text-2)", lineHeight: 1.65, marginBottom: 28}}>
-                      {t("details.admin.description")}
-                    </p>
-
-                    <div style={{marginBottom: 28}}>
-                      <div className="uppercase-sm" style={{color: "var(--text-3)", marginBottom: 14}}>{t("details.admin.menuTitle")}</div>
-                      <div style={{display: "flex", flexDirection: "column", gap: 10}}>
-                        {["T", "D", "R", "M", "V", "L"].map((key, idx) => {
-                          const menuItem = t.raw(`details.admin.menu.${idx}`);
-                          const icons = ["✅", "📋", "📅", "💬", "⭐", "🎯"];
-                          const colors = ["#10b981", "#3b82f6", "#8b5cf6", "#f59e0b", "#f4cf5e", "#ec4899"];
-                          return (
-                            <div key={key} style={{display: "flex", alignItems: "center", gap: 12, padding: "12px 14px", background: `${colors[idx]}08`, border: `1px solid ${colors[idx]}30`, borderRadius: 10}}>
-                              <div className="mono" style={{fontSize: 13, fontWeight: 700, color: colors[idx], width: 20}}>{menuItem.key}</div>
-                              <div style={{fontSize: 18}}>{icons[idx]}</div>
-                              <div style={{fontSize: 14, color: "var(--text-2)", flex: 1}}>{menuItem.label}</div>
-                              <div style={{width: 8, height: 8, borderRadius: "50%", background: colors[idx], boxShadow: `0 0 10px ${colors[idx]}`}} />
-                            </div>
-                          );
-                        })}
-                      </div>
-                    </div>
-
-                    <div className="glass" style={{padding: 18, borderRadius: 12}}>
-                      <div style={{display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 14}}>
-                        {[0, 1, 2].map(idx => {
-                          const stat = t.raw(`details.admin.stats.${idx}`);
-                          return (
-                            <div key={idx} style={{textAlign: "center"}}>
-                              <div style={{fontSize: 26, fontWeight: 700}} className="gradient-text">{stat.key}</div>
-                              <div style={{fontSize: 11, color: "var(--text-3)", marginTop: 3}}>{stat.label}</div>
-                            </div>
-                          );
-                        })}
-                      </div>
-                    </div>
-                  </>
-                )}
-
-                {activeSystem === "booking" && (
-                  <>
-                    <h2 style={{fontSize: 38, fontWeight: 700, letterSpacing: "-0.03em", marginBottom: 16, lineHeight: 1.15}}>
-                      {t("details.booking.title")} <span className="gradient-text">{t("details.booking.titleGradient")}</span>
-                    </h2>
-                    <p style={{fontSize: 16, color: "var(--text-2)", lineHeight: 1.65, marginBottom: 28}}>
-                      {t("details.booking.description")}
-                    </p>
-
-                    <div style={{marginBottom: 28}}>
-                      <div className="uppercase-sm" style={{color: "var(--text-3)", marginBottom: 14}}>{t("details.booking.advantagesTitle")}</div>
-                      <div style={{display: "flex", flexDirection: "column", gap: 10}}>
-                        {[0, 1, 2, 3, 4, 5].map(idx => {
-                          const advantage = t.raw(`details.booking.advantages.${idx}`);
-                          const icons = ["💰", "🔄", "💳", "⚡", "📊", "🎁"];
-                          const colors = ["#10b981", "#3b82f6", "#8b5cf6", "#f59e0b", "#ec4899", "#f4cf5e"];
-                          return (
-                            <div key={idx} style={{display: "flex", gap: 12, padding: "12px 14px", background: `${colors[idx]}08`, border: `1px solid ${colors[idx]}30`, borderRadius: 10}}>
-                              <div style={{fontSize: 18}}>{icons[idx]}</div>
-                              <div>
-                                <div style={{fontSize: 14, fontWeight: 600, color: "var(--text-1)", marginBottom: 2}}>{advantage.label}</div>
-                                <div style={{fontSize: 12, color: "var(--text-3)"}}>{advantage.detail}</div>
-                              </div>
-                            </div>
-                          );
-                        })}
-                      </div>
-                    </div>
-
-                    <div className="glass" style={{padding: 18, borderRadius: 12}}>
-                      <div style={{display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 14}}>
-                        {[0, 1, 2].map(idx => {
-                          const stat = t.raw(`details.booking.stats.${idx}`);
-                          return (
-                            <div key={idx} style={{textAlign: "center"}}>
-                              <div style={{fontSize: 26, fontWeight: 700}} className="gradient-text">{stat.key}</div>
-                              <div style={{fontSize: 11, color: "var(--text-3)", marginTop: 3}}>{stat.label}</div>
-                            </div>
-                          );
-                        })}
-                      </div>
-                    </div>
-                  </>
-                )}
-              </div>
-            </div>
-          </div>
-        </section>
+            </section>
+          );
+        })}
 
         {/* Benefits Section */}
         <section style={{padding: "70px 32px", borderTop: "1px solid var(--glass-border)"}}>
@@ -553,19 +652,19 @@ export default function WhatsAppPage() {
               subtitle={t("benefits.subtitle")}
             />
 
-            <div style={{display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 16, marginTop: 40}}>
+            <ScrollPaginationDots itemCount={6} gap={16} peekCarousel>
               {[0, 1, 2, 3, 4, 5].map(idx => {
                 const benefit = t.raw(`benefits.items.${idx}`);
                 const icons = ["🤖", "⚡", "🔄", "📊", "🔐", "📈"];
                 return (
-                  <div key={idx} className="card" style={{padding: 22}}>
+                  <div key={idx} data-carousel-slide className="card" style={{padding: 22, flexShrink: 0}}>
                     <div style={{fontSize: 32, marginBottom: 12}}>{icons[idx]}</div>
                     <div style={{fontSize: 16, fontWeight: 600, marginBottom: 6}}>{benefit.title}</div>
                     <div style={{fontSize: 13, color: "var(--text-3)", lineHeight: 1.5}}>{benefit.description}</div>
                   </div>
                 );
               })}
-            </div>
+            </ScrollPaginationDots>
           </div>
         </section>
 
@@ -578,12 +677,12 @@ export default function WhatsAppPage() {
               subtitle={t("useCases.subtitle")}
             />
 
-            <div style={{display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 20, marginTop: 40}}>
+            <ScrollPaginationDots itemCount={4} gap={20} peekCarousel>
               {[0, 1, 2, 3].map(caseIdx => {
                 const useCase = t.raw(`useCases.cases.${caseIdx}`);
                 const colors = ["#25D366", "#3b82f6", "#f59e0b", "#10b981"];
                 return (
-                  <div key={caseIdx} className="glass" style={{padding: 24, borderRadius: 14, border: `1px solid ${colors[caseIdx]}30`}}>
+                  <div key={caseIdx} data-carousel-slide className="glass" style={{padding: 24, borderRadius: 14, border: `1px solid ${colors[caseIdx]}30`, flexShrink: 0}}>
                     <div style={{fontSize: 18, fontWeight: 700, marginBottom: 16, color: "var(--text-1)"}}>{useCase.title}</div>
                     <div style={{display: "flex", flexDirection: "column", gap: 10}}>
                       {useCase.steps.map((step: string, i: number) => (
@@ -611,7 +710,7 @@ export default function WhatsAppPage() {
                   </div>
                 );
               })}
-            </div>
+            </ScrollPaginationDots>
           </div>
         </section>
 
@@ -625,59 +724,64 @@ export default function WhatsAppPage() {
             />
 
             {/* Flow en 7 étapes - Cycle complet */}
-            <div style={{marginTop: 50, display: "grid", gridTemplateColumns: "repeat(7, 1fr)", gap: 10, position: "relative"}}>
-              {/* Connecting gradient line */}
-              <div style={{
-                position: "absolute",
-                top: "30px",
-                left: "5%",
-                right: "5%",
-                height: 3,
-                background: "linear-gradient(90deg, #FF5A5F, #8b5cf6, #25D366, #f4cf5e, #06b6d4, #8b5cf6, #FF5A5F)",
-                opacity: 0.3,
-                zIndex: 0,
-                borderRadius: 2
-              }} />
+            <div className="wa-fullcycle-wrap" style={{ marginTop: 50, position: "relative" }}>
+              {/* Connecting gradient line — derrière les cartes (z-index via globals) */}
+              <div
+                className="wa-fullcycle-connector"
+                style={{
+                  position: "absolute",
+                  top: "clamp(24px, 3.5vw, 34px)",
+                  left: "5%",
+                  right: "5%",
+                  height: 3,
+                  background: "linear-gradient(90deg, #FF5A5F, #8b5cf6, #25D366, #f4cf5e, #06b6d4, #8b5cf6, #FF5A5F)",
+                  opacity: 0.35,
+                  borderRadius: 2,
+                  pointerEvents: "none",
+                }}
+              />
 
-              {[0, 1, 2, 3, 4, 5, 6].map(idx => {
-                const step = t.raw(`fullCycle.steps.${idx}`);
-                const colors = ["#FF5A5F", "#8b5cf6", "#25D366", "#f4cf5e", "#06b6d4", "#8b5cf6", "#FF5A5F"];
-                const icons = ["🏠", "📥", "💬", "🧠", "✅", "📤", "✈️"];
-                return (
-                  <div key={idx} style={{position: "relative", zIndex: 1}}>
-                    <div className="card" style={{
-                      padding: 16,
-                      textAlign: "center",
-                      background: `linear-gradient(135deg, ${colors[idx]}10, rgba(255,255,255,0.03))`,
-                      border: `2px solid ${colors[idx]}30`
-                    }}>
-                      <div style={{
-                        width: 50,
-                        height: 50,
-                        margin: "0 auto 12px",
-                        borderRadius: "50%",
-                        background: `linear-gradient(135deg, ${colors[idx]}, ${colors[idx]}cc)`,
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "center",
-                        fontSize: 22,
-                        boxShadow: `0 6px 16px ${colors[idx]}30`
-                      }}>{icons[idx]}</div>
-                      <div style={{fontSize: 13, fontWeight: 700, marginBottom: 6, color: "var(--text-1)"}}>{step.title}</div>
-                      <div style={{fontSize: 11, color: "var(--text-3)", lineHeight: 1.4, marginBottom: 10, whiteSpace: "pre-line"}}>
-                        {step.description}
-                      </div>
-                      <div className="glass" style={{padding: 8, fontSize: 10, fontStyle: "italic", color: "var(--text-2)", borderRadius: 6, lineHeight: 1.3, whiteSpace: "pre-line"}}>
-                        {step.message}
+              <ScrollPaginationDots itemCount={7} gap={10} peekCarousel className="sj-peek-sm wa-fullcycle-steps">
+                {[0, 1, 2, 3, 4, 5, 6].map(idx => {
+                  const step = t.raw(`fullCycle.steps.${idx}`);
+                  const colors = ["#FF5A5F", "#8b5cf6", "#25D366", "#f4cf5e", "#06b6d4", "#8b5cf6", "#FF5A5F"];
+                  const icons = ["🏠", "📥", "💬", "🧠", "✅", "📤", "✈️"];
+                  return (
+                    <div key={idx} data-carousel-slide style={{position: "relative", zIndex: 1, flexShrink: 0}}>
+                      <div className="card wa-fullcycle-card" style={{
+                        padding: 16,
+                        textAlign: "center",
+                        background: `linear-gradient(135deg, ${colors[idx]}10, rgba(255,255,255,0.03))`,
+                        border: `2px solid ${colors[idx]}30`
+                      }}>
+                        <div className="wa-fullcycle-icon" style={{
+                          width: 50,
+                          height: 50,
+                          margin: "0 auto 12px",
+                          borderRadius: "50%",
+                          background: `linear-gradient(135deg, ${colors[idx]}, ${colors[idx]}cc)`,
+                          display: "flex",
+                          alignItems: "center",
+                          justifyContent: "center",
+                          fontSize: 22,
+                          boxShadow: `0 6px 16px ${colors[idx]}30`
+                        }}>{icons[idx]}</div>
+                        <div className="wa-fullcycle-title" style={{fontSize: 13, fontWeight: 700, marginBottom: 6, color: "var(--text-1)"}}>{step.title}</div>
+                        <div className="wa-fullcycle-desc" style={{fontSize: 11, color: "var(--text-3)", lineHeight: 1.4, marginBottom: 10, whiteSpace: "pre-line"}}>
+                          {step.description}
+                        </div>
+                        <div className="glass wa-fullcycle-msg" style={{padding: 8, fontSize: 10, fontStyle: "italic", color: "var(--text-2)", borderRadius: 6, lineHeight: 1.3, whiteSpace: "pre-line"}}>
+                          {step.message}
+                        </div>
                       </div>
                     </div>
-                  </div>
-                );
-              })}
+                  );
+                })}
+              </ScrollPaginationDots>
             </div>
 
             {/* Mode Pilote Automatique */}
-            <div className="card" style={{
+            <div className="card wa-autopilot-card" style={{
               marginTop: 50,
               padding: 32,
               background: "linear-gradient(135deg, rgba(139,92,246,0.15), rgba(6,182,212,0.1))",
@@ -685,18 +789,24 @@ export default function WhatsAppPage() {
               borderRadius: 16
             }}>
               <div style={{display: "flex", alignItems: "center", gap: 20}}>
-                <div style={{
-                  width: 70,
-                  height: 70,
-                  borderRadius: "50%",
-                  background: "linear-gradient(135deg, #8b5cf6, #06b6d4)",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  fontSize: 36,
-                  flexShrink: 0,
-                  boxShadow: "0 12px 30px rgba(139,92,246,0.4)"
-                }}>🤖</div>
+                <div
+                  className="wa-autopilot-robot"
+                  style={{
+                    width: 70,
+                    height: 70,
+                    borderRadius: "50%",
+                    background: "linear-gradient(135deg, #8b5cf6, #06b6d4)",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    fontSize: 36,
+                    flexShrink: 0,
+                    boxShadow: "0 12px 30px rgba(139,92,246,0.45), 0 0 0 2px rgba(255,255,255,0.12) inset",
+                  }}
+                  aria-hidden
+                >
+                  🤖
+                </div>
                 <div style={{flex: 1}}>
                   <div style={{fontSize: 24, fontWeight: 800, marginBottom: 8, letterSpacing: "-0.02em"}}>
                     {t("fullCycle.autopilot.title")} <span className="gradient-text">{t("fullCycle.autopilot.titleGradient")}</span>
@@ -710,19 +820,22 @@ export default function WhatsAppPage() {
                       const icons = ["⚡", "🌙", "👁️", "🔔"];
                       const colors = ["#f59e0b", "#8b5cf6", "#06b6d4", "#ef4444"];
                       return (
-                        <div key={idx} style={{
-                          display: "flex",
-                          alignItems: "center",
-                          gap: 8,
-                          padding: "8px 14px",
-                          background: "rgba(255,255,255,0.6)",
-                          borderRadius: 999,
-                          fontSize: 12,
-                          fontWeight: 600,
-                          border: `1px solid ${colors[idx]}40`
-                        }}>
-                          <span>{icons[idx]}</span>
-                          <span style={{color: "var(--text-2)"}}>{feature.label}</span>
+                        <div
+                          key={idx}
+                          className="wa-autopilot-chip"
+                          style={{
+                            display: "flex",
+                            alignItems: "center",
+                            gap: 8,
+                            padding: "8px 14px",
+                            borderRadius: 999,
+                            fontSize: 12,
+                            fontWeight: 600,
+                            border: `1px solid ${colors[idx]}55`,
+                          }}
+                        >
+                          <span aria-hidden>{icons[idx]}</span>
+                          <span style={{ color: "var(--text-1)" }}>{feature.label}</span>
                         </div>
                       );
                     })}

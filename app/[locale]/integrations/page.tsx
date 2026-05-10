@@ -1,10 +1,12 @@
 "use client";
 
+import { Link } from '@/i18n/routing';
 import { Metadata } from 'next';
 import { useState } from 'react';
 import { useTranslations } from 'next-intl';
 import { BackgroundEffects } from '@/components/BackgroundEffects';
 import { PageHeader, PageFooter, PageHero, StatsBar, FinalCTA } from '@/components/SharedComponents';
+import { ScrollPaginationDots } from '@/components/shared/ScrollPaginationDots';
 
 interface Category {
   id: string;
@@ -158,10 +160,8 @@ export default function IntegrationsPage() {
           }
 
           div[style*="gridTemplateColumns: 'repeat(auto-fill, minmax(260px, 1fr))'"] > * {
-            min-width: 280px !important;
-            max-width: 300px !important;
             flex-shrink: 0 !important;
-            scroll-snap-align: start !important;
+            scroll-snap-align: center !important;
           }
 
           div[style*="gridTemplateColumns: '1fr 1fr'"] {
@@ -181,10 +181,6 @@ export default function IntegrationsPage() {
           button {
             min-height: 44px !important;
           }
-
-          ::-webkit-scrollbar { height: 8px; }
-          ::-webkit-scrollbar-track { background: rgba(255,255,255,0.05); border-radius: 4px; }
-          ::-webkit-scrollbar-thumb { background: rgba(244,207,94,0.3); border-radius: 4px; }
         }
       `}</style>
       <BackgroundEffects />
@@ -227,15 +223,19 @@ export default function IntegrationsPage() {
               ))}
             </div>
             {/* Grid */}
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(260px, 1fr))', gap: 14 }}>
-              {list.map(i => <Card key={i.n} i={i} />)}
-            </div>
+            <ScrollPaginationDots itemCount={list.length} gap={14} peekCarousel>
+              {list.map(i => (
+                <div key={i.n} data-carousel-slide style={{ flexShrink: 0 }}>
+                  <Card i={i} />
+                </div>
+              ))}
+            </ScrollPaginationDots>
           </div>
         </section>
 
         {/* API CTA */}
         <section style={{ padding: '70px 32px', borderTop: '1px solid var(--glass-border)' }}>
-          <div style={{
+          <div className="integrations-api-split" style={{
             maxWidth: 1100,
             margin: '0 auto',
             display: 'grid',
@@ -254,17 +254,18 @@ export default function IntegrationsPage() {
                 {t('apiSection.description')}
               </p>
               <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
-                <a href="/demo?source=integrations-api-docs" className="btn btn-primary">{t('apiSection.cta1')}</a>
+                <Link href={{ pathname: '/demo', query: { source: 'integrations-api-docs' } }} className="btn btn-primary">{t('apiSection.cta1')}</Link>
                 <a href="https://zapier.com" target="_blank" rel="noopener noreferrer" className="btn btn-ghost">{t('apiSection.cta2')}</a>
               </div>
             </div>
-            <div style={{
+            <div className="integrations-api-code" style={{
               background: '#0a0a10',
               border: '1px solid var(--glass-border)',
               borderRadius: 12,
               overflow: 'hidden',
               fontFamily: 'Geist Mono',
-              fontSize: 12
+              fontSize: 12,
+              minWidth: 0
             }}>
               <div style={{
                 background: 'rgba(255,255,255,0.04)',

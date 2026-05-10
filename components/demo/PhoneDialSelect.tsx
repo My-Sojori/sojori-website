@@ -13,9 +13,22 @@ type Props = {
   onSelect: (dial: string, iso: string) => void;
   inputStyle: React.CSSProperties;
   labelStyle: React.CSSProperties;
+  /** Libellés i18n (namespace demo.step1 côté page). */
+  dialLabel: string;
+  dialSearchPlaceholder: string;
+  dialNoResults: string;
 };
 
-export function PhoneDialSelect({ dial, iso, onSelect, inputStyle, labelStyle }: Props) {
+export function PhoneDialSelect({
+  dial,
+  iso,
+  onSelect,
+  inputStyle,
+  labelStyle,
+  dialLabel,
+  dialSearchPlaceholder,
+  dialNoResults,
+}: Props) {
   const [open, setOpen] = useState(false);
   const [q, setQ] = useState("");
   const wrapRef = useRef<HTMLDivElement>(null);
@@ -81,7 +94,7 @@ export function PhoneDialSelect({ dial, iso, onSelect, inputStyle, labelStyle }:
 
   return (
     <div ref={wrapRef} style={{ position: "relative" }}>
-      <label style={labelStyle}>Pays / indicatif *</label>
+      <label style={labelStyle}>{dialLabel}</label>
       <button
         type="button"
         aria-expanded={open}
@@ -116,7 +129,7 @@ export function PhoneDialSelect({ dial, iso, onSelect, inputStyle, labelStyle }:
             autoFocus
             value={q}
             onChange={(e) => setQ(e.target.value)}
-            placeholder="Rechercher un pays ou +33…"
+            placeholder={dialSearchPlaceholder}
             style={{
               ...inputStyle,
               borderRadius: 0,
@@ -126,7 +139,7 @@ export function PhoneDialSelect({ dial, iso, onSelect, inputStyle, labelStyle }:
           />
           <div style={{ overflowY: "auto", flex: 1 }}>
             {filtered.length === 0 ? (
-              <div style={{ padding: 14, fontSize: 13, color: "var(--text-3)" }}>Aucun résultat</div>
+              <div style={{ padding: 14, fontSize: 13, color: "var(--text-3)" }}>{dialNoResults}</div>
             ) : (
               filtered.map((r) => {
                 const active = r.dial === dial && r.iso === iso;

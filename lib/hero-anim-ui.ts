@@ -17,6 +17,8 @@ export type HeroAnimUi = {
   stageIngest: string;
   stageTimeline: string;
   channelsLive: string;
+  /** Entre canaux et carte, uniquement utile en layout mobile empilé. */
+  incomingMobileBridge: string;
   demoPropertyName: string;
   demoPropertyTagline: string;
   channelDirect: string;
@@ -31,6 +33,8 @@ export type HeroAnimUi = {
   demoTotalPrice: string;
   /** Small line under name in ingest act (route + price). */
   demoIngestSummary: string;
+  /** Acte 3 : sous-titre tant que seule la carte « Réservation Airbnb » est mise en avant au lancement du graphe. */
+  timelineKickoffLine: string;
 };
 
 const heroAnimByLocale: Record<string, HeroAnimUi> = {
@@ -52,6 +56,7 @@ const heroAnimByLocale: Record<string, HeroAnimUi> = {
     stageIngest: '⚡ INGESTION',
     stageTimeline: '🟢 ORCHESTRATION',
     channelsLive: '● CANAUX · EN DIRECT',
+    incomingMobileBridge: '→ Détail du séjour',
     demoPropertyName: 'Villa Belvédère',
     demoPropertyTagline: "NICE · CÔTE D'AZUR · 4ch · piscine",
     channelDirect: 'Direct',
@@ -61,6 +66,7 @@ const heroAnimByLocale: Record<string, HeroAnimUi> = {
     demoGuestOrigin: '· 🇺🇸 New York',
     demoTotalPrice: '1 840 €',
     demoIngestSummary: 'New York → Nice · 1 840 €',
+    timelineKickoffLine: 'Le graphe démarre sur cette réservation Airbnb — quelques secondes avant la suite du parcours.',
   },
   en: {
     headerIncoming: 'Incoming booking',
@@ -80,6 +86,7 @@ const heroAnimByLocale: Record<string, HeroAnimUi> = {
     stageIngest: '⚡ INGESTING',
     stageTimeline: '🟢 ORCHESTRATING',
     channelsLive: '● CHANNELS · LIVE',
+    incomingMobileBridge: '→ Stay details',
     demoPropertyName: 'Villa Belvédère',
     demoPropertyTagline: 'NICE · FRENCH RIVIERA · 4 bd · pool',
     channelDirect: 'Direct',
@@ -89,6 +96,7 @@ const heroAnimByLocale: Record<string, HeroAnimUi> = {
     demoGuestOrigin: '· 🇺🇸 New York',
     demoTotalPrice: '€1,840',
     demoIngestSummary: 'NYC → Nice · €1,840',
+    timelineKickoffLine: 'The timeline starts from this Airbnb booking — a few seconds before the rest unfolds.',
   },
   es: {
     headerIncoming: 'Reserva entrante',
@@ -108,6 +116,7 @@ const heroAnimByLocale: Record<string, HeroAnimUi> = {
     stageIngest: '⚡ INGESTA',
     stageTimeline: '🟢 ORQUESTACIÓN',
     channelsLive: '● CANALES · EN DIRECTO',
+    incomingMobileBridge: '→ Detalle de la estancia',
     demoPropertyName: 'Villa Belvédère',
     demoPropertyTagline: 'NIZA · COSTA AZUL · 4 hab · piscina',
     channelDirect: 'Directo',
@@ -117,6 +126,7 @@ const heroAnimByLocale: Record<string, HeroAnimUi> = {
     demoGuestOrigin: '· 🇺🇸 Nueva York',
     demoTotalPrice: '1.840 €',
     demoIngestSummary: 'Nueva York → Niza · 1.840 €',
+    timelineKickoffLine: 'La línea de tiempo arranca con esta reserva de Airbnb — unos segundos antes del resto.',
   },
   pt: {
     headerIncoming: 'Reserva recebida',
@@ -136,6 +146,7 @@ const heroAnimByLocale: Record<string, HeroAnimUi> = {
     stageIngest: '⚡ INGESTÃO',
     stageTimeline: '🟢 ORQUESTRAÇÃO',
     channelsLive: '● CANAIS · AO VIVO',
+    incomingMobileBridge: '→ Detalhes da estadia',
     demoPropertyName: 'Villa Belvédère',
     demoPropertyTagline: 'NICE · COSTA AZUL · 4 qts · piscina',
     channelDirect: 'Direto',
@@ -145,6 +156,7 @@ const heroAnimByLocale: Record<string, HeroAnimUi> = {
     demoGuestOrigin: '· 🇺🇸 Nova Iorque',
     demoTotalPrice: '1 840 €',
     demoIngestSummary: 'Nova Iorque → Nice · 1 840 €',
+    timelineKickoffLine: 'A linha do tempo começa com esta reserva Airbnb — alguns segundos antes do restante.',
   },
   ar: {
     headerIncoming: 'حجز وارد',
@@ -164,6 +176,7 @@ const heroAnimByLocale: Record<string, HeroAnimUi> = {
     stageIngest: '⚡ استيعاب',
     stageTimeline: '🟢 تنسيق العمليات',
     channelsLive: '● القنوات · مباشر',
+    incomingMobileBridge: '→ تفاصيل الإقامة',
     demoPropertyName: 'Villa Belvédère',
     demoPropertyTagline: 'نيس · الريفييرا · ٤ غرف · مسبح',
     channelDirect: 'مباشر',
@@ -173,6 +186,7 @@ const heroAnimByLocale: Record<string, HeroAnimUi> = {
     demoGuestOrigin: '· 🇺🇸 نيويورك',
     demoTotalPrice: '1840 €',
     demoIngestSummary: 'نيويورك → نيس · 1840 €',
+    timelineKickoffLine: 'يبدأ المخطط من حجز Airbnb هذا — بضع ثوانٍ قبل بقية المسار.',
   },
 };
 

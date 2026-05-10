@@ -3,6 +3,7 @@
 import { useTranslations } from 'next-intl';
 import { BackgroundEffects } from '@/components/BackgroundEffects';
 import { PageHeader, PageFooter, PageHero, StatsBar, FinalCTA } from '@/components/SharedComponents';
+import { ScrollPaginationDots } from '@/components/shared/ScrollPaginationDots';
 
 function PriceCalendar() {
   const t = useTranslations('dynamicPricing.calendar');
@@ -56,21 +57,23 @@ function PriceFactors() {
   const comingSoon = t.raw('comingSoon') as { icon: string; title: string; description: string };
 
   return (
-    <div>
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 12 }}>
-        {factorsList.map(f => (
-          <div key={f.label} className="card" style={{ padding: 18, display: 'flex', gap: 14, alignItems: 'flex-start' }}>
-            <div style={{ fontSize: 28, flexShrink: 0 }}>{f.icon}</div>
-            <div style={{ flex: 1 }}>
-              <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 4 }}>
-                <div style={{ fontSize: 15, fontWeight: 600 }}>{f.label}</div>
-                <div style={{ fontSize: 11, color: '#f4cf5e', fontFamily: 'var(--font-mono)', fontWeight: 600 }}>{f.impact}</div>
+    <>
+      <ScrollPaginationDots itemCount={factorsList.length} gap={14} peekCarousel className="sj-peek-sm">
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, minmax(0, 1fr))', gap: 12 }}>
+          {factorsList.map(f => (
+            <div key={f.label} data-carousel-slide className="card" style={{ padding: 18, display: 'flex', gap: 14, alignItems: 'flex-start' }}>
+              <div style={{ fontSize: 28, flexShrink: 0 }}>{f.icon}</div>
+              <div style={{ flex: 1, minWidth: 0 }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 4 }}>
+                  <div style={{ fontSize: 15, fontWeight: 600 }}>{f.label}</div>
+                  <div style={{ fontSize: 11, color: '#f4cf5e', fontFamily: 'var(--font-mono)', fontWeight: 600 }}>{f.impact}</div>
+                </div>
+                <div style={{ fontSize: 12, color: 'var(--text-3)', lineHeight: 1.5 }}>{f.description}</div>
               </div>
-              <div style={{ fontSize: 12, color: 'var(--text-3)', lineHeight: 1.5 }}>{f.description}</div>
             </div>
-          </div>
-        ))}
-      </div>
+          ))}
+        </div>
+      </ScrollPaginationDots>
       <div className="card" style={{ padding: 20, marginTop: 16, background: 'rgba(139,92,246,0.08)', border: '1px solid rgba(139,92,246,0.25)' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
           <div style={{ fontSize: 24 }}>{comingSoon.icon}</div>
@@ -80,7 +83,7 @@ function PriceFactors() {
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }
 
@@ -182,10 +185,10 @@ export default function DynamicPricingPage() {
           }
 
           div[style*="gridTemplateColumns: 'repeat(2, 1fr)'"] > * {
-            min-width: 300px !important;
-            max-width: 320px !important;
+            min-width: min(300px, 88vw) !important;
+            max-width: min(320px, 92vw) !important;
             flex-shrink: 0 !important;
-            scroll-snap-align: start !important;
+            scroll-snap-align: center !important;
           }
 
           div[style*="gridTemplateColumns: 'repeat(3, 1fr)'"] {
@@ -198,10 +201,10 @@ export default function DynamicPricingPage() {
           }
 
           div[style*="gridTemplateColumns: 'repeat(3, 1fr)'"] > * {
-            min-width: 280px !important;
-            max-width: 300px !important;
+            min-width: min(280px, 85vw) !important;
+            max-width: min(300px, 90vw) !important;
             flex-shrink: 0 !important;
-            scroll-snap-align: start !important;
+            scroll-snap-align: center !important;
           }
 
           div[style*="gridTemplateColumns: 'repeat(7, 1fr)'"] {
@@ -213,10 +216,6 @@ export default function DynamicPricingPage() {
             min-height: 44px !important;
             padding: 12px 20px !important;
           }
-
-          ::-webkit-scrollbar { height: 8px; }
-          ::-webkit-scrollbar-track { background: rgba(255,255,255,0.05); border-radius: 4px; }
-          ::-webkit-scrollbar-thumb { background: rgba(244,207,94,0.3); border-radius: 4px; }
         }
       `}</style>
       <BackgroundEffects />
@@ -264,15 +263,17 @@ export default function DynamicPricingPage() {
             </div>
             <p style={{ fontSize: 13, color: 'var(--text-3)', marginBottom: 24, maxWidth: 720 }}>{tRevenue('subtitle')}</p>
             <RevenueChart />
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 16, marginTop: 24 }}>
-              {impactCards.map(s => (
-                <div key={s.label} className="card" style={{ padding: 20 }}>
-                  <div className="gradient-text" style={{ fontSize: 36, fontWeight: 700, letterSpacing: '-0.02em' }}>{s.icon}</div>
-                  <div style={{ fontSize: 13, fontWeight: 500, marginTop: 4 }}>{s.label}</div>
-                  <div style={{ fontSize: 11, color: 'var(--text-3)', marginTop: 2 }}>{s.description}</div>
-                </div>
-              ))}
-            </div>
+            <ScrollPaginationDots itemCount={impactCards.length} gap={14} peekCarousel className="sj-peek-sm" style={{ marginTop: 24 }}>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, minmax(0, 1fr))', gap: 16 }}>
+                {impactCards.map(s => (
+                  <div key={s.label} data-carousel-slide className="card" style={{ padding: 20 }}>
+                    <div className="gradient-text" style={{ fontSize: 36, fontWeight: 700, letterSpacing: '-0.02em' }}>{s.icon}</div>
+                    <div style={{ fontSize: 13, fontWeight: 500, marginTop: 4 }}>{s.label}</div>
+                    <div style={{ fontSize: 11, color: 'var(--text-3)', marginTop: 2 }}>{s.description}</div>
+                  </div>
+                ))}
+              </div>
+            </ScrollPaginationDots>
           </div>
         </section>
 

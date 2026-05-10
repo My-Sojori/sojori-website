@@ -1,14 +1,23 @@
 "use client";
 
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useLayoutEffect, useRef } from 'react';
 import { useLocale } from 'next-intl';
 import { SojoriMark } from '../Logo';
 import { JourneyCard } from '../journey/JourneyCard';
+import { ScrollPaginationDots } from '@/components/shared/ScrollPaginationDots';
 import { type Phase, type JourneyEvent, type Lane, resolveEvent } from '@/lib/journey-data';
 import { getHeroAnimUi } from '@/lib/hero-anim-ui';
 import { getJourneyForLocale } from '@/lib/journey-for-locale';
 
-const LOOP_DURATION = 44; // seconds
+/** Durée d’un cycle timeline (plus grand = cartes qui apparaissent plus lentement). */
+const LOOP_DURATION = 64; // seconds
+
+/** Acte 1 — canaux + carte réservation (un peu plus long pour lire la résa Airbnb). */
+const PHASE_INCOMING_END = 0.11;
+/** Fin acte 2 — après quoi le graphe / lanes (acte 3) démarre. */
+const PHASE_INGEST_END = 0.22;
+/** Au début du timeline (0–1), ne montrer que l’événement `booking` ≈ TIMELINE_BOOKING_INTRO_END × (1−PHASE_INGEST_END) × LOOP_DURATION secondes (~5 s). */
+const TIMELINE_BOOKING_INTRO_END = 0.095;
 
 // ─── Timeline scrubber ─────────────────────────────────────────
 function TimelineBar({
@@ -25,21 +34,23 @@ function TimelineBar({
   rangeDir?: 'ltr';
 }) {
   return (
-    <div style={{ position: 'relative', width: '100%', userSelect: 'none' }}>
-      {/* Phase ticks */}
-      <div style={{ display: 'flex', gap: 0, marginBottom: 10, height: 32, position: 'relative' }}>
-        {phases.map((p, idx) => {
-          const w = (p.to - p.from) * 100;
+    <div className="hero-timeline-bar" style={{ position: 'relative', width: '100%', userSelect: 'none' }}>
+      {/* Phase ticks — split boxes (mobile: typo réduite, pas de débordement) */}
+      <div className="hero-timeline-phases" style={{ display: 'flex', gap: 4, marginBottom: 10, minHeight: 42, alignItems: 'stretch', position: 'relative' }}>
+        {phases.map((p) => {
           const isActive = progress >= p.from && progress < p.to;
           const isPast = progress >= p.to;
           const isFocused = focusPhase === p.id;
           return (
             <button
+              type="button"
               key={p.id}
+              className="hero-timeline-phase-btn"
               onClick={() => onPhaseClick(p)}
               style={{
-                width: `${w}%`,
-                marginRight: idx < phases.length - 1 ? 4 : 0,
+                flex: '1 1 0',
+                minWidth: 0,
+                width: 0,
                 background: isFocused
                   ? 'linear-gradient(180deg, rgba(230,176,34,0.32), rgba(230,176,34,0.18))'
                   : isActive
@@ -51,22 +62,25 @@ function TimelineBar({
                 borderRadius: 8,
                 color: isActive || isFocused ? 'var(--text)' : 'var(--text-3)',
                 fontFamily: 'inherit',
-                fontSize: 10.5,
+                fontSize: 8.75,
                 fontWeight: 600,
-                letterSpacing: 0.4,
+                letterSpacing: 0.22,
                 textTransform: 'uppercase',
-                padding: '4px 10px',
+                padding: '3px 6px',
                 cursor: 'pointer',
                 transition: 'all 0.25s ease',
-                display: 'flex', flexDirection: 'column', alignItems: 'flex-start', justifyContent: 'center',
-                gap: 1,
+                display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center',
+                gap: 2,
+                lineHeight: 1.12,
+                overflow: 'hidden',
+                boxSizing: 'border-box',
               }}
             >
-              <span style={{ fontSize: 11 }}>{p.label}</span>
+              <span className="hero-timeline-label" style={{ textAlign: 'center', width: '100%' }}>{p.label}</span>
               <span
-                className="mono"
+                className="mono hero-timeline-range"
                 dir={rangeDir}
-                style={{ fontSize: 9, opacity: 0.65, fontWeight: 400, letterSpacing: 0.6 }}
+                style={{ textAlign: 'center', width: '100%' }}
               >
                 {p.range}
               </span>
@@ -120,7 +134,7 @@ function SojoriCore({
   monoDir?: 'ltr';
 }) {
   return (
-    <div style={{
+    <div className="hero-sojori-core" style={{
       position: 'relative',
       display: 'inline-flex', alignItems: 'center', gap: 12,
       padding: '8px 14px 8px 8px',
@@ -129,7 +143,7 @@ function SojoriCore({
       border: '1px solid rgba(230,176,34,0.35)',
       boxShadow: '0 0 24px rgba(230,176,34,0.15), 0 0 0 1px rgba(230,176,34,0.15) inset',
     }}>
-      <div style={{ position: 'relative', width: 32, height: 32 }}>
+      <div className="hero-sojori-core-orb" style={{ position: 'relative', width: 32, height: 32 }}>
         {/* Orbiting ring */}
         <svg width="32" height="32" style={{ position: 'absolute', inset: 0, animation: 'orbit 8s linear infinite' }}>
           <circle cx="16" cy="16" r="13" fill="none" stroke="url(#core-grad)" strokeWidth="1.5" strokeDasharray="3 3" opacity="0.7" />
@@ -149,8 +163,8 @@ function SojoriCore({
           boxShadow: '0 0 18px rgba(230,176,34,0.4)',
         }} />
       </div>
-      <div style={{ display: 'flex', flexDirection: 'column', lineHeight: 1.1, whiteSpace: 'nowrap' }}>
-        <span style={{ fontSize: 11, fontWeight: 700, letterSpacing: 1.5, color: 'var(--text)' }}>{coreTitle}</span>
+      <div className="hero-sojori-core-text" style={{ display: 'flex', flexDirection: 'column', lineHeight: 1.1, whiteSpace: 'nowrap', minWidth: 0 }}>
+        <span className="hero-sojori-core-title" style={{ fontSize: 11, fontWeight: 700, letterSpacing: 1.5, color: 'var(--text)' }}>{coreTitle}</span>
         <span
           className="mono"
           dir={monoDir}
@@ -163,7 +177,7 @@ function SojoriCore({
   );
 }
 
-// ─── Scrollable lane row (accumulation puis défilement) ──────────
+// ─── Scrollable lane row (accumulation + scroll vers la carte la plus récente) ──────────
 function ScrollableLane({ visibleEvents, progress, hoveredId, setHoveredId, focusPhase }: {
   visibleEvents: JourneyEvent[];
   progress: number;
@@ -171,67 +185,129 @@ function ScrollableLane({ visibleEvents, progress, hoveredId, setHoveredId, focu
   setHoveredId: (id: string | null) => void;
   focusPhase: string | null;
 }) {
-  const CARD_WIDTH = 180; // Réduit de 25% (240 * 0.75)
-  const GAP = 8; // Réduit davantage
-  const MAX_VISIBLE_CARDS = 5; // Plus de cartes visibles avec la réduction
+  const LANE_CARD_GAP = 8;
+  const CARD_WIDTH = 250;
+
+  const laneScrollRef = useRef<HTMLDivElement>(null);
+  const prevCardCountRef = useRef(0);
 
   // Toutes les cartes qui ont déjà apparu
   const appearedCards = visibleEvents.filter(e => progress >= e.t);
+  const lastCardId = appearedCards[appearedCards.length - 1]?.id ?? '';
 
-  // Calculer le décalage global pour faire défiler vers la gauche quand nécessaire
-  let scrollOffset = 0;
-  if (appearedCards.length > MAX_VISIBLE_CARDS) {
-    // Commencer à défiler doucement vers la gauche
-    const overflow = appearedCards.length - MAX_VISIBLE_CARDS;
-    scrollOffset = -overflow * (CARD_WIDTH + GAP);
-  }
+  /* Garder la dernière carte dans la zone visible : les précédentes reculent à gauche */
+  useLayoutEffect(() => {
+    const root = laneScrollRef.current;
+    if (!root) return;
+
+    if (appearedCards.length === 0) {
+      root.scrollLeft = 0;
+      prevCardCountRef.current = 0;
+      return;
+    }
+
+    const maxScroll = Math.max(0, root.scrollWidth - root.clientWidth);
+    if (maxScroll <= 0) {
+      prevCardCountRef.current = appearedCards.length;
+      return;
+    }
+
+    const added = appearedCards.length > prevCardCountRef.current;
+    prevCardCountRef.current = appearedCards.length;
+
+    const run = () => {
+      const el = laneScrollRef.current;
+      if (!el) return;
+      const end = Math.max(0, el.scrollWidth - el.clientWidth);
+      const safeId = typeof CSS !== 'undefined' && typeof CSS.escape === 'function' ? CSS.escape(lastCardId) : lastCardId;
+      const lastEl = el.querySelector(`[data-event-id="${safeId}"]`) as HTMLElement | null;
+      if (lastEl) {
+        lastEl.scrollIntoView({
+          behavior: added ? 'smooth' : 'auto',
+          block: 'nearest',
+          inline: 'end',
+        });
+        return;
+      }
+      el.scrollTo({ left: end, behavior: added ? 'smooth' : 'auto' });
+    };
+
+    /* Double frame : la carte vient d'entrer, scrollWidth à jour après layout + scale */
+    requestAnimationFrame(() => requestAnimationFrame(run));
+  }, [appearedCards.length, lastCardId]);
+
+  const showEdgeFade = appearedCards.length > 1;
 
   return (
-    <div style={{ position: 'relative', marginLeft: 90, flex: 1, overflow: 'hidden', height: 68 }}>
-      <div
-        className="lane-scroll"
-        style={{
-          display: 'flex', alignItems: 'center', gap: GAP,
-          height: 68,
-          padding: '4px 4px',
-          position: 'relative',
-          transform: `translateX(${scrollOffset}px) scale(0.85)`,
-          transformOrigin: 'left center',
-          transition: 'transform 0.8s ease-out',
-        }}
+    <div className="hero-lane-cards" style={{ position: 'relative', marginLeft: 72, flex: 1, minWidth: 0, overflow: 'hidden', height: 68 }}>
+      <ScrollPaginationDots
+        itemCount={appearedCards.length}
+        itemWidth={CARD_WIDTH}
+        gap={LANE_CARD_GAP}
       >
-        {appearedCards.map((e, idx) => {
-          const age = progress - e.t;
-          const isNew = age < 0.05; // Animation d'entrée pour les nouvelles cartes
+        <div
+          ref={laneScrollRef}
+          className="lane-scroll"
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            height: 68,
+            padding: '4px 4px',
+            position: 'relative',
+            width: '100%',
+            maxWidth: '100%',
+            overflowX: 'auto',
+            overscrollBehaviorX: 'contain',
+            scrollbarWidth: 'none',
+            msOverflowStyle: 'none',
+          }}
+        >
+          <div
+            className="lane-scroll-scaled"
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: LANE_CARD_GAP,
+              height: '100%',
+              transform: 'scale(0.85)',
+              transformOrigin: 'left center',
+            }}
+          >
+          {appearedCards.map((e) => {
+            const age = progress - e.t;
+            /* Fenêtre plus large = apparition progressive plus lente sur la timeline */
+            const isNew = age < 0.092;
 
-          return (
-            <div
-              key={e.id}
-              data-event-id={e.id}
-              style={{
-                flexShrink: 0,
-                opacity: isNew ? 0 : 1,
-                transform: isNew ? 'scale(0.8) translateY(10px)' : 'scale(1) translateY(0)',
-                transition: 'opacity 0.5s ease-out, transform 0.5s cubic-bezier(.34,1.56,.64,1)',
-              }}
-            >
-              <JourneyCard
-                event={e}
-                progress={progress}
-                onHover={setHoveredId}
-                hovered={hoveredId === e.id}
-                focused={focusPhase === e.phase}
-              />
-            </div>
-          );
-        })}
-      </div>
+            return (
+              <div
+                key={e.id}
+                data-event-id={e.id}
+                style={{
+                  flexShrink: 0,
+                  opacity: isNew ? 0 : 1,
+                  transform: isNew ? 'scale(0.8) translateY(10px)' : 'scale(1) translateY(0)',
+                  transition: 'opacity 0.85s ease-out, transform 0.85s cubic-bezier(.34,1.56,.64,1)',
+                }}
+              >
+                <JourneyCard
+                  event={e}
+                  progress={progress}
+                  onHover={setHoveredId}
+                  hovered={hoveredId === e.id}
+                  focused={focusPhase === e.phase}
+                />
+              </div>
+            );
+          })}
+          </div>
+        </div>
+      </ScrollPaginationDots>
       {/* fade hint on left edge */}
       <div style={{
         position: 'absolute', left: 0, top: 0, bottom: 0, width: 40,
         background: 'linear-gradient(90deg, rgba(251,250,246,0.95), transparent)',
         pointerEvents: 'none', zIndex: 1,
-        opacity: appearedCards.length > MAX_VISIBLE_CARDS ? 1 : 0,
+        opacity: showEdgeFade ? 1 : 0,
         transition: 'opacity 0.5s',
       }} />
     </div>
@@ -239,16 +315,19 @@ function ScrollableLane({ visibleEvents, progress, hoveredId, setHoveredId, focu
 }
 
 // ─── Lane row with cards ───────────────────────────────────────
-function Lane({ lane, events, progress, hoveredId, setHoveredId, focusPhase }: {
+function Lane({ lane, events, progress, hoveredId, setHoveredId, focusPhase, timelineBookingIntroActive }: {
   lane: Lane;
   events: JourneyEvent[];
   progress: number;
   hoveredId: string | null;
   setHoveredId: (id: string | null) => void;
   focusPhase: string | null;
+  /** Acte 3 : au lancement du graphe, seule la carte « Réservation Airbnb » (id booking) est visible quelques secondes. */
+  timelineBookingIntroActive: boolean;
 }) {
   const visibleEvents = events
     .filter(e => e.lane === lane.id && progress >= e.t)
+    .filter(e => !timelineBookingIntroActive || e.id === 'booking')
     .sort((a, b) => a.t - b.t);
 
   // Check if there are active admin alerts (late status, admin type)
@@ -260,31 +339,32 @@ function Lane({ lane, events, progress, hoveredId, setHoveredId, focusPhase }: {
   });
 
   return (
-    <div style={{
+    <div className="hero-journey-lane" style={{
       position: 'relative',
       height: 78,
       display: 'flex',
       alignItems: 'center',
-      padding: '5px 0',
-      marginBottom: 10,
+      padding: '8px 0',
+      marginBottom: 0,
       borderRadius: 8,
       background: hasActiveAlert ? 'rgba(239,68,68,0.08)' : 'transparent',
       borderLeft: hasActiveAlert ? '3px solid rgba(239,68,68,0.5)' : '3px solid transparent',
-      paddingLeft: '8px',
+      paddingLeft: '4px',
       transition: 'background 0.4s ease, border-left 0.4s ease',
     }}>
       {/* Lane label */}
-      <div style={{
+      <div className="hero-journey-lane-label" style={{
         position: 'absolute', left: 0, top: '50%', transform: 'translateY(-50%)',
-        width: 85, paddingRight: 12,
+        width: 58, paddingRight: 6,
         zIndex: 2,
       }}>
-        <div style={{
-          fontSize: 9, fontWeight: 700, letterSpacing: 1.4,
-          color: lane.color, marginBottom: 2,
+        <div className="hero-lane-label-title" style={{
+          fontSize: 8.5, fontWeight: 700, letterSpacing: 0.9,
+          color: lane.color, marginBottom: 1,
           textShadow: `0 0 12px ${lane.color}33`,
+          lineHeight: 1.05,
         }}>{lane.label}</div>
-        <div style={{ fontSize: 9.5, color: 'var(--text-3)' }}>{lane.sublabel}</div>
+        <div className="hero-lane-label-sub" style={{ fontSize: 8, color: 'var(--text-3)', lineHeight: 1.15 }}>{lane.sublabel}</div>
         <div style={{
           width: 22, height: 2, marginTop: 5, borderRadius: 1,
           background: lane.color, boxShadow: `0 0 8px ${lane.color}66`,
@@ -292,8 +372,8 @@ function Lane({ lane, events, progress, hoveredId, setHoveredId, focusPhase }: {
       </div>
 
       {/* Lane track line */}
-      <div style={{
-        position: 'absolute', left: 110, right: 0, top: '50%',
+      <div className="hero-journey-lane-track" style={{
+        position: 'absolute', left: 72, right: 0, top: '50%',
         height: 1,
         background: `linear-gradient(90deg, transparent 0%, ${lane.color}40 8%, ${lane.color}40 92%, transparent 100%)`,
         opacity: 0.5,
@@ -348,12 +428,18 @@ export function HeroAnimationJourney() {
   const restart = () => { setProgress(0); setPlaying(true); setFocusPhase(null); };
 
   // Phase detection for 3-act animation
-  const phase = progress < 0.09 ? 'incoming' : progress < 0.18 ? 'ingest' : 'timeline';
-  const incomingProg = progress < 0.09 ? progress / 0.09 : 1;
-  const ingestProg = phase === 'ingest' ? (progress - 0.09) / 0.09 : (phase === 'timeline' ? 1 : 0);
-  const timelineProg = phase === 'timeline' ? (progress - 0.18) / 0.82 : 0;
+  const phase = progress < PHASE_INCOMING_END ? 'incoming' : progress < PHASE_INGEST_END ? 'ingest' : 'timeline';
+  const incomingProg = progress < PHASE_INCOMING_END ? progress / PHASE_INCOMING_END : 1;
+  const ingestSpan = PHASE_INGEST_END - PHASE_INCOMING_END;
+  const ingestProg = phase === 'ingest' ? (progress - PHASE_INCOMING_END) / ingestSpan : (phase === 'timeline' ? 1 : 0);
+  const timelineSpan = 1 - PHASE_INGEST_END;
+  const timelineProg = phase === 'timeline' ? (progress - PHASE_INGEST_END) / timelineSpan : 0;
+  const timelineBookingIntroActive = phase === 'timeline' && timelineProg < TIMELINE_BOOKING_INTRO_END;
 
-  const activeCount = events.filter(e => timelineProg >= e.t && timelineProg < e.t + 0.15).length;
+  const activeCount = events.filter((e) => {
+    if (timelineBookingIntroActive && e.id !== 'booking') return false;
+    return timelineProg >= e.t && timelineProg < e.t + 0.15;
+  }).length;
   const currentPhase = phases.find(p => timelineProg >= p.from && timelineProg < p.to) || phases[phases.length - 1];
 
   return (
@@ -379,7 +465,7 @@ export function HeroAnimationJourney() {
                     background: 'radial-gradient(circle, rgba(139,92,246,0.16), transparent 70%)', pointerEvents: 'none' }} />
 
       {/* Top stage row: core + current phase */}
-      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 18, position: 'relative', zIndex: 2 }}>
+      <div className="hero-stage-header" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 18, position: 'relative', zIndex: 2 }}>
         <SojoriCore
           progress={phase === 'timeline' ? timelineProg : 0}
           activeCount={activeCount}
@@ -387,22 +473,41 @@ export function HeroAnimationJourney() {
           coreTitle={ui.coreTitle}
           monoDir={locale === 'ar' ? 'ltr' : undefined}
         />
-        <div style={{ display: 'flex', alignItems: 'center', gap: 14 }}>
-          <div style={{ textAlign: 'right' }}>
+        <div className="hero-stage-meta" style={{ display: 'flex', alignItems: 'center', gap: 14, minWidth: 0, flex: '1 1 auto', justifyContent: 'flex-end' }}>
+          <div className="hero-stage-meta-inner" style={{ textAlign: 'right', minWidth: 0 }}>
             <div
-              className="mono"
+              className="mono hero-stage-meta-kicker"
               dir={locale === 'ar' ? 'ltr' : undefined}
               style={{ fontSize: 9.5, letterSpacing: 1.4, color: 'var(--text-3)' }}
             >
               {phase === 'incoming' ? ui.stageIncoming : phase === 'ingest' ? ui.stageIngest : ui.stageTimeline}
             </div>
-            <div style={{ fontSize: 14, fontWeight: 600, color: 'var(--text)', letterSpacing: -0.2 }}>
-              {phase === 'timeline'
-                ? `${currentPhase.label} · ${currentPhase.range}`
-                : phase === 'incoming'
-                  ? ui.headerIncoming
-                  : ui.headerIngest}
+            <div className="hero-stage-meta-title" style={{ fontSize: 14, fontWeight: 600, color: 'var(--text)', letterSpacing: -0.2 }}>
+              {phase === 'timeline' && timelineBookingIntroActive
+                ? ui.badgeNewBooking
+                : phase === 'timeline'
+                  ? `${currentPhase.label} · ${currentPhase.range}`
+                  : phase === 'incoming'
+                    ? ui.headerIncoming
+                    : ui.headerIngest}
             </div>
+            {phase === 'timeline' && timelineBookingIntroActive && (
+              <div
+                className="hero-stage-meta-kickoff"
+                style={{
+                  fontSize: 11,
+                  fontWeight: 500,
+                  color: 'var(--text-3)',
+                  marginTop: 6,
+                  lineHeight: 1.35,
+                  maxWidth: 420,
+                  marginLeft: 'auto',
+                  textAlign: 'right',
+                }}
+              >
+                {ui.timelineKickoffLine}
+              </div>
+            )}
           </div>
         </div>
       </div>
@@ -410,22 +515,34 @@ export function HeroAnimationJourney() {
       {/* ACT 1 — INCOMING BOOKING */}
       {phase === 'incoming' && (() => {
         const channels = [
-          { id: 'airbnb',  name: 'Airbnb',  color: '#ff5a5f', mark: 'A', activeAt: 0.15 },
+          { id: 'airbnb',  name: 'Airbnb',  color: '#ff5a5f', mark: 'A', activeAt: 0.06 },
           { id: 'booking', name: 'Booking', color: '#0066ff', mark: 'B', activeAt: 0.95 },
           { id: 'vrbo',    name: 'Vrbo',    color: '#0d6df0', mark: 'V', activeAt: 0.95 },
           { id: 'direct',  name: ui.channelDirect,  color: '#10b981', mark: 'D', activeAt: 0.95 },
         ];
         return (
-          <div style={{ position: 'relative', height: 330, zIndex: 2, overflow: 'hidden',
-                        display: 'grid', gridTemplateColumns: '180px 1fr', gap: 24,
-                        alignItems: 'center', padding: '8px 4px' }}>
+          <div
+            className="hero-incoming-stage"
+            style={{
+              position: 'relative',
+              height: 330,
+              zIndex: 2,
+              overflow: 'hidden',
+              display: 'grid',
+              gridTemplateColumns: '180px 1fr',
+              gap: 24,
+              alignItems: 'center',
+              padding: '8px 4px',
+            }}
+          >
             {/* LEFT — OTA channels listening */}
-            <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
-              <div className="mono" style={{ fontSize: 9.5, color: 'var(--text-3)',
+            <div className="hero-incoming-sidebar" style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
+              <div className="mono hero-incoming-channels-title" style={{ fontSize: 9.5, color: 'var(--text-3)',
                     letterSpacing: 1.2, marginBottom: 2 }}>{ui.channelsLive}</div>
+              <div className="hero-incoming-channel-grid">
               {channels.map(c => {
                 const active = incomingProg >= c.activeAt;
-                const justFired = c.id === 'airbnb' && incomingProg > 0.1 && incomingProg < 0.4;
+                const justFired = c.id === 'airbnb' && incomingProg > 0.04 && incomingProg < 0.45;
                 const channelMonoDir = locale === 'ar' ? 'ltr' : undefined;
                 return (
                   <div key={c.id} style={{
@@ -460,26 +577,34 @@ export function HeroAnimationJourney() {
                   </div>
                 );
               })}
+              </div>
             </div>
 
+            {/* Mobile : entre canaux et carte (évite l’effet « dessin par-dessus ») */}
+            <div className="hero-incoming-mobile-bridge mono">{ui.incomingMobileBridge}</div>
+
             {/* RIGHT — incoming reservation card */}
-            <div style={{ position: 'relative', minHeight: 320,
+            <div className="hero-incoming-main" style={{ position: 'relative', minHeight: 320,
               display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-              {/* Connector dot from channels to card */}
-              <svg style={{ position: 'absolute', left: -24, top: '50%', width: 60, height: 2,
+              {/* Connector dot from channels to card (desktop) */}
+              <svg className="hero-incoming-connector" style={{ position: 'absolute', left: -24, top: '50%', width: 60, height: 2,
                 transform: 'translateY(-50%)', overflow: 'visible' }}>
                 <line x1="0" y1="1" x2="60" y2="1" stroke="#ff5a5f" strokeWidth="2"
                   strokeDasharray="4 4"
-                  style={{ opacity: incomingProg > 0.15 ? 1 : 0, transition: 'opacity 0.3s' }}/>
+                  style={{ opacity: incomingProg > 0.08 ? 1 : 0, transition: 'opacity 0.3s' }}/>
                 <circle r="3" fill="#ff5a5f" style={{ filter: 'drop-shadow(0 0 4px #ff5a5f)' }}>
                   <animate attributeName="cx" from="0" to="60" dur="0.9s" repeatCount="indefinite"/>
                 </circle>
               </svg>
 
               {/* Property header */}
-              <div dir={locale === 'ar' ? 'rtl' : undefined} style={{ position: 'absolute', top: 8, left: 0, right: 0,
+              <div
+                className="hero-incoming-property"
+                dir={locale === 'ar' ? 'rtl' : undefined}
+                style={{ position: 'absolute', top: 8, left: 0, right: 0,
                 display: 'flex', alignItems: 'center', gap: 10,
-                opacity: incomingProg > 0.05 ? 1 : 0, transition: 'opacity 0.4s' }}>
+                opacity: incomingProg > 0.03 ? 1 : 0, transition: 'opacity 0.4s' }}
+              >
                 <div style={{ width: 56, height: 40, borderRadius: 8,
                   background: 'linear-gradient(135deg, #fde68a, #d97706, #7c2d12)',
                   position: 'relative', overflow: 'hidden' }}>
@@ -489,7 +614,7 @@ export function HeroAnimationJourney() {
                     color: '#fff', fontWeight: 700 }}>★ 4.92</div>
                 </div>
                 <div>
-                  <div style={{ fontSize: 13, fontWeight: 700, color: '#fff' }}>{ui.demoPropertyName}</div>
+                  <div className="hero-incoming-property-title" style={{ fontSize: 13, fontWeight: 700 }}>{ui.demoPropertyName}</div>
                   <div
                     className="mono"
                     dir={locale === 'ar' ? 'rtl' : 'ltr'}
@@ -501,13 +626,16 @@ export function HeroAnimationJourney() {
               </div>
 
               {/* Booking card — slides up */}
-              <div style={{
-                transform: `translateY(${incomingProg > 0.2 ? 0 : 28}px) scale(${incomingProg > 0.2 ? 1 : 0.94})`,
-                opacity: incomingProg > 0.2 ? 1 : 0,
+              <div
+                className="hero-incoming-card-shell"
+                style={{
+                transform: `translateY(${incomingProg > 0.1 ? 0 : 28}px) scale(${incomingProg > 0.1 ? 1 : 0.94})`,
+                opacity: incomingProg > 0.1 ? 1 : 0,
                 transition: 'all 0.5s cubic-bezier(.2,.7,.3,1)',
                 width: '100%', maxWidth: 420,
-              }}>
-                <div className="glass" style={{ padding: '18px 20px', borderRadius: 16,
+              }}
+              >
+                <div className="glass hero-incoming-card" style={{ padding: '18px 20px', borderRadius: 16,
                   border: '1px solid rgba(230,176,34,0.35)',
                   boxShadow: '0 12px 40px rgba(230,176,34,0.15)' }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 12 }}>
@@ -530,7 +658,7 @@ export function HeroAnimationJourney() {
                       display: 'flex', alignItems: 'center', justifyContent: 'center',
                       fontSize: 13, fontWeight: 700, color: '#fff' }}>SJ</div>
                     <div style={{ flex: 1, lineHeight: 1.2 }}>
-                      <div dir={locale === 'ar' ? 'ltr' : undefined} style={{ fontWeight: 600, fontSize: 14, color: '#fff' }}>
+                      <div dir={locale === 'ar' ? 'ltr' : undefined} className="hero-incoming-guest-title" style={{ fontWeight: 600, fontSize: 14 }}>
                         {ui.demoGuestName}{' '}
                         <span style={{ fontSize: 11, color: 'var(--text-3)', fontWeight: 500 }}>
                           {ui.demoGuestOrigin}
@@ -596,7 +724,7 @@ export function HeroAnimationJourney() {
 
       {/* ACT 2 — INGEST */}
       {phase === 'ingest' && (
-        <div style={{ position: 'relative', height: 330, zIndex: 2,
+        <div className="hero-ingest-stage" style={{ position: 'relative', height: 330, zIndex: 2,
           display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
           {/* Booking card shrinks + blurs into the core */}
           <div style={{
@@ -676,7 +804,7 @@ export function HeroAnimationJourney() {
           )}
 
           {/* Status caption */}
-          <div style={{
+          <div className="hero-ingest-caption" style={{
             position: 'absolute', bottom: 22, left: '50%', transform: 'translateX(-50%)',
             display: 'flex', alignItems: 'center', gap: 10,
             fontSize: 12, fontFamily: 'var(--mono)', letterSpacing: 0.6,
@@ -692,7 +820,7 @@ export function HeroAnimationJourney() {
 
       {/* ACT 3 — TIMELINE (existing orchestration) */}
       {phase === 'timeline' && (
-        <div style={{ position: 'relative', height: 330, overflow: 'visible' }}>
+        <div className="hero-journey-timeline-stage" style={{ position: 'relative', minHeight: 330, overflow: 'visible' }}>
           {lanes.map(lane => (
             <Lane
               key={lane.id}
@@ -702,6 +830,7 @@ export function HeroAnimationJourney() {
               hoveredId={hoveredId}
               setHoveredId={setHoveredId}
               focusPhase={focusPhase}
+              timelineBookingIntroActive={timelineBookingIntroActive}
             />
           ))}
         </div>
@@ -709,7 +838,7 @@ export function HeroAnimationJourney() {
 
       {/* Timeline scrubber */}
       {phase === 'timeline' && (
-        <div style={{ marginTop: 18, position: 'relative', zIndex: 2 }}>
+        <div className="hero-timeline-wrap" style={{ marginTop: 18, position: 'relative', zIndex: 2 }}>
           <TimelineBar
             progress={timelineProg}
             phases={phases}
@@ -721,13 +850,14 @@ export function HeroAnimationJourney() {
       )}
 
       {/* Controls */}
-      <div style={{
+      <div className="hero-anim-controls" style={{
         display: 'flex', alignItems: 'center', justifyContent: 'space-between',
         marginTop: 16, paddingTop: 14,
         borderTop: '1px solid rgba(26,20,8,0.06)',
         position: 'relative', zIndex: 2,
+        flexWrap: 'wrap', gap: 8,
       }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+        <div className="hero-anim-controls-left" style={{ display: 'flex', alignItems: 'center', gap: 8, flexShrink: 0 }}>
           <button
             onClick={() => setPlaying(p => !p)}
             style={{
@@ -752,18 +882,71 @@ export function HeroAnimationJourney() {
               display: 'inline-flex', alignItems: 'center', justifyContent: 'center',
             }}
           >↻</button>
-          <span className="mono" style={{ fontSize: 10.5, color: 'var(--text-3)', letterSpacing: 0.6, marginLeft: 6 }}>
-            {Math.floor(progress * LOOP_DURATION).toString().padStart(2, '0')}:{Math.floor((progress * LOOP_DURATION % 1) * 60).toString().padStart(2, '0')} / 00:{LOOP_DURATION}
+          <span className="mono hero-anim-time" style={{ fontSize: 10.5, color: 'var(--text-3)', letterSpacing: 0.6, marginLeft: 6 }}>
+            {(() => {
+              const es = Math.floor(progress * LOOP_DURATION);
+              const em = Math.floor(es / 60);
+              const ess = es % 60;
+              const tm = Math.floor(LOOP_DURATION / 60);
+              const ts = LOOP_DURATION % 60;
+              return `${String(em).padStart(2, '0')}:${String(ess).padStart(2, '0')} / ${String(tm).padStart(2, '0')}:${String(ts).padStart(2, '0')}`;
+            })()}
           </span>
         </div>
 
-        <div className="mono" style={{ fontSize: 10, color: 'var(--text-3)', letterSpacing: 0.6 }}>
+        <div className="mono hero-anim-controls-stats" style={{ fontSize: 10, color: 'var(--text-3)', letterSpacing: 0.6, textAlign: 'right', minWidth: 0, flex: '1 1 140px' }}>
           18 TÂCHES · 0 OUBLIS · 100% AUTO
         </div>
       </div>
 
       {/* CSS Keyframes for animations */}
       <style jsx>{`
+        /* Styles de base pour timeline (segments étroits : typo compacte + coupure propre) */
+        .hero-timeline-label {
+          font-size: 8.5px;
+          line-height: 1.12;
+          font-weight: 600;
+          word-break: break-word;
+          overflow-wrap: anywhere;
+          hyphens: auto;
+          max-width: 100%;
+          text-align: center;
+        }
+
+        .hero-timeline-range {
+          font-size: 7.25px;
+          opacity: 0.65;
+          font-weight: 400;
+          letter-spacing: 0.35px;
+          line-height: 1.1;
+          word-break: break-word;
+          overflow-wrap: anywhere;
+          max-width: 100%;
+          text-align: center;
+          display: block;
+        }
+
+        @media (max-width: 1100px) {
+          .hero-timeline-phases {
+            min-height: 40px !important;
+          }
+
+          .hero-timeline-phase-btn {
+            font-size: 8px !important;
+            padding: 2px 5px !important;
+            letter-spacing: 0.15px !important;
+          }
+
+          .hero-timeline-label {
+            font-size: 7.75px !important;
+          }
+
+          .hero-timeline-range {
+            font-size: 6.75px !important;
+            letter-spacing: 0.2px !important;
+          }
+        }
+
         @keyframes pulse-soft {
           0%, 100% { opacity: 1; }
           50%      { opacity: 0.55; }
@@ -809,12 +992,17 @@ export function HeroAnimationJourney() {
           0%, 100% { box-shadow: 0 0 0 1px rgba(245,158,11,0.6), 0 0 24px rgba(245,158,11,0.4), 0 18px 50px -12px rgba(245,158,11,0.45); }
           50%      { box-shadow: 0 0 0 2px rgba(245,158,11,0.8), 0 0 44px rgba(245,158,11,0.7), 0 22px 60px -10px rgba(245,158,11,0.65); }
         }
-        .lane-scroll::-webkit-scrollbar { height: 8px; }
-        .lane-scroll::-webkit-scrollbar-track { background: transparent; }
-        .lane-scroll::-webkit-scrollbar-thumb {
-          background: rgba(230,176,34,0.2); border-radius: 4px;
+        /* Pas de barre de scroll visible (évite la bande jaune sous les lanes) */
+        .lane-scroll {
+          scrollbar-width: none;
+          -ms-overflow-style: none;
         }
-        .lane-scroll::-webkit-scrollbar-thumb:hover { background: rgba(230,176,34,0.4); }
+        .lane-scroll::-webkit-scrollbar {
+          display: none;
+          width: 0;
+          height: 0;
+          background: transparent;
+        }
         .glass {
           background: rgba(255,255,255,0.04);
           backdrop-filter: blur(14px) saturate(140%);
@@ -825,36 +1013,426 @@ export function HeroAnimationJourney() {
           font-family: 'Geist Mono', ui-monospace, 'SF Mono', Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono', 'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro', 'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace;
         }
 
-        /* Mobile responsive - Réduction drastique pour visibilité */
+        /* Pont desktop : masqué (flux gauche → droite avec SVG) */
+        .hero-incoming-mobile-bridge {
+          display: none;
+        }
+
+        .hero-incoming-property-title {
+          color: var(--text);
+        }
+
+        .hero-incoming-guest-title {
+          color: var(--text);
+        }
+
+        /* Desktop : espace vertical entre les lignes Guest / Sojori / Staff / Admin */
+        @media (min-width: 769px) {
+          .hero-journey-timeline-stage {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+          }
+
+          .hero-journey-lane {
+            flex-shrink: 0;
+          }
+        }
+
+        /* Mobile — orchestrateur ultra-compact (polices / colonnes / lanes) */
         @media (max-width: 768px) {
           .hero-animation-wrapper {
-            transform: scale(0.55) !important;
+            transform: none;
             transform-origin: top center;
-            margin: -90px -20px -60px !important;
-            padding: 10px 12px 8px !important;
+            margin: 0 !important;
+            padding: 6px 4px 8px !important;
             min-height: 260px !important;
+            border-radius: 11px !important;
+            width: 100% !important;
+            max-width: none !important;
+            box-sizing: border-box;
+            overflow: visible !important;
+          }
+
+          /* Act 1 — empiler canaux puis carte (plus de chevauchement absolu) */
+          .hero-incoming-stage {
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: stretch !important;
+            height: auto !important;
+            min-height: 0 !important;
+            gap: 8px !important;
+            padding: 4px 2px !important;
+            overflow: visible !important;
+          }
+
+          .hero-incoming-mobile-bridge {
+            display: block !important;
+            text-align: center;
+            font-size: 8px;
+            letter-spacing: 0.12em;
+            color: var(--text-3);
+            padding: 2px 0 4px;
+            opacity: 0.95;
+          }
+
+          .hero-incoming-sidebar {
+            width: 100% !important;
+          }
+
+          .hero-incoming-channels-title {
+            font-size: 8px !important;
+            letter-spacing: 0.08em !important;
+            margin-bottom: 4px !important;
+          }
+
+          .hero-incoming-channel-grid {
+            display: grid !important;
+            grid-template-columns: 1fr 1fr !important;
+            gap: 6px !important;
+          }
+
+          .hero-incoming-channel-grid > div {
+            padding: 6px 8px !important;
+            gap: 6px !important;
+            border-radius: 8px !important;
+          }
+
+          .hero-incoming-channel-grid > div > div:first-of-type {
+            width: 22px !important;
+            height: 22px !important;
+            min-width: 22px !important;
+            border-radius: 6px !important;
+            font-size: 9px !important;
+          }
+
+          .hero-incoming-channel-grid > div > div:nth-child(2) > div:first-child {
+            font-size: 10px !important;
+          }
+
+          .hero-incoming-channel-grid > div > div:nth-child(2) > div:last-child {
+            font-size: 7.5px !important;
+            letter-spacing: 0.05em !important;
+          }
+
+          .hero-incoming-connector {
+            display: none !important;
+          }
+
+          .hero-incoming-main {
+            min-height: 0 !important;
+            width: 100% !important;
+            align-items: stretch !important;
+            justify-content: flex-start !important;
+          }
+
+          .hero-incoming-property {
+            position: relative !important;
+            top: auto !important;
+            left: auto !important;
+            right: auto !important;
+            margin-bottom: 6px !important;
+          }
+
+          .hero-incoming-property-title {
+            font-size: 12px !important;
+          }
+
+          .hero-incoming-guest-title {
+            font-size: 13px !important;
+          }
+
+          .hero-incoming-card {
+            padding: 11px 12px !important;
             border-radius: 12px !important;
-            width: calc(100vw - 40px) !important;
+          }
+
+          .hero-incoming-card-shell {
             max-width: 100% !important;
           }
 
-          /* Scroll horizontal pour les lanes sur mobile */
+          /* Act 2 — un peu plus bas pour éviter les labels qui dépassent */
+          .hero-ingest-stage {
+            height: 270px !important;
+            overflow: visible !important;
+          }
+
+          .hero-ingest-caption {
+            bottom: 10px !important;
+            font-size: 9px !important;
+            max-width: 92vw;
+            text-align: center;
+            line-height: 1.25;
+            flex-wrap: wrap;
+            justify-content: center;
+          }
+
+          .hero-stage-header {
+            margin-bottom: 6px !important;
+            gap: 4px !important;
+            flex-wrap: wrap;
+            align-items: flex-start !important;
+          }
+
+          .hero-sojori-core {
+            gap: 4px !important;
+            padding: 4px 6px 4px 4px !important;
+            max-width: min(100%, 46vw);
+            flex-shrink: 1;
+          }
+
+          .hero-sojori-core-orb,
+          .hero-sojori-core-orb svg {
+            width: 22px !important;
+            height: 22px !important;
+          }
+
+          .hero-sojori-core-text {
+            white-space: normal !important;
+            max-width: 100%;
+          }
+
+          .hero-sojori-core-title {
+            font-size: 8px !important;
+            letter-spacing: 0.45px !important;
+            line-height: 1.15 !important;
+            word-break: break-word;
+          }
+
+          .hero-sojori-core-text .mono {
+            font-size: 7px !important;
+            letter-spacing: 0.2px !important;
+            line-height: 1.2 !important;
+            word-break: break-word;
+          }
+
+          .hero-stage-meta {
+            flex: 1 1 38% !important;
+            min-width: 0 !important;
+          }
+
+          .hero-stage-meta-kicker {
+            font-size: 7px !important;
+            letter-spacing: 0.35px !important;
+          }
+
+          .hero-stage-meta-title {
+            font-size: 10px !important;
+            line-height: 1.2 !important;
+            word-break: break-word;
+          }
+
+          .hero-timeline-wrap {
+            margin-top: 6px !important;
+          }
+
+          .hero-timeline-phases {
+            height: auto !important;
+            min-height: 22px;
+            margin-bottom: 4px !important;
+            gap: 3px !important;
+          }
+
+          .hero-timeline-phase-btn {
+            font-size: 4px !important;
+            padding: 1px 1.5px !important;
+            flex: 1 1 0 !important;
+            width: 0 !important;
+            margin-right: 0 !important;
+            letter-spacing: 0 !important;
+            line-height: 1.05 !important;
+            min-width: 0 !important;
+            overflow: hidden;
+            border-radius: 4px !important;
+          }
+
+          .hero-timeline-label {
+            font-size: 4.5px !important;
+            line-height: 1.05 !important;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-align: center !important;
+            max-width: 100%;
+            hyphens: auto;
+            word-break: break-word;
+          }
+
+          .hero-timeline-range {
+            font-size: 4px !important;
+            letter-spacing: 0.05px !important;
+            opacity: 0.75 !important;
+            line-height: 1 !important;
+          }
+
+          .hero-lane-label-title {
+            font-size: 5.5px !important;
+            letter-spacing: 0.25px !important;
+            line-height: 1.1 !important;
+          }
+
+          .hero-lane-label-sub {
+            font-size: 5px !important;
+            line-height: 1.05 !important;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            max-width: 100%;
+          }
+
+          .hero-anim-controls {
+            margin-top: 6px !important;
+            padding-top: 6px !important;
+            row-gap: 4px !important;
+          }
+
+          .hero-anim-controls button {
+            width: 28px !important;
+            height: 28px !important;
+            font-size: 10px !important;
+          }
+
+          .hero-anim-time {
+            font-size: 7.5px !important;
+            margin-left: 2px !important;
+            letter-spacing: 0.15px !important;
+          }
+
+          .hero-anim-controls-stats {
+            font-size: 7px !important;
+            letter-spacing: 0.12px !important;
+            line-height: 1.25 !important;
+            flex: 1 1 100% !important;
+            text-align: center !important;
+          }
+
           .lane-scroll {
             overflow-x: auto !important;
             -webkit-overflow-scrolling: touch !important;
+            scroll-snap-type: x proximity;
           }
 
-          /* Réduire les espacements internes */
-          .hero-animation-wrapper > div {
-            margin-bottom: 8px !important;
+          .lane-scroll-scaled {
+            transform: scale(0.68) !important;
+            transform-origin: left center;
+          }
+
+          /* Entre lignes : marge/padding retirés (~ −75 % vs l’ancien rythme mobile) */
+          .hero-journey-lane {
+            height: 56px !important;
+            margin-bottom: 0 !important;
+            padding-top: 0 !important;
+            padding-bottom: 0 !important;
+          }
+
+          .hero-journey-lane-label {
+            width: 32px !important;
+            padding-right: 1px !important;
+            padding-left: 1px !important;
+          }
+
+          .hero-animation-wrapper .hero-lane-cards {
+            margin-left: 34px !important;
+            height: 52px !important;
+          }
+
+          .hero-animation-wrapper .hero-lane-cards .lane-scroll {
+            height: 52px !important;
+          }
+
+          .hero-journey-lane-track {
+            left: 36px !important;
+          }
+
+          .hero-journey-timeline-stage {
+            display: flex !important;
+            flex-direction: column !important;
+            gap: 0 !important;
+            height: auto !important;
+            min-height: 216px;
           }
         }
 
         @media (max-width: 480px) {
           .hero-animation-wrapper {
-            transform: scale(0.45) !important;
-            margin: -110px -25px -80px !important;
-            min-height: 220px !important;
+            padding: 5px 3px 6px !important;
+            min-height: 236px !important;
+            border-radius: 9px !important;
+          }
+
+          .lane-scroll-scaled {
+            transform: scale(0.62) !important;
+          }
+
+          .hero-animation-wrapper .hero-lane-cards {
+            margin-left: 46px !important;
+          }
+
+          .hero-journey-lane-track {
+            left: 50px !important;
+          }
+
+          .hero-journey-lane-label {
+            width: 42px !important;
+          }
+
+          .hero-journey-lane {
+            height: 52px !important;
+            margin-bottom: 0 !important;
+            padding-top: 0 !important;
+            padding-bottom: 0 !important;
+          }
+
+          .hero-animation-wrapper .hero-lane-cards {
+            height: 48px !important;
+          }
+
+          .hero-animation-wrapper .hero-lane-cards .lane-scroll {
+            height: 48px !important;
+          }
+
+          .hero-timeline-phase-btn {
+            font-size: 3.5px !important;
+            padding: 0.5px 1px !important;
+          }
+
+          .hero-timeline-label {
+            font-size: 4px !important;
+            -webkit-line-clamp: 2;
+          }
+
+          .hero-timeline-range {
+            font-size: 3.5px !important;
+          }
+
+          .hero-sojori-core {
+            max-width: min(100%, 44vw) !important;
+            padding: 3px 5px 3px 3px !important;
+          }
+
+          .hero-sojori-core-title {
+            font-size: 7.25px !important;
+          }
+
+          .hero-sojori-core-text .mono {
+            font-size: 6.25px !important;
+          }
+
+          .hero-stage-meta-kicker {
+            font-size: 6.25px !important;
+          }
+
+          .hero-stage-meta-title {
+            font-size: 9px !important;
+          }
+
+          .hero-anim-controls-stats {
+            font-size: 6.25px !important;
+          }
+
+          .hero-anim-time {
+            font-size: 6.75px !important;
           }
         }
       `}</style>

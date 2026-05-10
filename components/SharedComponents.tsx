@@ -1,11 +1,12 @@
 "use client";
 
 import React, { ReactNode } from 'react';
+import { createPortal } from 'react-dom';
 import { Link, routing } from '@/i18n/routing';
 import { useTranslations } from 'next-intl';
 
 type AppPathname = keyof typeof routing.pathnames;
-import { SojoriLogo, SojoriMark } from './Logo';
+import { SojoriLogo } from './Logo';
 import { LanguageSwitcher } from './LanguageSwitcher';
 
 export function Check() {
@@ -57,6 +58,49 @@ export function PageHeader({ pageTitle }: { pageTitle?: string }) {
   const [mobileProductOpen, setMobileProductOpen] = React.useState(false);
   const t = useTranslations('common.nav');
 
+  /* Ne pas utiliser overflow:hidden sur body : sur Safari / WebKit ça peut clipper les enfants
+   * position:fixed du portail (menu invisible alors que le burger passe en ✕). */
+  React.useEffect(() => {
+    if (!mobileMenuOpen) return;
+    const body = document.body;
+    const html = document.documentElement;
+    const prevBody = {
+      position: body.style.position,
+      top: body.style.top,
+      left: body.style.left,
+      right: body.style.right,
+      width: body.style.width,
+    };
+    const scrollY = window.scrollY;
+    body.style.position = 'fixed';
+    body.style.top = `-${scrollY}px`;
+    body.style.left = '0';
+    body.style.right = '0';
+    body.style.width = '100%';
+    html.classList.add('sj-mobile-menu-scroll-lock');
+    return () => {
+      body.style.position = prevBody.position;
+      body.style.top = prevBody.top;
+      body.style.left = prevBody.left;
+      body.style.right = prevBody.right;
+      body.style.width = prevBody.width;
+      html.classList.remove('sj-mobile-menu-scroll-lock');
+      window.scrollTo(0, scrollY);
+    };
+  }, [mobileMenuOpen]);
+
+  React.useEffect(() => {
+    if (!mobileMenuOpen) return;
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        setMobileMenuOpen(false);
+        setMobileProductOpen(false);
+      }
+    };
+    window.addEventListener('keydown', onKeyDown);
+    return () => window.removeEventListener('keydown', onKeyDown);
+  }, [mobileMenuOpen]);
+
   // Close mobile menu when clicking a link
   const handleMobileLinkClick = () => {
     setMobileMenuOpen(false);
@@ -64,22 +108,27 @@ export function PageHeader({ pageTitle }: { pageTitle?: string }) {
   };
 
   return (
-    <header style={{
+    <header
+      className="sj-page-header"
+      style={{
       position: 'sticky', top: 0, zIndex: 50,
       padding: '14px 32px',
       background: 'rgba(251,250,246,0.78)',
       backdropFilter: 'blur(20px) saturate(150%)',
       borderBottom: '1px solid rgba(26,20,8,0.06)',
-    }}>
+    }}
+    >
       <div style={{ maxWidth: 1400, margin: '0 auto', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: 16 }}>
-          <Link href="/" style={{ textDecoration: 'none', color: 'inherit' }}>
+        <div className="sj-page-header-brand" style={{ display: 'flex', alignItems: 'center', gap: 16 }}>
+          <Link href="/" style={{ textDecoration: 'none', color: 'inherit', flexShrink: 0 }}>
             <SojoriLogo size={32} />
           </Link>
           {pageTitle && (
             <>
-              <span style={{ color: 'var(--text-muted)', fontSize: 13 }}>›</span>
-              <span style={{ fontSize: 13, color: 'var(--text-2)', fontWeight: 500 }}>{pageTitle}</span>
+              <span style={{ color: 'var(--text-muted)', fontSize: 13, flexShrink: 0 }}>›</span>
+              <span className="sj-page-header-title" style={{ fontSize: 13, color: 'var(--text-2)', fontWeight: 500 }}>
+                {pageTitle}
+              </span>
             </>
           )}
         </div>
@@ -184,112 +233,68 @@ export function PageHeader({ pageTitle }: { pageTitle?: string }) {
           )}
         </nav>
 
-        {/* Mobile Hamburger Button */}
+        {/* Mobile Hamburger — styles dans globals.css (.sj-mobile-nav-toggle) : pas de <style> dans le <button> (HTML invalide, lignes invisibles sur certains navigateurs) */}
         <button
+          type="button"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          aria-label="Toggle mobile menu"
+          className="sj-mobile-nav-toggle"
+          aria-label={mobileMenuOpen ? t('closeMenu') : t('openMenu')}
           aria-expanded={mobileMenuOpen}
-          style={{
-            display: 'none',
-            flexDirection: 'column',
-            justifyContent: 'center',
-            alignItems: 'center',
-            width: 44,
-            height: 44,
-            background: 'transparent',
-            border: 'none',
-            cursor: 'pointer',
-            padding: 0,
-            zIndex: 60,
-          }}
         >
-          <style jsx>{`
-            @media (max-width: 768px) {
-              button[aria-label="Toggle mobile menu"] {
-                display: flex !important;
-              }
-            }
-          `}</style>
-          <span style={{
-            width: 24,
-            height: 2,
-            background: 'var(--text-1)',
-            borderRadius: 2,
-            transition: 'transform 0.3s, opacity 0.3s',
-            transform: mobileMenuOpen ? 'translateY(7px) rotate(45deg)' : 'translateY(0) rotate(0)',
-          }} />
-          <span style={{
-            width: 24,
-            height: 2,
-            background: 'var(--text-1)',
-            borderRadius: 2,
-            marginTop: 5,
-            transition: 'opacity 0.3s',
-            opacity: mobileMenuOpen ? 0 : 1,
-          }} />
-          <span style={{
-            width: 24,
-            height: 2,
-            background: 'var(--text-1)',
-            borderRadius: 2,
-            marginTop: 5,
-            transition: 'transform 0.3s, opacity 0.3s',
-            transform: mobileMenuOpen ? 'translateY(-7px) rotate(-45deg)' : 'translateY(0) rotate(0)',
-          }} />
+          <span
+            className="sj-mobile-nav-toggle-bar"
+            style={{
+              transition: 'transform 0.3s, opacity 0.3s',
+              transform: mobileMenuOpen ? 'translateY(7px) rotate(45deg)' : 'translateY(0) rotate(0)',
+            }}
+          />
+          <span
+            className="sj-mobile-nav-toggle-bar"
+            style={{
+              transition: 'opacity 0.3s',
+              opacity: mobileMenuOpen ? 0 : 1,
+            }}
+          />
+          <span
+            className="sj-mobile-nav-toggle-bar"
+            style={{
+              transition: 'transform 0.3s, opacity 0.3s',
+              transform: mobileMenuOpen ? 'translateY(-7px) rotate(-45deg)' : 'translateY(0) rotate(0)',
+            }}
+          />
         </button>
 
-        {/* Mobile Menu Overlay */}
-        {mobileMenuOpen && (
-          <>
-            {/* Backdrop */}
+        {/* Menu mobile : portail sur document.body — sinon position:fixed est ancré au header (backdrop-filter) et le panneau sort du viewport */}
+        {typeof document !== 'undefined' &&
+          mobileMenuOpen &&
+          createPortal(
             <div
-              onClick={handleMobileLinkClick}
+              className="sj-mobile-menu-mount"
               style={{
                 position: 'fixed',
-                top: 0,
-                left: 0,
-                right: 0,
-                bottom: 0,
-                background: 'rgba(26,20,8,0.5)',
-                backdropFilter: 'blur(4px)',
-                zIndex: 55,
-                animation: 'fadeIn 0.3s',
-              }}
-            />
-            <style jsx>{`
-              @keyframes fadeIn {
-                from { opacity: 0; }
-                to { opacity: 1; }
-              }
-              @keyframes slideIn {
-                from { transform: translateX(100%); }
-                to { transform: translateX(0); }
-              }
-            `}</style>
-
-            {/* Mobile Menu Panel */}
-            <div
-              style={{
-                position: 'fixed',
-                top: 0,
-                right: 0,
-                bottom: 0,
-                width: '85vw',
-                maxWidth: 400,
-                background: 'rgba(251,250,246,0.98)',
-                backdropFilter: 'blur(20px)',
-                zIndex: 60,
-                padding: '80px 24px 24px',
-                overflowY: 'auto',
-                boxShadow: '-4px 0 24px rgba(26,20,8,0.12)',
-                animation: 'slideIn 0.3s ease-out',
-                display: 'flex',
-                flexDirection: 'column',
+                inset: 0,
+                zIndex: 2147483000,
+                pointerEvents: 'none',
               }}
             >
+              <div
+                className="sj-mobile-menu-backdrop"
+                role="presentation"
+                onClick={handleMobileLinkClick}
+                style={{ pointerEvents: 'auto' }}
+              />
+
+              <div
+                className="sj-mobile-menu-panel"
+                role="dialog"
+                aria-modal="true"
+                aria-label={t('menuTitle')}
+                style={{ pointerEvents: 'auto' }}
+              >
               {/* Product Menu (Expandable) */}
               <div style={{ marginBottom: 8 }}>
                 <button
+                  type="button"
                   onClick={() => setMobileProductOpen(!mobileProductOpen)}
                   style={{
                     width: '100%',
@@ -457,9 +462,10 @@ export function PageHeader({ pageTitle }: { pageTitle?: string }) {
               >
                 {t('getDemo')} →
               </Link>
-            </div>
-          </>
-        )}
+              </div>
+            </div>,
+            document.body,
+          )}
       </div>
     </header>
   );
@@ -467,67 +473,87 @@ export function PageHeader({ pageTitle }: { pageTitle?: string }) {
 
 export function PageFooter() {
   return (
-    <footer style={{
+    <footer
+      className="sj-page-footer"
+      style={{
       padding: '60px 32px 30px',
       borderTop: '1px solid var(--border)',
       background: 'linear-gradient(180deg, transparent, rgba(245,243,236,0.6))'
-    }}>
+    }}
+    >
       <div style={{ maxWidth: 1400, margin: '0 auto' }}>
-        <div style={{
+        <div
+          className="sj-page-footer-grid"
+          style={{
           display: 'grid',
-          gridTemplateColumns: 'minmax(280px, 2fr) repeat(4, minmax(0, 1fr))',
+          gridTemplateColumns: 'minmax(260px, 2fr) minmax(0, 1fr)',
           gap: 40,
           marginBottom: 40,
-        }}>
-          <div>
+        }}
+        >
+          <div className="sj-page-footer-brand">
             <SojoriLogo size={32} />
-            <p style={{ fontSize: 13, color: 'var(--text-3)', marginTop: 16, lineHeight: 1.6, maxWidth: 280 }}>
+            <p className="sj-page-footer-tagline" style={{ fontSize: 13, color: 'var(--text-3)', marginTop: 16, lineHeight: 1.6, maxWidth: 280 }}>
               L&apos;orchestrateur de la location courte durée.
             </p>
-            <div style={{ marginTop: 16, fontSize: 11, color: 'var(--text-3)', fontFamily: 'var(--font-mono)' }}>
+            <div className="sj-page-footer-locations" style={{ marginTop: 16, fontSize: 11, color: 'var(--text-3)', fontFamily: 'var(--font-mono)' }}>
               📍 Paris · Casablanca
             </div>
           </div>
-          {PRODUCT_MENU.map(g => (
-            <div key={g.group}>
-              <div style={{
-                fontSize: 11,
-                color: 'var(--primary)',
-                fontWeight: 700,
-                letterSpacing: 1.2,
-                textTransform: 'uppercase',
-                marginBottom: 14,
-                fontFamily: 'var(--font-mono)'
-              }}>
-                {g.group}
+          <div
+            className="sj-page-footer-nav-columns"
+            style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(4, minmax(0, 1fr))',
+              gap: 40,
+              alignContent: 'start',
+            }}
+          >
+            {PRODUCT_MENU.map(g => (
+              <div key={g.group} className="sj-page-footer-nav-group">
+                <div className="sj-page-footer-nav-heading" style={{
+                  fontSize: 11,
+                  color: 'var(--primary)',
+                  fontWeight: 700,
+                  letterSpacing: 1.2,
+                  textTransform: 'uppercase',
+                  marginBottom: 14,
+                  fontFamily: 'var(--font-mono)'
+                }}>
+                  {g.group}
+                </div>
+                <div className="sj-page-footer-nav-links" style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
+                  {g.items.map(it => (
+                    <Link
+                      key={it.l}
+                      href={it.h}
+                      className="sj-page-footer-nav-link"
+                      style={{
+                        fontSize: 13,
+                        color: 'var(--text-2)',
+                        textDecoration: 'none',
+                        transition: 'color 0.2s'
+                      }}
+                    >
+                      {it.l}
+                    </Link>
+                  ))}
+                </div>
               </div>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
-                {g.items.map(it => (
-                  <Link
-                    key={it.l}
-                    href={it.h}
-                    style={{
-                      fontSize: 13,
-                      color: 'var(--text-2)',
-                      textDecoration: 'none',
-                      transition: 'color 0.2s'
-                    }}
-                  >
-                    {it.l}
-                  </Link>
-                ))}
-              </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
-        <div style={{ borderTop: '1px solid var(--glass-border)', paddingTop: 20, display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 12 }}>
+        <div
+          className="sj-page-footer-legal"
+          style={{ borderTop: '1px solid var(--glass-border)', paddingTop: 20, display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 12 }}
+        >
           <div style={{ fontSize: 11, color: 'var(--text-3)', fontFamily: 'var(--font-mono)' }}>
             © 2026 Sojori SAS · Tous droits réservés
           </div>
-          <div style={{ display: 'flex', gap: 18, fontSize: 11, color: 'var(--text-3)' }}>
-            <a href="#" style={{ color: 'inherit', textDecoration: 'none' }}>Mentions légales</a>
-            <a href="#" style={{ color: 'inherit', textDecoration: 'none' }}>CGU/CGV</a>
-            <a href="#" style={{ color: 'inherit', textDecoration: 'none' }}>Statut</a>
+          <div className="sj-page-footer-legal-links" style={{ display: 'flex', gap: 18, fontSize: 11, color: 'var(--text-3)' }}>
+            <a href="mailto:contact@sojori.com?subject=Mentions%20l%C3%A9gales" style={{ color: 'inherit', textDecoration: 'none' }}>Mentions légales</a>
+            <a href="mailto:contact@sojori.com?subject=CGU%20%2F%20CGV" style={{ color: 'inherit', textDecoration: 'none' }}>CGU/CGV</a>
+            <a href="mailto:contact@sojori.com?subject=Statut%20du%20service" style={{ color: 'inherit', textDecoration: 'none' }}>Statut</a>
           </div>
         </div>
       </div>
@@ -544,7 +570,7 @@ export function PageHero({ badge, title, subtitle, cta1, cta2, children }: {
   children?: ReactNode;
 }) {
   return (
-    <section style={{ padding: '80px 32px 50px', position: 'relative' }}>
+    <section className="sj-page-hero" style={{ padding: '80px 32px 50px', position: 'relative' }}>
       <div style={{ maxWidth: 1280, margin: '0 auto' }}>
         <div style={{ textAlign: 'center', maxWidth: 820, margin: '0 auto 44px' }}>
           {badge && <span className="badge" style={{ marginBottom: 20 }}><span className="badge-dot"></span> {badge}</span>}
@@ -572,8 +598,8 @@ export function PageHero({ badge, title, subtitle, cta1, cta2, children }: {
 
 export function StatsBar({ stats }: { stats: Array<{ k: string; l: string }> }) {
   return (
-    <section style={{ padding: '50px 32px', borderTop: '1px solid var(--glass-border)', borderBottom: '1px solid var(--glass-border)' }}>
-      <div style={{ maxWidth: 1280, margin: '0 auto', display: 'grid', gridTemplateColumns: `repeat(${stats.length}, 1fr)`, gap: 20 }}>
+    <section className="sj-stats-bar" style={{ padding: '50px 32px', borderTop: '1px solid var(--glass-border)', borderBottom: '1px solid var(--glass-border)' }}>
+      <div className="sj-stats-bar-grid" style={{ maxWidth: 1280, margin: '0 auto', display: 'grid', gridTemplateColumns: `repeat(${stats.length}, 1fr)`, gap: 20 }}>
         {stats.map((s, i) => (
           <div key={i} style={{ textAlign: 'center', padding: '12px', borderLeft: i ? '1px solid var(--glass-border)' : 'none' }}>
             <div style={{ fontSize: 40, fontWeight: 800, letterSpacing: '-0.04em', lineHeight: 1 }} className="gradient-text">{s.k}</div>
@@ -587,11 +613,14 @@ export function StatsBar({ stats }: { stats: Array<{ k: string; l: string }> }) 
 
 export function FinalCTA({ title, subtitle }: { title: ReactNode; subtitle: string }) {
   return (
-    <section style={{
+    <section
+      className="sj-final-cta"
+      style={{
       padding: '90px 32px',
       background: 'radial-gradient(ellipse 80% 60% at 50% 50%, rgba(230,176,34,0.14), transparent 70%)',
       textAlign: 'center'
-    }}>
+    }}
+    >
       <div style={{ maxWidth: 700, margin: '0 auto' }}>
         <h2 style={{ fontSize: 'clamp(32px, 4.4vw, 48px)', marginBottom: 14, textWrap: 'balance' }}>{title}</h2>
         <p style={{ fontSize: 17, color: 'var(--text-2)', marginBottom: 30 }}>{subtitle}</p>
