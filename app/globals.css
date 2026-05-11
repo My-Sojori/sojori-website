@@ -484,33 +484,47 @@ button[style*="rgba(255,255,255,0.18)"] {
   }
 
   /*
-   * Page /whatsapp — métriques (3 tuiles) : slides étroites sur mobile (~2+cards visibles),
-   * évite 280px × 3 qui impose un scroll horizontal excessif à côté du téléphone.
+   * Page /whatsapp — métriques : UNE ligne (grille 3), comme desktop, sans scroll ni points.
+   * Tailles proches du texte courant (haut de bloc ~16px / titres resserrés).
    */
-  .scroll-pagination-container.scroll-pagination--peek.wa-stats-row {
-    --sj-carousel-slide: min(132px, calc((100vw - 40px) / 2.5));
-    gap: 8px !important;
-    scroll-padding-inline: 12px !important;
-    padding-left: 12px !important;
-    padding-right: 8px !important;
+  .scroll-pagination-root[data-peek-root="true"]:has(> .scroll-pagination-container.wa-stats-row) .scroll-pagination-dots {
+    display: none !important;
   }
 
-  .scroll-pagination-container.scroll-pagination--peek.wa-stats-row > [data-carousel-slide],
-  .scroll-pagination-container.scroll-pagination--peek.wa-stats-row > *:has([data-carousel-slide]) > [data-carousel-slide] {
-    padding-left: 4px !important;
-    padding-right: 4px !important;
+  .scroll-pagination-container.scroll-pagination--peek.wa-stats-row {
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: 6px 8px !important;
+    overflow: visible !important;
+    overflow-x: visible !important;
+    scroll-snap-type: none !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    padding-bottom: 0 !important;
+    -webkit-overflow-scrolling: auto !important;
+  }
+
+  .scroll-pagination-container.scroll-pagination--peek.wa-stats-row > [data-carousel-slide] {
+    flex: none !important;
+    width: auto !important;
+    max-width: none !important;
+    min-width: 0 !important;
+    scroll-snap-align: unset !important;
+    box-sizing: border-box !important;
+    padding-left: 2px !important;
+    padding-right: 2px !important;
   }
 
   .wa-stats-row .wa-stat-metric .gradient-text {
-    font-size: clamp(17px, 5.2vw, 22px) !important;
-    line-height: 1.05 !important;
+    font-size: clamp(14px, 3.5vw, 17px) !important;
+    line-height: 1.15 !important;
   }
 
   .wa-stats-row .wa-stat-metric .wa-stat-label {
-    font-size: 9px !important;
+    font-size: 10px !important;
     line-height: 1.2 !important;
     display: -webkit-box;
-    -webkit-line-clamp: 3;
+    -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
     max-width: 100%;
@@ -768,41 +782,11 @@ button[style*="rgba(255,255,255,0.18)"] {
   }
 }
 
-/* WhatsApp flux : listes 6 items en colonne desktop, bandeau horizontal compact mobile */
+/* WhatsApp flux : listes (staff/admin/booking) — colonne verticale sur tous les breakpoints */
 .wa-flow-menu-strip {
   display: flex;
   flex-direction: column;
   gap: 10px;
-}
-
-@media (max-width: 768px) {
-  .wa-flow-menu-strip {
-    flex-direction: row;
-    flex-wrap: nowrap;
-    gap: 10px;
-    overflow-x: auto;
-    overflow-y: hidden;
-    padding-bottom: 10px;
-    margin-bottom: 4px;
-    -webkit-overflow-scrolling: touch;
-    scroll-snap-type: x mandatory;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-  }
-
-  .wa-flow-menu-strip::-webkit-scrollbar {
-    display: none;
-    height: 0;
-    width: 0;
-    background: transparent;
-  }
-
-  .wa-flow-menu-strip > * {
-    flex: 0 0 min(188px, 74vw);
-    max-width: 220px;
-    min-width: 0;
-    scroll-snap-align: start;
-  }
 }
 
 /* ════════════════════════════════════════════════════════════════════
@@ -824,41 +808,52 @@ button[style*="rgba(255,255,255,0.18)"] {
     height: auto;
   }
 
-  /* Generic section paddings with inline styles */
-  section[style*="padding: '80px 32px"],
-  section[style*="padding:80px 32px"],
-  section[style*="padding: 80px 32px"] {
-    padding: 56px 20px !important;
+  /* Generic section paddings — mobile (matches new tighter desktop values) */
+  section[style*="padding: 64px 32px"],
+  section[style*="padding: 56px 32px"],
+  section[style*="padding: 52px 32px"] {
+    padding: 28px 16px !important;
   }
-  section[style*="padding: '90px 32px"],
-  section[style*="padding:90px 32px"],
-  section[style*="padding: 90px 32px"] {
-    padding: 60px 20px !important;
+  section[style*="padding: 48px 32px"],
+  section[style*="padding: 44px 32px"] {
+    padding: 24px 16px !important;
   }
-  section[style*="padding: '100px 32px"],
-  section[style*="padding:100px 32px"],
-  section[style*="padding: 100px 32px"] {
-    padding: 64px 20px !important;
+  section[style*="padding: 36px 32px"],
+  section[style*="padding: 32px 32px"] {
+    padding: 20px 16px !important;
   }
-  section[style*="padding: '120px 32px"],
-  section[style*="padding:120px 32px"],
-  section[style*="padding: 120px 32px"] {
-    padding: 72px 20px !important;
+  section[style*="padding: 28px 32px"] {
+    padding: 18px 16px !important;
   }
-  section[style*="padding: '70px 32px"],
-  section[style*="padding:70px 32px"],
-  section[style*="padding: 70px 32px"] {
-    padding: 48px 20px !important;
+
+  /* 3-value patterns (product pages, about, etc.) */
+  section[style*="padding: 64px 32px 52px"],
+  div[style*="padding: 64px 32px 52px"] {
+    padding: 28px 16px 24px !important;
   }
-  section[style*="padding: '60px 32px"],
-  section[style*="padding:60px 32px"],
-  section[style*="padding: 60px 32px"] {
-    padding: 40px 20px !important;
+  section[style*="padding: 44px 32px 24px"],
+  div[style*="padding: 44px 32px 24px"] {
+    padding: 24px 16px 14px !important;
   }
-  section[style*="padding: '50px 32px"],
-  section[style*="padding:50px 32px"],
-  section[style*="padding: 50px 32px"] {
-    padding: 36px 20px !important;
+  section[style*="padding: 24px 32px 44px"],
+  div[style*="padding: 24px 32px 44px"] {
+    padding: 14px 16px 26px !important;
+  }
+  section[style*="padding: 12px 32px 44px"],
+  div[style*="padding: 12px 32px 44px"] {
+    padding: 8px 16px 26px !important;
+  }
+  section[style*="padding: 12px 32px 32px"],
+  div[style*="padding: 12px 32px 32px"] {
+    padding: 8px 16px 20px !important;
+  }
+  section[style*="padding: 12px 32px 24px"],
+  div[style*="padding: 12px 32px 24px"] {
+    padding: 8px 16px 16px !important;
+  }
+  section[style*="padding: 20px 32px 40px"],
+  div[style*="padding: 20px 32px 40px"] {
+    padding: 12px 16px 24px !important;
   }
 
   /* Generic grids that hardcode 2/3/4 columns */
@@ -917,27 +912,50 @@ button[style*="rgba(255,255,255,0.18)"] {
 }
 
 @media (max-width: 480px) {
-  section[style*="padding: '80px 32px"],
-  section[style*="padding: '90px 32px"],
-  section[style*="padding: '100px 32px"],
-  section[style*="padding: '120px 32px"],
-  section[style*="padding:80px 32px"],
-  section[style*="padding:90px 32px"],
-  section[style*="padding:100px 32px"],
-  section[style*="padding:120px 32px"],
-  section[style*="padding: 80px 32px"],
-  section[style*="padding: 90px 32px"],
-  section[style*="padding: 100px 32px"],
-  section[style*="padding: 120px 32px"] {
-    padding: 40px 16px !important;
+  section.sj-page-hero {
+    padding: 22px 16px 12px !important;
   }
-  section[style*="padding: '60px 32px"],
-  section[style*="padding: '70px 32px"],
-  section[style*="padding:60px 32px"],
-  section[style*="padding:70px 32px"],
-  section[style*="padding: 60px 32px"],
-  section[style*="padding: 70px 32px"] {
-    padding: 32px 16px !important;
+  section.sj-stats-bar {
+    padding: 14px 16px !important;
+  }
+  section.sj-final-cta {
+    padding: 22px 16px !important;
+  }
+
+  section[style*="padding: 64px 32px"],
+  section[style*="padding: 56px 32px"],
+  section[style*="padding: 52px 32px"],
+  section[style*="padding: 48px 32px"],
+  section[style*="padding: 44px 32px"] {
+    padding: 20px 16px !important;
+  }
+  section[style*="padding: 36px 32px"],
+  section[style*="padding: 32px 32px"],
+  section[style*="padding: 28px 32px"] {
+    padding: 16px 16px !important;
+  }
+
+  section[style*="padding: 24px 32px 44px"],
+  div[style*="padding: 24px 32px 44px"],
+  section[style*="padding: 12px 32px 44px"],
+  div[style*="padding: 12px 32px 44px"] {
+    padding: 8px 16px 20px !important;
+  }
+  section[style*="padding: 12px 32px 32px"],
+  div[style*="padding: 12px 32px 32px"],
+  section[style*="padding: 12px 32px 24px"],
+  div[style*="padding: 12px 32px 24px"] {
+    padding: 8px 16px 16px !important;
+  }
+  section[style*="padding: 64px 32px 52px"],
+  div[style*="padding: 64px 32px 52px"],
+  section[style*="padding: 44px 32px 24px"],
+  div[style*="padding: 44px 32px 24px"] {
+    padding: 16px 16px 12px !important;
+  }
+  section[style*="padding: 20px 32px 40px"],
+  div[style*="padding: 20px 32px 40px"] {
+    padding: 10px 16px 20px !important;
   }
 }
 
@@ -1121,11 +1139,15 @@ button[style*="rgba(255,255,255,0.18)"] {
   }
 
   section.sj-page-hero {
-    padding: 56px 16px 40px !important;
+    padding: 28px 16px 16px !important;
+  }
+
+  section.sj-stats-bar {
+    padding: 18px 16px !important;
   }
 
   section.sj-final-cta {
-    padding: 56px 16px !important;
+    padding: 28px 16px !important;
   }
 
   /* —— Page démo —— */

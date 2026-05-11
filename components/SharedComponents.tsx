@@ -21,8 +21,8 @@ export function Check() {
 export function SectionHead({ badge, title, subtitle, center = true }: { badge?: string; title: ReactNode; subtitle?: string; center?: boolean }) {
   return (
     <div style={{ textAlign: center ? 'center' : 'left', maxWidth: 720, margin: center ? '0 auto' : '0' }}>
-      {badge && <span className="badge" style={{ marginBottom: 18 }}><span className="badge-dot"></span> {badge}</span>}
-      <h2 style={{ marginBottom: 14, textWrap: 'balance' }}>{title}</h2>
+      {badge && <span className="badge" style={{ marginBottom: 12 }}><span className="badge-dot"></span> {badge}</span>}
+      <h2 style={{ marginBottom: 10, textWrap: 'balance' }}>{title}</h2>
       {subtitle && <p style={{ fontSize: 17, lineHeight: 1.6, textWrap: 'pretty', color: 'var(--text-2)' }}>{subtitle}</p>}
     </div>
   );
@@ -56,37 +56,41 @@ export function PageHeader({ pageTitle }: { pageTitle?: string }) {
   const [open, setOpen] = React.useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = React.useState(false);
   const [mobileProductOpen, setMobileProductOpen] = React.useState(false);
+  const savedScrollY = React.useRef(0);
+  const wasMenuOpen = React.useRef(false);
   const t = useTranslations('common.nav');
 
   /* Ne pas utiliser overflow:hidden sur body : sur Safari / WebKit ça peut clipper les enfants
    * position:fixed du portail (menu invisible alors que le burger passe en ✕). */
   React.useEffect(() => {
-    if (!mobileMenuOpen) return;
+    if (!mobileMenuOpen) {
+      // Menu fermé - restaurer scroll seulement si le menu était ouvert avant
+      if (wasMenuOpen.current) {
+        const body = document.body;
+        const html = document.documentElement;
+        body.style.position = '';
+        body.style.top = '';
+        body.style.left = '';
+        body.style.right = '';
+        body.style.width = '';
+        html.classList.remove('sj-mobile-menu-scroll-lock');
+        window.scrollTo(0, savedScrollY.current);
+        wasMenuOpen.current = false;
+      }
+      return;
+    }
+
+    // Menu ouvert - bloquer le scroll
+    wasMenuOpen.current = true;
     const body = document.body;
     const html = document.documentElement;
-    const prevBody = {
-      position: body.style.position,
-      top: body.style.top,
-      left: body.style.left,
-      right: body.style.right,
-      width: body.style.width,
-    };
-    const scrollY = window.scrollY;
+    savedScrollY.current = window.scrollY;
     body.style.position = 'fixed';
-    body.style.top = `-${scrollY}px`;
+    body.style.top = `-${savedScrollY.current}px`;
     body.style.left = '0';
     body.style.right = '0';
     body.style.width = '100%';
     html.classList.add('sj-mobile-menu-scroll-lock');
-    return () => {
-      body.style.position = prevBody.position;
-      body.style.top = prevBody.top;
-      body.style.left = prevBody.left;
-      body.style.right = prevBody.right;
-      body.style.width = prevBody.width;
-      html.classList.remove('sj-mobile-menu-scroll-lock');
-      window.scrollTo(0, scrollY);
-    };
   }, [mobileMenuOpen]);
 
   React.useEffect(() => {
@@ -476,7 +480,7 @@ export function PageFooter() {
     <footer
       className="sj-page-footer"
       style={{
-      padding: '60px 32px 30px',
+      padding: '36px 32px 24px',
       borderTop: '1px solid var(--border)',
       background: 'linear-gradient(180deg, transparent, rgba(245,243,236,0.6))'
     }}
@@ -570,14 +574,14 @@ export function PageHero({ badge, title, subtitle, cta1, cta2, children }: {
   children?: ReactNode;
 }) {
   return (
-    <section className="sj-page-hero" style={{ padding: '80px 32px 50px', position: 'relative' }}>
+    <section className="sj-page-hero" style={{ padding: '44px 32px 28px', position: 'relative' }}>
       <div style={{ maxWidth: 1280, margin: '0 auto' }}>
-        <div style={{ textAlign: 'center', maxWidth: 820, margin: '0 auto 44px' }}>
-          {badge && <span className="badge" style={{ marginBottom: 20 }}><span className="badge-dot"></span> {badge}</span>}
-          <h1 style={{ marginBottom: 18, textWrap: 'balance' }}>{title}</h1>
+        <div style={{ textAlign: 'center', maxWidth: 820, margin: '0 auto 24px' }}>
+          {badge && <span className="badge" style={{ marginBottom: 14 }}><span className="badge-dot"></span> {badge}</span>}
+          <h1 style={{ marginBottom: 14, textWrap: 'balance' }}>{title}</h1>
           {subtitle && <p style={{ fontSize: 18, lineHeight: 1.6, color: 'var(--text-2)', maxWidth: 660, margin: '0 auto', textWrap: 'pretty' }}>{subtitle}</p>}
           {(cta1 || cta2) && (
-            <div style={{ display: 'flex', gap: 12, justifyContent: 'center', marginTop: 30, flexWrap: 'wrap' }}>
+            <div style={{ display: 'flex', gap: 12, justifyContent: 'center', marginTop: 22, flexWrap: 'wrap' }}>
               {cta1 && (
                 <Link
                   href={{ pathname: '/demo', query: { source: 'page-hero' } }}
@@ -598,7 +602,7 @@ export function PageHero({ badge, title, subtitle, cta1, cta2, children }: {
 
 export function StatsBar({ stats }: { stats: Array<{ k: string; l: string }> }) {
   return (
-    <section className="sj-stats-bar" style={{ padding: '50px 32px', borderTop: '1px solid var(--glass-border)', borderBottom: '1px solid var(--glass-border)' }}>
+    <section className="sj-stats-bar" style={{ padding: '28px 32px', borderTop: '1px solid var(--glass-border)', borderBottom: '1px solid var(--glass-border)' }}>
       <div className="sj-stats-bar-grid" style={{ maxWidth: 1280, margin: '0 auto', display: 'grid', gridTemplateColumns: `repeat(${stats.length}, 1fr)`, gap: 20 }}>
         {stats.map((s, i) => (
           <div key={i} style={{ textAlign: 'center', padding: '12px', borderLeft: i ? '1px solid var(--glass-border)' : 'none' }}>
@@ -616,14 +620,14 @@ export function FinalCTA({ title, subtitle }: { title: ReactNode; subtitle: stri
     <section
       className="sj-final-cta"
       style={{
-      padding: '90px 32px',
+      padding: '48px 32px',
       background: 'radial-gradient(ellipse 80% 60% at 50% 50%, rgba(230,176,34,0.14), transparent 70%)',
       textAlign: 'center'
     }}
     >
       <div style={{ maxWidth: 700, margin: '0 auto' }}>
-        <h2 style={{ fontSize: 'clamp(32px, 4.4vw, 48px)', marginBottom: 14, textWrap: 'balance' }}>{title}</h2>
-        <p style={{ fontSize: 17, color: 'var(--text-2)', marginBottom: 30 }}>{subtitle}</p>
+        <h2 style={{ fontSize: 'clamp(32px, 4.4vw, 48px)', marginBottom: 10, textWrap: 'balance' }}>{title}</h2>
+        <p style={{ fontSize: 17, color: 'var(--text-2)', marginBottom: 20 }}>{subtitle}</p>
         <div style={{ display: 'flex', gap: 12, justifyContent: 'center', flexWrap: 'wrap' }}>
           <Link href={{ pathname: '/demo', query: { source: 'footer-cta' } }} className="btn btn-primary btn-lg">
             Demander une démo →

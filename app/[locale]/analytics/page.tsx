@@ -27,7 +27,7 @@ export default function AnalyticsPage() {
           subtitle="Revenue, Occupation, ADR, RevPAR par propriété. Performance staff. Alertes intelligentes. Export comptable. Le pilotage de votre activité — sans tableur Excel."
           cta1="Voir la démo" cta2="Audit gratuit"
         />
-        <section style={{padding: "20px 32px 60px"}}>
+        <section style={{padding: "12px 32px 32px"}}>
           <div style={{maxWidth: 1200, margin: "0 auto", display: "flex", flexDirection: "column", gap: 14}}>
             <div style={{
               display: "flex",
@@ -55,7 +55,7 @@ export default function AnalyticsPage() {
             <PropertyTable />
           </div>
         </section>
-        <section style={{padding: "40px 32px 80px", borderTop: "1px solid var(--glass-border)"}}>
+        <section style={{padding: "24px 32px 44px", borderTop: "1px solid var(--glass-border)"}}>
           <div style={{maxWidth: 1280, margin: "0 auto"}}>
             <div className="uppercase-sm" style={{color: "var(--text-3)", marginBottom: 12}}>● Capacités</div>
             <div style={{fontSize: 32, fontWeight: 700, letterSpacing: "-0.02em", marginBottom: 32, maxWidth: 700}}>Pilotez. <span className="gradient-text">Ne devinez plus.</span></div>

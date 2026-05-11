@@ -38,7 +38,7 @@ export default async function PMSPage() {
           cta1={t('hero.cta1')}
           cta2={t('hero.cta2')}
         />
-        <section style={{ padding: '20px 32px 80px' }}>
+        <section style={{ padding: '12px 32px 44px' }}>
           <div style={{ maxWidth: 1280, margin: '0 auto' }}>
             <div className="uppercase-sm" style={{ color: 'var(--text-3)', textAlign: 'center', marginBottom: 14 }}>
               {t('sectionCalendar.eyebrow')}
@@ -49,7 +49,7 @@ export default async function PMSPage() {
             <Calendar header={t('calendar.header')} properties={properties} />
           </div>
         </section>
-        <section style={{ padding: '40px 32px 80px', borderTop: '1px solid var(--glass-border)' }}>
+        <section style={{ padding: '24px 32px 44px', borderTop: '1px solid var(--glass-border)' }}>
           <div style={{ maxWidth: 1280, margin: '0 auto' }}>
             <div className="uppercase-sm" style={{ color: 'var(--text-3)', marginBottom: 12 }}>{t('sectionModules.eyebrow')}</div>
             <div style={{ fontSize: 32, fontWeight: 700, letterSpacing: '-0.02em', marginBottom: 32, maxWidth: 700 }}>

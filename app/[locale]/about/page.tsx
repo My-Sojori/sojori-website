@@ -34,19 +34,12 @@ export default function AboutPage() {
         }
 
         @media (max-width: 768px) {
-          section { padding: 60px 20px 40px !important; }
+          section { padding: 22px 16px 14px !important; }
 
           .hero-grid {
             grid-template-columns: 1fr !important;
-            gap: 32px !important;
+            gap: 24px !important;
           }
-
-          div[style*="padding: '80px 32px 40px'"] { padding: 60px 20px 28px !important; }
-          div[style*="padding: '120px 32px 100px'"] { padding: 80px 20px 60px !important; }
-          div[style*="padding: '100px 32px'"] { padding: 60px 20px !important; }
-          div[style*="padding: '110px 32px'"] { padding: 70px 20px !important; }
-          div[style*="padding: '80px 32px'"] { padding: 60px 20px !important; }
-          div[style*="padding: '120px 32px'"] { padding: 80px 20px !important; }
 
           div[style*="gridTemplateColumns: '1.4fr 1fr'"] {
             grid-template-columns: 1fr !important;
@@ -84,7 +77,7 @@ export default function AboutPage() {
         <PageHeader pageTitle={t('pageTitle')} />
 
         {/* HERO */}
-        <section style={{ padding: '80px 32px 40px', position: 'relative' }}>
+        <section style={{ padding: '44px 32px 24px', position: 'relative' }}>
           <div style={{ maxWidth: 1300, margin: '0 auto' }}>
             <span className="badge" style={{
               display: 'inline-flex',
@@ -194,7 +187,7 @@ export default function AboutPage() {
         </section>
 
         {/* MISSION */}
-        <section style={{ padding: '120px 32px 100px', textAlign: 'center' }}>
+        <section style={{ padding: '64px 32px 52px', textAlign: 'center' }}>
           <div style={{ maxWidth: 980, margin: '0 auto' }}>
             <div style={{
               fontFamily: 'var(--font-mono)',
@@ -246,7 +239,7 @@ export default function AboutPage() {
 
         {/* ORIGIN STORY — Magazine style */}
         <section style={{
-          padding: '100px 32px',
+          padding: '52px 32px',
           background: 'rgba(255,255,255,0.5)',
           borderTop: '1px solid var(--border)',
           borderBottom: '1px solid var(--border)'
@@ -386,7 +379,7 @@ export default function AboutPage() {
         </section>
 
         {/* VALUES — Asymmetric grid */}
-        <section style={{ padding: '100px 32px' }}>
+        <section style={{ padding: '52px 32px' }}>
           <div style={{ maxWidth: 1280, margin: '0 auto' }}>
             <ScrollPaginationDots itemCount={2} gap={14} peekCarousel style={{ marginBottom: 56 }}>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 60, alignItems: 'end' }}>
@@ -757,7 +750,7 @@ export default function AboutPage() {
         </section>
 
         {/* FOUNDER */}
-        <section style={{ padding: '110px 32px' }}>
+        <section style={{ padding: '56px 32px' }}>
           <div style={{ maxWidth: 1100, margin: '0 auto' }}>
             <ScrollPaginationDots itemCount={2} gap={14} peekCarousel style={{ marginBottom: 48 }}>
               <div className="team-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 60, alignItems: 'end' }}>
@@ -858,7 +851,7 @@ export default function AboutPage() {
 
         {/* SOCIAL */}
         <section style={{
-          padding: '80px 32px',
+          padding: '44px 32px',
           background: 'rgba(255,255,255,0.5)',
           borderTop: '1px solid var(--border)',
           borderBottom: '1px solid var(--border)'
@@ -978,7 +971,7 @@ export default function AboutPage() {
 
         {/* BIG STATS */}
         <section style={{
-          padding: '80px 32px',
+          padding: '44px 32px',
           background: 'linear-gradient(180deg, rgba(245,243,236,0.6), transparent)'
         }}>
           <div style={{ textAlign: 'center', marginBottom: 40 }}>
@@ -1072,7 +1065,7 @@ export default function AboutPage() {
 
         {/* CTA */}
         <section id="contact" style={{
-          padding: '120px 32px',
+          padding: '64px 32px',
           textAlign: 'center',
           background: 'radial-gradient(ellipse 60% 50% at 50% 50%, rgba(230,176,34,0.16), transparent 70%)'
         }}>

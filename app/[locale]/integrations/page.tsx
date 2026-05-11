@@ -145,10 +145,7 @@ export default function IntegrationsPage() {
     <>
       <style jsx>{`
         @media (max-width: 768px) {
-          section { padding: 60px 20px !important; }
-
-          div[style*="padding: '20px 32px 40px'"] { padding: 20px 20px 40px !important; }
-          div[style*="padding: '70px 32px'"] { padding: 60px 20px !important; }
+          section { padding: 22px 16px !important; }
 
           div[style*="gridTemplateColumns: 'repeat(auto-fill, minmax(260px, 1fr))'"] {
             display: flex !important;
@@ -194,7 +191,7 @@ export default function IntegrationsPage() {
           cta2={t('hero.cta2')}
         />
 
-        <section style={{ padding: '20px 32px 40px' }}>
+        <section style={{ padding: '12px 32px 24px' }}>
           <div style={{ maxWidth: 1280, margin: '0 auto' }}>
             {/* Filters */}
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8, marginBottom: 32 }}>
@@ -234,7 +231,7 @@ export default function IntegrationsPage() {
         </section>
 
         {/* API CTA */}
-        <section style={{ padding: '70px 32px', borderTop: '1px solid var(--glass-border)' }}>
+        <section style={{ padding: '36px 32px', borderTop: '1px solid var(--glass-border)' }}>
           <div className="integrations-api-split" style={{
             maxWidth: 1100,
             margin: '0 auto',

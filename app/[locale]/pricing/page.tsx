@@ -149,7 +149,7 @@ export default function PricingPage() {
         </section>
 
         {/* Listings input */}
-        <section className="pricing-calculator-section" style={{ padding: '0 32px 40px' }}>
+        <section className="pricing-calculator-section" style={{ padding: '0 32px 24px' }}>
           <div style={{ maxWidth: 720, margin: '0 auto', textAlign: 'center' }}>
             <div style={{ marginBottom: 16, color: 'var(--text-3)', fontSize: 13, fontFamily: 'var(--font-mono)', letterSpacing: '0.1em', textTransform: 'uppercase' }}>
               {t('calculator.yourProperties')}
@@ -332,12 +332,12 @@ export default function PricingPage() {
         </section>
 
         {/* FAQ */}
-        <section className="pricing-faq-section" style={{ padding: '60px 32px', borderTop: '1px solid var(--glass-border)' }}>
+        <section className="pricing-faq-section" style={{ padding: '32px 32px', borderTop: '1px solid var(--glass-border)' }}>
           <div style={{ maxWidth: 800, margin: '0 auto' }}>
             <div className="uppercase-sm" style={{ color: 'var(--text-3)', textAlign: 'center', marginBottom: 12 }}>
               {t('faq.badge')}
             </div>
-            <h2 style={{ fontSize: 36, marginBottom: 32, letterSpacing: '-0.02em', textAlign: 'center' }}>
+            <h2 style={{ fontSize: 36, marginBottom: 20, letterSpacing: '-0.02em', textAlign: 'center' }}>
               {t('faq.title', { gradient: '' })} <span className="gradient-text">{t('faq.titleGradient')}</span>
             </h2>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>

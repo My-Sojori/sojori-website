@@ -158,8 +158,8 @@
   "home": {
     "hero": {
       "badge": "● Orquestrador · Aluguel de Temporada",
-      "title": "Não é um software de gestão.",
-      "titleGradient": "É um software de orquestração.",
+      "title": "Software de orquestração",
+      "titleGradient": "para aluguel de temporada",
       "subtitle": "Sojori coordena sua atividade de aluguel de temporada como um humano faria — reserva, hóspede, equipe, proprietário. Exceto que nunca dorme.",
       "subtitleStrong": "E não pede para você pilotar.",
       "ctaPrimary": "Ver a orquestração →",

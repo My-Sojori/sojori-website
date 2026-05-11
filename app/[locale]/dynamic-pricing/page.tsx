@@ -170,10 +170,7 @@ export default function DynamicPricingPage() {
     <>
       <style jsx>{`
         @media (max-width: 768px) {
-          section { padding: 60px 20px !important; }
-
-          div[style*="padding: '20px 32px 80px'"] { padding: 20px 20px 60px !important; }
-          div[style*="padding: '40px 32px 80px'"] { padding: 40px 20px 60px !important; }
+          section { padding: 22px 16px !important; }
 
           div[style*="gridTemplateColumns: 'repeat(2, 1fr)'"] {
             display: flex !important;
@@ -229,7 +226,7 @@ export default function DynamicPricingPage() {
           cta2={tHero('cta2')}
         />
 
-        <section style={{ padding: '20px 32px 80px' }}>
+        <section style={{ padding: '12px 32px 44px' }}>
           <div style={{ maxWidth: 1200, margin: '0 auto' }}>
             <div className="uppercase-sm" style={{ color: 'var(--text-3)', marginBottom: 12, textAlign: 'center' }}>{tCalSection('badge')}</div>
             <div style={{ fontSize: 32, fontWeight: 700, letterSpacing: '-0.02em', textAlign: 'center', maxWidth: 720, margin: '0 auto 12px' }}>
@@ -242,7 +239,7 @@ export default function DynamicPricingPage() {
           </div>
         </section>
 
-        <section style={{ padding: '40px 32px 80px', borderTop: '1px solid var(--glass-border)' }}>
+        <section style={{ padding: '24px 32px 44px', borderTop: '1px solid var(--glass-border)' }}>
           <div style={{ maxWidth: 1200, margin: '0 auto' }}>
             <div className="uppercase-sm" style={{ color: 'var(--text-3)', marginBottom: 12 }}>{tFactors('badge')}</div>
             <div style={{ fontSize: 32, fontWeight: 700, letterSpacing: '-0.02em', marginBottom: 32, maxWidth: 700 }}>
@@ -254,7 +251,7 @@ export default function DynamicPricingPage() {
           </div>
         </section>
 
-        <section style={{ padding: '40px 32px 80px', borderTop: '1px solid var(--glass-border)' }}>
+        <section style={{ padding: '24px 32px 44px', borderTop: '1px solid var(--glass-border)' }}>
           <div style={{ maxWidth: 1100, margin: '0 auto' }}>
             <div className="uppercase-sm" style={{ color: 'var(--text-3)', marginBottom: 12 }}>{tRevenue('badge')}</div>
             <div style={{ fontSize: 32, fontWeight: 700, letterSpacing: '-0.02em', marginBottom: 12, maxWidth: 700 }}>

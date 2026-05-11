@@ -159,7 +159,7 @@ export default function OwnerPortalPage() {
           cta2="Devenir propriétaire Sojori"
         />
 
-        <section style={{ padding: "20px 32px 80px" }}>
+        <section style={{ padding: "12px 32px 44px" }}>
           <div style={{ maxWidth: 1100, margin: "0 auto" }}>
             <div className="owner-portal-showcase" style={{ display: "grid", gridTemplateColumns: "1fr 1.2fr", gap: 60, alignItems: "center" }}>
               <div>
@@ -193,7 +193,7 @@ export default function OwnerPortalPage() {
           </div>
         </section>
 
-        <section style={{ padding: "40px 32px 80px", borderTop: "1px solid var(--glass-border)" }}>
+        <section style={{ padding: "24px 32px 44px", borderTop: "1px solid var(--glass-border)" }}>
           <div style={{ maxWidth: 1100, margin: "0 auto" }}>
             <div className="uppercase-sm" style={{ color: "var(--text-3)", marginBottom: 12 }}>● Statement mensuel</div>
             <div style={{ fontSize: 32, fontWeight: 700, letterSpacing: "-0.02em", marginBottom: 14, maxWidth: 700 }}>Transparence <span className="gradient-text">totale</span>. Aucune surprise.</div>

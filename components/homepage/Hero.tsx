@@ -24,7 +24,17 @@ export function Hero() {
             <strong style={{ color: 'var(--text)' }}> {t('subtitleStrong')}</strong>
           </p>
           <div style={{ display: 'flex', gap: 12, justifyContent: 'center', marginTop: 32, flexWrap: 'wrap' }} className="hero-cta-buttons">
-            <a href="#animation" className="btn btn-primary btn-lg">{t('ctaPrimary')}</a>
+            <a
+              href="#animation"
+              className="btn btn-primary btn-lg"
+              onClick={(e) => {
+                e.preventDefault();
+                const el = document.getElementById('animation');
+                if (el) {
+                  el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+              }}
+            >{t('ctaPrimary')}</a>
             <Link href={{ pathname: '/demo', query: { source: 'homepage-hero' } }} className="btn btn-ghost btn-lg">{t('ctaSecondary')}</Link>
           </div>
         </div>

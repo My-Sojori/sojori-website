@@ -165,10 +165,7 @@ export default function GuestExperiencePage() {
     <>
       <style jsx>{`
         @media (max-width: 768px) {
-          section { padding: 60px 20px !important; }
-
-          div[style*="padding: '20px 32px 80px'"] { padding: 20px 20px 60px !important; }
-          div[style*="padding: '60px 32px'"] { padding: 60px 20px !important; }
+          section { padding: 22px 16px !important; }
 
           div[style*="gridTemplateColumns: '380px 1fr'"] {
             grid-template-columns: 1fr !important;
@@ -211,7 +208,7 @@ export default function GuestExperiencePage() {
           cta1={t("hero.cta1")}
           cta2={t("hero.cta2")}
         />
-        <section style={{ padding: "20px 32px 80px" }}>
+        <section style={{ padding: "12px 32px 44px" }}>
           <div style={{ maxWidth: 1280, margin: "0 auto", display: "grid", gridTemplateColumns: "380px 1fr", gap: 60, alignItems: "center" }}>
             <div style={{ display: "flex", justifyContent: "center" }}><WhatsAppPhone tab={tab} t={t} /></div>
             <div>
@@ -244,7 +241,7 @@ export default function GuestExperiencePage() {
         </section>
 
         {/* Features */}
-        <section style={{ padding: "60px 32px" }}>
+        <section style={{ padding: "32px 32px" }}>
           <div style={{ maxWidth: 1280, margin: "0 auto" }}>
             <div className="uppercase-sm" style={{ color: "var(--text-3)", marginBottom: 12 }}>{t("features.badge")}</div>
             <h2 style={{ fontSize: 36, marginBottom: 32, maxWidth: 700 }}>

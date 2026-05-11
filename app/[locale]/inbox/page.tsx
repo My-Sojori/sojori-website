@@ -160,10 +160,7 @@ export default function InboxPage() {
         }
 
         @media (max-width: 768px) {
-          section { padding: 60px 20px !important; }
-
-          div[style*="padding: '20px 32px 80px'"] { padding: 20px 20px 60px !important; }
-          div[style*="padding: '40px 32px 80px'"] { padding: 40px 20px 60px !important; }
+          section { padding: 22px 16px !important; }
 
           .inbox-container {
             flex-direction: column !important;
@@ -222,12 +219,12 @@ export default function InboxPage() {
           subtitle={t('hero.subtitle')}
           cta1={t('hero.cta1')} cta2={t('hero.cta2')}
         />
-        <section style={{padding: "20px 32px 80px"}}>
+        <section style={{padding: "12px 32px 44px"}}>
           <div style={{maxWidth: 1280, margin: "0 auto"}}>
             <Inbox />
           </div>
         </section>
-        <section style={{padding: "40px 32px 80px", borderTop: "1px solid var(--glass-border)"}}>
+        <section style={{padding: "24px 32px 44px", borderTop: "1px solid var(--glass-border)"}}>
           <div style={{maxWidth: 1200, margin: "0 auto"}}>
             <div className="uppercase-sm" style={{color: "var(--text-3)", marginBottom: 12}}>{t('capabilities.badge')}</div>
             <div style={{fontSize: 32, fontWeight: 700, letterSpacing: "-0.02em", marginBottom: 32, maxWidth: 700}}>{t('capabilities.title')} <span className="gradient-text">{t('capabilities.titleGradient')}</span></div>

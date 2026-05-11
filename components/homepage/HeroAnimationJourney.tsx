@@ -222,11 +222,9 @@ function ScrollableLane({ visibleEvents, progress, hoveredId, setHoveredId, focu
       const safeId = typeof CSS !== 'undefined' && typeof CSS.escape === 'function' ? CSS.escape(lastCardId) : lastCardId;
       const lastEl = el.querySelector(`[data-event-id="${safeId}"]`) as HTMLElement | null;
       if (lastEl) {
-        lastEl.scrollIntoView({
-          behavior: added ? 'smooth' : 'auto',
-          block: 'nearest',
-          inline: 'end',
-        });
+        // Use scrollLeft instead of scrollIntoView to avoid affecting page scroll
+        const scrollLeft = lastEl.offsetLeft - (el.clientWidth - lastEl.offsetWidth);
+        el.scrollTo({ left: Math.max(0, scrollLeft), behavior: added ? 'smooth' : 'auto' });
         return;
       }
       el.scrollTo({ left: end, behavior: added ? 'smooth' : 'auto' });
