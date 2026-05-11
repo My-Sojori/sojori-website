@@ -1782,6 +1782,8 @@
       "subtitle": "Primeiro um horário simples — o questionário detalhado virá logo depois, uma vez que seu horário esteja garantido.",
       "agentLabel": "Anfitrião da demo",
       "chooseDayLabel": "Escolha um dia",
+      "thisWeekLabel": "Esta semana",
+      "nextWeekLabel": "Próxima semana",
       "availableSlotsLabel": "Horários disponíveis neste dia",
       "fullLabel": "Completo",
       "availableLabel": "disponível",
@@ -1878,10 +1880,15 @@
         "appointmentFrom": "das",
         "appointmentTo": "às",
         "appointmentForRequest": "conforme o seu pedido registado",
-        "checkEmail": "Consulte o seu email: confirmação, lembrete e link para reagendar (Sarah, Sojori).",
+        "checkEmail": "Pode modificar ou cancelar o seu agendamento pelo link enviado por email (remetente Sarah, Sojori).",
         "noFormNeeded": "Não é necessário preencher outro formulário para",
         "backToHome": "← Voltar ao início",
-        "viewPricing": "Ver preços"
+        "viewPricing": "Ver preços",
+        "reschedule": "Modificar o agendamento",
+        "rescheduling": "Modificando…",
+        "cancel": "Cancelar o agendamento",
+        "cancelling": "Cancelando…",
+        "cancelledMessage": "Seu agendamento foi cancelado. Você pode voltar mais tarde para agendar um novo."
       },
       "confirmed": {
         "title": "Solicitação ",

@@ -1783,6 +1783,8 @@
       "subtitle": "D'abord un créneau simple — le questionnaire détaillé viendra juste après, une fois votre horaire sécurisé.",
       "agentLabel": "Hôte de la démo",
       "chooseDayLabel": "Choisissez un jour",
+      "thisWeekLabel": "Cette semaine",
+      "nextWeekLabel": "Semaine suivante",
       "availableSlotsLabel": "Créneaux disponibles ce jour",
       "fullLabel": "Complet",
       "availableLabel": "libre",
@@ -1879,10 +1881,15 @@
         "appointmentFrom": "de",
         "appointmentTo": "à",
         "appointmentForRequest": "conformément à votre demande enregistrée",
-        "checkEmail": "Consultez votre boîte mail : confirmation, rappel et lien de modification (expéditeur Sarah, Sojori).",
+        "checkEmail": "Vous pouvez modifier ou annuler votre rendez-vous depuis le lien envoyé par email (expéditeur Sarah, Sojori).",
         "noFormNeeded": "Aucun formulaire complémentaire n’est nécessaire pour",
         "backToHome": "← Retour à l’accueil",
-        "viewPricing": "Voir les tarifs"
+        "viewPricing": "Voir les tarifs",
+        "reschedule": "Modifier le rendez-vous",
+        "rescheduling": "Modification en cours…",
+        "cancel": "Annuler le rendez-vous",
+        "cancelling": "Annulation…",
+        "cancelledMessage": "Votre rendez-vous a été annulé. Vous pouvez revenir plus tard pour en prendre un nouveau."
       },
       "confirmed": {
         "title": "Demande ",

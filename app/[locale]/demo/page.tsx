@@ -112,11 +112,15 @@ function DemoPageContent() {
     if (resumeFromUrlApplied.current) return;
     const id = searchParams.get('demoRequestId')?.trim() ?? '';
     const stepRaw = searchParams.get('step')?.trim() ?? '';
+    const reschedFrom = searchParams.get('rescheduledFromId')?.trim() ?? '';
     if (!id || !/^[a-f0-9]{24}$/i.test(id)) return;
     const stepNum = stepRaw ? Number.parseInt(stepRaw, 10) : 2;
     if (stepNum !== 2 && stepNum !== 3 && stepNum !== 4) return;
     resumeFromUrlApplied.current = true;
     setDemoRequestId(id);
+    if (reschedFrom && /^[a-f0-9]{24}$/i.test(reschedFrom)) {
+      setRescheduledFromId(reschedFrom);
+    }
     setStep(stepNum);
   }, [searchParams]);
 
@@ -139,6 +143,10 @@ function DemoPageContent() {
   } | null>(null);
   /** RDV déjà lié à la demande : on saute calendrier + questionnaire, écran final seul. */
   const [calendarSkippedAlreadyBooked, setCalendarSkippedAlreadyBooked] = useState(false);
+  const [rescheduling, setRescheduling] = useState(false);
+  const [cancellingAppt, setCancellingAppt] = useState(false);
+  const [apptCancelled, setApptCancelled] = useState(false);
+  const [rescheduledFromId, setRescheduledFromId] = useState<string | null>(null);
 
   useEffect(() => {
     if (step !== 2) return;
@@ -320,6 +328,7 @@ function DemoPageContent() {
           demoRequestId,
           slotId: selectedSlot.id,
           clientName: provisionalClientName(),
+          ...(rescheduledFromId ? { rescheduledFromId } : {}),
         }),
       });
       let bookRaw: unknown;
@@ -334,6 +343,7 @@ function DemoPageContent() {
       }
       setError('');
       setCalendarSkippedAlreadyBooked(false);
+      setRescheduledFromId(null);
       setStep(3);
     } catch (err: unknown) {
       setError(err instanceof Error ? err.message : 'Une erreur est survenue. Veuillez réessayer.');
@@ -725,64 +735,74 @@ function DemoPageContent() {
                       <p style={{ fontSize: 14, fontWeight: 500, color: 'var(--text-2)', marginBottom: 12 }}>
                         {t('step2.chooseDayLabel')}
                       </p>
-                      <div
-                        className="demo-cal-days"
-                        style={{
-                          display: 'grid',
-                          gridTemplateColumns: 'repeat(auto-fill, minmax(112px, 1fr))',
-                          gap: 12,
-                          marginBottom: 28,
-                        }}
-                      >
-                        {bookingWeek.days.map((d) => {
-                          const active = selectedDateYmd === d.date;
-                          const count = d.slots.length;
-                          const full = count === 0;
-                          return (
-                            <button
-                              key={d.date}
-                              type="button"
-                              onClick={() => {
-                                setSelectedDateYmd(d.date);
-                                setSelectedSlot(null);
-                              }}
+                      {[0, 1].map((weekIdx) => {
+                        const weekDays = bookingWeek.days.slice(weekIdx * 7, weekIdx * 7 + 7);
+                        if (weekDays.length === 0) return null;
+                        return (
+                          <div key={weekIdx} style={{ marginBottom: weekIdx === 0 ? 8 : 28 }}>
+                            <span style={{ display: 'block', fontSize: 11, fontWeight: 600, color: 'var(--text-3)', marginBottom: 6, textTransform: 'uppercase', letterSpacing: '0.04em' }}>
+                              {weekIdx === 0 ? t('step2.thisWeekLabel') : t('step2.nextWeekLabel')}
+                            </span>
+                            <div
+                              className="demo-cal-days"
                               style={{
-                                padding: '12px 10px',
-                                borderRadius: 10,
-                                cursor: full ? 'default' : 'pointer',
-                                textAlign: 'center',
-                                border: active
-                                  ? '1px solid rgba(184, 136, 26, 0.55)'
-                                  : '1px solid var(--glass-border)',
-                                background: active
-                                  ? 'rgba(244, 207, 94, 0.18)'
-                                  : full
-                                    ? 'var(--bg-2)'
-                                    : 'var(--bg-1)',
-                                boxShadow: active ? '0 0 0 2px rgba(244, 207, 94, 0.35)' : 'none',
-                                color: 'var(--text)',
-                                transition: 'background 0.15s ease, box-shadow 0.15s ease',
-                                opacity: full ? 0.72 : 1,
+                                display: 'grid',
+                                gridTemplateColumns: 'repeat(7, 1fr)',
+                                gap: 8,
                               }}
                             >
-                              <span style={{ display: 'block', fontWeight: 600, fontSize: 13, lineHeight: 1.3 }}>
-                                {d.label}
-                              </span>
-                              <span
-                                style={{
-                                  display: 'block',
-                                  marginTop: 5,
-                                  fontSize: 11,
-                                  fontWeight: 500,
-                                  color: full ? 'var(--text-3)' : 'var(--success)',
-                                }}
-                              >
-                                {full ? t('step2.fullLabel') : `${count} ${count > 1 ? t('step2.availablePluralLabel') : t('step2.availableLabel')}`}
-                              </span>
-                            </button>
-                          );
-                        })}
-                      </div>
+                              {weekDays.map((d) => {
+                                const active = selectedDateYmd === d.date;
+                                const count = d.slots.length;
+                                const full = count === 0;
+                                return (
+                                  <button
+                                    key={d.date}
+                                    type="button"
+                                    onClick={() => {
+                                      setSelectedDateYmd(d.date);
+                                      setSelectedSlot(null);
+                                    }}
+                                    style={{
+                                      padding: '10px 4px',
+                                      borderRadius: 10,
+                                      cursor: full ? 'default' : 'pointer',
+                                      textAlign: 'center',
+                                      border: active
+                                        ? '1px solid rgba(184, 136, 26, 0.55)'
+                                        : '1px solid var(--glass-border)',
+                                      background: active
+                                        ? 'rgba(244, 207, 94, 0.18)'
+                                        : full
+                                          ? 'var(--bg-2)'
+                                          : 'var(--bg-1)',
+                                      boxShadow: active ? '0 0 0 2px rgba(244, 207, 94, 0.35)' : 'none',
+                                      color: 'var(--text)',
+                                      transition: 'background 0.15s ease, box-shadow 0.15s ease',
+                                      opacity: full ? 0.72 : 1,
+                                    }}
+                                  >
+                                    <span style={{ display: 'block', fontWeight: 600, fontSize: 12, lineHeight: 1.3 }}>
+                                      {d.label}
+                                    </span>
+                                    <span
+                                      style={{
+                                        display: 'block',
+                                        marginTop: 4,
+                                        fontSize: 10,
+                                        fontWeight: 500,
+                                        color: full ? 'var(--text-3)' : 'var(--success)',
+                                      }}
+                                    >
+                                      {full ? t('step2.fullLabel') : `${count} ${count > 1 ? t('step2.availablePluralLabel') : t('step2.availableLabel')}`}
+                                    </span>
+                                  </button>
+                                );
+                              })}
+                            </div>
+                          </div>
+                        );
+                      })}
 
                       {!selectedDateYmd && (
                         <p
@@ -1100,14 +1120,68 @@ function DemoPageContent() {
                       {t('step4.alreadyBooked.noFormNeeded')}{' '}
                       <strong>{formData.email}</strong>.
                     </p>
-                    <div className="demo-cta-stack" style={{ display: 'flex', gap: 12, justifyContent: 'center', flexWrap: 'wrap', marginBottom: 40 }}>
-                      <Link href="/" className="btn btn-primary btn-lg">
-                        {t('step4.alreadyBooked.backToHome')}
-                      </Link>
-                      <Link href="/pricing" className="btn btn-ghost btn-lg">
-                        {t('step4.alreadyBooked.viewPricing')}
-                      </Link>
-                    </div>
+                    {apptCancelled ? (
+                      <div style={{ padding: 20, borderRadius: 12, background: 'rgba(239,68,68,0.08)', border: '1px solid rgba(239,68,68,0.25)', marginBottom: 40 }}>
+                        <p style={{ margin: 0, fontSize: 15, color: 'var(--text-2)' }}>{t('step4.alreadyBooked.cancelledMessage')}</p>
+                      </div>
+                    ) : (
+                      <div className="demo-cta-stack" style={{ display: 'flex', gap: 12, justifyContent: 'center', flexWrap: 'wrap', marginBottom: 40 }}>
+                        <button
+                          type="button"
+                          className="btn btn-primary btn-lg"
+                          disabled={rescheduling || cancellingAppt}
+                          onClick={async () => {
+                            if (!selectedSlot?.id || !demoRequestId) return;
+                            setRescheduling(true);
+                            try {
+                              const res = await fetch(`${DEMO_API}/appointment/cancel-by-demo`, {
+                                method: 'POST',
+                                headers: { 'Content-Type': 'application/json' },
+                                body: JSON.stringify({ appointmentId: selectedSlot.id, demoRequestId, isReschedule: true }),
+                              });
+                              const raw: unknown = await res.json();
+                              const parsed = normalizeDemoBackendResponse(raw) as { success?: boolean };
+                              if (parsed.success) {
+                                setRescheduledFromId(selectedSlot.id);
+                                setCalendarSkippedAlreadyBooked(false);
+                                setSelectedSlot(null);
+                                setStep(2);
+                              }
+                            } catch { /* ignore */ } finally {
+                              setRescheduling(false);
+                            }
+                          }}
+                        >
+                          {rescheduling ? t('step4.alreadyBooked.rescheduling') : t('step4.alreadyBooked.reschedule')}
+                        </button>
+                        <button
+                          type="button"
+                          className="btn btn-ghost btn-lg"
+                          disabled={rescheduling || cancellingAppt}
+                          style={{ borderColor: 'rgba(239,68,68,0.4)', color: '#f87171' }}
+                          onClick={async () => {
+                            if (!selectedSlot?.id || !demoRequestId) return;
+                            setCancellingAppt(true);
+                            try {
+                              const res = await fetch(`${DEMO_API}/appointment/cancel-by-demo`, {
+                                method: 'POST',
+                                headers: { 'Content-Type': 'application/json' },
+                                body: JSON.stringify({ appointmentId: selectedSlot.id, demoRequestId }),
+                              });
+                              const raw: unknown = await res.json();
+                              const parsed = normalizeDemoBackendResponse(raw) as { success?: boolean };
+                              if (parsed.success) {
+                                setApptCancelled(true);
+                              }
+                            } catch { /* ignore */ } finally {
+                              setCancellingAppt(false);
+                            }
+                          }}
+                        >
+                          {cancellingAppt ? t('step4.alreadyBooked.cancelling') : t('step4.alreadyBooked.cancel')}
+                        </button>
+                      </div>
+                    )}
                   </>
                 ) : (
                   <>

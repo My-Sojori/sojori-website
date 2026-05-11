@@ -1782,6 +1782,8 @@
       "subtitle": "Primero una franja horaria simple — el cuestionario detallado vendrá justo después, una vez que tu horario esté asegurado.",
       "agentLabel": "Anfitrión de la demo",
       "chooseDayLabel": "Elige un día",
+      "thisWeekLabel": "Esta semana",
+      "nextWeekLabel": "Semana siguiente",
       "availableSlotsLabel": "Franjas disponibles en este día",
       "fullLabel": "Completo",
       "availableLabel": "disponible",
@@ -1878,10 +1880,15 @@
         "appointmentFrom": "de",
         "appointmentTo": "a",
         "appointmentForRequest": "según tu solicitud registrada",
-        "checkEmail": "Revisa tu correo: confirmación, recordatorio y enlace para cambiar la cita (Sarah, Sojori).",
+        "checkEmail": "Puede modificar o cancelar su cita desde el enlace enviado por email (remitente Sarah, Sojori).",
         "noFormNeeded": "No necesitas rellenar otro formulario para",
         "backToHome": "← Volver al inicio",
-        "viewPricing": "Ver precios"
+        "viewPricing": "Ver precios",
+        "reschedule": "Modificar la cita",
+        "rescheduling": "Modificando…",
+        "cancel": "Cancelar la cita",
+        "cancelling": "Cancelando…",
+        "cancelledMessage": "Su cita ha sido cancelada. Puede volver más tarde para reservar una nueva."
       },
       "confirmed": {
         "title": "¡Solicitud ",

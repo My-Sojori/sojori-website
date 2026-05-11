@@ -1783,6 +1783,8 @@
       "subtitle": "First a simple time slot — the detailed questionnaire will come right after, once your schedule is secured.",
       "agentLabel": "Demo host",
       "chooseDayLabel": "Choose a day",
+      "thisWeekLabel": "This week",
+      "nextWeekLabel": "Next week",
       "availableSlotsLabel": "Available slots on this day",
       "fullLabel": "Full",
       "availableLabel": "available",
@@ -1879,10 +1881,15 @@
         "appointmentFrom": "from",
         "appointmentTo": "to",
         "appointmentForRequest": "according to your saved request",
-        "checkEmail": "Check your inbox for the confirmation, reminder, and link to reschedule (from Sarah, Sojori).",
+        "checkEmail": "You can reschedule or cancel your appointment from the link sent by email (from Sarah, Sojori).",
         "noFormNeeded": "No additional questionnaire is required for",
         "backToHome": "← Back to home",
-        "viewPricing": "View pricing"
+        "viewPricing": "View pricing",
+        "reschedule": "Reschedule appointment",
+        "rescheduling": "Rescheduling…",
+        "cancel": "Cancel appointment",
+        "cancelling": "Cancelling…",
+        "cancelledMessage": "Your appointment has been cancelled. You can come back later to book a new one."
       },
       "confirmed": {
         "title": "Request ",

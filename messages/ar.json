@@ -1775,6 +1775,8 @@
       "subtitle": "أولاً موعد بسيط — سيأتي الاستبيان التفصيلي بعد ذلك مباشرة، بمجرد تأمين موعدك.",
       "agentLabel": "مضيف العرض",
       "chooseDayLabel": "اختر يومًا",
+      "thisWeekLabel": "هذا الأسبوع",
+      "nextWeekLabel": "الأسبوع القادم",
       "availableSlotsLabel": "المواعيد المتاحة في هذا اليوم",
       "fullLabel": "ممتلئ",
       "availableLabel": "متاح",
@@ -1871,10 +1873,15 @@
         "appointmentFrom": "من",
         "appointmentTo": "إلى",
         "appointmentForRequest": "وفق طلبك المحفوظ",
-        "checkEmail": "راجع بريدك: التأكيد والتذكير ورابط التعديل أو الإلغاء (Sarah، Sojori).",
+        "checkEmail": "يمكنك تعديل أو إلغاء موعدك من الرابط المرسل عبر البريد الإلكتروني (المرسل: Sarah, Sojori).",
         "noFormNeeded": "لا يلزم استبيان إضافي لـ",
         "backToHome": "← العودة للرئيسية",
-        "viewPricing": "عرض الأسعار"
+        "viewPricing": "عرض الأسعار",
+        "reschedule": "تعديل الموعد",
+        "rescheduling": "جارٍ التعديل…",
+        "cancel": "إلغاء الموعد",
+        "cancelling": "جارٍ الإلغاء…",
+        "cancelledMessage": "تم إلغاء موعدك. يمكنك العودة لاحقًا لحجز موعد جديد."
       },
       "confirmed": {
         "title": "طلب ",
