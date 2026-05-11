@@ -808,7 +808,7 @@
             "J-7 : Message bienvenue + langue détectée",
             "J-3 : Demande passeport · OCR + KYC en 30 sec",
             "J-1 : Code porte + WiFi + GPS",
-            "J : Vérification arrivée · QR scan",
+            "J : Contrôle arrivée · WhatsApp + GPS partagé",
             "J+1 : Demande d'avis · lien pré-rempli"
           ]
         },
@@ -833,13 +833,13 @@
           ]
         },
         {
-          "title": "Staff task management",
+          "title": "Gestion des tâches équipe",
           "steps": [
             "Check-out détecté → tâche ménage créée",
             "Staff reçoit notif WhatsApp avec détails",
-            "Navigation GPS vers le bien",
-            "QR scan arrivée → chrono démarre",
-            "Photos + validation → paiement auto"
+            "GPS vers le bien · lien partagé sur WhatsApp",
+            "Arrivée confirmée sur WhatsApp → chrono démarre",
+            "Photos + signalements multilingues → corrections → validation → paiement auto"
           ]
         }
       ]
@@ -1740,7 +1740,7 @@
   "demo": {
     "pageTitle": "Demander une démo",
     "errors": {
-      "submitStep1": "Impossible d'enregistrer la demande. Réessayez ou écrivez à contact@sojori.com.",
+      "submitStep1": "Impossible d'enregistrer la demande. Réessayez ou écrivez à Sarah (Sojori) : contact@sojori.com.",
       "invalidResponse": "Réponse inattendue du serveur. Réessayez.",
       "availability": "Impossible de charger les disponibilités.",
       "bookSlot": "Impossible de réserver ce créneau.",
@@ -1795,7 +1795,7 @@
       "loadingTitle": "Vérification des disponibilités",
       "loadingDescription": "Nous synchronisons le planning de l'équipe avec les créneaux réellement libres.",
       "loadingWait": "Merci de patienter environ 5 secondes…",
-      "noAgentNotice": "Aucun créneau en ligne pour le moment. Vous devriez recevoir un e-mail avec un lien pour prendre rendez-vous — pensez à vérifier vos courriers indésirables."
+      "noAgentNotice": "Aucun créneau en ligne pour le moment. Vous devriez recevoir un e-mail de Sarah (Sojori) avec un lien pour prendre rendez-vous — pensez à vérifier vos courriers indésirables."
     },
     "step3": {
       "badge": "Étape 3/4 · Personnalisation",
@@ -1879,7 +1879,7 @@
         "appointmentFrom": "de",
         "appointmentTo": "à",
         "appointmentForRequest": "conformément à votre demande enregistrée",
-        "checkEmail": "Consultez votre boîte mail : confirmation, rappel et lien de modification s’y trouvent.",
+        "checkEmail": "Consultez votre boîte mail : confirmation, rappel et lien de modification (expéditeur Sarah, Sojori).",
         "noFormNeeded": "Aucun formulaire complémentaire n’est nécessaire pour",
         "backToHome": "← Retour à l’accueil",
         "viewPricing": "Voir les tarifs"
@@ -1892,7 +1892,7 @@
         "ifNeeded": "si besoin.",
         "appointmentLabel": "Rendez-vous :",
         "appointmentAt": "à",
-        "emailSent": "Un e-mail de confirmation a été envoyé à",
+        "emailSent": "Sarah (Sojori) vous a envoyé un e-mail de confirmation à",
         "backToHome": "← Retour à l’accueil",
         "viewPricing": "Voir les tarifs",
         "feature1Title": "Setup en 7 jours",

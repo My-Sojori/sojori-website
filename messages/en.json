@@ -808,7 +808,7 @@
             "D-7: Welcome message + language detected",
             "D-3: Passport request · OCR + KYC in 30 sec",
             "D-1: Door code + WiFi + GPS",
-            "D: Arrival verification · QR scan",
+            "D: Arrival check · WhatsApp + shared GPS",
             "D+1: Review request · pre-filled link"
           ]
         },
@@ -837,9 +837,9 @@
           "steps": [
             "Check-out detected → cleaning task created",
             "Staff receives WhatsApp notif with details",
-            "GPS navigation to property",
-            "QR scan arrival → timer starts",
-            "Photos + validation → auto payment"
+            "GPS to property · link shared in WhatsApp",
+            "Arrival confirmed in WhatsApp → timer starts",
+            "Photos flag snags for fixes · team reads in any language · validation → payout"
           ]
         }
       ]
@@ -1740,7 +1740,7 @@
   "demo": {
     "pageTitle": "Request a demo",
     "errors": {
-      "submitStep1": "We couldn't save your request. Try again or email contact@sojori.com.",
+      "submitStep1": "We couldn't save your request. Try again or email Sarah at Sojori: contact@sojori.com.",
       "invalidResponse": "Unexpected server response. Please try again.",
       "availability": "Could not load availability.",
       "bookSlot": "Could not book this time slot.",
@@ -1795,7 +1795,7 @@
       "loadingTitle": "Checking availability",
       "loadingDescription": "We're synchronizing the team's schedule with actually available slots.",
       "loadingWait": "Please wait approximately 5 seconds…",
-      "noAgentNotice": "No online slots are available right now. You should receive an email with a link to book a time — please check your spam folder."
+      "noAgentNotice": "No online slots are available right now. You should receive an email from Sarah (Sojori) with a link to book a time — please check your spam folder."
     },
     "step3": {
       "badge": "Step 3/4 · Personalization",
@@ -1879,7 +1879,7 @@
         "appointmentFrom": "from",
         "appointmentTo": "to",
         "appointmentForRequest": "according to your saved request",
-        "checkEmail": "Check your inbox for the confirmation, reminder, and link to reschedule.",
+        "checkEmail": "Check your inbox for the confirmation, reminder, and link to reschedule (from Sarah, Sojori).",
         "noFormNeeded": "No additional questionnaire is required for",
         "backToHome": "← Back to home",
         "viewPricing": "View pricing"
@@ -1892,7 +1892,7 @@
         "ifNeeded": "if needed.",
         "appointmentLabel": "Appointment:",
         "appointmentAt": "at",
-        "emailSent": "A confirmation email has been sent to",
+        "emailSent": "Sarah (Sojori) sent a confirmation email to",
         "backToHome": "← Back to home",
         "viewPricing": "View pricing",
         "feature1Title": "7-day setup",

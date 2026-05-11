@@ -807,7 +807,7 @@
             "D-7: Mensaje bienvenida + idioma detectado",
             "D-3: Solicitud pasaporte · OCR + KYC en 30 seg",
             "D-1: Código puerta + WiFi + GPS",
-            "D: Verificación llegada · Escaneo QR",
+            "D: Control llegada · WhatsApp + GPS compartido",
             "D+1: Solicitud reseña · enlace pre-completado"
           ]
         },
@@ -836,9 +836,9 @@
           "steps": [
             "Check-out detectado → tarea limpieza creada",
             "Personal recibe notif WhatsApp con detalles",
-            "Navegación GPS a la propiedad",
-            "Escaneo QR llegada → cronómetro inicia",
-            "Fotos + validación → pago automático"
+            "GPS a la propiedad · enlace compartido en WhatsApp",
+            "Llegada confirmada en WhatsApp → arranca el cronómetro",
+            "Fotos señalan incidencias · equipo en cualquier idioma · validación → pago"
           ]
         }
       ]
@@ -1739,7 +1739,7 @@
   "demo": {
     "pageTitle": "Solicitar una demo",
     "errors": {
-      "submitStep1": "No pudimos registrar tu solicitud. Inténtalo de nuevo o escribe a contact@sojori.com.",
+      "submitStep1": "No pudimos registrar tu solicitud. Inténtalo de nuevo o escribe a Sarah (Sojori): contact@sojori.com.",
       "invalidResponse": "Respuesta inesperada del servidor. Inténtalo de nuevo.",
       "availability": "No se pudieron cargar las disponibilidades.",
       "bookSlot": "No se pudo reservar este horario.",
@@ -1794,7 +1794,7 @@
       "loadingTitle": "Verificando disponibilidad",
       "loadingDescription": "Estamos sincronizando el horario del equipo con las franjas realmente disponibles.",
       "loadingWait": "Por favor espera aproximadamente 5 segundos…",
-      "noAgentNotice": "No hay franjas en línea por ahora. Deberías recibir un correo con un enlace para reservar — revisa también la carpeta de spam."
+      "noAgentNotice": "No hay franjas en línea por ahora. Deberías recibir un correo de Sarah (Sojori) con un enlace para reservar — revisa también la carpeta de spam."
     },
     "step3": {
       "badge": "Paso 3/4 · Personalización",
@@ -1878,7 +1878,7 @@
         "appointmentFrom": "de",
         "appointmentTo": "a",
         "appointmentForRequest": "según tu solicitud registrada",
-        "checkEmail": "Revisa tu correo: confirmación, recordatorio y enlace para cambiar la cita.",
+        "checkEmail": "Revisa tu correo: confirmación, recordatorio y enlace para cambiar la cita (Sarah, Sojori).",
         "noFormNeeded": "No necesitas rellenar otro formulario para",
         "backToHome": "← Volver al inicio",
         "viewPricing": "Ver precios"
@@ -1891,7 +1891,7 @@
         "ifNeeded": "si hace falta.",
         "appointmentLabel": "Cita:",
         "appointmentAt": "a las",
-        "emailSent": "Se ha enviado un correo de confirmación a",
+        "emailSent": "Sarah (Sojori) te ha enviado un correo de confirmación a",
         "backToHome": "← Volver al inicio",
         "viewPricing": "Ver precios",
         "feature1Title": "Puesta en marcha en 7 días",

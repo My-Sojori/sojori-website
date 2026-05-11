@@ -807,7 +807,7 @@
             "D-7: Mensagem boas-vindas + idioma detectado",
             "D-3: Solicitação passaporte · OCR + KYC em 30 seg",
             "D-1: Código porta + WiFi + GPS",
-            "D: Verificação chegada · Scan QR",
+            "D: Chegada verificada · WhatsApp + GPS compartilhado",
             "D+1: Solicitação avaliação · link pré-preenchido"
           ]
         },
@@ -836,9 +836,9 @@
           "steps": [
             "Check-out detectado → tarefa limpeza criada",
             "Equipe recebe notif WhatsApp com detalhes",
-            "Navegação GPS para a propriedade",
-            "Scan QR chegada → cronômetro inicia",
-            "Fotos + validação → pagamento automático"
+            "GPS à propriedade · link compartilhado no WhatsApp",
+            "Chegada confirmada no WhatsApp → cronómetro inicia",
+            "Fotos marcam pendências · equipa em qualquer idioma · validação → pagamento"
           ]
         }
       ]
@@ -1739,7 +1739,7 @@
   "demo": {
     "pageTitle": "Solicitar uma demo",
     "errors": {
-      "submitStep1": "Não foi possível registar o seu pedido. Tente novamente ou escreva para contact@sojori.com.",
+      "submitStep1": "Não foi possível registar o seu pedido. Tente novamente ou escreva para Sarah (Sojori): contact@sojori.com.",
       "invalidResponse": "Resposta inesperada do servidor. Tente novamente.",
       "availability": "Não foi possível carregar as disponibilidades.",
       "bookSlot": "Não foi possível reservar este horário.",
@@ -1794,7 +1794,7 @@
       "loadingTitle": "Verificando disponibilidade",
       "loadingDescription": "Estamos sincronizando a agenda da equipe com os horários realmente disponíveis.",
       "loadingWait": "Por favor, aguarde aproximadamente 5 segundos…",
-      "noAgentNotice": "Não há horários online no momento. Você deve receber um e-mail com um link para agendar — verifique também o spam."
+      "noAgentNotice": "Não há horários online no momento. Você deve receber um e-mail da Sarah (Sojori) com um link para agendar — verifique também o spam."
     },
     "step3": {
       "badge": "Passo 3/4 · Personalização",
@@ -1878,7 +1878,7 @@
         "appointmentFrom": "das",
         "appointmentTo": "às",
         "appointmentForRequest": "conforme o seu pedido registado",
-        "checkEmail": "Consulte o seu email: confirmação, lembrete e link para reagendar.",
+        "checkEmail": "Consulte o seu email: confirmação, lembrete e link para reagendar (Sarah, Sojori).",
         "noFormNeeded": "Não é necessário preencher outro formulário para",
         "backToHome": "← Voltar ao início",
         "viewPricing": "Ver preços"
@@ -1891,7 +1891,7 @@
         "ifNeeded": "se necessário.",
         "appointmentLabel": "Compromisso:",
         "appointmentAt": "às",
-        "emailSent": "Foi enviado um email de confirmação para",
+        "emailSent": "A Sarah (Sojori) enviou um email de confirmação para",
         "backToHome": "← Voltar ao início",
         "viewPricing": "Ver preços",
         "feature1Title": "Implementação em 7 dias",
