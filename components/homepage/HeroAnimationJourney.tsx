@@ -9,15 +9,15 @@ import { type Phase, type JourneyEvent, type Lane, resolveEvent } from '@/lib/jo
 import { getHeroAnimUi } from '@/lib/hero-anim-ui';
 import { getJourneyForLocale } from '@/lib/journey-for-locale';
 
-/** Durée d’un cycle timeline (plus grand = cartes qui apparaissent plus lentement). */
-const LOOP_DURATION = 64; // seconds
+/** Durée d'un cycle timeline (plus grand = cartes qui apparaissent plus lentement). */
+const LOOP_DURATION = 43; // seconds - réduit pour animation plus rapide
 
-/** Acte 1 — canaux + carte réservation (un peu plus long pour lire la résa Airbnb). */
-const PHASE_INCOMING_END = 0.11;
-/** Fin acte 2 — après quoi le graphe / lanes (acte 3) démarre. */
-const PHASE_INGEST_END = 0.22;
-/** Au début du timeline (0–1), ne montrer que l’événement `booking` ≈ TIMELINE_BOOKING_INTRO_END × (1−PHASE_INGEST_END) × LOOP_DURATION secondes (~5 s). */
-const TIMELINE_BOOKING_INTRO_END = 0.095;
+/** Acte 1 — canaux + carte réservation (réduit pour arriver vite à l'animation 3). */
+const PHASE_INCOMING_END = 0.06;
+/** Fin acte 2 — après quoi le graphe / lanes (acte 3) démarre (réduit de 3 secondes). */
+const PHASE_INGEST_END = 0.09;
+/** Au début du timeline (0–1), montrer immédiatement toutes les cartes (animations 1 et 2 ont déjà introduit la réservation). */
+const TIMELINE_BOOKING_INTRO_END = 0.0;
 
 // ─── Timeline scrubber ─────────────────────────────────────────
 function TimelineBar({
@@ -433,6 +433,8 @@ export function HeroAnimationJourney() {
   const timelineSpan = 1 - PHASE_INGEST_END;
   const timelineProg = phase === 'timeline' ? (progress - PHASE_INGEST_END) / timelineSpan : 0;
   const timelineBookingIntroActive = phase === 'timeline' && timelineProg < TIMELINE_BOOKING_INTRO_END;
+
+
 
   const activeCount = events.filter((e) => {
     if (timelineBookingIntroActive && e.id !== 'booking') return false;

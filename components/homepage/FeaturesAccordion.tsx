@@ -85,7 +85,7 @@ export function FeaturesAccordion() {
   ];
 
   return (
-    <section style={{ padding: '110px 32px' }} className="features-accordion-section">
+    <section style={{ padding: '80px 32px' }} className="features-accordion-section">
       <div style={{ maxWidth: 920, margin: '0 auto' }}>
         <SectionHead
           badge={t('badge')}
@@ -205,7 +205,7 @@ export function FeaturesAccordion() {
           }
         }
         @media (max-width: 768px) {
-          .features-accordion-section { padding: 70px 20px !important; }
+          .features-accordion-section { padding: 56px 20px !important; }
           .accordion-button { padding: 16px 20px !important; gap: 12px !important; }
           .accordion-icon { font-size: 20px !important; }
           .accordion-title { font-size: 15px !important; }

@@ -1,7 +1,5 @@
 "use client";
 
-import { ScrollPaginationDots } from '@/components/shared/ScrollPaginationDots';
-
 interface BookingData {
   propIdx: number;
   startDay: number;
@@ -11,41 +9,41 @@ interface BookingData {
 }
 
 export function Calendar({ header, properties }: { header: string; properties: string[] }) {
-  const days = Array.from({ length: 21 }, (_, i) => i + 5);
+  // Full month: 31 days starting from day 1
+  const days = Array.from({ length: 31 }, (_, i) => i + 1);
   const bookings: BookingData[] = [
-    [0, 5, 4, '#FF5A5F', 'Sarah J. · Airbnb'],
-    [0, 11, 6, '#003580', 'Marco R. · Booking'],
-    [0, 19, 3, '#0E64A4', 'Emma · Vrbo'],
-    [1, 6, 5, '#FF5A5F', 'James P. · Airbnb'],
-    [1, 14, 8, '#003580', 'Wei L. · Booking'],
-    [2, 5, 9, '#FF5A5F', 'Carlos · Airbnb'],
-    [2, 17, 4, '#FFC72C', 'Linh N. · Expedia'],
-    [3, 8, 6, '#003580', 'Yumi K. · Booking'],
-    [3, 16, 5, '#FF5A5F', 'Ali B. · Airbnb'],
-    [4, 5, 7, '#FF5A5F', 'Diego · Airbnb'],
-    [4, 14, 4, '#003580', 'Sofia · Booking'],
-    [4, 19, 3, '#FFC72C', 'Tom W. · Expedia'],
+    [0, 2, 5, '#FF5A5F', 'Sarah J. · Airbnb'],
+    [0, 9, 7, '#003580', 'Marco R. · Booking'],
+    [0, 18, 6, '#0E64A4', 'Emma · Vrbo'],
+    [0, 26, 4, '#FF5A5F', 'Lisa M. · Airbnb'],
+    [1, 3, 6, '#FF5A5F', 'James P. · Airbnb'],
+    [1, 12, 10, '#003580', 'Wei L. · Booking'],
+    [1, 24, 5, '#0E64A4', 'Nina T. · Vrbo'],
+    [2, 1, 8, '#FF5A5F', 'Carlos · Airbnb'],
+    [2, 11, 5, '#FFC72C', 'Linh N. · Expedia'],
+    [2, 18, 9, '#003580', 'Ahmed R. · Booking'],
+    [3, 5, 7, '#003580', 'Yumi K. · Booking'],
+    [3, 14, 6, '#FF5A5F', 'Ali B. · Airbnb'],
+    [3, 22, 8, '#0E64A4', 'Kim S. · Vrbo'],
+    [4, 2, 8, '#FF5A5F', 'Diego · Airbnb'],
+    [4, 12, 5, '#003580', 'Sofia · Booking'],
+    [4, 19, 7, '#FFC72C', 'Tom W. · Expedia'],
+    [4, 27, 4, '#FF5A5F', 'Julia P. · Airbnb'],
   ].map((b) => ({ propIdx: b[0] as number, startDay: b[1] as number, length: b[2] as number, color: b[3] as string, label: b[4] as string }));
 
   const colW = 38;
   const rowH = 50;
   const headW = 160;
 
-  // Calculate itemCount and itemWidth for ScrollPaginationDots
-  // Assuming a viewport shows approximately 5-6 days at a time on mobile/tablet
-  const daysPerView = 6;
+  // ScrollPaginationDots only for mobile
+  const daysPerView = 7;
   const itemWidth = daysPerView * colW;
   const itemCount = Math.ceil(days.length / daysPerView);
 
   return (
-    <ScrollPaginationDots
-      itemCount={itemCount}
-      itemWidth={itemWidth}
-      gap={0}
-      className="pms-calendar-card card"
-      style={{ padding: 0 }}
-    >
-      <div className="pms-calendar-inner" style={{ minWidth: headW + days.length * colW + 20 }}>
+    <div className="pms-calendar-wrapper">
+      <div className="pms-calendar-card card" style={{ padding: 0, overflowX: 'auto' }}>
+        <div className="pms-calendar-inner" style={{ minWidth: headW + days.length * colW }}>
         <div className="pms-calendar-header" style={{ display: 'flex', borderBottom: '1px solid var(--glass-border)', position: 'sticky', top: 0, background: 'rgba(20,20,28,0.95)', backdropFilter: 'blur(10px)', zIndex: 2 }}>
           <div className="pms-calendar-header-label" style={{ width: headW, padding: '14px 18px', fontSize: 11, fontWeight: 600, color: 'var(--text-3)', textTransform: 'uppercase', letterSpacing: 1 }}>{header}</div>
           {days.map((d) => (
@@ -70,7 +68,7 @@ export function Calendar({ header, properties }: { header: string; properties: s
                     className="pms-calendar-booking"
                     style={{
                       position: 'absolute',
-                      left: (startDay - 5) * colW + 3,
+                      left: (startDay - 1) * colW + 3,
                       top: 9,
                       height: rowH - 18,
                       width: length * colW - 6,
@@ -98,6 +96,7 @@ export function Calendar({ header, properties }: { header: string; properties: s
             </div>
           </div>
         ))}
+        </div>
       </div>
 
       {/* Mobile optimizations */}
@@ -168,6 +167,25 @@ export function Calendar({ header, properties }: { header: string; properties: s
           box-shadow: 0 6px 16px rgba(0,0,0,0.3);
         }
 
+        /* Desktop: no scroll, show everything */
+        @media (min-width: 769px) {
+          .pms-calendar-card {
+            overflow-x: visible !important;
+          }
+          .pms-calendar-inner {
+            width: 100% !important;
+            min-width: auto !important;
+          }
+        }
+
+        /* Mobile: enable horizontal scroll */
+        @media (max-width: 768px) {
+          .pms-calendar-card {
+            overflow-x: auto !important;
+            scrollbar-width: thin;
+          }
+        }
+
         @media (max-width: 768px) {
           .pms-calendar-header-label {
             width: 90px !important;
@@ -234,6 +252,6 @@ export function Calendar({ header, properties }: { header: string; properties: s
           }
         }
       `}</style>
-    </ScrollPaginationDots>
+    </div>
   );
 }

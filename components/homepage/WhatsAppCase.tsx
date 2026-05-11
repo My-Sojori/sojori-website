@@ -29,7 +29,7 @@ export function WhatsAppCase() {
   return (
     <section
       className="whatsapp-case-section"
-      style={{ padding: '110px 32px', background: 'linear-gradient(180deg, transparent, rgba(139,92,246,0.04) 50%, transparent)' }}
+      style={{ padding: '80px 32px', background: 'linear-gradient(180deg, transparent, rgba(139,92,246,0.04) 50%, transparent)' }}
       id="whatsapp-ai"
     >
       <div style={{ maxWidth: 1280, margin: '0 auto' }}>
@@ -193,10 +193,10 @@ export function WhatsAppCase() {
       <style jsx>{`
         @media (max-width: 768px) {
           .whatsapp-case-section {
-            padding: 60px 20px !important;
+            padding: 56px 20px !important;
           }
           .whatsapp-case-grid-carousel {
-            margin-top: 28px !important;
+            margin-top: 36px !important;
             gap: 24px !important;
           }
           /* Text before image on mobile */

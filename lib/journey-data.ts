@@ -75,13 +75,13 @@ export const TYPE_COLORS: Record<EventType, string> = {
 
 export const EVENTS: JourneyEvent[] = [
   // ── AVANT L'ARRIVÉE ─────────────────────────────────────────
-  // Réservation initiale
+  // Réservation initiale (t=0 pour apparaître immédiatement avec le graphe)
   {
-    id: 'booking', t: 0.00, lane: 1, phase: 'before', type: 'declaration',
+    id: 'booking', t: 0.0, lane: 1, phase: 'before', type: 'declaration',
     icon: '🏠', title: 'Réservation Airbnb', sub: 'Sarah J. · 3 nuits · €840',
     status: 'completed', anim: 'confetti', tag: 'J-14',
     transitions: [
-      { at: 0.02, status: 'completed', sub: 'Sync auto → Calendrier · Paiement confirmé', tag: 'Synced' },
+      { at: 0.013, status: 'completed', sub: 'Sync auto → Calendrier · Paiement confirmé', tag: 'Synced' },
     ]
   },
 

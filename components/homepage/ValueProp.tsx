@@ -59,7 +59,7 @@ export function ValueProp() {
   ];
 
   return (
-    <section style={{ padding: '110px 32px' }} id="features" className="value-prop-section">
+    <section style={{ padding: '80px 32px' }} id="features" className="value-prop-section">
       <div style={{ maxWidth: 1280, margin: '0 auto' }}>
         <SectionHead
           badge={t('badge')}
@@ -78,7 +78,7 @@ export function ValueProp() {
           gap={16}
           peekCarousel
           className="value-prop-carousel"
-          style={{ marginTop: 56 }}
+          style={{ marginTop: 48 }}
         >
           <div className="value-prop-slides-row">
           {pillars.map((p, i) => (
@@ -169,9 +169,9 @@ export function ValueProp() {
         }
 
         @media (max-width: 768px) {
-          .value-prop-section { padding: 48px 20px 20px !important; }
+          .value-prop-section { padding: 56px 20px !important; }
           .value-prop-carousel {
-            margin-top: 32px !important;
+            margin-top: 36px !important;
           }
           .value-prop-card { padding: 24px !important; }
           .value-prop-card:hover { transform: none !important; }

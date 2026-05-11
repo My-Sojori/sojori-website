@@ -44,7 +44,7 @@ export function SocialProof() {
   ];
 
   return (
-    <section style={{ padding: '110px 32px' }} className="social-proof-section">
+    <section style={{ padding: '80px 32px' }} className="social-proof-section">
       <div style={{ maxWidth: 1280, margin: '0 auto' }}>
         <SectionHead badge={t('badge')} title={t('title')} />
 
@@ -147,8 +147,8 @@ export function SocialProof() {
         }
 
         @media (max-width: 768px) {
-          .social-proof-section { padding: 70px 20px !important; }
-          .testimonials-carousel { margin-top: 40px !important; }
+          .social-proof-section { padding: 56px 20px !important; }
+          .testimonials-carousel { margin-top: 36px !important; }
           .testimonial-card {
             padding: 24px !important;
             min-height: auto !important;

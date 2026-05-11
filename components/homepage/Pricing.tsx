@@ -65,7 +65,7 @@ export function Pricing() {
   return (
     <section
       style={{
-        padding: '110px 32px',
+        padding: '80px 32px',
         // Aurora Soft : remplace l'ancien fond dark `rgba(15,15,20,0.6)`
         background: 'linear-gradient(180deg, transparent, rgba(245,243,236,0.6) 30%, rgba(245,243,236,0.6) 70%, transparent)',
       }}
@@ -198,7 +198,7 @@ export function Pricing() {
         }
 
         @media (max-width: 768px) {
-          .pricing-section { padding: 70px 20px !important; }
+          .pricing-section { padding: 56px 20px !important; }
 
           .pricing-grid {
             display: flex !important;

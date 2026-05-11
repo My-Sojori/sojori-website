@@ -9,10 +9,11 @@ export function FinalCTA() {
   return (
     <section
       style={{
-        padding: '120px 32px',
+        padding: '90px 32px',
         background: 'radial-gradient(ellipse 80% 60% at 50% 50%, rgba(230,176,34,0.14) 0%, transparent 70%)',
         textAlign: 'center',
       }}
+      className="final-cta-section"
     >
       <div style={{ maxWidth: 760, margin: '0 auto' }}>
         <h2 style={{ fontSize: 'clamp(36px, 5vw, 56px)', marginBottom: 18, textWrap: 'balance' }}>
@@ -35,6 +36,13 @@ export function FinalCTA() {
           {t('footer')}
         </div>
       </div>
+      <style jsx>{`
+        @media (max-width: 768px) {
+          .final-cta-section {
+            padding: 60px 20px !important;
+          }
+        }
+      `}</style>
     </section>
   );
 }
