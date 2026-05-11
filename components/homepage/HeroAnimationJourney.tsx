@@ -273,8 +273,7 @@ function ScrollableLane({ visibleEvents, progress, hoveredId, setHoveredId, focu
           >
           {appearedCards.map((e) => {
             const age = progress - e.t;
-            /* Fenêtre plus large = apparition progressive plus lente sur la timeline */
-            const isNew = age < 0.092;
+            const isNew = age < 0.018;
 
             return (
               <div
@@ -284,7 +283,7 @@ function ScrollableLane({ visibleEvents, progress, hoveredId, setHoveredId, focu
                   flexShrink: 0,
                   opacity: isNew ? 0 : 1,
                   transform: isNew ? 'scale(0.8) translateY(10px)' : 'scale(1) translateY(0)',
-                  transition: 'opacity 0.85s ease-out, transform 0.85s cubic-bezier(.34,1.56,.64,1)',
+                  transition: 'opacity 0.5s ease-out, transform 0.5s cubic-bezier(.34,1.56,.64,1)',
                 }}
               >
                 <JourneyCard
