@@ -28,6 +28,46 @@
       "seeDetails": "See Details",
       "watchDemo": "Watch Demo",
       "bookDemo": "Book a Demo"
+    },
+    "productMenu": {
+      "platform": "Platform",
+      "guest": "Guest",
+      "operations": "Operations",
+      "company": "Company",
+      "pms": "PMS",
+      "pmsDesc": "Multi-property management",
+      "channelManager": "Channel Manager",
+      "channelManagerDesc": "Multi-OTA sync",
+      "dynamicPricing": "Dynamic Pricing",
+      "dynamicPricingDesc": "Rules & calendar",
+      "analytics": "Smart Analytics",
+      "analyticsDesc": "Real-time metrics",
+      "whatsappBot": "WhatsApp Bot",
+      "whatsappBotDesc": "AI & guest journey",
+      "inbox": "Unified Inbox",
+      "inboxDesc": "All channels",
+      "guestExp": "Guest Experience",
+      "guestExpDesc": "Guest journey",
+      "teamflow": "TeamFlow",
+      "teamflowDesc": "Staff & cleaning",
+      "ownerPortal": "Owner Portal",
+      "ownerPortalDesc": "Owner dashboard",
+      "dashboardApp": "Dashboard App",
+      "dashboardAppDesc": "Manager control",
+      "pricing": "Pricing",
+      "pricingDesc": "Plans & pricing",
+      "integrations": "Integrations",
+      "integrationsDesc": "Connectors & API",
+      "about": "About",
+      "aboutDesc": "The Sojori team"
+    },
+    "footer": {
+      "tagline": "The short-term rental orchestrator.",
+      "copyright": "© 2026 Sojori SAS · All rights reserved"
+    },
+    "finalCta": {
+      "demoButton": "Request a demo →",
+      "homeButton": "← Back to homepage"
     }
   },
   "pricing": {
@@ -2071,6 +2111,119 @@
       "titleBefore": "Migrate your PMS.",
       "titleGradient": "In 7 days.",
       "subtitle": "Migration from Hostfully, Smoobu, Lodgify included. Guided onboarding. 1-month free trial."
+    }
+  },
+  "legal": {
+    "nav": {
+      "terms": "Terms of Service",
+      "privacy": "Privacy Policy",
+      "backHome": "Back to homepage"
+    },
+    "terms": {
+      "pageTitle": "Terms of Service",
+      "effectiveDate": "Effective date: March 1, 2025",
+      "intro": "These Terms of Service govern the use of Sojori's platform and services. By accessing or using our services, you agree to comply with and be bound by these Terms.",
+      "sections": [
+        {
+          "title": "1. Service Scope",
+          "content": "Sojori provides property management and orchestration software for short-term rental operators. The platform enables users to manage properties, reservations, guest communication, staff coordination, dynamic pricing and owner reporting through a centralised interface. Sojori acts as a technology provider and is not a party to any rental agreement between hosts and guests."
+        },
+        {
+          "title": "2. Account & Access",
+          "content": "You must provide accurate and complete information when registering. Your account is personal, non-transferable and may not be shared. You are solely responsible for maintaining the confidentiality of your credentials and for all activity that occurs under your account. You agree to notify Sojori immediately of any unauthorised use."
+        },
+        {
+          "title": "3. Subscription, Fees & Payment",
+          "content": "Subscription fees are billed monthly or annually according to the plan selected. All prices are listed exclusive of applicable taxes unless stated otherwise. Payments are due in advance. In the event of non-payment, Sojori reserves the right to suspend or terminate access to the platform after reasonable notice. Refunds are not provided except as required by applicable law or as specified in your plan's trial terms."
+        },
+        {
+          "title": "4. Free Trial",
+          "content": "New accounts may benefit from a free trial period of one (1) month. During the trial no payment information is required. At the end of the trial the account will be suspended unless a paid plan is activated. No data is deleted during suspension; you may reactivate at any time."
+        },
+        {
+          "title": "5. User Responsibilities",
+          "content": "Users must use the platform in compliance with all applicable laws, including local short-term rental regulations. Users are responsible for the accuracy of property listings, descriptions, pricing and availability. Sojori is not responsible for double bookings, pricing errors, regulatory fines, or disputes arising from inaccurate user-provided data."
+        },
+        {
+          "title": "6. Data Protection & Privacy",
+          "content": "Sojori collects and processes personal data solely for the purpose of providing, improving and securing the service. We do not sell personal data to third parties. Guest data processed through the platform (passport scans, contact details) is handled in accordance with GDPR and Moroccan data-protection law (Loi 09-08). Full details are provided in our Privacy Policy."
+        },
+        {
+          "title": "7. Integrations & Third-Party Services",
+          "content": "The platform integrates with third-party services including but not limited to WhatsApp Business API, Channex, Rentals United and payment gateways. Sojori is not responsible for the availability, accuracy or policies of these third-party services. Your use of integrated services is subject to their own terms."
+        },
+        {
+          "title": "8. Service Availability",
+          "content": "Sojori aims to maintain high availability but does not guarantee uninterrupted access. Planned maintenance windows will be communicated in advance when possible. Sojori shall not be liable for outages caused by circumstances beyond its reasonable control, including internet disruptions, third-party API failures, or force majeure events."
+        },
+        {
+          "title": "9. Limitation of Liability",
+          "content": "The platform is provided \"as is\" and \"as available\". To the fullest extent permitted by law, Sojori's total liability for any claim arising from or related to the service shall not exceed the fees paid by the user in the twelve (12) months preceding the claim. Sojori shall not be liable for indirect, incidental, consequential or punitive damages."
+        },
+        {
+          "title": "10. Intellectual Property",
+          "content": "All software, content, trademarks, logos and documentation remain the exclusive property of Sojori SAS. Users may not copy, decompile, reverse-engineer, modify, redistribute or create derivative works from any part of the platform without prior written consent."
+        },
+        {
+          "title": "11. Termination",
+          "content": "Users may cancel their subscription at any time from the dashboard or by contacting support. Cancellation takes effect at the end of the current billing period. Sojori may terminate or suspend accounts for material breach of these Terms, non-payment, or illegal activity, with or without prior notice depending on severity."
+        },
+        {
+          "title": "12. Governing Law & Disputes",
+          "content": "These Terms are governed by the laws of the Kingdom of Morocco. Any dispute shall first be submitted to good-faith mediation. If mediation fails, the competent courts of Casablanca shall have exclusive jurisdiction."
+        },
+        {
+          "title": "13. Changes to These Terms",
+          "content": "Sojori may update these Terms from time to time. Material changes will be notified via email or in-app notification at least thirty (30) days before they take effect. Continued use of the platform after the effective date constitutes acceptance of the updated Terms."
+        }
+      ],
+      "contact": "For any enquiries: support@sojori.com"
+    },
+    "privacy": {
+      "pageTitle": "Privacy Policy",
+      "effectiveDate": "Effective date: March 1, 2025",
+      "intro": "At Sojori, your privacy is our priority. This policy explains what personal data we collect, why we collect it, how we use it and the rights you have over it.",
+      "sections": [
+        {
+          "title": "1. Data We Collect",
+          "content": "We collect the minimum data necessary to provide and improve the service:\n\n• Contact details (name, email, phone) provided during sign-up or demo requests.\n• Business information (company name, number of properties, role) shared when engaging with our services.\n• Guest data (names, passport scans, contact details) processed on behalf of our users for check-in and identity verification.\n• Technical data (IP address, browser type, device, access logs) collected automatically for security and performance."
+        },
+        {
+          "title": "2. How We Use Your Data",
+          "content": "Your data is used to:\n\n• Provide and operate the Sojori platform.\n• Process demo requests and appointment scheduling.\n• Send transactional notifications (booking confirmations, task alerts).\n• Improve service quality, fix bugs and develop new features.\n• Ensure platform security and prevent fraud.\n• Comply with legal and regulatory requirements.\n\nWe do not sell or rent your personal data to third parties for marketing purposes."
+        },
+        {
+          "title": "3. Data Sharing",
+          "content": "We share data only when necessary:\n\n• With infrastructure providers (Google Cloud, MongoDB Atlas, AWS) that process data on our behalf under strict contractual safeguards.\n• With integrated services (WhatsApp Business API, Channex, Rentals United) to the extent required for their operation.\n• With legal authorities when required by law or court order.\n\nAll sub-processors are bound by data-processing agreements compliant with GDPR and Moroccan data-protection law."
+        },
+        {
+          "title": "4. Data Hosting & Security",
+          "content": "Your data is hosted in France (Google Cloud europe-west9, Paris) and encrypted both in transit (TLS 1.2+) and at rest. We implement access controls, audit logging and regular security reviews to protect against unauthorised access, alteration or destruction."
+        },
+        {
+          "title": "5. Cookies",
+          "content": "Our website uses:\n\n• Strictly necessary cookies to enable core functionality.\n• Performance cookies to analyse website usage (anonymised).\n• Optional cookies for personalisation.\n\nYou can manage cookie preferences through your browser settings at any time."
+        },
+        {
+          "title": "6. Data Retention",
+          "content": "We retain personal data only as long as necessary for the purposes described in this policy or as required by law. Account data is retained for the duration of the subscription plus six (6) months. Guest data processed on behalf of users is retained according to the user's settings and applicable local regulations."
+        },
+        {
+          "title": "7. Your Rights",
+          "content": "Under GDPR and Moroccan law (Loi 09-08), you have the right to:\n\n• Access the personal data we hold about you.\n• Rectify inaccurate or incomplete data.\n• Request deletion of your data (right to be forgotten).\n• Restrict or object to certain processing.\n• Data portability — receive your data in a structured, machine-readable format.\n• Withdraw consent for optional processing at any time.\n\nTo exercise these rights, contact us at support@sojori.com. We will respond within thirty (30) days."
+        },
+        {
+          "title": "8. Changes to This Policy",
+          "content": "We may update this policy to reflect regulatory changes or service improvements. Material changes will be communicated via email or on our website at least thirty (30) days in advance."
+        }
+      ],
+      "contact": "For any data-related enquiries: support@sojori.com",
+      "dpo": "Data Protection Officer: privacy@sojori.com"
+    },
+    "footer": {
+      "terms": "Terms of Service",
+      "privacy": "Privacy Policy",
+      "status": "Status"
     }
   }
 }

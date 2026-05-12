@@ -28,6 +28,46 @@
       "seeDetails": "Voir le détail",
       "watchDemo": "Voir la démo",
       "bookDemo": "Demander une démo"
+    },
+    "productMenu": {
+      "platform": "Plateforme",
+      "guest": "Guest",
+      "operations": "Opérations",
+      "company": "Entreprise",
+      "pms": "PMS",
+      "pmsDesc": "Gestion multi-bien",
+      "channelManager": "Channel Manager",
+      "channelManagerDesc": "Sync multi-OTA",
+      "dynamicPricing": "Tarification dynamique",
+      "dynamicPricingDesc": "Règles & calendrier",
+      "analytics": "Smart Analytics",
+      "analyticsDesc": "Indicateurs temps réel",
+      "whatsappBot": "WhatsApp Bot",
+      "whatsappBotDesc": "IA & parcours invité",
+      "inbox": "Inbox unifiée",
+      "inboxDesc": "Tous les canaux",
+      "guestExp": "Guest Experience",
+      "guestExpDesc": "Parcours voyageur",
+      "teamflow": "TeamFlow",
+      "teamflowDesc": "Staff & ménage",
+      "ownerPortal": "Owner Portal",
+      "ownerPortalDesc": "Portail propriétaire",
+      "dashboardApp": "Dashboard App",
+      "dashboardAppDesc": "Pilotage gestionnaire",
+      "pricing": "Tarifs",
+      "pricingDesc": "Plans & contrats",
+      "integrations": "Intégrations",
+      "integrationsDesc": "Connecteurs & API",
+      "about": "À propos",
+      "aboutDesc": "L'équipe Sojori"
+    },
+    "footer": {
+      "tagline": "L'orchestrateur de la location courte durée.",
+      "copyright": "© 2026 Sojori SAS · Tous droits réservés"
+    },
+    "finalCta": {
+      "demoButton": "Demander une démo →",
+      "homeButton": "← Retour homepage"
     }
   },
   "pricing": {
@@ -2071,6 +2111,119 @@
       "titleBefore": "Migrez votre PMS.",
       "titleGradient": "En 7 jours.",
       "subtitle": "Migration depuis Hostfully, Smoobu, Lodgify offerte. Onboarding guidé. 1 mois d'essai gratuit."
+    }
+  },
+  "legal": {
+    "nav": {
+      "terms": "Conditions Générales d'Utilisation",
+      "privacy": "Politique de Confidentialité",
+      "backHome": "Retour à l'accueil"
+    },
+    "terms": {
+      "pageTitle": "Conditions Générales d'Utilisation",
+      "effectiveDate": "Date d'effet : 1er mars 2025",
+      "intro": "Les présentes Conditions Générales d'Utilisation régissent l'utilisation de la plateforme et des services Sojori. En accédant ou en utilisant nos services, vous acceptez d'être lié par les présentes Conditions.",
+      "sections": [
+        {
+          "title": "1. Objet du service",
+          "content": "Sojori fournit un logiciel de gestion et d'orchestration pour les opérateurs de locations courte durée. La plateforme permet de gérer les propriétés, les réservations, la communication avec les voyageurs, la coordination du personnel, la tarification dynamique et les rapports propriétaires depuis une interface centralisée. Sojori intervient en qualité de prestataire technologique et n'est pas partie aux contrats de location conclus entre hôtes et voyageurs."
+        },
+        {
+          "title": "2. Compte & accès",
+          "content": "Vous devez fournir des informations exactes et complètes lors de votre inscription. Votre compte est personnel, non cessible et ne peut être partagé. Vous êtes seul responsable de la confidentialité de vos identifiants et de toute activité effectuée sous votre compte. Vous vous engagez à notifier immédiatement Sojori de toute utilisation non autorisée."
+        },
+        {
+          "title": "3. Abonnement, tarifs & paiement",
+          "content": "Les frais d'abonnement sont facturés mensuellement ou annuellement selon le plan choisi. Tous les prix sont indiqués hors taxes sauf mention contraire. Les paiements sont exigibles d'avance. En cas de non-paiement, Sojori se réserve le droit de suspendre ou de résilier l'accès à la plateforme après mise en demeure. Aucun remboursement n'est effectué sauf obligation légale ou conditions spécifiques à la période d'essai."
+        },
+        {
+          "title": "4. Période d'essai",
+          "content": "Les nouveaux comptes peuvent bénéficier d'une période d'essai gratuite d'un (1) mois. Aucune information de paiement n'est requise pendant l'essai. À l'issue de la période d'essai, le compte est suspendu si aucun plan payant n'est activé. Aucune donnée n'est supprimée pendant la suspension ; vous pouvez réactiver votre compte à tout moment."
+        },
+        {
+          "title": "5. Responsabilités de l'utilisateur",
+          "content": "Les utilisateurs doivent utiliser la plateforme conformément à toutes les lois applicables, y compris la réglementation locale des locations courte durée. Les utilisateurs sont responsables de l'exactitude des annonces, descriptions, tarifs et disponibilités. Sojori n'est pas responsable des doubles réservations, erreurs tarifaires, amendes réglementaires ou litiges résultant de données incorrectes fournies par l'utilisateur."
+        },
+        {
+          "title": "6. Protection des données & vie privée",
+          "content": "Sojori collecte et traite les données personnelles uniquement aux fins de fourniture, d'amélioration et de sécurisation du service. Nous ne vendons pas les données personnelles à des tiers. Les données des voyageurs traitées via la plateforme (scans de passeport, coordonnées) sont gérées conformément au RGPD et à la loi marocaine sur la protection des données (Loi 09-08). Les détails complets figurent dans notre Politique de Confidentialité."
+        },
+        {
+          "title": "7. Intégrations & services tiers",
+          "content": "La plateforme s'intègre à des services tiers incluant, sans s'y limiter, WhatsApp Business API, Channex, Rentals United et des passerelles de paiement. Sojori n'est pas responsable de la disponibilité, de l'exactitude ou des politiques de ces services tiers. Votre utilisation des services intégrés est soumise à leurs propres conditions."
+        },
+        {
+          "title": "8. Disponibilité du service",
+          "content": "Sojori s'efforce de maintenir une haute disponibilité mais ne garantit pas un accès ininterrompu. Les fenêtres de maintenance planifiées seront communiquées à l'avance dans la mesure du possible. Sojori ne saurait être tenue responsable des interruptions causées par des circonstances hors de son contrôle raisonnable, y compris les perturbations internet, les défaillances d'API tierces ou les cas de force majeure."
+        },
+        {
+          "title": "9. Limitation de responsabilité",
+          "content": "La plateforme est fournie « en l'état » et « selon disponibilité ». Dans les limites autorisées par la loi, la responsabilité totale de Sojori pour toute réclamation liée au service ne pourra excéder les frais payés par l'utilisateur au cours des douze (12) mois précédant la réclamation. Sojori ne saurait être tenue responsable des dommages indirects, accessoires, consécutifs ou punitifs."
+        },
+        {
+          "title": "10. Propriété intellectuelle",
+          "content": "L'ensemble des logiciels, contenus, marques, logos et documentation demeurent la propriété exclusive de Sojori SAS. Les utilisateurs ne peuvent copier, décompiler, rétro-concevoir, modifier, redistribuer ou créer des œuvres dérivées à partir de tout élément de la plateforme sans consentement écrit préalable."
+        },
+        {
+          "title": "11. Résiliation",
+          "content": "Les utilisateurs peuvent résilier leur abonnement à tout moment depuis le tableau de bord ou en contactant le support. La résiliation prend effet à la fin de la période de facturation en cours. Sojori peut résilier ou suspendre les comptes en cas de manquement grave aux présentes Conditions, de non-paiement ou d'activité illégale, avec ou sans préavis selon la gravité."
+        },
+        {
+          "title": "12. Droit applicable & litiges",
+          "content": "Les présentes Conditions sont régies par le droit du Royaume du Maroc. Tout litige sera d'abord soumis à une médiation de bonne foi. En cas d'échec de la médiation, les tribunaux compétents de Casablanca auront compétence exclusive."
+        },
+        {
+          "title": "13. Modification des Conditions",
+          "content": "Sojori peut mettre à jour les présentes Conditions de temps à autre. Les modifications substantielles seront notifiées par email ou notification in-app au moins trente (30) jours avant leur entrée en vigueur. L'utilisation continue de la plateforme après la date d'effet vaut acceptation des Conditions mises à jour."
+        }
+      ],
+      "contact": "Pour toute question : support@sojori.com"
+    },
+    "privacy": {
+      "pageTitle": "Politique de Confidentialité",
+      "effectiveDate": "Date d'effet : 1er mars 2025",
+      "intro": "Chez Sojori, la protection de vos données est notre priorité. Cette politique explique quelles données personnelles nous collectons, pourquoi nous les collectons, comment nous les utilisons et les droits dont vous disposez.",
+      "sections": [
+        {
+          "title": "1. Données collectées",
+          "content": "Nous collectons le minimum de données nécessaire à la fourniture et à l'amélioration du service :\n\n• Coordonnées (nom, email, téléphone) fournies lors de l'inscription ou de demandes de démo.\n• Informations professionnelles (nom de l'entreprise, nombre de propriétés, rôle) communiquées dans le cadre de notre collaboration.\n• Données voyageurs (noms, scans de passeport, coordonnées) traitées pour le compte de nos utilisateurs pour le check-in et la vérification d'identité.\n• Données techniques (adresse IP, type de navigateur, appareil, logs d'accès) collectées automatiquement pour la sécurité et la performance."
+        },
+        {
+          "title": "2. Utilisation de vos données",
+          "content": "Vos données sont utilisées pour :\n\n• Fournir et opérer la plateforme Sojori.\n• Traiter les demandes de démo et la planification de rendez-vous.\n• Envoyer des notifications transactionnelles (confirmations de réservation, alertes de tâches).\n• Améliorer la qualité du service, corriger les bugs et développer de nouvelles fonctionnalités.\n• Assurer la sécurité de la plateforme et prévenir la fraude.\n• Respecter les obligations légales et réglementaires.\n\nNous ne vendons ni ne louons vos données personnelles à des tiers à des fins marketing."
+        },
+        {
+          "title": "3. Partage des données",
+          "content": "Nous partageons les données uniquement lorsque nécessaire :\n\n• Avec nos prestataires d'infrastructure (Google Cloud, MongoDB Atlas, AWS) qui traitent les données pour notre compte sous garanties contractuelles strictes.\n• Avec les services intégrés (WhatsApp Business API, Channex, Rentals United) dans la mesure nécessaire à leur fonctionnement.\n• Avec les autorités légales lorsque la loi ou une décision de justice l'exige.\n\nTous les sous-traitants sont liés par des contrats de traitement des données conformes au RGPD et à la loi marocaine sur la protection des données."
+        },
+        {
+          "title": "4. Hébergement & sécurité des données",
+          "content": "Vos données sont hébergées en France (Google Cloud europe-west9, Paris) et chiffrées en transit (TLS 1.2+) et au repos. Nous mettons en œuvre des contrôles d'accès, une journalisation des accès et des revues de sécurité régulières pour protéger contre les accès non autorisés, les altérations ou la destruction."
+        },
+        {
+          "title": "5. Cookies",
+          "content": "Notre site web utilise :\n\n• Des cookies strictement nécessaires pour les fonctionnalités essentielles.\n• Des cookies de performance pour analyser l'utilisation du site (anonymisés).\n• Des cookies optionnels pour la personnalisation.\n\nVous pouvez gérer vos préférences de cookies via les paramètres de votre navigateur à tout moment."
+        },
+        {
+          "title": "6. Conservation des données",
+          "content": "Nous conservons les données personnelles uniquement pendant la durée nécessaire aux finalités décrites dans cette politique ou selon les obligations légales. Les données de compte sont conservées pendant la durée de l'abonnement plus six (6) mois. Les données voyageurs traitées pour le compte des utilisateurs sont conservées selon les paramètres définis par l'utilisateur et la réglementation locale applicable."
+        },
+        {
+          "title": "7. Vos droits",
+          "content": "En vertu du RGPD et de la loi marocaine (Loi 09-08), vous disposez du droit de :\n\n• Accéder aux données personnelles que nous détenons vous concernant.\n• Rectifier les données inexactes ou incomplètes.\n• Demander la suppression de vos données (droit à l'oubli).\n• Limiter ou vous opposer à certains traitements.\n• Portabilité des données — recevoir vos données dans un format structuré et lisible par machine.\n• Retirer votre consentement pour les traitements optionnels à tout moment.\n\nPour exercer ces droits, contactez-nous à support@sojori.com. Nous répondrons sous trente (30) jours."
+        },
+        {
+          "title": "8. Modification de cette politique",
+          "content": "Nous pouvons mettre à jour cette politique pour refléter les évolutions réglementaires ou les améliorations du service. Les modifications substantielles seront communiquées par email ou sur notre site web au moins trente (30) jours à l'avance."
+        }
+      ],
+      "contact": "Pour toute question relative aux données : support@sojori.com",
+      "dpo": "Délégué à la protection des données : privacy@sojori.com"
+    },
+    "footer": {
+      "terms": "CGU",
+      "privacy": "Confidentialité",
+      "status": "Statut"
     }
   }
 }

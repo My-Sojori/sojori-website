@@ -28,29 +28,34 @@ export function SectionHead({ badge, title, subtitle, center = true }: { badge?:
   );
 }
 
-const PRODUCT_MENU: { group: string; items: { l: string; h: AppPathname; d: string }[] }[] = [
-  { group: 'Plateforme', items: [
-    { l: 'PMS', h: '/pms', d: 'Gestion multi-bien' },
-    { l: 'Channel Manager', h: '/channel-manager', d: 'Sync multi-OTA' },
-    { l: 'Tarification dynamique', h: '/dynamic-pricing', d: 'Règles & calendrier' },
-    { l: 'Smart Analytics', h: '/analytics', d: 'Indicateurs temps réel' },
-  ]},
-  { group: 'Guest', items: [
-    { l: 'WhatsApp Bot', h: '/whatsapp', d: 'IA & parcours invité' },
-    { l: 'Inbox unifiée', h: '/inbox', d: 'Tous les canaux' },
-    { l: 'Guest Experience', h: '/guest-experience', d: 'Parcours voyageur' },
-  ]},
-  { group: 'Operations', items: [
-    { l: 'TeamFlow', h: '/teamflow', d: 'Staff & ménage' },
-    { l: 'Owner Portal', h: '/owner-portal', d: 'Portail propriétaire' },
-    { l: 'Dashboard App', h: '/dashboard-app', d: 'Pilotage gestionnaire' },
-  ]},
-  { group: 'Entreprise', items: [
-    { l: 'Tarifs', h: '/pricing', d: 'Plans & contrats' },
-    { l: 'Intégrations', h: '/integrations', d: 'Connecteurs & API' },
-    { l: 'À propos', h: '/about', d: 'L\'équipe Sojori' },
-  ]},
-];
+type MenuGroup = { group: string; items: { l: string; h: AppPathname; d: string }[] };
+
+function useProductMenu(): MenuGroup[] {
+  const t = useTranslations('common.productMenu');
+  return [
+    { group: t('platform'), items: [
+      { l: t('pms'), h: '/pms', d: t('pmsDesc') },
+      { l: t('channelManager'), h: '/channel-manager', d: t('channelManagerDesc') },
+      { l: t('dynamicPricing'), h: '/dynamic-pricing', d: t('dynamicPricingDesc') },
+      { l: t('analytics'), h: '/analytics', d: t('analyticsDesc') },
+    ]},
+    { group: t('guest'), items: [
+      { l: t('whatsappBot'), h: '/whatsapp', d: t('whatsappBotDesc') },
+      { l: t('inbox'), h: '/inbox', d: t('inboxDesc') },
+      { l: t('guestExp'), h: '/guest-experience', d: t('guestExpDesc') },
+    ]},
+    { group: t('operations'), items: [
+      { l: t('teamflow'), h: '/teamflow', d: t('teamflowDesc') },
+      { l: t('ownerPortal'), h: '/owner-portal', d: t('ownerPortalDesc') },
+      { l: t('dashboardApp'), h: '/dashboard-app', d: t('dashboardAppDesc') },
+    ]},
+    { group: t('company'), items: [
+      { l: t('pricing'), h: '/pricing', d: t('pricingDesc') },
+      { l: t('integrations'), h: '/integrations', d: t('integrationsDesc') },
+      { l: t('about'), h: '/about', d: t('aboutDesc') },
+    ]},
+  ];
+}
 
 export function PageHeader({ pageTitle }: { pageTitle?: string }) {
   const [open, setOpen] = React.useState(false);
@@ -59,6 +64,7 @@ export function PageHeader({ pageTitle }: { pageTitle?: string }) {
   const savedScrollY = React.useRef(0);
   const wasMenuOpen = React.useRef(false);
   const t = useTranslations('common.nav');
+  const PRODUCT_MENU = useProductMenu();
 
   /* Ne pas utiliser overflow:hidden sur body : sur Safari / WebKit ça peut clipper les enfants
    * position:fixed du portail (menu invisible alors que le burger passe en ✕). */
@@ -476,6 +482,9 @@ export function PageHeader({ pageTitle }: { pageTitle?: string }) {
 }
 
 export function PageFooter() {
+  const tLegal = useTranslations('legal');
+  const tFooter = useTranslations('common.footer');
+  const PRODUCT_MENU = useProductMenu();
   return (
     <footer
       className="sj-page-footer"
@@ -498,7 +507,7 @@ export function PageFooter() {
           <div className="sj-page-footer-brand">
             <SojoriLogo size={32} />
             <p className="sj-page-footer-tagline" style={{ fontSize: 13, color: 'var(--text-3)', marginTop: 16, lineHeight: 1.6, maxWidth: 280 }}>
-              L&apos;orchestrateur de la location courte durée.
+              {tFooter('tagline')}
             </p>
             <div className="sj-page-footer-locations" style={{ marginTop: 16, fontSize: 11, color: 'var(--text-3)', fontFamily: 'var(--font-mono)' }}>
               📍 Paris · Casablanca
@@ -552,12 +561,12 @@ export function PageFooter() {
           style={{ borderTop: '1px solid var(--glass-border)', paddingTop: 20, display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 12 }}
         >
           <div style={{ fontSize: 11, color: 'var(--text-3)', fontFamily: 'var(--font-mono)' }}>
-            © 2026 Sojori SAS · Tous droits réservés
+            {tFooter('copyright')}
           </div>
           <div className="sj-page-footer-legal-links" style={{ display: 'flex', gap: 18, fontSize: 11, color: 'var(--text-3)' }}>
-            <a href="mailto:contact@sojori.com?subject=Mentions%20l%C3%A9gales" style={{ color: 'inherit', textDecoration: 'none' }}>Mentions légales</a>
-            <a href="mailto:contact@sojori.com?subject=CGU%20%2F%20CGV" style={{ color: 'inherit', textDecoration: 'none' }}>CGU/CGV</a>
-            <a href="mailto:contact@sojori.com?subject=Statut%20du%20service" style={{ color: 'inherit', textDecoration: 'none' }}>Statut</a>
+            <Link href="/terms" style={{ color: 'inherit', textDecoration: 'none' }}>{tLegal('footer.terms')}</Link>
+            <Link href="/privacy" style={{ color: 'inherit', textDecoration: 'none' }}>{tLegal('footer.privacy')}</Link>
+            <a href="https://status.sojori.com" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit', textDecoration: 'none' }}>{tLegal('footer.status')}</a>
           </div>
         </div>
       </div>
@@ -616,6 +625,7 @@ export function StatsBar({ stats }: { stats: Array<{ k: string; l: string }> }) 
 }
 
 export function FinalCTA({ title, subtitle }: { title: ReactNode; subtitle: string }) {
+  const tCta = useTranslations('common.finalCta');
   return (
     <section
       className="sj-final-cta"
@@ -630,9 +640,9 @@ export function FinalCTA({ title, subtitle }: { title: ReactNode; subtitle: stri
         <p style={{ fontSize: 17, color: 'var(--text-2)', marginBottom: 20 }}>{subtitle}</p>
         <div style={{ display: 'flex', gap: 12, justifyContent: 'center', flexWrap: 'wrap' }}>
           <Link href={{ pathname: '/demo', query: { source: 'footer-cta' } }} className="btn btn-primary btn-lg">
-            Demander une démo →
+            {tCta('demoButton')}
           </Link>
-          <Link href="/" className="btn btn-ghost btn-lg">← Retour homepage</Link>
+          <Link href="/" className="btn btn-ghost btn-lg">{tCta('homeButton')}</Link>
         </div>
       </div>
     </section>

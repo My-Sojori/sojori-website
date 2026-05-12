@@ -20,6 +20,8 @@ const PATHS = [
   '/brand',
   '/gestion-locative-marrakech',
   '/conciergerie-marrakech',
+  '/terms',
+  '/privacy',
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

@@ -75,156 +75,138 @@ export const TYPE_COLORS: Record<EventType, string> = {
 
 export const EVENTS: JourneyEvent[] = [
   // ── AVANT L'ARRIVÉE ─────────────────────────────────────────
-  // Réservation initiale (t=0 pour apparaître immédiatement avec le graphe)
   {
     id: 'booking', t: 0.0, lane: 1, phase: 'before', type: 'declaration',
     icon: '🏠', title: 'Réservation Airbnb', sub: 'Sarah J. · 3 nuits · €840',
     status: 'completed', anim: 'confetti', tag: 'J-14',
     transitions: [
-      { at: 0.013, status: 'completed', sub: 'Sync auto → Calendrier · Paiement confirmé', tag: 'Synced' },
+      { at: 0.013, status: 'completed', sub: 'Sync calendrier · paiement OK', tag: 'Synced' },
     ]
   },
-
   {
     id: 'staff-prep', t: 0.03, lane: 2, phase: 'before', type: 'staff',
-    icon: '👨‍🔧', title: 'Préparation logement', sub: 'Lucas · Contrôle qualité',
+    icon: '👨‍🔧', title: 'Préparation logement', sub: 'Lucas · contrôle qualité',
     status: 'active', anim: 'slide-right', tag: 'J-1', avatar: 'L',
     transitions: [
       { at: 0.06, status: 'completed', sub: 'Qualité ✓ · Stock ✓ · Clés ✓', tag: 'Prêt' },
     ]
   },
-
   {
     id: 'welcome', t: 0.05, lane: 0, phase: 'before', type: 'message',
-    icon: '📨', title: 'Message bienvenue', sub: "« Welcome to Paris! Your stay starts soon »",
+    icon: '📨', title: 'Message bienvenue', sub: 'Bienvenue à Paris !',
     status: 'completed', anim: 'fade', tag: 'J-7'
   },
-
   {
     id: 'register', t: 0.08, lane: 1, phase: 'before', type: 'declaration',
     icon: '🔐', title: 'Registration', sub: 'KYC en cours…',
     status: 'pending', anim: 'pop', tag: 'En cours',
     transitions: [
-      { at: 0.14, status: 'completed', sub: 'Identité vérifiée en 30 secondes', tag: 'Validé' },
+      { at: 0.14, status: 'completed', sub: 'Identité vérifiée · 30s', tag: 'Validé' },
     ]
   },
-
   {
     id: 'arrival-slot', t: 0.12, lane: 0, phase: 'before', type: 'timeslot',
-    icon: '🎫', title: 'Choix arrivée', sub: 'Créneau 16:00 — 17:00',
+    icon: '🎫', title: 'Choix arrivée', sub: '16:00 — 17:00',
     status: 'info', anim: 'pop', tag: 'Timeslot',
     transitions: [
       { at: 0.20, status: 'completed', tag: 'Confirmé' },
     ]
   },
-
   {
     id: 'kids-club', t: 0.16, lane: 0, phase: 'before', type: 'request',
-    icon: '👶', title: 'Kids Club demandé', sub: 'Service garde enfants',
+    icon: '👶', title: 'Kids Club', sub: 'Garde enfants demandée',
     status: 'pending', anim: 'pop', tag: 'Option',
     transitions: [
-      { at: 0.21, status: 'completed', sub: 'Kids Club réservé · 2 enfants', tag: 'Confirmé' },
+      { at: 0.21, status: 'completed', sub: 'Réservé · 2 enfants', tag: 'Confirmé' },
     ]
   },
-
   {
     id: 'airport-shuttle', t: 0.18, lane: 0, phase: 'before', type: 'request',
-    icon: '✈️', title: 'Navette aéroport', sub: "Demande transfert à l'arrivée",
+    icon: '✈️', title: 'Navette aéroport', sub: 'Transfert demandé',
     status: 'pending', anim: 'slide-right', tag: 'Transport',
     transitions: [
-      { at: 0.22, status: 'completed', sub: 'Chauffeur confirmé · Vol AA123', tag: 'Planifié' },
+      { at: 0.22, status: 'completed', sub: 'Chauffeur · Vol AA123', tag: 'Planifié' },
     ]
   },
 
   // ── ARRIVÉE ─────────────────────────────────────────────────
   {
     id: 'arrived', t: 0.24, lane: 0, phase: 'arrival', type: 'declaration',
-    icon: '🏨', title: 'Arrivée client', sub: 'GPS + QR · auto-déclaré',
+    icon: '🏨', title: 'Arrivée client', sub: 'GPS · auto-déclaré',
     status: 'completed', anim: 'pop', tag: 'Jour J'
   },
-
-  // Admin conflict: Départ non déclaré + nouvelle arrivée même jour
   {
     id: 'admin-conflict', t: 0.27, lane: 3, phase: 'arrival', type: 'admin',
-    icon: '⚠️', title: 'Conflit planning', sub: 'Client précédent n\'a pas déclaré son départ',
+    icon: '⚠️', title: 'Conflit planning', sub: 'Départ non déclaré',
     status: 'late', anim: 'shake', tag: 'Blocage',
     transitions: [
-      { at: 0.29, status: 'active', sub: 'Admin contacte client sortant · Heure départ ?', tag: 'En cours', icon: '📞' },
-      { at: 0.32, status: 'completed', sub: 'Départ 14h confirmé · Nouvelle arrivée 16h OK', tag: 'Résolu', icon: '✓' },
+      { at: 0.29, status: 'active', sub: 'Contact client sortant', tag: 'En cours', icon: '📞' },
+      { at: 0.32, status: 'completed', sub: 'Départ 14h · Arrivée 16h OK', tag: 'Résolu', icon: '✓' },
     ]
   },
 
   // ── PENDANT LE SÉJOUR ───────────────────────────────────────
   {
     id: 'feedback', t: 0.38, lane: 0, phase: 'stay', type: 'message',
-    icon: '💬', title: 'Message feedback', sub: "« Comment se passe votre séjour ? »",
+    icon: '💬', title: 'Message feedback', sub: 'Satisfaction · J+1',
     status: 'info', anim: 'bubble', tag: 'J+1'
   },
-
-  // Cleaning included — full lifecycle
   {
     id: 'clean-mid', t: 0.42, lane: 2, phase: 'stay', type: 'cleaning',
-    icon: '🧹', title: 'Ménage inclus J+3', sub: 'Planifié · rappel J-2',
+    icon: '🧹', title: 'Ménage inclus J+3', sub: 'Planifié · J+3',
     status: 'soon', anim: 'cascade', tag: 'Planifié',
     transitions: [
-      { at: 0.46, status: 'pending', sub: 'Bientôt · staff notifié', tag: 'Bientôt' },
+      { at: 0.46, status: 'pending', sub: 'Staff notifié', tag: 'Bientôt' },
       { at: 0.50, status: 'active', sub: 'Sophie en route', tag: 'Assigné', avatar: 'S' },
-      { at: 0.55, status: 'completed', sub: 'Ménage effectué · logement impeccable', tag: 'OK', icon: '✅' },
+      { at: 0.55, status: 'completed', sub: 'Effectué · impeccable', tag: 'OK', icon: '✅' },
     ]
   },
-
-  // Optional client requests
   {
     id: 'transport', t: 0.46, lane: 0, phase: 'stay', type: 'request',
     icon: '🚗', title: 'Transport aéroport', sub: 'Demande client',
     status: 'pending', anim: 'slide-right', tag: 'Optionnel',
     transitions: [
-      { at: 0.52, status: 'completed', sub: 'Chauffeur assigné · ETA 16:23', tag: 'Confirmé' },
+      { at: 0.52, status: 'completed', sub: 'Chauffeur · ETA 16:23', tag: 'Confirmé' },
     ]
   },
-
   {
     id: 'groceries', t: 0.50, lane: 0, phase: 'stay', type: 'request',
     icon: '🛍️', title: 'Courses', sub: 'Demande client',
     status: 'pending', anim: 'pop', tag: 'Optionnel',
     transitions: [
-      { at: 0.56, status: 'completed', sub: "Frigo rempli à l'arrivée", tag: 'Livré' },
+      { at: 0.56, status: 'completed', sub: 'Frigo rempli', tag: 'Livré' },
     ]
   },
-
   {
     id: 'wifi-issue', t: 0.52, lane: 0, phase: 'stay', type: 'request',
-    icon: '📶', title: 'Ticket support WiFi', sub: 'Problème connexion signalé',
+    icon: '📶', title: 'Ticket WiFi', sub: 'Connexion signalée',
     status: 'late', anim: 'shake', tag: 'Urgent',
     transitions: [
-      { at: 0.52, status: 'active', sub: 'Staff assigné immédiatement · Marc en route', tag: 'Assigné', avatar: 'M' },
-      { at: 0.54, status: 'active', sub: 'Technicien sur place · Diagnostic en cours', tag: 'En cours' },
-      { at: 0.56, status: 'completed', sub: 'WiFi rétabli · Vitesse testée OK', tag: 'Résolu' },
+      { at: 0.52, status: 'active', sub: 'Marc en route', tag: 'Assigné', avatar: 'M' },
+      { at: 0.54, status: 'active', sub: 'Diagnostic en cours', tag: 'En cours' },
+      { at: 0.56, status: 'completed', sub: 'WiFi rétabli · OK', tag: 'Résolu' },
     ]
   },
-
   {
     id: 'support', t: 0.54, lane: 1, phase: 'stay', type: 'request',
     icon: '✨', title: 'Support personnalisé', sub: 'Concierge dédié',
     status: 'active', anim: 'pop', tag: 'Premium'
   },
-
   {
     id: 'extra-clean', t: 0.58, lane: 2, phase: 'stay', type: 'cleaning',
-    icon: '🧼', title: 'Ménage supplémentaire', sub: 'Service à la demande',
+    icon: '🧼', title: 'Ménage extra', sub: 'À la demande',
     status: 'pending', anim: 'cascade', tag: 'EXTRA · 25€',
     transitions: [
-      { at: 0.63, status: 'completed', sub: 'Ménage effectué · 28 min', tag: 'Done' },
+      { at: 0.63, status: 'completed', sub: 'Effectué · 28 min', tag: 'Done' },
     ]
   },
 
   // ── DÉPART ──────────────────────────────────────────────────
   {
     id: 'depart-instr', t: 0.68, lane: 0, phase: 'departure', type: 'message',
-    icon: '📋', title: 'Instructions départ', sub: "« Tout ce qu'il faut savoir »",
+    icon: '📋', title: 'Instructions départ', sub: 'Consignes envoyées',
     status: 'info', anim: 'fade', tag: 'J-1'
   },
-
   {
     id: 'depart-slot', t: 0.71, lane: 0, phase: 'departure', type: 'timeslot',
     icon: '🎫', title: 'Choix départ', sub: 'Créneau 11:00',
@@ -233,7 +215,6 @@ export const EVENTS: JourneyEvent[] = [
       { at: 0.76, status: 'completed', tag: 'Confirmé' },
     ]
   },
-
   {
     id: 'staff-late', t: 0.73, lane: 3, phase: 'departure', type: 'admin',
     icon: '🚨', title: 'Staff manquant', sub: 'Réassignation requise',
@@ -242,31 +223,27 @@ export const EVENTS: JourneyEvent[] = [
       { at: 0.78, status: 'completed', sub: 'Marc réassigné · 2 min', tag: 'Résolu', icon: '👨‍💼' },
     ]
   },
-
   {
     id: 'departed', t: 0.79, lane: 0, phase: 'departure', type: 'declaration',
     icon: '✅', title: 'Départ client', sub: 'Checkout déclaré',
     status: 'completed', anim: 'confetti', tag: 'Done'
   },
-
-  // Final cleaning — special PRIORITÉ MAX with countdown
   {
     id: 'final-clean', t: 0.81, lane: 2, phase: 'departure', type: 'cleaning',
-    icon: '🧹', title: 'Ménage Sojori final', sub: '2h restantes avant prochaine résa',
+    icon: '🧹', title: 'Ménage final', sub: 'Prochaine résa dans 2h',
     status: 'late', anim: 'priority', tag: 'PRIORITÉ', priority: true,
     transitions: [
-      { at: 0.84, status: 'pending', sub: '1h30 · Marc sur place', tag: 'En cours', avatar: 'M' },
-      { at: 0.86, status: 'completed', sub: 'Préparation prochaine réservation · Logement prêt', tag: '✓ Prêt', icon: '✅', priority: false },
+      { at: 0.84, status: 'pending', sub: 'Marc sur place · 1h30', tag: 'En cours', avatar: 'M' },
+      { at: 0.86, status: 'completed', sub: 'Logement prêt', tag: '✓ Prêt', icon: '✅', priority: false },
     ]
   },
 
   // ── APRÈS LE SÉJOUR ─────────────────────────────────────────
   {
     id: 'thanks', t: 0.88, lane: 0, phase: 'after', type: 'message',
-    icon: '🙏', title: 'Message merci', sub: "« À très bientôt chez Sojori »",
+    icon: '🙏', title: 'Message merci', sub: 'À bientôt !',
     status: 'info', anim: 'fade', tag: 'J+1'
   },
-
   {
     id: 'review', t: 0.93, lane: 0, phase: 'after', type: 'message',
     icon: '⭐', title: "Demande d'avis", sub: '5 étoiles reçues',

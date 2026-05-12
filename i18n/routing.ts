@@ -30,7 +30,9 @@ export const routing = defineRouting({
     '/brand': '/brand',
     '/dashboard-app': '/dashboard-app',
     '/conciergerie-marrakech': '/conciergerie-marrakech',
-    '/gestion-locative-marrakech': '/gestion-locative-marrakech'
+    '/gestion-locative-marrakech': '/gestion-locative-marrakech',
+    '/terms': '/terms',
+    '/privacy': '/privacy'
   }
 });
 
