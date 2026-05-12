@@ -87,7 +87,7 @@
           "whatsappStaff": "واتساب الموظفين (أعضاء غير محدودين)",
           "webDirectBooking": "الحجز المباشر عبر الويب (محرك الحجز المباشر)",
           "channelManagerUnlimited": "مدير قنوات غير محدود — 20+ OTAs",
-          "dynamicPricing": "التسعير الديناميكي (47 إشارة)",
+          "dynamicPricing": "التسعير الديناميكي (6 عوامل قابلة للتكوين)",
           "teamflow": "TeamFlow قياسي",
           "ownerPortalFull": "بوابة المالك الكاملة",
           "analytics": "التحليلات الذكية",
@@ -401,7 +401,7 @@
     "pricingPreview": {
       "badge": "التسعير",
       "title": "شفاف. بدون مفاجآت.",
-      "subtitle": "لا رسوم مخفية. إلغاء سهل في أي وقت. تجربة مجانية لمدة 14 يوماً.",
+      "subtitle": "لا رسوم مخفية. إلغاء سهل في أي وقت. تجربة مجانية لمدة شهر واحد.",
       "tiers": [
         {
           "name": "SOLO",
@@ -450,12 +450,12 @@
             "تنسيق كامل",
             "API و webhooks",
             "مدير حساب مخصص",
-            "SLA مميز 99.99%"
+            "SLA مميز 99.9%"
           ],
           "cta": "اتصل بالمبيعات"
         }
       ],
-      "footer": "✓ تجربة مجانية لمدة 14 يوماً · ✓ إلغاء سهل · ✓ الإعداد في أقل من 7 أيام"
+      "footer": "✓ تجربة مجانية لمدة شهر · ✓ إلغاء سهل · ✓ الإعداد في أقل من 7 أيام"
     },
     "finalCTA": {
       "title": "مستعد",
@@ -474,6 +474,13 @@
       "title": "4 أنظمة واتساب.",
       "titleGradient": "منصة موحدة واحدة.",
       "subtitle": "يستخدم Sojori واتساب كقناة رئيسية للتواصل مع ضيوفك وفريقك، ويتيح لك إدارة عملك من هاتفك. لا حاجة لتنزيل تطبيق. فقط واتساب."
+    },
+    "sectionNav": {
+      "hint": "مرر الشرائح للانتقال إلى كل تدفق — كل حالات الاستخدام في هذه الصفحة."
+    },
+    "guestMenu": {
+      "more": "خيارات قائمة إضافية",
+      "less": "إخفاء الخيارات الإضافية"
     },
     "systems": {
       "guest": {
@@ -919,7 +926,7 @@
     "finalCTA": {
       "title": "فعّل واتساب.",
       "titleGradient": "اليوم.",
-      "subtitle": "4 أنظمة واتساب مضمنة من خطة Pro. إعداد 5 دقائق. دعم تقني غير محدود."
+      "subtitle": "4 أنظمة واتساب مضمنة من خطة Orchestre. إعداد 5 دقائق. دعم تقني غير محدود."
     }
   },
   "integrations": {
@@ -1271,7 +1278,7 @@
     ],
     "finalCTA": {
       "title": "أطلق واتساب لضيوفك. في 5 دقائق.",
-      "subtitle": "مشمول من خطة Pro. لا تطوير مطلوب. ضيوفك لديهم بالفعل واتساب."
+      "subtitle": "مشمول من خطة Orchestre. لا تطوير مطلوب. ضيوفك لديهم بالفعل واتساب."
     }
   },
   "dynamicPricing": {
@@ -1898,7 +1905,7 @@
         "feature1Desc": "استيراد بياناتك مشمول",
         "feature2Title": "عرض مخصص",
         "feature2Desc": "حسب نظامك والقنوات لديك",
-        "feature3Title": "14 يومًا مجانًا",
+        "feature3Title": "شهر مجاني",
         "feature3Desc": "بدون التزام"
       },
       "trustIndicators": {
@@ -1911,7 +1918,7 @@
           "description": "بناءً على سياقك"
         },
         "trial": {
-          "title": "14 يومًا مجانًا",
+          "title": "شهر مجاني",
           "description": "بدون التزام"
         }
       }
@@ -1923,11 +1930,11 @@
       },
       "secure": {
         "title": "100% آمن",
-        "description": "GDPR · SOC 2 · ISO 27001"
+        "description": "متوافق مع GDPR · مستضاف في فرنسا"
       },
       "trial": {
         "title": "بدون التزام",
-        "description": "تجربة مجانية لمدة 14 يومًا"
+        "description": "تجربة مجانية لمدة شهر"
       }
     }
   },
@@ -1988,81 +1995,81 @@
   "pmsPage": {
     "pageTitle": "PMS",
     "hero": {
-      "badge": "📋 PMS · Property management system",
-      "titleLine1": "All your properties.",
-      "titleGradient": "One calendar.",
-      "subtitle": "Multi-property bookings, automated payments, invoicing, digital contracts. The nerve centre of your operations — clean, fast, quiet.",
-      "cta1": "Book a demo",
-      "cta2": "Import my PMS"
+      "badge": "📋 PMS · نظام إدارة العقارات",
+      "titleLine1": "كل عقاراتك.",
+      "titleGradient": "تقويم واحد.",
+      "subtitle": "حجوزات متعددة العقارات، مدفوعات آلية، فواتير، عقود رقمية. المركز العصبي لعملياتك — نظيف، سريع، هادئ.",
+      "cta1": "احجز عرضاً توضيحياً",
+      "cta2": "استيراد PMS الخاص بي"
     },
     "calendar": {
-      "header": "Property · March 2025"
+      "header": "العقار · مارس 2025"
     },
     "properties": [
-      "Paris 15 apartment",
-      "Barcelona villa",
-      "Montmartre loft",
-      "Marais studio",
-      "Lyon duplex"
+      "شقة باريس 15",
+      "فيلا برشلونة",
+      "لوفت مونمارتر",
+      "استوديو ماريه",
+      "دوبلكس ليون"
     ],
     "sectionCalendar": {
-      "eyebrow": "● Multi-property calendar in real time",
-      "title": "Overview.",
-      "titleGradient": "At a glance."
+      "eyebrow": "● تقويم متعدد العقارات في الوقت الفعلي",
+      "title": "نظرة عامة.",
+      "titleGradient": "بنظرة واحدة."
     },
     "sectionModules": {
-      "eyebrow": "● PMS modules",
-      "title": "Everything.",
-      "titleMuted": "Really everything."
+      "eyebrow": "● وحدات PMS",
+      "title": "كل شيء.",
+      "titleMuted": "حرفياً كل شيء."
     },
     "modules": [
       {
-        "title": "Unified calendar",
-        "desc": "All your properties, one calendar. Drag-and-drop, month/week/day views."
+        "title": "تقويم موحد",
+        "desc": "كل عقاراتك، تقويم واحد. سحب وإفلات، عرض شهري/أسبوعي/يومي."
       },
       {
-        "title": "Automated payments",
-        "desc": "Stripe + bank transfers. Charge on booking, one-click refunds."
+        "title": "مدفوعات آلية",
+        "desc": "Stripe + تحويلات بنكية. تحصيل عند الحجز، استرداد بنقرة واحدة."
       },
       {
-        "title": "Invoices & contracts",
-        "desc": "Generated automatically. E-signed. Compliant archiving."
+        "title": "فواتير وعقود",
+        "desc": "تُنشأ تلقائياً. توقيع إلكتروني. أرشفة متوافقة."
       },
       {
-        "title": "Financial dashboard",
-        "desc": "Revenue, costs, margin per property. Monthly accounting export."
+        "title": "لوحة مالية",
+        "desc": "الإيرادات، التكاليف، الهامش لكل عقار. تصدير محاسبي شهري."
       },
       {
-        "title": "Tourist tax automation",
-        "desc": "Calculated, collected, filed. Multi-city, multi-country."
+        "title": "ضريبة سياحية آلية",
+        "desc": "محسوبة، محصّلة، مُصرّح بها. متعددة المدن والدول."
       },
       {
-        "title": "2-way iCal sync",
-        "desc": "With your channel manager + direct Airbnb/Booking. No double entry."
+        "title": "مزامنة iCal ثنائية الاتجاه",
+        "desc": "مع مدير القنوات + Airbnb/Booking مباشرة. بدون إدخال مزدوج."
       }
     ],
     "stats": [
       {
-        "k": "1 calendar",
-        "l": "All properties"
+        "k": "تقويم واحد",
+        "l": "كل العقارات"
       },
       {
-        "k": "<3 sec",
-        "l": "Create booking"
+        "k": "<3 ثوانٍ",
+        "l": "إنشاء حجز"
       },
       {
         "k": "100%",
-        "l": "Auto invoicing"
+        "l": "فوترة آلية"
       },
       {
-        "k": "42k+",
-        "l": "Bookings handled"
+        "k": "+42 ألف",
+        "l": "حجز تمت إدارته"
       }
     ],
     "finalCTA": {
-      "titleBefore": "Migrate your PMS.",
-      "titleGradient": "In 7 days.",
-      "subtitle": "Migration from Hostfully, Smoobu, Lodgify included. Guided onboarding. 1-month free trial."
+      "titleBefore": "انقل نظام PMS الخاص بك.",
+      "titleGradient": "في 7 أيام.",
+      "subtitle": "الترحيل من Hostfully، Smoobu، Lodgify مشمول. إعداد موجّه. شهر تجريبي مجاني."
     }
   }
 }

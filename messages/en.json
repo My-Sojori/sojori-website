@@ -87,7 +87,7 @@
           "whatsappStaff": "WhatsApp Staff (unlimited members)",
           "webDirectBooking": "Web Direct Booking (direct booking engine)",
           "channelManagerUnlimited": "Unlimited Channel Manager — 20+ OTAs",
-          "dynamicPricing": "Dynamic Pricing (47 signals)",
+          "dynamicPricing": "Dynamic Pricing (6 configurable factors)",
           "teamflow": "Standard TeamFlow",
           "ownerPortalFull": "Full Owner Portal",
           "analytics": "Smart Analytics",
@@ -451,7 +451,7 @@
             "Full orchestration",
             "API & webhooks",
             "Dedicated account manager",
-            "99.99% premium SLA"
+            "99.9% premium SLA"
           ],
           "cta": "Contact sales"
         }
@@ -927,7 +927,7 @@
     "finalCTA": {
       "title": "Activate WhatsApp.",
       "titleGradient": "Today.",
-      "subtitle": "4 WhatsApp systems included from the Pro plan. 5-minute setup. Unlimited technical support."
+      "subtitle": "4 WhatsApp systems included from the Orchestre plan. 5-minute setup. Unlimited technical support."
     }
   },
   "integrations": {
@@ -1279,7 +1279,7 @@
     ],
     "finalCTA": {
       "title": "Launch WhatsApp for your guests. In 5 minutes.",
-      "subtitle": "Included from the Pro plan. No development required. Your guests already have WhatsApp."
+      "subtitle": "Included from the Orchestre plan. No development required. Your guests already have WhatsApp."
     }
   },
   "dynamicPricing": {
@@ -1931,7 +1931,7 @@
       },
       "secure": {
         "title": "100% secure",
-        "description": "GDPR · SOC 2 · ISO 27001"
+        "description": "GDPR compliant · Hosted in France"
       },
       "trial": {
         "title": "No commitment",

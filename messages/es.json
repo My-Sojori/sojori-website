@@ -87,7 +87,7 @@
           "whatsappStaff": "WhatsApp Personal (miembros ilimitados)",
           "webDirectBooking": "Reserva Directa Web (motor de reservas directas)",
           "channelManagerUnlimited": "Channel Manager ilimitado — 20+ OTAs",
-          "dynamicPricing": "Precios Dinámicos (47 señales)",
+          "dynamicPricing": "Precios Dinámicos (6 factores configurables)",
           "teamflow": "TeamFlow estándar",
           "ownerPortalFull": "Portal Propietario completo",
           "analytics": "Smart Analytics",
@@ -450,7 +450,7 @@
             "Orquestación completa",
             "API y webhooks",
             "Account manager dedicado",
-            "SLA premium 99.99%"
+            "SLA premium 99.9%"
           ],
           "cta": "Contactar ventas"
         }
@@ -926,7 +926,7 @@
     "finalCTA": {
       "title": "Activa WhatsApp.",
       "titleGradient": "Hoy mismo.",
-      "subtitle": "4 sistemas WhatsApp incluidos desde el plan Pro. Configuración en 5 minutos. Soporte técnico ilimitado."
+      "subtitle": "4 sistemas WhatsApp incluidos desde el plan Orchestre. Configuración en 5 minutos. Soporte técnico ilimitado."
     }
   },
   "integrations": {
@@ -1278,7 +1278,7 @@
     ],
     "finalCTA": {
       "title": "Lanza WhatsApp para tus huéspedes. En 5 minutos.",
-      "subtitle": "Incluido desde el plan Pro. Sin desarrollo requerido. Tus huéspedes ya tienen WhatsApp."
+      "subtitle": "Incluido desde el plan Orchestre. Sin desarrollo requerido. Tus huéspedes ya tienen WhatsApp."
     }
   },
   "dynamicPricing": {
@@ -1930,7 +1930,7 @@
       },
       "secure": {
         "title": "100% seguro",
-        "description": "RGPD · SOC 2 · ISO 27001"
+        "description": "Conforme RGPD · Alojado en Francia"
       },
       "trial": {
         "title": "Sin compromiso",
@@ -1995,80 +1995,80 @@
   "pmsPage": {
     "pageTitle": "PMS",
     "hero": {
-      "badge": "📋 PMS · Property management system",
-      "titleLine1": "All your properties.",
-      "titleGradient": "One calendar.",
-      "subtitle": "Multi-property bookings, automated payments, invoicing, digital contracts. The nerve centre of your operations — clean, fast, quiet.",
-      "cta1": "Book a demo",
-      "cta2": "Import my PMS"
+      "badge": "📋 PMS · Sistema de gestión de propiedades",
+      "titleLine1": "Todas tus propiedades.",
+      "titleGradient": "Un solo calendario.",
+      "subtitle": "Reservas multi-propiedad, pagos automatizados, facturación, contratos digitales. El centro neurálgico de tus operaciones — limpio, rápido, silencioso.",
+      "cta1": "Reservar una demo",
+      "cta2": "Importar mi PMS"
     },
     "calendar": {
-      "header": "Property · March 2025"
+      "header": "Propiedad · Marzo 2025"
     },
     "properties": [
-      "Paris 15 apartment",
-      "Barcelona villa",
-      "Montmartre loft",
-      "Marais studio",
-      "Lyon duplex"
+      "Apartamento París 15",
+      "Villa Barcelona",
+      "Loft Montmartre",
+      "Estudio Marais",
+      "Dúplex Lyon"
     ],
     "sectionCalendar": {
-      "eyebrow": "● Multi-property calendar in real time",
-      "title": "Overview.",
-      "titleGradient": "At a glance."
+      "eyebrow": "● Calendario multi-propiedad en tiempo real",
+      "title": "Visión general.",
+      "titleGradient": "De un vistazo."
     },
     "sectionModules": {
-      "eyebrow": "● PMS modules",
-      "title": "Everything.",
-      "titleMuted": "Really everything."
+      "eyebrow": "● Módulos PMS",
+      "title": "Todo.",
+      "titleMuted": "Absolutamente todo."
     },
     "modules": [
       {
-        "title": "Unified calendar",
-        "desc": "All your properties, one calendar. Drag-and-drop, month/week/day views."
+        "title": "Calendario unificado",
+        "desc": "Todas tus propiedades, un calendario. Arrastra y suelta, vistas mes/semana/día."
       },
       {
-        "title": "Automated payments",
-        "desc": "Stripe + bank transfers. Charge on booking, one-click refunds."
+        "title": "Pagos automatizados",
+        "desc": "Stripe + transferencias bancarias. Cobro al reservar, reembolsos en un clic."
       },
       {
-        "title": "Invoices & contracts",
-        "desc": "Generated automatically. E-signed. Compliant archiving."
+        "title": "Facturas y contratos",
+        "desc": "Generados automáticamente. Firma electrónica. Archivado conforme."
       },
       {
-        "title": "Financial dashboard",
-        "desc": "Revenue, costs, margin per property. Monthly accounting export."
+        "title": "Dashboard financiero",
+        "desc": "Ingresos, costes, margen por propiedad. Exportación contable mensual."
       },
       {
-        "title": "Tourist tax automation",
-        "desc": "Calculated, collected, filed. Multi-city, multi-country."
+        "title": "Tasa turística automática",
+        "desc": "Calculada, cobrada, declarada. Multi-ciudad, multi-país."
       },
       {
-        "title": "2-way iCal sync",
-        "desc": "With your channel manager + direct Airbnb/Booking. No double entry."
+        "title": "Sincronización iCal bidireccional",
+        "desc": "Con tu channel manager + Airbnb/Booking directo. Sin doble entrada."
       }
     ],
     "stats": [
       {
-        "k": "1 calendar",
-        "l": "All properties"
+        "k": "1 calendario",
+        "l": "Todas las propiedades"
       },
       {
-        "k": "<3 sec",
-        "l": "Create booking"
+        "k": "<3 seg",
+        "l": "Crear reserva"
       },
       {
         "k": "100%",
-        "l": "Auto invoicing"
+        "l": "Facturación automática"
       },
       {
         "k": "42k+",
-        "l": "Bookings handled"
+        "l": "Reservas gestionadas"
       }
     ],
     "finalCTA": {
-      "titleBefore": "Migrate your PMS.",
-      "titleGradient": "In 7 days.",
+      "titleBefore": "Migra tu PMS.",
+      "titleGradient": "En 7 días.",
       "subtitle": "Migración desde Hostfully, Smoobu, Lodgify incluida. Onboarding guiado. 1 mes de prueba gratis."
     }
   }

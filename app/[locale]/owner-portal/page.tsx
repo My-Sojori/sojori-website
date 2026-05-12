@@ -44,7 +44,7 @@ function OwnerPhone() {
             <div style={{ fontSize: 10, color: "#10b981", fontWeight: 600 }}>↗ +18% vs M-1</div>
           </div>
           <div style={{ fontSize: 30, fontWeight: 700, color: "#fff", marginTop: 6, letterSpacing: "-0.02em" }}>€18,420</div>
-          <div style={{ fontSize: 11, color: "rgba(255,255,255,0.55)", marginTop: 2 }}>Net après commission Sojori</div>
+          <div style={{ fontSize: 11, color: "rgba(255,255,255,0.55)", marginTop: 2 }}>Net après commission gestion</div>
           <div style={{ marginTop: 12, display: "flex", gap: 8 }}>
             <div style={{ flex: 1, height: 4, borderRadius: 2, background: "#f4cf5e" }} />
             <div style={{ flex: 1, height: 4, borderRadius: 2, background: "#f4cf5e" }} />
@@ -123,7 +123,7 @@ function MonthlyStatement() {
           { l: "Ménages inclus", v: "Inclus", d: "14 ménages · gratuits" },
           { l: "Ménages extras", v: "+€275", d: "11 ménages payants" },
           { l: "Maintenance", v: "−€140", d: "1 intervention plomberie" },
-          { l: "Commission Sojori (15%)", v: "−€3,468", d: "Sur revenu brut" },
+          { l: "Commission Gestion (15%)", v: "−€3,468", d: "Sur revenu brut" },
         ].map((r, i) => (
           <div key={i} style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", padding: "12px 0", borderTop: i ? "1px solid rgba(255,255,255,0.04)" : "none" }}>
             <div>
