@@ -1328,7 +1328,7 @@
       "badge": "📈 Dynamic Pricing · Tarification intelligente",
       "title": "Le bon prix.",
       "titleGradient": "Au bon moment.",
-      "subtitle": "Sojori ajuste vos tarifs selon la saisonnalité, les jours, les événements, le taux d'occupation et la durée de séjour. Configuration flexible pour maximiser vos revenus.",
+      "subtitle": "Sojori combine les données de marché réelles avec des règles flexibles pour optimiser vos tarifs. Suivez vos concurrents, analysez la demande à Marrakech & Paris, et maximisez les revenus sur tout votre portefeuille.",
       "cta1": "Demander une démo",
       "cta2": "Nous contacter"
     },
@@ -1462,6 +1462,94 @@
       "title": "Optimisez vos revenus.",
       "titleGradient": "revenus",
       "subtitle": "Découvrez comment le dynamic pricing Sojori peut maximiser vos revenus locatifs."
+    },
+    "marketIntel": {
+      "badge": "● Intelligence de marché · Données réelles",
+      "title": "Voyez le marché. Fixez vos prix en conséquence.",
+      "titleHighlight": "Voyez le marché",
+      "subtitle": "Sojori se connecte aux fournisseurs de données de marché pour vous donner des insights en temps réel sur l'occupancy, l'ADR, la croissance de l'offre et le positionnement concurrentiel à Marrakech et Paris.",
+      "updatedRecently": "Mis à jour il y a 6 heures",
+      "occupancy": "Taux d'occupation",
+      "medianADR": "ADR médian",
+      "activeListings": "Annonces actives",
+      "supplyGrowth": "Croissance offre (24m)",
+      "zoneBreakdown": "Détail par zone"
+    },
+    "portfolio": {
+      "badge": "● Gestion de portefeuille",
+      "title": "Toutes vos propriétés. Un seul tableau de bord.",
+      "titleHighlight": "Un seul tableau de bord",
+      "subtitle": "Gérez plusieurs annonces à travers villes et quartiers. Comparez les performances, suivez les revenus et optimisez les stratégies tarifaires en un coup d'œil.",
+      "totalProperties": "Total propriétés",
+      "cities": "villes",
+      "ttmRevenue": "Revenus TTM",
+      "trailing12months": "12 derniers mois",
+      "avgOccupancy": "Occupation moy.",
+      "acrossPortfolio": "Sur tout le portefeuille",
+      "property": "Propriété",
+      "location": "Localisation",
+      "occupancy": "Occupation",
+      "revenueTTM": "Revenus (TTM)",
+      "status": "Statut",
+      "active": "Actif",
+      "benefits": [
+        {
+          "icon": "📊",
+          "title": "Comparaison multi-propriétés",
+          "description": "Comparez l'ADR, l'occupation et les revenus de toutes vos annonces en temps réel"
+        },
+        {
+          "icon": "🎯",
+          "title": "Performance par zone",
+          "description": "Comprenez quels quartiers et villes génèrent les meilleurs retours"
+        },
+        {
+          "icon": "⚡",
+          "title": "Optimisation rapide",
+          "description": "Identifiez les propriétés sous-performantes et ajustez les prix instantanément"
+        }
+      ]
+    },
+    "competitive": {
+      "badge": "● Intelligence concurrentielle",
+      "title": "Connaissez votre marché. Battez vos concurrents.",
+      "titleHighlight": "Battez vos concurrents",
+      "subtitle": "Suivez les annonces comparables, analysez leurs stratégies tarifaires et positionnez-vous de manière compétitive sur le marché. Générez des rapports partageables pour propriétaires et investisseurs.",
+      "compSet": "Vos Comparables",
+      "comps": "comps",
+      "avgCompADR": "ADR moyen comps",
+      "avgCompOcc": "Occ. moy. comps",
+      "yourPosition": "Votre Position Marché",
+      "adrPosition": "ADR vs Marché",
+      "adrAboveMarket": "Votre ADR est 8% au-dessus des comparables",
+      "occPosition": "Occupation vs Marché",
+      "occBelowMarket": "Marge d'amélioration de 3 points d'occupation",
+      "revenueRank": "Classement Revenus",
+      "rankDescription": "Sur 5 comps suivis dans votre zone",
+      "shareReports": "Partager Rapports Marché",
+      "shareDescription": "Générez des liens partageables avec occupation par zone, tendances ADR, graphiques de croissance de l'offre et prévisions de pacing. Parfait pour rapports propriétaires et décisions d'investissement.",
+      "shareTypes": [
+        {"icon": "📊", "label": "Analyse de marché par ville et zone"},
+        {"icon": "📈", "label": "Rapport de positionnement concurrentiel"},
+        {"icon": "💰", "label": "Évaluation des opportunités de revenus"}
+      ],
+      "insights": [
+        {
+          "icon": "🎯",
+          "title": "Positionnement stratégique",
+          "description": "Sachez exactement où vous vous situez face aux concurrents en prix et performance"
+        },
+        {
+          "icon": "📡",
+          "title": "Suivi en temps réel",
+          "description": "Données de marché actualisées toutes les 26 heures via intégration AirROI & Channels"
+        },
+        {
+          "icon": "🔗",
+          "title": "Partagez avec stakeholders",
+          "description": "Générez des rapports professionnels pour propriétaires, investisseurs et partenaires"
+        }
+      ]
     }
   },
   "inbox": {

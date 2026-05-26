@@ -1328,7 +1328,7 @@
       "badge": "📈 Dynamic Pricing · Intelligent pricing",
       "title": "The right price.",
       "titleGradient": "At the right time.",
-      "subtitle": "Sojori adjusts your rates based on seasonality, days, events, occupancy rate and length of stay. Flexible configuration to maximize your revenue.",
+      "subtitle": "Sojori combines real market data with flexible rules to optimize your rates. Track competitors, analyze demand across Marrakech & Paris, and maximize revenue across your portfolio.",
       "cta1": "Request a demo",
       "cta2": "Contact us"
     },
@@ -1462,6 +1462,94 @@
       "title": "Optimize your revenue.",
       "titleGradient": "revenue",
       "subtitle": "Discover how Sojori dynamic pricing can maximize your rental revenue."
+    },
+    "marketIntel": {
+      "badge": "● Market Intelligence · Real data",
+      "title": "See the market. Price accordingly.",
+      "titleHighlight": "See the market",
+      "subtitle": "Sojori connects to market data providers to give you real-time insights on occupancy, ADR, supply growth, and competitive positioning across Marrakech and Paris.",
+      "updatedRecently": "Updated 6 hours ago",
+      "occupancy": "Occupancy",
+      "medianADR": "Median ADR",
+      "activeListings": "Active listings",
+      "supplyGrowth": "Supply growth (24m)",
+      "zoneBreakdown": "Zone-level breakdown"
+    },
+    "portfolio": {
+      "badge": "● Portfolio Management",
+      "title": "All your properties. One dashboard.",
+      "titleHighlight": "One dashboard",
+      "subtitle": "Manage multiple listings across cities and zones. Compare performance, track revenue, and optimize pricing strategies at a glance.",
+      "totalProperties": "Total properties",
+      "cities": "cities",
+      "ttmRevenue": "TTM Revenue",
+      "trailing12months": "Trailing 12 months",
+      "avgOccupancy": "Avg. Occupancy",
+      "acrossPortfolio": "Across portfolio",
+      "property": "Property",
+      "location": "Location",
+      "occupancy": "Occupancy",
+      "revenueTTM": "Revenue (TTM)",
+      "status": "Status",
+      "active": "Active",
+      "benefits": [
+        {
+          "icon": "📊",
+          "title": "Multi-property comparison",
+          "description": "Compare ADR, occupancy, and revenue across all your listings in real-time"
+        },
+        {
+          "icon": "🎯",
+          "title": "Zone performance",
+          "description": "Understand which neighborhoods and cities drive the best returns"
+        },
+        {
+          "icon": "⚡",
+          "title": "Quick optimization",
+          "description": "Identify underperforming properties and adjust pricing instantly"
+        }
+      ]
+    },
+    "competitive": {
+      "badge": "● Competitive Intelligence",
+      "title": "Know your market. Beat your competitors.",
+      "titleHighlight": "Beat your competitors",
+      "subtitle": "Track comparable listings, analyze their pricing strategies, and position yourself competitively in the market. Generate shareable reports for owners and investors.",
+      "compSet": "Your Comp Set",
+      "comps": "comps",
+      "avgCompADR": "Avg. Comp ADR",
+      "avgCompOcc": "Avg. Comp Occ",
+      "yourPosition": "Your Market Position",
+      "adrPosition": "ADR vs Market",
+      "adrAboveMarket": "Your ADR is 8% above comparable listings",
+      "occPosition": "Occupancy vs Market",
+      "occBelowMarket": "Room to improve occupancy by 3 points",
+      "revenueRank": "Revenue Rank",
+      "rankDescription": "Out of 5 tracked comps in your zone",
+      "shareReports": "Share Market Reports",
+      "shareDescription": "Generate shareable links with occupancy by zone, ADR trends, supply growth charts, and pacing forecasts. Perfect for owner reports and investment decisions.",
+      "shareTypes": [
+        {"icon": "📊", "label": "Market analysis by city & zone"},
+        {"icon": "📈", "label": "Competitive positioning report"},
+        {"icon": "💰", "label": "Revenue opportunity assessment"}
+      ],
+      "insights": [
+        {
+          "icon": "🎯",
+          "title": "Position strategically",
+          "description": "Know exactly where you stand vs. competitors in pricing and performance"
+        },
+        {
+          "icon": "📡",
+          "title": "Track in real-time",
+          "description": "Market data refreshed every 26 hours via AirROI & Channels integration"
+        },
+        {
+          "icon": "🔗",
+          "title": "Share with stakeholders",
+          "description": "Generate professional reports for property owners, investors, and partners"
+        }
+      ]
     }
   },
   "inbox": {

@@ -4,6 +4,9 @@ import { useTranslations } from 'next-intl';
 import { BackgroundEffects } from '@/components/BackgroundEffects';
 import { PageHeader, PageFooter, PageHero, StatsBar, FinalCTA } from '@/components/SharedComponents';
 import { ScrollPaginationDots } from '@/components/shared/ScrollPaginationDots';
+import { MarketIntelligence } from '@/components/dynamic-pricing/MarketIntelligence';
+import { PortfolioOverview } from '@/components/dynamic-pricing/PortfolioOverview';
+import { CompetitiveIntel } from '@/components/dynamic-pricing/CompetitiveIntel';
 
 function PriceCalendar() {
   const t = useTranslations('dynamicPricing.calendar');
@@ -172,6 +175,22 @@ export default function DynamicPricingPage() {
         @media (max-width: 768px) {
           section { padding: 22px 16px !important; }
 
+          div[style*="gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr)'"] {
+            grid-template-columns: 1fr !important;
+          }
+
+          div[style*="gridTemplateColumns: '1fr 1fr'"] {
+            grid-template-columns: 1fr !important;
+          }
+
+          table {
+            font-size: 11px !important;
+          }
+
+          table th, table td {
+            padding: 10px 8px !important;
+          }
+
           div[style*="gridTemplateColumns: 'repeat(2, 1fr)'"] {
             display: flex !important;
             overflow-x: auto !important;
@@ -226,6 +245,8 @@ export default function DynamicPricingPage() {
           cta2={tHero('cta2')}
         />
 
+        <MarketIntelligence />
+
         <section style={{ padding: '12px 32px 44px' }}>
           <div style={{ maxWidth: 1200, margin: '0 auto' }}>
             <div className="uppercase-sm" style={{ color: 'var(--text-3)', marginBottom: 12, textAlign: 'center' }}>{tCalSection('badge')}</div>
@@ -250,6 +271,9 @@ export default function DynamicPricingPage() {
             <PriceFactors />
           </div>
         </section>
+
+        <PortfolioOverview />
+        <CompetitiveIntel />
 
         <section style={{ padding: '24px 32px 44px', borderTop: '1px solid var(--glass-border)' }}>
           <div style={{ maxWidth: 1100, margin: '0 auto' }}>
