@@ -119,7 +119,15 @@ export async function generateMetadata({
     authors: [{ name: "Sojori" }],
     creator: "Sojori",
     publisher: "Sojori",
-    metadataBase: new URL('https://sojori.com'),
+    metadataBase: new URL('https://business.sojori.com'),
+    icons: {
+      icon: [
+        { url: '/favicon.svg', type: 'image/svg+xml' },
+        { url: '/icon.png', type: 'image/png', sizes: '32x32' },
+      ],
+      apple: [{ url: '/apple-icon.png', sizes: '180x180', type: 'image/png' }],
+      shortcut: '/favicon.svg',
+    },
     alternates: {
       canonical: `/${locale}`,
       languages: {
@@ -133,7 +141,7 @@ export async function generateMetadata({
     openGraph: {
       type: 'website',
       locale: localeMap[locale] || 'fr_FR',
-      url: `https://sojori.com/${locale}`,
+      url: `https://business.sojori.com/${locale}`,
       siteName: 'Sojori',
       title: meta.title,
       description: meta.description,
