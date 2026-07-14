@@ -86,6 +86,10 @@ async function publishOne(p) {
   const params = p.type === 'REELS'
     ? { media_type: 'REELS', video_url: p.url, caption: p.caption }
     : { image_url: p.url, caption: p.caption };
+  // Image d'arrêt (poster) du reel, optionnelle : URL publique via IG_REEL_COVER_URL
+  if (p.type === 'REELS' && process.env.IG_REEL_COVER_URL) {
+    params.cover_url = process.env.IG_REEL_COVER_URL;
+  }
   const container = await post(`${IG_USER_ID}/media`, params);
   const creationId = container.id;
 
