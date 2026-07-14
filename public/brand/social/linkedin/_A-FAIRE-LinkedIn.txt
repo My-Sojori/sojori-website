@@ -1,0 +1,18 @@
+=== À FAIRE SUR LINKEDIN (≈15 min) ===
+
+--- PROFIL PERSO (Tawfiq) ---
+1. Nom : mettre les majuscules -> "Tawfiq Gouach"
+2. Bannière (crayon sur l'image de fond) : uploader
+   Sojori_LinkedIn_cover_perso_1584x396.png
+3. Titre : copier le contenu de PROFIL-PERSO_titre.txt
+4. Section "Infos" : copier PROFIL-PERSO_infos.txt
+5. Localisation : ajouter Maroc / Marrakech
+
+--- PAGE ENTREPRISE SOJORI ---
+6. Logo : uploader Sojori_avatar_insta_linkedin_320x320.png
+7. Image de couverture : uploader
+   Sojori_LinkedIn_cover_entreprise_4200x700.png
+8. Slogan : copier PAGE-ENTREPRISE_slogan.txt
+9. "Infos" / Description : copier PAGE-ENTREPRISE_infos.txt
+10. Spécialités : copier PAGE-ENTREPRISE_specialites.txt
+11. Bouton CTA : "Visiter le site web" -> business.sojori.com

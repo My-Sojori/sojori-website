@@ -1,0 +1,7 @@
+Après des années en ingénierie et direction dans l'industrie (Cegelec, Alstom, GE Vernova), je construis Sojori : la plateforme qui orchestre la location courte durée au Maroc — réservations, voyageurs, ménage, propriétaires — sur un seul outil.
+
+Le constat : à Marrakech, acquérir un voyageur coûte cher (commissions OTA, frais, concurrence). La marge n'est plus dans la nuitée, elle est dans les services autour du séjour. Sojori automatise la relation voyageur par IA (sur WhatsApp), capte cette marge par des upsells, et libère les conciergeries pour ce qui compte : gérer plus de biens et signer plus de propriétaires — sans agrandir l'équipe.
+
+Pensé pour le terrain marocain : WhatsApp natif, arabe, paiement local.
+
+Vous gérez des locations courte durée au Maroc ? Parlons-en.
