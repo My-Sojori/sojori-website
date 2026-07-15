@@ -93,14 +93,13 @@ async function publishOne(p) {
   const container = await post(`${IG_USER_ID}/media`, params);
   const creationId = container.id;
 
-  // 2) pour la vidéo/reel : attendre que le traitement soit FINISHED
-  if (p.type === 'REELS') {
-    for (let i = 0; i < 30; i++) {
-      const st = await getStatus(creationId);
-      if (st === 'FINISHED') break;
-      if (st === 'ERROR') throw new Error('Traitement vidéo en erreur');
-      await sleep(5000);
-    }
+  // 2) attendre que le traitement du container soit FINISHED (images comme reels :
+  //    publier trop tôt provoque l'erreur 9007 "Media ID is not available")
+  for (let i = 0; i < 30; i++) {
+    const st = await getStatus(creationId);
+    if (st === 'FINISHED') break;
+    if (st === 'ERROR') throw new Error('Traitement média en erreur');
+    await sleep(p.type === 'REELS' ? 5000 : 2000);
   }
 
   // 3) publier
