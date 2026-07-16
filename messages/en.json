@@ -2159,6 +2159,26 @@
     "teamflow": {
       "title": "Staff management Marrakech | Teams for riads & villas Morocco",
       "description": "Housekeeping planning, tasks and performance. Coordinate cleaning, concierge and maintenance."
+    },
+    "about": {
+      "title": "About Sojori | The short-term rental orchestrator",
+      "description": "Sojori builds orchestration software for property managers: PMS, channel manager, WhatsApp AI, dynamic pricing. Based in Marrakech, Casablanca and Paris."
+    },
+    "demo": {
+      "title": "Request a Sojori demo | PMS & short-term rental orchestrator",
+      "description": "Book a personalized Sojori demo: PMS, Channel Manager, WhatsApp AI. Setup in under 7 days, 1 month free trial."
+    },
+    "demoRdv": {
+      "title": "Confirm your demo appointment | Sojori",
+      "description": "Pick your time slot for a personalized Sojori demo with a product expert."
+    },
+    "integrations": {
+      "title": "Sojori integrations | Airbnb, Booking, Expedia, WhatsApp & API",
+      "description": "Sojori connectors and API: Airbnb, Booking.com, Expedia, Vrbo, WhatsApp Business, accounting. Real-time sync."
+    },
+    "pricing": {
+      "title": "Sojori pricing | PMS & short-term rental orchestrator plans",
+      "description": "Transparent Sojori pricing, no hidden fees: Solo, Orchestre, Symphonie. 1 month free trial, cancel anytime."
     }
   },
   "pmsPage": {

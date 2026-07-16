@@ -10,6 +10,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   return {
     title: t('gestionLocativeAgadir.title'),
     description: t('gestionLocativeAgadir.description'),
+    alternates: { canonical: `/${locale}/gestion-locative-agadir` },
   };
 }
 

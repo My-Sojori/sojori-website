@@ -2070,6 +2070,26 @@
     "teamflow": {
       "title": "Gestión de staff Marrakech | Equipos riads y villas",
       "description": "Planificación de limpieza, tareas y rendimiento. Coordina housekeeping y mantenimiento."
+    },
+    "about": {
+      "title": "Sobre Sojori | El orquestador del alquiler vacacional",
+      "description": "Sojori desarrolla software de orquestación para gestores de propiedades: PMS, channel manager, WhatsApp IA, precios dinámicos. Con sede en Marrakech, Casablanca y París."
+    },
+    "demo": {
+      "title": "Solicitar una demo de Sojori | PMS y orquestador de alquiler vacacional",
+      "description": "Reserva una demo personalizada de Sojori: PMS, Channel Manager, WhatsApp IA. Configuración en menos de 7 días, 1 mes de prueba gratis."
+    },
+    "demoRdv": {
+      "title": "Confirma tu cita de demo | Sojori",
+      "description": "Elige tu horario para una demo personalizada de Sojori con un experto de producto."
+    },
+    "integrations": {
+      "title": "Integraciones Sojori | Airbnb, Booking, Expedia, WhatsApp y API",
+      "description": "Conectores y API de Sojori: Airbnb, Booking.com, Expedia, Vrbo, WhatsApp Business, contabilidad. Sincronización en tiempo real."
+    },
+    "pricing": {
+      "title": "Tarifas Sojori | Planes PMS y orquestador de alquiler vacacional",
+      "description": "Tarificación transparente de Sojori, sin costes ocultos: Solo, Orchestre, Symphonie. 1 mes de prueba gratis, cancela cuando quieras."
     }
   },
   "pmsPage": {

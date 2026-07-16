@@ -2070,6 +2070,26 @@
     "teamflow": {
       "title": "Gestão de equipa Marraquexe | Riads e villas",
       "description": "Planeamento de limpeza, tarefas e desempenho. Coordena housekeeping e manutenção."
+    },
+    "about": {
+      "title": "Sobre a Sojori | O orquestrador do alojamento local",
+      "description": "A Sojori desenvolve software de orquestração para gestores de propriedades: PMS, channel manager, WhatsApp IA, preços dinâmicos. Sediada em Marraquexe, Casablanca e Paris."
+    },
+    "demo": {
+      "title": "Pedir uma demo Sojori | PMS e orquestrador de alojamento local",
+      "description": "Marque uma demo personalizada da Sojori: PMS, Channel Manager, WhatsApp IA. Configuração em menos de 7 dias, 1 mês de teste grátis."
+    },
+    "demoRdv": {
+      "title": "Confirme o seu agendamento de demo | Sojori",
+      "description": "Escolha o seu horário para uma demo personalizada da Sojori com um especialista de produto."
+    },
+    "integrations": {
+      "title": "Integrações Sojori | Airbnb, Booking, Expedia, WhatsApp e API",
+      "description": "Conectores e API da Sojori: Airbnb, Booking.com, Expedia, Vrbo, WhatsApp Business, contabilidade. Sincronização em tempo real."
+    },
+    "pricing": {
+      "title": "Preços Sojori | Planos PMS e orquestrador de alojamento local",
+      "description": "Preços transparentes Sojori, sem taxas ocultas: Solo, Orchestre, Symphonie. 1 mês de teste grátis, cancele quando quiser."
     }
   },
   "pmsPage": {

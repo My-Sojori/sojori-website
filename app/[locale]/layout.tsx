@@ -240,52 +240,72 @@ export default async function LocaleLayout({
     ],
   };
 
-  const jsonLd = {
+  // Résumé ~50 mots pensé pour les assistants IA (ChatGPT, Perplexity, Gemini) qui
+  // cherchent "qu'est-ce que Sojori" — business.sojori.com est l'entité canonique
+  // de l'entreprise ; sojori.com (marketplace grand public) n'en est qu'un produit.
+  const organizationDescriptionByLocale: Record<string, string> = {
+    fr: "Sojori est une entreprise technologique qui développe un logiciel d'orchestration pour la location courte durée : PMS, channel manager, conciergerie WhatsApp IA trilingue, tarification dynamique et gestion des équipes terrain. Basée à Marrakech, Casablanca et Paris, Sojori équipe des property managers professionnels au Maroc et en France, et édite aussi sojori.com, sa marketplace grand public de riads, villas et appartements.",
+    en: 'Sojori is a technology company building orchestration software for short-term rentals: PMS, channel manager, trilingual WhatsApp AI concierge, dynamic pricing and field-team workflows. Based in Marrakech, Casablanca and Paris, Sojori equips professional property managers across Morocco and France, and also runs sojori.com, its consumer marketplace for riads, villas and apartments.',
+    es: 'Sojori es una empresa tecnológica que desarrolla software de orquestación para el alquiler vacacional: PMS, channel manager, conserjería WhatsApp con IA, precios dinámicos y gestión de equipos. Con sede en Marrakech, Casablanca y París, Sojori equipa a gestores de propiedades profesionales en Marruecos y Francia, y también opera sojori.com, su marketplace para riads, villas y apartamentos.',
+    pt: 'A Sojori é uma empresa de tecnologia que desenvolve software de orquestração para o alojamento local: PMS, channel manager, conciergerie WhatsApp com IA, preços dinâmicos e gestão de equipas. Sediada em Marraquexe, Casablanca e Paris, a Sojori equipa gestores de propriedades profissionais em Marrocos e França, e também opera o sojori.com, o seu marketplace de riads, villas e apartamentos.',
+    ar: 'Sojori شركة تقنية تطور برمجيات تنسيق للإيجار قصير الأجل: نظام إدارة الممتلكات، مدير القنوات، كونسييرج واتساب بالذكاء الاصطناعي، تسعير ديناميكي وإدارة الفرق الميدانية. ومقرها مراكش والدار البيضاء وباريس، وتزوّد Sojori مديري العقارات المحترفين في المغرب وفرنسا، كما تدير sojori.com، سوقها المخصص للرياض والفيلل والشقق.',
+  };
+
+  // Organization en bloc JSON-LD top-level indépendant — plus facilement
+  // extractible par les crawlers/LLM qu'imbriquée dans un SoftwareApplication.
+  const organizationJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: 'Sojori',
+    url: 'https://business.sojori.com',
+    logo: 'https://business.sojori.com/logo.png',
+    slogan:
+      locale === 'en'
+        ? 'Orchestration software for short-term rentals'
+        : "Software d'orchestration pour la location courte durée",
+    description: organizationDescriptionByLocale[locale] ?? organizationDescriptionByLocale.fr,
+    sameAs: [
+      'https://sojori.com',
+      'https://www.linkedin.com/company/108488739',
+      'https://instagram.com/sojoriapp',
+    ],
+    address: [
+      {
+        '@type': 'PostalAddress',
+        addressLocality: 'Marrakech',
+        addressCountry: 'MA',
+      },
+      {
+        '@type': 'PostalAddress',
+        addressLocality: 'Casablanca',
+        addressCountry: 'MA',
+      },
+      {
+        '@type': 'PostalAddress',
+        addressLocality: 'Paris',
+        addressCountry: 'FR',
+      },
+    ],
+    contactPoint: {
+      '@type': 'ContactPoint',
+      contactType: 'Sales',
+      areaServed: ['MA', 'FR', 'ES', 'PT'],
+      availableLanguage: ['French', 'Arabic', 'English', 'Spanish', 'Portuguese'],
+    },
+  };
+
+  const softwareApplicationJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'SoftwareApplication',
     name: 'Sojori',
     applicationCategory: 'BusinessApplication',
     operatingSystem: 'Web',
+    // Référence légère vers l'Organization — le détail complet (adresse, contact,
+    // sameAs) vit uniquement dans le bloc Organization ci-dessus, pas dupliqué ici.
     provider: {
       '@type': 'Organization',
       name: 'Sojori',
       url: 'https://business.sojori.com',
-      logo: 'https://business.sojori.com/logo.png',
-      slogan:
-        locale === 'en'
-          ? 'Orchestration software for short-term rentals'
-          : "Software d'orchestration pour la location courte durée",
-      description:
-        locale === 'en'
-          ? 'Sojori orchestrates short-term rentals end to end: PMS, channel manager, trilingual WhatsApp AI concierge, dynamic pricing and field-team workflows — Morocco & France.'
-          : "Sojori orchestre la location courte durée de bout en bout : PMS, channel manager, conciergerie WhatsApp IA trilingue, tarification dynamique et gestion des équipes terrain — Maroc & France.",
-      sameAs: [
-        'https://www.linkedin.com/company/108488739',
-        'https://instagram.com/sojoriapp',
-      ],
-      address: [
-        {
-          '@type': 'PostalAddress',
-          addressLocality: 'Marrakech',
-          addressCountry: 'MA',
-        },
-        {
-          '@type': 'PostalAddress',
-          addressLocality: 'Casablanca',
-          addressCountry: 'MA',
-        },
-        {
-          '@type': 'PostalAddress',
-          addressLocality: 'Paris',
-          addressCountry: 'FR',
-        },
-      ],
-      contactPoint: {
-        '@type': 'ContactPoint',
-        contactType: 'Sales',
-        areaServed: ['MA', 'FR', 'ES', 'PT'],
-        availableLanguage: ['French', 'Arabic', 'English', 'Spanish', 'Portuguese'],
-      },
     },
     description: locale === 'en'
       ? 'PMS and orchestrator for property managers in Marrakech, Casablanca and Paris. Channel Manager, WhatsApp AI, dynamic pricing, analytics.'
@@ -304,7 +324,11 @@ export default async function LocaleLayout({
       <head>
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareApplicationJsonLd) }}
         />
         {/* Pixel Meta (retargeting ads) — PageView sur toutes les pages */}
         <script

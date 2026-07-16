@@ -7,6 +7,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   return {
     title: t('dynamicPricing.title'),
     description: t('dynamicPricing.description'),
+    alternates: { canonical: `/${locale}/dynamic-pricing` },
   };
 }
 

@@ -9,6 +9,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   return {
     title: t('conciergerieCasablanca.title'),
     description: t('conciergerieCasablanca.description'),
+    alternates: { canonical: `/${locale}/conciergerie-casablanca` },
   };
 }
 

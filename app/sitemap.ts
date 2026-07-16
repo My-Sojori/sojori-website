@@ -17,6 +17,8 @@ const PATHS = [
   '/integrations',
   '/about',
   '/demo',
+  '/demo/rdv',
+  '/offre-conciergeries',
   '/brand',
   '/gestion-locative-marrakech',
   '/conciergerie-marrakech',

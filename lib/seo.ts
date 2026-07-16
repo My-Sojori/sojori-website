@@ -26,7 +26,7 @@ export function generateSEO({
   image = '/og-image.jpg',
   locale = 'fr',
 }: SEOProps): Metadata {
-  const url = `https://sojori.com${path}`;
+  const url = `https://business.sojori.com${path}`;
   const ogLocale = OG_LOCALE[locale] || OG_LOCALE.fr;
 
   return {

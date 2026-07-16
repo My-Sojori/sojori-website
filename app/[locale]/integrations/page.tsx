@@ -1,7 +1,6 @@
 "use client";
 
 import { Link } from '@/i18n/routing';
-import { Metadata } from 'next';
 import { useState } from 'react';
 import { useTranslations } from 'next-intl';
 import { BackgroundEffects } from '@/components/BackgroundEffects';

@@ -10,6 +10,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   return {
     title: t('gestionLocativeTanger.title'),
     description: t('gestionLocativeTanger.description'),
+    alternates: { canonical: `/${locale}/gestion-locative-tanger` },
   };
 }
 
