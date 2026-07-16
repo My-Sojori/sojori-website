@@ -307,6 +307,13 @@ export default async function LocaleLayout({
           <img height="1" width="1" style={{ display: 'none' }} alt=""
             src="https://www.facebook.com/tr?id=1039671441788657&ev=PageView&noscript=1" />
         </noscript>
+        {/* Google Analytics 4 — pageview + dataLayer pour tous les événements custom */}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-KCVTT735EZ" />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-KCVTT735EZ');`,
+          }}
+        />
       </head>
       {/* Aurora Soft — light theme. NE PAS mettre bg-bg-0 ni text-white ici. */}
       <body className="antialiased">
