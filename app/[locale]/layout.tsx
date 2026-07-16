@@ -249,8 +249,8 @@ export default async function LocaleLayout({
     provider: {
       '@type': 'Organization',
       name: 'Sojori',
-      url: 'https://sojori.com',
-      logo: 'https://sojori.com/logo.png',
+      url: 'https://business.sojori.com',
+      logo: 'https://business.sojori.com/logo.png',
       slogan:
         locale === 'en'
           ? 'Orchestration software for short-term rentals'
