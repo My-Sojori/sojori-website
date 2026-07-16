@@ -27,17 +27,17 @@ HASHES = {
 
 COPY = {
     'briques': {
-        'message': ("Vous gérez des Airbnb au Maroc ? PMS, Channel Manager, WhatsApp, réservation directe, "
-                    "upsell, ménage : 6 briques, 1 seul logiciel. Sojori ne gère pas vos biens — il équipe "
-                    "votre conciergerie pour en gérer plus, avec la même équipe. Offre de lancement pour les "
-                    "15 premières conciergeries : 2 mois gratuits + migration complète offerte."),
+        'message': ("Vous gérez des Airbnb au Maroc ? PMS, Channel Manager, prix dynamiques, WhatsApp, "
+                    "réservation directe, upsell, ménage, analytics : tout dans un seul logiciel. "
+                    "Offre de lancement pour les 15 premières conciergeries : 2 mois gratuits + "
+                    "migration complète offerte."),
         'name': '2 mois gratuits. Migration offerte.',
         'description': 'Le logiciel des conciergeries Airbnb.',
     },
     'hero': {
         'message': ("Le logiciel des conciergeries Airbnb au Maroc. Gérez plus de biens, gagnez plus par bien — "
-                    "sans agrandir l'équipe. On ne gère pas vos biens : on vous donne l'outil. Offre de "
-                    "lancement : 2 mois gratuits + migration offerte, sans engagement. 15 places."),
+                    "sans agrandir l'équipe. Prix dynamiques, WhatsApp automatisé, réservation directe, upsell. "
+                    "Offre de lancement : 2 mois gratuits + migration offerte, sans engagement. 15 places."),
         'name': 'Un seul outil. Tout orchestré.',
         'description': '2 mois gratuits — 15 places seulement.',
     },

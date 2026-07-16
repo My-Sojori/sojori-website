@@ -10,10 +10,14 @@ import { PageHeader, PageFooter } from '@/components/SharedComponents';
 const BRIQUES = [
   { icon: '🗂️', label: 'PMS' },
   { icon: '🔗', label: 'Channel Manager' },
+  { icon: '📈', label: 'Prix dynamiques' },
   { icon: '💬', label: 'WhatsApp Guest' },
   { icon: '🌐', label: 'Booking direct' },
   { icon: '✨', label: 'Upsell' },
   { icon: '🧹', label: 'Staff & Ménage' },
+  { icon: '📥', label: 'Inbox unifiée' },
+  { icon: '📊', label: 'Analytics' },
+  { icon: '🏠', label: 'Portail propriétaire' },
 ];
 
 const ETAPES = [
@@ -35,7 +39,6 @@ const ETAPES = [
 ];
 
 const REASSURANCE = [
-  { icon: '🛠️', text: 'Un logiciel, pas une conciergerie — vos biens et vos clients restent les vôtres' },
   { icon: '🇲🇦', text: 'Paiement marocain, facturation locale' },
   { icon: '🗣️', text: 'Support WhatsApp en français et en arabe' },
   { icon: '🔓', text: 'Sans engagement — vos données restent les vôtres' },
@@ -65,8 +68,8 @@ export function OffreConciergeriesClient() {
           </h1>
           <p style={{ fontSize: 19, lineHeight: 1.55, color: 'var(--text-2)', maxWidth: 640, margin: '0 auto' }}>
             Vous gérez des Airbnb au Maroc ? Sojori est <strong style={{ color: 'var(--text)' }}>le logiciel</strong>{' '}qui
-            orchestre toute votre activité — annonces, calendriers, voyageurs, ménage. On ne gère pas vos biens :
-            on vous donne l&apos;outil pour en gérer plus, avec la même équipe.
+            orchestre toute votre activité — annonces, calendriers, prix dynamiques, voyageurs, ménage.
+            Gérez plus de biens, gagnez plus par bien, avec la même équipe.
             <strong style={{ color: 'var(--text)' }}> Sans engagement.</strong>
           </p>
           <div style={{ display: 'flex', gap: 12, justifyContent: 'center', marginTop: 30, flexWrap: 'wrap' }}>
