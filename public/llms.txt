@@ -1,0 +1,33 @@
+# Sojori
+
+> Software d'orchestration pour la location courte durée — PMS, channel manager, conciergerie WhatsApp IA trilingue (FR/AR/EN), tarification dynamique et gestion des équipes terrain. Maroc (Marrakech, Casablanca) & France (Paris).
+> Orchestration software for short-term rentals: PMS, channel manager, trilingual WhatsApp AI concierge, dynamic pricing and field-team workflows. Morocco & France.
+
+Sojori est une plateforme B2B pour property managers, conciergeries et propriétaires :
+au-delà d'un PMS classique, elle orchestre tout le séjour — messages automatiques au bon
+moment (enregistrement, heure d'arrivée, instructions départ), assignation du staff
+(ménage, check-in, navette), relances et escalades — avec un assistant WhatsApp IA qui
+répond aux voyageurs en français, arabe et anglais.
+
+## Pages principales
+
+- [Accueil](https://business.sojori.com/fr): présentation de la plateforme d'orchestration
+- [PMS](https://business.sojori.com/fr/pms): gestion des réservations et des annonces
+- [Channel Manager](https://business.sojori.com/fr/channel-manager): synchronisation Airbnb, Booking.com et OTAs (via Rentals United)
+- [Conciergerie WhatsApp IA](https://business.sojori.com/fr/whatsapp): assistant voyageur trilingue, check-in digital, services (transport, courses, conciergerie)
+- [Conciergerie Marrakech](https://business.sojori.com/fr/conciergerie-marrakech): offre dédiée riads & villas à Marrakech
+- [Tarification dynamique](https://business.sojori.com/fr/dynamic-pricing): prix pilotés par règles et données marché
+- [Analytics](https://business.sojori.com/fr/analytics): revenus, occupation, performance par bien
+- [TeamFlow](https://business.sojori.com/fr/teamflow): planning et workflows des équipes terrain
+- [Portail propriétaire](https://business.sojori.com/fr/owner-portal): reporting transparent pour les propriétaires
+- [Tarifs](https://business.sojori.com/fr/pricing): offres et prix
+
+## Sites
+
+- [business.sojori.com](https://business.sojori.com/fr): site B2B (property managers & conciergeries)
+- [sojori.com](https://sojori.com): réservation voyageurs — riads, villas et appartements au Maroc
+
+## Contact
+
+- LinkedIn: https://www.linkedin.com/company/108488739
+- Instagram: https://instagram.com/sojoriapp

@@ -251,6 +251,14 @@ export default async function LocaleLayout({
       name: 'Sojori',
       url: 'https://sojori.com',
       logo: 'https://sojori.com/logo.png',
+      slogan:
+        locale === 'en'
+          ? 'Orchestration software for short-term rentals'
+          : "Software d'orchestration pour la location courte durée",
+      description:
+        locale === 'en'
+          ? 'Sojori orchestrates short-term rentals end to end: PMS, channel manager, trilingual WhatsApp AI concierge, dynamic pricing and field-team workflows — Morocco & France.'
+          : "Sojori orchestre la location courte durée de bout en bout : PMS, channel manager, conciergerie WhatsApp IA trilingue, tarification dynamique et gestion des équipes terrain — Maroc & France.",
       sameAs: [
         'https://www.linkedin.com/company/108488739',
         'https://instagram.com/sojoriapp',
