@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: '/',
       disallow: ['/api/', '/admin/'],
     },
-    sitemap: 'https://sojori.com/sitemap.xml',
+    sitemap: 'https://business.sojori.com/sitemap.xml',
   };
 }

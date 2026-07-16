@@ -25,7 +25,7 @@ const PATHS = [
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://sojori.com';
+  const baseUrl = 'https://business.sojori.com';
   const entries: MetadataRoute.Sitemap = [];
 
   for (const locale of routing.locales) {
