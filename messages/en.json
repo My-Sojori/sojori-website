@@ -2100,6 +2100,38 @@
       "title": "Concierge Marrakech | WhatsApp & guest services",
       "description": "Digital concierge for riads and villas: WhatsApp, check-in, local services."
     },
+    "gestionLocativeCasablanca": {
+      "title": "Property Management Casablanca | PMS apartments",
+      "description": "PMS and orchestration for short-term rentals in Casablanca: channel manager, WhatsApp, teams."
+    },
+    "conciergerieCasablanca": {
+      "title": "Concierge Casablanca | WhatsApp & guest services",
+      "description": "Digital concierge for apartments: WhatsApp, check-in, local services."
+    },
+    "gestionLocativeAgadir": {
+      "title": "Property Management Agadir | PMS beach residences",
+      "description": "PMS and orchestration for seasonal rentals in Agadir: channel manager, WhatsApp, teams."
+    },
+    "conciergerieAgadir": {
+      "title": "Concierge Agadir | WhatsApp & guest services",
+      "description": "Digital concierge for beach residences: WhatsApp, check-in, local services."
+    },
+    "gestionLocativeTanger": {
+      "title": "Property Management Tangier | PMS medina & modern Tangier",
+      "description": "PMS and orchestration for short-term rentals in Tangier: channel manager, WhatsApp, teams."
+    },
+    "conciergerieTanger": {
+      "title": "Concierge Tangier | WhatsApp & guest services",
+      "description": "Digital concierge for properties in Tangier: WhatsApp, check-in, local services."
+    },
+    "gestionLocativeRabat": {
+      "title": "Property Management Rabat | PMS capital apartments",
+      "description": "PMS and orchestration for short-term rentals in Rabat: channel manager, WhatsApp, teams."
+    },
+    "conciergerieRabat": {
+      "title": "Concierge Rabat | WhatsApp & guest services",
+      "description": "Digital concierge for apartments in Rabat: WhatsApp, check-in, local services."
+    },
     "dynamicPricing": {
       "title": "Dynamic pricing | Rules & calendar",
       "description": "Rates by seasonality, occupancy and channels — pushed to your OTAs."

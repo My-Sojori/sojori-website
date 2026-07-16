@@ -2100,6 +2100,38 @@
       "title": "Conciergerie Marrakech | WhatsApp & services invités",
       "description": "Conciergerie digitale pour riads et villas : WhatsApp, check-in, services locaux."
     },
+    "gestionLocativeCasablanca": {
+      "title": "Gestion locative Casablanca | PMS appartements",
+      "description": "PMS et orchestration pour la location courte durée à Casablanca : channel manager, WhatsApp, équipes."
+    },
+    "conciergerieCasablanca": {
+      "title": "Conciergerie Casablanca | WhatsApp & services invités",
+      "description": "Conciergerie digitale pour appartements : WhatsApp, check-in, services locaux."
+    },
+    "gestionLocativeAgadir": {
+      "title": "Gestion locative Agadir | PMS résidences balnéaires",
+      "description": "PMS et orchestration pour la location saisonnière à Agadir : channel manager, WhatsApp, équipes."
+    },
+    "conciergerieAgadir": {
+      "title": "Conciergerie Agadir | WhatsApp & services invités",
+      "description": "Conciergerie digitale pour résidences balnéaires : WhatsApp, check-in, services locaux."
+    },
+    "gestionLocativeTanger": {
+      "title": "Gestion locative Tanger | PMS médina & Tanger moderne",
+      "description": "PMS et orchestration pour la location courte durée à Tanger : channel manager, WhatsApp, équipes."
+    },
+    "conciergerieTanger": {
+      "title": "Conciergerie Tanger | WhatsApp & services invités",
+      "description": "Conciergerie digitale pour biens à Tanger : WhatsApp, check-in, services locaux."
+    },
+    "gestionLocativeRabat": {
+      "title": "Gestion locative Rabat | PMS appartements capitale",
+      "description": "PMS et orchestration pour la location courte durée à Rabat : channel manager, WhatsApp, équipes."
+    },
+    "conciergerieRabat": {
+      "title": "Conciergerie Rabat | WhatsApp & services invités",
+      "description": "Conciergerie digitale pour appartements à Rabat : WhatsApp, check-in, services locaux."
+    },
     "dynamicPricing": {
       "title": "Tarification dynamique | Règles & calendrier",
       "description": "Tarifs selon saisonnalité, occupation et canaux — poussée vers vos OTAs."

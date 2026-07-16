@@ -2011,6 +2011,38 @@
       "title": "Conserjería Marrakech | WhatsApp y servicios",
       "description": "Conserjería digital para riads y villas: WhatsApp, check-in, servicios locales."
     },
+    "gestionLocativeCasablanca": {
+      "title": "Gestión de alquileres Casablanca | PMS apartamentos",
+      "description": "PMS y orquestación para el alquiler de corta duración en Casablanca: channel manager, WhatsApp, equipos."
+    },
+    "conciergerieCasablanca": {
+      "title": "Conserjería Casablanca | WhatsApp y servicios",
+      "description": "Conserjería digital para apartamentos: WhatsApp, check-in, servicios locales."
+    },
+    "gestionLocativeAgadir": {
+      "title": "Gestión de alquileres Agadir | PMS residencias de playa",
+      "description": "PMS y orquestación para el alquiler estacional en Agadir: channel manager, WhatsApp, equipos."
+    },
+    "conciergerieAgadir": {
+      "title": "Conserjería Agadir | WhatsApp y servicios",
+      "description": "Conserjería digital para residencias de playa: WhatsApp, check-in, servicios locales."
+    },
+    "gestionLocativeTanger": {
+      "title": "Gestión de alquileres Tánger | PMS medina y Tánger moderno",
+      "description": "PMS y orquestación para el alquiler de corta duración en Tánger: channel manager, WhatsApp, equipos."
+    },
+    "conciergerieTanger": {
+      "title": "Conserjería Tánger | WhatsApp y servicios",
+      "description": "Conserjería digital para propiedades en Tánger: WhatsApp, check-in, servicios locales."
+    },
+    "gestionLocativeRabat": {
+      "title": "Gestión de alquileres Rabat | PMS apartamentos capital",
+      "description": "PMS y orquestación para el alquiler de corta duración en Rabat: channel manager, WhatsApp, equipos."
+    },
+    "conciergerieRabat": {
+      "title": "Conserjería Rabat | WhatsApp y servicios",
+      "description": "Conserjería digital para apartamentos en Rabat: WhatsApp, check-in, servicios locales."
+    },
     "dynamicPricing": {
       "title": "Precios dinámicos | Reglas y calendario",
       "description": "Tarifas según estacionalidad, ocupación y canales — envío a OTAs."

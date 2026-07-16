@@ -2011,6 +2011,38 @@
       "title": "Conciergerie Marraquexe | WhatsApp e serviços",
       "description": "Conciergerie digital para riads e villas: WhatsApp, check-in, serviços locais."
     },
+    "gestionLocativeCasablanca": {
+      "title": "Gestão de aluguel Casablanca | PMS apartamentos",
+      "description": "PMS e orquestração para aluguel de temporada em Casablanca: channel manager, WhatsApp, equipas."
+    },
+    "conciergerieCasablanca": {
+      "title": "Conciergerie Casablanca | WhatsApp e serviços",
+      "description": "Conciergerie digital para apartamentos: WhatsApp, check-in, serviços locais."
+    },
+    "gestionLocativeAgadir": {
+      "title": "Gestão de aluguel Agadir | PMS residências de praia",
+      "description": "PMS e orquestração para aluguel de temporada em Agadir: channel manager, WhatsApp, equipas."
+    },
+    "conciergerieAgadir": {
+      "title": "Conciergerie Agadir | WhatsApp e serviços",
+      "description": "Conciergerie digital para residências de praia: WhatsApp, check-in, serviços locais."
+    },
+    "gestionLocativeTanger": {
+      "title": "Gestão de aluguel Tânger | PMS medina e Tânger moderna",
+      "description": "PMS e orquestração para aluguel de temporada em Tânger: channel manager, WhatsApp, equipas."
+    },
+    "conciergerieTanger": {
+      "title": "Conciergerie Tânger | WhatsApp e serviços",
+      "description": "Conciergerie digital para propriedades em Tânger: WhatsApp, check-in, serviços locais."
+    },
+    "gestionLocativeRabat": {
+      "title": "Gestão de aluguel Rabat | PMS apartamentos capital",
+      "description": "PMS e orquestração para aluguel de temporada em Rabat: channel manager, WhatsApp, equipas."
+    },
+    "conciergerieRabat": {
+      "title": "Conciergerie Rabat | WhatsApp e serviços",
+      "description": "Conciergerie digital para apartamentos em Rabat: WhatsApp, check-in, serviços locais."
+    },
     "dynamicPricing": {
       "title": "Preços dinâmicos | Regras e calendário",
       "description": "Tarifas por sazonalidade, ocupação e canais — envio às OTAs."

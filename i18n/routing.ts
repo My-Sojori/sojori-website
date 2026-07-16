@@ -31,6 +31,14 @@ export const routing = defineRouting({
     '/dashboard-app': '/dashboard-app',
     '/conciergerie-marrakech': '/conciergerie-marrakech',
     '/gestion-locative-marrakech': '/gestion-locative-marrakech',
+    '/conciergerie-casablanca': '/conciergerie-casablanca',
+    '/gestion-locative-casablanca': '/gestion-locative-casablanca',
+    '/conciergerie-agadir': '/conciergerie-agadir',
+    '/gestion-locative-agadir': '/gestion-locative-agadir',
+    '/conciergerie-tanger': '/conciergerie-tanger',
+    '/gestion-locative-tanger': '/gestion-locative-tanger',
+    '/conciergerie-rabat': '/conciergerie-rabat',
+    '/gestion-locative-rabat': '/gestion-locative-rabat',
     '/terms': '/terms',
     '/privacy': '/privacy'
   }
