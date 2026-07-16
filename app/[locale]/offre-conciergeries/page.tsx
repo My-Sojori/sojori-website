@@ -2,9 +2,9 @@ import type { Metadata } from 'next';
 import { OffreConciergeriesClient } from './OffreConciergeriesClient';
 
 export const metadata: Metadata = {
-  title: 'Offre de lancement conciergeries — 2 mois gratuits | Sojori',
+  title: 'Logiciel de gestion Airbnb — 2 mois gratuits | Sojori',
   description:
-    "Offre réservée aux 15 premières conciergeries au Maroc : 2 mois gratuits et migration complète offerte. Un seul outil pour tout orchestrer — PMS, Channel Manager, WhatsApp, booking direct, upsell, staff.",
+    "Le logiciel des conciergeries et gestionnaires Airbnb au Maroc. Offre de lancement — 15 premières conciergeries : 2 mois gratuits et migration complète offerte. PMS, Channel Manager, WhatsApp, réservation directe, upsell, ménage.",
 };
 
 export default function OffreConciergeriesPage() {

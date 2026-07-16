@@ -25,7 +25,7 @@ const ETAPES = [
   {
     n: '2',
     title: 'Migration offerte — on s’occupe de tout',
-    text: 'Listings, calendriers, réservations, voyageurs : notre équipe transfère tout. Vous ne touchez à rien, zéro interruption d’activité.',
+    text: 'Annonces Airbnb & Booking, calendriers, réservations, voyageurs : notre équipe transfère tout. Vous ne touchez à rien, zéro interruption d’activité.',
   },
   {
     n: '3',
@@ -35,6 +35,7 @@ const ETAPES = [
 ];
 
 const REASSURANCE = [
+  { icon: '🛠️', text: 'Un logiciel, pas une conciergerie — vos biens et vos clients restent les vôtres' },
   { icon: '🇲🇦', text: 'Paiement marocain, facturation locale' },
   { icon: '🗣️', text: 'Support WhatsApp en français et en arabe' },
   { icon: '🔓', text: 'Sans engagement — vos données restent les vôtres' },
@@ -63,8 +64,9 @@ export function OffreConciergeriesClient() {
             <span className="gradient-text">Migration offerte.</span>
           </h1>
           <p style={{ fontSize: 19, lineHeight: 1.55, color: 'var(--text-2)', maxWidth: 640, margin: '0 auto' }}>
-            Vous gérez des locations courte durée au Maroc ? On transfère toute votre activité
-            sur Sojori — listings, calendriers, réservations — et vous jugez sur pièces pendant 2 mois.
+            Vous gérez des Airbnb au Maroc ? Sojori est <strong style={{ color: 'var(--text)' }}>le logiciel</strong>{' '}qui
+            orchestre toute votre activité — annonces, calendriers, voyageurs, ménage. On ne gère pas vos biens :
+            on vous donne l&apos;outil pour en gérer plus, avec la même équipe.
             <strong style={{ color: 'var(--text)' }}> Sans engagement.</strong>
           </p>
           <div style={{ display: 'flex', gap: 12, justifyContent: 'center', marginTop: 30, flexWrap: 'wrap' }}>
