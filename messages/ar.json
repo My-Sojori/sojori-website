@@ -61,6 +61,14 @@
       "about": "عن سجوري",
       "aboutDesc": "فريق Sojori"
     },
+    "cityMenu": {
+      "heading": "المدن",
+      "marrakech": "مراكش",
+      "casablanca": "الدار البيضاء",
+      "agadir": "أكادير",
+      "tanger": "طنجة",
+      "rabat": "الرباط"
+    },
     "footer": {
       "tagline": "منسق الإيجار قصير المدة.",
       "copyright": "© 2026 Sojori SAS · جميع الحقوق محفوظة"

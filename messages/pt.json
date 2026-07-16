@@ -61,6 +61,14 @@
       "about": "Sobre nós",
       "aboutDesc": "A equipa Sojori"
     },
+    "cityMenu": {
+      "heading": "Cidades",
+      "marrakech": "Marraquexe",
+      "casablanca": "Casablanca",
+      "agadir": "Agadir",
+      "tanger": "Tânger",
+      "rabat": "Rabat"
+    },
     "footer": {
       "tagline": "O orquestrador do alojamento local.",
       "copyright": "© 2026 Sojori SAS · Todos os direitos reservados"

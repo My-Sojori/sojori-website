@@ -61,6 +61,14 @@
       "about": "Nosotros",
       "aboutDesc": "El equipo Sojori"
     },
+    "cityMenu": {
+      "heading": "Ciudades",
+      "marrakech": "Marrakech",
+      "casablanca": "Casablanca",
+      "agadir": "Agadir",
+      "tanger": "Tánger",
+      "rabat": "Rabat"
+    },
     "footer": {
       "tagline": "El orquestador del alquiler vacacional.",
       "copyright": "© 2026 Sojori SAS · Todos los derechos reservados"

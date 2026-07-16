@@ -61,6 +61,14 @@
       "about": "À propos",
       "aboutDesc": "L'équipe Sojori"
     },
+    "cityMenu": {
+      "heading": "Villes",
+      "marrakech": "Marrakech",
+      "casablanca": "Casablanca",
+      "agadir": "Agadir",
+      "tanger": "Tanger",
+      "rabat": "Rabat"
+    },
     "footer": {
       "tagline": "L'orchestrateur de la location courte durée.",
       "copyright": "© 2026 Sojori SAS · Tous droits réservés"

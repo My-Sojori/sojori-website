@@ -481,10 +481,23 @@ export function PageHeader({ pageTitle }: { pageTitle?: string }) {
   );
 }
 
+function useCityMenu(): { l: string; h: AppPathname }[] {
+  const t = useTranslations('common.cityMenu');
+  return [
+    { l: t('marrakech'), h: '/gestion-locative-marrakech' },
+    { l: t('casablanca'), h: '/gestion-locative-casablanca' },
+    { l: t('agadir'), h: '/gestion-locative-agadir' },
+    { l: t('tanger'), h: '/gestion-locative-tanger' },
+    { l: t('rabat'), h: '/gestion-locative-rabat' },
+  ];
+}
+
 export function PageFooter() {
   const tLegal = useTranslations('legal');
   const tFooter = useTranslations('common.footer');
+  const tCityMenu = useTranslations('common.cityMenu');
   const PRODUCT_MENU = useProductMenu();
+  const CITY_MENU = useCityMenu();
   return (
     <footer
       className="sj-page-footer"
@@ -517,7 +530,7 @@ export function PageFooter() {
             className="sj-page-footer-nav-columns"
             style={{
               display: 'grid',
-              gridTemplateColumns: 'repeat(4, minmax(0, 1fr))',
+              gridTemplateColumns: 'repeat(5, minmax(0, 1fr))',
               gap: 40,
               alignContent: 'start',
             }}
@@ -554,6 +567,36 @@ export function PageFooter() {
                 </div>
               </div>
             ))}
+            <div className="sj-page-footer-nav-group">
+              <div className="sj-page-footer-nav-heading" style={{
+                fontSize: 11,
+                color: 'var(--primary)',
+                fontWeight: 700,
+                letterSpacing: 1.2,
+                textTransform: 'uppercase',
+                marginBottom: 14,
+                fontFamily: 'var(--font-mono)'
+              }}>
+                {tCityMenu('heading')}
+              </div>
+              <div className="sj-page-footer-nav-links" style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
+                {CITY_MENU.map(it => (
+                  <Link
+                    key={it.l}
+                    href={it.h}
+                    className="sj-page-footer-nav-link"
+                    style={{
+                      fontSize: 13,
+                      color: 'var(--text-2)',
+                      textDecoration: 'none',
+                      transition: 'color 0.2s'
+                    }}
+                  >
+                    {it.l}
+                  </Link>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
         <div
