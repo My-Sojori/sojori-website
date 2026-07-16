@@ -58,7 +58,6 @@ for label in ['briques', 'hero']:
     crea = post(f'{ACT}/adcreatives', {
         'name': f'Sojori offre — {label}',
         'object_story_spec': json.dumps(spec),
-        'degrees_of_freedom_spec': json.dumps({'creative_features_spec': {'standard_enhancements': {'enroll_status': 'OPT_OUT'}}}),
     })
     print(f'créa {label}:', crea)
     if 'error' in crea:
