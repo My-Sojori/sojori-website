@@ -73,7 +73,7 @@ export default function PrivacyPage() {
       <BackgroundEffects />
       <PageHeader />
 
-      <main style={{ padding: '100px 24px 40px' }}>
+      <main style={{ padding: '100px 24px 40px', position: 'relative', zIndex: 1 }}>
         <div className="legal-page">
           <div style={{ marginBottom: 12 }}>
             <Link href="/" style={{ fontSize: 13, color: 'var(--accent)', textDecoration: 'none', fontFamily: 'var(--font-mono)' }}>
