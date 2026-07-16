@@ -8,6 +8,7 @@ import { PageHeader, PageFooter } from '@/components/SharedComponents';
 import { Link } from '@/i18n/routing';
 import { PhoneDialSelect } from '@/components/demo/PhoneDialSelect';
 import { normalizeDemoBackendResponse, demoResponseErrorMessage } from '@/lib/demoApiResponse';
+import { trackDemoLead, trackDemoScheduled, trackDemoQualified } from '@/lib/analytics';
 
 /** API démo via routes Next.js → srv-crm (même origine que le site). */
 const DEMO_API = '/api/v1/demo';
@@ -289,6 +290,7 @@ function DemoPageContent() {
 
         setDemoRequestId(String(newId));
         setCalendarSkippedAlreadyBooked(false);
+        trackDemoLead(source);
         await waitRemainingMin();
         setStep(2);
       }
@@ -343,6 +345,7 @@ function DemoPageContent() {
       }
       setError('');
       setCalendarSkippedAlreadyBooked(false);
+      if (!rescheduledFromId) trackDemoScheduled(source);
       setRescheduledFromId(null);
       setStep(3);
     } catch (err: unknown) {
@@ -394,6 +397,7 @@ function DemoPageContent() {
         throw new Error(demoResponseErrorMessage(qualData) || t('errors.qualify'));
       }
 
+      trackDemoQualified(source);
       setStep(4);
     } catch (err: unknown) {
       setError(err instanceof Error ? err.message : 'Une erreur est survenue. Veuillez réessayer.');

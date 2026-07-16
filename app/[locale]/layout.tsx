@@ -4,6 +4,7 @@ import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import { routing } from '@/i18n/routing';
+import { AnalyticsBootstrap } from '@/components/AnalyticsBootstrap';
 import "../globals.css";
 
 const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
@@ -318,6 +319,7 @@ export default async function LocaleLayout({
       {/* Aurora Soft — light theme. NE PAS mettre bg-bg-0 ni text-white ici. */}
       <body className="antialiased">
         <NextIntlClientProvider messages={messages}>
+          <AnalyticsBootstrap />
           {children}
         </NextIntlClientProvider>
       </body>
