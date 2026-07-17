@@ -10,6 +10,7 @@
     "start": "next start",
     "lint": "eslint",
     "gen:dial-codes": "node scripts/gen-phone-dial-data.mjs",
+    "seo:indexnow": "node scripts/indexnow-submit.mjs",
     "i18n:merge-seo-pages": "node scripts/merge-seo-pages.mjs",
     "i18n:merge-pms-page": "node scripts/merge-pms-page.mjs"
   },
