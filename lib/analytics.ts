@@ -50,6 +50,17 @@ export function trackCtaClick(ctaLabel: string, location: string) {
 }
 
 /**
+ * Clic CTA d'une landing publicitaire : c'est une INTENTION, pas encore un lead.
+ * Pixel → InitiateCheckout (le Lead ne part qu'à la soumission du formulaire /demo,
+ * sinon un même prospect compte double et l'optimisation Meta apprendrait sur des
+ * cliqueurs de bouton). GA4 → rien ici : la délégation globale capte déjà le clic
+ * (select_content) car ces CTA pointent vers /demo.
+ */
+export function trackOfferCta(source: string) {
+  fbqEvent('InitiateCheckout', { source });
+}
+
+/**
  * Délégation d'événements globale : capture le clic sur TOUT lien menant à /demo, qu'il
  * ait ou non un ?source=... — pas besoin d'instrumenter chaque CTA un par un dans chaque
  * composant (Hero, FinalCTA, SharedComponents nav/footer/mobile menu…), donc un futur CTA
