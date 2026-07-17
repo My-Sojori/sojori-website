@@ -3,6 +3,7 @@
 import { Link } from '@/i18n/routing';
 import { BackgroundEffects } from '@/components/BackgroundEffects';
 import { PageHeader, PageFooter } from '@/components/SharedComponents';
+import { trackDemoLead } from '@/lib/analytics';
 
 /* Landing dédiée aux campagnes d'acquisition conciergeries (ads Meta).
    Contenu FR volontairement en dur : la cible est le Maroc francophone. */
@@ -45,8 +46,7 @@ const REASSURANCE = [
 ];
 
 function trackLead() {
-  const w = window as unknown as { fbq?: (...args: unknown[]) => void };
-  if (w.fbq) w.fbq('track', 'Lead');
+  trackDemoLead('offre-conciergeries');
 }
 
 export function OffreConciergeriesClient() {
