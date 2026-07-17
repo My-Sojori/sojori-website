@@ -78,11 +78,19 @@ def post_json(url, payload, token):
 
 
 def ga4_traffic(prop, token, days):
-    """Sessions + engagement du trafic Meta paid, par jour."""
+    """Sessions + engagement du trafic paid Meta/Instagram, par jour.
+
+    endDate=today (pas yesterday) : la campagne tourne en continu et le
+    Gestionnaire Meta compte en America/Los_Angeles, donc la journee en cours
+    porte l'essentiel du trafic — l'exclure renvoyait 0 session.
+
+    sessionSource capte 'meta' ET 'ig' : Meta reecrit l'utm_source en 'ig'
+    sur les placements Instagram, donc filtrer sur 'meta' seul perd ce trafic.
+    """
     data = post_json(
         f"https://analyticsdata.googleapis.com/v1beta/properties/{prop}:runReport",
         {
-            "dateRanges": [{"startDate": f"{days}daysAgo", "endDate": "yesterday"}],
+            "dateRanges": [{"startDate": f"{days}daysAgo", "endDate": "today"}],
             "dimensions": [{"name": "date"}, {"name": "sessionSource"}, {"name": "sessionMedium"}],
             "metrics": [
                 {"name": "sessions"},
@@ -93,7 +101,12 @@ def ga4_traffic(prop, token, days):
             "dimensionFilter": {
                 "andGroup": {
                     "expressions": [
-                        {"filter": {"fieldName": "sessionSource", "stringFilter": {"value": "meta"}}},
+                        {
+                            "filter": {
+                                "fieldName": "sessionSource",
+                                "inListFilter": {"values": ["meta", "ig"]},
+                            }
+                        },
                         {"filter": {"fieldName": "sessionMedium", "stringFilter": {"value": "paid"}}},
                     ]
                 }
@@ -122,13 +135,18 @@ def ga4_leads(prop, token, days):
     data = post_json(
         f"https://analyticsdata.googleapis.com/v1beta/properties/{prop}:runReport",
         {
-            "dateRanges": [{"startDate": f"{days}daysAgo", "endDate": "yesterday"}],
+            "dateRanges": [{"startDate": f"{days}daysAgo", "endDate": "today"}],
             "dimensions": [{"name": "date"}, {"name": "eventName"}],
             "metrics": [{"name": "eventCount"}],
             "dimensionFilter": {
                 "andGroup": {
                     "expressions": [
-                        {"filter": {"fieldName": "sessionSource", "stringFilter": {"value": "meta"}}},
+                        {
+                            "filter": {
+                                "fieldName": "sessionSource",
+                                "inListFilter": {"values": ["meta", "ig"]},
+                            }
+                        },
                         {
                             "filter": {
                                 "fieldName": "eventName",
