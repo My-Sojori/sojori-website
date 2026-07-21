@@ -78,9 +78,9 @@ export function OffreConciergeriesClient() {
               className="btn btn-primary btn-lg"
               onClick={trackLead}
             >
-              Réserver ma démo (15 min)
+              Réserver
             </Link>
-            <Link href="/pricing" className="btn btn-ghost btn-lg">Voir les tarifs</Link>
+            <Link href="/" className="btn btn-ghost btn-lg">Découvrir</Link>
           </div>
           <div className="mono" style={{ marginTop: 16, fontSize: 11, color: 'var(--text-3)', letterSpacing: 1.1 }}>
             DÉMO 15 MIN · MIGRATION INCLUSE · 2 MOIS OFFERTS
