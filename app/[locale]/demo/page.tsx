@@ -461,12 +461,12 @@ function DemoPageContent() {
                     {t('step1.subtitle')}
                   </p>
                   {source === 'offre-conciergeries-express' && (
-                    <Link
-                      href={{ pathname: '/offre-conciergeries', query: { source: 'demo-express-discover' } }}
+                    <a
+                      href={`/${locale}/offre-conciergeries?source=demo-express-discover`}
                       style={{ display: 'inline-block', marginTop: 14, fontSize: 14, color: 'var(--text-3)', textDecoration: 'underline' }}
                     >
                       Découvrir Sojori avant de réserver →
-                    </Link>
+                    </a>
                   )}
                 </div>
 
