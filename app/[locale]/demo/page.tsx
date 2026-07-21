@@ -460,6 +460,14 @@ function DemoPageContent() {
                   <p style={{ fontSize: 18, lineHeight: 1.6, color: 'var(--text-2)', maxWidth: 600, margin: '0 auto' }}>
                     {t('step1.subtitle')}
                   </p>
+                  {source === 'offre-conciergeries-express' && (
+                    <Link
+                      href={{ pathname: '/offre-conciergeries', query: { source: 'demo-express-discover' } }}
+                      style={{ display: 'inline-block', marginTop: 14, fontSize: 14, color: 'var(--text-3)', textDecoration: 'underline' }}
+                    >
+                      Découvrir Sojori avant de réserver →
+                    </Link>
+                  )}
                 </div>
 
                 <div className="glass demo-glass-panel" style={{ padding: 40, borderRadius: 16, position: 'relative' }}>
