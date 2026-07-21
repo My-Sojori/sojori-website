@@ -77,8 +77,8 @@ function DemoPageContent() {
 
   const [formData, setFormData] = useState({
     // Step 1
-    countryCode: '+33',
-    dialCountryIso: 'FR',
+    countryCode: '+212',
+    dialCountryIso: 'MA',
     email: '',
     phone: '',
     numberOfProperties: '',
