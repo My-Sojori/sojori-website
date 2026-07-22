@@ -468,6 +468,14 @@ function DemoPageContent() {
                       Découvrir Sojori avant de réserver →
                     </a>
                   )}
+                  {source === 'global-launch-express' && (
+                    <a
+                      href={`/${locale}/global-launch?source=demo-express-discover`}
+                      style={{ display: 'inline-block', marginTop: 14, fontSize: 14, color: 'var(--text-3)', textDecoration: 'underline' }}
+                    >
+                      Discover Sojori before booking →
+                    </a>
+                  )}
                 </div>
 
                 <div className="glass demo-glass-panel" style={{ padding: 40, borderRadius: 16, position: 'relative' }}>
