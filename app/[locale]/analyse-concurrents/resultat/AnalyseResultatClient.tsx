@@ -207,7 +207,7 @@ function LoadingView() {
       </div>
       <h2 style={{ marginBottom: 10 }}>On analyse votre annonce…</h2>
       <p style={{ color: 'var(--text-2)', fontSize: 15 }}>
-        Comparables AirROI + bilan IA — quelques secondes.
+        Analyse de vos concurrents en cours — quelques secondes.
       </p>
       <div
         style={{
@@ -642,7 +642,7 @@ function CompsTable({ competitors }: { competitors: CompetitorCard[] }) {
     <div style={{ marginTop: 8 }}>
       <h2 style={{ fontSize: 18, marginBottom: 6 }}>Vos {competitors.length} concurrents directs</h2>
       <p style={{ fontSize: 13.5, color: 'var(--text-3)', marginBottom: 14 }}>
-        Tableau simple · tri colonnes · snapshot AirROI
+        Triez par prix, occupation ou revenu pour situer votre bien.
       </p>
       <div className="glass" style={{ borderRadius: 14, overflowX: 'auto' }}>
         <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 12.5, minWidth: 720 }}>

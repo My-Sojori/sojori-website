@@ -112,7 +112,7 @@ export function LabClient({ previewSecret }: { previewSecret: string }) {
         </div>
         <h1 style={{ marginBottom: 10, fontSize: 28 }}>Tester une annonce</h1>
         <p style={{ color: 'var(--text-2)', fontSize: 14, marginBottom: 22, lineHeight: 1.45 }}>
-          Colle un lien Airbnb → analyse AirROI + bilan Sonnet tout de suite (coût API réel).
+          Colle un lien Airbnb → analyse complète immédiate (coût API réel).
         </p>
         <form onSubmit={run} className="glass" style={{ padding: 22, borderRadius: 14 }}>
           {error && (
