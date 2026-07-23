@@ -108,9 +108,20 @@ export function AnalyseConcurrentsClient() {
                   style={{
                     width: '100%', padding: '12px 14px', borderRadius: 10,
                     border: '1px solid var(--glass-border)', background: 'var(--bg-1)',
-                    fontSize: 14.5, marginBottom: 16, boxSizing: 'border-box',
+                    fontSize: 14.5, marginBottom: 8, boxSizing: 'border-box',
                   }}
                 />
+                <div style={{ fontSize: 12, color: 'var(--text-3)', lineHeight: 1.5, marginBottom: 16, background: 'var(--bg-2)', border: '1px solid var(--glass-border)', borderRadius: 10, padding: '10px 12px' }}>
+                  <strong style={{ color: 'var(--text-2)' }}>Comment trouver le bon lien&nbsp;?</strong> Ouvrez votre annonce sur Airbnb,
+                  copiez l'adresse de la page&nbsp;: elle doit contenir <code style={{ fontFamily: 'monospace', color: 'var(--text-2)' }}>/rooms/</code> suivi
+                  d'un numéro (ex.&nbsp;<code style={{ fontFamily: 'monospace' }}>airbnb.com/rooms/12345678</code>). Les liens raccourcis
+                  (<code style={{ fontFamily: 'monospace' }}>abnb.me/…</code>) ou de recherche ne fonctionnent pas.
+                  <br />
+                  <span style={{ display: 'inline-block', marginTop: 6 }}>
+                    ℹ️ Certaines annonces récentes ne sont pas encore référencées dans notre base d'analyse&nbsp;: si c'est le cas,
+                    essayez simplement une autre annonce.
+                  </span>
+                </div>
                 <label style={{ display: 'block', fontSize: 13, fontWeight: 600, marginBottom: 6 }}>
                   Votre e-mail
                 </label>
