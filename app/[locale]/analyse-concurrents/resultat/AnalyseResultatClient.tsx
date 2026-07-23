@@ -199,27 +199,87 @@ export function AnalyseResultatClient({
   );
 }
 
+const LOADING_STEPS = [
+  { icon: '🏠', label: 'Lecture de votre annonce' },
+  { icon: '🗺️', label: 'Recherche des concurrents autour de vous' },
+  { icon: '📊', label: 'Calcul du prix de marché' },
+  { icon: '✨', label: 'Préparation de votre bilan personnalisé' },
+];
+
 function LoadingView() {
+  const [step, setStep] = useState(0);
+  useEffect(() => {
+    // avance d'une étape toutes ~2,2s ; se fige sur la dernière (le vrai résultat
+    // arrive quand l'API répond, la barre ne prétend jamais être "finie" avant).
+    const id = setInterval(() => {
+      setStep((s) => (s < LOADING_STEPS.length - 1 ? s + 1 : s));
+    }, 2200);
+    return () => clearInterval(id);
+  }, []);
+
   return (
-    <div style={{ textAlign: 'center', padding: '60px 20px' }}>
+    <div style={{ textAlign: 'center', padding: '60px 20px', maxWidth: 440, margin: '0 auto' }}>
       <div className="mono" style={{ fontSize: 13, color: 'var(--text-3)', letterSpacing: 1.2, marginBottom: 14 }}>
         ANALYSE EN COURS
       </div>
-      <h2 style={{ marginBottom: 10 }}>On analyse votre annonce…</h2>
-      <p style={{ color: 'var(--text-2)', fontSize: 15 }}>
-        Analyse de vos concurrents en cours — quelques secondes.
+      <h2 style={{ marginBottom: 6 }}>On analyse votre annonce…</h2>
+      <p style={{ color: 'var(--text-2)', fontSize: 14, marginBottom: 30 }}>
+        Cela prend quelques secondes, ne fermez pas cette page.
       </p>
-      <div
-        style={{
-          margin: '30px auto 0',
-          width: 44,
-          height: 44,
-          borderRadius: '50%',
-          border: '3px solid var(--glass-border)',
-          borderTopColor: '#e6b022',
-          animation: 'spin-slow 0.9s linear infinite',
-        }}
-      />
+
+      {/* barre de progression */}
+      <div style={{ height: 6, borderRadius: 999, background: 'var(--glass-border)', overflow: 'hidden', marginBottom: 28 }}>
+        <div
+          style={{
+            height: '100%',
+            width: `${((step + 1) / LOADING_STEPS.length) * 100}%`,
+            background: 'linear-gradient(90deg, #f4cf5e, #e6b022)',
+            borderRadius: 999,
+            transition: 'width 0.6s cubic-bezier(0.4,0,0.2,1)',
+          }}
+        />
+      </div>
+
+      {/* étapes */}
+      <div style={{ textAlign: 'left', display: 'flex', flexDirection: 'column', gap: 14 }}>
+        {LOADING_STEPS.map((s, i) => {
+          const done = i < step;
+          const active = i === step;
+          return (
+            <div
+              key={i}
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: 12,
+                opacity: done || active ? 1 : 0.4,
+                transition: 'opacity 0.4s ease',
+              }}
+            >
+              <span
+                style={{
+                  width: 30,
+                  height: 30,
+                  borderRadius: '50%',
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  fontSize: 15,
+                  flexShrink: 0,
+                  background: done ? 'rgba(230,176,34,0.18)' : active ? 'rgba(230,176,34,0.12)' : 'var(--glass-border)',
+                  border: active ? '1px solid #e6b022' : '1px solid transparent',
+                }}
+              >
+                {done ? '✓' : s.icon}
+              </span>
+              <span style={{ fontSize: 14.5, fontWeight: active ? 600 : 400, color: active ? 'var(--text)' : 'var(--text-2)' }}>
+                {s.label}
+                {active && <span className="mono" style={{ marginLeft: 6, color: '#e6b022' }}>…</span>}
+              </span>
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 }
