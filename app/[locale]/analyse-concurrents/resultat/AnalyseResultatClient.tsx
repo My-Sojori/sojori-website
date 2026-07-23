@@ -347,7 +347,7 @@ function ReadyView({ result }: { result: AnalysisResult }) {
           Sojori ajuste vos prix chaque jour en fonction de vos concurrents. Découvrez-le en 15 minutes.
         </p>
         <Link
-          href="/demo?source=analyse-concurrents-resultat"
+          href={{ pathname: '/demo', query: { source: 'analyse-concurrents-resultat' } }}
           className="btn btn-primary btn-lg"
           prefetch={false}
         >
