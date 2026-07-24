@@ -21,6 +21,7 @@ export type SjrListing = {
   lng: number | null;
   amenities?: string[];
 };
+export type SjrMonth = { month: string; revenueMad: number | null; adrMad: number | null; occupancy: number | null };
 export type SjrData = {
   yourListing: SjrListing;
   estimatedMarketPriceMad: number | null;
@@ -28,6 +29,10 @@ export type SjrData = {
   competitorsCount: number;
   bestCompetitor: SjrListing | null;
   competitors: SjrListing[];
+  /** Historique mensuel (12 mois) — votre bien */
+  yourMonthly: SjrMonth[];
+  /** Historique mensuel (12 mois) — meilleur concurrent */
+  bestMonthly: SjrMonth[];
   amenitiesDiff: { shared: string[]; onlyYours: string[]; onlyTheirs: string[] } | null;
   bilan: {
     headline: string;

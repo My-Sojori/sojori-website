@@ -22,6 +22,7 @@ export function SjrReadyView({ data }: { data: SjrData }) {
         <Hero data={data} />
         <KpiRow data={data} />
         {best && <FaceOff you={you} best={best} manque={manque} />}
+        <RevenueChart data={data} />
         <RadarMap data={data} />
         <CompsTable data={data} />
         <Amenities data={data} />
@@ -109,6 +110,99 @@ function FaceOff({ you, best, manque }: { you: SjrListing; best: SjrListing; man
           <div style={{ fontSize: 'clamp(15px,4vw,19px)', fontWeight: 600, color: '#4A360E' }}>MAD / an de manque à gagner</div>
         </div>
       )}
+    </div>
+  );
+}
+
+/* ---------- GRAPHIQUE REVENU 12 MOIS (vous vs concurrent vs estimation) ---------- */
+const MONTHS_FR = ['jan', 'fév', 'mar', 'avr', 'mai', 'juin', 'juil', 'aoû', 'sep', 'oct', 'nov', 'déc'];
+function monthLabel(ym: string): string {
+  const m = /^\d{4}-(\d{2})$/.exec(ym);
+  if (!m) return ym;
+  const idx = parseInt(m[1], 10) - 1;
+  return MONTHS_FR[idx] ?? ym;
+}
+function RevenueChart({ data }: { data: SjrData }) {
+  const [ref, seen] = useInView(0.2);
+  const [hover, setHover] = useState<number | null>(null);
+  const you = data.yourMonthly ?? [];
+  const best = data.bestMonthly ?? [];
+  if (you.length < 3) return null;
+
+  // aligner sur les mois de "vous" (source de vérité), rapprocher le concurrent par mois
+  const bestByMonth = new Map(best.map((m) => [m.month, m]));
+  const series = you.map((m) => ({
+    month: m.month,
+    label: monthLabel(m.month),
+    you: m.revenueMad ?? 0,
+    best: bestByMonth.get(m.month)?.revenueMad ?? 0,
+  }));
+  const maxVal = Math.max(1, ...series.map((s) => Math.max(s.you, s.best)));
+  // estimation marché = moyenne mensuelle du revenu marché estimé sur 12 mois
+  const estMonthly = data.estimatedMarketRevenueTtmMad != null ? data.estimatedMarketRevenueTtmMad / 12 : null;
+
+  const W = 680, H = 300, padL = 8, padR = 8, padT = 16, padB = 26;
+  const plotW = W - padL - padR, plotH = H - padT - padB;
+  const n = series.length;
+  const groupW = plotW / n;
+  const barW = Math.max(5, groupW * 0.32);
+  const yOf = (v: number) => padT + plotH * (1 - v / maxVal);
+  const estY = estMonthly != null ? yOf(estMonthly) : null;
+
+  return (
+    <div ref={ref} style={{ marginBottom: 34 }}>
+      <div className="eyebrow reveal" style={{ marginBottom: 12 }}>Sur 12 mois</div>
+      <h2 className="reveal" style={{ fontSize: 'clamp(24px,6.5vw,32px)', marginBottom: 6 }}>Votre revenu, mois par mois</h2>
+      <p className="reveal" style={{ fontSize: 14, color: 'var(--ink3)', marginBottom: 18, lineHeight: 1.5 }}>
+        Votre annonce vs le meilleur concurrent · la ligne = revenu de marché estimé.
+      </p>
+      <div className="glass reveal" style={{ borderRadius: 22, padding: '18px 14px 10px' }}>
+        {/* légende */}
+        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px 18px', alignItems: 'center', fontSize: 12.5, color: 'var(--ink2)', marginBottom: 12, paddingLeft: 4 }}>
+          <span style={{ display: 'inline-flex', alignItems: 'center', gap: 7 }}><span style={{ width: 12, height: 12, borderRadius: 4, background: 'rgba(28,23,16,.22)' }} />Vous</span>
+          <span style={{ display: 'inline-flex', alignItems: 'center', gap: 7 }}><span style={{ width: 12, height: 12, borderRadius: 4, background: 'var(--gold)' }} />Meilleur concurrent</span>
+          {estMonthly != null && <span style={{ display: 'inline-flex', alignItems: 'center', gap: 7 }}><span style={{ width: 16, height: 0, borderTop: '2px dashed var(--goldDeep)' }} />Marché estimé</span>}
+        </div>
+        <svg viewBox={`0 0 ${W} ${H}`} width="100%" style={{ display: 'block', overflow: 'visible' }}>
+          {/* ligne estimation marché */}
+          {estY != null && (
+            <>
+              <line x1={padL} y1={estY} x2={W - padR} y2={estY} stroke="var(--goldDeep)" strokeWidth="1.5" strokeDasharray="5 5" opacity={seen ? 0.8 : 0} style={{ transition: 'opacity .8s .3s' }} />
+              <text x={W - padR} y={estY - 6} textAnchor="end" fontSize="11" fontFamily="var(--mono)" fill="var(--goldDeep)" opacity={seen ? 1 : 0} style={{ transition: 'opacity .8s .3s' }}>{fmtMad(estMonthly)}</text>
+            </>
+          )}
+          {series.map((s, i) => {
+            const gx = padL + i * groupW + groupW / 2;
+            const yH = plotH * (s.you / maxVal), bH = plotH * (s.best / maxVal);
+            const isH = hover === i;
+            return (
+              <g key={s.month} onMouseEnter={() => setHover(i)} onMouseLeave={() => setHover(null)} style={{ cursor: 'pointer' }}>
+                {isH && <rect x={padL + i * groupW} y={padT} width={groupW} height={plotH} fill="rgba(230,176,34,.08)" rx="6" />}
+                {/* vous */}
+                <rect x={gx - barW - 2} y={padT + plotH - (seen ? yH : 0)} width={barW} height={seen ? yH : 0} rx="3"
+                  fill="rgba(28,23,16,.24)" style={{ transition: `y .7s cubic-bezier(.2,.7,.2,1) ${i * 35}ms, height .7s cubic-bezier(.2,.7,.2,1) ${i * 35}ms` }} />
+                {/* concurrent */}
+                <rect x={gx + 2} y={padT + plotH - (seen ? bH : 0)} width={barW} height={seen ? bH : 0} rx="3"
+                  fill="url(#barGold)" style={{ transition: `y .7s cubic-bezier(.2,.7,.2,1) ${i * 35 + 60}ms, height .7s cubic-bezier(.2,.7,.2,1) ${i * 35 + 60}ms` }} />
+                <text x={gx} y={H - 8} textAnchor="middle" fontSize="11" fontFamily="var(--mono)" fill="var(--ink3)">{s.label}</text>
+              </g>
+            );
+          })}
+          <defs><linearGradient id="barGold" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stopColor="#F4CF5E" /><stop offset="100%" stopColor="#B8881A" /></linearGradient></defs>
+        </svg>
+        {/* tooltip */}
+        <div style={{ minHeight: 40, padding: '8px 6px 2px', fontSize: 13, color: 'var(--ink2)' }}>
+          {hover != null ? (
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '4px 16px' }}>
+              <b style={{ color: 'var(--ink)', textTransform: 'capitalize' }}>{series[hover].label}</b>
+              <span>Vous : <b>{fmtMad(series[hover].you)}</b></span>
+              <span>Concurrent : <b style={{ color: 'var(--goldDeep)' }}>{fmtMad(series[hover].best)}</b></span>
+            </div>
+          ) : (
+            <span className="mono" style={{ color: 'var(--ink3)', fontSize: 11.5 }}>Survolez un mois pour le détail.</span>
+          )}
+        </div>
+      </div>
     </div>
   );
 }

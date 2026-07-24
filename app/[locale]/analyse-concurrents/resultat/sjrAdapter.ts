@@ -1,6 +1,17 @@
 /* Adapte le résultat API (AnalysisResult) au format attendu par les vues (SjrData). */
 import type { AnalysisResult } from './AnalyseResultatClient';
-import type { SjrData, SjrListing } from './sjrShared';
+import type { SjrData, SjrListing, SjrMonth } from './sjrShared';
+
+type AnyMonthly = { month?: string; revenueMad?: number | null; adrMad?: number | null; occupancy?: number | null };
+function mapMonthly(arr: AnyMonthly[] | null | undefined): SjrMonth[] {
+  if (!Array.isArray(arr)) return [];
+  return arr.map((m) => ({
+    month: String(m.month ?? ''),
+    revenueMad: m.revenueMad ?? null,
+    adrMad: m.adrMad ?? null,
+    occupancy: m.occupancy ?? null,
+  }));
+}
 
 type AnyListing = {
   airbnbListingId?: string | null;
@@ -52,6 +63,8 @@ export function toSjrData(r: AnalysisResult): SjrData {
     competitorsCount: r.competitorsCount ?? competitors.length,
     bestCompetitor: r.bestCompetitor ? mapListing(r.bestCompetitor as AnyListing) : null,
     competitors,
+    yourMonthly: mapMonthly(r.yourPriceSeries?.monthlyHistory as AnyMonthly[] | undefined),
+    bestMonthly: mapMonthly(r.bestCompetitorPriceSeries?.monthlyHistory as AnyMonthly[] | undefined),
     amenitiesDiff: r.amenitiesDiff ?? null,
     bilan: r.bilan
       ? {
