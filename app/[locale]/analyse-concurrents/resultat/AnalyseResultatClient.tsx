@@ -307,9 +307,14 @@ function ErrorView({ message }: { message: string }) {
       <div style={{ fontSize: 40, marginBottom: 16 }}>⚠️</div>
       <h2 style={{ marginBottom: 10 }}>Impossible de charger l&apos;analyse</h2>
       <p style={{ color: 'var(--text-2)', fontSize: 15, marginBottom: 26 }}>{message}</p>
-      <a href={`/${locale}/analyse-concurrents`} className="btn btn-primary btn-lg">
-        Réessayer
-      </a>
+      <div style={{ display: 'flex', gap: 12, justifyContent: 'center', flexWrap: 'wrap' }}>
+        <a href={`/${locale}/analyse-concurrents`} className="btn btn-primary btn-lg">
+          Réessayer
+        </a>
+        <a href={`/${locale}/analyse-concurrents/exemple`} className="btn btn-lg" style={{ border: '1px solid var(--glass-border)' }}>
+          Voir un exemple d&apos;analyse
+        </a>
+      </div>
     </div>
   );
 }
@@ -453,7 +458,7 @@ function BilanBlock({ bilan }: { bilan: Bilan }) {
   return (
     <div className="glass" style={{ padding: 24, borderRadius: 16, marginBottom: 28 }}>
       <div className="uppercase-sm" style={{ color: 'var(--text-3)', marginBottom: 14 }}>
-        Bilan IA {bilan.model ? `· ${bilan.model}` : ''}
+        Bilan Sojori
       </div>
       <div
         style={{

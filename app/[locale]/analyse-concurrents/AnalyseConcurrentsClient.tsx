@@ -119,7 +119,10 @@ export function AnalyseConcurrentsClient() {
                   <br />
                   <span style={{ display: 'inline-block', marginTop: 6 }}>
                     ℹ️ Certaines annonces récentes ne sont pas encore référencées dans notre base d'analyse&nbsp;: si c'est le cas,
-                    essayez simplement une autre annonce.
+                    essayez simplement une autre annonce, ou{' '}
+                    <a href="analyse-concurrents/exemple" style={{ color: 'var(--text-2)', textDecoration: 'underline' }}>
+                      voir un exemple d'analyse
+                    </a>.
                   </span>
                 </div>
                 <label style={{ display: 'block', fontSize: 13, fontWeight: 600, marginBottom: 6 }}>
