@@ -98,6 +98,11 @@ export function AnalyseResultatClient({
     if (initialResult || initialState === 'expired' || initialState === 'error') return;
     if (!token) return;
     let cancelled = false;
+    // On garde l'écran de chargement animé au moins MIN_LOADING_MS pour que le
+    // client voie l'analyse "travailler" (les 5 étapes), même si le résultat
+    // arrive plus vite (cache). Les erreurs s'affichent immédiatement.
+    const MIN_LOADING_MS = 8000;
+    const startedAt = Date.now();
     (async () => {
       try {
         const res = await fetch(`${API}/result/${encodeURIComponent(token)}`);
@@ -112,6 +117,9 @@ export function AnalyseResultatClient({
           setError(data.error || "Impossible de charger l'analyse.");
           return;
         }
+        const wait = Math.max(0, MIN_LOADING_MS - (Date.now() - startedAt));
+        await new Promise((r) => setTimeout(r, wait));
+        if (cancelled) return;
         setResult(data.data as AnalysisResult);
         setState('ready');
       } catch (e) {

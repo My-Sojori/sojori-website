@@ -1,8 +1,5 @@
 import type { Metadata } from 'next';
-import { AnalyseResultatClient, type AnalysisResult } from './AnalyseResultatClient';
-import { getDemoServiceBaseUrl } from '@/lib/getDemoServiceBaseUrl';
-import { demoProxyFetch } from '@/lib/demoProxyFetch';
-import { normalizeDemoBackendResponse } from '@/lib/demoApiResponse';
+import { AnalyseResultatClient } from './AnalyseResultatClient';
 
 export const metadata: Metadata = {
   title: 'Votre analyse concurrentielle | Sojori',
@@ -24,46 +21,6 @@ function pickToken(raw: string | string[] | undefined): string {
   return String(raw ?? '').trim();
 }
 
-async function loadResult(token: string): Promise<{
-  result: AnalysisResult | null;
-  loadState: 'ready' | 'expired' | 'error' | 'loading';
-  error: string;
-}> {
-  if (!token) {
-    return { result: null, loadState: 'error', error: 'Lien invalide — token manquant.' };
-  }
-  try {
-    const base = getDemoServiceBaseUrl();
-    const res = await demoProxyFetch(
-      `${base}/api/v1/competitor-analysis/result/${encodeURIComponent(token)}`,
-      { method: 'GET', signal: AbortSignal.timeout(180_000) },
-    );
-    const raw = await res.json();
-    const data = normalizeDemoBackendResponse(raw) as {
-      success?: boolean;
-      error?: string;
-      data?: AnalysisResult;
-    };
-    if (res.status === 410) {
-      return { result: null, loadState: 'expired', error: '' };
-    }
-    if (!res.ok || data.success !== true || !data.data) {
-      return {
-        result: null,
-        loadState: 'error',
-        error: data.error || "Impossible de charger l'analyse.",
-      };
-    }
-    return { result: data.data, loadState: 'ready', error: '' };
-  } catch (e) {
-    return {
-      result: null,
-      loadState: 'error',
-      error: e instanceof Error ? e.message : 'Connexion impossible.',
-    };
-  }
-}
-
 export default async function AnalyseResultatPage({ searchParams }: PageProps) {
   const sp = await searchParams;
   let token = pickToken(sp.token);
@@ -73,14 +30,13 @@ export default async function AnalyseResultatPage({ searchParams }: PageProps) {
     if (weirdKey) token = weirdKey.slice('token='.length).trim();
   }
 
-  const loaded = await loadResult(token);
-
-  return (
-    <AnalyseResultatClient
-      initialToken={token}
-      initialResult={loaded.result}
-      initialState={loaded.loadState}
-      initialError={loaded.error}
-    />
-  );
+  // On NE pré-charge PAS le résultat côté serveur : le client fait le fetch et
+  // affiche l'écran de chargement animé (les 5 étapes) pendant l'analyse. Sans
+  // token, on rend directement l'état d'erreur.
+  if (!token) {
+    return (
+      <AnalyseResultatClient initialToken="" initialState="error" initialError="Lien invalide — token manquant." />
+    );
+  }
+  return <AnalyseResultatClient initialToken={token} initialState="loading" />;
 }

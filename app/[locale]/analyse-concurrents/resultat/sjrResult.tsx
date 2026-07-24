@@ -19,6 +19,7 @@ export function SjrReadyView({ data }: { data: SjrData }) {
       <ZelBg />
       <Header />
       <div className="appwrap" style={{ padding: '8px 16px 90px', position: 'relative', zIndex: 1 }}>
+        <ListingHeader you={you} />
         <Hero data={data} />
         <KpiRow data={data} />
         {best && <FaceOff you={you} best={best} manque={manque} />}
@@ -29,6 +30,30 @@ export function SjrReadyView({ data }: { data: SjrData }) {
         <Bilan data={data} />
         <CtaBlock />
         <Disclaimer />
+      </div>
+    </div>
+  );
+}
+
+function ListingHeader({ you }: { you: SjrListing }) {
+  if (!you.name && !you.photoUrl) return null;
+  const url = airbnbUrl(you.id);
+  const specs = [
+    you.bedrooms != null ? `${you.bedrooms} ch` : null,
+    you.baths != null ? `${you.baths} sdb` : null,
+    you.guests != null ? `${you.guests} pers.` : null,
+  ].filter(Boolean).join(' · ');
+  return (
+    <div className="glass reveal" style={{ display: 'flex', alignItems: 'center', gap: 14, padding: 14, borderRadius: 18, marginTop: 10 }}>
+      <Photo src={you.photoUrl} style={{ width: 72, height: 72, borderRadius: 12, flexShrink: 0 }} />
+      <div style={{ minWidth: 0, flex: 1 }}>
+        <div className="mono" style={{ fontSize: 10.5, fontWeight: 600, letterSpacing: '.1em', textTransform: 'uppercase', color: 'var(--goldDeep)', marginBottom: 4 }}>Votre annonce</div>
+        <div style={{ fontWeight: 700, fontSize: 15.5, lineHeight: 1.25, color: 'var(--ink)', overflow: 'hidden', textOverflow: 'ellipsis', display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical' }}>{you.name || 'Votre bien'}</div>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginTop: 4, fontSize: 12.5, color: 'var(--ink2)', flexWrap: 'wrap' }}>
+          {specs && <span>{specs}</span>}
+          {you.rating != null && <span style={{ display: 'inline-flex', alignItems: 'center', gap: 3 }}><StarF size={12} />{you.rating.toFixed(2)}<span style={{ color: 'var(--ink3)' }}>· {you.reviewsCount ?? 0} avis</span></span>}
+          {url && <a href={url} target="_blank" rel="noopener noreferrer" style={{ color: 'var(--goldDeep)', fontWeight: 700, textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: 3 }}><Icon name="ext" size={12} />Voir</a>}
+        </div>
       </div>
     </div>
   );
