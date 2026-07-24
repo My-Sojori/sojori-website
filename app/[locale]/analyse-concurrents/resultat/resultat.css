@@ -1,0 +1,48 @@
+/* ===== Sojori — page résultat « Analyse concurrentielle » (design Claude Design) ===== */
+.sjr-scope{
+  --paper:#F7F3EA; --paper2:#FFFFFF;
+  --ink:#1C1710; --ink2:#6B6152; --ink3:#9A9082;
+  --gold:#E6B022; --goldSoft:#F4CF5E; --goldDeep:#B8881A;
+  --grad:linear-gradient(135deg,#F4CF5E,#E6B022 54%,#B8881A);
+  --glass:rgba(255,255,255,.72); --glassBorder:rgba(230,176,34,.28);
+  --line:rgba(28,23,16,.10);
+  --good:#1f9d6b; --warn:#C67A2E; --bad:#C2703F;
+  --sans:'Geist',-apple-system,system-ui,sans-serif;
+  --mono:'Geist Mono',ui-monospace,monospace;
+  --shadow:0 24px 60px rgba(120,90,20,.14);
+  --shadow-sm:0 10px 26px rgba(120,90,20,.10);
+  font-family:var(--sans);color:var(--ink);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+}
+.sjr-scope *{box-sizing:border-box}
+.sjr-scope .page{position:relative;min-height:100vh;overflow:hidden;background:
+  radial-gradient(70% 34% at 18% 4%,rgba(244,207,94,.5),transparent 60%),
+  radial-gradient(56% 30% at 96% 98%,rgba(230,176,34,.26),transparent 62%),
+  linear-gradient(180deg,#FBF8F1,#F2EBDB)}
+.sjr-scope .zel{position:absolute;inset:0;opacity:.05;pointer-events:none}
+.sjr-scope h1,.sjr-scope h2,.sjr-scope h3{margin:0;letter-spacing:-.03em;line-height:1.05;font-weight:800}
+.sjr-scope p{margin:0}
+.sjr-scope .mono{font-family:var(--mono)}
+.sjr-scope .gt{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.sjr-scope .eyebrow{font-family:var(--mono);font-size:12px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--goldDeep);
+  display:inline-flex;align-items:center;gap:10px}
+.sjr-scope .eyebrow::before{content:"";width:22px;height:2px;background:var(--gold);border-radius:2px}
+.sjr-scope .glass{background:var(--glass);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid var(--glassBorder);
+  border-radius:20px;box-shadow:var(--shadow-sm)}
+.sjr-scope .badge{display:inline-flex;align-items:center;gap:9px;font-family:var(--mono);font-size:12px;font-weight:600;letter-spacing:.04em;
+  color:var(--goldDeep);background:rgba(230,176,34,.12);border:1px solid var(--glassBorder);padding:8px 15px;border-radius:999px}
+.sjr-scope .badge-dot{width:7px;height:7px;border-radius:999px;background:var(--gold);box-shadow:0 0 0 4px rgba(230,176,34,.18)}
+.sjr-scope .chip{display:inline-flex;align-items:center;gap:7px;font-size:12.5px;padding:6px 12px;border-radius:999px;
+  background:rgba(230,176,34,.10);border:1px solid rgba(230,176,34,.24);color:var(--ink2)}
+.sjr-scope .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-family:var(--sans);font-weight:700;font-size:16px;
+  letter-spacing:-.01em;padding:16px 28px;border-radius:16px;border:none;cursor:pointer;text-decoration:none;transition:transform .15s,box-shadow .15s}
+.sjr-scope .btn-primary{background:var(--grad);color:#2A1E08;box-shadow:0 16px 36px rgba(230,176,34,.36)}
+.sjr-scope .btn-primary:hover{transform:translateY(-2px);box-shadow:0 22px 46px rgba(230,176,34,.46)}
+.sjr-scope .btn-ghost{background:var(--paper2);color:var(--ink);border:1px solid var(--line)}
+.sjr-scope .btn-lg{font-size:17px;padding:18px 34px}
+.sjr-scope .reveal{opacity:0;transform:translateY(26px)}
+.sjr-scope .reveal.in{opacity:1;transform:none;transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1)}
+@keyframes sjr-blink{50%{opacity:.15}}
+@keyframes sjr-floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+@keyframes sjr-ring{0%{transform:scale(.6);opacity:.5}100%{transform:scale(1.7);opacity:0}}
+@keyframes sjr-spin{to{transform:rotate(360deg)}}
+.sjr-scope .appwrap{max-width:1080px;margin:0 auto}
