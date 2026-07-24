@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { BackgroundEffects } from '@/components/BackgroundEffects';
 import { PageHeader, PageFooter } from '@/components/SharedComponents';
-import { trackOfferCta } from '@/lib/analytics';
+import { trackDemoLead } from '@/lib/analytics';
 
 const API = '/api/v1/competitor-analysis';
 
@@ -34,7 +34,9 @@ export function AnalyseConcurrentsClient() {
       if (!res.ok || data.success !== true) {
         throw new Error(data.error || "Une erreur est survenue, réessayez.");
       }
-      trackOfferCta('analyse-concurrents');
+      // Soumission réussie = vrai lead (email + annonce reçus) → événement Lead
+      // pour suivre les conversions de la pub et optimiser dessus.
+      trackDemoLead('analyse-concurrents');
       setSubmitted(true);
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Une erreur est survenue.');
