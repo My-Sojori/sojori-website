@@ -1550,7 +1550,7 @@
         {
           "icon": "📡",
           "title": "Track in real-time",
-          "description": "Market data refreshed every 26 hours via AirROI & Channels integration"
+          "description": "Market data refreshed continuously from listings and booking channels"
         },
         {
           "icon": "🔗",

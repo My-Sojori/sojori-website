@@ -1550,7 +1550,7 @@
         {
           "icon": "📡",
           "title": "Suivi en temps réel",
-          "description": "Données de marché actualisées toutes les 26 heures via intégration AirROI & Channels"
+          "description": "Données de marché actualisées en continu à partir des annonces et canaux de réservation"
         },
         {
           "icon": "🔗",
