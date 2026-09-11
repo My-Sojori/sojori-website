@@ -1,6 +1,7 @@
 {
   "name": "sojori-website",
   "version": "1.0.0",
+  "packageManager": "pnpm@10.18.1",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -23,12 +24,12 @@
     "react-dom": "19.2.4"
   },
   "devDependencies": {
-    "@tailwindcss/postcss": "^4",
+    "@tailwindcss/postcss": "^4.3.3",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "eslint": "^9",
-    "eslint-config-next": "16.2.4",
+    "eslint": "^9.39.4",
+    "eslint-config-next": "16.3.5",
     "tailwindcss": "^4",
     "typescript": "^5"
   }

@@ -43,3 +43,11 @@ _backups/
 
 # Archives de travail — ne pas versionner (2026-09-11)
 *.zip
+
+# 2026-09-11 : ce projet utilise pnpm (Vercel lance `pnpm install`).
+# Un package-lock.json héritait du commit initial Create Next App et n'était
+# plus maintenu : une mise à jour faite avec npm a produit deux lockfiles
+# divergents et cassé le déploiement (ERR_PNPM_OUTDATED_LOCKFILE).
+# Toujours utiliser pnpm ici.
+package-lock.json
+yarn.lock
