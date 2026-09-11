@@ -107,7 +107,7 @@ export default async function PmsPageAgadir({ params }: { params: Promise<{ loca
         <section style={{ padding: '40px 32px 64px', borderTop: '1px solid var(--glass-border)' }}>
           <div style={{ maxWidth: 900, margin: '0 auto' }}>
             <h2 style={{ fontSize: 30, fontWeight: 700, letterSpacing: '-0.02em', marginBottom: 20 }}>Tour-opérateurs, OTA et direct à Agadir</h2>
-            <p style={{ fontSize: 16, lineHeight: 1.75, color: 'var(--text-3)', marginBottom: 16 }}>Agadir reste l&apos;un des marchés marocains les plus dépendants des tour-opérateurs, qui apportent du volume à prix négocié. Booking et Airbnb portent l&apos;individuel, et le direct progresse sur les hivernants qui reviennent chaque année.</p>
+            <p style={{ fontSize: 16, lineHeight: 1.75, color: 'var(--text-3)', marginBottom: 16 }}>Agadir reste l&apos;un des marchés marocains les plus dépendants des tour-opérateurs, qui apportent du volume à prix négocié. Booking, Expedia et Airbnb portent l&apos;individuel, et le direct progresse sur les hivernants qui reviennent chaque année.</p>
             <p style={{ fontSize: 16, lineHeight: 1.75, color: 'var(--text-3)', marginBottom: 16 }}>Le channel manager tient les disponibilités à jour sur les canaux ouverts, en tenant compte de l&apos;inventaire déjà engagé en allotement. L&apos;enjeu est de mesurer ce que rapporte réellement chaque canal une fois les conditions négociées prises en compte.</p>
           </div>
         </section>
@@ -191,7 +191,7 @@ export default async function PmsPageAgadir({ params }: { params: Promise<{ loca
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 16 }}>
               {[
                 { t: 'PMS', d: 'Planning, réservations, facturation, taxe de séjour.', link: '/pms' as const },
-                { t: 'Channel Manager', d: 'Booking, Airbnb et OTA synchronisés dans les deux sens.', link: '/channel-manager' as const },
+                { t: 'Channel Manager', d: 'Booking, Expedia, Airbnb et OTA synchronisés dans les deux sens.', link: '/channel-manager' as const },
                 { t: 'TeamFlow', d: 'Ménage et maintenance déclenchés sur les événements réels.', link: '/teamflow' as const },
                 { t: 'WhatsApp', d: 'Check-in digital, fiche police, messages du séjour.', link: '/whatsapp' as const },
                 { t: 'Dynamic Pricing', d: 'Tarification ajustée sur la demande réelle.', link: '/dynamic-pricing' as const },

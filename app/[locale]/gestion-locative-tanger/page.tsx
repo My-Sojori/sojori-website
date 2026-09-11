@@ -61,7 +61,7 @@ export default function GestionLocativeTangerPage() {
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 16 }}>
               {[
                 { i: '📋', t: 'PMS Multi-Propriétés', d: 'Calendrier unifié médina, Malabata, centre-ville. Réservations, paiements MAD/EUR, facturation automatique, contrats digitaux — adapté à une clientèle mixte marocaine, espagnole et internationale.', link: '/pms' as const },
-                { i: '🔄', t: 'Channel Manager Temps Réel', d: 'Synchronisation Airbnb, Booking.com, Expedia. Évitez surréservations pendant les pics d\'été et l\'opération Marhaba, gérez calendrier depuis un dashboard unique.', link: '/channel-manager' as const },
+                { i: '🔄', t: 'Channel Manager Temps Réel', d: 'Synchronisation Booking.com, Expedia, Airbnb. Évitez surréservations pendant les pics d\'été et l\'opération Marhaba, gérez calendrier depuis un dashboard unique.', link: '/channel-manager' as const },
                 { i: '💬', t: 'WhatsApp Conciergerie 24/7', d: 'Conciergerie automatique FR/AR/ES/EN adaptée à une clientèle multilingue frontalière. Check-in digital, instructions d\'accès pour la médina, support réactif.', link: '/whatsapp' as const },
                 { i: '💰', t: 'Dynamic Pricing Adapté', d: 'Yield management pensé pour la saisonnalité spécifique de Tanger : été, opération Marhaba (retour massif des MRE), excursions à la journée. Optimisez RevPAR automatiquement.', link: '/dynamic-pricing' as const },
                 { i: '👥', t: 'Gestion Équipe Locale', d: 'Planification ménage sur des biens de médina comme de résidences modernes, attribution tâches, suivi performances. Coordonnez vos équipes sans chaos WhatsApp.', link: '/teamflow' as const },
@@ -131,8 +131,8 @@ export default function GestionLocativeTangerPage() {
                     "a": "Les tâches se déclenchent sur les événements réels : départ constaté, arrivée anticipée, chambre signalée en panne. Chaque intervenant reçoit sa mission sur WhatsApp, en français ou en arabe, sans application à installer. Vous voyez l'état de chaque chambre en temps réel plutôt que de le reconstituer en fin de journée."
           },
           {
-                    "q": "Comment gérer Booking.com, Airbnb et les réservations directes ?",
-                    "a": "Le channel manager synchronise disponibilités et tarifs dans les deux sens avec Booking, Airbnb et les autres canaux. Les réservations directes entrent dans le même flux. Vous évitez la surréservation, et surtout vous cessez de gérer chaque canal séparément."
+                    "q": "Comment gérer Booking.com, Expedia, Airbnb et les réservations directes ?",
+                    "a": "Le channel manager synchronise disponibilités et tarifs dans les deux sens avec Booking, Expedia, Airbnb et les autres canaux. Les réservations directes entrent dans le même flux. Vous évitez la surréservation, et surtout vous cessez de gérer chaque canal séparément."
           },
           {
                     "q": "Quels indicateurs suivre pour un établissement à Tanger ?",

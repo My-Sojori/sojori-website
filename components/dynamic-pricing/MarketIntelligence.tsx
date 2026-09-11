@@ -35,9 +35,9 @@ export function MarketIntelligence() {
       { name: 'Medina', adr: 1120, occ: 48, color: '#8b5cf6' }
     ],
     paris: [
-      { name: 'Marais', adr: 220, occ: 68, color: '#ef4444' },
+      { name: 'Hivernage', adr: 1450, occ: 68, color: '#ef4444' },
       { name: 'Latin Quarter', adr: 195, occ: 64, color: '#3b82f6' },
-      { name: 'Montmartre', adr: 175, occ: 59, color: '#8b5cf6' }
+      { name: 'Gueliz', adr: 980, occ: 59, color: '#8b5cf6' }
     ]
   };
 

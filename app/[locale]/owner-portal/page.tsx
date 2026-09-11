@@ -35,7 +35,7 @@ function OwnerPhone() {
         </div>
         <div style={{ padding: "4px 16px 12px" }}>
           <div style={{ fontSize: 11, color: "rgba(255,255,255,0.5)" }}>Bonjour Antoine 👋</div>
-          <div style={{ fontSize: 18, fontWeight: 700, color: "#fff", marginTop: 2 }}>Appartement Paris 15</div>
+          <div style={{ fontSize: 18, fontWeight: 700, color: "#fff", marginTop: 2 }}>Riad Dar Zellige</div>
         </div>
 
         {/* Revenue card */}
@@ -112,7 +112,7 @@ function MonthlyStatement() {
       <div style={{ padding: "18px 22px", borderBottom: "1px solid var(--glass-border)", display: "flex", justifyContent: "space-between", alignItems: "center", background: "rgba(244,207,94,0.05)" }}>
         <div>
           <div style={{ fontSize: 11, color: "var(--text-3)", textTransform: "uppercase", letterSpacing: 1 }}>Statement</div>
-          <div style={{ fontSize: 18, fontWeight: 700, marginTop: 2 }}>Mars 2025 · Appartement Paris 15</div>
+          <div style={{ fontSize: 18, fontWeight: 700, marginTop: 2 }}>Mars 2026 · Riad Dar Zellige</div>
         </div>
         <button style={{ background: "transparent", border: "1px solid var(--glass-border)", color: "var(--text-1)", padding: "7px 14px", borderRadius: 7, fontSize: 12, cursor: "pointer" }}>📥 PDF</button>
       </div>
@@ -171,7 +171,7 @@ export default function OwnerPortalPage() {
                   {[
                     { i: "📊", t: "Dashboard temps réel", d: "Revenus, occupation, ADR · mis à jour à la minute." },
                     { i: "📅", t: "Calendrier de vos bookings", d: "Vue mois ou liste · arrivées passées et futures." },
-                    { i: "⭐", t: "Avis voyageurs", d: "Tous vos avis OTA centralisés · réponses suggérées par IA." },
+                    { i: "⭐", t: "Avis clients", d: "Tous vos avis OTA centralisés · réponses suggérées par IA." },
                     { i: "💰", t: "Statements PDF auto", d: "Le 1er de chaque mois · viré sous 48h ouvrées." },
                   ].map(c => (
                     <div key={c.t} style={{ display: "flex", gap: 14 }}>
@@ -204,7 +204,7 @@ export default function OwnerPortalPage() {
         </section>
 
         <StatsBar stats={[{k:"<48h",l:"Délai de virement"},{k:"12 langues",l:"Statements traduits"},{k:"100%",l:"Transparence frais"},{k:"4.94★",l:"Satisfaction propriétaires"}]} />
-        <FinalCTA title={<>Confiez votre logement. <span className="gradient-text">Récupérez votre temps.</span></>} subtitle="Audit gratuit. Onboarding en 7 jours. Premier voyageur sous 14 jours." />
+        <FinalCTA title={<>Confiez votre établissement. <span className="gradient-text">Récupérez votre temps.</span></>} subtitle="Audit gratuit. Onboarding en 7 jours. Premier client sous 14 jours." />
         <PageFooter />
       </div>
     </>

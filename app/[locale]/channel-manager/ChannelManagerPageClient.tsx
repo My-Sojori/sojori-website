@@ -182,7 +182,7 @@ function SyncDemo() {
         }}
       >
         <div className="channel-manager-sync-header-title" style={{ fontSize: 14, fontWeight: 600, minWidth: 0, lineHeight: 1.35 }}>
-          Sync status — Appartement Paris 15 · 47 Rue des Abbesses
+          Sync status — Riad Dar Zellige · Derb Jdid, Médina
         </div>
         <div
           className="channel-manager-sync-live"

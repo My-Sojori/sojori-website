@@ -53,7 +53,7 @@ function Dashboard({ dark = true }: { dark: boolean }) {
           <div style={{ width: 24, height: 24, borderRadius: '50%', background: 'linear-gradient(135deg, #f4cf5e, #e6b022)', color: '#1a1408', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 9, fontWeight: 700 }}>AB</div>
           <div style={{ lineHeight: 1.2 }}>
             <div style={{ fontSize: 10, fontWeight: 600 }}>Ahmed B.</div>
-            <div style={{ fontSize: 8, color: text3 }}>Appartement Paris 15</div>
+            <div style={{ fontSize: 8, color: text3 }}>Riad Dar Zellige</div>
           </div>
         </div>
       </aside>
@@ -112,9 +112,9 @@ function Dashboard({ dark = true }: { dark: boolean }) {
                 <Link href={{ pathname: '/inbox', query: { source: 'dashboard-app-mock-activity' } }} style={{ fontSize: 9, color: '#e6b022', textDecoration: 'none' }}>View all →</Link>
               </div>
               {[
-                { t: '2 min', i: '✓', c: '#10b981', text: 'Sarah J. checked in · Appartement Paris 15' },
+                { t: '2 min', i: '✓', c: '#10b981', text: 'Sarah J. checked in · Riad Dar Zellige' },
                 { t: '14 min', i: '💬', c: '#06b6d4', text: 'New WhatsApp from Marco · "AC issue"' },
-                { t: '38 min', i: '🧹', c: '#8b5cf6', text: 'Sophie completed cleaning · Loft Montmartre' },
+                { t: '38 min', i: '🧹', c: '#8b5cf6', text: 'Sophie completed cleaning · Hôtel Tafoukt' },
                 { t: '1h', i: '📨', c: '#e6b022', text: 'Booking confirmed · Airbnb · €840' },
               ].map((a, i) => (
                 <div key={i} style={{ display: 'flex', alignItems: 'center', gap: 8, padding: '6px 0', borderTop: i ? `1px solid ${border}` : 'none' }}>
@@ -127,9 +127,9 @@ function Dashboard({ dark = true }: { dark: boolean }) {
             <div style={{ background: card, border: `1px solid ${border}`, borderRadius: 8, padding: 12 }}>
               <div style={{ fontSize: 11, fontWeight: 600, marginBottom: 10 }}>Today's arrivals</div>
               {[
-                { name: 'Sarah Johnson', prop: 'Appartement Paris 15', time: '15:00', n: '2 guests' },
-                { name: 'Marco Rossi', prop: 'Loft Montmartre', time: '17:30', n: '4 guests' },
-                { name: 'Emma R.', prop: 'Villa Barcelona', time: '19:00', n: '6 guests' },
+                { name: 'Sarah Johnson', prop: 'Riad Dar Zellige', time: '15:00', n: '2 guests' },
+                { name: 'Marco Rossi', prop: 'Hôtel Tafoukt', time: '17:30', n: '4 guests' },
+                { name: 'Emma R.', prop: 'Suite Junior', time: '19:00', n: '6 guests' },
               ].map((g, i) => (
                 <div key={i} style={{ display: 'flex', alignItems: 'center', gap: 8, padding: '6px 0', borderTop: i ? `1px solid ${border}` : 'none' }}>
                   <div style={{ width: 26, height: 26, borderRadius: '50%', background: `linear-gradient(135deg, hsl(${i * 70},70%,55%), hsl(${i * 70 + 30},70%,40%))`, color: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 10, fontWeight: 700 }}>{g.name.split(' ').map(p => p[0]).join('')}</div>

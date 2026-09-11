@@ -61,7 +61,7 @@ export default function GestionLocativeMarrakechPage() {
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 16 }}>
               {[
                 { i: '📋', t: 'PMS Multi-Propriétés', d: 'Calendrier unifié riads/villas. Réservations, paiements MAD/EUR, facturation automatique, contrats digitaux. Taxe de séjour Marrakech intégrée.', link: '/pms' as const },
-                { i: '🔄', t: 'Channel Manager Temps Réel', d: 'Synchronisation Airbnb, Booking.com, Expedia. Évitez surréservations, gérez calendrier depuis un dashboard. API 2-way temps réel.', link: '/channel-manager' as const },
+                { i: '🔄', t: 'Channel Manager Temps Réel', d: 'Synchronisation Booking.com, Expedia, Airbnb. Évitez surréservations, gérez calendrier depuis un dashboard. API 2-way temps réel.', link: '/channel-manager' as const },
                 { i: '💬', t: 'WhatsApp Conciergerie 24/7', d: 'WhatsApp Business API. Conciergerie automatique FR/AR/EN. Check-in digital, réservation transport, épicerie, expériences. Guests satisfaits = reviews 5★.', link: '/whatsapp' as const },
                 { i: '💰', t: 'Dynamic Pricing Local', d: 'Yield management adapté Marrakech : événements (Marathon, festivals), saisons touristiques, jours fériés marocains. Optimisez RevPAR automatiquement.', link: '/dynamic-pricing' as const },
                 { i: '👥', t: 'Gestion Équipe Locale', d: 'Planification ménage, attribution tâches conciergerie, suivi performances. Coordonnez femmes de ménage, gardiens, maintenance — zéro WhatsApp perso.', link: '/teamflow' as const },
@@ -131,8 +131,8 @@ export default function GestionLocativeMarrakechPage() {
                     "a": "Les tâches se déclenchent sur les événements réels : départ constaté, arrivée anticipée, chambre signalée en panne. Chaque intervenant reçoit sa mission sur WhatsApp, en français ou en arabe, sans application à installer. Vous voyez l'état de chaque chambre en temps réel plutôt que de le reconstituer en fin de journée."
           },
           {
-                    "q": "Comment gérer Booking.com, Airbnb et les réservations directes ?",
-                    "a": "Le channel manager synchronise disponibilités et tarifs dans les deux sens avec Booking, Airbnb et les autres canaux. Les réservations directes entrent dans le même flux. Vous évitez la surréservation, et surtout vous cessez de gérer chaque canal séparément."
+                    "q": "Comment gérer Booking.com, Expedia, Airbnb et les réservations directes ?",
+                    "a": "Le channel manager synchronise disponibilités et tarifs dans les deux sens avec Booking, Expedia, Airbnb et les autres canaux. Les réservations directes entrent dans le même flux. Vous évitez la surréservation, et surtout vous cessez de gérer chaque canal séparément."
           },
           {
                     "q": "Quels indicateurs suivre pour un établissement à Marrakech ?",

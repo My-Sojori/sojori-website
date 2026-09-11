@@ -31,7 +31,7 @@ const FAQ = [
   },
   {
     "q": "Comment éviter la surréservation en haute saison ?",
-    "a": "Le channel manager synchronise les disponibilités dans les deux sens avec Booking, Airbnb et les autres canaux, les réservations directes entrant dans le même flux. En pic, c'est le point le plus sensible : aucune chambre de secours n'est disponible pour rattraper une double réservation."
+    "a": "Le channel manager synchronise les disponibilités dans les deux sens avec Booking, Expedia, Airbnb et les autres canaux, les réservations directes entrant dans le même flux. En pic, c'est le point le plus sensible : aucune chambre de secours n'est disponible pour rattraper une double réservation."
   },
   {
     "q": "Faut-il remplacer le PMS déjà installé ?",
@@ -191,7 +191,7 @@ export default async function PmsPageTanger({ params }: { params: Promise<{ loca
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 16 }}>
               {[
                 { t: 'PMS', d: 'Planning, réservations, facturation, taxe de séjour.', link: '/pms' as const },
-                { t: 'Channel Manager', d: 'Booking, Airbnb et OTA synchronisés dans les deux sens.', link: '/channel-manager' as const },
+                { t: 'Channel Manager', d: 'Booking, Expedia, Airbnb et OTA synchronisés dans les deux sens.', link: '/channel-manager' as const },
                 { t: 'TeamFlow', d: 'Ménage et maintenance déclenchés sur les événements réels.', link: '/teamflow' as const },
                 { t: 'WhatsApp', d: 'Check-in digital, fiche police, messages du séjour.', link: '/whatsapp' as const },
                 { t: 'Dynamic Pricing', d: 'Tarification ajustée sur la demande réelle.', link: '/dynamic-pricing' as const },

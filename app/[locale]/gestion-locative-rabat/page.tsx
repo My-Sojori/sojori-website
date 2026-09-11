@@ -61,7 +61,7 @@ export default function GestionLocativeRabatPage() {
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 16 }}>
               {[
                 { i: '📋', t: 'PMS Multi-Propriétés', d: 'Calendrier unifié pour appartements de standing (Agdal, Hay Riad, Hassan). Réservations, paiements MAD/EUR, facturation automatique, contrats digitaux — adapté aux séjours professionnels et diplomatiques.', link: '/pms' as const },
-                { i: '🔄', t: 'Channel Manager Temps Réel', d: 'Synchronisation Airbnb, Booking.com, Expedia. Évitez surréservations sur des portefeuilles à demande régulière toute l\'année, gérez calendrier depuis un dashboard unique.', link: '/channel-manager' as const },
+                { i: '🔄', t: 'Channel Manager Temps Réel', d: 'Synchronisation Booking.com, Expedia, Airbnb. Évitez surréservations sur des portefeuilles à demande régulière toute l\'année, gérez calendrier depuis un dashboard unique.', link: '/channel-manager' as const },
                 { i: '💬', t: 'WhatsApp Conciergerie 24/7', d: 'Conciergerie automatique FR/AR/EN adaptée aux séjours courts et missions professionnelles. Check-in digital, instructions d\'accès, support réactif.', link: '/whatsapp' as const },
                 { i: '💰', t: 'Dynamic Pricing Adapté', d: 'Yield management pensé pour une demande plus lissée qu\'une destination balnéaire : missions professionnelles en semaine, tourisme culturel le weekend. Optimisez RevPAR automatiquement.', link: '/dynamic-pricing' as const },
                 { i: '👥', t: 'Gestion Équipe Locale', d: 'Planification ménage sur des portefeuilles d\'appartements de standing, attribution tâches, suivi performances. Coordonnez vos équipes sans chaos WhatsApp.', link: '/teamflow' as const },
@@ -131,8 +131,8 @@ export default function GestionLocativeRabatPage() {
                     "a": "Les tâches se déclenchent sur les événements réels : départ constaté, arrivée anticipée, chambre signalée en panne. Chaque intervenant reçoit sa mission sur WhatsApp, en français ou en arabe, sans application à installer. Vous voyez l'état de chaque chambre en temps réel plutôt que de le reconstituer en fin de journée."
           },
           {
-                    "q": "Comment gérer Booking.com, Airbnb et les réservations directes ?",
-                    "a": "Le channel manager synchronise disponibilités et tarifs dans les deux sens avec Booking, Airbnb et les autres canaux. Les réservations directes entrent dans le même flux. Vous évitez la surréservation, et surtout vous cessez de gérer chaque canal séparément."
+                    "q": "Comment gérer Booking.com, Expedia, Airbnb et les réservations directes ?",
+                    "a": "Le channel manager synchronise disponibilités et tarifs dans les deux sens avec Booking, Expedia, Airbnb et les autres canaux. Les réservations directes entrent dans le même flux. Vous évitez la surréservation, et surtout vous cessez de gérer chaque canal séparément."
           },
           {
                     "q": "Quels indicateurs suivre pour un établissement à Rabat ?",

@@ -61,7 +61,7 @@ export default function GestionLocativeCasablancaPage() {
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 16 }}>
               {[
                 { i: '📋', t: 'PMS Multi-Propriétés', d: 'Calendrier unifié pour portefeuilles d\'appartements. Réservations, paiements MAD/EUR, facturation automatique, contrats digitaux — adapté aux séjours courts business autant qu\'aux vacances.', link: '/pms' as const },
-                { i: '🔄', t: 'Channel Manager Temps Réel', d: 'Synchronisation Airbnb, Booking.com, Expedia. Évitez surréservations sur des portefeuilles de dizaines d\'appartements, gérez calendrier depuis un dashboard unique.', link: '/channel-manager' as const },
+                { i: '🔄', t: 'Channel Manager Temps Réel', d: 'Synchronisation Booking.com, Expedia, Airbnb. Évitez surréservations sur des portefeuilles de dizaines d\'appartements, gérez calendrier depuis un dashboard unique.', link: '/channel-manager' as const },
                 { i: '💬', t: 'WhatsApp Conciergerie 24/7', d: 'Conciergerie automatique FR/AR/EN adaptée aux arrivées tardives fréquentes (vols long-courrier). Check-in digital, instructions d\'accès, support réactif.', link: '/whatsapp' as const },
                 { i: '💰', t: 'Dynamic Pricing Adapté', d: 'Yield management pensé pour une demande mixte affaires/loisirs : semaine vs weekend, événements professionnels, saisonnalité touristique. Optimisez RevPAR automatiquement.', link: '/dynamic-pricing' as const },
                 { i: '👥', t: 'Gestion Équipe Locale', d: 'Planification ménage sur des portefeuilles étendus, attribution tâches, suivi performances. Coordonnez plusieurs équipes sur plusieurs quartiers sans chaos WhatsApp.', link: '/teamflow' as const },
@@ -87,7 +87,7 @@ export default function GestionLocativeCasablancaPage() {
             <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: 16 }}>
               {[
                 { profil: 'Hôtel de charme · Portefeuille Appartements Maarif/Gauthier', pb: 'Gérait un portefeuille d\'appartements avec Excel + WhatsApp perso. Arrivées tardives non gérées la nuit, messages guests perdus, pas de visibilité revenus consolidée.', sol: 'PMS + Channel Manager + WhatsApp AI déployés en quelques jours. Calendrier unifié, conciergerie 24/7 automatique pour les arrivées tardives, reporting financier mensuel.', res: 'Occupation en hausse · surréservations éliminées · gestion des arrivées de nuit automatisée' },
-                { profil: 'Co-host · Studios & Appartements Meublés', pb: 'Propriétaires voulaient transparence finances sur des séjours majoritairement courts. Statements manuels = plusieurs jours par mois. Virements retardés.', sol: 'Owner Portal multi-devise. Statements automatiques, virements programmés, dashboards propriétaires en temps réel.', res: 'Temps administratif fortement réduit · rétention propriétaires élevée · portefeuille en croissance' },
+                { profil: 'Résidence hôtelière · 30 chambres', pb: 'Propriétaires voulaient transparence finances sur des séjours majoritairement courts. Statements manuels = plusieurs jours par mois. Virements retardés.', sol: 'Owner Portal multi-devise. Statements automatiques, virements programmés, dashboards propriétaires en temps réel.', res: 'Temps administratif fortement réduit · rétention propriétaires élevée · portefeuille en croissance' },
                 { profil: 'Agence · Portefeuille Mixte Business & Loisirs', pb: 'Équipe ménage désorganisée sur des rotations rapides (séjours courts fréquents). Pas de suivi qualité. Reviews clients en baisse.', sol: 'TeamFlow déployé. Planning automatique par propriété, checklist ménage digitale, suivi temps réel. WhatsApp AI pour guests business et loisirs.', res: 'Reviews en hausse · coordination plus rapide · équipe mieux organisée' },
               ].map((c, i) => (
                 <div key={i} className="card" style={{ padding: 24 }}>
@@ -131,8 +131,8 @@ export default function GestionLocativeCasablancaPage() {
                     "a": "Les tâches se déclenchent sur les événements réels : départ constaté, arrivée anticipée, chambre signalée en panne. Chaque intervenant reçoit sa mission sur WhatsApp, en français ou en arabe, sans application à installer. Vous voyez l'état de chaque chambre en temps réel plutôt que de le reconstituer en fin de journée."
           },
           {
-                    "q": "Comment gérer Booking.com, Airbnb et les réservations directes ?",
-                    "a": "Le channel manager synchronise disponibilités et tarifs dans les deux sens avec Booking, Airbnb et les autres canaux. Les réservations directes entrent dans le même flux. Vous évitez la surréservation, et surtout vous cessez de gérer chaque canal séparément."
+                    "q": "Comment gérer Booking.com, Expedia, Airbnb et les réservations directes ?",
+                    "a": "Le channel manager synchronise disponibilités et tarifs dans les deux sens avec Booking, Expedia, Airbnb et les autres canaux. Les réservations directes entrent dans le même flux. Vous évitez la surréservation, et surtout vous cessez de gérer chaque canal séparément."
           },
           {
                     "q": "Quels indicateurs suivre pour un établissement à Casablanca ?",

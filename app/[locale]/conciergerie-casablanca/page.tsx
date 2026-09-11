@@ -40,7 +40,7 @@ export default function ConciergerieCasablancaPage() {
               {[
                 { i: '💼', t: 'Clientèle Business Pressée', d: 'Guests en séjour professionnel, souvent peu disponibles pour des échanges longs. Besoin de réponses rapides et précises sur WhatsApp, pas d\'appels téléphoniques chronophages.' },
                 { i: '⏰', t: 'Arrivées Tardives Fréquentes', d: 'Aéroport Mohammed V, hub international avec de nombreux vols long-courrier arrivant tard. Impossible d\'avoir staff physique 24/7. WhatsApp AI gère check-in, code porte, instructions à toute heure.' },
-                { i: '⭐', t: 'Reviews = Tout', d: 'Sur Airbnb/Booking, une review <4★ tue la visibilité. Conciergerie réactive = satisfaction guest = 5★. Sojori répond <2min, 24/7, même pour des guests exigeants.' },
+                { i: '⭐', t: 'Reviews = Tout', d: 'Sur Booking/Airbnb, une review <4★ tue la visibilité. Conciergerie réactive = satisfaction guest = 5★. Sojori répond <2min, 24/7, même pour des guests exigeants.' },
               ].map(c => (
                 <div key={c.t} className="card" style={{ padding: 22 }}>
                   <div style={{ fontSize: 28, marginBottom: 10 }}>{c.i}</div>
@@ -89,7 +89,7 @@ export default function ConciergerieCasablancaPage() {
                 { step: '2', moment: 'J-1 avant arrivée', action: 'Instructions accès', detail: 'Code porte, adresse exacte Google Maps. Proposition taxi aéroport si besoin. Tout sur WhatsApp.' },
                 { step: '3', moment: 'Jour J arrivée', action: 'Check-in autonome', detail: 'Guest arrive, code fonctionne, instructions WiFi/équipements reçues. Pas besoin de staff physique, même à minuit. AI disponible 24/7.' },
                 { step: '4', moment: 'Pendant séjour', action: 'Conciergerie à la demande', detail: 'Guest demande resto, taxi, support business → WhatsApp AI traite, réserve, confirme. Property manager notifié si intervention humaine nécessaire.' },
-                { step: '5', moment: 'Jour check-out', action: 'Feedback automatique', detail: 'Message remerciement + demande review Airbnb/Booking. Lien direct, taux conversion élevé.' },
+                { step: '5', moment: 'Jour check-out', action: 'Feedback automatique', detail: 'Message remerciement + demande review Booking/Airbnb. Lien direct, taux conversion élevé.' },
               ].map((c) => (
                 <div key={c.step} className="card" style={{ padding: 20, display: 'flex', gap: 20, alignItems: 'start' }}>
                   <div style={{ width: 40, height: 40, borderRadius: '50%', background: '#f4cf5e', color: '#0a0a10', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 700, fontSize: 16, flexShrink: 0 }}>{c.step}</div>

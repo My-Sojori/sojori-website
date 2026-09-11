@@ -2,7 +2,7 @@
   "metadata": {
     "home": {
       "title": "Sojori — L'orchestrateur de l'hospitalité",
-      "description": "Moteur d'orchestration de l'hospitalité. Réservation, voyageur, ménage, maintenance, propriétaire — coordonnés par IA, pilotés depuis WhatsApp. PMS inclus, ou connecté au vôtre."
+      "description": "Moteur d'orchestration de l'hospitalité. Réservation, client, ménage, maintenance, revenu — coordonnés par IA, pilotés depuis WhatsApp. PMS inclus, ou connecté au vôtre."
     },
     "pricing": {
       "title": "Tarifs Sojori — Orchestration hôtelière | Marrakech, Casablanca, Paris",
@@ -35,7 +35,7 @@
       "operations": "Opérations",
       "company": "Entreprise",
       "pms": "PMS",
-      "pmsDesc": "Gestion multi-bien",
+      "pmsDesc": "Gestion multi-établissement",
       "channelManager": "Channel Manager",
       "channelManagerDesc": "Sync multi-OTA",
       "dynamicPricing": "Tarification dynamique",
@@ -47,7 +47,7 @@
       "inbox": "Inbox unifiée",
       "inboxDesc": "Tous les canaux",
       "guestExp": "Guest Experience",
-      "guestExpDesc": "Parcours voyageur",
+      "guestExpDesc": "Parcours client",
       "teamflow": "TeamFlow",
       "teamflowDesc": "Staff & ménage",
       "ownerPortal": "Owner Portal",
@@ -82,7 +82,7 @@
     "hero": {
       "badge": "● Pricing simple · par listing",
       "title": "Trois tiers.",
-      "titleGradient": "Un seul prix par bien.",
+      "titleGradient": "Un seul prix par chambre.",
       "subtitle": "Solo pour démarrer. Orchestre pour orchestrer. Symphonie pour piloter à l'échelle. Pas de paliers absurdes — un prix par listing, par mois."
     },
     "toggles": {
@@ -96,7 +96,7 @@
       "goToTier": "Afficher {name}"
     },
     "calculator": {
-      "yourProperties": "Vos biens",
+      "yourProperties": "Vos chambres",
       "listings": "listings",
       "forListings": "Pour {count} listing{plural}",
       "perListing": "/listing/mois",
@@ -112,7 +112,7 @@
         "tagline": "Pour démarrer.",
         "description": "Le PMS qui digitalise votre activité, sans la couche orchestration.",
         "features": {
-          "pms": "PMS multi-bien (calendrier, résas, paiements)",
+          "pms": "PMS multi-établissement (calendrier, résas, paiements)",
           "channelManager": "Channel Manager — 5 OTAs",
           "inbox": "Inbox unifiée",
           "tasks": "Gestion des tâches (web dashboard)",
@@ -208,11 +208,11 @@
       "badge": "● Orchestrateur · Hospitalité",
       "title": "Le moteur d'orchestration",
       "titleGradient": "de l'hospitalité",
-      "subtitle": "Sojori coordonne votre établissement comme un humain le ferait — réservation, voyageur, staff, propriétaire. Sauf qu'il ne dort jamais.",
-      "subtitleStrong": "Et qu'il ne vous demande pas de piloter.",
+      "subtitle": "Sojori orchestre l’expérience client, les opérations et le revenu de votre établissement — en connectant vos systèmes, vos clients, vos équipes et vos partenaires.",
+      "subtitleStrong": "Sans que vous ayez à piloter.",
       "ctaPrimary": "Voir l'orchestration →",
       "ctaSecondary": "Demander une démo",
-      "flow": "RÉSERVATION → VOYAGEUR → STAFF → PROPRIÉTAIRE · UN SEUL FIL CONDUCTEUR"
+      "flow": "EXPÉRIENCE CLIENT → OPÉRATIONS → VENTES & REVENU · UN SEUL MOTEUR"
     },
     "trustBar": {
       "title": "Intégré avec les meilleures plateformes",
@@ -230,7 +230,7 @@
         "title": "Les modules travaillent",
         "sub": "Le socle.",
         "items": [
-          "PMS · calendrier multi-bien",
+          "PMS · calendrier multi-établissement",
           "Channel Manager · 20+ OTAs",
           "Pricing dynamique",
           "Owner Portal",
@@ -246,7 +246,7 @@
         "items": [
           "Comprend chaque réservation",
           "Décide qui fait quoi, quand, pourquoi",
-          "Coordonne voyageur, staff, propriétaire",
+          "Coordonne client, équipes et partenaires",
           "Apprend de chaque séjour",
           "+20 décisions par séjour, sans intervention"
         ],
@@ -257,7 +257,7 @@
         "title": "WhatsApp simplifie",
         "sub": "La surface.",
         "items": [
-          "Guest — le voyageur, en 12 langues",
+          "Guest — le client, en 12 langues",
           "Staff — l'équipe terrain",
           "Admin — votre PMS dans la poche",
           "Booking Direct — la résa sans intermédiaire"
@@ -269,7 +269,7 @@
       "badge": "💬 Cas d'usage réel",
       "title": "Vos guests parlent.",
       "titleGradient": "Sojori répond.",
-      "subtitle": "Sarah (USA) réserve via Airbnb pour un appartement à Paris. Sojori AI gère tout, 24/7, en anglais.",
+      "subtitle": "Sarah (USA) réserve via Booking une chambre au Riad Dar Zellige. Sojori AI gère tout, 24/7, en anglais.",
       "header": {
         "name": "Sojori AI",
         "status": "Online · répond en quelques secondes"
@@ -509,7 +509,7 @@
     "finalCTA": {
       "title": "Prêt à",
       "titleGradient": "orchestrer",
-      "titleEnd": "vos locations ?",
+      "titleEnd": "votre établissement ?",
       "subtitle": "Rejoignez des centaines d'établissements qui orchestrent leurs opérations avec Sojori.",
       "ctaPrimary": "Demander une démo gratuite →",
       "ctaSecondary": "Voir le pricing",
@@ -522,7 +522,7 @@
       "badge": "💬 WhatsApp · Au cœur de Sojori",
       "title": "4 systèmes WhatsApp.",
       "titleGradient": "Une plateforme unifiée.",
-      "subtitle": "Sojori utilise WhatsApp comme canal principal pour communiquer avec vos voyageurs, votre équipe, et vous permettre de gérer votre activité depuis votre téléphone. Pas d'app à télécharger. Juste WhatsApp."
+      "subtitle": "Sojori utilise WhatsApp comme canal principal pour communiquer avec vos clients, vos équipes et vos partenaires, et vous permettre de gérer votre établissement depuis votre téléphone."
     },
     "sectionNav": {
       "hint": "Faites défiler les pastilles pour aller à chaque parcours — les 4 cas d'usage sont sur cette page."
@@ -534,7 +534,7 @@
     "systems": {
       "guest": {
         "label": "WhatsApp Guest",
-        "badge": "💬 Voyageurs",
+        "badge": "💬 Clients",
         "stat": "87% autonome"
       },
       "staff": {
@@ -574,37 +574,37 @@
     "messages": {
       "guest": {
         "today": "Aujourd'hui",
-        "welcome": "Bonjour Sarah ! 👋 Bienvenue à Paris.\n\nVotre check-in est dans 2h à l'appartement Montmartre. Voici vos accès :",
+        "welcome": "Bonjour Sarah ! 👋 Bienvenue à Marrakech.\n\nVotre arrivée est dans 2h. Voici vos informations :",
         "access": "🔑 Code porte : 4729\n📍 47 Rue des Abbesses\n🚇 Métro : Abbesses (ligne 12)",
         "wifi": "WiFi : SOJORI_PARIS\nMot de passe : paris2024",
         "userQuestion": "Merci ! Je peux arriver plus tôt vers 14h ?",
-        "aiResponse": "Parfait ✓ L'appartement sera prêt à 14h.\n\nJ'ai prévenu l'équipe. Lucas vous attendra devant l'immeuble pour vous accueillir 🙂",
+        "aiResponse": "Parfait ✓ La chambre sera prête à 14h.\n\nJ'ai prévenu l'équipe. Youssef vous accueillera à la réception 🙂",
         "userThanks": "Super, merci beaucoup ! 🙏",
         "checkinComplete": "Check-in effectué · QR code scanné"
       },
       "staff": {
         "today": "Aujourd'hui · 08:30",
-        "tasks": "Bonjour Sophie 👋\n\n*📋 Vos tâches du jour (3)*\n\n1️⃣ Ménage · Appt Montmartre\n   Check-out 11h · Arrivée 15h\n   ⏱️ 2h estimées\n\n2️⃣ Maintenance · Appt Marais\n   AC à vérifier · Guest signalement\n   ⏱️ 30 min\n\n3️⃣ Linge · Studio Bastille\n   Changement draps · Avant 14h\n   ⏱️ 45 min",
-        "received": "Reçu ! Je commence par Montmartre ✓",
+        "tasks": "Bonjour Sophie 👋\n\n*📋 Vos tâches du jour (3)*\n\n1️⃣ Ménage · Chambre 204\n   Départ 11:00 → arrivée 15:00\n   [Démarrer]\n\n2️⃣ Recouche · Chambre 118\n   Client sur place · après 14:00\n   [Voir]\n\n3️⃣ Maintenance · Suite Junior\n   Climatiseur signalé\n   [Voir]\n",
+        "received": "Reçu ! Je commence par la 204 ✓",
         "confirmation": "Parfait 🙌 J'ai mis la tâche en cours.\n\nN'oublie pas de scanner le QR à l'arrivée pour démarrer le chrono.",
         "taskStarted": "Tâche #1 démarrée · Géolocalisation OK",
         "taskComplete": "Ménage terminé ! Photos envoyées 📸",
-        "validation": "Super Sophie ! ⭐\n\nTâche validée · 1h50 (10 min d'avance)\nProchaine tâche : Appt Marais à 11h"
+        "validation": "Super Sophie ! ⭐\n\nTâche validée · 1h50 (10 min d'avance)\nProchaine tâche : Chambre 118\n"
       },
       "admin": {
         "monday": "Lundi 15:00",
         "dashboard": "Bonjour Marc 👋\n\n*🎯 Tableau de bord*\n\nTapez la lettre correspondante :\n\n*T* - Tâches en attente (3)\n*D* - Déclarations arrivée/départ (2)\n*R* - Réservations check-in/out (5)\n*M* - Messages guests (7)\n*V* - Avis à répondre (2)\n*L* - Demandes réservation (4)",
         "userCommand": "M",
-        "messagesList": "💬 *Messages en attente (7)*\n\n1. Sarah · Appt Montmartre\n   « WiFi code ? » · il y a 15 min\n   [Répondre]\n\n2. Marco · Villa Barcelona\n   « AC doesn't work » · il y a 32 min\n   [URGENT]\n\n3. Emma · Studio Marais\n   « Late checkout possible? » · il y a 1h\n   [Répondre]",
+        "messagesList": "💬 *Messages en attente (7)*\n\n1. Sarah · Chambre 204\n   « Code WiFi ? » · il y a 15 min\n   [Répondre]\n\n2. Marco · Suite Junior\n   « AC doesn't work » · il y a 32 min\n   [URGENT]\n\n3. Emma · Chambre 118\n   « Late checkout possible? » · il y a 1h\n   [Répondre]\n",
         "userChoice": "Je prends Marco en priorité",
         "transferred": "Conversation transférée ✓\n\nVous pouvez maintenant échanger directement avec Marco.\n\nL'IA a déjà proposé : vérifier disjoncteur + envoi technicien si besoin."
       },
       "booking": {
         "tuesday": "Mardi 10:00",
-        "userRequest": "Bonjour, je cherche un appartement à Paris du 15 au 20 juin pour 2 personnes",
-        "available": "Bonjour ! 👋\n\nJ'ai trouvé *3 appartements disponibles* pour vos dates :\n\n🏠 *Appt Montmartre* · 65m²\n   €120/nuit · 2 personnes\n   ⭐ 4.9 (47 avis)\n   [Voir photos]\n\n🏠 *Studio Marais* · 45m²\n   €95/nuit · 2 personnes\n   ⭐ 4.8 (32 avis)\n   [Voir photos]\n\n🏠 *Loft République* · 80m²\n   €150/nuit · 4 personnes\n   ⭐ 5.0 (12 avis)\n   [Voir photos]",
-        "userInterest": "L'appartement Montmartre m'intéresse ! C'est combien au total ?",
-        "pricing": "🏠 *Appartement Montmartre*\n5 nuits · 15-20 juin 2025\n\n💰 *Tarif*\n€120 × 5 nuits = €600\nFrais ménage = €40\n*Total = €640*\n\n✨ Réservation directe :\n❌ Pas de commission Airbnb\n💳 Paiement sécurisé\n🎁 Check-in flexible\n\n[Réserver maintenant]",
+        "userRequest": "Bonjour, je cherche une chambre à Marrakech du 15 au 20 juin pour 2 personnes",
+        "available": "Bonjour ! 👋\n\nJ'ai trouvé *3 chambres disponibles* pour vos dates :\n\n🛏 *Chambre Deluxe* · vue patio\n   1 200 MAD/nuit · 2 personnes\n   ⭐ 4.9 (47 avis)\n   [Voir photos]\n\n🛏 *Suite Junior* · terrasse privée\n   1 800 MAD/nuit · 2 personnes\n   ⭐ 4.8 (32 avis)\n   [Voir photos]\n\n🛏 *Suite Riad* · salon séparé\n   2 400 MAD/nuit · 4 personnes\n   ⭐ 5.0 (12 avis)\n   [Voir photos]\n",
+        "userInterest": "La Suite Junior m'intéresse ! C'est combien au total ?\n",
+        "pricing": "🛏 *Suite Junior*\n5 nuits · 15-20 juin 2026\n\n💰 *Tarif*\n1 800 MAD × 5 nuits = 9 000 MAD\nTaxe de séjour = 250 MAD\n*Total = 9 250 MAD*\n\n✨ Réservation directe :\n❌ Pas de commission OTA\n💳 Paiement sécurisé\n🎁 Arrivée flexible\n\n[Réserver maintenant]\n",
         "userBook": "Parfait, je réserve !",
         "paymentReceived": "Paiement reçu €640 · Réservation confirmée",
         "confirmed": "🎉 *Réservation confirmée !*\n\nVous recevrez sous 5 min :\n✉️ Email de confirmation\n📱 Accès guest app\n📍 Guidebook Paris\n\nHâte de vous accueillir Sarah ! 🙂"
@@ -614,7 +614,7 @@
       "guest": {
         "title": "WhatsApp Guest",
         "titleGradient": "Intelligence",
-        "description": "L'IA Sojori répond à vos voyageurs 24/7 sur WhatsApp. Check-in autonome, support instantané, upsell intelligent, demande d'avis. Le tout en 12 langues.",
+        "description": "L'IA Sojori répond à vos clients 24/7 sur WhatsApp. Check-in autonome, support instantané, upsell intelligent, demande d'avis. Le tout en 12 langues.",
         "menuTitle": "Menu principal",
         "menu": [
           {
@@ -631,7 +631,7 @@
           },
           {
             "key": "E",
-            "label": "Enregistrement voyageurs"
+            "label": "Enregistrement clients"
           },
           {
             "key": "F",
@@ -689,7 +689,7 @@
           },
           {
             "label": "Navigation GPS intégrée",
-            "detail": "Itinéraire vers chaque bien"
+            "detail": "Itinéraire vers chaque établissement"
           },
           {
             "label": "Partage de position WhatsApp",
@@ -768,7 +768,7 @@
       "booking": {
         "title": "WhatsApp Direct",
         "titleGradient": "Booking",
-        "description": "Vos anciens voyageurs peuvent réserver directement via WhatsApp. Plus de commission OTA. Paiement sécurisé. Confirmation instantanée.",
+        "description": "Vos anciens clients peuvent réserver directement via WhatsApp. Plus de commission OTA. Paiement sécurisé. Confirmation instantanée.",
         "advantagesTitle": "Avantages",
         "advantages": [
           {
@@ -885,7 +885,7 @@
           "steps": [
             "Check-out détecté → tâche ménage créée",
             "Staff reçoit notif WhatsApp avec détails",
-            "GPS vers le bien · lien partagé sur WhatsApp",
+            "GPS vers l'établissement · lien partagé sur WhatsApp",
             "Arrivée confirmée sur WhatsApp → chrono démarre",
             "Photos + signalements multilingues → corrections → validation → paiement auto"
           ]
@@ -894,12 +894,12 @@
     },
     "fullCycle": {
       "badge": "🔄 Cycle complet",
-      "title": "Airbnb → Sojori → WhatsApp + AI →",
+      "title": "Booking → Sojori → WhatsApp + AI →",
       "titleGradient": "Réponse automatique",
-      "subtitle": "Le message arrive d'Airbnb ou Booking.com, passe par l'AI WhatsApp avec traduction, validation PM, puis retourne automatiquement sur la plateforme d'origine. Tout le cycle en quelques secondes.",
+      "subtitle": "Le message arrive de Booking, d'Expedia ou d'Airbnb, passe par l'AI WhatsApp avec traduction, validation, puis retourne automatiquement sur la plateforme d'origine.",
       "steps": [
         {
-          "title": "Airbnb",
+          "title": "Booking",
           "description": "Message guest\nsur la plateforme",
           "message": "\"Where is WiFi?\""
         },
@@ -926,10 +926,10 @@
         {
           "title": "Sojori",
           "description": "Réponse\nAPI auto",
-          "message": "Traduit EN\n→ Airbnb"
+          "message": "Traduit EN\n→ Booking"
         },
         {
-          "title": "Airbnb",
+          "title": "Booking",
           "description": "Réponse\nau guest",
           "message": "\"WiFi: XXX\""
         }
@@ -1077,13 +1077,13 @@
       },
       "urgentLabel": "URGENT",
       "tasks": {
-        "task1": "Ménage Appartement Paris 15",
-        "task2": "Check-in Marco · Loft Montmartre",
-        "task3": "Maintenance AC · Villa Barcelona",
-        "task4": "Ménage Studio Marais",
+        "task1": "Ménage · Chambre 204",
+        "task2": "Arrivée Marco · Suite Junior",
+        "task3": "Maintenance AC · Suite Junior",
+        "task4": "Ménage · Chambre 118",
         "task5": "Ménage Duplex Lyon",
         "task6": "Check-out James P.",
-        "task7": "Course produits · Appartement"
+        "task7": "Réassort minibar · Chambre 118"
       }
     },
     "kpis": {
@@ -1145,7 +1145,7 @@
         },
         {
           "icon": "⭐",
-          "title": "Notes voyageurs",
+          "title": "Notes clients",
           "description": "Mappées au membre qui a fait le ménage. Bonus performance."
         }
       ]
@@ -1179,13 +1179,13 @@
     "hero": {
       "badge": "💬 Guest Experience · 100% WhatsApp",
       "title": "Zéro app. Zéro téléchargement. 100% WhatsApp.",
-      "subtitle": "Vos voyageurs reçoivent tout par WhatsApp : code porte, WiFi, guidebook IA, réservations. Pas d'app à télécharger, pas de compte à créer. Juste leur numéro de téléphone.",
+      "subtitle": "Vos clients reçoivent tout par WhatsApp : accès, WiFi, guide IA, réservations de services. Pas d'app à télécharger, pas de compte à créer.",
       "cta1": "Voir la démo",
       "cta2": "Tester WhatsApp"
     },
     "interactive": {
       "badge": "● VUE INTERACTIVE",
-      "title": "L'expérience voyageur, 100% WhatsApp.",
+      "title": "L'expérience client, 100% WhatsApp.",
       "subtitle": "Pas d'app web à développer. Tout se passe dans WhatsApp. Vos guests ont déjà WhatsApp sur leur téléphone. C'est là qu'ils reçoivent tout."
     },
     "tabs": {
@@ -1263,7 +1263,7 @@
     },
     "features": {
       "badge": "● Tout inclus",
-      "title": "Tout ce dont un voyageur a besoin. Dans WhatsApp.",
+      "title": "Tout ce dont un client a besoin. Dans WhatsApp.",
       "items": [
         {
           "icon": "💬",
@@ -1341,7 +1341,7 @@
       "cta2": "Nous contacter"
     },
     "calendar": {
-      "title": "Mars 2025 · Appartement Paris 15",
+      "title": "Mars 2026 · Riad Dar Zellige",
       "labels": {
         "event": "Événement",
         "highDemand": "Forte demande",
@@ -1573,9 +1573,9 @@
     "pageTitle": "Inbox unifiée",
     "hero": {
       "badge": "💬 Unified Inbox · Tous les canaux. Une boîte.",
-      "title": "WhatsApp, Airbnb, Booking, email.",
+      "title": "WhatsApp, Booking, Expedia, Airbnb.",
       "titleGradient": "Au même endroit.",
-      "subtitle": "Chaque message voyageur, peu importe le canal, dans une seule boîte. Réponses suggérées par IA. Historique complet. Templates personnalisés. Plus jamais de message oublié.",
+      "subtitle": "Chaque message client, peu importe le canal, dans une seule boîte. Réponses suggérées par IA. Historique complet. Templates personnalisés.",
       "cta1": "Voir la démo",
       "cta2": "Connecter mes canaux"
     },
@@ -1602,7 +1602,7 @@
     "conversation": {
       "header": {
         "name": "Sarah Johnson",
-        "details": "WhatsApp · Appartement Paris 15 · check-in 15:00"
+        "details": "WhatsApp · Chambre 204 · arrivée 15:00"
       },
       "buttons": {
         "guestProfile": "Profil guest",
@@ -1664,7 +1664,7 @@
     "stats": {
       "stat1": {
         "key": "4 canaux",
-        "label": "WA, Airbnb, Booking, Email"
+        "label": "WA, Booking, Expedia, Airbnb"
       },
       "stat2": {
         "key": "<2 min",
@@ -1682,7 +1682,7 @@
     "finalCTA": {
       "title": "Connectez vos canaux.",
       "titleGradient": "En 5 minutes.",
-      "subtitle": "WhatsApp, Airbnb, Booking, email — tous en un. Setup instantané, OAuth sécurisé."
+      "subtitle": "WhatsApp, Booking, Expedia, Airbnb, email — tous en un. Setup instantané, OAuth sécurisé."
     }
   },
   "about": {
@@ -1730,7 +1730,7 @@
     "mission": {
       "badge": "Notre mission",
       "title": "Orchestrer chaque détail du ",
-      "titleGradient": "parcours voyageur",
+      "titleGradient": "parcours client",
       "titleEnd": ".",
       "subtitle": "Comme le ferait le meilleur concierge.",
       "goalTitle": "Pas seulement gérer des réservations. Mais coordonner chaque interaction, anticiper chaque besoin, orchestrer chaque moment — avec la précision d'un concierge 5 étoiles."
@@ -1780,7 +1780,7 @@
       "subtitle": "Quatre principes qu'on relit à chaque feature, à chaque embauche, à chaque décision produit.",
       "value1": {
         "number": "01 — Priorité",
-        "title": "Hôtes ",
+        "title": "Hôteliers ",
         "titleStrong": "d'abord",
         "titleEnd": ".",
         "description": "On construit pour ceux qui se lèvent à 6h pour gérer un check-in. Pas pour les slides VC."
@@ -1903,15 +1903,15 @@
       "dialNoResults": "Aucun résultat",
       "phoneLabel": "Téléphone *",
       "phonePlaceholder": "6 12 34 56 78",
-      "propertiesLabel": "Nombre de biens *",
+      "propertiesLabel": "Nombre de chambres *",
       "propertiesPlaceholder": "Sélectionnez...",
       "propertiesOptions": {
-        "1": "1 bien",
-        "2-5": "2-5 biens",
-        "6-10": "6-10 biens",
-        "11-20": "11-20 biens",
-        "21-50": "21-50 biens",
-        "51+": "51+ biens"
+        "1": "1 chambre",
+        "2-5": "2-5 chambres",
+        "6-10": "6-10 chambres",
+        "11-20": "11-20 chambres",
+        "21-50": "21-50 chambres",
+        "51+": "51+ chambres"
       },
       "submitButton": "Réserver ma démo →",
       "submitButtonLoading": "Envoi en cours...",
@@ -1926,7 +1926,7 @@
       "titleGradient": "créneau de démo",
       "titleEnd": " (30 min)",
       "subtitle": "D'abord un créneau simple — le questionnaire détaillé viendra juste après, une fois votre horaire sécurisé.",
-      "agentLabel": "Hôte de la démo",
+      "agentLabel": "Votre interlocuteur",
       "chooseDayLabel": "Choisissez un jour",
       "thisWeekLabel": "Cette semaine",
       "nextWeekLabel": "Semaine suivante",
@@ -1959,17 +1959,18 @@
       "rolePlaceholder": "Sélectionnez...",
       "roleOptions": {
         "property-manager": "Property Manager (gestionnaire)",
-        "owner": "Propriétaire (gère ses propres biens)",
+        "owner": "Propriétaire (gère son propre établissement)",
         "agency": "Agence immobilière",
         "hotel": "Hôtel / Résidence"
       },
       "propertyTypesLabel": "Types de propriétés (plusieurs choix possibles)",
       "propertyTypeOptions": [
-        "Appartement",
-        "Villa",
-        "Maison",
-        "Chambre d'hôtel",
+        "Hôtel",
+        "Riad",
+        "Maison d’hôtes",
         "Résidence",
+        "Villa",
+        "Appartement",
         "Autre"
       ],
       "currentToolsTitle": "🛠️ Outils actuels",
@@ -1979,7 +1980,7 @@
       "currentChannelManagerPlaceholder": "ex: Rentals United, SiteMinder...",
       "currentDynamicPricingLabel": "Dynamic Pricing",
       "currentDynamicPricingPlaceholder": "ex: PriceLabs, Beyond, Manuel...",
-      "currentWhatsAppLabel": "Communication voyageurs",
+      "currentWhatsAppLabel": "Communication client",
       "currentWhatsAppPlaceholder": "ex: WhatsApp manuel, Email...",
       "needsTitle": "🎯 Vos besoins",
       "timelineLabel": "Quand souhaitez-vous lancer Sojori ? *",
@@ -2118,12 +2119,12 @@
       "description": "Conciergerie digitale pour riads et villas : WhatsApp, check-in, services locaux."
     },
     "gestionLocativeCasablanca": {
-      "title": "Gestion locative Casablanca | PMS appartements",
+      "title": "Gestion hôtelière Casablanca | PMS hôtels & résidences",
       "description": "PMS et orchestration hôtelière à Casablanca : channel manager, WhatsApp, équipes."
     },
     "conciergerieCasablanca": {
       "title": "Conciergerie Casablanca | WhatsApp & services invités",
-      "description": "Conciergerie digitale pour appartements : WhatsApp, check-in, services locaux."
+      "description": "Conciergerie digitale pour hôtels et résidences : WhatsApp, check-in, services aux clients."
     },
     "gestionLocativeAgadir": {
       "title": "Gestion locative Agadir | PMS résidences balnéaires",
@@ -2142,12 +2143,12 @@
       "description": "Conciergerie digitale pour biens à Tanger : WhatsApp, check-in, services locaux."
     },
     "gestionLocativeRabat": {
-      "title": "Gestion locative Rabat | PMS appartements capitale",
+      "title": "Gestion hôtelière Rabat | PMS hôtels de la capitale",
       "description": "PMS et orchestration hôtelière à Rabat : channel manager, WhatsApp, équipes."
     },
     "conciergerieRabat": {
       "title": "Conciergerie Rabat | WhatsApp & services invités",
-      "description": "Conciergerie digitale pour appartements à Rabat : WhatsApp, check-in, services locaux."
+      "description": "Conciergerie digitale pour hôtels et riads à Rabat : WhatsApp, check-in, services aux clients."
     },
     "dynamicPricing": {
       "title": "Tarification dynamique | Règles & calendrier",
@@ -2248,10 +2249,10 @@
       "header": "Propriété · Mars 2025"
     },
     "properties": [
-      "Appartement Paris 15",
-      "Villa Barcelona",
-      "Loft Montmartre",
-      "Studio Marais",
+      "Riad Dar Zellige · Marrakech",
+      "Hôtel Tafoukt · Agadir",
+      "Hôtel Tafoukt · Agadir",
+      "Dar Gueliz · Marrakech",
       "Duplex Lyon"
     ],
     "sectionCalendar": {
@@ -2287,7 +2288,7 @@
       },
       {
         "title": "Sync 2-way iCal",
-        "desc": "Avec votre channel manager + Airbnb/Booking direct. Zéro double-saisie."
+        "desc": "Avec votre channel manager + Booking, Expedia et Airbnb en direct. Zéro double-saisie."
       }
     ],
     "stats": [

@@ -48,8 +48,8 @@ export function PortfolioOverview() {
   const portfolioListings = [
     { name: 'Riad Atlas Prestige', city: 'Marrakech', zone: 'Hivernage', adr: 1450, occ: 58, revenue: 42300, color: '#ef4444' },
     { name: 'Villa Jardin Secret', city: 'Marrakech', zone: 'Palmeraie', adr: 2100, occ: 51, revenue: 53900, color: '#10b981' },
-    { name: 'Appartement Marais Lux', city: 'Paris', zone: 'Marais', adr: 220, occ: 72, revenue: 57400, color: '#3b82f6' },
-    { name: 'Studio Montmartre View', city: 'Paris', zone: 'Montmartre', adr: 165, occ: 68, revenue: 40700, color: '#8b5cf6' },
+    { name: 'Hôtel Tafoukt', city: 'Agadir', zone: 'Front de mer', adr: 1150, occ: 72, revenue: 57400, color: '#3b82f6' },
+    { name: 'Maison d’hôtes Kasbah', city: 'Rabat', zone: 'Oudayas', adr: 860, occ: 68, revenue: 40700, color: '#8b5cf6' },
     { name: 'Dar Gueliz Moderne', city: 'Marrakech', zone: 'Gueliz', adr: 980, occ: 45, revenue: 19800, color: '#f59e0b' },
   ];
 
@@ -141,7 +141,7 @@ export function PortfolioOverview() {
                         <div style={{ fontSize: 11, color: 'var(--text-3)' }}>{listing.zone}</div>
                       </td>
                       <td style={{ padding: 16, textAlign: 'right', fontFamily: 'var(--font-mono)', fontSize: 13, fontWeight: 600 }}>
-                        {listing.adr} {listing.city === 'Paris' ? '€' : 'MAD'}
+                        {listing.adr} MAD
                       </td>
                       <td style={{ padding: 16, textAlign: 'right' }}>
                         <div style={{ display: 'inline-block', padding: '4px 10px', borderRadius: 20, background: `${listing.color}20`, color: listing.color, fontSize: 12, fontWeight: 600, fontFamily: 'var(--font-mono)' }}>

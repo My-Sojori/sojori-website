@@ -66,7 +66,7 @@ export default function AnalyticsPage() {
               { i: "📈", t: "Benchmarks marché", d: "Comparaison avec votre quartier, votre type de bien, votre saison." },
               { i: "📥", t: "Exports comptable", d: "CSV, PDF, format compta (FEC, Sage). Auto le 1er du mois." },
               { i: "🔮", t: "Forecasts prédictifs", d: "Revenue prévisionnel à 90 jours. Scénarios what-if intégrés." },
-              { i: "🎯", t: "Cohort analysis", d: "Voyageurs récurrents, sources qui convertissent, LTV par canal." },
+              { i: "🎯", t: "Cohort analysis", d: "Clients récurrents, sources qui convertissent, LTV par canal." },
             ]} />
           </div>
         </section>

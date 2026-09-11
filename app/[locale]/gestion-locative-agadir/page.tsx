@@ -61,7 +61,7 @@ export default function GestionLocativeAgadirPage() {
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 16 }}>
               {[
                 { i: '📋', t: 'PMS Multi-Propriétés', d: 'Calendrier unifié pour résidences balnéaires. Réservations, paiements MAD/EUR, facturation automatique, contrats digitaux — pensé pour les séjours longs comme pour les courts city-breaks.', link: '/pms' as const },
-                { i: '🔄', t: 'Channel Manager Temps Réel', d: 'Synchronisation Airbnb, Booking.com, Expedia. Évitez surréservations sur des portefeuilles saisonniers à forte occupation, gérez calendrier depuis un dashboard unique.', link: '/channel-manager' as const },
+                { i: '🔄', t: 'Channel Manager Temps Réel', d: 'Synchronisation Booking.com, Expedia, Airbnb. Évitez surréservations sur des portefeuilles saisonniers à forte occupation, gérez calendrier depuis un dashboard unique.', link: '/channel-manager' as const },
                 { i: '💬', t: 'WhatsApp Conciergerie 24/7', d: 'Conciergerie automatique FR/AR/EN adaptée aux arrivées charter groupées et aux séjours longs des résidents hivernaux. Check-in digital, support réactif toute l\'année.', link: '/whatsapp' as const },
                 { i: '💰', t: 'Dynamic Pricing Saisonnier', d: 'Yield management pensé pour la double saison d\'Agadir : pic estival familles, saison hivernale longue durée. Optimisez RevPAR automatiquement selon la demande.', link: '/dynamic-pricing' as const },
                 { i: '👥', t: 'Gestion Équipe Locale', d: 'Planification ménage adaptée aux rotations rapides de la haute saison, attribution tâches, suivi performances. Coordonnez vos équipes sans chaos WhatsApp.', link: '/teamflow' as const },
@@ -131,8 +131,8 @@ export default function GestionLocativeAgadirPage() {
                     "a": "Les tâches se déclenchent sur les événements réels : départ constaté, arrivée anticipée, chambre signalée en panne. Chaque intervenant reçoit sa mission sur WhatsApp, en français ou en arabe, sans application à installer. Vous voyez l'état de chaque chambre en temps réel plutôt que de le reconstituer en fin de journée."
           },
           {
-                    "q": "Comment gérer Booking.com, Airbnb et les réservations directes ?",
-                    "a": "Le channel manager synchronise disponibilités et tarifs dans les deux sens avec Booking, Airbnb et les autres canaux. Les réservations directes entrent dans le même flux. Vous évitez la surréservation, et surtout vous cessez de gérer chaque canal séparément."
+                    "q": "Comment gérer Booking.com, Expedia, Airbnb et les réservations directes ?",
+                    "a": "Le channel manager synchronise disponibilités et tarifs dans les deux sens avec Booking, Expedia, Airbnb et les autres canaux. Les réservations directes entrent dans le même flux. Vous évitez la surréservation, et surtout vous cessez de gérer chaque canal séparément."
           },
           {
                     "q": "Quels indicateurs suivre pour un établissement à Agadir ?",

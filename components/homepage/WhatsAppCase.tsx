@@ -11,7 +11,7 @@ export function WhatsAppCase() {
   const t = useTranslations('home.whatsappCase');
   const [step, setStep] = useState(0);
   const messages = [
-    { from: 'sojori', t: 'J-7', text: "👋 Hi Sarah! Welcome to Paris Montmartre. I'm Sojori, your AI concierge. I'll help you check in." },
+    { from: 'sojori', t: 'J-7', text: "👋 Hi Sarah! Welcome to Riad Dar Zellige, Marrakech. I'm Sojori, your AI concierge. I'll help you check in." },
     { from: 'guest', t: 'J-7', text: 'Hi! Thanks. Do I need to send anything?' },
     { from: 'sojori', t: 'J-3', text: "Just snap a photo of your passport — I'll handle the rest. KYC takes ~30s ✨" },
     { from: 'guest', t: 'J+2', text: "AC isn't cooling well, can you help?" },

@@ -12,11 +12,11 @@ interface Property {
 
 export function PropertyTable() {
   const props: Property[] = [
-    { name: "Appartement Paris 15", rev: "€18,420", occ: "94%", adr: "€1,450", revpar: "€1,365", rating: "4.92", delta: "+18%" },
-    { name: "Loft Montmartre", rev: "€14,200", occ: "87%", adr: "€1,180", revpar: "€1,027", rating: "4.85", delta: "+12%" },
-    { name: "Villa Atlas", rev: "€22,890", occ: "91%", adr: "€1,890", revpar: "€1,720", rating: "4.95", delta: "+24%" },
-    { name: "Atlas Loft", rev: "€8,640", occ: "78%", adr: "€820", revpar: "€640", rating: "4.78", delta: "+8%" },
-    { name: "Médina House", rev: "€11,250", occ: "83%", adr: "€980", revpar: "€814", rating: "4.88", delta: "+15%" },
+    { name: "Riad Dar Zellige", rev: "184 200 MAD", occ: "94%", adr: "1 450 MAD", revpar: "1 365 MAD", rating: "4.92", delta: "+18%" },
+    { name: "Hôtel Tafoukt", rev: "142 000 MAD", occ: "87%", adr: "1 180 MAD", revpar: "1 027 MAD", rating: "4.85", delta: "+12%" },
+    { name: "Villa Atlas", rev: "228 900 MAD", occ: "91%", adr: "1 890 MAD", revpar: "1 720 MAD", rating: "4.95", delta: "+24%" },
+    { name: "Dar Gueliz", rev: "86 400 MAD", occ: "78%", adr: "820 MAD", revpar: "640 MAD", rating: "4.78", delta: "+8%" },
+    { name: "Maison d’hôtes Médina", rev: "112 500 MAD", occ: "83%", adr: "980 MAD", revpar: "814 MAD", rating: "4.88", delta: "+15%" },
   ];
 
   return (
