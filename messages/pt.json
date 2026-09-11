@@ -1,11 +1,11 @@
 {
   "metadata": {
     "home": {
-      "title": "Sojori — O Orquestrador de Aluguel de Temporada",
+      "title": "Sojori — O Orquestrador da Hotelaria",
       "description": "Software de orquestração para gestores de aluguéis de temporada. Reserva, hóspede, equipe, proprietário — coordenados por IA, controlados pelo WhatsApp. Lançamento no Marrocos."
     },
     "pricing": {
-      "title": "Preços Sojori — PMS Aluguel de Temporada | Marrakech, Casablanca, Paris",
+      "title": "Preços Sojori — Orquestração Hoteleira | Marrakech, Casablanca, Paris",
       "description": "Preços transparentes por propriedade. Solo para começar. Orchestre para orquestrar. Symphonie para escalar."
     }
   },
@@ -205,10 +205,10 @@
   },
   "home": {
     "hero": {
-      "badge": "● Orquestrador · Aluguel de Temporada",
-      "title": "Software de orquestração",
-      "titleGradient": "para aluguel de temporada",
-      "subtitle": "Sojori coordena sua atividade de aluguel de temporada como um humano faria — reserva, hóspede, equipe, proprietário. Exceto que nunca dorme.",
+      "badge": "● Orquestrador · Hotelaria",
+      "title": "O motor de orquestração",
+      "titleGradient": "da hotelaria",
+      "subtitle": "Sojori coordena sua atividade de hotelaria como um humano faria — reserva, hóspede, equipe, proprietário. Exceto que nunca dorme.",
       "subtitleStrong": "E não pede para você pilotar.",
       "ctaPrimary": "Ver a orquestração →",
       "ctaSecondary": "Solicitar uma demo",
@@ -406,7 +406,7 @@
     },
     "socialProof": {
       "badge": "⭐ Eles confiam em nós",
-      "title": "Property managers que já automatizam.",
+      "title": "Estabelecimentos que já orquestram.",
       "testimonials": [
         {
           "quote": "Antes do Sojori: 4h/dia em mensagens WhatsApp. Depois do Sojori: 20 min/dia. O resto é automático.",
@@ -509,7 +509,7 @@
       "title": "Pronto para",
       "titleGradient": "orquestrar",
       "titleEnd": "seus aluguéis?",
-      "subtitle": "Junte-se a centenas de property managers que automatizam suas operações com Sojori.",
+      "subtitle": "Junte-se a centenas de estabelecimentos que automatizam suas operações com Sojori.",
       "ctaPrimary": "Solicitar uma demo gratuita →",
       "ctaSecondary": "Ver preços",
       "footer": "✓ Demo personalizada · ✓ Sem compromisso · ✓ Configuração em <7 dias"
@@ -1593,9 +1593,9 @@
       "badge": "Sobre Sojori",
       "titlePart1": "O ",
       "titleGradient": "orquestrador inteligente",
-      "titlePart2": "que os property managers",
+      "titlePart2": "que os hoteleiros",
       "titlePart3": "merecem.",
-      "description": "Os property managers merecem algo melhor do que ferramentas que apenas gerenciam calendários e pagamentos. Sojori atende à necessidade de ",
+      "description": "Os hoteleiros merecem algo melhor do que ferramentas que apenas gerenciam calendários e pagamentos. Sojori atende à necessidade de ",
       "descriptionStrong": "orquestração",
       "descriptionEnd": ": coordenar cada interação, antecipar cada necessidade, no momento certo.",
       "ctaDemo": "Solicitar uma demo →",
@@ -1646,7 +1646,7 @@
         "ch1": {
           "number": "i.",
           "title": "A lacuna entre ambição e ferramentas.",
-          "p1": "Os property managers querem oferecer ",
+          "p1": "Os hoteleiros querem oferecer ",
           "p1Strong": "uma experiência excepcional",
           "p1End": ": hospitalidade, atenção aos detalhes, antecipação de necessidades.",
           "p2": "Mas os PMS tradicionais se limitam a gerenciar ",
@@ -1724,7 +1724,7 @@
         "2025": {
           "year": "2025",
           "label": "Lançamento",
-          "description": "Sojori é lançada. Primeiros property managers adotam a plataforma para orquestrar suas operações diárias."
+          "description": "Sojori é lançada. Primeiros estabelecimentos adotam a plataforma para orquestrar suas operações diárias."
         },
         "today": {
           "year": "Hoje",
@@ -2013,7 +2013,7 @@
     },
     "gestionLocativeMarrakech": {
       "title": "Gestão locativa Marraquexe | PMS riads e villas",
-      "description": "PMS e orquestração para aluguel de temporada em Marraquexe: channel manager, WhatsApp, equipas."
+      "description": "PMS e orquestração para hotelaria em Marraquexe: channel manager, WhatsApp, equipas."
     },
     "conciergerieMarrakech": {
       "title": "Conciergerie Marraquexe | WhatsApp e serviços",
@@ -2021,7 +2021,7 @@
     },
     "gestionLocativeCasablanca": {
       "title": "Gestão de aluguel Casablanca | PMS apartamentos",
-      "description": "PMS e orquestração para aluguel de temporada em Casablanca: channel manager, WhatsApp, equipas."
+      "description": "PMS e orquestração para hotelaria em Casablanca: channel manager, WhatsApp, equipas."
     },
     "conciergerieCasablanca": {
       "title": "Conciergerie Casablanca | WhatsApp e serviços",
@@ -2029,7 +2029,7 @@
     },
     "gestionLocativeAgadir": {
       "title": "Gestão de aluguel Agadir | PMS residências de praia",
-      "description": "PMS e orquestração para aluguel de temporada em Agadir: channel manager, WhatsApp, equipas."
+      "description": "PMS e orquestração para hotelaria em Agadir: channel manager, WhatsApp, equipas."
     },
     "conciergerieAgadir": {
       "title": "Conciergerie Agadir | WhatsApp e serviços",
@@ -2037,7 +2037,7 @@
     },
     "gestionLocativeTanger": {
       "title": "Gestão de aluguel Tânger | PMS medina e Tânger moderna",
-      "description": "PMS e orquestração para aluguel de temporada em Tânger: channel manager, WhatsApp, equipas."
+      "description": "PMS e orquestração para hotelaria em Tânger: channel manager, WhatsApp, equipas."
     },
     "conciergerieTanger": {
       "title": "Conciergerie Tânger | WhatsApp e serviços",
@@ -2045,7 +2045,7 @@
     },
     "gestionLocativeRabat": {
       "title": "Gestão de aluguel Rabat | PMS apartamentos capital",
-      "description": "PMS e orquestração para aluguel de temporada em Rabat: channel manager, WhatsApp, equipas."
+      "description": "PMS e orquestração para hotelaria em Rabat: channel manager, WhatsApp, equipas."
     },
     "conciergerieRabat": {
       "title": "Conciergerie Rabat | WhatsApp e serviços",

@@ -1,11 +1,11 @@
 {
   "metadata": {
     "home": {
-      "title": "Sojori — L'orchestrateur de la location courte durée",
+      "title": "Sojori — L'orchestrateur de l'hospitalité",
       "description": "Software d'orchestration pour gestionnaires de locations courte durée. Réservation, voyageur, staff, propriétaire — coordonnés par IA, pilotés depuis WhatsApp. Lancement Maroc."
     },
     "pricing": {
-      "title": "Tarifs Sojori — PMS Location Courte Durée | Marrakech, Casablanca, Paris",
+      "title": "Tarifs Sojori — Orchestration hôtelière | Marrakech, Casablanca, Paris",
       "description": "Pricing transparent par listing. Solo pour démarrer. Orchestre pour orchestrer. Symphonie pour piloter à l'échelle."
     }
   },
@@ -70,7 +70,7 @@
       "rabat": "Rabat"
     },
     "footer": {
-      "tagline": "L'orchestrateur de la location courte durée.",
+      "tagline": "L'orchestrateur de l'hospitalité.",
       "copyright": "© 2026 Sojori SAS · Tous droits réservés"
     },
     "finalCta": {
@@ -205,10 +205,10 @@
   },
   "home": {
     "hero": {
-      "badge": "● Orchestrateur · Location courte durée",
-      "title": "Software d'orchestration",
-      "titleGradient": "location courte durée",
-      "subtitle": "Sojori coordonne votre activité de location courte durée comme un humain le ferait — réservation, voyageur, staff, propriétaire. Sauf qu'il ne dort jamais.",
+      "badge": "● Orchestrateur · Hospitalité",
+      "title": "Le moteur d'orchestration",
+      "titleGradient": "de l'hospitalité",
+      "subtitle": "Sojori coordonne votre établissement comme un humain le ferait — réservation, voyageur, staff, propriétaire. Sauf qu'il ne dort jamais.",
       "subtitleStrong": "Et qu'il ne vous demande pas de piloter.",
       "ctaPrimary": "Voir l'orchestration →",
       "ctaSecondary": "Demander une démo",
@@ -407,7 +407,7 @@
     },
     "socialProof": {
       "badge": "⭐ Ils nous font confiance",
-      "title": "Des property managers qui automatisent déjà.",
+      "title": "Des établissements qui orchestrent déjà.",
       "testimonials": [
         {
           "quote": "Avant Sojori : 4h/jour sur les messages WhatsApp. Après Sojori : 20 min/jour. Le reste est automatique.",
@@ -510,7 +510,7 @@
       "title": "Prêt à",
       "titleGradient": "orchestrer",
       "titleEnd": "vos locations ?",
-      "subtitle": "Rejoignez des centaines de property managers qui automatisent leurs opérations avec Sojori.",
+      "subtitle": "Rejoignez des centaines d'établissements qui orchestrent leurs opérations avec Sojori.",
       "ctaPrimary": "Demander une démo gratuite →",
       "ctaSecondary": "Voir le pricing",
       "footer": "✓ Démo personnalisée · ✓ Sans engagement · ✓ Setup en <7 jours"
@@ -1537,9 +1537,18 @@
       "shareReports": "Partager Rapports Marché",
       "shareDescription": "Générez des liens partageables avec occupation par zone, tendances ADR, graphiques de croissance de l'offre et prévisions de pacing. Parfait pour rapports propriétaires et décisions d'investissement.",
       "shareTypes": [
-        {"icon": "📊", "label": "Analyse de marché par ville et zone"},
-        {"icon": "📈", "label": "Rapport de positionnement concurrentiel"},
-        {"icon": "💰", "label": "Évaluation des opportunités de revenus"}
+        {
+          "icon": "📊",
+          "label": "Analyse de marché par ville et zone"
+        },
+        {
+          "icon": "📈",
+          "label": "Rapport de positionnement concurrentiel"
+        },
+        {
+          "icon": "💰",
+          "label": "Évaluation des opportunités de revenus"
+        }
       ],
       "insights": [
         {
@@ -1682,9 +1691,9 @@
       "badge": "À propos de Sojori",
       "titlePart1": "L'",
       "titleGradient": "orchestrateur intelligent",
-      "titlePart2": "que les property managers",
+      "titlePart2": "que les hôteliers",
       "titlePart3": "méritent.",
-      "description": "Les property managers méritent mieux que des outils qui gèrent uniquement calendriers et paiements. Sojori répond au besoin d'",
+      "description": "Les hôteliers méritent mieux que des outils qui gèrent uniquement calendriers et paiements. Sojori répond au besoin d'",
       "descriptionStrong": "orchestration",
       "descriptionEnd": " : coordonner chaque interaction, anticiper chaque besoin, au bon moment.",
       "ctaDemo": "Demander une démo →",
@@ -1735,7 +1744,7 @@
         "ch1": {
           "number": "i.",
           "title": "L'écart entre l'ambition et les outils.",
-          "p1": "Les property managers veulent offrir ",
+          "p1": "Les hôteliers veulent offrir ",
           "p1Strong": "une expérience exceptionnelle",
           "p1End": " : hospitalité, sens du détail, anticipation des besoins.",
           "p2": "Mais les PMS classiques se limitent à gérer ",
@@ -1813,7 +1822,7 @@
         "2025": {
           "year": "2025",
           "label": "Lancement",
-          "description": "Sojori est lancé. Premiers property managers adoptent la plateforme pour orchestrer leurs opérations quotidiennes."
+          "description": "Sojori est lancé. Premiers établissements adoptent la plateforme pour orchestrer leurs opérations quotidiennes."
         },
         "today": {
           "year": "Today",
@@ -2085,7 +2094,7 @@
       "description": "Distribution unifiée : Airbnb, Booking, Vrbo et plus. Calendrier et prix synchronisés, anti-overbooking."
     },
     "analytics": {
-      "title": "Analytics | BI location courte durée",
+      "title": "Analytics | BI hôtelière",
       "description": "Indicateurs revenus, occupation, ADR, RevPAR. Tableaux de bord et exports."
     },
     "dashboardApp": {
@@ -2110,7 +2119,7 @@
     },
     "gestionLocativeCasablanca": {
       "title": "Gestion locative Casablanca | PMS appartements",
-      "description": "PMS et orchestration pour la location courte durée à Casablanca : channel manager, WhatsApp, équipes."
+      "description": "PMS et orchestration hôtelière à Casablanca : channel manager, WhatsApp, équipes."
     },
     "conciergerieCasablanca": {
       "title": "Conciergerie Casablanca | WhatsApp & services invités",
@@ -2126,7 +2135,7 @@
     },
     "gestionLocativeTanger": {
       "title": "Gestion locative Tanger | PMS médina & Tanger moderne",
-      "description": "PMS et orchestration pour la location courte durée à Tanger : channel manager, WhatsApp, équipes."
+      "description": "PMS et orchestration hôtelière à Tanger : channel manager, WhatsApp, équipes."
     },
     "conciergerieTanger": {
       "title": "Conciergerie Tanger | WhatsApp & services invités",
@@ -2134,7 +2143,7 @@
     },
     "gestionLocativeRabat": {
       "title": "Gestion locative Rabat | PMS appartements capitale",
-      "description": "PMS et orchestration pour la location courte durée à Rabat : channel manager, WhatsApp, équipes."
+      "description": "PMS et orchestration hôtelière à Rabat : channel manager, WhatsApp, équipes."
     },
     "conciergerieRabat": {
       "title": "Conciergerie Rabat | WhatsApp & services invités",
@@ -2161,11 +2170,11 @@
       "description": "Planification ménage, tâches, performance. Coordonnez ménage, conciergerie et maintenance."
     },
     "about": {
-      "title": "À propos de Sojori | L'orchestrateur de la location courte durée",
-      "description": "Sojori développe un logiciel d'orchestration pour property managers : PMS, channel manager, WhatsApp IA, tarification dynamique. Basé à Marrakech, Casablanca et Paris."
+      "title": "À propos de Sojori | L'orchestrateur de l'hospitalité",
+      "description": "Sojori développe un moteur d'orchestration pour l'hospitalité : PMS, channel manager, WhatsApp IA, tarification dynamique. Basé à Marrakech, Casablanca et Paris."
     },
     "demo": {
-      "title": "Demander une démo Sojori | PMS & orchestrateur location courte durée",
+      "title": "Demander une démo Sojori | PMS & orchestrateur hospitalité",
       "description": "Réservez une démo personnalisée de Sojori : PMS, Channel Manager, WhatsApp IA. Setup en moins de 7 jours, 1 mois d'essai gratuit."
     },
     "demoRdv": {
@@ -2177,7 +2186,7 @@
       "description": "Connecteurs et API Sojori : Airbnb, Booking.com, Expedia, Vrbo, WhatsApp Business, comptabilité. Synchronisation temps réel."
     },
     "pricing": {
-      "title": "Tarifs Sojori | Plans PMS & orchestrateur location courte durée",
+      "title": "Tarifs Sojori | Plans PMS & orchestrateur hospitalité",
       "description": "Tarification transparente Sojori, sans frais cachés : Solo, Orchestre, Symphonie. 1 mois d'essai gratuit, annulation facile."
     }
   },

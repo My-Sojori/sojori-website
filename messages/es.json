@@ -1,11 +1,11 @@
 {
   "metadata": {
     "home": {
-      "title": "Sojori — El Orquestador de Alquiler Vacacional",
+      "title": "Sojori — El Orquestador de la Hostelería",
       "description": "Software de orquestación para gestores de alquileres vacacionales. Reserva, huésped, personal, propietario — coordinados por IA, controlados desde WhatsApp. Lanzamiento en Marruecos."
     },
     "pricing": {
-      "title": "Precios Sojori — PMS Alquiler Vacacional | Marrakech, Casablanca, París",
+      "title": "Precios Sojori — Orquestación Hotelera | Marrakech, Casablanca, París",
       "description": "Precios transparentes por propiedad. Solo para empezar. Orchestre para orquestar. Symphonie para escalar."
     }
   },
@@ -70,7 +70,7 @@
       "rabat": "Rabat"
     },
     "footer": {
-      "tagline": "El orquestador del alquiler vacacional.",
+      "tagline": "El orquestador del hostelería.",
       "copyright": "© 2026 Sojori SAS · Todos los derechos reservados"
     },
     "finalCta": {
@@ -205,10 +205,10 @@
   },
   "home": {
     "hero": {
-      "badge": "● Orquestador · Alquiler Vacacional",
-      "title": "Software de orquestación",
-      "titleGradient": "para alquiler vacacional",
-      "subtitle": "Sojori coordina tu actividad de alquiler vacacional como lo haría un humano — reserva, huésped, personal, propietario. Excepto que nunca duerme.",
+      "badge": "● Orquestador · Hostelería",
+      "title": "El motor de orquestación",
+      "titleGradient": "de la hostelería",
+      "subtitle": "Sojori coordina tu actividad de hostelería como lo haría un humano — reserva, huésped, personal, propietario. Excepto que nunca duerme.",
       "subtitleStrong": "Y no te pide que lo dirijas.",
       "ctaPrimary": "Ver la orquestación →",
       "ctaSecondary": "Solicitar una demo",
@@ -406,7 +406,7 @@
     },
     "socialProof": {
       "badge": "⭐ Confían en nosotros",
-      "title": "Property managers que ya automatizan.",
+      "title": "Establecimientos que ya orquestan.",
       "testimonials": [
         {
           "quote": "Antes de Sojori: 4h/día en mensajes WhatsApp. Después de Sojori: 20 min/día. El resto es automático.",
@@ -509,7 +509,7 @@
       "title": "¿Listo para",
       "titleGradient": "orquestar",
       "titleEnd": "tus alquileres?",
-      "subtitle": "Únete a cientos de property managers que automatizan sus operaciones con Sojori.",
+      "subtitle": "Únete a cientos de establecimientos que automatizan sus operaciones con Sojori.",
       "ctaPrimary": "Solicitar una demo gratuita →",
       "ctaSecondary": "Ver precios",
       "footer": "✓ Demo personalizada · ✓ Sin compromiso · ✓ Configuración en <7 días"
@@ -1593,9 +1593,9 @@
       "badge": "Acerca de Sojori",
       "titlePart1": "El ",
       "titleGradient": "orquestador inteligente",
-      "titlePart2": "que los property managers",
+      "titlePart2": "que los hoteleros",
       "titlePart3": "merecen.",
-      "description": "Los property managers merecen algo mejor que herramientas que solo gestionan calendarios y pagos. Sojori responde a la necesidad de ",
+      "description": "Los hoteleros merecen algo mejor que herramientas que solo gestionan calendarios y pagos. Sojori responde a la necesidad de ",
       "descriptionStrong": "orquestación",
       "descriptionEnd": ": coordinar cada interacción, anticipar cada necesidad, en el momento adecuado.",
       "ctaDemo": "Solicitar una demo →",
@@ -1646,7 +1646,7 @@
         "ch1": {
           "number": "i.",
           "title": "La brecha entre ambición y herramientas.",
-          "p1": "Los property managers quieren ofrecer ",
+          "p1": "Los hoteleros quieren ofrecer ",
           "p1Strong": "una experiencia excepcional",
           "p1End": ": hospitalidad, atención al detalle, anticipación de necesidades.",
           "p2": "Pero los PMS tradicionales se limitan a gestionar ",
@@ -1724,7 +1724,7 @@
         "2025": {
           "year": "2025",
           "label": "Lanzamiento",
-          "description": "Sojori se lanza. Los primeros property managers adoptan la plataforma para orquestar sus operaciones diarias."
+          "description": "Sojori se lanza. Los primeros establecimientos adoptan la plataforma para orquestar sus operaciones diarias."
         },
         "today": {
           "year": "Hoy",
@@ -1996,7 +1996,7 @@
       "description": "Distribución unificada: Airbnb, Booking, Vrbo y más. Calendario y tarifas en tiempo real."
     },
     "analytics": {
-      "title": "Analytics | BI alquiler vacacional",
+      "title": "Analytics | BI hostelería",
       "description": "Ingresos, ocupación, ADR, RevPAR. Cuadros de mando y exportaciones."
     },
     "dashboardApp": {
@@ -2013,7 +2013,7 @@
     },
     "gestionLocativeMarrakech": {
       "title": "Gestión locativa Marrakech | PMS riads y villas",
-      "description": "PMS y orquestación para alquiler vacacional en Marrakech: channel manager, WhatsApp, equipos."
+      "description": "PMS y orquestación para hostelería en Marrakech: channel manager, WhatsApp, equipos."
     },
     "conciergerieMarrakech": {
       "title": "Conserjería Marrakech | WhatsApp y servicios",
@@ -2072,11 +2072,11 @@
       "description": "Planificación de limpieza, tareas y rendimiento. Coordina housekeeping y mantenimiento."
     },
     "about": {
-      "title": "Sobre Sojori | El orquestador del alquiler vacacional",
+      "title": "Sobre Sojori | El orquestador del hostelería",
       "description": "Sojori desarrolla software de orquestación para gestores de propiedades: PMS, channel manager, WhatsApp IA, precios dinámicos. Con sede en Marrakech, Casablanca y París."
     },
     "demo": {
-      "title": "Solicitar una demo de Sojori | PMS y orquestador de alquiler vacacional",
+      "title": "Solicitar una demo de Sojori | PMS y orquestador de hostelería",
       "description": "Reserva una demo personalizada de Sojori: PMS, Channel Manager, WhatsApp IA. Configuración en menos de 7 días, 1 mes de prueba gratis."
     },
     "demoRdv": {
@@ -2088,7 +2088,7 @@
       "description": "Conectores y API de Sojori: Airbnb, Booking.com, Expedia, Vrbo, WhatsApp Business, contabilidad. Sincronización en tiempo real."
     },
     "pricing": {
-      "title": "Tarifas Sojori | Planes PMS y orquestador de alquiler vacacional",
+      "title": "Tarifas Sojori | Planes PMS y orquestador de hostelería",
       "description": "Tarificación transparente de Sojori, sin costes ocultos: Solo, Orchestre, Symphonie. 1 mes de prueba gratis, cancela cuando quieras."
     }
   },

@@ -25,8 +25,8 @@ export async function generateMetadata({
   // Metadata par langue
   const metadataByLocale: Record<string, { title: string; description: string; keywords: string[] }> = {
     fr: {
-      title: "Sojori — PMS Location Courte Durée | Marrakech, Casablanca, Paris",
-      description: "PMS et orchestrateur pour property managers à Marrakech, Casablanca et Paris. Channel Manager, WhatsApp IA, tarification dynamique par règles, analytics. Location courte durée Maroc & France.",
+      title: "Sojori — Orchestration hôtelière | Marrakech, Casablanca, Paris",
+      description: "Moteur d'orchestration pour hôtels, riads et résidences à Marrakech, Casablanca et Paris. Channel Manager, WhatsApp IA, tarification dynamique par règles, analytics. Location courte durée Maroc & France.",
       keywords: [
         "PMS Marrakech",
         "PMS Maroc",
@@ -44,8 +44,8 @@ export async function generateMetadata({
       ]
     },
     en: {
-      title: "Sojori — Short-Term Rental PMS | Marrakech, Casablanca, Paris",
-      description: "PMS and orchestrator for property managers in Marrakech, Casablanca and Paris. Channel Manager, WhatsApp AI, dynamic pricing, analytics. Short-term rentals Morocco & France.",
+      title: "Sojori — Hospitality Orchestration | Marrakech, Casablanca, Paris",
+      description: "Hospitality orchestration engine for hotels, riads and residences in Marrakech, Casablanca and Paris. Channel Manager, WhatsApp AI, dynamic pricing, analytics. Short-term rentals Morocco & France.",
       keywords: [
         "PMS Marrakech",
         "PMS Morocco",
@@ -61,8 +61,8 @@ export async function generateMetadata({
       ]
     },
     es: {
-      title: "Sojori — PMS Alquiler Vacacional | Marrakech, Casablanca, París",
-      description: "PMS y orquestador para gestores de propiedades en Marrakech, Casablanca y París. Channel Manager, WhatsApp IA, precios dinámicos, analytics. Alquiler vacacional Marruecos y Francia.",
+      title: "Sojori — Orquestación Hotelera | Marrakech, Casablanca, París",
+      description: "Motor de orquestación para hoteles, riads y residencias en Marrakech, Casablanca y París. Channel Manager, WhatsApp IA, precios dinámicos, analytics. Alquiler vacacional Marruecos y Francia.",
       keywords: [
         "PMS Marrakech",
         "PMS Marruecos",
@@ -76,8 +76,8 @@ export async function generateMetadata({
       ]
     },
     pt: {
-      title: "Sojori — PMS Aluguel de Temporada | Marrakech, Casablanca, Paris",
-      description: "PMS e orquestrador para gestores de propriedades em Marrakech, Casablanca e Paris. Channel Manager, WhatsApp IA, preços dinâmicos, analytics. Aluguel de temporada Marrocos & França.",
+      title: "Sojori — Orquestração Hoteleira | Marrakech, Casablanca, Paris",
+      description: "Motor de orquestração para hotéis, riads e residências em Marrakech, Casablanca e Paris. Channel Manager, WhatsApp IA, preços dinâmicos, analytics. Aluguel de temporada Marrocos & França.",
       keywords: [
         "PMS Marrakech",
         "PMS Marrocos",
@@ -309,14 +309,14 @@ export default async function LocaleLayout({
       url: SITE_URL,
     },
     description: locale === 'en'
-      ? 'PMS and orchestrator for property managers in Marrakech, Casablanca and Paris. Channel Manager, WhatsApp AI, dynamic pricing, analytics.'
+      ? 'Hospitality orchestration engine for hotels, riads and residences in Marrakech, Casablanca and Paris. Channel Manager, WhatsApp AI, dynamic pricing, analytics.'
       : locale === 'es'
-      ? 'PMS y orquestador para gestores de propiedades en Marrakech, Casablanca y París. Channel Manager, WhatsApp IA, precios dinámicos, analytics.'
+      ? 'Motor de orquestación para hoteles, riads y residencias en Marrakech, Casablanca y París. Channel Manager, WhatsApp IA, precios dinámicos, analytics.'
       : locale === 'pt'
-      ? 'PMS e orquestrador para gestores de propriedades em Marrakech, Casablanca e Paris. Channel Manager, WhatsApp IA, preços dinâmicos, analytics.'
+      ? 'Motor de orquestração para hotéis, riads e residências em Marrakech, Casablanca e Paris. Channel Manager, WhatsApp IA, preços dinâmicos, analytics.'
       : locale === 'ar'
       ? 'نظام إدارة وتنسيق للمديرين العقاريين في مراكش، الدار البيضاء وباريس'
-      : 'PMS et orchestrateur pour property managers à Marrakech, Casablanca et Paris. Channel Manager, WhatsApp IA, tarification dynamique par règles, analytics.',
+      : 'Moteur d’orchestration pour hôtels, riads et résidences à Marrakech, Casablanca et Paris. Channel Manager, WhatsApp IA, tarification dynamique par règles, analytics.',
     featureList: featureListByLocale[locale] ?? featureListByLocale.fr,
   };
 

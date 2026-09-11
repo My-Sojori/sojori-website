@@ -1,11 +1,11 @@
 {
   "metadata": {
     "home": {
-      "title": "Sojori — The Short-Term Rental Orchestrator",
-      "description": "Orchestration software for short-term rental managers. Reservation, guest, staff, owner — coordinated by AI, controlled from WhatsApp. Launching in Morocco."
+      "title": "Sojori — The Hospitality Orchestrator",
+      "description": "Orchestration software for hospitality managers. Reservation, guest, staff, owner — coordinated by AI, controlled from WhatsApp. Launching in Morocco."
     },
     "pricing": {
-      "title": "Sojori Pricing — Short-Term Rental PMS | Marrakech, Casablanca, Paris",
+      "title": "Sojori Pricing — Hospitality Orchestration | Marrakech, Casablanca, Paris",
       "description": "Transparent per-listing pricing. Solo to start. Orchestre to orchestrate. Symphonie to scale."
     }
   },
@@ -70,7 +70,7 @@
       "rabat": "Rabat"
     },
     "footer": {
-      "tagline": "The short-term rental orchestrator.",
+      "tagline": "The hospitality orchestrator.",
       "copyright": "© 2026 Sojori SAS · All rights reserved"
     },
     "finalCta": {
@@ -205,10 +205,10 @@
   },
   "home": {
     "hero": {
-      "badge": "● Orchestrator · Short-Term Rental",
-      "title": "Short-term rental",
-      "titleGradient": "orchestration software",
-      "subtitle": "Sojori coordinates your short-term rental business like a human would — reservation, guest, staff, owner. Except it never sleeps.",
+      "badge": "● Orchestrator · Hospitality",
+      "title": "The orchestration engine",
+      "titleGradient": "for hospitality",
+      "subtitle": "Sojori coordinates your property like a human would — reservation, guest, staff, owner. Except it never sleeps.",
       "subtitleStrong": "And it doesn't ask you to drive.",
       "ctaPrimary": "See the orchestration →",
       "ctaSecondary": "Request a demo",
@@ -407,7 +407,7 @@
     },
     "socialProof": {
       "badge": "⭐ They trust us",
-      "title": "Property managers already automating.",
+      "title": "Properties already orchestrating.",
       "testimonials": [
         {
           "quote": "Before Sojori: 4h/day on WhatsApp messages. After Sojori: 20 min/day. The rest is automatic.",
@@ -510,7 +510,7 @@
       "title": "Ready to",
       "titleGradient": "orchestrate",
       "titleEnd": "your rentals?",
-      "subtitle": "Join hundreds of property managers automating their operations with Sojori.",
+      "subtitle": "Join hundreds of properties orchestrating their operations with Sojori.",
       "ctaPrimary": "Request a free demo →",
       "ctaSecondary": "See pricing",
       "footer": "✓ Personalized demo · ✓ No commitment · ✓ Setup in <7 days"
@@ -1537,9 +1537,18 @@
       "shareReports": "Share Market Reports",
       "shareDescription": "Generate shareable links with occupancy by zone, ADR trends, supply growth charts, and pacing forecasts. Perfect for owner reports and investment decisions.",
       "shareTypes": [
-        {"icon": "📊", "label": "Market analysis by city & zone"},
-        {"icon": "📈", "label": "Competitive positioning report"},
-        {"icon": "💰", "label": "Revenue opportunity assessment"}
+        {
+          "icon": "📊",
+          "label": "Market analysis by city & zone"
+        },
+        {
+          "icon": "📈",
+          "label": "Competitive positioning report"
+        },
+        {
+          "icon": "💰",
+          "label": "Revenue opportunity assessment"
+        }
       ],
       "insights": [
         {
@@ -1682,9 +1691,9 @@
       "badge": "About Sojori",
       "titlePart1": "The ",
       "titleGradient": "intelligent orchestrator",
-      "titlePart2": "that property managers",
+      "titlePart2": "that hoteliers",
       "titlePart3": "deserve.",
-      "description": "Property managers deserve better than tools that only manage calendars and payments. Sojori addresses the need for ",
+      "description": "Hoteliers deserve better than tools that only manage calendars and payments. Sojori addresses the need for ",
       "descriptionStrong": "orchestration",
       "descriptionEnd": ": coordinating every interaction, anticipating every need, at the right time.",
       "ctaDemo": "Request a demo →",
@@ -1735,7 +1744,7 @@
         "ch1": {
           "number": "i.",
           "title": "The gap between ambition and tools.",
-          "p1": "Property managers want to offer ",
+          "p1": "Hoteliers want to offer ",
           "p1Strong": "an exceptional experience",
           "p1End": ": hospitality, attention to detail, anticipating needs.",
           "p2": "But traditional PMS systems are limited to managing ",
@@ -1808,12 +1817,12 @@
         "2024": {
           "year": "2024",
           "label": "Foundation",
-          "description": "Sojori is founded to address the orchestration need in short-term rental management. The goal: go beyond traditional PMS by coordinating every step of the guest journey."
+          "description": "Sojori is founded to address the orchestration need in hospitality management. The goal: go beyond traditional PMS by coordinating every step of the guest journey."
         },
         "2025": {
           "year": "2025",
           "label": "Launch",
-          "description": "Sojori is launched. First property managers adopt the platform to orchestrate their daily operations."
+          "description": "Sojori is launched. First properties adopt the platform to orchestrate their daily operations."
         },
         "today": {
           "year": "Today",
@@ -1868,7 +1877,7 @@
       "title": "Ready to ",
       "titleStrong": "orchestrate like never before",
       "titleEnd": "?",
-      "subtitle": "Discover how Sojori transforms the daily management of your short-term rentals.",
+      "subtitle": "Discover how Sojori transforms the daily management of your hospitalitys.",
       "ctaDemo": "Request a demo →",
       "ctaHome": "← Back to homepage"
     }
@@ -2078,14 +2087,14 @@
   "seoPages": {
     "pms": {
       "title": "PMS Marrakech & Casablanca | Property management software Morocco",
-      "description": "Full PMS for property managers in Marrakech, Casablanca and Paris. Bookings, unified calendar, multi-property."
+      "description": "Full PMS for hospitality in Marrakech, Casablanca and Paris. Bookings, unified calendar, multi-property."
     },
     "channelManager": {
       "title": "Channel Manager | Multi-OTA sync",
       "description": "Unified distribution: Airbnb, Booking, Vrbo and more. Real-time calendar and rates, anti-overbooking."
     },
     "analytics": {
-      "title": "Analytics | Short-term rental BI",
+      "title": "Analytics | Hospitality BI",
       "description": "Revenue, occupancy, ADR, RevPAR. Dashboards and exports."
     },
     "dashboardApp": {
@@ -2102,7 +2111,7 @@
     },
     "gestionLocativeMarrakech": {
       "title": "Property management Marrakech | PMS for riads & villas",
-      "description": "PMS and orchestration for short-term rentals in Marrakech: channel manager, WhatsApp, teams."
+      "description": "PMS and hospitality orchestration in Marrakech: channel manager, WhatsApp, teams."
     },
     "conciergerieMarrakech": {
       "title": "Concierge Marrakech | WhatsApp & guest services",
@@ -2110,7 +2119,7 @@
     },
     "gestionLocativeCasablanca": {
       "title": "Property Management Casablanca | PMS apartments",
-      "description": "PMS and orchestration for short-term rentals in Casablanca: channel manager, WhatsApp, teams."
+      "description": "PMS and hospitality orchestration in Casablanca: channel manager, WhatsApp, teams."
     },
     "conciergerieCasablanca": {
       "title": "Concierge Casablanca | WhatsApp & guest services",
@@ -2126,7 +2135,7 @@
     },
     "gestionLocativeTanger": {
       "title": "Property Management Tangier | PMS medina & modern Tangier",
-      "description": "PMS and orchestration for short-term rentals in Tangier: channel manager, WhatsApp, teams."
+      "description": "PMS and hospitality orchestration in Tangier: channel manager, WhatsApp, teams."
     },
     "conciergerieTanger": {
       "title": "Concierge Tangier | WhatsApp & guest services",
@@ -2134,7 +2143,7 @@
     },
     "gestionLocativeRabat": {
       "title": "Property Management Rabat | PMS capital apartments",
-      "description": "PMS and orchestration for short-term rentals in Rabat: channel manager, WhatsApp, teams."
+      "description": "PMS and hospitality orchestration in Rabat: channel manager, WhatsApp, teams."
     },
     "conciergerieRabat": {
       "title": "Concierge Rabat | WhatsApp & guest services",
@@ -2150,7 +2159,7 @@
     },
     "whatsapp": {
       "title": "WhatsApp AI Marrakech | 24/7 automated concierge Morocco",
-      "description": "24/7 WhatsApp AI for property managers in Marrakech: automated concierge, instant guest replies, FR/AR/EN, digital check-in."
+      "description": "24/7 WhatsApp AI for hospitality in Marrakech: automated concierge, instant guest replies, FR/AR/EN, digital check-in."
     },
     "inbox": {
       "title": "Unified inbox Marrakech | Centralised multi-OTA messaging Morocco",
@@ -2161,11 +2170,11 @@
       "description": "Housekeeping planning, tasks and performance. Coordinate cleaning, concierge and maintenance."
     },
     "about": {
-      "title": "About Sojori | The short-term rental orchestrator",
-      "description": "Sojori builds orchestration software for property managers: PMS, channel manager, WhatsApp AI, dynamic pricing. Based in Marrakech, Casablanca and Paris."
+      "title": "About Sojori | The hospitality orchestrator",
+      "description": "Sojori builds hospitality orchestration engine: PMS, channel manager, WhatsApp AI, dynamic pricing. Based in Marrakech, Casablanca and Paris."
     },
     "demo": {
-      "title": "Request a Sojori demo | PMS & short-term rental orchestrator",
+      "title": "Request a Sojori demo | PMS & hospitality orchestrator",
       "description": "Book a personalized Sojori demo: PMS, Channel Manager, WhatsApp AI. Setup in under 7 days, 1 month free trial."
     },
     "demoRdv": {
@@ -2177,7 +2186,7 @@
       "description": "Sojori connectors and API: Airbnb, Booking.com, Expedia, Vrbo, WhatsApp Business, accounting. Real-time sync."
     },
     "pricing": {
-      "title": "Sojori pricing | PMS & short-term rental orchestrator plans",
+      "title": "Sojori pricing | PMS & hospitality orchestrator plans",
       "description": "Transparent Sojori pricing, no hidden fees: Solo, Orchestre, Symphonie. 1 month free trial, cancel anytime."
     }
   },
@@ -2274,7 +2283,7 @@
       "sections": [
         {
           "title": "1. Service Scope",
-          "content": "Sojori provides property management and orchestration software for short-term rental operators. The platform enables users to manage properties, reservations, guest communication, staff coordination, dynamic pricing and owner reporting through a centralised interface. Sojori acts as a technology provider and is not a party to any rental agreement between hosts and guests."
+          "content": "Sojori provides property management and orchestration software for hospitality operators. The platform enables users to manage properties, reservations, guest communication, staff coordination, dynamic pricing and owner reporting through a centralised interface. Sojori acts as a technology provider and is not a party to any rental agreement between hosts and guests."
         },
         {
           "title": "2. Account & Access",
@@ -2290,7 +2299,7 @@
         },
         {
           "title": "5. User Responsibilities",
-          "content": "Users must use the platform in compliance with all applicable laws, including local short-term rental regulations. Users are responsible for the accuracy of property listings, descriptions, pricing and availability. Sojori is not responsible for double bookings, pricing errors, regulatory fines, or disputes arising from inaccurate user-provided data."
+          "content": "Users must use the platform in compliance with all applicable laws, including local hospitality regulations. Users are responsible for the accuracy of property listings, descriptions, pricing and availability. Sojori is not responsible for double bookings, pricing errors, regulatory fines, or disputes arising from inaccurate user-provided data."
         },
         {
           "title": "6. Data Protection & Privacy",
