@@ -130,7 +130,7 @@ export function PageHeader({ pageTitle }: { pageTitle?: string }) {
     >
       <div style={{ maxWidth: 1400, margin: '0 auto', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
         <div className="sj-page-header-brand" style={{ display: 'flex', alignItems: 'center', gap: 16 }}>
-          <Link href="/" style={{ textDecoration: 'none', color: 'inherit', flexShrink: 0 }}>
+          <Link href="/" style={{ textDecoration: 'none', color: 'inherit', flexShrink: 0 }} prefetch={false}>
             <SojoriLogo size={32} />
           </Link>
           {pageTitle && (
@@ -171,16 +171,16 @@ export function PageHeader({ pageTitle }: { pageTitle?: string }) {
           >
             {t('product')} <span style={{ fontSize: 9, marginLeft: 4, opacity: 0.7 }}>▼</span>
           </button>
-          <Link href="/whatsapp" className="btn btn-ghost" style={{ padding: '8px 14px', fontSize: 13 }}>{t('whatsapp')}</Link>
-          <Link href="/pricing" className="btn btn-ghost" style={{ padding: '8px 14px', fontSize: 13 }}>{t('pricing')}</Link>
-          <Link href="/integrations" className="btn btn-ghost" style={{ padding: '8px 14px', fontSize: 13 }}>{t('integrations')}</Link>
-          <Link href="/about" className="btn btn-ghost" style={{ padding: '8px 14px', fontSize: 13 }}>{t('about')}</Link>
+          <Link href="/whatsapp" className="btn btn-ghost" style={{ padding: '8px 14px', fontSize: 13 }} prefetch={false}>{t('whatsapp')}</Link>
+          <Link href="/pricing" className="btn btn-ghost" style={{ padding: '8px 14px', fontSize: 13 }} prefetch={false}>{t('pricing')}</Link>
+          <Link href="/integrations" className="btn btn-ghost" style={{ padding: '8px 14px', fontSize: 13 }} prefetch={false}>{t('integrations')}</Link>
+          <Link href="/about" className="btn btn-ghost" style={{ padding: '8px 14px', fontSize: 13 }} prefetch={false}>{t('about')}</Link>
           <LanguageSwitcher />
           <Link
             href={{ pathname: '/demo', query: { source: 'navbar-demo' } }}
             className="btn btn-primary"
             style={{ padding: '9px 16px', fontSize: 13 }}
-          >
+           prefetch={false}>
             {t('getDemo')}
           </Link>
 
@@ -222,6 +222,7 @@ export function PageHeader({ pageTitle }: { pageTitle?: string }) {
                       <Link
                         key={it.l}
                         href={it.h}
+                        prefetch={false}
                         style={{
                           textDecoration: 'none',
                           padding: '8px 10px',
@@ -362,7 +363,7 @@ export function PageHeader({ pageTitle }: { pageTitle?: string }) {
                                 background: 'transparent',
                                 minHeight: 44,
                               }}
-                            >
+                             prefetch={false}>
                               <div style={{ fontSize: 14, fontWeight: 600, color: 'var(--text-1)' }}>{it.l}</div>
                               <div style={{ fontSize: 11, color: 'var(--text-3)', marginTop: 2 }}>{it.d}</div>
                             </Link>
@@ -389,7 +390,7 @@ export function PageHeader({ pageTitle }: { pageTitle?: string }) {
                   marginBottom: 8,
                   minHeight: 44,
                 }}
-              >
+               prefetch={false}>
                 {t('whatsapp')}
               </Link>
 
@@ -407,7 +408,7 @@ export function PageHeader({ pageTitle }: { pageTitle?: string }) {
                   marginBottom: 8,
                   minHeight: 44,
                 }}
-              >
+               prefetch={false}>
                 {t('pricing')}
               </Link>
 
@@ -425,7 +426,7 @@ export function PageHeader({ pageTitle }: { pageTitle?: string }) {
                   marginBottom: 8,
                   minHeight: 44,
                 }}
-              >
+               prefetch={false}>
                 {t('integrations')}
               </Link>
 
@@ -443,7 +444,7 @@ export function PageHeader({ pageTitle }: { pageTitle?: string }) {
                   marginBottom: 8,
                   minHeight: 44,
                 }}
-              >
+               prefetch={false}>
                 {t('about')}
               </Link>
 
@@ -469,7 +470,7 @@ export function PageHeader({ pageTitle }: { pageTitle?: string }) {
                   alignItems: 'center',
                   justifyContent: 'center',
                 }}
-              >
+               prefetch={false}>
                 {t('getDemo')} →
               </Link>
               </div>
@@ -560,7 +561,7 @@ export function PageFooter() {
                         textDecoration: 'none',
                         transition: 'color 0.2s'
                       }}
-                    >
+                     prefetch={false}>
                       {it.l}
                     </Link>
                   ))}
@@ -591,7 +592,7 @@ export function PageFooter() {
                       textDecoration: 'none',
                       transition: 'color 0.2s'
                     }}
-                  >
+                   prefetch={false}>
                     {it.l}
                   </Link>
                 ))}
@@ -607,8 +608,8 @@ export function PageFooter() {
             {tFooter('copyright')}
           </div>
           <div className="sj-page-footer-legal-links" style={{ display: 'flex', gap: 18, fontSize: 11, color: 'var(--text-3)' }}>
-            <Link href="/terms" style={{ color: 'inherit', textDecoration: 'none' }}>{tLegal('footer.terms')}</Link>
-            <Link href="/privacy" style={{ color: 'inherit', textDecoration: 'none' }}>{tLegal('footer.privacy')}</Link>
+            <Link href="/terms" style={{ color: 'inherit', textDecoration: 'none' }} prefetch={false}>{tLegal('footer.terms')}</Link>
+            <Link href="/privacy" style={{ color: 'inherit', textDecoration: 'none' }} prefetch={false}>{tLegal('footer.privacy')}</Link>
             <a href="https://status.sojori.com" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit', textDecoration: 'none' }}>{tLegal('footer.status')}</a>
           </div>
         </div>
@@ -638,7 +639,7 @@ export function PageHero({ badge, title, subtitle, cta1, cta2, children }: {
                 <Link
                   href={{ pathname: '/demo', query: { source: 'page-hero' } }}
                   className="btn btn-primary btn-lg"
-                >
+                 prefetch={false}>
                   {cta1} →
                 </Link>
               )}
@@ -682,10 +683,10 @@ export function FinalCTA({ title, subtitle }: { title: ReactNode; subtitle: stri
         <h2 style={{ fontSize: 'clamp(32px, 4.4vw, 48px)', marginBottom: 10, textWrap: 'balance' }}>{title}</h2>
         <p style={{ fontSize: 17, color: 'var(--text-2)', marginBottom: 20 }}>{subtitle}</p>
         <div style={{ display: 'flex', gap: 12, justifyContent: 'center', flexWrap: 'wrap' }}>
-          <Link href={{ pathname: '/demo', query: { source: 'footer-cta' } }} className="btn btn-primary btn-lg">
+          <Link href={{ pathname: '/demo', query: { source: 'footer-cta' } }} className="btn btn-primary btn-lg" prefetch={false}>
             {tCta('demoButton')}
           </Link>
-          <Link href="/" className="btn btn-ghost btn-lg">{tCta('homeButton')}</Link>
+          <Link href="/" className="btn btn-ghost btn-lg" prefetch={false}>{tCta('homeButton')}</Link>
         </div>
       </div>
     </section>

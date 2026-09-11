@@ -40,3 +40,6 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 _backups/
+
+# Archives de travail — ne pas versionner (2026-09-11)
+*.zip

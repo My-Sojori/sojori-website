@@ -77,10 +77,11 @@ export function OffreConciergeriesClient() {
               href={{ pathname: '/demo', query: { source: 'offre-conciergeries' } }}
               className="btn btn-primary btn-lg"
               onClick={trackLead}
+              prefetch={false}
             >
               Réserver
             </Link>
-            <Link href="/" className="btn btn-ghost btn-lg">Découvrir</Link>
+            <Link href="/" className="btn btn-ghost btn-lg" prefetch={false}>Découvrir</Link>
           </div>
           <div className="mono" style={{ marginTop: 16, fontSize: 11, color: 'var(--text-3)', letterSpacing: 1.1 }}>
             DÉMO 15 MIN · MIGRATION INCLUSE · 2 MOIS OFFERTS
@@ -157,6 +158,7 @@ export function OffreConciergeriesClient() {
           href={{ pathname: '/demo', query: { source: 'offre-conciergeries' } }}
           className="btn btn-primary btn-lg"
           onClick={trackLead}
+          prefetch={false}
         >
           Je prends ma place
         </Link>
