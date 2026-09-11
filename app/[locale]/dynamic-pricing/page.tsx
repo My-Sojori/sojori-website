@@ -239,7 +239,7 @@ export default function DynamicPricingPage() {
         <PageHeader pageTitle={t('pageTitle')} />
         <PageHero
           badge={tHero('badge')}
-          title={<>{tHero('title')}<br /><span className="gradient-text">{tHero('titleGradient')}</span></>}
+          title={<>{tHero('title')}{' '}<br /><span className="gradient-text">{tHero('titleGradient')}</span></>}
           subtitle={tHero('subtitle')}
           cta1={tHero('cta1')}
           cta2={tHero('cta2')}

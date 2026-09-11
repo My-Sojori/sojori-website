@@ -16,7 +16,7 @@ export function Hero() {
             {t('badge')}
           </span>
           <h1 style={{ marginBottom: 20, textWrap: 'balance' }}>
-            {t('title')}<br />
+            {t('title')}{' '}<br />
             <span className="gradient-text">{t('titleGradient')}</span>
           </h1>
           <p style={{ fontSize: 19, lineHeight: 1.55, color: 'var(--text-2)', maxWidth: 680, margin: '0 auto', textWrap: 'pretty' }} className="hero-subtitle">

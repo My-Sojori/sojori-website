@@ -109,7 +109,7 @@ export default function PricingPage() {
         <PageHeader />
         <PageHero
           badge={t('hero.badge')}
-          title={<>{t('hero.title')}<br /><span className="gradient-text">{t('hero.titleGradient')}</span></>}
+          title={<>{t('hero.title')}{' '}<br /><span className="gradient-text">{t('hero.titleGradient')}</span></>}
           subtitle={t('hero.subtitle')}
         />
 

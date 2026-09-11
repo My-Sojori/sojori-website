@@ -195,7 +195,7 @@ export default function TeamflowPage() {
         <PageHeader pageTitle={t('pageTitle')} />
         <PageHero
           badge={t('hero.badge')}
-          title={<>{heroTitle}<br /><span className="gradient-text">{heroTitleGradient}</span></>}
+          title={<>{heroTitle}{' '}<br /><span className="gradient-text">{heroTitleGradient}</span></>}
           subtitle={t('hero.subtitle')}
           cta1={t('hero.cta1')}
           cta2={t('hero.cta2')}

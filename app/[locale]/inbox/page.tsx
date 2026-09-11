@@ -215,7 +215,7 @@ export default function InboxPage() {
         <PageHeader pageTitle={t('pageTitle')} />
         <PageHero
           badge={t('hero.badge')}
-          title={<>{t('hero.title')}<br /><span className="gradient-text">{t('hero.titleGradient')}</span></>}
+          title={<>{t('hero.title')}{' '}<br /><span className="gradient-text">{t('hero.titleGradient')}</span></>}
           subtitle={t('hero.subtitle')}
           cta1={t('hero.cta1')} cta2={t('hero.cta2')}
         />
