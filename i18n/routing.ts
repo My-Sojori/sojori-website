@@ -44,6 +44,7 @@ export const routing = defineRouting({
     '/pms-rabat': '/pms-rabat',
     '/pms-tanger': '/pms-tanger',
     '/pms-agadir': '/pms-agadir',
+    '/go-siyaha': '/go-siyaha',
     '/terms': '/terms',
     '/privacy': '/privacy'
   }

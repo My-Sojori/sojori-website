@@ -45,6 +45,7 @@ const PATHS = [
   '/pms-rabat',
   '/pms-tanger',
   '/pms-agadir',
+  '/go-siyaha',
   '/terms',
   '/privacy',
 ];

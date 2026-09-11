@@ -23,7 +23,7 @@ const FAQ = [
   },
   {
     "q": "Sojori gère-t-il la fiche police marocaine ?",
-    "a": "Oui. La fiche police est collectée avant l'arrivée : le client la remplit lui-même depuis WhatsApp, avec sa pièce d'identité, dans le cadre du check-in digital. Vous récupérez les informations complètes du séjour sans les saisir à la réception. Sojori prépare les données ; la transmission aux autorités reste votre démarche."
+    "a": "Oui, pour la partie collecte. L'obligation vient du dahir du 14 janvier 1953, reprise par la loi 80-14 : un bulletin individuel par personne hébergée. Sojori fait remplir la fiche par le client lui-même avant son arrivée, depuis WhatsApp, avec sa pièce d'identité — vous récupérez des données complètes sans saisie au comptoir, et vous voyez quels séjours sont en règle. La déclaration aux autorités, aujourd'hui dématérialisée via la plateforme STDN, reste la démarche de l'établissement."
   },
   {
     "q": "Comment la taxe de séjour est-elle calculée ?",
@@ -127,6 +127,61 @@ export default async function PmsPageMarrakech({ params }: { params: Promise<{ l
           </div>
         </section>
 
+
+        {/* Fiche de police — ajouté le 2026-09-11. C'est un sujet à fort
+            volume de recherche que les concurrents traitent peu, et une
+            obligation réelle des hôteliers marocains. Rédigé prudemment :
+            Sojori collecte et prépare, il ne télé-déclare pas à la place de
+            l'établissement. */}
+        <section style={{ padding: '40px 32px 64px', borderTop: '1px solid var(--glass-border)' }}>
+          <div style={{ maxWidth: 900, margin: '0 auto' }}>
+            <div className="uppercase-sm" style={{ color: 'var(--text-3)', marginBottom: 12 }}>● Conformité</div>
+            <h2 style={{ fontSize: 30, fontWeight: 700, letterSpacing: '-0.02em', marginBottom: 20 }}>
+              Fiche de police : l&apos;obligation, et comment Sojori l&apos;orchestre à Marrakech
+            </h2>
+            <p style={{ fontSize: 16, lineHeight: 1.75, color: 'var(--text-3)', marginBottom: 16 }}>
+              Tout établissement d&apos;hébergement touristique au Maroc — hôtel, riad,
+              maison d&apos;hôtes, résidence — doit établir un bulletin individuel pour
+              chaque personne hébergée, marocaine ou étrangère. L&apos;obligation remonte
+              au dahir du 14 janvier 1953 et a été reprise par la loi 80-14 relative
+              aux établissements touristiques. Elle ne connaît pas d&apos;exception de
+              taille : un riad de quatre chambres y est tenu comme un hôtel de deux
+              cents.
+            </p>
+            <p style={{ fontSize: 16, lineHeight: 1.75, color: 'var(--text-3)', marginBottom: 16 }}>
+              La déclaration s&apos;est dématérialisée. Le ministère du Tourisme, le
+              ministère de l&apos;Intérieur, la DGSN et la Gendarmerie Royale ont mis en
+              place la plateforme de télé-déclaration des nuitées (STDN), qui remplace
+              le dépôt des bulletins papier par une déclaration quotidienne en ligne.
+              Les manquements exposent, selon les sources professionnelles du secteur,
+              à des amendes de l&apos;ordre de 2 000 à 10 000 dirhams, et à une fermeture
+              administrative en cas de récidive.
+            </p>
+            <div className="card" style={{ padding: 22, marginBottom: 16 }}>
+              <div style={{ fontSize: 16, fontWeight: 600, marginBottom: 10 }}>Ce que Sojori fait</div>
+              <p style={{ fontSize: 15, lineHeight: 1.7, color: 'var(--text-3)', marginBottom: 12 }}>
+                Sojori orchestre la <strong style={{ color: 'var(--text-2)' }}>collecte</strong> de la fiche,
+                pas la déclaration. Avant l&apos;arrivée, le client reçoit sur WhatsApp
+                son parcours de check-in : il renseigne lui-même son identité et
+                dépose sa pièce d&apos;identité. Les données arrivent complètes et
+                structurées dans le dossier du séjour, prêtes à être déclarées.
+              </p>
+              <ul style={{ margin: 0, paddingLeft: 20, color: 'var(--text-3)', lineHeight: 1.9, fontSize: 15 }}>
+                <li>La saisie se fait en amont, pas au comptoir à l&apos;arrivée</li>
+                <li>Le client remplit en français, en anglais ou en arabe</li>
+                <li>Les relances sont automatiques tant que la fiche est incomplète</li>
+                <li>Vous voyez d&apos;un coup d&apos;œil quels séjours sont en règle et lesquels ne le sont pas</li>
+              </ul>
+            </div>
+            <p style={{ fontSize: 14, lineHeight: 1.7, color: 'var(--text-3)', fontStyle: 'italic' }}>
+              Sojori prépare les données ; la déclaration aux autorités reste la
+              démarche de l&apos;établissement. Les modalités exactes et les montants
+              applicables à votre catégorie sont à confirmer auprès de la DGSN et du
+              ministère du Tourisme, seuls habilités à les fixer.
+            </p>
+          </div>
+        </section>
+
         {/* Maillage interne : ces liens portent le PageRank vers les pages
             produit et les autres villes. C'était le levier le plus faible
             du site — 33 pages quasiment sans liens entre elles. */}
@@ -155,6 +210,9 @@ export default async function PmsPageMarrakech({ params }: { params: Promise<{ l
               {' · '}
               <Link href={'/conciergerie-marrakech' as const} style={{ color: '#f4cf5e', textDecoration: 'none' }}>conciergerie de Marrakech</Link>
               <br />
+              <br />
+              Financement :{' '}
+              <Link href={'/go-siyaha' as const} style={{ color: '#f4cf5e', textDecoration: 'none' }}>Go Siyaha, la subvention digitalisation</Link>
               Autres villes :{' '}
               <Link href={'/pms-casablanca' as const} style={{ color: '#f4cf5e', textDecoration: 'none' }}>PMS Casablanca</Link>
               {' · '}

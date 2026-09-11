@@ -2208,6 +2208,10 @@
     "pmsAgadir": {
       "title": "Hotel PMS Agadir — Hotel management software | Sojori",
       "description": "PMS and hospitality orchestration engine for hotels, riads and residences in Agadir: bookings, housekeeping, maintenance, channel manager, police form and city tax. Also connects to your existing PMS."
+    },
+    "goSiyaha": {
+      "title": "Go Siyaha 2026 — Morocco tourism digitalisation grant | Sojori",
+      "description": "The Go Siyaha programme supports the digitalisation of Moroccan tourism businesses: scope, rates, eligibility and covered expenses. Where Sojori fits in, with no grant promises."
     }
   },
   "pmsPage": {
