@@ -6,6 +6,7 @@ import { SojoriMark } from '../Logo';
 import { JourneyCard } from '../journey/JourneyCard';
 import { ScrollPaginationDots } from '@/components/shared/ScrollPaginationDots';
 import { type Phase, type JourneyEvent, type Lane, resolveEvent } from '@/lib/journey-data';
+import { SCENARIOS, DEFAULT_SCENARIO, getScenario } from '@/lib/journey-scenarios';
 import { getHeroAnimUi } from '@/lib/hero-anim-ui';
 import { getJourneyForLocale } from '@/lib/journey-for-locale';
 
@@ -386,7 +387,18 @@ function Lane({ lane, events, progress, hoveredId, setHoveredId, focusPhase, tim
 export function HeroAnimationJourney() {
   const locale = useLocale();
   const ui = getHeroAnimUi(locale);
-  const { phases, lanes, events } = getJourneyForLocale(locale);
+
+  // 2026-09-11 — Scénarios d'orchestration. Le parcours par défaut est
+  // désormais un séjour hôtelier ; le visiteur peut explorer le check-in
+  // (borne ou WhatsApp), le room service et le housekeeping.
+  // Ces scénarios ne sont écrits qu'en français : pour les autres locales
+  // on garde le parcours traduit existant, sans onglets, plutôt que
+  // d'afficher du français au milieu d'une page anglaise.
+  const scenarioMode = locale === 'fr';
+  const [scenarioId, setScenarioId] = useState<string>(DEFAULT_SCENARIO.id);
+  const scenario = getScenario(scenarioId);
+  const localized = getJourneyForLocale(locale);
+  const { phases, lanes, events } = scenarioMode ? scenario : localized;
 
   const [progress, setProgress] = useState(0);
   const [playing, setPlaying] = useState(true);
@@ -423,6 +435,19 @@ export function HeroAnimationJourney() {
   };
 
   const restart = () => { setProgress(0); setPlaying(true); setFocusPhase(null); };
+
+  /** Changer de scénario repart au début de la TIMELINE, pas du cycle.
+   *  Remettre progress à 0 relancerait les deux actes d'intro (canaux puis
+   *  ingestion) : le visiteur qui clique un onglet verrait disparaître les
+   *  onglets eux-mêmes pendant ~4 s, et son clic semblerait sans effet. */
+  const selectScenario = (id: string) => {
+    if (id === scenarioId) return;
+    setScenarioId(id);
+    setProgress(PHASE_INGEST_END + 0.001);
+    setFocusPhase(null);
+    setHoveredId(null);
+    setPlaying(true);
+  };
 
   // Phase detection for 3-act animation
   const phase = progress < PHASE_INCOMING_END ? 'incoming' : progress < PHASE_INGEST_END ? 'ingest' : 'timeline';
@@ -514,8 +539,10 @@ export function HeroAnimationJourney() {
       {/* ACT 1 — INCOMING BOOKING */}
       {phase === 'incoming' && (() => {
         const channels = [
-          { id: 'airbnb',  name: 'Airbnb',  color: '#ff5a5f', mark: 'A', activeAt: 0.06 },
-          { id: 'booking', name: 'Booking', color: '#0066ff', mark: 'B', activeAt: 0.95 },
+          // 2026-09-11 : Booking d'abord — c'est le canal d'un hôtelier.
+          // Airbnb reste présent : les riads en vivent réellement.
+          { id: 'booking', name: 'Booking', color: '#0066ff', mark: 'B', activeAt: 0.06 },
+          { id: 'airbnb',  name: 'Airbnb',  color: '#ff5a5f', mark: 'A', activeAt: 0.95 },
           { id: 'vrbo',    name: 'Vrbo',    color: '#0d6df0', mark: 'V', activeAt: 0.95 },
           { id: 'direct',  name: ui.channelDirect,  color: '#10b981', mark: 'D', activeAt: 0.95 },
         ];
@@ -835,6 +862,52 @@ export function HeroAnimationJourney() {
         </div>
       )}
 
+      {/* Sélecteur de scénario — le visiteur explore au-delà du séjour type */}
+      {scenarioMode && phase === 'timeline' && (
+        <div
+          className="hero-scenario-tabs"
+          role="tablist"
+          aria-label="Scénarios d'orchestration"
+          style={{ display: 'flex', gap: 6, marginTop: 16, flexWrap: 'wrap', position: 'relative', zIndex: 3 }}
+        >
+          {SCENARIOS.map((s) => {
+            const on = s.id === scenarioId;
+            return (
+              <button
+                key={s.id}
+                type="button"
+                role="tab"
+                aria-selected={on}
+                title={s.hint}
+                onClick={() => selectScenario(s.id)}
+                style={{
+                  background: on ? 'rgba(230,176,34,0.18)' : 'rgba(26,20,8,0.04)',
+                  border: `1px solid ${on ? 'rgba(230,176,34,0.65)' : 'rgba(26,20,8,0.09)'}`,
+                  borderRadius: 999,
+                  color: on ? 'var(--text)' : 'var(--text-3)',
+                  fontFamily: 'inherit',
+                  fontSize: 11.5,
+                  fontWeight: 600,
+                  letterSpacing: 0.2,
+                  padding: '5px 13px',
+                  cursor: 'pointer',
+                  transition: 'all 0.2s ease',
+                  whiteSpace: 'nowrap',
+                }}
+              >
+                {s.label}
+              </button>
+            );
+          })}
+          <span
+            className="hero-scenario-hint"
+            style={{ fontSize: 11.5, color: 'var(--text-3)', alignSelf: 'center', marginLeft: 4 }}
+          >
+            {scenario.hint}
+          </span>
+        </div>
+      )}
+
       {/* Timeline scrubber */}
       {phase === 'timeline' && (
         <div className="hero-timeline-wrap" style={{ marginTop: 18, position: 'relative', zIndex: 2 }}>
@@ -894,7 +967,9 @@ export function HeroAnimationJourney() {
         </div>
 
         <div className="mono hero-anim-controls-stats" style={{ fontSize: 10, color: 'var(--text-3)', letterSpacing: 0.6, textAlign: 'right', minWidth: 0, flex: '1 1 140px' }}>
-          18 TÂCHES · 0 OUBLIS · 100% AUTO
+          {/* Compté sur le scénario affiché : « 18 » était écrit en dur et
+              devenait faux dès qu'on changeait d'onglet. */}
+          {events.length} TÂCHES · 0 OUBLIS · 100% AUTO
         </div>
       </div>
 
