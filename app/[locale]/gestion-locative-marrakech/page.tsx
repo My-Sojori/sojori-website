@@ -145,6 +145,29 @@ export default function GestionLocativeMarrakechPage() {
 ]}
         />
 
+        {/* Maillage interne — ajouté le 2026-09-11. Ces pages vivaient sans
+            liens entre elles : le PageRank n'y circulait pas. */}
+        <section style={{ padding: '32px 32px 56px', borderTop: '1px solid var(--glass-border)' }}>
+          <div style={{ maxWidth: 1000, margin: '0 auto' }}>
+            <div className="uppercase-sm" style={{ color: 'var(--text-3)', marginBottom: 14 }}>● Sur le même sujet</div>
+            <div style={{ fontSize: 14, color: 'var(--text-3)', lineHeight: 2 }}>
+              <Link href={'/pms-marrakech' as const} style={{ color: '#f4cf5e', textDecoration: 'none', fontWeight: 600 }}>PMS hôtel Marrakech</Link>
+              {' · '}
+              <Link href={'/conciergerie-marrakech' as const} style={{ color: '#f4cf5e', textDecoration: 'none' }}>Conciergerie Marrakech</Link>
+              <br />
+              Autres villes :{' '}
+              <Link href={'/pms-casablanca' as const} style={{ color: '#f4cf5e', textDecoration: 'none' }}>PMS Casablanca</Link>
+              {' · '}
+              <Link href={'/pms-rabat' as const} style={{ color: '#f4cf5e', textDecoration: 'none' }}>PMS Rabat</Link>
+              {' · '}
+              <Link href={'/pms-tanger' as const} style={{ color: '#f4cf5e', textDecoration: 'none' }}>PMS Tanger</Link>
+              {' · '}
+              <Link href={'/pms-agadir' as const} style={{ color: '#f4cf5e', textDecoration: 'none' }}>PMS Agadir</Link>
+            </div>
+          </div>
+        </section>
+
+
 
         <FinalCTA
           title={<>Rejoignez les établissements de Marrakech. <span className="gradient-text">1 mois d&apos;essai gratuit.</span></>}

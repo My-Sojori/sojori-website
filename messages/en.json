@@ -2,7 +2,7 @@
   "metadata": {
     "home": {
       "title": "Sojori — The Hospitality Orchestrator",
-      "description": "Orchestration software for hospitality managers. Reservation, guest, staff, owner — coordinated by AI, controlled from WhatsApp. Launching in Morocco."
+      "description": "The hospitality orchestration engine. Bookings, guests, housekeeping, maintenance, owners — coordinated by AI, driven from WhatsApp. PMS included, or connected to yours."
     },
     "pricing": {
       "title": "Sojori Pricing — Hospitality Orchestration | Marrakech, Casablanca, Paris",
@@ -2188,6 +2188,26 @@
     "pricing": {
       "title": "Sojori pricing | PMS & hospitality orchestrator plans",
       "description": "Transparent Sojori pricing, no hidden fees: Solo, Orchestre, Symphonie. 1 month free trial, cancel anytime."
+    },
+    "pmsMarrakech": {
+      "title": "Hotel PMS Marrakech — Hotel management software | Sojori",
+      "description": "PMS and hospitality orchestration engine for hotels, riads and residences in Marrakech: bookings, housekeeping, maintenance, channel manager, police form and city tax. Also connects to your existing PMS."
+    },
+    "pmsCasablanca": {
+      "title": "Hotel PMS Casablanca — Hotel management software | Sojori",
+      "description": "PMS and hospitality orchestration engine for hotels, riads and residences in Casablanca: bookings, housekeeping, maintenance, channel manager, police form and city tax. Also connects to your existing PMS."
+    },
+    "pmsRabat": {
+      "title": "Hotel PMS Rabat — Hotel management software | Sojori",
+      "description": "PMS and hospitality orchestration engine for hotels, riads and residences in Rabat: bookings, housekeeping, maintenance, channel manager, police form and city tax. Also connects to your existing PMS."
+    },
+    "pmsTanger": {
+      "title": "Hotel PMS Tanger — Hotel management software | Sojori",
+      "description": "PMS and hospitality orchestration engine for hotels, riads and residences in Tanger: bookings, housekeeping, maintenance, channel manager, police form and city tax. Also connects to your existing PMS."
+    },
+    "pmsAgadir": {
+      "title": "Hotel PMS Agadir — Hotel management software | Sojori",
+      "description": "PMS and hospitality orchestration engine for hotels, riads and residences in Agadir: bookings, housekeeping, maintenance, channel manager, police form and city tax. Also connects to your existing PMS."
     }
   },
   "pmsPage": {

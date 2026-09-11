@@ -38,6 +38,13 @@ const PATHS = [
   '/conciergerie-tanger',
   '/gestion-locative-rabat',
   '/conciergerie-rabat',
+  // 2026-09-11 : pages « PMS + ville ». Elles ciblent la requête que le
+  // concurrent direct (welcomax.com) occupe déjà sur les 5 villes.
+  '/pms-marrakech',
+  '/pms-casablanca',
+  '/pms-rabat',
+  '/pms-tanger',
+  '/pms-agadir',
   '/terms',
   '/privacy',
 ];

@@ -2090,6 +2090,26 @@
     "pricing": {
       "title": "Tarifas Sojori | Planes PMS y orquestador de hostelería",
       "description": "Tarificación transparente de Sojori, sin costes ocultos: Solo, Orchestre, Symphonie. 1 mes de prueba gratis, cancela cuando quieras."
+    },
+    "pmsMarrakech": {
+      "title": "PMS Hotel Marrakech — Software de gestión hotelera | Sojori",
+      "description": "PMS y motor de orquestación para hoteles, riads y residencias en Marrakech: reservas, limpieza, mantenimiento, channel manager, ficha policial y tasa turística. También se conecta a tu PMS actual."
+    },
+    "pmsCasablanca": {
+      "title": "PMS Hotel Casablanca — Software de gestión hotelera | Sojori",
+      "description": "PMS y motor de orquestación para hoteles, riads y residencias en Casablanca: reservas, limpieza, mantenimiento, channel manager, ficha policial y tasa turística. También se conecta a tu PMS actual."
+    },
+    "pmsRabat": {
+      "title": "PMS Hotel Rabat — Software de gestión hotelera | Sojori",
+      "description": "PMS y motor de orquestación para hoteles, riads y residencias en Rabat: reservas, limpieza, mantenimiento, channel manager, ficha policial y tasa turística. También se conecta a tu PMS actual."
+    },
+    "pmsTanger": {
+      "title": "PMS Hotel Tanger — Software de gestión hotelera | Sojori",
+      "description": "PMS y motor de orquestación para hoteles, riads y residencias en Tanger: reservas, limpieza, mantenimiento, channel manager, ficha policial y tasa turística. También se conecta a tu PMS actual."
+    },
+    "pmsAgadir": {
+      "title": "PMS Hotel Agadir — Software de gestión hotelera | Sojori",
+      "description": "PMS y motor de orquestación para hoteles, riads y residencias en Agadir: reservas, limpieza, mantenimiento, channel manager, ficha policial y tasa turística. También se conecta a tu PMS actual."
     }
   },
   "pmsPage": {

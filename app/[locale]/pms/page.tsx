@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { getTranslations } from 'next-intl/server';
 import { BackgroundEffects } from '@/components/BackgroundEffects';
+import { Link } from '@/i18n/routing';
 import { PageHeader, PageFooter, PageHero, StatsBar, FinalCTA } from '@/components/SharedComponents';
 import { Calendar } from '@/components/pms/Calendar';
 import { ScrollPaginationDots } from '@/components/shared/ScrollPaginationDots';
@@ -71,6 +72,38 @@ export default async function PMSPage() {
           </div>
         </section>
         <StatsBar stats={stats.map((s) => ({ k: s.k, l: s.l }))} />
+
+        {/* Page pilier → déclinaisons ville. Ajouté le 2026-09-11 : c'est
+            /pms qui concentre l'autorité, elle doit la redistribuer. */}
+        <section style={{ padding: '32px 32px 64px', borderTop: '1px solid var(--glass-border)' }}>
+          <div style={{ maxWidth: 1000, margin: '0 auto' }}>
+            <div className="uppercase-sm" style={{ color: 'var(--text-3)', marginBottom: 14 }}>● Le PMS Sojori par ville</div>
+            <h2 style={{ fontSize: 30, fontWeight: 700, letterSpacing: '-0.02em', marginBottom: 20 }}>
+              Chaque marché a son rythme.
+            </h2>
+            <p style={{ fontSize: 16, lineHeight: 1.75, color: 'var(--text-3)', marginBottom: 24, maxWidth: 760 }}>
+              Un riad de médina, un hôtel d&apos;affaires et une résidence balnéaire n&apos;ont
+              ni la même durée de séjour, ni le même mix de canaux, ni les mêmes contraintes
+              de ménage. Voici comment Sojori s&apos;applique dans les cinq principales villes
+              hôtelières du Maroc.
+            </p>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: 12 }}>
+              {[
+              { city: 'Marrakech', slug: '/pms-marrakech' as const },
+              { city: 'Casablanca', slug: '/pms-casablanca' as const },
+              { city: 'Rabat', slug: '/pms-rabat' as const },
+              { city: 'Tanger', slug: '/pms-tanger' as const },
+              { city: 'Agadir', slug: '/pms-agadir' as const },
+              ].map(c => (
+                <Link key={c.city} href={c.slug} className="card" style={{ padding: 18, textDecoration: 'none', display: 'block', textAlign: 'center' }}>
+                  <div style={{ fontSize: 15, fontWeight: 600 }}>{c.city}</div>
+                  <div style={{ fontSize: 12, color: 'var(--text-3)', marginTop: 4 }}>PMS hôtel</div>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+
         <FinalCTA
           title={
             <>

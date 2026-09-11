@@ -81,9 +81,9 @@ export const moroccanKeywords = [
 export const frenchKeywords = [
   'PMS France',
   'PMS Paris',
-  'gestion locative Paris',
-  'property manager Paris',
-  'location courte durée France',
+  'PMS hôtel Paris',
+  'logiciel hôtelier Paris',
+  'gestion hôtelière France',
   'channel manager France',
-  'logiciel location saisonnière',
+  'logiciel hôtel indépendant',
 ];

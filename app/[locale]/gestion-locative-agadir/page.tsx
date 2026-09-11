@@ -145,6 +145,29 @@ export default function GestionLocativeAgadirPage() {
 ]}
         />
 
+        {/* Maillage interne — ajouté le 2026-09-11. Ces pages vivaient sans
+            liens entre elles : le PageRank n'y circulait pas. */}
+        <section style={{ padding: '32px 32px 56px', borderTop: '1px solid var(--glass-border)' }}>
+          <div style={{ maxWidth: 1000, margin: '0 auto' }}>
+            <div className="uppercase-sm" style={{ color: 'var(--text-3)', marginBottom: 14 }}>● Sur le même sujet</div>
+            <div style={{ fontSize: 14, color: 'var(--text-3)', lineHeight: 2 }}>
+              <Link href={'/pms-agadir' as const} style={{ color: '#f4cf5e', textDecoration: 'none', fontWeight: 600 }}>PMS hôtel Agadir</Link>
+              {' · '}
+              <Link href={'/conciergerie-agadir' as const} style={{ color: '#f4cf5e', textDecoration: 'none' }}>Conciergerie Agadir</Link>
+              <br />
+              Autres villes :{' '}
+              <Link href={'/pms-marrakech' as const} style={{ color: '#f4cf5e', textDecoration: 'none' }}>PMS Marrakech</Link>
+              {' · '}
+              <Link href={'/pms-casablanca' as const} style={{ color: '#f4cf5e', textDecoration: 'none' }}>PMS Casablanca</Link>
+              {' · '}
+              <Link href={'/pms-rabat' as const} style={{ color: '#f4cf5e', textDecoration: 'none' }}>PMS Rabat</Link>
+              {' · '}
+              <Link href={'/pms-tanger' as const} style={{ color: '#f4cf5e', textDecoration: 'none' }}>PMS Tanger</Link>
+            </div>
+          </div>
+        </section>
+
+
 
         <FinalCTA
           title={<>Rejoignez les établissements d&apos;Agadir. <span className="gradient-text">1 mois d&apos;essai gratuit.</span></>}

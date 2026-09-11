@@ -39,6 +39,11 @@ export const routing = defineRouting({
     '/gestion-locative-tanger': '/gestion-locative-tanger',
     '/conciergerie-rabat': '/conciergerie-rabat',
     '/gestion-locative-rabat': '/gestion-locative-rabat',
+    '/pms-marrakech': '/pms-marrakech',
+    '/pms-casablanca': '/pms-casablanca',
+    '/pms-rabat': '/pms-rabat',
+    '/pms-tanger': '/pms-tanger',
+    '/pms-agadir': '/pms-agadir',
     '/terms': '/terms',
     '/privacy': '/privacy'
   }

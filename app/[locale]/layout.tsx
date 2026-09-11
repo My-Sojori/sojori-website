@@ -26,18 +26,19 @@ export async function generateMetadata({
   const metadataByLocale: Record<string, { title: string; description: string; keywords: string[] }> = {
     fr: {
       title: "Sojori — Orchestration hôtelière | Marrakech, Casablanca, Paris",
-      description: "Moteur d'orchestration pour hôtels, riads et résidences à Marrakech, Casablanca et Paris. Channel Manager, WhatsApp IA, tarification dynamique par règles, analytics. Location courte durée Maroc & France.",
+      description: "Moteur d'orchestration pour hôtels, riads et résidences à Marrakech, Casablanca et Paris. Channel Manager, WhatsApp IA, tarification dynamique par règles, analytics. Housekeeping, maintenance et communication client orchestrés.",
       keywords: [
         "PMS Marrakech",
         "PMS Maroc",
         "gestion locative Marrakech",
-        "property management Marrakech",
-        "location saisonnière Marrakech",
+        "logiciel hôtelier Marrakech",
+        "gestion hôtel Marrakech",
         "PMS Casablanca",
         "channel manager Maroc",
-        "logiciel gestion location courte durée",
+        "logiciel gestion hôtelière Maroc",
+        "housekeeping hôtel",
         "PMS France",
-        "property manager Paris",
+        "logiciel hôtelier Paris",
         "gestion Airbnb Marrakech",
         "WhatsApp automatisation Maroc",
         "yield management Marrakech"
@@ -45,16 +46,17 @@ export async function generateMetadata({
     },
     en: {
       title: "Sojori — Hospitality Orchestration | Marrakech, Casablanca, Paris",
-      description: "Hospitality orchestration engine for hotels, riads and residences in Marrakech, Casablanca and Paris. Channel Manager, WhatsApp AI, dynamic pricing, analytics. Short-term rentals Morocco & France.",
+      description: "Hospitality orchestration engine for hotels, riads and residences in Marrakech, Casablanca and Paris. Channel Manager, WhatsApp AI, dynamic pricing, analytics. Housekeeping, maintenance and guest communication orchestrated.",
       keywords: [
         "PMS Marrakech",
         "PMS Morocco",
-        "property management Marrakech",
-        "vacation rental Marrakech",
+        "hotel software Marrakech",
+        "hotel management Marrakech",
         "PMS Casablanca",
         "channel manager Morocco",
-        "short-term rental software",
-        "property manager Paris",
+        "hotel management software Morocco",
+        "hotel housekeeping software",
+        "hotel software Paris",
         "Airbnb management Marrakech",
         "WhatsApp automation Morocco",
         "revenue management Marrakech"
@@ -67,10 +69,11 @@ export async function generateMetadata({
         "PMS Marrakech",
         "PMS Marruecos",
         "gestión inmobiliaria Marrakech",
-        "alquiler vacacional Marrakech",
+        "gestión hotelera Marrakech",
         "PMS Casablanca",
         "channel manager Marruecos",
-        "software alquiler vacacional",
+        "software hotelero Marruecos",
+        "software limpieza hotel",
         "gestor propiedades París",
         "gestión Airbnb Marrakech"
       ]
@@ -195,7 +198,7 @@ export default async function LocaleLayout({
 
   const featureListByLocale: Record<string, string[]> = {
     fr: [
-      'PMS location courte durée',
+      'PMS hôtelier',
       'Channel Manager',
       'Assistant WhatsApp IA',
       'Tarification dynamique',
@@ -222,7 +225,7 @@ export default async function LocaleLayout({
       'Experiencia del huésped',
     ],
     pt: [
-      'PMS alojamento local',
+      'PMS hoteleiro',
       'Channel Manager',
       'Assistente WhatsApp IA',
       'Preços dinâmicos',
@@ -243,12 +246,14 @@ export default async function LocaleLayout({
 
   // Résumé ~50 mots pensé pour les assistants IA (ChatGPT, Perplexity, Gemini) qui
   // cherchent "qu'est-ce que Sojori" — sojori.com est l'entité canonique
-  // de l'entreprise ; sojori.com (marketplace grand public) n'en est qu'un produit.
+  // de l'entreprise (le logiciel) ; book.sojori.com, la marketplace grand
+  // public, n'en est qu'un produit. 2026-09-11 : corrigé après la bascule
+  // des domaines, ce commentaire décrivait encore l'ancienne architecture.
   const organizationDescriptionByLocale: Record<string, string> = {
-    fr: "Sojori est une entreprise technologique qui développe un logiciel d'orchestration pour la location courte durée : PMS, channel manager, conciergerie WhatsApp IA trilingue, tarification dynamique et gestion des équipes terrain. Basée à Marrakech, Casablanca et Paris, Sojori équipe des property managers professionnels au Maroc et en France, et édite aussi sojori.com, sa marketplace grand public de riads, villas et appartements.",
-    en: 'Sojori is a technology company building orchestration software for short-term rentals: PMS, channel manager, trilingual WhatsApp AI concierge, dynamic pricing and field-team workflows. Based in Marrakech, Casablanca and Paris, Sojori equips professional property managers across Morocco and France, and also runs sojori.com, its consumer marketplace for riads, villas and apartments.',
-    es: 'Sojori es una empresa tecnológica que desarrolla software de orquestación para el alquiler vacacional: PMS, channel manager, conserjería WhatsApp con IA, precios dinámicos y gestión de equipos. Con sede en Marrakech, Casablanca y París, Sojori equipa a gestores de propiedades profesionales en Marruecos y Francia, y también opera sojori.com, su marketplace para riads, villas y apartamentos.',
-    pt: 'A Sojori é uma empresa de tecnologia que desenvolve software de orquestração para o alojamento local: PMS, channel manager, conciergerie WhatsApp com IA, preços dinâmicos e gestão de equipas. Sediada em Marraquexe, Casablanca e Paris, a Sojori equipa gestores de propriedades profissionais em Marrocos e França, e também opera o sojori.com, o seu marketplace de riads, villas e apartamentos.',
+    fr: "Sojori est une entreprise technologique qui développe le moteur d'orchestration de l'hospitalité : PMS hôtelier, channel manager, conciergerie WhatsApp IA trilingue, housekeeping et maintenance, tarification dynamique et gestion des équipes terrain. Sojori inclut son propre PMS et se connecte aux PMS existants, dont Mews. Basée à Marrakech, Casablanca et Paris, Sojori équipe hôtels, riads et résidences au Maroc et en France, et édite aussi book.sojori.com, sa marketplace grand public de riads, villas et appartements.",
+    en: 'Sojori is a technology company building the hospitality orchestration engine: hotel PMS, channel manager, trilingual WhatsApp AI concierge, housekeeping and maintenance, dynamic pricing and field-team workflows. Sojori includes its own PMS and connects to existing ones, including Mews. Based in Marrakech, Casablanca and Paris, Sojori equips hotels, riads and residences across Morocco and France, and also runs book.sojori.com, its consumer marketplace for riads, villas and apartments.',
+    es: 'Sojori es una empresa tecnológica que desarrolla el motor de orquestación de la hostelería: PMS hotelero, channel manager, conserjería WhatsApp con IA, limpieza y mantenimiento, precios dinámicos y gestión de equipos. Sojori incluye su propio PMS y se conecta a los existentes, incluido Mews. Con sede en Marrakech, Casablanca y París, Sojori equipa hoteles, riads y residencias en Marruecos y Francia, y también opera book.sojori.com, su marketplace para riads, villas y apartamentos.',
+    pt: 'A Sojori é uma empresa de tecnologia que desenvolve o motor de orquestração da hotelaria: PMS hoteleiro, channel manager, conciergerie WhatsApp com IA, limpeza e manutenção, preços dinâmicos e gestão de equipas. A Sojori inclui o seu próprio PMS e liga-se aos existentes, incluindo o Mews. Sediada em Marraquexe, Casablanca e Paris, a Sojori equipa hotéis, riads e residências em Marrocos e França, e também opera o book.sojori.com, o seu marketplace de riads, villas e apartamentos.',
     ar: 'Sojori شركة تقنية تطور برمجيات تنسيق للإيجار قصير الأجل: نظام إدارة الممتلكات، مدير القنوات، كونسييرج واتساب بالذكاء الاصطناعي، تسعير ديناميكي وإدارة الفرق الميدانية. ومقرها مراكش والدار البيضاء وباريس، وتزوّد Sojori مديري العقارات المحترفين في المغرب وفرنسا، كما تدير sojori.com، سوقها المخصص للرياض والفيلل والشقق.',
   };
 
@@ -262,8 +267,8 @@ export default async function LocaleLayout({
     logo: `${SITE_URL}/logo.png`,
     slogan:
       locale === 'en'
-        ? 'Orchestration software for short-term rentals'
-        : "Software d'orchestration pour la location courte durée",
+        ? 'The hospitality orchestration engine'
+        : "Moteur d'orchestration de l'hospitalité",
     description: organizationDescriptionByLocale[locale] ?? organizationDescriptionByLocale.fr,
     sameAs: [
       'https://sojori.com',

@@ -2,7 +2,7 @@
   "metadata": {
     "home": {
       "title": "Sojori — L'orchestrateur de l'hospitalité",
-      "description": "Software d'orchestration pour gestionnaires de locations courte durée. Réservation, voyageur, staff, propriétaire — coordonnés par IA, pilotés depuis WhatsApp. Lancement Maroc."
+      "description": "Moteur d'orchestration de l'hospitalité. Réservation, voyageur, ménage, maintenance, propriétaire — coordonnés par IA, pilotés depuis WhatsApp. PMS inclus, ou connecté au vôtre."
     },
     "pricing": {
       "title": "Tarifs Sojori — Orchestration hôtelière | Marrakech, Casablanca, Paris",
@@ -1817,7 +1817,7 @@
         "2024": {
           "year": "2024",
           "label": "Création",
-          "description": "Sojori est créée pour répondre au besoin d'orchestration dans la gestion locative courte durée. L'objectif : aller au-delà des PMS classiques en coordonnant chaque étape du parcours voyageur."
+          "description": "Sojori est créée pour répondre au besoin d'orchestration dans l'hospitalité. L'objectif : aller au-delà des PMS classiques en coordonnant chaque étape du séjour, de l'arrivée au départ."
         },
         "2025": {
           "year": "2025",
@@ -1877,7 +1877,7 @@
       "title": "Prêt à ",
       "titleStrong": "orchestrer comme jamais",
       "titleEnd": " ?",
-      "subtitle": "Découvrez comment Sojori transforme la gestion quotidienne de vos locations courte durée.",
+      "subtitle": "Découvrez comment Sojori transforme la gestion quotidienne de votre établissement.",
       "ctaDemo": "Demander une démo →",
       "ctaHome": "← Retour homepage"
     }
@@ -2188,6 +2188,26 @@
     "pricing": {
       "title": "Tarifs Sojori | Plans PMS & orchestrateur hospitalité",
       "description": "Tarification transparente Sojori, sans frais cachés : Solo, Orchestre, Symphonie. 1 mois d'essai gratuit, annulation facile."
+    },
+    "pmsMarrakech": {
+      "title": "PMS Hôtel Marrakech — Logiciel de gestion hôtelière | Sojori",
+      "description": "PMS et moteur d'orchestration pour hôtels, riads et maisons d'hôtes à Marrakech : réservations, housekeeping, maintenance, channel manager, fiche police et taxe de séjour. Se connecte aussi à votre PMS existant."
+    },
+    "pmsCasablanca": {
+      "title": "PMS Hôtel Casablanca — Logiciel de gestion hôtelière | Sojori",
+      "description": "PMS et moteur d'orchestration pour hôtels et résidences à Casablanca : clientèle affaires, facturation entreprise, housekeeping, channel manager, fiche police et taxe de séjour. Se connecte aussi à votre PMS existant."
+    },
+    "pmsRabat": {
+      "title": "PMS Hôtel Rabat — Logiciel de gestion hôtelière | Sojori",
+      "description": "PMS et moteur d'orchestration pour hôtels, riads et résidences à Rabat : clientèle institutionnelle, housekeeping, maintenance, channel manager, fiche police et taxe de séjour. Se connecte aussi à votre PMS existant."
+    },
+    "pmsTanger": {
+      "title": "PMS Hôtel Tanger — Logiciel de gestion hôtelière | Sojori",
+      "description": "PMS et moteur d'orchestration pour hôtels, riads et résidences à Tanger : forte saisonnalité, housekeeping, maintenance, channel manager, fiche police et taxe de séjour. Se connecte aussi à votre PMS existant."
+    },
+    "pmsAgadir": {
+      "title": "PMS Hôtel Agadir — Logiciel de gestion hôtelière | Sojori",
+      "description": "PMS et moteur d'orchestration pour hôtels, résidences et appart-hôtels à Agadir : séjours longs, tour-opérateurs, housekeeping, channel manager, fiche police et taxe de séjour. Se connecte aussi à votre PMS existant."
     }
   },
   "pmsPage": {

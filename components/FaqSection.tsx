@@ -8,8 +8,9 @@ export type FaqItem = { q: string; a: string };
  * 2026-09-11 : aucune page du site ne portait de données structurées FAQ.
  * C'est ce qui permet à Google d'afficher les questions dépliables sous le
  * résultat — plus de surface dans la SERP, et une chance d'apparaître en
- * position zéro. Les concurrents marocains sur « PMS + ville » n'en ont pas
- * non plus : le terrain est libre.
+ * position zéro. Vérifié le 2026-09-11 : Welcomax, le concurrent direct sur
+ * « PMS + ville », en porte déjà (FAQPage, Service, LocalBusiness…). Ce n'est
+ * donc pas un avantage mais un prérequis pour rester comparable.
  *
  * Le JSON-LD doit refléter EXACTEMENT le texte visible, sinon Google
  * considère le balisage comme trompeur et peut pénaliser la page. D'où le
