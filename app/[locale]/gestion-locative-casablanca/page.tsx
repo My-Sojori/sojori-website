@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { getTranslations } from 'next-intl/server';
 import { Link } from '@/i18n/routing';
+import { FaqSection } from '@/components/FaqSection';
 import { BackgroundEffects } from '@/components/BackgroundEffects';
 import { PageHeader, PageFooter, PageHero, StatsBar, FinalCTA } from '@/components/SharedComponents';
 
@@ -113,6 +114,37 @@ export default function GestionLocativeCasablancaPage() {
           { k: '24/7', l: 'Support FR/AR' },
           { k: '<7j', l: 'Mise en place' }
         ]} />
+        <FaqSection
+          badge="Gestion hôtelière Casablanca"
+          title="Questions fréquentes"
+          items={[
+          {
+                    "q": "Quel logiciel de gestion hôtelière choisir à Casablanca ?",
+                    "a": "Le critère qui compte n'est pas la liste de fonctions, mais ce que le logiciel orchestre réellement : réservations, housekeeping, maintenance, communication client et revenu dans un même flux. Sojori inclut son propre PMS, et se connecte aussi aux PMS déjà en place — vous n'êtes pas obligé de remplacer l'existant pour orchestrer vos opérations."
+          },
+          {
+                    "q": "Sojori remplace-t-il mon PMS actuel ?",
+                    "a": "Non, sauf si vous le souhaitez. Sojori est un moteur d'orchestration : il se connecte à votre PMS existant (Mews et d'autres), récupère les réservations et les états de chambre, puis orchestre ce qui se passe autour — accueil, ménage, maintenance, messages clients, tarification. Pour un établissement sans PMS, celui de Sojori suffit."
+          },
+          {
+                    "q": "Comment organiser le housekeeping et la maintenance à Casablanca ?",
+                    "a": "Les tâches se déclenchent sur les événements réels : départ constaté, arrivée anticipée, chambre signalée en panne. Chaque intervenant reçoit sa mission sur WhatsApp, en français ou en arabe, sans application à installer. Vous voyez l'état de chaque chambre en temps réel plutôt que de le reconstituer en fin de journée."
+          },
+          {
+                    "q": "Comment gérer Booking.com, Airbnb et les réservations directes ?",
+                    "a": "Le channel manager synchronise disponibilités et tarifs dans les deux sens avec Booking, Airbnb et les autres canaux. Les réservations directes entrent dans le même flux. Vous évitez la surréservation, et surtout vous cessez de gérer chaque canal séparément."
+          },
+          {
+                    "q": "Quels indicateurs suivre pour un établissement à Casablanca ?",
+                    "a": "Taux d'occupation, prix moyen, revenu par chambre disponible, et surtout la part du direct dans votre mix. Casablanca vit d'une clientèle affaires en semaine, avec des séjours courts et un fort taux de répétition : piloter ces indicateurs par canal, et non globalement, change les décisions de tarification."
+          },
+          {
+                    "q": "Sojori convient-il pour hôtels d'affaires, appart-hôtels et résidences Anfa ?",
+                    "a": "Oui. L'orchestration ne dépend pas du type d'établissement mais des flux à coordonner — arrivées, ménage, demandes clients, revenu. Les règles se paramètrent par établissement, pas selon un modèle imposé."
+          }
+]}
+        />
+
 
         <FinalCTA
           title={<>Rejoignez les property managers de Casablanca. <span className="gradient-text">1 mois d&apos;essai gratuit.</span></>}

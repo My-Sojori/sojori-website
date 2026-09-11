@@ -4,6 +4,13 @@ import { routing } from '@/i18n/routing';
 
 const PATHS = [
   '/',
+  // 2026-09-11 : ces 4 landings existaient mais n'étaient pas déclarées —
+  // Google ne les découvrait que par les liens internes, ce qui retarde
+  // l'indexation. reel-capture reste exclue : elle porte un noindex.
+  '/analyse-concurrents',
+  '/global-launch',
+  '/global-launch-express',
+  '/offre-conciergeries-express',
   '/pms',
   '/channel-manager',
   '/whatsapp',

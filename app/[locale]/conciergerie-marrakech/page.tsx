@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { getTranslations } from 'next-intl/server';
+import { FaqSection } from '@/components/FaqSection';
 import { BackgroundEffects } from '@/components/BackgroundEffects';
 import { PageHeader, PageFooter, PageHero, StatsBar, FinalCTA } from '@/components/SharedComponents';
 
@@ -143,6 +144,37 @@ export default function ConciergerieMarrakechPage() {
           { k: '3 langues', l: 'FR/AR/EN auto' },
           { k: '+0.6★', l: 'Gain reviews' }
         ]} />
+        <FaqSection
+          badge="Communication client Marrakech"
+          title="Questions fréquentes"
+          items={[
+          {
+                    "q": "Comment automatiser la communication client d'un hôtel à Marrakech ?",
+                    "a": "Les messages partent sur WhatsApp, le canal que les clients utilisent déjà — confirmation, instructions d'arrivée, informations pratiques, relance d'avis. L'assistant répond aux demandes courantes 24h/24, et transmet à votre équipe ce qui demande un arbitrage humain."
+          },
+          {
+                    "q": "L'assistant parle-t-il arabe, français et anglais ?",
+                    "a": "Oui, plus l'espagnol. Il détecte la langue du client et répond dans celle-ci. À Marrakech, où se croisent clientèles locale et internationale, cela évite d'avoir un réceptionniste multilingue disponible en continu."
+          },
+          {
+                    "q": "Que se passe-t-il quand l'assistant ne sait pas répondre ?",
+                    "a": "La conversation bascule vers votre équipe avec tout l'historique. L'automatisation traite le volume répétitif — horaires, wifi, accès, services — et vous laisse les situations qui demandent un jugement. Vous gardez la main à tout moment."
+          },
+          {
+                    "q": "Comment gérer les arrivées tardives et les demandes de dernière minute ?",
+                    "a": "Les instructions d'accès partent automatiquement avant l'arrivée. Si le client prévient d'un retard, l'événement est capté et votre équipe d'accueil alertée — sans appel à 23 h. Les demandes de service entrent dans le même flux et deviennent des tâches assignées."
+          },
+          {
+                    "q": "Peut-on vendre des services additionnels pendant le séjour ?",
+                    "a": "Oui : transferts, petit-déjeuner, late check-out, expériences, ménage supplémentaire. Le client commande dans la conversation, la demande arrive à l'équipe concernée. C'est du revenu additionnel sur un séjour déjà réservé — le levier le plus rentable en hôtellerie."
+          },
+          {
+                    "q": "Est-ce adapté à hôtels de charme, riads de la médina et villas de la Palmeraie ?",
+                    "a": "Oui. Ce qui est orchestré, ce sont les moments du séjour : avant l'arrivée, pendant, après le départ. La taille et le type d'établissement changent le volume, pas la logique."
+          }
+]}
+        />
+
 
         <FinalCTA
           title={<>Testez la conciergerie WhatsApp AI. <span className="gradient-text">1 mois gratuit.</span></>}
