@@ -2114,6 +2114,26 @@
     "goSiyaha": {
       "title": "Go Siyaha 2026 — Subvención digitalización turismo Marruecos | Sojori",
       "description": "El programa Go Siyaha apoya la digitalización de los establecimientos turísticos marroquíes: ejes, tasas, elegibilidad y gastos cubiertos. Dónde interviene Sojori, sin prometer subvenciones."
+    },
+    "altCloudbeds": {
+      "title": "Alternativa a Cloudbeds en Marruecos — Sojori vs Cloudbeds | Sojori",
+      "description": "Cloudbeds vs Sojori para hoteles y riads en Marruecos: PMS frente a motor de orquestación. Comparativa honesta, incluido cuándo Cloudbeds es la mejor opción."
+    },
+    "altPluriel": {
+      "title": "Alternativa a Pluriel en Marruecos — Sojori vs Pluriel | Sojori",
+      "description": "Pluriel vs Sojori para hoteles y riads en Marruecos: PMS frente a motor de orquestación. Comparativa honesta, incluido cuándo Pluriel es la mejor opción."
+    },
+    "altNozoul": {
+      "title": "Alternativa a Nozoul en Marruecos — Sojori vs Nozoul | Sojori",
+      "description": "Nozoul vs Sojori para hoteles y riads en Marruecos: PMS frente a motor de orquestación. Comparativa honesta, incluido cuándo Nozoul es la mejor opción."
+    },
+    "altWelcomax": {
+      "title": "Alternativa a Welcomax en Marruecos — Sojori vs Welcomax | Sojori",
+      "description": "Welcomax vs Sojori para hoteles y riads en Marruecos: PMS frente a motor de orquestación. Comparativa honesta, incluido cuándo Welcomax es la mejor opción."
+    },
+    "comparatifPmsMaroc": {
+      "title": "Comparativa PMS hotel Marruecos 2026 — ¿Qué software? | Sojori",
+      "description": "Comparativa de software de gestión hotelera en Marruecos: Cloudbeds, Pluriel, Nozoul, Welcomax y Sojori. Perfiles, arquitecturas y cuándo elegir cada uno."
     }
   },
   "pmsPage": {

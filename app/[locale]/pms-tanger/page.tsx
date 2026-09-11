@@ -211,6 +211,9 @@ export default async function PmsPageTanger({ params }: { params: Promise<{ loca
               <Link href={'/conciergerie-tanger' as const} style={{ color: '#f4cf5e', textDecoration: 'none' }}>conciergerie de Tanger</Link>
               <br />
               <br />
+              <br />
+              Comparer :{' '}
+              <Link href={'/comparatif-pms-maroc' as const} style={{ color: '#f4cf5e', textDecoration: 'none' }}>Sojori face aux autres PMS du Maroc</Link>
               Financement :{' '}
               <Link href={'/go-siyaha' as const} style={{ color: '#f4cf5e', textDecoration: 'none' }}>Go Siyaha, la subvention digitalisation</Link>
               Autres villes :{' '}

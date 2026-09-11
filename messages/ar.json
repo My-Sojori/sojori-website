@@ -2114,6 +2114,26 @@
     "goSiyaha": {
       "title": "برنامج Go Siyaha 2026 — دعم رقمنة السياحة بالمغرب | Sojori",
       "description": "برنامج Go Siyaha يدعم رقمنة المؤسسات السياحية المغربية: المحاور، النسب، شروط الأهلية والنفقات المغطاة. دور Sojori، دون أي وعد بالحصول على الدعم."
+    },
+    "altCloudbeds": {
+      "title": "بديل Cloudbeds في المغرب — Sojori مقابل Cloudbeds | Sojori",
+      "description": "Cloudbeds مقابل Sojori للفنادق والرياضات في المغرب: نظام إدارة الفنادق مقابل محرك التنسيق. مقارنة صادقة."
+    },
+    "altPluriel": {
+      "title": "بديل Pluriel في المغرب — Sojori مقابل Pluriel | Sojori",
+      "description": "Pluriel مقابل Sojori للفنادق والرياضات في المغرب: نظام إدارة الفنادق مقابل محرك التنسيق. مقارنة صادقة."
+    },
+    "altNozoul": {
+      "title": "بديل Nozoul في المغرب — Sojori مقابل Nozoul | Sojori",
+      "description": "Nozoul مقابل Sojori للفنادق والرياضات في المغرب: نظام إدارة الفنادق مقابل محرك التنسيق. مقارنة صادقة."
+    },
+    "altWelcomax": {
+      "title": "بديل Welcomax في المغرب — Sojori مقابل Welcomax | Sojori",
+      "description": "Welcomax مقابل Sojori للفنادق والرياضات في المغرب: نظام إدارة الفنادق مقابل محرك التنسيق. مقارنة صادقة."
+    },
+    "comparatifPmsMaroc": {
+      "title": "مقارنة أنظمة إدارة الفنادق بالمغرب 2026 | Sojori",
+      "description": "مقارنة برامج إدارة الفنادق في المغرب: Cloudbeds وPluriel وNozoul وWelcomax وSojori. الملامح والبنيات والحالة المناسبة لكل منها."
     }
   },
   "pmsPage": {

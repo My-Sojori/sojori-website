@@ -45,6 +45,11 @@ export const routing = defineRouting({
     '/pms-tanger': '/pms-tanger',
     '/pms-agadir': '/pms-agadir',
     '/go-siyaha': '/go-siyaha',
+    '/alternative-cloudbeds': '/alternative-cloudbeds',
+    '/alternative-pluriel': '/alternative-pluriel',
+    '/alternative-nozoul': '/alternative-nozoul',
+    '/alternative-welcomax': '/alternative-welcomax',
+    '/comparatif-pms-maroc': '/comparatif-pms-maroc',
     '/terms': '/terms',
     '/privacy': '/privacy'
   }

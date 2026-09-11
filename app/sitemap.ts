@@ -46,6 +46,13 @@ const PATHS = [
   '/pms-tanger',
   '/pms-agadir',
   '/go-siyaha',
+  // 2026-09-11 : pages comparatives — requêtes « alternative à X » et
+  // « meilleur PMS hôtel Maroc », fin de parcours, fort taux de conversion.
+  '/alternative-cloudbeds',
+  '/alternative-pluriel',
+  '/alternative-nozoul',
+  '/alternative-welcomax',
+  '/comparatif-pms-maroc',
   '/terms',
   '/privacy',
 ];

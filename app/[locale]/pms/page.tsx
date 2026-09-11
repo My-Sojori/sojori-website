@@ -87,6 +87,10 @@ export default async function PMSPage() {
               de ménage. Voici comment Sojori s&apos;applique dans les cinq principales villes
               hôtelières du Maroc.
             </p>
+            <p style={{ fontSize: 14, color: 'var(--text-3)', lineHeight: 1.9, marginBottom: 20 }}>
+              Vous comparez plusieurs solutions ?{' '}
+              <Link href={'/comparatif-pms-maroc' as const} style={{ color: '#f4cf5e', textDecoration: 'none', fontWeight: 600 }}>Voir le comparatif des PMS au Maroc</Link>
+            </p>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: 12 }}>
               {[
               { city: 'Marrakech', slug: '/pms-marrakech' as const },
