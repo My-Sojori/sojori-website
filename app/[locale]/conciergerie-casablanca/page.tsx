@@ -105,7 +105,7 @@ export default function ConciergerieCasablancaPage() {
 
         <section style={{ padding: '40px 32px 80px', borderTop: '1px solid var(--glass-border)' }}>
           <div style={{ maxWidth: 1000, margin: '0 auto' }}>
-            <div className="uppercase-sm" style={{ color: 'var(--text-3)', marginBottom: 12 }}>● Résultats Property Managers Casablanca</div>
+            <div className="uppercase-sm" style={{ color: 'var(--text-3)', marginBottom: 12 }}>● Résultats Établissements Casablanca</div>
             <div style={{ fontSize: 32, fontWeight: 700, letterSpacing: '-0.02em', marginBottom: 32 }}>
               Avant / Après Sojori Conciergerie
             </div>

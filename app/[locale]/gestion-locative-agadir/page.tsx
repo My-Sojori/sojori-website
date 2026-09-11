@@ -24,8 +24,8 @@ export default function GestionLocativeAgadirPage() {
 
         <PageHero
           badge="🏖️ Gestion Locative Agadir · Solution Complète"
-          title={<>Gérez vos résidences balnéaires.<br /><span className="gradient-text">Depuis Agadir.</span></>}
-          subtitle="Property managers à Agadir : PMS complet, Channel Manager multi-OTA, Conciergerie WhatsApp 24/7, Dynamic Pricing saisonnier. La solution pensée pour la station balnéaire la plus fréquentée du Maroc."
+          title={<>Orchestrez votre établissement.<br /><span className="gradient-text">Depuis Agadir.</span></>}
+          subtitle="Hôtels, clubs et résidences de tourisme à Agadir : PMS complet, Channel Manager multi-OTA, Conciergerie WhatsApp 24/7, Dynamic Pricing saisonnier. La solution pensée pour la station balnéaire la plus fréquentée du Maroc."
           cta1="Voir la démo"
           cta2="Parler à un expert"
         />
@@ -56,7 +56,7 @@ export default function GestionLocativeAgadirPage() {
           <div style={{ maxWidth: 1200, margin: '0 auto' }}>
             <div className="uppercase-sm" style={{ color: 'var(--text-3)', marginBottom: 12 }}>● Modules Sojori pour Agadir</div>
             <div style={{ fontSize: 32, fontWeight: 700, letterSpacing: '-0.02em', marginBottom: 32 }}>
-              Tout ce dont un property manager à Agadir a besoin. <span style={{ color: 'var(--text-3)' }}>Dans un seul logiciel.</span>
+              Tout ce dont un établissement à Agadir a besoin. <span style={{ color: 'var(--text-3)' }}>Dans un seul logiciel.</span>
             </div>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 16 }}>
               {[
@@ -86,7 +86,7 @@ export default function GestionLocativeAgadirPage() {
             </div>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: 16 }}>
               {[
-                { profil: 'Property Manager · Résidences Marina & Founty', pb: 'Gérait des résidences balnéaires avec Excel + WhatsApp perso. Pic estival ingérable manuellement, messages guests perdus, aucune visibilité revenus consolidée.', sol: 'PMS + Channel Manager + WhatsApp AI déployés en quelques jours. Calendrier unifié, conciergerie 24/7 automatique pour absorber les pics de haute saison, reporting financier mensuel.', res: 'Occupation en hausse sur la haute saison · 0 surréservation · gestion des pics automatisée' },
+                { profil: 'Hôtel de charme · Résidences Marina & Founty', pb: 'Gérait des résidences balnéaires avec Excel + WhatsApp perso. Pic estival ingérable manuellement, messages guests perdus, aucune visibilité revenus consolidée.', sol: 'PMS + Channel Manager + WhatsApp AI déployés en quelques jours. Calendrier unifié, conciergerie 24/7 automatique pour absorber les pics de haute saison, reporting financier mensuel.', res: 'Occupation en hausse sur la haute saison · 0 surréservation · gestion des pics automatisée' },
                 { profil: 'Co-host · Appartements Standing Front de Mer', pb: 'Propriétaires voulaient transparence finances sur des locations à forte saisonnalité. Statements manuels = plusieurs jours par mois. Virements retardés.', sol: 'Owner Portal multi-devise. Statements automatiques, virements programmés, dashboards propriétaires en temps réel.', res: 'Temps administratif fortement réduit · rétention propriétaires élevée · portefeuille en croissance' },
                 { profil: 'Agence · Portefeuille Résidences Sécurisées', pb: 'Équipe ménage désorganisée sur des rotations rapides en haute saison. Pas de suivi qualité. Reviews clients en baisse pendant les pics.', sol: 'TeamFlow déployé. Planning automatique par propriété, checklist ménage digitale, suivi temps réel. WhatsApp AI pour guests toute l\'année.', res: 'Reviews en hausse · coordination plus rapide même en pic · équipe mieux organisée' },
               ].map((c, i) => (
@@ -147,7 +147,7 @@ export default function GestionLocativeAgadirPage() {
 
 
         <FinalCTA
-          title={<>Rejoignez les property managers d&apos;Agadir. <span className="gradient-text">1 mois d&apos;essai gratuit.</span></>}
+          title={<>Rejoignez les établissements d&apos;Agadir. <span className="gradient-text">1 mois d&apos;essai gratuit.</span></>}
           subtitle="Onboarding guidé en français. Migration depuis Hostfully, Smoobu, Lodgify offerte. Support dédié Maroc."
         />
 

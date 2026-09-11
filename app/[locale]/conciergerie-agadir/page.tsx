@@ -62,7 +62,7 @@ export default function ConciergerieAgadirPage() {
                 { i: '🚖', t: 'Transport Aéroport', d: 'Réservation taxi aéroport Al Massira automatique. Guest envoie heure d\'arrivée sur WhatsApp → taxi confirmé, prix transparent. Tracking chauffeur temps réel.' },
                 { i: '🏖️', t: 'Guidebook Digital Agadir', d: 'Recommandations quartier : Marina, Founty, Talborjt. Restaurants, plage, souk El Had. Mis à jour en continu.' },
                 { i: '🍽️', t: 'Réservations Restaurants', d: 'Guest demande resto sur WhatsApp → suggestions + réservation directe. Adapté aux familles comme aux couples.' },
-                { i: '🏄', t: 'Excursions & Activités', d: 'Surf, vallée de l\'Ourika, désert, activités enfants. Tarifs négociés, réservation instantanée, commission property manager.' },
+                { i: '🏄', t: 'Excursions & Activités', d: 'Surf, vallée de l\'Ourika, désert, activités enfants. Tarifs négociés, réservation instantanée, commission établissement.' },
                 { i: '🔑', t: 'Check-in Digital', d: 'Code porte envoyé automatiquement J-1. Instructions WiFi, climatisation, équipements. Arrivée autonome même en pic charter.' },
                 { i: '🛎️', t: 'Demandes Sur-Mesure', d: 'Épicerie livrée, baby-sitting, location matériel plage. Tout traité sur WhatsApp, facturation automatique.' },
               ].map(c => (
@@ -105,7 +105,7 @@ export default function ConciergerieAgadirPage() {
 
         <section style={{ padding: '40px 32px 80px', borderTop: '1px solid var(--glass-border)' }}>
           <div style={{ maxWidth: 1000, margin: '0 auto' }}>
-            <div className="uppercase-sm" style={{ color: 'var(--text-3)', marginBottom: 12 }}>● Résultats Property Managers Agadir</div>
+            <div className="uppercase-sm" style={{ color: 'var(--text-3)', marginBottom: 12 }}>● Résultats Établissements Agadir</div>
             <div style={{ fontSize: 32, fontWeight: 700, letterSpacing: '-0.02em', marginBottom: 32 }}>
               Avant / Après Sojori Conciergerie
             </div>

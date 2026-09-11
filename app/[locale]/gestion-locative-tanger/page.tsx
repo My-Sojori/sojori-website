@@ -24,8 +24,8 @@ export default function GestionLocativeTangerPage() {
 
         <PageHero
           badge="⚓ Gestion Locative Tanger · Solution Complète"
-          title={<>Gérez vos biens.<br /><span className="gradient-text">Depuis le détroit de Gibraltar.</span></>}
-          subtitle="Property managers à Tanger : PMS complet, Channel Manager multi-OTA, Conciergerie WhatsApp 24/7, Dynamic Pricing adapté à un marché unique en Europe/Maroc. La porte d'entrée du Maroc, à 14 km de l'Espagne."
+          title={<>Orchestrez votre établissement.<br /><span className="gradient-text">Depuis le détroit de Gibraltar.</span></>}
+          subtitle="Hôtels, résidences et maisons d'hôtes à Tanger : PMS complet, Channel Manager multi-OTA, Conciergerie WhatsApp 24/7, Dynamic Pricing adapté à un marché unique en Europe/Maroc. La porte d'entrée du Maroc, à 14 km de l'Espagne."
           cta1="Voir la démo"
           cta2="Parler à un expert"
         />
@@ -56,7 +56,7 @@ export default function GestionLocativeTangerPage() {
           <div style={{ maxWidth: 1200, margin: '0 auto' }}>
             <div className="uppercase-sm" style={{ color: 'var(--text-3)', marginBottom: 12 }}>● Modules Sojori pour Tanger</div>
             <div style={{ fontSize: 32, fontWeight: 700, letterSpacing: '-0.02em', marginBottom: 32 }}>
-              Tout ce dont un property manager à Tanger a besoin. <span style={{ color: 'var(--text-3)' }}>Dans un seul logiciel.</span>
+              Tout ce dont un établissement à Tanger a besoin. <span style={{ color: 'var(--text-3)' }}>Dans un seul logiciel.</span>
             </div>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 16 }}>
               {[
@@ -86,7 +86,7 @@ export default function GestionLocativeTangerPage() {
             </div>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: 16 }}>
               {[
-                { profil: 'Property Manager · Riads Médina/Kasbah', pb: 'Gérait quelques riads avec Excel + WhatsApp perso. Clientèle multilingue (espagnole, française, anglophone) difficile à gérer sans automatisation, messages perdus.', sol: 'PMS + Channel Manager + WhatsApp AI déployés en quelques jours. Calendrier unifié, conciergerie multilingue 24/7, reporting financier mensuel.', res: 'Occupation en hausse · communication fluidifiée toutes langues · 0 surréservation' },
+                { profil: 'Hôtel de charme · Riads Médina/Kasbah', pb: 'Gérait quelques riads avec Excel + WhatsApp perso. Clientèle multilingue (espagnole, française, anglophone) difficile à gérer sans automatisation, messages perdus.', sol: 'PMS + Channel Manager + WhatsApp AI déployés en quelques jours. Calendrier unifié, conciergerie multilingue 24/7, reporting financier mensuel.', res: 'Occupation en hausse · communication fluidifiée toutes langues · 0 surréservation' },
                 { profil: 'Co-host · Appartements Malabata & Centre-ville', pb: 'Propriétaires voulaient transparence finances sur un marché en forte croissance. Statements manuels = plusieurs jours par mois. Virements retardés.', sol: 'Owner Portal multi-devise. Statements automatiques, virements programmés, dashboards propriétaires en temps réel.', res: 'Temps administratif fortement réduit · rétention propriétaires élevée · portefeuille en croissance' },
                 { profil: 'Agence · Portefeuille Mixte Médina & Résidences Modernes', pb: 'Équipe ménage désorganisée sur des biens hétérogènes (riads historiques, appartements récents). Pas de suivi qualité. Reviews clients en baisse.', sol: 'TeamFlow déployé. Planning automatique par propriété, checklist ménage digitale, suivi temps réel. WhatsApp AI pour guests.', res: 'Reviews en hausse · coordination plus rapide · équipe mieux organisée' },
               ].map((c, i) => (
@@ -147,7 +147,7 @@ export default function GestionLocativeTangerPage() {
 
 
         <FinalCTA
-          title={<>Rejoignez les property managers de Tanger. <span className="gradient-text">1 mois d&apos;essai gratuit.</span></>}
+          title={<>Rejoignez les établissements de Tanger. <span className="gradient-text">1 mois d&apos;essai gratuit.</span></>}
           subtitle="Onboarding guidé en français. Migration depuis Hostfully, Smoobu, Lodgify offerte. Support dédié Maroc."
         />
 

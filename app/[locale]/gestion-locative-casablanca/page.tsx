@@ -24,8 +24,8 @@ export default function GestionLocativeCasablancaPage() {
 
         <PageHero
           badge="🏙️ Gestion Locative Casablanca · Solution Complète"
-          title={<>Gérez vos appartements.<br /><span className="gradient-text">Depuis Casablanca.</span></>}
-          subtitle="Property managers à Casablanca : PMS complet, Channel Manager multi-OTA, Conciergerie WhatsApp 24/7, Dynamic Pricing adapté à la clientèle affaires. La solution pensée pour la capitale économique du Maroc."
+          title={<>Orchestrez votre établissement.<br /><span className="gradient-text">Depuis Casablanca.</span></>}
+          subtitle="Hôtels, appart-hôtels et résidences à Casablanca : PMS complet, Channel Manager multi-OTA, Conciergerie WhatsApp 24/7, Dynamic Pricing adapté à la clientèle affaires. La solution pensée pour la capitale économique du Maroc."
           cta1="Voir la démo"
           cta2="Parler à un expert"
         />
@@ -38,9 +38,9 @@ export default function GestionLocativeCasablancaPage() {
             </div>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 16 }}>
               {[
-                { i: '💼', t: 'Clientèle Affaires Dominante', d: "Premier pôle économique et financier du Maroc : sièges sociaux, banques, Casablanca Finance City. La location courte durée y répond d'abord à une demande business — séjours pro, missions, relocations — plus qu'au tourisme loisirs pur." },
+                { i: '💼', t: 'Clientèle Affaires Dominante', d: "Premier pôle économique et financier du Maroc : sièges sociaux, banques, Casablanca Finance City. La hospitalité y répond d'abord à une demande business — séjours pro, missions, relocations — plus qu'au tourisme loisirs pur." },
                 { i: '✈️', t: 'Hub Aérien International', d: "Aéroport Mohammed V, principal point d'entrée international du pays avec de nombreuses liaisons long-courrier. Beaucoup d'arrivées tardives et de séjours courts en semaine, un rythme différent des villes balnéaires." },
-                { i: '🏢', t: 'Marché Immobilier Le Plus Dense', d: "Le plus grand parc de logements meublés du pays, concentré dans des quartiers modernes (Maarif, Gauthier, Racine, CFC). Les property managers y gèrent des portefeuilles d'appartements standardisés plutôt que des biens de charme uniques." },
+                { i: '🏢', t: 'Marché Immobilier Le Plus Dense', d: "Le plus grand parc de logements meublés du pays, concentré dans des quartiers modernes (Maarif, Gauthier, Racine, CFC). Les établissements y gèrent des portefeuilles d'appartements standardisés plutôt que des biens de charme uniques." },
               ].map(c => (
                 <div key={c.t} className="card" style={{ padding: 22 }}>
                   <div style={{ fontSize: 28, marginBottom: 10 }}>{c.i}</div>
@@ -56,7 +56,7 @@ export default function GestionLocativeCasablancaPage() {
           <div style={{ maxWidth: 1200, margin: '0 auto' }}>
             <div className="uppercase-sm" style={{ color: 'var(--text-3)', marginBottom: 12 }}>● Modules Sojori pour Casablanca</div>
             <div style={{ fontSize: 32, fontWeight: 700, letterSpacing: '-0.02em', marginBottom: 32 }}>
-              Tout ce dont un property manager à Casablanca a besoin. <span style={{ color: 'var(--text-3)' }}>Dans un seul logiciel.</span>
+              Tout ce dont un établissement à Casablanca a besoin. <span style={{ color: 'var(--text-3)' }}>Dans un seul logiciel.</span>
             </div>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 16 }}>
               {[
@@ -86,7 +86,7 @@ export default function GestionLocativeCasablancaPage() {
             </div>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: 16 }}>
               {[
-                { profil: 'Property Manager · Portefeuille Appartements Maarif/Gauthier', pb: 'Gérait un portefeuille d\'appartements avec Excel + WhatsApp perso. Arrivées tardives non gérées la nuit, messages guests perdus, pas de visibilité revenus consolidée.', sol: 'PMS + Channel Manager + WhatsApp AI déployés en quelques jours. Calendrier unifié, conciergerie 24/7 automatique pour les arrivées tardives, reporting financier mensuel.', res: 'Occupation en hausse · surréservations éliminées · gestion des arrivées de nuit automatisée' },
+                { profil: 'Hôtel de charme · Portefeuille Appartements Maarif/Gauthier', pb: 'Gérait un portefeuille d\'appartements avec Excel + WhatsApp perso. Arrivées tardives non gérées la nuit, messages guests perdus, pas de visibilité revenus consolidée.', sol: 'PMS + Channel Manager + WhatsApp AI déployés en quelques jours. Calendrier unifié, conciergerie 24/7 automatique pour les arrivées tardives, reporting financier mensuel.', res: 'Occupation en hausse · surréservations éliminées · gestion des arrivées de nuit automatisée' },
                 { profil: 'Co-host · Studios & Appartements Meublés', pb: 'Propriétaires voulaient transparence finances sur des séjours majoritairement courts. Statements manuels = plusieurs jours par mois. Virements retardés.', sol: 'Owner Portal multi-devise. Statements automatiques, virements programmés, dashboards propriétaires en temps réel.', res: 'Temps administratif fortement réduit · rétention propriétaires élevée · portefeuille en croissance' },
                 { profil: 'Agence · Portefeuille Mixte Business & Loisirs', pb: 'Équipe ménage désorganisée sur des rotations rapides (séjours courts fréquents). Pas de suivi qualité. Reviews clients en baisse.', sol: 'TeamFlow déployé. Planning automatique par propriété, checklist ménage digitale, suivi temps réel. WhatsApp AI pour guests business et loisirs.', res: 'Reviews en hausse · coordination plus rapide · équipe mieux organisée' },
               ].map((c, i) => (
@@ -147,7 +147,7 @@ export default function GestionLocativeCasablancaPage() {
 
 
         <FinalCTA
-          title={<>Rejoignez les property managers de Casablanca. <span className="gradient-text">1 mois d&apos;essai gratuit.</span></>}
+          title={<>Rejoignez les établissements de Casablanca. <span className="gradient-text">1 mois d&apos;essai gratuit.</span></>}
           subtitle="Onboarding guidé en français. Migration depuis Hostfully, Smoobu, Lodgify offerte. Support dédié Maroc."
         />
 

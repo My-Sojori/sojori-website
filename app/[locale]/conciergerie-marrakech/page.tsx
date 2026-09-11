@@ -62,7 +62,7 @@ export default function ConciergerieMarrakechPage() {
                 { i: '🚖', t: 'Transport Aéroport', d: 'Réservation taxi aéroport Menara automatique. Guest envoie heure d\'arrivée sur WhatsApp → taxi confirmé, prix transparent (150-200 MAD). Tracking chauffeur temps réel.' },
                 { i: '🏛️', t: 'Guidebook Digital Marrakech', d: 'Recommandations quartier : Médina, Gueliz, Hivernage. Restaurants (Le Jardin, Nomad), hammams traditionnels, souks, palais. Mis à jour en continu.' },
                 { i: '🍽️', t: 'Réservations Restaurants', d: 'Guest demande resto sur WhatsApp → suggestions + réservation directe. Partenariats locaux : La Mamounia, Dar Yacout, terrasses Médina.' },
-                { i: '🏜️', t: 'Excursions & Expériences', d: 'Désert Sahara, vallée Ourika, Atlas, quad Palmeraie, cours cuisine. Tarifs négociés, réservation instantanée, commission property manager.' },
+                { i: '🏜️', t: 'Excursions & Expériences', d: 'Désert Sahara, vallée Ourika, Atlas, quad Palmeraie, cours cuisine. Tarifs négociés, réservation instantanée, commission établissement.' },
                 { i: '🔑', t: 'Check-in Digital', d: 'Code porte envoyé automatiquement J-1. Instructions WiFi, climatisation, équipements. Photos/vidéos guidage. Arrivée autonome même à minuit.' },
                 { i: '🛎️', t: 'Demandes Sur-Mesure', d: 'Épicerie livrée, baby-sitting, chauffeur privé, massages à domicile. Tout traité sur WhatsApp, facturation automatique.' },
               ].map(c => (
@@ -105,7 +105,7 @@ export default function ConciergerieMarrakechPage() {
 
         <section style={{ padding: '40px 32px 80px', borderTop: '1px solid var(--glass-border)' }}>
           <div style={{ maxWidth: 1000, margin: '0 auto' }}>
-            <div className="uppercase-sm" style={{ color: 'var(--text-3)', marginBottom: 12 }}>● Résultats Property Managers Marrakech</div>
+            <div className="uppercase-sm" style={{ color: 'var(--text-3)', marginBottom: 12 }}>● Résultats Établissements Marrakech</div>
             <div style={{ fontSize: 32, fontWeight: 700, letterSpacing: '-0.02em', marginBottom: 32 }}>
               Avant / Après Sojori Conciergerie
             </div>

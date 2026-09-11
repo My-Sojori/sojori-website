@@ -24,8 +24,8 @@ export default function GestionLocativeMarrakechPage() {
 
         <PageHero
           badge="🏛️ Gestion Locative Marrakech · Solution Complète"
-          title={<>Gérez vos riads & villas.<br /><span className="gradient-text">Depuis Marrakech.</span></>}
-          subtitle="Property managers à Marrakech : PMS complet, Channel Manager multi-OTA, Conciergerie WhatsApp 24/7, Dynamic Pricing local. La solution pensée pour le marché marocain — Airbnb, Booking, gestion équipe, tout synchronisé."
+          title={<>Orchestrez votre établissement.<br /><span className="gradient-text">Depuis Marrakech.</span></>}
+          subtitle="Hôtels de charme, riads et maisons d'hôtes à Marrakech : PMS complet, Channel Manager multi-OTA, Conciergerie WhatsApp 24/7, Dynamic Pricing local. La solution pensée pour le marché marocain — Airbnb, Booking, gestion équipe, tout synchronisé."
           cta1="Voir la démo"
           cta2="Parler à un expert"
         />
@@ -34,13 +34,13 @@ export default function GestionLocativeMarrakechPage() {
           <div style={{ maxWidth: 1200, margin: '0 auto' }}>
             <div className="uppercase-sm" style={{ color: 'var(--text-3)', marginBottom: 12 }}>● Pourquoi Marrakech ?</div>
             <div style={{ fontSize: 32, fontWeight: 700, letterSpacing: '-0.02em', marginBottom: 32, maxWidth: 820 }}>
-              Marrakech = <span className="gradient-text">capitale location saisonnière Maroc</span>
+              Marrakech = <span className="gradient-text">capitale de l'hôtellerie de charme au Maroc</span>
             </div>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 16 }}>
               {[
-                { i: '🏛️', t: 'Riads & Villas Premium', d: 'Marrakech concentre 70% des locations de luxe au Maroc. Médina historique, Palmeraie, Agdal — nos property managers gèrent 500+ propriétés haut de gamme.' },
+                { i: '🏛️', t: 'Riads & Villas Premium', d: 'Marrakech concentre 70% des locations de luxe au Maroc. Médina historique, Palmeraie, Agdal — nos établissements partenaires exploitent 500+ chambres et suites haut de gamme.' },
                 { i: '🌍', t: 'Hub Tourisme International', d: 'Aéroport international, 13M visiteurs/an. Clients FR/EN/AR. Sojori gère les 3 langues nativement — WhatsApp AI, inbox unifié, traduction automatique.' },
-                { i: '📈', t: 'Marché Professionnel', d: 'Les property managers à Marrakech gèrent en moyenne 12 propriétés. Besoin d\'outils pro : multi-propriétés, yield management, gestion staff locale.' },
+                { i: '📈', t: 'Exploitation professionnelle', d: 'Les établissements à Marrakech exploitent en moyenne 12 unités. Besoin d\'outils pro : multi-propriétés, yield management, gestion staff locale.' },
               ].map(c => (
                 <div key={c.t} className="card" style={{ padding: 22 }}>
                   <div style={{ fontSize: 28, marginBottom: 10 }}>{c.i}</div>
@@ -56,7 +56,7 @@ export default function GestionLocativeMarrakechPage() {
           <div style={{ maxWidth: 1200, margin: '0 auto' }}>
             <div className="uppercase-sm" style={{ color: 'var(--text-3)', marginBottom: 12 }}>● Modules Sojori pour Marrakech</div>
             <div style={{ fontSize: 32, fontWeight: 700, letterSpacing: '-0.02em', marginBottom: 32 }}>
-              Tout ce dont un property manager à Marrakech a besoin. <span style={{ color: 'var(--text-3)' }}>Dans un seul logiciel.</span>
+              Tout ce dont un établissement à Marrakech a besoin. <span style={{ color: 'var(--text-3)' }}>Dans un seul logiciel.</span>
             </div>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 16 }}>
               {[
@@ -86,7 +86,7 @@ export default function GestionLocativeMarrakechPage() {
             </div>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: 16 }}>
               {[
-                { profil: 'Property Manager · 8 Riads Médina', pb: 'Gérait 8 riads avec Excel + WhatsApp perso. Surréservations fréquentes, messages guests perdus, pas de visibilité revenus.', sol: 'PMS + Channel Manager + WhatsApp AI déployés en 5 jours. Calendrier unifié, conciergerie 24/7 automatique, reporting financier mensuel.', res: '+40% occupation · 0 surréservation · 92% satisfaction guests' },
+                { profil: 'Hôtel de charme · 8 Riads Médina', pb: 'Exploitait 8 riads avec Excel + WhatsApp perso. Surréservations fréquentes, messages guests perdus, pas de visibilité revenus.', sol: 'PMS + Channel Manager + WhatsApp AI déployés en 5 jours. Calendrier unifié, conciergerie 24/7 automatique, reporting financier mensuel.', res: '+40% occupation · 0 surréservation · 92% satisfaction guests' },
                 { profil: 'Co-host · 15 Villas Palmeraie', pb: 'Propriétaires voulaient transparence finances. Statements manuels Excel = 2 jours/mois. Virements retardés.', sol: 'Owner Portal multi-devise. Statements automatiques J+1, virements programmés J+7. Dashboards propriétaires temps réel.', res: '0h admin/mois · 100% rétention propriétaires · +5 villas signées' },
                 { profil: 'Agence · 25 Propriétés Mix', pb: 'Équipe ménage désorganisée. Planning WhatsApp = chaos. Pas de suivi qualité. Reviews clients en baisse.', sol: 'TeamFlow déployé. Planning automatique par propriété, checklist ménage digitale, suivi temps réel. WhatsApp AI pour guests.', res: '+0.4★ reviews · -30% temps coordination · Équipe motivée' },
               ].map((c, i) => (
@@ -110,7 +110,7 @@ export default function GestionLocativeMarrakechPage() {
 
         <StatsBar stats={[
           { k: '500+', l: 'Propriétés Marrakech' },
-          { k: '70+', l: 'Property Managers' },
+          { k: '70+', l: 'Établissements' },
           { k: '4.8★', l: 'Satisfaction moyenne' },
           { k: '24/7', l: 'Support FR/AR' }
         ]} />
@@ -147,7 +147,7 @@ export default function GestionLocativeMarrakechPage() {
 
 
         <FinalCTA
-          title={<>Rejoignez les property managers de Marrakech. <span className="gradient-text">1 mois d&apos;essai gratuit.</span></>}
+          title={<>Rejoignez les établissements de Marrakech. <span className="gradient-text">1 mois d&apos;essai gratuit.</span></>}
           subtitle="Onboarding guidé en français. Migration depuis Hostfully, Smoobu, Lodgify offerte. Support dédié Marrakech."
         />
 

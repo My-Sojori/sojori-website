@@ -62,7 +62,7 @@ export default function ConciergerieTangerPage() {
                 { i: '🚖', t: 'Transport Aéroport & Port', d: 'Réservation taxi aéroport Ibn Battouta ou depuis le port automatique. Guest envoie heure d\'arrivée sur WhatsApp → transport confirmé, prix transparent.' },
                 { i: '🏛️', t: 'Guidebook Digital Médina/Kasbah', d: 'Recommandations quartier : médina, Kasbah, Grand Socco, Petit Socco. Restaurants, cafés emblématiques, vue sur le détroit. Mis à jour en continu.' },
                 { i: '🍽️', t: 'Réservations Restaurants', d: 'Guest demande resto sur WhatsApp → suggestions + réservation directe. Adapté à une clientèle multiculturelle.' },
-                { i: '⚓', t: 'Excursions & Ferry', d: 'Grottes d\'Hercule, Cap Spartel, excursion vers l\'Espagne via ferry. Tarifs négociés, réservation instantanée, commission property manager.' },
+                { i: '⚓', t: 'Excursions & Ferry', d: 'Grottes d\'Hercule, Cap Spartel, excursion vers l\'Espagne via ferry. Tarifs négociés, réservation instantanée, commission établissement.' },
                 { i: '🔑', t: 'Check-in Digital', d: 'Code porte envoyé automatiquement J-1. Instructions WiFi, climatisation, équipements. Arrivée autonome même dans les ruelles de la médina.' },
                 { i: '🛎️', t: 'Demandes Sur-Mesure', d: 'Épicerie livrée, guide privé médina, chauffeur. Tout traité sur WhatsApp, facturation automatique.' },
               ].map(c => (
@@ -105,7 +105,7 @@ export default function ConciergerieTangerPage() {
 
         <section style={{ padding: '40px 32px 80px', borderTop: '1px solid var(--glass-border)' }}>
           <div style={{ maxWidth: 1000, margin: '0 auto' }}>
-            <div className="uppercase-sm" style={{ color: 'var(--text-3)', marginBottom: 12 }}>● Résultats Property Managers Tanger</div>
+            <div className="uppercase-sm" style={{ color: 'var(--text-3)', marginBottom: 12 }}>● Résultats Établissements Tanger</div>
             <div style={{ fontSize: 32, fontWeight: 700, letterSpacing: '-0.02em', marginBottom: 32 }}>
               Avant / Après Sojori Conciergerie
             </div>

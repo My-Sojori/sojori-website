@@ -24,8 +24,8 @@ export default function GestionLocativeRabatPage() {
 
         <PageHero
           badge="🏛️ Gestion Locative Rabat · Solution Complète"
-          title={<>Gérez vos appartements.<br /><span className="gradient-text">Depuis la capitale.</span></>}
-          subtitle="Property managers à Rabat : PMS complet, Channel Manager multi-OTA, Conciergerie WhatsApp 24/7, Dynamic Pricing adapté à une clientèle institutionnelle et diplomatique. La solution pensée pour la capitale administrative du Maroc, classée patrimoine mondial UNESCO."
+          title={<>Orchestrez votre établissement.<br /><span className="gradient-text">Depuis la capitale.</span></>}
+          subtitle="Hôtels, riads et résidences à Rabat : PMS complet, Channel Manager multi-OTA, Conciergerie WhatsApp 24/7, Dynamic Pricing adapté à une clientèle institutionnelle et diplomatique. La solution pensée pour la capitale administrative du Maroc, classée patrimoine mondial UNESCO."
           cta1="Voir la démo"
           cta2="Parler à un expert"
         />
@@ -56,7 +56,7 @@ export default function GestionLocativeRabatPage() {
           <div style={{ maxWidth: 1200, margin: '0 auto' }}>
             <div className="uppercase-sm" style={{ color: 'var(--text-3)', marginBottom: 12 }}>● Modules Sojori pour Rabat</div>
             <div style={{ fontSize: 32, fontWeight: 700, letterSpacing: '-0.02em', marginBottom: 32 }}>
-              Tout ce dont un property manager à Rabat a besoin. <span style={{ color: 'var(--text-3)' }}>Dans un seul logiciel.</span>
+              Tout ce dont un établissement à Rabat a besoin. <span style={{ color: 'var(--text-3)' }}>Dans un seul logiciel.</span>
             </div>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 16 }}>
               {[
@@ -86,7 +86,7 @@ export default function GestionLocativeRabatPage() {
             </div>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: 16 }}>
               {[
-                { profil: 'Property Manager · Appartements Agdal/Hay Riad', pb: 'Gérait un portefeuille d\'appartements avec Excel + WhatsApp perso. Clientèle professionnelle exigeante sur les délais de réponse, messages guests perdus, pas de visibilité revenus.', sol: 'PMS + Channel Manager + WhatsApp AI déployés en quelques jours. Calendrier unifié, conciergerie 24/7 automatique, reporting financier mensuel.', res: 'Occupation en hausse · réactivité accrue pour la clientèle professionnelle · 0 surréservation' },
+                { profil: 'Hôtel de charme · Appartements Agdal/Hay Riad', pb: 'Gérait un portefeuille d\'appartements avec Excel + WhatsApp perso. Clientèle professionnelle exigeante sur les délais de réponse, messages guests perdus, pas de visibilité revenus.', sol: 'PMS + Channel Manager + WhatsApp AI déployés en quelques jours. Calendrier unifié, conciergerie 24/7 automatique, reporting financier mensuel.', res: 'Occupation en hausse · réactivité accrue pour la clientèle professionnelle · 0 surréservation' },
                 { profil: 'Co-host · Appartements Standing Souissi/Hassan', pb: 'Propriétaires voulaient transparence finances sur des locations à clientèle mixte affaires/culture. Statements manuels = plusieurs jours par mois. Virements retardés.', sol: 'Owner Portal multi-devise. Statements automatiques, virements programmés, dashboards propriétaires en temps réel.', res: 'Temps administratif fortement réduit · rétention propriétaires élevée · portefeuille en croissance' },
                 { profil: 'Agence · Portefeuille Missions Professionnelles', pb: 'Équipe ménage désorganisée sur des rotations rapides liées aux missions courtes. Pas de suivi qualité. Reviews clients en baisse.', sol: 'TeamFlow déployé. Planning automatique par propriété, checklist ménage digitale, suivi temps réel. WhatsApp AI pour guests business.', res: 'Reviews en hausse · coordination plus rapide · équipe mieux organisée' },
               ].map((c, i) => (
@@ -147,7 +147,7 @@ export default function GestionLocativeRabatPage() {
 
 
         <FinalCTA
-          title={<>Rejoignez les property managers de Rabat. <span className="gradient-text">1 mois d&apos;essai gratuit.</span></>}
+          title={<>Rejoignez les établissements de Rabat. <span className="gradient-text">1 mois d&apos;essai gratuit.</span></>}
           subtitle="Onboarding guidé en français. Migration depuis Hostfully, Smoobu, Lodgify offerte. Support dédié Maroc."
         />
 
