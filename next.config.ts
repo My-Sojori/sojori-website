@@ -6,6 +6,52 @@ const withNextIntl = createNextIntlPlugin('./i18n/request.ts');
 const nextConfig: NextConfig = {
   // Next 16 bloque HMR si on ouvre 127.0.0.1 alors que le serveur annonce localhost
   allowedDevOrigins: ['127.0.0.1', 'localhost'],
+  /**
+   * Redirections 301 — bascule de domaines du 2026-09-11.
+   *
+   * sojori.com servait le site de LOCATION, il sert désormais le SaaS.
+   * La location déménage sur book.sojori.com.
+   *
+   * Sans ces règles, les URLs indexées depuis des mois (fiches logement,
+   * recherche, checkout) renverraient du contenu SaaS ou un 404 : le
+   * référencement acquis serait perdu, et les campagnes Meta Ads en cours
+   * atterriraient sur la mauvaise page.
+   *
+   * `permanent: true` = 301 : Google transfère le positionnement vers la
+   * nouvelle adresse au lieu de le dissoudre.
+   */
+  async redirects() {
+    const BOOK = 'https://book.sojori.com'
+    // Chemins du site de location, relevés sur sojori-vente le 2026-09-11.
+    // Aucun n'entre en collision avec une route du SaaS (vérifié).
+    const rentalPaths = [
+      'become-host',
+      'checkout/:path*',
+      'coming-soon',
+      'demo-mvp',
+      'experiences',
+      'fail/:path*',
+      'listings/:path*',
+      'login',
+      'login/sso-callback',
+      'pm/:path*',
+      'profile',
+      'search',
+      'signup',
+      'signup/sso-callback',
+      'sso-callback',
+      'thankYou/:path*',
+      'verified-hosts',
+      'wishlist',
+    ]
+
+    return rentalPaths.map((p) => ({
+      source: `/${p}`,
+      destination: `${BOOK}/${p}`,
+      permanent: true,
+    }))
+  },
+
   async headers() {
     return [
       {

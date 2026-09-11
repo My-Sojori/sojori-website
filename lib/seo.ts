@@ -1,3 +1,4 @@
+import { SITE_URL } from './siteUrl';
 import { Metadata } from 'next';
 
 const OG_LOCALE: Record<string, string> = {
@@ -26,7 +27,7 @@ export function generateSEO({
   image = '/og-image.jpg',
   locale = 'fr',
 }: SEOProps): Metadata {
-  const url = `https://business.sojori.com${path}`;
+  const url = `${SITE_URL}${path}`;
   const ogLocale = OG_LOCALE[locale] || OG_LOCALE.fr;
 
   return {

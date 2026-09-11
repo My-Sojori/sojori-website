@@ -1,3 +1,4 @@
+import { SITE_URL } from '@/lib/siteUrl';
 import type { MetadataRoute } from 'next';
 import { routing } from '@/i18n/routing';
 
@@ -35,7 +36,7 @@ const PATHS = [
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://business.sojori.com';
+  const baseUrl = SITE_URL;
   const entries: MetadataRoute.Sitemap = [];
 
   for (const locale of routing.locales) {

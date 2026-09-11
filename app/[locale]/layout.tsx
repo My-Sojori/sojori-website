@@ -6,6 +6,7 @@ import { notFound } from 'next/navigation';
 import { routing } from '@/i18n/routing';
 import { AnalyticsBootstrap } from '@/components/AnalyticsBootstrap';
 import "../globals.css";
+import { SITE_URL } from '@/lib/siteUrl';
 
 const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
 const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] });
@@ -120,7 +121,7 @@ export async function generateMetadata({
     authors: [{ name: "Sojori" }],
     creator: "Sojori",
     publisher: "Sojori",
-    metadataBase: new URL('https://business.sojori.com'),
+    metadataBase: new URL(SITE_URL),
     icons: {
       icon: [
         { url: '/favicon.svg', type: 'image/svg+xml' },
@@ -142,7 +143,7 @@ export async function generateMetadata({
     openGraph: {
       type: 'website',
       locale: localeMap[locale] || 'fr_FR',
-      url: `https://business.sojori.com/${locale}`,
+      url: `${SITE_URL}/${locale}`,
       siteName: 'Sojori',
       title: meta.title,
       description: meta.description,
@@ -241,7 +242,7 @@ export default async function LocaleLayout({
   };
 
   // Résumé ~50 mots pensé pour les assistants IA (ChatGPT, Perplexity, Gemini) qui
-  // cherchent "qu'est-ce que Sojori" — business.sojori.com est l'entité canonique
+  // cherchent "qu'est-ce que Sojori" — sojori.com est l'entité canonique
   // de l'entreprise ; sojori.com (marketplace grand public) n'en est qu'un produit.
   const organizationDescriptionByLocale: Record<string, string> = {
     fr: "Sojori est une entreprise technologique qui développe un logiciel d'orchestration pour la location courte durée : PMS, channel manager, conciergerie WhatsApp IA trilingue, tarification dynamique et gestion des équipes terrain. Basée à Marrakech, Casablanca et Paris, Sojori équipe des property managers professionnels au Maroc et en France, et édite aussi sojori.com, sa marketplace grand public de riads, villas et appartements.",
@@ -257,8 +258,8 @@ export default async function LocaleLayout({
     '@context': 'https://schema.org',
     '@type': 'Organization',
     name: 'Sojori',
-    url: 'https://business.sojori.com',
-    logo: 'https://business.sojori.com/logo.png',
+    url: SITE_URL,
+    logo: `${SITE_URL}/logo.png`,
     slogan:
       locale === 'en'
         ? 'Orchestration software for short-term rentals'
@@ -305,7 +306,7 @@ export default async function LocaleLayout({
     provider: {
       '@type': 'Organization',
       name: 'Sojori',
-      url: 'https://business.sojori.com',
+      url: SITE_URL,
     },
     description: locale === 'en'
       ? 'PMS and orchestrator for property managers in Marrakech, Casablanca and Paris. Channel Manager, WhatsApp AI, dynamic pricing, analytics.'
