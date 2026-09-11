@@ -45,11 +45,25 @@ const nextConfig: NextConfig = {
       'wishlist',
     ]
 
-    return rentalPaths.map((p) => ({
-      source: `/${p}`,
-      destination: `${BOOK}/${p}`,
+    // business.sojori.com servait le SaaS avant la bascule. Le laisser
+    // répondre en parallèle de sojori.com créerait du contenu dupliqué :
+    // Google verrait deux adresses pour les mêmes 35 pages et diluerait le
+    // positionnement. On le redirige vers le domaine canonique.
+    const businessRedirect = {
+      source: '/:path*',
+      has: [{ type: 'host' as const, value: 'business.sojori.com' }],
+      destination: 'https://sojori.com/:path*',
       permanent: true,
-    }))
+    }
+
+    return [
+      businessRedirect,
+      ...rentalPaths.map((p) => ({
+        source: `/${p}`,
+        destination: `${BOOK}/${p}`,
+        permanent: true,
+      })),
+    ]
   },
 
   async headers() {
