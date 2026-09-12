@@ -143,6 +143,12 @@ export async function generateMetadata({
         'ar': '/ar',
       },
     },
+    // 2026-09-12 : signale /llms.txt aux moteurs de réponse (ChatGPT,
+    // Perplexity, Claude). Le fichier existe dans public/ mais rien ne le
+    // déclarait : un crawler ne le trouve que s'il le devine.
+    other: {
+      'llms-txt': `${SITE_URL}/llms.txt`,
+    },
     openGraph: {
       type: 'website',
       locale: localeMap[locale] || 'fr_FR',

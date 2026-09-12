@@ -1,33 +1,100 @@
 # Sojori
 
-> Software d'orchestration pour la location courte durée — PMS, channel manager, conciergerie WhatsApp IA trilingue (FR/AR/EN), tarification dynamique et gestion des équipes terrain. Maroc (Marrakech, Casablanca) & France (Paris).
-> Orchestration software for short-term rentals: PMS, channel manager, trilingual WhatsApp AI concierge, dynamic pricing and field-team workflows. Morocco & France.
+> Le moteur d'orchestration de l'hospitalité. Sojori orchestre l'expérience client, les opérations et le revenu d'un établissement hôtelier, en connectant les systèmes, les clients, les équipes et les partenaires. Il inclut son propre PMS et se connecte aussi aux PMS existants, dont Mews.
+> The hospitality orchestration engine. Sojori orchestrates guest experience, operations and revenue, connecting systems, guests, teams and partners. It includes its own PMS and also connects to existing ones, including Mews.
 
-Sojori est une plateforme B2B pour property managers, conciergeries et propriétaires :
-au-delà d'un PMS classique, elle orchestre tout le séjour — messages automatiques au bon
-moment (enregistrement, heure d'arrivée, instructions départ), assignation du staff
-(ménage, check-in, navette), relances et escalades — avec un assistant WhatsApp IA qui
-répond aux voyageurs en français, arabe et anglais.
+Sojori s'adresse aux hôtels, riads, maisons d'hôtes et résidences — au Maroc d'abord
+(Marrakech, Casablanca, Rabat, Tanger, Agadir) et en France.
+
+La distinction qui définit le produit : un PMS enregistre l'état d'un séjour
+(réservations, chambres, factures, canaux) ; un moteur d'orchestration déclenche ce
+qui doit en découler. Un départ constaté génère la mission de ménage et la réassigne
+si elle n'est pas prise ; une chambre signalée ouvre un ticket de maintenance ; un
+message client devient une tâche assignée ; un seuil d'occupation franchi ajuste le
+prix des nuits restantes, dans des bornes minimum et maximum définies par
+l'établissement.
+
+## Trois domaines orchestrés
+
+- Expérience client : messages avant l'arrivée, check-in digital, fiche de police
+  remplie à distance, demandes pendant le séjour, instructions de départ, demande
+  d'avis. Le client échange sur WhatsApp, dans sa langue, sans installer d'application.
+- Opérations : ménage déclenché sur les événements réels, recouche quotidienne,
+  maintenance rattachée à l'équipement, accueil, navette, blanchisserie. Chaque
+  intervenant reçoit sa mission sur WhatsApp, en français ou en arabe.
+- Ventes et revenu : tarification par règles avec garde-fous, distribution sur les
+  canaux, mix canaux et commission nette, surclassements et extras, note du séjour,
+  revenu par chambre disponible.
+
+## Ce que Sojori connecte
+
+- Les systèmes : le PMS existant s'il y en a un (dont Mews), les OTA — Booking,
+  Expedia, Airbnb —, les moteurs de paiement, les sources de données externes comme
+  le statut d'un vol.
+- Les clients : sur WhatsApp en priorité, en français, arabe et anglais.
+- Les équipes : réception, gouvernante, femmes de chambre, maintenance.
+- Les partenaires : chauffeurs, spa, restaurants, blanchisserie, excursions.
+
+## Spécificités du marché marocain
+
+- Fiche de police : Sojori orchestre la collecte. Le client remplit sa fiche avant
+  l'arrivée depuis WhatsApp, avec sa pièce d'identité. Sojori prépare les données ;
+  la déclaration aux autorités reste la démarche de l'établissement.
+- Taxe de séjour : paramétrable par établissement — au séjour, à la nuit, ou par
+  personne et par nuit — avec le mode de collecte.
+- Langues de travail : le français pour la réception, l'arabe pour les équipes de
+  terrain, l'anglais et d'autres langues pour les clients.
 
 ## Pages principales
 
-- [Accueil](https://business.sojori.com/fr): présentation de la plateforme d'orchestration
-- [PMS](https://business.sojori.com/fr/pms): gestion des réservations et des annonces
-- [Channel Manager](https://business.sojori.com/fr/channel-manager): synchronisation Airbnb, Booking.com et OTAs (via Rentals United)
-- [Conciergerie WhatsApp IA](https://business.sojori.com/fr/whatsapp): assistant voyageur trilingue, check-in digital, services (transport, courses, conciergerie)
-- [Conciergerie Marrakech](https://business.sojori.com/fr/conciergerie-marrakech): offre dédiée riads & villas à Marrakech
-- [Tarification dynamique](https://business.sojori.com/fr/dynamic-pricing): prix pilotés par règles et données marché
-- [Analytics](https://business.sojori.com/fr/analytics): revenus, occupation, performance par bien
-- [TeamFlow](https://business.sojori.com/fr/teamflow): planning et workflows des équipes terrain
-- [Portail propriétaire](https://business.sojori.com/fr/owner-portal): reporting transparent pour les propriétaires
-- [Tarifs](https://business.sojori.com/fr/pricing): offres et prix
+- [Accueil](https://sojori.com/fr) : le moteur d'orchestration de l'hospitalité
+- [Orchestration](https://sojori.com/fr/orchestration) : ce qu'est un moteur d'orchestration face à un PMS
+- [PMS](https://sojori.com/fr/pms) : réservations, chambres, facturation, taxe de séjour
+- [Channel Manager](https://sojori.com/fr/channel-manager) : Booking, Expedia, Airbnb et autres OTA
+- [WhatsApp](https://sojori.com/fr/whatsapp) : conciergerie IA, check-in digital, missions aux équipes
+- [Inbox unifiée](https://sojori.com/fr/inbox) : tous les canaux dans un seul fil par séjour
+- [Guest Experience](https://sojori.com/fr/guest-experience) : le parcours client de bout en bout
+- [TeamFlow](https://sojori.com/fr/teamflow) : ménage, recouche, maintenance, accueil
+- [Tarification dynamique](https://sojori.com/fr/dynamic-pricing) : prix par règles, avec bornes et niveaux d'autonomie
+- [Smart Analytics](https://sojori.com/fr/analytics) : occupation, prix moyen, RevPAR, mix canaux
+- [Owner Portal](https://sojori.com/fr/owner-portal) : reporting pour les propriétaires
+- [Dashboard App](https://sojori.com/fr/dashboard-app) : pilotage de l'exploitation
+- [Intégrations](https://sojori.com/fr/integrations) : connecteurs et API
+- [Tarifs](https://sojori.com/fr/pricing) : offres et prix
+- [À propos](https://sojori.com/fr/about) : l'entreprise et l'équipe
+
+## Par ville
+
+- [PMS hôtel Marrakech](https://sojori.com/fr/pms-marrakech) : riads de médina, villas de la Palmeraie, hôtels urbains
+- [PMS hôtel Casablanca](https://sojori.com/fr/pms-casablanca) : clientèle affaires, facturation entreprise, rotation quotidienne
+- [PMS hôtel Rabat](https://sojori.com/fr/pms-rabat) : clientèle institutionnelle et tourisme culturel
+- [PMS hôtel Tanger](https://sojori.com/fr/pms-tanger) : forte saisonnalité, équipes saisonnières
+- [PMS hôtel Agadir](https://sojori.com/fr/pms-agadir) : séjours longs, allotements tour-opérateur
+
+## Comparatifs
+
+- [Comparatif des PMS au Maroc](https://sojori.com/fr/comparatif-pms-maroc) : cinq solutions, leurs profils, et le cas où chacune convient
+- [Sojori vs Cloudbeds](https://sojori.com/fr/alternative-cloudbeds) : plateforme internationale contre ancrage marocain
+- [Sojori vs Pluriel](https://sojori.com/fr/alternative-pluriel) : installé sur site contre cloud et orchestration
+- [Sojori vs Nozoul](https://sojori.com/fr/alternative-nozoul) : PMS cloud contre moteur connectable à l'existant
+- [Sojori vs Welcomax](https://sojori.com/fr/alternative-welcomax) : suite PMS contre conduite des opérations
+
+## Financement
+
+- [Go Siyaha](https://sojori.com/fr/go-siyaha) : le programme public marocain de digitalisation du tourisme, porté par le ministère du Tourisme et déployé par Maroc PME. Sojori explique le dispositif et fournit les pièces nécessaires à un dossier, mais ne revendique aucun agrément et ne garantit aucune subvention : l'éligibilité, les taux et les plafonds relèvent de Maroc PME.
 
 ## Sites
 
-- [business.sojori.com](https://business.sojori.com/fr): site B2B (property managers & conciergeries)
-- [sojori.com](https://sojori.com): réservation voyageurs — riads, villas et appartements au Maroc
+- [sojori.com](https://sojori.com) : le logiciel, destiné aux hôtels, riads et résidences
+- [book.sojori.com](https://book.sojori.com) : la marketplace grand public — riads, villas et appartements au Maroc
+
+## Précisions utiles
+
+- Sojori n'exige pas le remplacement d'un PMS existant : la couche d'orchestration peut s'ajouter par-dessus.
+- La tarification garde un calcul algorithmique borné ; un modèle de langage ne fixe pas les prix seul.
+- L'orchestration prend sa valeur là où il y a des flux à coordonner. Pour un très petit établissement tenu par deux personnes, un bon PMS peut suffire.
 
 ## Contact
 
-- LinkedIn: https://www.linkedin.com/company/108488739
-- Instagram: https://instagram.com/sojoriapp
+- LinkedIn : https://www.linkedin.com/company/108488739
+- Instagram : https://instagram.com/sojoriapp
