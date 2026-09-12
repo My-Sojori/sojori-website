@@ -4,6 +4,7 @@ import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { BackgroundEffects } from '@/components/BackgroundEffects';
 import { PageHeader, PageFooter, PageHero, StatsBar, FinalCTA } from '@/components/SharedComponents';
 import { ScrollPaginationDots } from '@/components/shared/ScrollPaginationDots';
+import { InFlow } from '@/components/InFlow';
 
 const CHANNEL_MANAGER_BENEFITS = [
   { i: '🚫', t: 'Zéro overbooking', d: 'Booking confirmée → 18 OTAs bloquées en 2 secondes. Garantie contractuelle.' },
@@ -397,6 +398,15 @@ export default function ChannelManagerPageClient() {
         </section>
 
         <StatsBar stats={[{k:'18 OTAs',l:'Connectées en 1 clic'},{k:'<2 sec',l:'Sync temps réel'},{k:'0',l:'Overbooking · garanti'},{k:'99.97%',l:'API uptime'}]} />
+
+        <InFlow
+          domain="Ventes & revenu"
+          domainColor="#10b981"
+          self="Le channel manager distribue vos disponibilités et vos tarifs, dans les deux sens."
+          upstream={[{ label: 'Inventaire du PMS', href: '/pms' }, { label: 'Prix recalculé', href: '/dynamic-pricing' }, { label: 'Chambre remise à blanc', href: '/teamflow' }]}
+          downstream={[{ label: 'Réservation enregistrée', href: '/pms' }, { label: 'Mix canaux', href: '/analytics' }, { label: 'Séquence client', href: '/guest-experience' }]}
+        />
+
         <FinalCTA title={<>Connectez vos OTAs. <span className="gradient-text">En 5 min.</span></>} subtitle="Setup guidé. Migration depuis votre channel manager actuel offerte. 1 mois d'essai gratuit." />
         <PageFooter />
       </div>

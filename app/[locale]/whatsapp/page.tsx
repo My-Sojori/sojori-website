@@ -5,6 +5,7 @@ import { useTranslations } from "next-intl";
 import { BackgroundEffects } from "@/components/BackgroundEffects";
 import { PageHeader, PageFooter, PageHero, StatsBar, FinalCTA, SectionHead } from "@/components/SharedComponents";
 import { ScrollPaginationDots } from "@/components/shared/ScrollPaginationDots";
+import { InFlow } from '@/components/InFlow';
 
 // ========================================
 // WhatsApp Phone Component (Réutilisable)
@@ -964,6 +965,15 @@ export default function WhatsAppPage() {
         })} />
 
         {/* Final CTA */}
+
+        <InFlow
+          domain="Expérience client"
+          domainColor="#06b6d4"
+          self="WhatsApp est le canal par lequel clients, équipes et partenaires reçoivent et répondent."
+          upstream={[{ label: 'Séjour confirmé', href: '/pms' }, { label: 'Mission assignée', href: '/teamflow' }, { label: 'Message client entrant', href: '/inbox' }]}
+          downstream={[{ label: 'Fiche de police complétée', href: '/pms' }, { label: 'Demande devenue tâche', href: '/teamflow' }, { label: 'Extra facturé', href: '/analytics' }]}
+        />
+
         <FinalCTA
           title={<>{t("finalCTA.title")} <span className="gradient-text">{t("finalCTA.titleGradient")}</span></>}
           subtitle={t("finalCTA.subtitle")}

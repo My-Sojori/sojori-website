@@ -175,6 +175,9 @@ export default async function GoSiyahaPage({ params }: { params: Promise<{ local
               ))}
             </div>
             <div style={{ marginTop: 28, fontSize: 14, color: 'var(--text-3)', lineHeight: 1.9 }}>
+              <br />
+              Comprendre :{' '}
+              <Link href={'/orchestration' as const} style={{ color: '#f4cf5e', textDecoration: 'none', fontWeight: 600 }}>Qu&apos;est-ce que l&apos;orchestration hôtelière ?</Link>
               Par ville :{' '}
               <Link href={'/pms-marrakech' as const} style={{ color: '#f4cf5e', textDecoration: 'none' }}>PMS Marrakech</Link>
               {' · '}

@@ -6,6 +6,7 @@ import { useTranslations } from 'next-intl';
 import { BackgroundEffects } from "@/components/BackgroundEffects";
 import { PageHeader, PageFooter, PageHero, StatsBar, FinalCTA } from "@/components/SharedComponents";
 import { ScrollPaginationDots } from "@/components/shared/ScrollPaginationDots";
+import { InFlow } from '@/components/InFlow';
 
 interface Channel {
   id: string;
@@ -249,6 +250,15 @@ export default function InboxPage() {
           {k: t('stats.stat3.key'), l: t('stats.stat3.label')},
           {k: t('stats.stat4.key'), l: t('stats.stat4.label')}
         ]} />
+
+        <InFlow
+          domain="Expérience client"
+          domainColor="#06b6d4"
+          self="L'inbox rassemble les messages de tous les canaux dans un seul fil par séjour."
+          upstream={[{ label: 'Booking, Expedia, Airbnb', href: '/channel-manager' }, { label: 'WhatsApp', href: '/whatsapp' }, { label: 'E-mail direct' }]}
+          downstream={[{ label: 'Réponse envoyée', href: '/whatsapp' }, { label: 'Tâche créée', href: '/teamflow' }, { label: 'Historique du séjour', href: '/pms' }]}
+        />
+
         <FinalCTA title={<>{t('finalCTA.title')} <span className="gradient-text">{t('finalCTA.titleGradient')}</span></>} subtitle={t('finalCTA.subtitle')} />
         <PageFooter />
       </div>

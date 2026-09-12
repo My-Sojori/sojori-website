@@ -3,6 +3,7 @@ import { getTranslations } from 'next-intl/server';
 import { BackgroundEffects } from "@/components/BackgroundEffects";
 import { PageHeader, PageFooter, PageHero, StatsBar, FinalCTA } from "@/components/SharedComponents";
 import { SojoriMark } from "@/components/Logo";
+import { InFlow } from '@/components/InFlow';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
@@ -204,6 +205,15 @@ export default function OwnerPortalPage() {
         </section>
 
         <StatsBar stats={[{k:"<48h",l:"Délai de virement"},{k:"12 langues",l:"Statements traduits"},{k:"100%",l:"Transparence frais"},{k:"4.94★",l:"Satisfaction propriétaires"}]} />
+
+        <InFlow
+          domain="Opérations"
+          domainColor="#8b5cf6"
+          self="Le portail propriétaire rend compte, sans que vous ayez à préparer un rapport."
+          upstream={[{ label: 'Revenus du séjour', href: '/analytics' }, { label: 'Charges et extras', href: '/pms' }]}
+          downstream={[{ label: 'Relevé automatique' }, { label: 'Virement programmé' }]}
+        />
+
         <FinalCTA title={<>Confiez votre établissement. <span className="gradient-text">Récupérez votre temps.</span></>} subtitle="Audit gratuit. Onboarding en 7 jours. Premier client sous 14 jours." />
         <PageFooter />
       </div>

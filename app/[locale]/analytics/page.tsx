@@ -5,6 +5,7 @@ import { PageHeader, PageFooter, PageHero, StatsBar, FinalCTA } from "@/componen
 import { PropertyTable } from "@/components/analytics/PropertyTable";
 import { MainChart } from "@/components/analytics/MainChart";
 import { CapabilitiesScroll } from "@/components/analytics/CapabilitiesScroll";
+import { InFlow } from '@/components/InFlow';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
@@ -71,6 +72,15 @@ export default function AnalyticsPage() {
           </div>
         </section>
         <StatsBar stats={[{k:"Live",l:"Mises à jour minute"},{k:"47 KPIs",l:"Tracked en continu"},{k:"90 jours",l:"Forecast prédictif"},{k:"Excel?",l:"Plus jamais"}]} />
+
+        <InFlow
+          domain="Ventes & revenu"
+          domainColor="#10b981"
+          self="Analytics mesure ce que le séjour rapporte réellement, par canal et par chambre."
+          upstream={[{ label: 'Séjours du PMS', href: '/pms' }, { label: 'Revenus des extras', href: '/guest-experience' }, { label: 'Commissions canaux', href: '/channel-manager' }]}
+          downstream={[{ label: 'Règles de prix affinées', href: '/dynamic-pricing' }, { label: 'Décisions de distribution', href: '/channel-manager' }]}
+        />
+
         <FinalCTA title={<>Audit analytics <span className="gradient-text">gratuit</span>.</>} subtitle="On analyse votre data 12 derniers mois et on vous montre vos angles morts. Aucun engagement." />
         <PageFooter />
       </div>

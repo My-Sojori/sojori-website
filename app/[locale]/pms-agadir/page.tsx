@@ -216,6 +216,9 @@ export default async function PmsPageAgadir({ params }: { params: Promise<{ loca
               <Link href={'/comparatif-pms-maroc' as const} style={{ color: '#f4cf5e', textDecoration: 'none' }}>Sojori face aux autres PMS du Maroc</Link>
               Financement :{' '}
               <Link href={'/go-siyaha' as const} style={{ color: '#f4cf5e', textDecoration: 'none' }}>Go Siyaha, la subvention digitalisation</Link>
+              <br />
+              Comprendre :{' '}
+              <Link href={'/orchestration' as const} style={{ color: '#f4cf5e', textDecoration: 'none', fontWeight: 600 }}>Qu&apos;est-ce que l&apos;orchestration hôtelière ?</Link>
               Autres villes :{' '}
               <Link href={'/pms-marrakech' as const} style={{ color: '#f4cf5e', textDecoration: 'none' }}>PMS Marrakech</Link>
               {' · '}

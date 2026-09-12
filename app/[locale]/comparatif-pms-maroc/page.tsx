@@ -241,6 +241,9 @@ export default async function ComparatifPmsMarocPage({ params }: { params: Promi
               {' · '}
               <Link href={'/pms' as const} style={{ color: '#f4cf5e', textDecoration: 'none' }}>Le PMS Sojori</Link>
               <br />
+              <br />
+              Comprendre :{' '}
+              <Link href={'/orchestration' as const} style={{ color: '#f4cf5e', textDecoration: 'none', fontWeight: 600 }}>Qu&apos;est-ce que l&apos;orchestration hôtelière ?</Link>
               Par ville :{' '}
               <Link href={'/pms-marrakech' as const} style={{ color: '#f4cf5e', textDecoration: 'none' }}>Marrakech</Link>
               {' · '}

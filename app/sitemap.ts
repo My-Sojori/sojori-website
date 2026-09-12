@@ -53,6 +53,10 @@ const PATHS = [
   '/alternative-nozoul',
   '/alternative-welcomax',
   '/comparatif-pms-maroc',
+  // 2026-09-12 : page pilier de l'orchestration — la notion que Sojori vend
+  // n'avait aucune page. Cible aussi « orchestration hôtelière », requête
+  // qu'aucun concurrent n'occupe.
+  '/orchestration',
   '/terms',
   '/privacy',
 ];

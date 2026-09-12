@@ -2,6 +2,7 @@
 
 import { useTranslations } from 'next-intl';
 import { BackgroundEffects } from '@/components/BackgroundEffects';
+import { InFlow } from '@/components/InFlow';
 import { PageHeader, PageFooter, PageHero, StatsBar, FinalCTA } from '@/components/SharedComponents';
 import { ScrollPaginationDots } from '@/components/shared/ScrollPaginationDots';
 import { MarketIntelligence } from '@/components/dynamic-pricing/MarketIntelligence';
@@ -299,6 +300,15 @@ export default function DynamicPricingPage() {
         </section>
 
         <StatsBar stats={stats} />
+
+        <InFlow
+          domain="Ventes & revenu"
+          domainColor="#10b981"
+          self="La tarification recalcule le prix par règles, dans les bornes que vous fixez."
+          upstream={[{ label: 'Occupation réelle', href: '/pms' }, { label: 'Rythme de réservation', href: '/analytics' }, { label: 'Événement en ville' }]}
+          downstream={[{ label: 'Poussé sur les canaux', href: '/channel-manager' }, { label: 'RevPAR mesuré', href: '/analytics' }]}
+        />
+
         <FinalCTA
           title={<>{tFinalCTA('title').split(tFinalCTA('titleGradient'))[0]}<span className="gradient-text">{tFinalCTA('titleGradient')}</span>.</>}
           subtitle={tFinalCTA('subtitle')}

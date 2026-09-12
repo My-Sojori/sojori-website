@@ -155,6 +155,9 @@ export default function GestionLocativeMarrakechPage() {
               {' · '}
               <Link href={'/conciergerie-marrakech' as const} style={{ color: '#f4cf5e', textDecoration: 'none' }}>Conciergerie Marrakech</Link>
               <br />
+              <br />
+              Comprendre :{' '}
+              <Link href={'/orchestration' as const} style={{ color: '#f4cf5e', textDecoration: 'none', fontWeight: 600 }}>Qu&apos;est-ce que l&apos;orchestration hôtelière ?</Link>
               Autres villes :{' '}
               <Link href={'/pms-casablanca' as const} style={{ color: '#f4cf5e', textDecoration: 'none' }}>PMS Casablanca</Link>
               {' · '}

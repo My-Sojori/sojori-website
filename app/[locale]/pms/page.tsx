@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { getTranslations } from 'next-intl/server';
 import { BackgroundEffects } from '@/components/BackgroundEffects';
+import { InFlow } from '@/components/InFlow';
 import { Link } from '@/i18n/routing';
 import { PageHeader, PageFooter, PageHero, StatsBar, FinalCTA } from '@/components/SharedComponents';
 import { Calendar } from '@/components/pms/Calendar';
@@ -107,6 +108,15 @@ export default async function PMSPage() {
             </div>
           </div>
         </section>
+
+        <InFlow
+          domain="Le moteur"
+          domainColor="#e6b022"
+          self="Le PMS tient l'état du séjour : réservations, chambres, factures, taxe de séjour."
+          upstream={[{ label: 'Réservation entrante' }, { label: 'Channel Manager', href: '/channel-manager' }, { label: 'Réservation directe' }]}
+          downstream={[{ label: 'TeamFlow', href: '/teamflow' }, { label: 'Guest Experience', href: '/guest-experience' }, { label: 'Tarification', href: '/dynamic-pricing' }, { label: 'Smart Analytics', href: '/analytics' }]}
+        />
+
 
         <FinalCTA
           title={

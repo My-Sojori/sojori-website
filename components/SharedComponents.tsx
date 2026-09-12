@@ -32,26 +32,36 @@ type MenuGroup = { group: string; items: { l: string; h: AppPathname; d: string 
 
 function useProductMenu(): MenuGroup[] {
   const t = useTranslations('common.productMenu');
+  // 2026-09-12 — Le menu est reclassé sur les trois domaines orchestrés.
+  // « Plateforme » regroupait PMS, canaux, tarification et analytics, soit
+  // des briques de trois domaines différents : le visiteur lisait un
+  // catalogue de modules, pas un moteur. Les noms des modules sont
+  // conservés — ils portent le SEO (« PMS » est la requête) et ce sont
+  // ceux que les clients actuels connaissent.
   return [
-    { group: t('platform'), items: [
+    { group: t('engine'), items: [
+      { l: t('orchestration'), h: '/orchestration', d: t('orchestrationDesc') },
       { l: t('pms'), h: '/pms', d: t('pmsDesc') },
-      { l: t('channelManager'), h: '/channel-manager', d: t('channelManagerDesc') },
-      { l: t('dynamicPricing'), h: '/dynamic-pricing', d: t('dynamicPricingDesc') },
-      { l: t('analytics'), h: '/analytics', d: t('analyticsDesc') },
+      { l: t('integrations'), h: '/integrations', d: t('integrationsDesc') },
     ]},
     { group: t('guest'), items: [
+      { l: t('guestExp'), h: '/guest-experience', d: t('guestExpDesc') },
       { l: t('whatsappBot'), h: '/whatsapp', d: t('whatsappBotDesc') },
       { l: t('inbox'), h: '/inbox', d: t('inboxDesc') },
-      { l: t('guestExp'), h: '/guest-experience', d: t('guestExpDesc') },
     ]},
     { group: t('operations'), items: [
       { l: t('teamflow'), h: '/teamflow', d: t('teamflowDesc') },
-      { l: t('ownerPortal'), h: '/owner-portal', d: t('ownerPortalDesc') },
       { l: t('dashboardApp'), h: '/dashboard-app', d: t('dashboardAppDesc') },
+      { l: t('ownerPortal'), h: '/owner-portal', d: t('ownerPortalDesc') },
+    ]},
+    { group: t('revenue'), items: [
+      { l: t('dynamicPricing'), h: '/dynamic-pricing', d: t('dynamicPricingDesc') },
+      { l: t('channelManager'), h: '/channel-manager', d: t('channelManagerDesc') },
+      { l: t('analytics'), h: '/analytics', d: t('analyticsDesc') },
     ]},
     { group: t('company'), items: [
       { l: t('pricing'), h: '/pricing', d: t('pricingDesc') },
-      { l: t('integrations'), h: '/integrations', d: t('integrationsDesc') },
+      { l: t('comparatif'), h: '/comparatif-pms-maroc', d: t('comparatifDesc') },
       { l: t('about'), h: '/about', d: t('aboutDesc') },
     ]},
   ];

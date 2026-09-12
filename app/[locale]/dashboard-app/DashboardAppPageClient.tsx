@@ -4,6 +4,7 @@ import { BackgroundEffects } from "@/components/BackgroundEffects";
 import { PageHeader, PageFooter, PageHero, StatsBar, FinalCTA } from "@/components/SharedComponents";
 import { Link } from '@/i18n/routing';
 import { SojoriMark } from "@/components/Logo";
+import { InFlow } from '@/components/InFlow';
 
 const NAV = [
   { i: '🏠', l: 'Home', active: true },
@@ -239,6 +240,15 @@ export default function DashboardAppPageClient() {
           { k: '9 modules', l: 'Tout-en-un' },
           { k: '99.97%', l: 'Uptime' }
         ]} />
+
+        <InFlow
+          domain="Opérations"
+          domainColor="#8b5cf6"
+          self="Le tableau de bord montre l'état réel de l'exploitation, au moment où vous regardez."
+          upstream={[{ label: 'Arrivées et départs', href: '/pms' }, { label: 'Avancement des équipes', href: '/teamflow' }, { label: 'Messages en attente', href: '/inbox' }]}
+          downstream={[{ label: 'Arbitrage de priorité', href: '/teamflow' }, { label: 'Décision de prix', href: '/dynamic-pricing' }]}
+        />
+
 
         <FinalCTA
           title={<>Votre dashboard. <span className="gradient-text">En 5 minutes.</span></>}

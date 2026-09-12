@@ -5,6 +5,7 @@ import { useTranslations } from "next-intl";
 import { BackgroundEffects } from "@/components/BackgroundEffects";
 import { PageHeader, PageFooter, PageHero, StatsBar, FinalCTA } from "@/components/SharedComponents";
 import { ScrollPaginationDots } from "@/components/shared/ScrollPaginationDots";
+import { InFlow } from '@/components/InFlow';
 
 interface Tab {
   id: string;
@@ -267,6 +268,15 @@ export default function GuestExperiencePage() {
           const stat = t.raw(`stats.${i}`);
           return { k: stat.key, l: stat.label };
         })} />
+
+        <InFlow
+          domain="Expérience client"
+          domainColor="#06b6d4"
+          self="Le parcours client se déroule tout seul, de la confirmation à la demande d'avis."
+          upstream={[{ label: 'Réservation confirmée', href: '/pms' }, { label: 'Chambre prête', href: '/teamflow' }, { label: 'Départ constaté' }]}
+          downstream={[{ label: 'Demandes en tâches', href: '/teamflow' }, { label: 'Extras sur la note', href: '/analytics' }, { label: 'Avis publié', href: '/channel-manager' }]}
+        />
+
 
         <FinalCTA
           title={<>{t("finalCTA.title").split("En 5 minutes")[0]}<span className="gradient-text">{t("finalCTA.title").includes("En 5 minutes") ? "En 5 minutes." : t("finalCTA.title").includes("In 5 minutes") ? "In 5 minutes." : t("finalCTA.title").includes("Em 5 minutos") ? "Em 5 minutos." : t("finalCTA.title").includes("في 5 دقائق") ? "في 5 دقائق." : "En 5 minutos."}</span></>}

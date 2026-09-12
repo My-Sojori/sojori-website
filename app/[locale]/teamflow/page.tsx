@@ -2,6 +2,7 @@
 
 import { useTranslations } from 'next-intl';
 import { BackgroundEffects } from '@/components/BackgroundEffects';
+import { InFlow } from '@/components/InFlow';
 import { PageHeader, PageFooter, PageHero, StatsBar, FinalCTA } from '@/components/SharedComponents';
 import { ScrollPaginationDots } from '@/components/shared/ScrollPaginationDots';
 
@@ -236,6 +237,15 @@ export default function TeamflowPage() {
           </div>
         </section>
         <StatsBar stats={stats.map(s => ({ k: s.key, l: s.label }))} />
+
+        <InFlow
+          domain="Opérations"
+          domainColor="#8b5cf6"
+          self="TeamFlow exécute : ménage, recouche, maintenance, accueil — déclenchés sur les événements réels."
+          upstream={[{ label: 'Départ constaté', href: '/pms' }, { label: 'Demande client', href: '/guest-experience' }, { label: 'Équipement signalé', href: '/whatsapp' }]}
+          downstream={[{ label: 'Chambre vendable', href: '/channel-manager' }, { label: 'Client accueilli', href: '/guest-experience' }, { label: 'Temps de remise en état', href: '/analytics' }]}
+        />
+
         <FinalCTA
           title={<>{finalCTATitle} <span className="gradient-text">{finalCTATitleGradient}</span></>}
           subtitle={t('finalCTA.subtitle')}

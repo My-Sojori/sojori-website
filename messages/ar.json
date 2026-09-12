@@ -31,7 +31,7 @@
     },
     "productMenu": {
       "platform": "المنصة",
-      "guest": "الضيف",
+      "guest": "تجربة الضيف",
       "operations": "العمليات",
       "company": "الشركة",
       "pms": "PMS",
@@ -59,7 +59,13 @@
       "integrations": "التكاملات",
       "integrationsDesc": "الموصلات وAPI",
       "about": "عن سجوري",
-      "aboutDesc": "فريق Sojori"
+      "aboutDesc": "فريق Sojori",
+      "engine": "المحرك",
+      "revenue": "المبيعات والإيرادات",
+      "orchestration": "التنسيق",
+      "orchestrationDesc": "ما تنسّقه Sojori",
+      "comparatif": "مقارنات",
+      "comparatifDesc": "Sojori مقابل أنظمة أخرى"
     },
     "cityMenu": {
       "heading": "المدن",
@@ -2134,6 +2140,10 @@
     "comparatifPmsMaroc": {
       "title": "مقارنة أنظمة إدارة الفنادق بالمغرب 2026 | Sojori",
       "description": "مقارنة برامج إدارة الفنادق في المغرب: Cloudbeds وPluriel وNozoul وWelcomax وSojori. الملامح والبنيات والحالة المناسبة لكل منها."
+    },
+    "orchestration": {
+      "title": "تنسيق الضيافة — ما هو محرك التنسيق؟ | Sojori",
+      "description": "نظام إدارة الفنادق يسجّل، ومحرك التنسيق ينفّذ. كيف تنسّق Sojori تجربة الضيف والعمليات والإيرادات."
     }
   },
   "pmsPage": {

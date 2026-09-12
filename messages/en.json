@@ -31,7 +31,7 @@
     },
     "productMenu": {
       "platform": "Platform",
-      "guest": "Guest",
+      "guest": "Guest experience",
       "operations": "Operations",
       "company": "Company",
       "pms": "PMS",
@@ -59,7 +59,13 @@
       "integrations": "Integrations",
       "integrationsDesc": "Connectors & API",
       "about": "About",
-      "aboutDesc": "The Sojori team"
+      "aboutDesc": "The Sojori team",
+      "engine": "The engine",
+      "revenue": "Sales & revenue",
+      "orchestration": "Orchestration",
+      "orchestrationDesc": "What Sojori orchestrates",
+      "comparatif": "Comparisons",
+      "comparatifDesc": "Sojori vs other PMS"
     },
     "cityMenu": {
       "heading": "Cities",
@@ -2232,6 +2238,10 @@
     "comparatifPmsMaroc": {
       "title": "Hotel PMS comparison Morocco 2026 — Which software? | Sojori",
       "description": "Comparison of hotel management software in Morocco: Cloudbeds, Pluriel, Nozoul, Welcomax and Sojori. Profiles, architectures and when each is the right fit."
+    },
+    "orchestration": {
+      "title": "Hospitality orchestration — What is an orchestration engine? | Sojori",
+      "description": "A PMS records; an orchestrator makes things happen. How Sojori orchestrates guest experience, operations and revenue by connecting systems, guests, teams and partners."
     }
   },
   "pmsPage": {

@@ -155,6 +155,9 @@ export default function GestionLocativeAgadirPage() {
               {' · '}
               <Link href={'/conciergerie-agadir' as const} style={{ color: '#f4cf5e', textDecoration: 'none' }}>Conciergerie Agadir</Link>
               <br />
+              <br />
+              Comprendre :{' '}
+              <Link href={'/orchestration' as const} style={{ color: '#f4cf5e', textDecoration: 'none', fontWeight: 600 }}>Qu&apos;est-ce que l&apos;orchestration hôtelière ?</Link>
               Autres villes :{' '}
               <Link href={'/pms-marrakech' as const} style={{ color: '#f4cf5e', textDecoration: 'none' }}>PMS Marrakech</Link>
               {' · '}

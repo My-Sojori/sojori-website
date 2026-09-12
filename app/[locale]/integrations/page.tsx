@@ -4,6 +4,7 @@ import { Link } from '@/i18n/routing';
 import { useState } from 'react';
 import { useTranslations } from 'next-intl';
 import { BackgroundEffects } from '@/components/BackgroundEffects';
+import { InFlow } from '@/components/InFlow';
 import { PageHeader, PageFooter, PageHero, StatsBar, FinalCTA } from '@/components/SharedComponents';
 import { ScrollPaginationDots } from '@/components/shared/ScrollPaginationDots';
 
@@ -296,6 +297,15 @@ curl -X POST \\
           { k: t('stats.stat3Key'), l: t('stats.stat3Label') },
           { k: t('stats.stat4Key'), l: t('stats.stat4Label') }
         ]} />
+
+        <InFlow
+          domain="Le moteur"
+          domainColor="#e6b022"
+          self="Les intégrations branchent Sojori sur ce que vous utilisez déjà — dont votre PMS."
+          upstream={[{ label: 'Mews et autres PMS' }, { label: 'OTA et channel managers', href: '/channel-manager' }, { label: 'Paiement et sources de données' }]}
+          downstream={[{ label: 'Réservations récupérées', href: '/pms' }, { label: 'Orchestration active', href: '/orchestration' }]}
+        />
+
 
         <FinalCTA
           title={<>{t('finalCTA.title')} <span className="gradient-text">{t('finalCTA.titleGradient')}</span></>}

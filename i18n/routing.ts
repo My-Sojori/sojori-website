@@ -50,6 +50,7 @@ export const routing = defineRouting({
     '/alternative-nozoul': '/alternative-nozoul',
     '/alternative-welcomax': '/alternative-welcomax',
     '/comparatif-pms-maroc': '/comparatif-pms-maroc',
+    '/orchestration': '/orchestration',
     '/terms': '/terms',
     '/privacy': '/privacy'
   }

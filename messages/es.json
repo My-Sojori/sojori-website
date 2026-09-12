@@ -31,7 +31,7 @@
     },
     "productMenu": {
       "platform": "Plataforma",
-      "guest": "Huésped",
+      "guest": "Experiencia del cliente",
       "operations": "Operaciones",
       "company": "Empresa",
       "pms": "PMS",
@@ -59,7 +59,13 @@
       "integrations": "Integraciones",
       "integrationsDesc": "Conectores y API",
       "about": "Nosotros",
-      "aboutDesc": "El equipo Sojori"
+      "aboutDesc": "El equipo Sojori",
+      "engine": "El motor",
+      "revenue": "Ventas e ingresos",
+      "orchestration": "Orquestación",
+      "orchestrationDesc": "Lo que Sojori orquesta",
+      "comparatif": "Comparativas",
+      "comparatifDesc": "Sojori frente a otros PMS"
     },
     "cityMenu": {
       "heading": "Ciudades",
@@ -2134,6 +2140,10 @@
     "comparatifPmsMaroc": {
       "title": "Comparativa PMS hotel Marruecos 2026 — ¿Qué software? | Sojori",
       "description": "Comparativa de software de gestión hotelera en Marruecos: Cloudbeds, Pluriel, Nozoul, Welcomax y Sojori. Perfiles, arquitecturas y cuándo elegir cada uno."
+    },
+    "orchestration": {
+      "title": "Orquestación hotelera — ¿Qué es un motor de orquestación? | Sojori",
+      "description": "Un PMS registra; un orquestador hace que las cosas ocurran. Cómo Sojori orquesta la experiencia del cliente, las operaciones y los ingresos."
     }
   },
   "pmsPage": {
