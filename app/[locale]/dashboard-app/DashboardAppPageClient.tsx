@@ -5,6 +5,7 @@ import { PageHeader, PageFooter, PageHero, StatsBar, FinalCTA } from "@/componen
 import { Link } from '@/i18n/routing';
 import { SojoriMark } from "@/components/Logo";
 import { InFlow } from '@/components/InFlow';
+import { FaqSection } from '@/components/FaqSection';
 
 const NAV = [
   { i: '🏠', l: 'Home', active: true },
@@ -248,6 +249,30 @@ export default function DashboardAppPageClient() {
           upstream={[{ label: 'Arrivées et départs', href: '/pms' }, { label: 'Avancement des équipes', href: '/teamflow' }, { label: 'Messages en attente', href: '/inbox' }]}
           downstream={[{ label: 'Arbitrage de priorité', href: '/teamflow' }, { label: 'Décision de prix', href: '/dynamic-pricing' }]}
         />
+
+        <FaqSection
+          badge="Pilotage"
+          title="Questions fréquentes"
+          items={[
+  {
+    "q": "Qu'est-ce que je vois en ouvrant le tableau de bord ?",
+    "a": "L'état réel de l'exploitation au moment où vous regardez : arrivées et départs du jour, chambres prêtes ou en cours, messages en attente, incidents ouverts. Pas un rapport de la veille."
+  },
+  {
+    "q": "Est-ce accessible à distance ?",
+    "a": "Oui, depuis un navigateur, sur téléphone comme sur ordinateur. Rien à installer — c'est un des écarts avec les solutions installées sur site, qui vivent dans l'établissement."
+  },
+  {
+    "q": "Peut-on arbitrer depuis le tableau de bord ?",
+    "a": "Oui. Une arrivée anticipée peut faire remonter une chambre en priorité, une chambre libérée peut être remise en vente. L'intérêt n'est pas de regarder, mais de décider là où l'information est."
+  },
+  {
+    "q": "Plusieurs établissements sur un même écran ?",
+    "a": "Oui, avec une vue consolidée et le détail par site. C'est ce que demandent les exploitations multi-sites, où la coordination redevient manuelle dès que les outils sont cloisonnés."
+  }
+]}
+        />
+
 
 
         <FinalCTA

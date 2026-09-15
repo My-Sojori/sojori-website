@@ -125,13 +125,19 @@ export async function generateMetadata({
     creator: "Sojori",
     publisher: "Sojori",
     metadataBase: new URL(SITE_URL),
+    // 2026-09-15 : favicon.ico était un PNG renommé (MD5 identique à
+    // icon.png) et n'était déclaré nulle part — shortcut pointait sur le SVG.
+    // Les agrégateurs et navigateurs anciens demandent /favicon.ico en
+    // premier : ils recevaient un fichier au mauvais format, non annoncé, et
+    // retombaient sur l'icône générique de globe.
     icons: {
       icon: [
+        { url: '/favicon.ico', type: 'image/x-icon', sizes: '16x16 32x32' },
         { url: '/favicon.svg', type: 'image/svg+xml' },
         { url: '/icon.png', type: 'image/png', sizes: '32x32' },
       ],
       apple: [{ url: '/apple-icon.png', sizes: '180x180', type: 'image/png' }],
-      shortcut: '/favicon.svg',
+      shortcut: '/favicon.ico',
     },
     alternates: {
       canonical: `/${locale}`,

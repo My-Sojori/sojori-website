@@ -4,6 +4,7 @@ import { BackgroundEffects } from "@/components/BackgroundEffects";
 import { PageHeader, PageFooter, PageHero, StatsBar, FinalCTA } from "@/components/SharedComponents";
 import { SojoriMark } from "@/components/Logo";
 import { InFlow } from '@/components/InFlow';
+import { FaqSection } from '@/components/FaqSection';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
@@ -213,6 +214,30 @@ export default function OwnerPortalPage() {
           upstream={[{ label: 'Revenus du séjour', href: '/analytics' }, { label: 'Charges et extras', href: '/pms' }]}
           downstream={[{ label: 'Relevé automatique' }, { label: 'Virement programmé' }]}
         />
+
+        <FaqSection
+          badge="Portail propriétaire"
+          title="Questions fréquentes"
+          items={[
+  {
+    "q": "À quoi sert le portail propriétaire ?",
+    "a": "À rendre compte sans préparer un rapport. Le propriétaire consulte l'occupation, les revenus, les charges et les documents de son établissement, en libre accès, au lieu de les demander en fin de mois."
+  },
+  {
+    "q": "Le propriétaire voit-il tout ?",
+    "a": "Il voit ce qui le concerne, selon le paramétrage. Les données commerciales de l'exploitation et celles des autres établissements restent en dehors de sa vue."
+  },
+  {
+    "q": "Les relevés sont-ils automatiques ?",
+    "a": "Oui, construits sur les données d'exploitation plutôt que ressaisis. C'est généralement plusieurs jours par mois récupérés sur un travail qui n'apporte rien à personne."
+  },
+  {
+    "q": "Est-ce utile si je suis propriétaire exploitant ?",
+    "a": "Moins, puisque vous avez déjà le tableau de bord. Le portail prend sa valeur quand des tiers attendent des comptes — propriétaires bailleurs, copropriétaires, investisseurs."
+  }
+]}
+        />
+
 
         <FinalCTA title={<>Confiez votre établissement. <span className="gradient-text">Récupérez votre temps.</span></>} subtitle="Audit gratuit. Onboarding en 7 jours. Premier client sous 14 jours." />
         <PageFooter />

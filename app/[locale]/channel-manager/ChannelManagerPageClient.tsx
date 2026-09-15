@@ -5,6 +5,7 @@ import { BackgroundEffects } from '@/components/BackgroundEffects';
 import { PageHeader, PageFooter, PageHero, StatsBar, FinalCTA } from '@/components/SharedComponents';
 import { ScrollPaginationDots } from '@/components/shared/ScrollPaginationDots';
 import { InFlow } from '@/components/InFlow';
+import { FaqSection } from '@/components/FaqSection';
 
 const CHANNEL_MANAGER_BENEFITS = [
   { i: '🚫', t: 'Zéro overbooking', d: 'Booking confirmée → 18 OTAs bloquées en 2 secondes. Garantie contractuelle.' },
@@ -406,6 +407,34 @@ export default function ChannelManagerPageClient() {
           upstream={[{ label: 'Inventaire du PMS', href: '/pms' }, { label: 'Prix recalculé', href: '/dynamic-pricing' }, { label: 'Chambre remise à blanc', href: '/teamflow' }]}
           downstream={[{ label: 'Réservation enregistrée', href: '/pms' }, { label: 'Mix canaux', href: '/analytics' }, { label: 'Séquence client', href: '/guest-experience' }]}
         />
+
+        <FaqSection
+          badge="Channel Manager"
+          title="Questions fréquentes"
+          items={[
+  {
+    "q": "Quels canaux sont synchronisés ?",
+    "a": "Booking, Expedia, Airbnb et les autres OTA, dans les deux sens : les disponibilités et les tarifs partent vers les canaux, les réservations reviennent dans le même flux que les réservations directes."
+  },
+  {
+    "q": "Comment éviter la surréservation ?",
+    "a": "L'inventaire reste tenu par le PMS, qui fait autorité, et le channel manager distribue depuis cette source unique. C'est en haute saison que cela compte le plus : à taux d'occupation élevé, aucune chambre de secours ne permet de rattraper une double réservation."
+  },
+  {
+    "q": "Peut-on mesurer ce que rapporte réellement chaque canal ?",
+    "a": "Oui, et c'est la question qui compte davantage que le volume brut. Le reporting sépare le revenu par canal une fois la commission déduite, ce qui permet d'arbitrer où pousser le direct plutôt que de subir le mix existant."
+  },
+  {
+    "q": "Une chambre remise à blanc redevient-elle vendable automatiquement ?",
+    "a": "Oui. C'est un exemple de ce que l'orchestration ajoute à un channel manager classique : la fin du ménage remet la chambre en vente sans intervention, au lieu d'attendre qu'une personne pense à rouvrir la disponibilité."
+  },
+  {
+    "q": "Faut-il abandonner notre channel manager actuel ?",
+    "a": "Pas nécessairement. Selon les possibilités d'interfaçage, Sojori peut s'ajouter à l'existant. Parlons-en avant d'envisager une migration : c'est souvent le point sur lequel une décision hâtive coûte cher."
+  }
+]}
+        />
+
 
         <FinalCTA title={<>Connectez vos OTAs. <span className="gradient-text">En 5 min.</span></>} subtitle="Setup guidé. Migration depuis votre channel manager actuel offerte. 1 mois d'essai gratuit." />
         <PageFooter />

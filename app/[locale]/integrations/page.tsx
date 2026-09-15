@@ -7,6 +7,7 @@ import { BackgroundEffects } from '@/components/BackgroundEffects';
 import { InFlow } from '@/components/InFlow';
 import { PageHeader, PageFooter, PageHero, StatsBar, FinalCTA } from '@/components/SharedComponents';
 import { ScrollPaginationDots } from '@/components/shared/ScrollPaginationDots';
+import { FaqSection } from '@/components/FaqSection';
 
 interface Category {
   id: string;
@@ -305,6 +306,30 @@ curl -X POST \\
           upstream={[{ label: 'Mews et autres PMS' }, { label: 'OTA et channel managers', href: '/channel-manager' }, { label: 'Paiement et sources de données' }]}
           downstream={[{ label: 'Réservations récupérées', href: '/pms' }, { label: 'Orchestration active', href: '/orchestration' }]}
         />
+
+        <FaqSection
+          badge="Intégrations"
+          title="Questions fréquentes"
+          items={[
+  {
+    "q": "Sojori se connecte-t-il à Mews ?",
+    "a": "Oui. Sojori récupère les réservations et les états de chambre depuis Mews, puis orchestre autour — accueil, ménage, maintenance, messages clients, tarification. Vous n'avez pas à remplacer votre PMS pour orchestrer."
+  },
+  {
+    "q": "Et les autres PMS ?",
+    "a": "L'interfaçage dépend de ce que le système expose. Dites-nous lequel vous utilisez : c'est la première question à trancher, avant toute discussion de périmètre."
+  },
+  {
+    "q": "Y a-t-il une API ?",
+    "a": "Oui, pour les échanges avec vos propres outils. Les intégrations courantes — OTA, channel managers, paiement — sont déjà en place et ne demandent pas de développement."
+  },
+  {
+    "q": "Que se passe-t-il si un système tombe ?",
+    "a": "Les échanges sont conçus pour reprendre sans perte ni doublon lorsque le système revient. C'est un point à vérifier chez tout éditeur : une synchronisation qui rejoue mal crée des surréservations."
+  }
+]}
+        />
+
 
 
         <FinalCTA

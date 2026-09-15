@@ -6,6 +6,7 @@ import { Link } from '@/i18n/routing';
 import { PageHeader, PageFooter, PageHero, StatsBar, FinalCTA } from '@/components/SharedComponents';
 import { Calendar } from '@/components/pms/Calendar';
 import { ScrollPaginationDots } from '@/components/shared/ScrollPaginationDots';
+import { FaqSection } from '@/components/FaqSection';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
@@ -116,6 +117,38 @@ export default async function PMSPage() {
           upstream={[{ label: 'Réservation entrante' }, { label: 'Channel Manager', href: '/channel-manager' }, { label: 'Réservation directe' }]}
           downstream={[{ label: 'TeamFlow', href: '/teamflow' }, { label: 'Guest Experience', href: '/guest-experience' }, { label: 'Tarification', href: '/dynamic-pricing' }, { label: 'Smart Analytics', href: '/analytics' }]}
         />
+
+        <FaqSection
+          badge="PMS hôtelier"
+          title="Questions fréquentes"
+          items={[
+  {
+    "q": "Le PMS Sojori est-il obligatoire ?",
+    "a": "Non. Sojori inclut son propre PMS pour un établissement qui n'en a pas, mais se connecte aussi aux PMS existants, dont Mews. Vous pouvez donc ajouter la couche d'orchestration sans toucher à votre système de réservation — c'est souvent le chemin le plus court pour en mesurer l'apport."
+  },
+  {
+    "q": "Gère-t-il la fiche de police marocaine ?",
+    "a": "Sojori orchestre la collecte : le client remplit sa fiche avant l'arrivée depuis WhatsApp, avec sa pièce d'identité, dans le cadre du check-in digital. Vous récupérez des données complètes sans saisie au comptoir. Sojori prépare les données ; la déclaration aux autorités reste la démarche de l'établissement."
+  },
+  {
+    "q": "Comment la taxe de séjour est-elle calculée ?",
+    "a": "Elle se paramètre par établissement : montant par adulte et par nuit, avec un calcul au séjour, à la nuit, ou par personne et par nuit. Le mode de collecte se règle aussi — espèces à l'arrivée, carte, ou inclus dans le prix. Le montant est reporté sur la note."
+  },
+  {
+    "q": "Peut-on gérer plusieurs établissements ?",
+    "a": "Oui, avec une vue consolidée et des règles propres à chaque site. C'est généralement le moment où un PMS conçu pour un établissement unique atteint sa limite : équipes partagées, arbitrages de priorité entre sites, reporting d'ensemble."
+  },
+  {
+    "q": "Que devient l'historique de nos réservations ?",
+    "a": "La reprise des données est prise en charge lors de la mise en route. C'est l'étape la plus longue du déploiement, et celle qu'il faut cadrer en premier — davantage que l'installation elle-même."
+  },
+  {
+    "q": "Combien de temps pour être opérationnel ?",
+    "a": "Quelques jours pour un établissement seul. Ce qui prend du temps n'est pas la mise en service mais la reprise des historiques et le paramétrage de vos règles — cadences de ménage, tarification, circuits de validation."
+  }
+]}
+        />
+
 
 
         <FinalCTA

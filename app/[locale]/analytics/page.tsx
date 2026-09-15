@@ -6,6 +6,7 @@ import { PropertyTable } from "@/components/analytics/PropertyTable";
 import { MainChart } from "@/components/analytics/MainChart";
 import { CapabilitiesScroll } from "@/components/analytics/CapabilitiesScroll";
 import { InFlow } from '@/components/InFlow';
+import { FaqSection } from '@/components/FaqSection';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
@@ -80,6 +81,34 @@ export default function AnalyticsPage() {
           upstream={[{ label: 'Séjours du PMS', href: '/pms' }, { label: 'Revenus des extras', href: '/guest-experience' }, { label: 'Commissions canaux', href: '/channel-manager' }]}
           downstream={[{ label: 'Règles de prix affinées', href: '/dynamic-pricing' }, { label: 'Décisions de distribution', href: '/channel-manager' }]}
         />
+
+        <FaqSection
+          badge="Analytics"
+          title="Questions fréquentes"
+          items={[
+  {
+    "q": "Quels indicateurs suivre en priorité ?",
+    "a": "Le taux d'occupation, le prix moyen et le revenu par chambre disponible — mais surtout par période, par catégorie et par canal, jamais en moyenne globale. Une moyenne mensuelle masque exactement ce qu'il faut corriger : le creux du week-end à Casablanca, la saison basse à Tanger."
+  },
+  {
+    "q": "Peut-on voir le revenu hors hébergement ?",
+    "a": "Oui. Restauration, spa, transferts, surclassements et départs tardifs sont suivis séparément. C'est souvent la part la plus mal mesurée d'une exploitation, alors qu'elle progresse quand la relation client est orchestrée."
+  },
+  {
+    "q": "Les données sont-elles en temps réel ?",
+    "a": "Les indicateurs d'exploitation — arrivées, départs, état des chambres, messages en attente — reflètent la situation courante. Les analyses de revenu se consolident sur la période choisie."
+  },
+  {
+    "q": "Peut-on exporter vers notre comptabilité ?",
+    "a": "Oui, des exports sont prévus pour alimenter votre outil comptable. Sojori n'est pas un logiciel de comptabilité et ne cherche pas à le remplacer : il fournit les données d'exploitation."
+  },
+  {
+    "q": "Comment comparer plusieurs établissements ?",
+    "a": "Le reporting consolide les sites tout en permettant de les comparer entre eux — occupation, prix moyen, mix canaux, revenu par chambre disponible. C'est ce que les outils conçus pour un établissement unique font mal."
+  }
+]}
+        />
+
 
         <FinalCTA title={<>Audit analytics <span className="gradient-text">gratuit</span>.</>} subtitle="On analyse votre data 12 derniers mois et on vous montre vos angles morts. Aucun engagement." />
         <PageFooter />
