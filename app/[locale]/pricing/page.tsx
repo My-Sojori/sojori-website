@@ -6,6 +6,7 @@ import { useTranslations } from 'next-intl';
 import { BackgroundEffects } from '@/components/BackgroundEffects';
 import { PageHeader, PageFooter, PageHero, FinalCTA } from '@/components/SharedComponents';
 import { ScrollPaginationDots } from '@/components/shared/ScrollPaginationDots';
+import { FaqSection } from '@/components/FaqSection';
 
 interface Tier {
   name: string;
@@ -354,6 +355,34 @@ export default function PricingPage() {
             </div>
           </div>
         </section>
+
+        <FaqSection
+          badge="Tarifs"
+          title="Questions fréquentes"
+          items={[
+  {
+    "q": "Comment le prix est-il calculé ?",
+    "a": "Par chambre, sur trois offres. Vous payez le nombre de chambres que vous exploitez, sans palier caché ni surcoût par utilisateur : vos femmes de chambre, votre gouvernante et votre réception accèdent tous à ce qui les concerne."
+  },
+  {
+    "q": "Y a-t-il des frais de mise en route ?",
+    "a": "La mise en route est accompagnée et la migration depuis votre outil actuel est prise en charge. Un mois d'essai gratuit permet de juger sur votre propre exploitation plutôt que sur une démonstration."
+  },
+  {
+    "q": "Faut-il s'engager sur la durée ?",
+    "a": "Les conditions se discutent selon la taille et la durée. Dites-nous votre situation : un riad de huit chambres et un groupe de quatre établissements n'ont pas le même besoin ni le même dossier."
+  },
+  {
+    "q": "Le programme Go Siyaha peut-il financer l'abonnement ?",
+    "a": "Le volet transformation digitale du programme couvre les outils numériques, et des acteurs du secteur indiquent que les solutions PMS y entrent. Nous fournissons les pièces nécessaires à votre dossier, mais nous ne revendiquons aucun agrément : l'éligibilité relève de Maroc PME."
+  },
+  {
+    "q": "Que se passe-t-il si je garde mon PMS actuel ?",
+    "a": "C'est possible : Sojori se connecte aux PMS existants, dont Mews. Le périmètre et donc le tarif s'ajustent à ce que vous utilisez réellement. Parlons-en avant de décider quoi que ce soit sur votre système de réservation."
+  }
+]}
+        />
+
 
         <FinalCTA
           title={<>{t('finalCTA.title', { gradient: '' })} <span className="gradient-text">{t('finalCTA.titleGradient')}</span></>}

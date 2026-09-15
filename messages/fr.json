@@ -2178,7 +2178,7 @@
     },
     "about": {
       "title": "À propos de Sojori | L'orchestrateur de l'hospitalité",
-      "description": "Sojori développe un moteur d'orchestration pour l'hospitalité : PMS, channel manager, WhatsApp IA, tarification dynamique. Basé à Marrakech, Casablanca et Paris."
+      "description": "Sojori développe le moteur d'orchestration de l'hospitalité : expérience client, opérations et revenu, pour hôtels et riads au Maroc et en France."
     },
     "demo": {
       "title": "Demander une démo Sojori | PMS & orchestrateur hospitalité",
@@ -2190,7 +2190,7 @@
     },
     "integrations": {
       "title": "Intégrations Sojori | Airbnb, Booking, Expedia, WhatsApp & API",
-      "description": "Sojori se connecte à votre PMS existant, dont Mews, aux OTA et à vos outils. API disponible. Ajoutez l'orchestration sans remplacer votre système de réservation."
+      "description": "Sojori se connecte à votre PMS existant, dont Mews, aux OTA et à vos outils. API disponible. Orchestrez sans remplacer votre système de réservation."
     },
     "pricing": {
       "title": "Tarifs Sojori | Plans PMS & orchestrateur hospitalité",

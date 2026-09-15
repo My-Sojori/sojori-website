@@ -6,6 +6,7 @@ import { BackgroundEffects } from "@/components/BackgroundEffects";
 import { PageHeader, PageFooter, PageHero, StatsBar, FinalCTA, SectionHead } from "@/components/SharedComponents";
 import { ScrollPaginationDots } from "@/components/shared/ScrollPaginationDots";
 import { InFlow } from '@/components/InFlow';
+import { FaqSection } from '@/components/FaqSection';
 
 // ========================================
 // WhatsApp Phone Component (Réutilisable)
@@ -973,6 +974,38 @@ export default function WhatsAppPage() {
           upstream={[{ label: 'Séjour confirmé', href: '/pms' }, { label: 'Mission assignée', href: '/teamflow' }, { label: 'Message client entrant', href: '/inbox' }]}
           downstream={[{ label: 'Fiche de police complétée', href: '/pms' }, { label: 'Demande devenue tâche', href: '/teamflow' }, { label: 'Extra facturé', href: '/analytics' }]}
         />
+
+        <FaqSection
+          badge="WhatsApp"
+          title="Questions fréquentes"
+          items={[
+  {
+    "q": "Pourquoi WhatsApp plutôt qu'une application ?",
+    "a": "Parce que vos clients et vos équipes l'utilisent déjà. Une femme de chambre n'installera pas une application métier ; un client en voyage non plus. WhatsApp supprime la marche à franchir : pas de compte à créer, pas de téléchargement, pas de mot de passe oublié."
+  },
+  {
+    "q": "L'assistant répond-il tout seul aux clients ?",
+    "a": "Il traite les demandes courantes et propose des réponses pour le reste. Vous réglez ce qui part automatiquement et ce qui passe par une validation. Le niveau d'autonomie vous appartient — nous ne partons pas du principe qu'une IA doit tout gérer sans regard humain."
+  },
+  {
+    "q": "Faut-il un numéro WhatsApp Business ?",
+    "a": "Oui, l'établissement utilise son propre numéro professionnel via l'API WhatsApp Business. La mise en place fait partie du déploiement."
+  },
+  {
+    "q": "Dans quelles langues les équipes reçoivent-elles leurs missions ?",
+    "a": "En français ou en arabe, selon ce que chacun utilise réellement. C'est un point souvent négligé : un outil que seule la réception comprend laisse le terrain hors du système, alors que c'est le terrain qui exécute."
+  },
+  {
+    "q": "Peut-on collecter la fiche de police par WhatsApp ?",
+    "a": "Oui. Le client la remplit avant son arrivée et joint sa pièce d'identité, dans le cadre du check-in digital. Vous récupérez des données complètes sans saisie au comptoir. Sojori prépare les données ; la déclaration aux autorités reste votre démarche."
+  },
+  {
+    "q": "Que se passe-t-il si un client écrit la nuit ?",
+    "a": "L'assistant répond aux demandes courantes à toute heure et escalade le reste selon vos règles. L'intérêt n'est pas de répondre vite pour répondre vite, mais qu'aucune demande ne reste sans suite jusqu'au matin."
+  }
+]}
+        />
+
 
         <FinalCTA
           title={<>{t("finalCTA.title")} <span className="gradient-text">{t("finalCTA.titleGradient")}</span></>}

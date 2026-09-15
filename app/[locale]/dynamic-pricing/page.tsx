@@ -8,6 +8,7 @@ import { ScrollPaginationDots } from '@/components/shared/ScrollPaginationDots';
 import { MarketIntelligence } from '@/components/dynamic-pricing/MarketIntelligence';
 import { PortfolioOverview } from '@/components/dynamic-pricing/PortfolioOverview';
 import { CompetitiveIntel } from '@/components/dynamic-pricing/CompetitiveIntel';
+import { FaqSection } from '@/components/FaqSection';
 
 function PriceCalendar() {
   const t = useTranslations('dynamicPricing.calendar');
@@ -308,6 +309,38 @@ export default function DynamicPricingPage() {
           upstream={[{ label: 'Occupation réelle', href: '/pms' }, { label: 'Rythme de réservation', href: '/analytics' }, { label: 'Événement en ville' }]}
           downstream={[{ label: 'Poussé sur les canaux', href: '/channel-manager' }, { label: 'RevPAR mesuré', href: '/analytics' }]}
         />
+
+        <FaqSection
+          badge="Tarification"
+          title="Questions fréquentes"
+          items={[
+  {
+    "q": "L'IA fixe-t-elle mes prix toute seule ?",
+    "a": "Non, et c'est un choix assumé. Le calcul reste algorithmique, à partir de règles et de signaux mesurables — occupation, saisonnalité, événements, rythme de réservation. Un modèle de langage peut interpréter et recommander, jamais décider seul du prix."
+  },
+  {
+    "q": "Comment garder la main ?",
+    "a": "Par des bornes minimum et maximum que vous fixez, et un niveau d'autonomie paramétrable : application automatique en dessous d'un certain écart, validation requise au-delà. Vous pouvez aussi rester en recommandation pure, sans application automatique."
+  },
+  {
+    "q": "Sur quoi le prix est-il recalculé ?",
+    "a": "L'occupation réelle et à venir, le rythme de réservation comparé à la même période l'an passé, la saisonnalité de votre ville, les événements locaux. À Marrakech un festival, à Tanger le pic estival, à Casablanca l'effet semaine."
+  },
+  {
+    "q": "Le nouveau prix part-il sur les canaux ?",
+    "a": "Oui, vers Booking, Expedia, Airbnb et les autres canaux ouverts, ainsi que sur votre direct. Un prix recalculé qui resterait dans le logiciel ne servirait à rien."
+  },
+  {
+    "q": "Est-ce adapté à un petit établissement ?",
+    "a": "La tarification par règles a d'autant plus de valeur que vous n'avez pas le temps de surveiller vos prix chaque jour. Mais sur un riad à tarif unique toute l'année, l'apport est faible — nous préférons vous le dire."
+  },
+  {
+    "q": "Peut-on mesurer ce que ça rapporte ?",
+    "a": "Oui, par le revenu par chambre disponible comparé à la période précédente, et par la part du direct dans le mix. C'est la mesure qui compte : une hausse d'occupation obtenue en cassant les prix n'est pas un gain."
+  }
+]}
+        />
+
 
         <FinalCTA
           title={<>{tFinalCTA('title').split(tFinalCTA('titleGradient'))[0]}<span className="gradient-text">{tFinalCTA('titleGradient')}</span>.</>}
