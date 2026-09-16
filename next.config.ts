@@ -24,25 +24,17 @@ const nextConfig: NextConfig = {
     const BOOK = 'https://book.sojori.com'
     // Chemins du site de location, relevés sur sojori-vente le 2026-09-11.
     // Aucun n'entre en collision avec une route du SaaS (vérifié).
+    // 2026-09-16 : réduit de 18 à 3 chemins. book.sojori.com est servi depuis
+    // le 14/09 par le projet sojori-app, une refonte du site de réservation qui
+    // n'a pas repris toutes les routes de l'ancien (sojori-vente). Testés un à
+    // un : 15 des 18 chemins renvoyaient 404 — on envoyait donc visiteurs et
+    // robots dans le vide, ce qui est pire que ne pas rediriger du tout.
+    // Les trois qui restent ont été vérifiés en production.
+    // À ré-ajouter au fur et à mesure que les pages réapparaissent.
     const rentalPaths = [
-      'become-host',
       'checkout/:path*',
-      'coming-soon',
-      'demo-mvp',
-      'experiences',
-      'fail/:path*',
       'listings/:path*',
-      'login',
-      'login/sso-callback',
-      'pm/:path*',
-      'profile',
       'search',
-      'signup',
-      'signup/sso-callback',
-      'sso-callback',
-      'thankYou/:path*',
-      'verified-hosts',
-      'wishlist',
     ]
 
     // business.sojori.com servait le SaaS avant la bascule. Le laisser
