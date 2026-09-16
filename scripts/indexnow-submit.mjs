@@ -1,65 +1,42 @@
-// Notifie Bing/IndexNow des URLs du sitemap après chaque déploiement.
-// Usage: node scripts/indexnow-submit.mjs
-const HOST = 'business.sojori.com';
+/**
+ * Notifie IndexNow des URLs du site après un déploiement.
+ *
+ * IndexNow couvre Bing, Yandex, Seznam et Naver — pas Google, qui ne l'a
+ * jamais adopté. Pour Google, le sitemap et les demandes d'indexation dans
+ * Search Console restent les seuls leviers.
+ *
+ * 2026-09-16 : le script pointait encore sur business.sojori.com, un domaine
+ * qui n'existe plus depuis la bascule, et portait une liste de chemins figée
+ * qui ignorait les 23 pages créées depuis. Il était donc sans effet. Il lit
+ * désormais le sitemap : plus de liste à maintenir en double.
+ *
+ * Usage : node scripts/indexnow-submit.mjs
+ */
+const HOST = 'sojori.com';
 const KEY = '70379f5cddb44812bb8861ea81e6ebfb';
 const KEY_LOCATION = `https://${HOST}/${KEY}.txt`;
-const LOCALES = ['fr', 'en', 'es', 'pt', 'ar'];
+const SITEMAP = `https://${HOST}/sitemap.xml`;
 
-const PATHS = [
-  '/',
-  '/pms',
-  '/channel-manager',
-  '/whatsapp',
-  '/dynamic-pricing',
-  '/analytics',
-  '/inbox',
-  '/teamflow',
-  '/owner-portal',
-  '/dashboard-app',
-  '/guest-experience',
-  '/pricing',
-  '/integrations',
-  '/about',
-  '/demo',
-  '/demo/rdv',
-  '/offre-conciergeries',
-  '/brand',
-  '/gestion-locative-marrakech',
-  '/conciergerie-marrakech',
-  '/gestion-locative-casablanca',
-  '/conciergerie-casablanca',
-  '/gestion-locative-agadir',
-  '/conciergerie-agadir',
-  '/gestion-locative-tanger',
-  '/conciergerie-tanger',
-  '/gestion-locative-rabat',
-  '/conciergerie-rabat',
-  '/terms',
-  '/privacy',
-];
+const xml = await fetch(SITEMAP).then((r) => {
+  if (!r.ok) throw new Error(`sitemap ${r.status}`);
+  return r.text();
+});
 
-const urlList = [];
-for (const locale of LOCALES) {
-  for (const path of PATHS) {
-    const suffix = path === '/' ? '' : path;
-    urlList.push(`https://${HOST}/${locale}${suffix}`);
-  }
+const urlList = [...xml.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1]);
+if (!urlList.length) {
+  console.error('Aucune URL dans le sitemap — rien à soumettre.');
+  process.exit(1);
 }
 
+// IndexNow plafonne à 10 000 URLs par requête ; on est très en dessous.
 const res = await fetch('https://api.indexnow.org/indexnow', {
   method: 'POST',
   headers: { 'Content-Type': 'application/json; charset=utf-8' },
-  body: JSON.stringify({
-    host: HOST,
-    key: KEY,
-    keyLocation: KEY_LOCATION,
-    urlList,
-  }),
+  body: JSON.stringify({ host: HOST, key: KEY, keyLocation: KEY_LOCATION, urlList }),
 });
 
-console.log(`IndexNow: ${res.status} ${res.statusText} — ${urlList.length} URLs soumises`);
+console.log(`IndexNow : ${res.status} ${res.statusText} — ${urlList.length} URLs soumises`);
 if (!res.ok) {
-  const text = await res.text();
-  console.error(text);
+  console.error(await res.text());
   process.exit(1);
 }
