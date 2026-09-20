@@ -51,6 +51,7 @@ export const routing = defineRouting({
     '/alternative-welcomax': '/alternative-welcomax',
     '/comparatif-pms-maroc': '/comparatif-pms-maroc',
     '/orchestration': '/orchestration',
+    '/mcp': '/mcp',
     '/terms': '/terms',
     '/privacy': '/privacy'
   }

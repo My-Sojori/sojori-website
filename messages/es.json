@@ -36,6 +36,8 @@
       "company": "Empresa",
       "pms": "PMS",
       "pmsDesc": "Gestión multi-propiedad",
+      "mcp": "MCP",
+      "mcpDesc": "Tu IA lee tus cifras",
       "channelManager": "Channel Manager",
       "channelManagerDesc": "Sync multi-OTA",
       "dynamicPricing": "Precios dinámicos",
@@ -2257,6 +2259,10 @@
     "orchestration": {
       "title": "Orquestación hotelera — ¿Qué es un motor de orquestación? | Sojori",
       "description": "Un PMS registra; un orquestador hace que las cosas ocurran. Cómo Sojori orquesta la experiencia del cliente, las operaciones y los ingresos."
+    },
+    "mcp": {
+      "title": "PMS conectado a la IA — MCP | Consulta Sojori desde ChatGPT o Claude",
+      "description": "El primer PMS hotelero con servidor MCP. Pregunta a ChatGPT o Claude y obtén tus cifras reales. Solo lectura, sin datos que identifiquen al huésped."
     }
   },
   "pmsPage": {

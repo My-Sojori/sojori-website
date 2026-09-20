@@ -36,6 +36,8 @@
       "company": "الشركة",
       "pms": "PMS",
       "pmsDesc": "إدارة متعددة العقارات",
+      "mcp": "MCP",
+      "mcpDesc": "ذكاؤك الاصطناعي يقرأ أرقامك",
       "channelManager": "Channel Manager",
       "channelManagerDesc": "مزامنة OTA",
       "dynamicPricing": "التسعير الديناميكي",
@@ -2257,6 +2259,10 @@
     "orchestration": {
       "title": "تنسيق الضيافة — ما هو محرك التنسيق؟ | Sojori",
       "description": "نظام إدارة الفنادق يسجّل، ومحرك التنسيق ينفّذ. كيف تنسّق Sojori تجربة الضيف والعمليات والإيرادات."
+    },
+    "mcp": {
+      "title": "نظام PMS متصل بالذكاء الاصطناعي — MCP | استعلم عن Sojori من ChatGPT أو Claude",
+      "description": "أول نظام PMS فندقي بخادم MCP. اسأل ChatGPT أو Claude واحصل على أرقامك الحقيقية. قراءة فقط، دون أي بيانات تعرّف بالنزيل."
     }
   },
   "pmsPage": {

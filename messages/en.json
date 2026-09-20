@@ -36,6 +36,8 @@
       "company": "Company",
       "pms": "PMS",
       "pmsDesc": "Multi-property management",
+      "mcp": "MCP",
+      "mcpDesc": "Your AI reads your figures",
       "channelManager": "Channel Manager",
       "channelManagerDesc": "Multi-OTA sync",
       "dynamicPricing": "Dynamic Pricing",
@@ -2355,6 +2357,10 @@
     "orchestration": {
       "title": "Hospitality orchestration — What is an orchestration engine? | Sojori",
       "description": "A PMS records; an orchestrator makes things happen. How Sojori orchestrates guest experience, operations and revenue by connecting systems, guests, teams and partners."
+    },
+    "mcp": {
+      "title": "AI-connected PMS — MCP | Query Sojori from ChatGPT or Claude",
+      "description": "The first hotel PMS with an MCP server. Ask ChatGPT or Claude, get your real figures. Read-only, with no guest-identifying data."
     }
   },
   "pmsPage": {

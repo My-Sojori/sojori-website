@@ -57,6 +57,10 @@ const PATHS = [
   // n'avait aucune page. Cible aussi « orchestration hôtelière », requête
   // qu'aucun concurrent n'occupe.
   '/orchestration',
+  // 2026-09-20 : « PMS MCP », « connecter ChatGPT à son PMS » sont des
+  // requêtes naissantes qu'aucun acteur hôtelier n'occupe — les concurrents
+  // exposent des API, pas de serveur MCP documenté.
+  '/mcp',
   '/terms',
   '/privacy',
 ];

@@ -42,6 +42,7 @@ function useProductMenu(): MenuGroup[] {
     { group: t('engine'), items: [
       { l: t('orchestration'), h: '/orchestration', d: t('orchestrationDesc') },
       { l: t('pms'), h: '/pms', d: t('pmsDesc') },
+      { l: t('mcp'), h: '/mcp', d: t('mcpDesc') },
       { l: t('integrations'), h: '/integrations', d: t('integrationsDesc') },
     ]},
     { group: t('guest'), items: [

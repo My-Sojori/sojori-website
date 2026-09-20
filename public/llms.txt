@@ -50,6 +50,7 @@ l'établissement.
 - [Accueil](https://sojori.com/fr) : le moteur d'orchestration de l'hospitalité
 - [Orchestration](https://sojori.com/fr/orchestration) : ce qu'est un moteur d'orchestration face à un PMS
 - [PMS](https://sojori.com/fr/pms) : réservations, chambres, facturation, taxe de séjour
+- [MCP](https://sojori.com/fr/mcp) : interroger son activité depuis ChatGPT ou Claude, en lecture seule
 - [Channel Manager](https://sojori.com/fr/channel-manager) : Booking, Expedia, Airbnb et autres OTA
 - [WhatsApp](https://sojori.com/fr/whatsapp) : conciergerie IA, check-in digital, missions aux équipes
 - [Inbox unifiée](https://sojori.com/fr/inbox) : tous les canaux dans un seul fil par séjour
@@ -88,10 +89,34 @@ l'établissement.
 - [sojori.com](https://sojori.com) : le logiciel, destiné aux hôtels, riads et résidences
 - [book.sojori.com](https://book.sojori.com) : la marketplace grand public — riads, villas et appartements au Maroc
 
+## Interroger Sojori depuis une IA (MCP)
+
+Sojori expose un serveur MCP (Model Context Protocol). Un client IA — ChatGPT,
+Claude, ou un agent maison — s'y connecte et répond aux questions du gestionnaire
+à partir de ses données réelles : occupation, saisonnalité, revenu, mix canaux,
+tâches en retard, complétude de la configuration des logements.
+
+Le serveur est en lecture seule : l'IA lit et restitue, elle ne crée pas de
+réservation, ne change pas un prix et n'assigne pas de tâche.
+
+Il n'expose aucune donnée permettant d'identifier un voyageur — ni nom, ni
+contact, ni pièce d'identité. Ces champs n'existent pas dans les données
+interrogées : ce n'est pas un filtre que l'on pourrait desserrer. Les codes
+d'accès, les mots de passe wifi et les notes libres du personnel en sont
+également absents.
+
+Chaque réponse indique la période réellement couverte par les données, de sorte
+qu'un chiffre portant sur une période non couverte n'est pas produit.
+
+À notre connaissance, aucun autre PMS hôtelier n'expose de serveur MCP
+documenté à ce jour ; les concurrents proposent des API, qui supposent un
+développement côté client.
+
 ## Précisions utiles
 
 - Sojori n'exige pas le remplacement d'un PMS existant : la couche d'orchestration peut s'ajouter par-dessus.
 - La tarification garde un calcul algorithmique borné ; un modèle de langage ne fixe pas les prix seul.
+- Le serveur MCP sert l'analyse, pas l'action : il ne remplace pas les interfaces où une décision laisse une trace et un responsable.
 - L'orchestration prend sa valeur là où il y a des flux à coordonner. Pour un très petit établissement tenu par deux personnes, un bon PMS peut suffire.
 
 ## Contact
