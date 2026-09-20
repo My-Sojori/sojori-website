@@ -132,9 +132,9 @@ export function Pricing() {
                   <span style={{ fontSize: 32, fontWeight: 800, letterSpacing: '-0.03em', color: 'var(--text)' }}>{tier.price}</span>
                 ) : (
                   <>
-                    <span style={{ fontSize: 18, color: 'var(--text-3)' }}>€</span>
+                    {/* En MAD la devise suit le montant : elle est portée par `period`. */}
                     <span style={{ fontSize: 48, fontWeight: 800, letterSpacing: '-0.04em', lineHeight: 1, color: 'var(--text)' }}>{tier.price}</span>
-                    <span style={{ fontSize: 13, color: 'var(--text-3)', marginLeft: 4 }}>{tier.period}</span>
+                    <span style={{ fontSize: 13, color: 'var(--text-3)', marginLeft: 5 }}>{tier.period}</span>
                   </>
                 )}
               </div>

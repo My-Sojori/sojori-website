@@ -5,8 +5,8 @@
       "description": "Software de orquestração para gestores de aluguéis de temporada. Reserva, hóspede, equipe, proprietário — coordenados por IA, controlados pelo WhatsApp. Lançamento no Marrocos."
     },
     "pricing": {
-      "title": "Preços Sojori — Orquestração Hoteleira | Marrakech, Casablanca, Paris",
-      "description": "Preços transparentes por propriedade. Solo para começar. Orchestre para orquestrar. Symphonie para escalar."
+      "title": "Preços Sojori — Orquestração hoteleira | Marrocos",
+      "description": "Preços públicos, em dirhams. Base 200 MAD, Confort 350 MAD, Premium 550 MAD por alojamento e por mês. Descontos a partir de 20 alojamentos."
     }
   },
   "common": {
@@ -86,10 +86,10 @@
   },
   "pricing": {
     "hero": {
-      "badge": "● Preços simples · por propriedade",
-      "title": "Três níveis.",
-      "titleGradient": "Um preço por propriedade.",
-      "subtitle": "Solo para começar. Orchestre para orquestrar. Symphonie para escalar. Sem níveis absurdos — um preço por propriedade, por mês."
+      "badge": "● Preços públicos · por alojamento",
+      "title": "Três planos.",
+      "titleGradient": "Um preço por alojamento.",
+      "subtitle": "Base para digitalizar. Confort para orquestrar. Premium para ir até ao fim. Preços publicados, em dirhams — porque mais ninguém o faz."
     },
     "toggles": {
       "monthly": "Mensal",
@@ -98,115 +98,230 @@
     },
     "carousel": {
       "hint": "Deslize · 3 planos",
-      "navLabel": "Navegar entre planos",
+      "navLabel": "Navegar entre os planos",
       "goToTier": "Mostrar {name}"
     },
     "calculator": {
-      "yourProperties": "Suas propriedades",
-      "listings": "propriedades",
-      "forListings": "Para {count} propriedade{plural}",
-      "perListing": "/propriedade/mês",
-      "perMonth": "€ / mês",
-      "perYear": "ou {amount}€ / ano",
-      "billing": "faturamento {period}"
+      "yourProperties": "Os seus alojamentos",
+      "listings": "alojamentos",
+      "forListings": "Para {count} {plural}",
+      "perListing": "/alojamento/mês",
+      "perMonth": "MAD / mês",
+      "perYear": "ou seja {amount} MAD / ano",
+      "billing": "faturação {period}",
+      "minimum": "A partir de {count} alojamentos",
+      "unavailable": "Mínimo {count} alojamentos",
+      "periodMonthly": "mensal",
+      "periodAnnual": "anual",
+      "unitSingular": "alojamento",
+      "unitPlural": "alojamentos"
     },
+    "billingMonthly": "monthly",
+    "billingAnnual": "annual",
     "tiers": {
-      "popularBadge": "Mais Popular",
-      "solo": {
-        "name": "Solo",
-        "price": 15,
-        "tagline": "Para começar.",
-        "description": "O PMS que digitaliza seu negócio, sem a camada de orquestração.",
+      "popularBadge": "O mais escolhido",
+      "minimumLabel": "Mínimo {count} alojamentos",
+      "base": {
+        "name": "Base",
+        "tagline": "Para digitalizar.",
+        "description": "Tudo o que um PMS faz — mais as três superfícies WhatsApp. As suas equipas e os seus hóspedes já estão no WhatsApp: a Sojori também.",
         "features": {
-          "pms": "PMS multi-propriedade (calendário, reservas, pagamentos)",
-          "channelManager": "Channel Manager — 5 OTAs",
+          "pms": "PMS multipropriedade (calendário, reservas, pagamentos)",
+          "channelManager": "Channel Manager ilimitado — Booking, Expedia, Airbnb",
           "inbox": "Caixa de entrada unificada",
-          "tasks": "Gestão de tarefas (painel web)",
-          "whatsappGuest": "WhatsApp Hóspede — apenas modelos",
-          "ownerPortal": "Portal Proprietário — somente leitura",
-          "billing": "Faturamento automático",
+          "ownerPortal": "Portal do proprietário",
+          "whatsappGuest": "WhatsApp Hóspede — menu de serviços",
+          "whatsappStaff": "WhatsApp Equipas — tarefas e prestadores",
+          "whatsappAdmin": "WhatsApp Gerente — o PMS no bolso",
+          "rulesPricing": "Tarifação por regras (época, fim de semana, estadia mínima)",
+          "cityTax": "Taxa turística",
           "support": "Suporte por email"
         },
-        "cta": "Escolher Solo"
+        "cta": "Escolher Base"
       },
-      "orchestre": {
-        "name": "Orchestre",
-        "price": 35,
+      "confort": {
+        "name": "Confort",
         "tagline": "Para orquestrar.",
-        "description": "O nível onde a IA assume as operações. WhatsApp + Reserva Direta Web + Preços Dinâmicos.",
+        "description": "O seu hóspede deixa de escolher num menu: fala. A IA assume, as equipas acompanham, a receita ajusta-se.",
         "features": {
-          "allSolo": "Tudo no Solo, +",
-          "whatsappGuestAI": "WhatsApp Hóspede — IA 24/7, 12 idiomas",
-          "whatsappAdmin": "WhatsApp Admin (PMS no bolso)",
-          "whatsappStaff": "WhatsApp Equipe (membros ilimitados)",
-          "webDirectBooking": "Reserva Direta Web (motor de reservas diretas)",
-          "channelManagerUnlimited": "Channel Manager ilimitado — 20+ OTAs",
-          "dynamicPricing": "Preços Dinâmicos (6 fatores configuráveis)",
-          "teamflow": "TeamFlow padrão",
-          "ownerPortalFull": "Portal Proprietário completo",
+          "allBase": "Tudo o Base, +",
+          "whatsappAi": "WhatsApp IA 24/7 — 12 idiomas",
+          "whatsappOwner": "WhatsApp Proprietário — relatórios e receitas",
+          "teamflow": "TeamFlow — limpeza, manutenção, equipas",
           "analytics": "Smart Analytics",
-          "support": "Suporte prioritário 24/7"
+          "bookingEngine": "Motor de reservas (site)",
+          "support": "Suporte prioritário"
         },
-        "cta": "Começar com Orchestre"
+        "cta": "Começar com Confort"
       },
-      "symphonie": {
-        "name": "Symphonie",
-        "price": 59,
-        "tagline": "Para escalar.",
-        "description": "O Sojori completo. A 4ª superfície WhatsApp + TeamFlow Advanced + multi-marca + API.",
+      "premium": {
+        "name": "Premium",
+        "tagline": "Para ir até ao fim.",
+        "description": "A orquestração completa: os módulos accionam-se uns aos outros e os seus dados tornam-se consultáveis pela sua própria IA.",
         "features": {
-          "allOrchestre": "Tudo no Orchestre, +",
-          "whatsappBookingDirect": "WhatsApp Reserva Direta (a 4ª superfície)",
-          "teamflowAdvanced": "TeamFlow Advanced (escalações, pontuação IA)",
-          "multiBrand": "Multi-marca / multi-equipes",
-          "orchestrationFull": "Orquestração IA completa + construtor de fluxos",
-          "api": "API e webhooks + SSO",
-          "csm": "Customer Success dedicado",
-          "sla": "SLA 99.9%",
-          "securityAudit": "Auditoria de segurança personalizada"
+          "allConfort": "Tudo o Confort, +",
+          "orchestration": "Orquestração avançada — os módulos accionam-se entre si",
+          "whatsappBooking": "Motor de reservas WhatsApp",
+          "sojoriPay": "Sojori Pay — o seu hóspede paga sem sair da conversa",
+          "mcp": "MCP AI — consulte a sua atividade a partir do ChatGPT ou do Claude",
+          "api": "API e webhooks · multimarca · SSO",
+          "csm": "Customer Success dedicado"
         },
-        "cta": "Escolher Symphonie"
+        "cta": "Escolher Premium"
       }
     },
+    "addons": {
+      "badge": "● Add-ons",
+      "title": "À la carte.",
+      "titleGradient": "Mínimo 10 alojamentos.",
+      "subtitle": "Disponíveis tanto no Base como no Confort. Só paga o que utiliza.",
+      "perListing": "MAD / alojamento / mês",
+      "onQuote": "sob consulta",
+      "items": {
+        "checkin": {
+          "name": "Check-in por WhatsApp",
+          "price": "+50",
+          "description": "O passaporte é lido automaticamente e a ficha policial fica preparada."
+        },
+        "concierge": {
+          "name": "Concierge",
+          "price": "+100",
+          "description": "Transferes, room service, compras, excursões — pedidos por WhatsApp."
+        },
+        "dynamicPricing": {
+          "name": "Preços dinâmicos",
+          "price": "+100",
+          "description": "É o mercado que decide, dentro dos limites que definir."
+        },
+        "crm": {
+          "name": "CRM",
+          "price": "+80",
+          "description": "Os seus clientes, o seu histórico, as suas preferências."
+        },
+        "marketing": {
+          "name": "Marketing",
+          "price": "",
+          "description": "Encher os seus alojamentos — aquisição, conteúdo, campanhas."
+        },
+        "b2bSales": {
+          "name": "B2B Sales",
+          "price": "",
+          "description": "O agente comercial qualifica, orça, faz seguimento e fecha."
+        }
+      }
+    },
+    "earn": {
+      "badge": "● O que ganha",
+      "title": "A Sojori não só custa.",
+      "titleGradient": "Também lhe rende.",
+      "subtitle": "Duas receitas que antes não tinha.",
+      "items": {
+        "concierge": {
+          "percent": "10 %",
+          "name": "Concierge",
+          "description": "Sobre cada serviço pedido pelos seus hóspedes. O transfer do aeroporto, a excursão, o room service: fica com a sua parte."
+        },
+        "affiliation": {
+          "percent": "5 %",
+          "name": "Afiliação",
+          "description": "Sobre cada cliente que nos traz, enquanto ele ficar com a Sojori."
+        }
+      }
+    },
+    "services": {
+      "badge": "● Serviços",
+      "title": "E se respondêssemos",
+      "titleGradient": "por si?",
+      "customerService": {
+        "name": "Apoio ao hóspede externalizado",
+        "price": "3 000 MAD",
+        "unit": "por cada 25 alojamentos",
+        "description": "A nossa equipa responde aos seus hóspedes, em seu nome, em todos os canais."
+      },
+      "whiteLabel": {
+        "name": "Marca branca WhatsApp",
+        "price": "5 000 MAD",
+        "unit": "pagamento único",
+        "description": "O seu número, o seu logótipo. Os seus hóspedes só veem a sua marca."
+      }
+    },
+    "discounts": {
+      "title": "Descontos por volume",
+      "tiers": {
+        "small": {
+          "range": "1 – 19 alojamentos",
+          "value": "preço cheio"
+        },
+        "medium": {
+          "range": "20 – 50 alojamentos",
+          "value": "−15 %"
+        },
+        "large": {
+          "range": "51 alojamentos ou mais",
+          "value": "−25 %"
+        }
+      },
+      "annual": "Compromisso anual: −20 % adicionais."
+    },
     "onboarding": {
-      "title": "Integração €300 única",
-      "description": "em todos os níveis · migração da sua ferramenta atual + configuração WhatsApp + treinamento Zoom 2h."
+      "title": "Onboarding",
+      "description": "Migração a partir da sua ferramenta atual, configuração do Channel Manager e do WhatsApp, definição dos percursos, formação das suas equipas.",
+      "base": "2 000 MAD",
+      "confort": "4 000 MAD",
+      "premium": "6 000 MAD",
+      "oneTime": "pagamento único"
     },
     "faq": {
-      "title": "Perguntas",
+      "title": "Perguntas {gradient}",
       "titleGradient": "frequentes.",
       "badge": "● FAQ",
       "questions": {
+        "whyMad": {
+          "q": "Porque é que publicam os preços, e em dirhams?",
+          "a": "Porque fatura em dirhams e comparar euros com um orçamento em MAD não ajuda ninguém. E porque nenhum outro player do mercado publica os seus preços — preferimos que saiba antes de entrar numa reunião."
+        },
+        "minimum": {
+          "q": "Porquê um mínimo de alojamentos no Confort e no Premium?",
+          "a": "O Confort exige 10 alojamentos, o Premium 50. Abaixo disso, a orquestração custa mais do que rende: com dois ou três alojamentos ainda consegue gerir sozinho sem perder nada. O Base não tem mínimo."
+        },
         "engagement": {
-          "q": "Há compromisso?",
-          "a": "Mensal: sem compromisso, cancele a qualquer momento. Anual: 12 meses em troca de −20%."
+          "q": "Existe fidelização?",
+          "a": "Mensal: sem fidelização, cancelável a qualquer momento. Anual: 12 meses em troca de −20%."
         },
         "onboarding": {
-          "q": "Como funciona a integração?",
-          "a": "Migração da sua ferramenta atual (Hostfully, Smoobu, Lodgify, Hostaway), configuração Channel Manager + WhatsApp Cloud API, configuração de fluxos, treinamento Zoom 2h. Contar 5-7 dias úteis. Tudo é remoto — sem visita presencial, o que nos permite ser rápidos e acessíveis. Garantia: se a integração não for concluída em 14 dias, reembolso total."
+          "q": "Como funciona o onboarding?",
+          "a": "Migração a partir da sua ferramenta atual, configuração do Channel Manager e da WhatsApp Cloud API, definição dos percursos, formação das suas equipas. Conte com 5 a 7 dias úteis. De 2 000 MAD no Base a 6 000 MAD no Premium, consoante o número de superfícies a ligar."
+        },
+        "concierge": {
+          "q": "Como funcionam os 10 % do concierge?",
+          "a": "O seu hóspede pede um transfer, uma excursão ou room service pelo WhatsApp. O parceiro executa e fica com 10 % do serviço. É receita que hoje não capta: neste momento faz a chamada e o cliente paga diretamente ao motorista."
+        },
+        "addons": {
+          "q": "Os add-ons são obrigatórios?",
+          "a": "Não. Activam-se individualmente, no Base tal como no Confort, com um mínimo de 10 alojamentos cada. Pode começar sem eles e acrescentá-los quando a necessidade surgir."
         },
         "whatsappCost": {
-          "q": "Os custos do WhatsApp estão incluídos?",
-          "a": "No Solo, os 3 modelos transacionais essenciais estão incluídos. No Orchestre e Symphonie, a IA conversacional é ilimitada e incluída — os custos da WhatsApp Cloud API são cobertos dentro do uso padrão. A grande maioria das conversas Sojori é gratuita graças à janela de serviço WhatsApp de 24h."
-        },
-        "webVsWhatsappBooking": {
-          "q": "Qual é a diferença entre Reserva Direta Web e WhatsApp Reserva Direta?",
-          "a": "Reserva Direta Web (Orchestre+) é um site completo de reservas ou um widget incorporável no seu site existente (como Stripe checkout). WhatsApp Reserva Direta (Symphonie) permite que prospects reservem diretamente no chat do WhatsApp, sem passar por um site. Para pagamentos WhatsApp Direct: Sojori cobra com uma margem de 5%, ou o PM cobra diretamente e Sojori leva 0%. Ambos eliminam a comissão OTA — mas por dois canais diferentes."
+          "q": "O custo do WhatsApp está incluído?",
+          "a": "Sim, as conversas de serviço estão incluídas na subscrição. Apenas as campanhas de marketing de grande volume são refaturadas ao custo Meta, sem margem."
         },
         "changeTier": {
-          "q": "Posso mudar de nível durante o ano?",
-          "a": "Sim. Upgrade a qualquer momento (rateado). Downgrade no final do ciclo de faturamento."
+          "q": "Posso mudar de plano a meio do ano?",
+          "a": "Sim, nos dois sentidos e sem custos. A faturação é ajustada proporcionalmente a partir do mês seguinte."
+        },
+        "keepPms": {
+          "q": "E se mantiver o meu PMS atual?",
+          "a": "É possível: a Sojori integra-se com o seu PMS existente e orquestra por cima. Perde então o interesse da camada base, por isso falamos caso a caso."
         },
         "freeTrial": {
-          "q": "Há teste gratuito?",
-          "a": "1 mês grátis em qualquer nível, sem cartão de crédito. A integração de €300 só é cobrada na assinatura, não durante o teste."
+          "q": "Existe período de teste gratuito?",
+          "a": "O primeiro mês é grátis em todos os planos, sem cartão. A migração está incluída no onboarding."
         }
       }
     },
     "finalCTA": {
-      "title": "Pronto para orquestrar?",
-      "titleGradient": "1 mês grátis.",
-      "subtitle": "Migração da sua ferramenta atual incluída na integração. Sem cartão de crédito para o teste. Configuração em menos de 7 dias."
+      "title": "Pronto para orquestrar? {gradient}",
+      "titleGradient": "Primeiro mês grátis.",
+      "subtitle": "Migração incluída no onboarding. Sem cartão para o teste. Implementação em menos de 7 dias."
     }
   },
   "home": {
@@ -454,62 +569,60 @@
     },
     "pricingPreview": {
       "badge": "Preços",
-      "title": "Transparente. Sem surpresas.",
-      "subtitle": "Sem taxas ocultas. Cancelamento fácil a qualquer momento. 1 mês de teste grátis.",
+      "title": "Publicados. Em dirhams.",
+      "subtitle": "Sem custos ocultos, sem «consulte-nos». Primeiro mês grátis, cancelável a qualquer momento.",
       "tiers": [
         {
-          "name": "SOLO",
-          "tagline": "Para começar.",
-          "range": "1-10 propriedades",
-          "price": "15",
-          "period": "/propriedade/mês",
+          "name": "BASE",
+          "tagline": "Para digitalizar.",
+          "range": "a partir de 1 alojamento",
+          "price": "200",
+          "period": "MAD/alojamento/mês",
           "items": [
-            "Módulo PMS",
-            "Channel Manager",
+            "PMS + calendário",
+            "Channel Manager ilimitado",
             "Caixa de entrada unificada",
-            "Gestão de tarefas",
-            "WhatsApp para hóspedes (limitado)",
-            "Portal do proprietário (limitado)"
+            "WhatsApp Hóspede, Equipas, Gerente",
+            "Taxa turística"
           ],
-          "cta": "Testar grátis"
+          "cta": "Experimentar grátis"
         },
         {
-          "name": "ORCHESTRE",
+          "name": "CONFORT",
           "tagline": "Para orquestrar.",
-          "range": "11-100 propriedades",
-          "price": "35",
-          "period": "/propriedade/mês",
-          "badge": "★ POPULAR",
+          "range": "a partir de 10 alojamentos",
+          "price": "350",
+          "period": "MAD/alojamento/mês",
+          "badge": "★ O MAIS ESCOLHIDO",
           "items": [
-            "Tudo em Solo +",
-            "WhatsApp IA completo (hóspedes + administradores + equipe)",
-            "Channel Manager ilimitado (20+ OTAs)",
-            "Preços dinâmicos",
-            "TeamFlow avançado",
-            "Análise em tempo real",
-            "Suporte prioritário 24/7"
+            "Tudo o Base +",
+            "WhatsApp IA 24/7 — 12 idiomas",
+            "WhatsApp Proprietário",
+            "TeamFlow — limpeza e manutenção",
+            "Motor de reservas",
+            "Smart Analytics",
+            "Suporte prioritário"
           ],
-          "cta": "Testar grátis"
+          "cta": "Experimentar grátis"
         },
         {
-          "name": "SYMPHONIE",
-          "tagline": "Para pilotar em escala.",
-          "range": "100-2000+ propriedades",
-          "price": "59",
-          "period": "/propriedade/mês",
+          "name": "PREMIUM",
+          "tagline": "Para ir até ao fim.",
+          "range": "a partir de 50 alojamentos",
+          "price": "550",
+          "period": "MAD/alojamento/mês",
           "items": [
-            "Tudo em Orchestre +",
+            "Tudo o Confort +",
+            "Orquestração avançada",
             "Reserva direta por WhatsApp",
-            "Multi-marca",
-            "Orquestração completa",
-            "API e webhooks",
-            "Account manager dedicado",
-            "SLA premium 99.9%"
+            "Sojori Pay",
+            "MCP AI — ChatGPT, Claude",
+            "API e webhooks · SSO"
           ],
-          "cta": "Contatar vendas"
+          "cta": "Falar com vendas"
         }
       ],
-      "footer": "✓ 1 mês de teste grátis · ✓ Cancelamento fácil · ✓ Configuração em menos de 7 dias"
+      "footer": "✓ Primeiro mês grátis · ✓ Descontos a partir de 20 alojamentos · ✓ Implementação em menos de 7 dias"
     },
     "finalCTA": {
       "title": "Pronto para",
@@ -2094,8 +2207,8 @@
       "description": "Conectores e API da Sojori: Airbnb, Booking.com, Expedia, Vrbo, WhatsApp Business, contabilidade. Sincronização em tempo real."
     },
     "pricing": {
-      "title": "Preços Sojori | Planos PMS e orquestrador hoteleiro",
-      "description": "Preços transparentes Sojori, sem taxas ocultas: Solo, Orchestre, Symphonie. 1 mês de teste grátis, cancele quando quiser."
+      "title": "Preços Sojori | Preços públicos em dirhams, por alojamento",
+      "description": "Base 200 MAD, Confort 350 MAD, Premium 550 MAD por alojamento e por mês. Descontos a partir de 20 alojamentos, primeiro mês grátis."
     },
     "pmsMarrakech": {
       "title": "PMS Hotel Marrakech — Software de gestão hoteleira | Sojori",

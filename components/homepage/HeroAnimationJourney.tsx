@@ -320,7 +320,7 @@ function Lane({ lane, events, progress, hoveredId, setHoveredId, focusPhase, tim
   hoveredId: string | null;
   setHoveredId: (id: string | null) => void;
   focusPhase: string | null;
-  /** Acte 3 : au lancement du graphe, seule la carte « Réservation Airbnb » (id booking) est visible quelques secondes. */
+  /** Acte 3 : au lancement du graphe, seule la carte « Réservation Booking » (id booking) est visible quelques secondes. */
   timelineBookingIntroActive: boolean;
 }) {
   const visibleEvents = events
