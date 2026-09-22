@@ -1378,3 +1378,537 @@ html.sj-mobile-menu-scroll-lock {
     font-size: 8px !important;
   }
 }
+
+/* ══════════════════════════════════════════════════════════════════════
+   Compte de résultat animé — /analytics et /owner-portal
+   ──────────────────────────────────────────────────────────────────────
+   En CSS global et non en styled-jsx : le composant délègue chaque ligne à
+   un sous-composant, et styled-jsx ne traverse pas les enfants. Les règles
+   restent préfixées `pnl-` pour rester circonscrites.
+   ═══════════════════════════════════════════════════════════════════════ */
+
+.pnl {
+  position: relative;
+  border-radius: 18px;
+  border: 1px solid var(--glass-border);
+  background:
+    radial-gradient(ellipse 80% 50% at 85% 0%, rgba(230, 176, 34, 0.07), transparent 60%),
+    rgba(255, 255, 255, 0.025);
+  padding: 26px 28px 22px;
+  overflow: hidden;
+}
+
+/* Filet de lumière qui parcourt le haut de la carte — signale que le
+   relevé est vivant, pas une capture d'écran. */
+.pnl::before {
+  content: '';
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(244, 207, 94, 0.55), transparent);
+  transform: translateX(-100%);
+}
+
+.pnl-live::before {
+  animation: pnl-sweep 2.6s cubic-bezier(0.4, 0, 0.2, 1) 0.2s;
+}
+
+.pnl-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.pnl-title {
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  color: var(--text);
+  line-height: 1.2;
+}
+
+.pnl-sub {
+  margin-top: 5px;
+  font-size: 13px;
+  color: var(--text-2);
+  max-width: 520px;
+  line-height: 1.5;
+}
+
+.pnl-tabs {
+  display: inline-flex;
+  gap: 3px;
+  padding: 3px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--glass-border);
+  flex-shrink: 0;
+}
+
+.pnl-tab {
+  padding: 7px 17px;
+  border: none;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--text-2);
+  font-size: 12.5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+  font-family: inherit;
+}
+
+.pnl-tab:hover {
+  color: var(--text);
+}
+
+.pnl-tab-on,
+.pnl-tab-on:hover {
+  background: linear-gradient(180deg, #f4cf5e, #e6b022);
+  color: #1a1408;
+}
+
+.pnl-unit {
+  margin: 18px 0 4px;
+  font-size: 10.5px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--text-3);
+  font-family: var(--font-mono, ui-monospace, monospace);
+}
+
+.pnl-body {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── une ligne du compte ─────────────────────────────────────────────── */
+
+.pnl-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 24px;
+  padding: 11px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  opacity: 0;
+  transform: translateY(8px);
+}
+
+.pnl-row.pnl-on {
+  animation: pnl-in 500ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation-delay: var(--d);
+}
+
+.pnl-label {
+  min-width: 0;
+}
+
+.pnl-name {
+  display: block;
+  font-size: 13.5px;
+  color: var(--text);
+  line-height: 1.35;
+}
+
+.pnl-hint {
+  display: block;
+  margin-top: 3px;
+  font-size: 11.5px;
+  color: var(--text-3);
+  line-height: 1.4;
+}
+
+.pnl-amount {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+  text-align: right;
+  letter-spacing: -0.01em;
+}
+
+.pnl-cur {
+  margin-left: 3px;
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--text-3);
+  letter-spacing: 0.04em;
+}
+
+.pnl-amount.pnl-neg {
+  color: #d99a9a;
+}
+
+.pnl-amount.pnl-neg .pnl-cur {
+  color: rgba(217, 154, 154, 0.65);
+}
+
+/* ── sous-total et résultat ──────────────────────────────────────────── */
+
+.pnl-subtotal {
+  border-top: 1px solid var(--glass-border);
+  border-bottom: none;
+  margin-top: 6px;
+  padding-top: 14px;
+}
+
+.pnl-subtotal .pnl-name {
+  font-weight: 700;
+}
+
+.pnl-subtotal .pnl-amount {
+  font-weight: 800;
+}
+
+.pnl-result {
+  margin-top: 12px;
+  padding: 16px 18px;
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  border-bottom: 1px solid rgba(16, 185, 129, 0.3);
+  border-radius: 13px;
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.1), rgba(16, 185, 129, 0.025));
+}
+
+.pnl-result .pnl-name {
+  font-size: 14.5px;
+  font-weight: 800;
+}
+
+.pnl-result .pnl-amount {
+  font-size: 23px;
+  font-weight: 800;
+  color: #10b981;
+  letter-spacing: -0.025em;
+}
+
+.pnl-result .pnl-cur {
+  color: rgba(16, 185, 129, 0.7);
+  font-size: 11px;
+}
+
+/* ── indicateurs ─────────────────────────────────────────────────────── */
+
+.pnl-kpis {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 11px;
+  margin-top: 18px;
+}
+
+.pnl-kpi {
+  padding: 13px 14px;
+  border-radius: 11px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--glass-border);
+  opacity: 0;
+  transform: translateY(8px);
+}
+
+.pnl-kpi.pnl-on {
+  animation: pnl-in 500ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation-delay: var(--d);
+}
+
+.pnl-kpi-label {
+  font-size: 9.5px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-3);
+}
+
+.pnl-kpi-value {
+  margin-top: 6px;
+  font-size: 19px;
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  color: var(--text);
+  font-variant-numeric: tabular-nums;
+}
+
+.pnl-kpi-hint {
+  margin-top: 4px;
+  font-size: 11px;
+  color: var(--text-3);
+  line-height: 1.4;
+}
+
+.pnl-foot {
+  margin-top: 16px;
+  font-size: 11.5px;
+  color: var(--text-3);
+}
+
+@keyframes pnl-in {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pnl-sweep {
+  to {
+    transform: translateX(100%);
+  }
+}
+
+@media (max-width: 860px) {
+  .pnl {
+    padding: 20px 18px 18px;
+  }
+
+  .pnl-kpis {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .pnl-hint {
+    display: none;
+  }
+
+  .pnl-row {
+    gap: 14px;
+    padding: 9px 0;
+  }
+
+  .pnl-result .pnl-amount {
+    font-size: 19px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pnl-row,
+  .pnl-kpi {
+    opacity: 1;
+    transform: none;
+    animation: none !important;
+  }
+
+  .pnl::before {
+    animation: none !important;
+  }
+}
+
+/* ══════════════════════════════════════════════════════════════════════
+   Questionnaire de qualification — étape 3 de la démo
+   ──────────────────────────────────────────────────────────────────────
+   Que des boutons : le prospect a déjà réservé son créneau, tout ce qui
+   demande un effort ici se paie en abandon. Le champ libre n'apparaît que
+   derrière « Autre ».
+   ═══════════════════════════════════════════════════════════════════════ */
+
+.qf {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+}
+
+.qf-field {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.qf-label {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: -0.01em;
+}
+
+.qf-label-lead {
+  font-size: 18px;
+}
+
+.qf-hint {
+  font-size: 12.5px;
+  color: var(--text-3);
+  margin-top: -4px;
+}
+
+.qf-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.qf-pill {
+  padding: 9px 15px;
+  border-radius: 999px;
+  border: 1px solid var(--glass-border);
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--text-2);
+  font-size: 13.5px;
+  font-family: inherit;
+  cursor: pointer;
+  transition: border-color 0.15s ease, background 0.15s ease, color 0.15s ease;
+}
+
+.qf-pill:hover {
+  border-color: rgba(230, 176, 34, 0.45);
+  color: var(--text);
+}
+
+.qf-pill-on,
+.qf-pill-on:hover {
+  background: rgba(230, 176, 34, 0.16);
+  border-color: #e6b022;
+  color: #f4cf5e;
+  font-weight: 600;
+}
+
+/* ── la question d'entrée, plus grande que les autres ─────────────────── */
+
+.qf-segments {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.qf-seg {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  align-items: flex-start;
+  text-align: left;
+  padding: 18px 20px;
+  border-radius: 13px;
+  border: 1px solid var(--glass-border);
+  background: rgba(255, 255, 255, 0.03);
+  cursor: pointer;
+  font-family: inherit;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+
+.qf-seg:hover {
+  border-color: rgba(230, 176, 34, 0.45);
+}
+
+.qf-seg-on,
+.qf-seg-on:hover {
+  border-color: #e6b022;
+  background: rgba(230, 176, 34, 0.1);
+}
+
+.qf-seg-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.qf-seg-on .qf-seg-title {
+  color: #f4cf5e;
+}
+
+.qf-seg-desc {
+  font-size: 12.5px;
+  color: var(--text-3);
+  line-height: 1.4;
+}
+
+/* ── saisies libres, réduites au minimum ──────────────────────────────── */
+
+.qf-inputs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.qf-input,
+.qf-other {
+  padding: 11px 14px;
+  border-radius: 10px;
+  border: 1px solid var(--glass-border);
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--text);
+  font-size: 13.5px;
+  font-family: inherit;
+  outline: none;
+  transition: border-color 0.15s ease;
+}
+
+.qf-input:focus,
+.qf-other:focus {
+  border-color: rgba(230, 176, 34, 0.55);
+}
+
+.qf-input::placeholder,
+.qf-other::placeholder {
+  color: var(--text-3);
+}
+
+.qf-other {
+  padding: 9px 14px;
+  border-radius: 999px;
+  min-width: 170px;
+}
+
+.qf-input-narrow {
+  max-width: 260px;
+}
+
+.qf-sep {
+  height: 1px;
+  background: var(--glass-border);
+  margin: 2px 0;
+}
+
+.qf-error {
+  padding: 12px 15px;
+  border-radius: 10px;
+  background: rgba(207, 143, 143, 0.12);
+  border: 1px solid rgba(207, 143, 143, 0.35);
+  color: #d99a9a;
+  font-size: 13px;
+}
+
+.qf-actions {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+.qf-submit {
+  min-width: 220px;
+  justify-content: center;
+}
+
+.qf-skip {
+  border: none;
+  background: none;
+  color: var(--text-3);
+  font-size: 13px;
+  font-family: inherit;
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.qf-skip:hover {
+  color: var(--text-2);
+}
+
+.qf-foot {
+  font-size: 12px;
+  color: var(--text-3);
+  margin: 0;
+}
+
+@media (max-width: 720px) {
+  .qf-segments,
+  .qf-inputs {
+    grid-template-columns: 1fr;
+  }
+
+  .qf-pill {
+    font-size: 13px;
+    padding: 8px 13px;
+  }
+
+  .qf-submit {
+    width: 100%;
+  }
+}

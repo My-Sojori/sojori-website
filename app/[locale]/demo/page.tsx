@@ -7,6 +7,7 @@ import { BackgroundEffects } from '@/components/BackgroundEffects';
 import { PageHeader, PageFooter } from '@/components/SharedComponents';
 import { Link } from '@/i18n/routing';
 import { PhoneDialSelect } from '@/components/demo/PhoneDialSelect';
+import { QualificationForm, type QualificationPayload } from '@/components/demo/QualificationForm';
 import { normalizeDemoBackendResponse, demoResponseErrorMessage } from '@/lib/demoApiResponse';
 import { trackDemoLead, trackDemoScheduled, trackDemoQualified } from '@/lib/analytics';
 
@@ -127,6 +128,8 @@ function DemoPageContent() {
 
   const [loading, setLoading] = useState(false);
   const [demoRequestId, setDemoRequestId] = useState<string>('');
+  /** Remis par le backend à l'étape 1 ; exigé pour envoyer le questionnaire. */
+  const [qualificationToken, setQualificationToken] = useState<string>('');
   const [error, setError] = useState<string>('');
 
   const [bookingChecking, setBookingChecking] = useState(true);
@@ -277,7 +280,7 @@ function DemoPageContent() {
         const data = normalizeDemoBackendResponse(rawBody) as {
           success?: boolean;
           error?: string;
-          data?: { id?: string };
+          data?: { id?: string; qualificationToken?: string };
         };
 
         if (data.success !== true) {
@@ -289,6 +292,7 @@ function DemoPageContent() {
         }
 
         setDemoRequestId(String(newId));
+        setQualificationToken(String(data.data?.qualificationToken ?? ''));
         setCalendarSkippedAlreadyBooked(false);
         trackDemoLead(source);
         await waitRemainingMin();
@@ -356,8 +360,7 @@ function DemoPageContent() {
     }
   };
 
-  const handleSubmitQualification = async (e: React.FormEvent) => {
-    e.preventDefault();
+  const handleQualificationSubmit = async (payload: QualificationPayload) => {
     if (!demoRequestId) {
       setError('Session invalide. Recommencez depuis l’étape 1.');
       return;
@@ -369,22 +372,7 @@ function DemoPageContent() {
       const qualRes = await fetch(`${DEMO_API}/request/${demoRequestId}/qualify`, {
         method: 'PATCH',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          fullName: formData.fullName,
-          company: formData.company,
-          propertyTypes: formData.propertyTypes,
-          currentPMS: formData.currentPMS,
-          currentChannelManager: formData.currentChannelManager,
-          currentDynamicPricing: formData.currentDynamicPricing,
-          currentWhatsApp: formData.currentWhatsApp,
-          timeline: formData.timeline,
-          biggestChallenges: formData.biggestChallenges,
-          expectations: formData.expectations,
-          newPropertiesNext12Months: parseInt(formData.newPropertiesNext12Months, 10) || 0,
-          hearAboutUs: formData.hearAboutUs,
-          promoCode: formData.promoCode,
-          roleType: formData.roleType,
-        }),
+        body: JSON.stringify({ ...payload, qualificationToken }),
       });
       let qualRaw: unknown;
       try {
@@ -971,134 +959,12 @@ function DemoPageContent() {
                     </div>
                   )}
 
-                  <form onSubmit={handleSubmitQualification}>
-
-                    {/* Informations de base */}
-                    <div style={{ marginBottom: 32 }}>
-                      <h3 style={{ fontSize: 18, marginBottom: 20, color: '#f4cf5e' }}>{t('step3.basicInfoTitle')}</h3>
-
-                      <div className="demo-form-grid-2" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 16 }}>
-                        <div>
-                          <label style={labelStyle as React.CSSProperties}>{t('step3.fullNameLabel')}</label>
-                          <input type="text" name="fullName" required value={formData.fullName} onChange={handleChange} placeholder={t('step3.fullNamePlaceholder')} style={inputStyle} />
-                        </div>
-                        <div>
-                          <label style={labelStyle as React.CSSProperties}>{t('step3.companyLabel')}</label>
-                          <input type="text" name="company" required value={formData.company} onChange={handleChange} placeholder={t('step3.companyPlaceholder')} style={inputStyle} />
-                        </div>
-                      </div>
-
-                      <div style={{ marginBottom: 16 }}>
-                        <label style={labelStyle as React.CSSProperties}>{t('step3.roleLabel')}</label>
-                        <select name="roleType" required value={formData.roleType} onChange={handleChange} style={inputStyle}>
-                          <option value="">{t('step3.rolePlaceholder')}</option>
-                          <option value="property-manager">{t('step3.roleOptions.property-manager')}</option>
-                          <option value="owner">{t('step3.roleOptions.owner')}</option>
-                          <option value="agency">{t('step3.roleOptions.agency')}</option>
-                          <option value="hotel">{t('step3.roleOptions.hotel')}</option>
-                        </select>
-                      </div>
-
-                      <div>
-                        <label style={labelStyle as React.CSSProperties}>{t('step3.propertyTypesLabel')}</label>
-                        <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8, marginTop: 8 }}>
-                          {PROPERTY_TYPE_VALUES.map((value, idx) => (
-                            <label key={value} style={{ display: 'flex', alignItems: 'center', gap: 6, padding: '8px 12px', borderRadius: 8, border: '1px solid var(--glass-border)', background: formData.propertyTypes.includes(value) ? 'rgba(230,176,34,0.15)' : 'rgba(255,255,255,0.02)', cursor: 'pointer', fontSize: 13 }}>
-                              <input type="checkbox" checked={formData.propertyTypes.includes(value)} onChange={() => togglePropertyType(value)} style={{ cursor: 'pointer' }} />
-                              {propertyTypeOptionLabels[idx] ?? value}
-                            </label>
-                          ))}
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* Outils actuels */}
-                    <div style={{ marginBottom: 32 }}>
-                      <h3 style={{ fontSize: 18, marginBottom: 20, color: '#f4cf5e' }}>{t('step3.currentToolsTitle')}</h3>
-
-                      <div className="demo-form-grid-2" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
-                        <div>
-                          <label style={labelStyle as React.CSSProperties}>{t('step3.currentPMSLabel')}</label>
-                          <input type="text" name="currentPMS" value={formData.currentPMS} onChange={handleChange} placeholder={t('step3.currentPMSPlaceholder')} style={inputStyle} />
-                        </div>
-                        <div>
-                          <label style={labelStyle as React.CSSProperties}>{t('step3.currentChannelManagerLabel')}</label>
-                          <input type="text" name="currentChannelManager" value={formData.currentChannelManager} onChange={handleChange} placeholder={t('step3.currentChannelManagerPlaceholder')} style={inputStyle} />
-                        </div>
-                        <div>
-                          <label style={labelStyle as React.CSSProperties}>{t('step3.currentDynamicPricingLabel')}</label>
-                          <input type="text" name="currentDynamicPricing" value={formData.currentDynamicPricing} onChange={handleChange} placeholder={t('step3.currentDynamicPricingPlaceholder')} style={inputStyle} />
-                        </div>
-                        <div>
-                          <label style={labelStyle as React.CSSProperties}>{t('step3.currentWhatsAppLabel')}</label>
-                          <input type="text" name="currentWhatsApp" value={formData.currentWhatsApp} onChange={handleChange} placeholder={t('step3.currentWhatsAppPlaceholder')} style={inputStyle} />
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* Besoins et timing */}
-                    <div style={{ marginBottom: 32 }}>
-                      <h3 style={{ fontSize: 18, marginBottom: 20, color: '#f4cf5e' }}>{t('step3.needsTitle')}</h3>
-
-                      <div style={{ marginBottom: 16 }}>
-                        <label style={labelStyle as React.CSSProperties}>{t('step3.timelineLabel')}</label>
-                        <select name="timeline" required value={formData.timeline} onChange={handleChange} style={inputStyle}>
-                          <option value="">{t('step3.timelinePlaceholder')}</option>
-                          <option value="asap">{t('step3.timelineOptions.asap')}</option>
-                          <option value="1month">{t('step3.timelineOptions.1month')}</option>
-                          <option value="1-3months">{t('step3.timelineOptions.1-3months')}</option>
-                          <option value="3-6months">{t('step3.timelineOptions.3-6months')}</option>
-                          <option value="exploring">{t('step3.timelineOptions.exploring')}</option>
-                        </select>
-                      </div>
-
-                      <div style={{ marginBottom: 16 }}>
-                        <label style={labelStyle as React.CSSProperties}>{t('step3.newPropertiesLabel')}</label>
-                        <input type="number" name="newPropertiesNext12Months" value={formData.newPropertiesNext12Months} onChange={handleChange} placeholder={t('step3.newPropertiesPlaceholder')} min="0" style={inputStyle} />
-                      </div>
-
-                      <div style={{ marginBottom: 16 }}>
-                        <label style={labelStyle as React.CSSProperties}>{t('step3.challengesLabel')}</label>
-                        <textarea name="biggestChallenges" required value={formData.biggestChallenges} onChange={handleChange} placeholder={t('step3.challengesPlaceholder')} rows={3} style={{ ...inputStyle, resize: 'vertical' }} />
-                      </div>
-
-                      <div style={{ marginBottom: 16 }}>
-                        <label style={labelStyle as React.CSSProperties}>{t('step3.expectationsLabel')}</label>
-                        <textarea name="expectations" required value={formData.expectations} onChange={handleChange} placeholder={t('step3.expectationsPlaceholder')} rows={3} style={{ ...inputStyle, resize: 'vertical' }} />
-                      </div>
-                    </div>
-
-                    {/* Informations complémentaires */}
-                    <div style={{ marginBottom: 32 }}>
-                      <h3 style={{ fontSize: 18, marginBottom: 20, color: '#f4cf5e' }}>{t('step3.additionalInfoTitle')}</h3>
-
-                      <div style={{ marginBottom: 16 }}>
-                        <label style={labelStyle as React.CSSProperties}>{t('step3.hearAboutUsLabel')}</label>
-                        <select name="hearAboutUs" required value={formData.hearAboutUs} onChange={handleChange} style={inputStyle}>
-                          <option value="">{t('step3.hearAboutUsPlaceholder')}</option>
-                          <option value="google">{t('step3.hearAboutUsOptions.google')}</option>
-                          <option value="linkedin">{t('step3.hearAboutUsOptions.linkedin')}</option>
-                          <option value="facebook">{t('step3.hearAboutUsOptions.facebook')}</option>
-                          <option value="referral">{t('step3.hearAboutUsOptions.referral')}</option>
-                          <option value="blog">{t('step3.hearAboutUsOptions.blog')}</option>
-                          <option value="event">{t('step3.hearAboutUsOptions.event')}</option>
-                          <option value="other">{t('step3.hearAboutUsOptions.other')}</option>
-                        </select>
-                      </div>
-
-                      <div>
-                        <label style={labelStyle as React.CSSProperties}>{t('step3.promoCodeLabel')}</label>
-                        <input type="text" name="promoCode" value={formData.promoCode} onChange={handleChange} placeholder={t('step3.promoCodePlaceholder')} style={inputStyle} />
-                      </div>
-                    </div>
-
-                    <p style={{ fontSize: 12, color: 'var(--text-3)', marginBottom: 12 }}>
-                      {t('step3.scheduleNote')}
-                    </p>
-                    <button type="submit" disabled={loading} className="btn btn-primary" style={{ width: '100%', padding: '14px', fontSize: 15, fontWeight: 600, opacity: loading ? 0.6 : 1, cursor: loading ? 'not-allowed' : 'pointer' }}>
-                      {loading ? t('step3.submitButtonLoading') : t('step3.submitButton')}
-                    </button>
-                  </form>
+                  <QualificationForm
+                    onSubmit={handleQualificationSubmit}
+                    loading={loading}
+                    error={error}
+                    submitLabel={t('step3.submitButton')}
+                  />
                 </div>
               </>
             )}

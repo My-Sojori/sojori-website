@@ -4,6 +4,7 @@ import { BackgroundEffects } from "@/components/BackgroundEffects";
 import { PageHeader, PageFooter, PageHero, StatsBar, FinalCTA } from "@/components/SharedComponents";
 import { PropertyTable } from "@/components/analytics/PropertyTable";
 import { MainChart } from "@/components/analytics/MainChart";
+import { PnlAnimation } from "@/components/analytics/PnlAnimation";
 import { CapabilitiesScroll } from "@/components/analytics/CapabilitiesScroll";
 import { InFlow } from '@/components/InFlow';
 import { FaqSection } from '@/components/FaqSection';
@@ -42,10 +43,10 @@ export default function AnalyticsPage() {
               WebkitOverflowScrolling: "touch"
             }}>
               {[
-                { l: "Revenue net", v: "€247,890", d: "+24.6%", c: "#f4cf5e" },
-                { l: "Occupation", v: "87.4%", d: "+5.2pts", c: "#06b6d4" },
-                { l: "ADR moyen", v: "€1,264", d: "+€84", c: "#a78bfa" },
-                { l: "RevPAR", v: "€1,103", d: "+€142", c: "#10b981" },
+                { l: "Produit du mois", v: "1,51 M MAD", d: "+24,6 %", c: "#f4cf5e" },
+                { l: "Occupation", v: "87,4 %", d: "+5,2 pts", c: "#06b6d4" },
+                { l: "ADR moyen", v: "1 264 MAD", d: "+84 MAD", c: "#a78bfa" },
+                { l: "RevPAR", v: "1 103 MAD", d: "+142 MAD", c: "#10b981" },
               ].map(s => (
                 <div key={s.l} className="card" style={{padding: 18, minWidth: 200, flexShrink: 0}}>
                   <div style={{fontSize: 11, color: "var(--text-3)", textTransform: "uppercase", letterSpacing: 1}}>{s.l}</div>
@@ -55,6 +56,7 @@ export default function AnalyticsPage() {
               ))}
             </div>
             <MainChart />
+            <PnlAnimation />
             <PropertyTable />
           </div>
         </section>

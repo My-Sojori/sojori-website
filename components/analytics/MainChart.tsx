@@ -9,7 +9,9 @@ interface ChartDataPoint {
 export function MainChart() {
   const data: ChartDataPoint[] = Array.from({ length: 30 }, (_, i) => ({
     d: i + 1,
-    rev: 4 + Math.sin(i / 4) * 1.5 + i * 0.18 + Math.random() * 0.6,
+    // Variation déterministe : `Math.random()` divergeait entre le rendu
+    // serveur et le rendu client, ce qui cassait l'hydratation.
+    rev: 4 + Math.sin(i / 4) * 1.5 + i * 0.18 + Math.sin(i * 2.7) * 0.3,
     occ: 65 + Math.sin(i / 5) * 12 + i * 0.5,
   }));
   const w = 760, h = 280, pad = 40;
@@ -22,7 +24,7 @@ export function MainChart() {
           <div>
             <div style={{fontSize: 11, color: "var(--text-3)", textTransform: "uppercase", letterSpacing: 1}}>Revenue · 30 derniers jours</div>
             <div style={{display: "flex", alignItems: "baseline", gap: 12, marginTop: 4}}>
-              <span style={{fontSize: 28, fontWeight: 700, letterSpacing: "-0.02em"}}>€247,890</span>
+              <span style={{fontSize: 28, fontWeight: 700, letterSpacing: "-0.02em"}}>1,51 M MAD</span>
               <span style={{fontSize: 13, color: "#10b981", fontWeight: 600}}>↗ +24.6%</span>
             </div>
           </div>
