@@ -7,7 +7,11 @@ import { BackgroundEffects } from '@/components/BackgroundEffects';
 import { PageHeader, PageFooter } from '@/components/SharedComponents';
 import { Link } from '@/i18n/routing';
 import { PhoneDialSelect } from '@/components/demo/PhoneDialSelect';
-import { QualificationForm, type QualificationPayload } from '@/components/demo/QualificationForm';
+import {
+  QualificationForm,
+  type QualificationPayload,
+  type FollowUpQuestion,
+} from '@/components/demo/QualificationForm';
 import { normalizeDemoBackendResponse, demoResponseErrorMessage } from '@/lib/demoApiResponse';
 import { trackDemoLead, trackDemoScheduled, trackDemoQualified } from '@/lib/analytics';
 
@@ -357,6 +361,33 @@ function DemoPageContent() {
       console.error('Error confirming slot:', err);
     } finally {
       setLoading(false);
+    }
+  };
+
+  /**
+   * Questions de suivi, choisies d'après ce qui vient d'être répondu.
+   *
+   * Le backend sert un jeu écrit à l'avance quand l'IA n'aboutit pas, mais si
+   * la requête elle-même échoue, on rend une liste vide : le questionnaire se
+   * termine sans ces questions plutôt que de s'arrêter sur une panne.
+   */
+  const handleRequestFollowUp = async (
+    payload: QualificationPayload,
+  ): Promise<FollowUpQuestion[]> => {
+    if (!demoRequestId) return [];
+    try {
+      const res = await fetch(`${DEMO_API}/request/${demoRequestId}/follow-up`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ ...payload, qualificationToken }),
+      });
+      const raw: unknown = await res.json();
+      const data = normalizeDemoBackendResponse(raw) as {
+        data?: { questions?: FollowUpQuestion[] };
+      };
+      return Array.isArray(data.data?.questions) ? data.data.questions : [];
+    } catch {
+      return [];
     }
   };
 
@@ -961,6 +992,7 @@ function DemoPageContent() {
 
                   <QualificationForm
                     onSubmit={handleQualificationSubmit}
+                    onRequestFollowUp={handleRequestFollowUp}
                     loading={loading}
                     error={error}
                     submitLabel={t('step3.submitButton')}
