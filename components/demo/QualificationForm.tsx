@@ -5,6 +5,7 @@ import {
   SEGMENTS,
   COMMON_TIMELINE,
   HEAR_ABOUT_US,
+  HAS_PMS,
   labelOf,
   labelsOf,
   type Segment,
@@ -165,6 +166,12 @@ export function QualificationForm({
   const [company, setCompany] = useState('');
   const [propertyTypes, setPropertyTypes] = useState<string[]>([]);
   const [size, setSize] = useState('');
+  /**
+   * La réponse qui commande la conversation commerciale : Sojori orchestre
+   * au-dessus d'un PMS en place, ou fournit le socle. Ce n'est ni la même
+   * offre ni la même démonstration.
+   */
+  const [hasPms, setHasPms] = useState('');
   const [pms, setPms] = useState('');
   const [pmsOther, setPmsOther] = useState('');
   const [cm, setCm] = useState('');
@@ -199,7 +206,12 @@ export function QualificationForm({
       roleType: segment === 'hotel' ? 'hotel' : 'property-manager',
       propertyTypes: propertyTypes.map(v => labelOf(cfg.propertyTypes, v)),
       numberOfProperties: size ? labelOf(cfg.sizes, size) : '',
-      currentPMS: resolve(cfg.pms, pms, pmsOther),
+      currentPMS:
+        hasPms === 'yes'
+          ? resolve(cfg.pms, pms, pmsOther)
+          : hasPms
+            ? labelOf(HAS_PMS, hasPms)
+            : '',
       currentChannelManager: resolve(cfg.channelManager, cm, cmOther),
       currentDynamicPricing: resolve(cfg.pricing, pricing, pricingOther),
       currentWhatsApp: '',
@@ -278,13 +290,34 @@ export function QualificationForm({
           <div className="qf-sep" />
 
           <SingleChoice
-            label="Quel logiciel utilisez-vous aujourd’hui ?"
-            choices={cfg.pms}
-            value={pms}
-            onChange={setPms}
-            otherValue={pmsOther}
-            onOtherChange={setPmsOther}
+            label={
+              segment === 'hotel'
+                ? 'Avez-vous un PMS aujourd’hui ?'
+                : 'Avez-vous un logiciel de gestion aujourd’hui ?'
+            }
+            hint="Sojori s’y connecte, ou vous en fournit un. C’est la réponse qui change le plus la démonstration."
+            choices={HAS_PMS}
+            value={hasPms}
+            onChange={v => {
+              setHasPms(v);
+              // Changer d'avis ne doit pas laisser traîner un éditeur choisi.
+              if (v !== 'yes') {
+                setPms('');
+                setPmsOther('');
+              }
+            }}
           />
+
+          {hasPms === 'yes' && (
+            <SingleChoice
+              label="Lequel ?"
+              choices={cfg.pms}
+              value={pms}
+              onChange={setPms}
+              otherValue={pmsOther}
+              onOtherChange={setPmsOther}
+            />
+          )}
 
           <SingleChoice
             label="Et pour vos canaux de distribution ?"

@@ -73,8 +73,7 @@ const HOTEL: SegmentConfig = {
     { value: 'opera', label: 'Opera' },
     { value: 'cloudbeds', label: 'Cloudbeds' },
     { value: 'nozoul', label: 'Nozoul' },
-    { value: 'excel', label: 'Excel ou papier' },
-    { value: 'none', label: 'Aucun' },
+    { value: 'protel', label: 'Protel' },
     { value: 'other', label: 'Autre' },
   ],
   channelManager: [
@@ -132,8 +131,7 @@ const STR: SegmentConfig = {
     { value: 'guesty', label: 'Guesty' },
     { value: 'smoobu', label: 'Smoobu' },
     { value: 'lodgify', label: 'Lodgify' },
-    { value: 'excel', label: 'Excel ou papier' },
-    { value: 'none', label: 'Aucun' },
+    { value: 'beds24', label: 'Beds24' },
     { value: 'other', label: 'Autre' },
   ],
   channelManager: [
@@ -176,6 +174,20 @@ const STR: SegmentConfig = {
     { value: '15+', label: 'Plus de 15' },
   ],
 };
+
+/**
+ * La question la plus structurante du questionnaire.
+ *
+ * Sojori n'est pas un PMS, mais peut en fournir un. Selon la réponse, ce
+ * n'est pas le même produit qu'on présente ni la même démonstration qu'on
+ * prépare : orchestrer au-dessus d'un système en place, ou fournir le socle.
+ * D'où une question à part entière, avant la liste des éditeurs.
+ */
+export const HAS_PMS: Choice[] = [
+  { value: 'yes', label: 'Oui, j’en utilise un' },
+  { value: 'spreadsheet', label: 'Un tableur, un cahier' },
+  { value: 'no', label: 'Non, rien de structuré' },
+];
 
 export const SEGMENTS: Record<Segment, SegmentConfig> = { hotel: HOTEL, str: STR };
 
