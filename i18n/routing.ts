@@ -52,6 +52,7 @@ export const routing = defineRouting({
     '/comparatif-pms-maroc': '/comparatif-pms-maroc',
     '/orchestration': '/orchestration',
     '/mcp': '/mcp',
+    '/preparer': '/preparer',
     '/terms': '/terms',
     '/privacy': '/privacy'
   }
