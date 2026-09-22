@@ -81,6 +81,13 @@ export function PreparerClient() {
         throw new Error(demoResponseErrorMessage(data) || 'Envoi impossible pour le moment.');
       }
       setEtat('merci');
+
+      // La note de qualification est pour le commercial, pas pour le client :
+      // on la déclenche après l'avoir remercié, sans attendre le résultat ni
+      // rien lui dire si elle échoue.
+      void fetch(`/api/v1/demo/verdict-by-token?t=${encodeURIComponent(token)}`, {
+        method: 'POST',
+      }).catch(() => {});
     } catch (e) {
       setErreur(e instanceof Error ? e.message : 'Une erreur est survenue.');
       setEtat('form');
