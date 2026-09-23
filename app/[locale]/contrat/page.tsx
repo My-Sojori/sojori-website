@@ -44,6 +44,69 @@ type Contract = {
   revenusPartages?: Array<{ taux: string; label: string; resume: string }> | null;
 };
 
+/**
+ * Les articles du contrat.
+ *
+ * Écrits ici et non en base : ce sont les conditions générales de Sojori, les
+ * mêmes pour tous. Ce qui varie d'un client à l'autre — offre, volume,
+ * montants — vient du contrat lui-même et s'affiche au-dessus.
+ *
+ * Rédigés pour être LUS. Un contrat que personne ne lit ne protège personne :
+ * au premier désaccord, celui qui invoque une clause que l'autre n'a jamais
+ * comprise a déjà perdu la relation, même s'il gagne le point.
+ */
+const ARTICLES: Array<{ titre: string; alineas: string[] }> = [
+  {
+    titre: 'Objet',
+    alineas: [
+      "Sojori met à disposition du Client une plateforme d'orchestration de l'hospitalité en mode logiciel-service : gestion locative, distribution sur les canaux de réservation, communication avec les voyageurs et les équipes, et les modules souscrits ci-dessus.",
+      "L'accès se fait par navigateur web et par WhatsApp. Aucune installation ni maintenance n'incombe au Client.",
+      "Le détail des fonctionnalités comprises figure au récapitulatif ci-dessus. Il fait partie du contrat.",
+    ],
+  },
+  {
+    titre: 'Mise en service',
+    alineas: [
+      "Les frais d'installation couvrent l'activation du compte, la connexion des canaux de distribution, la reprise des données existantes et la formation initiale des équipes.",
+      "La mise en service se déroule à distance et prend de deux à six semaines selon le nombre de logements et la complexité des intégrations. Sojori n'est pas responsable des délais imputables à un tiers — un canal de réservation, un serrurier connecté, une banque.",
+      "Les frais d'installation sont dus à la signature et ne sont pas remboursables.",
+    ],
+  },
+  {
+    titre: 'Facturation',
+    alineas: [
+      "La facturation commence au premier jour de la mise en service, ou dix jours après la signature si la mise en service n'a pas encore eu lieu du fait du Client.",
+      "L'abonnement est facturé d'avance, à la même date chaque mois. Un logement ajouté en cours de mois est facturé au prorata sur la facture suivante ; un logement retiré est déduit de la même façon.",
+      "Les montants sont exprimés en dirhams, hors taxes. La TVA applicable s'ajoute au taux en vigueur.",
+      "En cas d'impayé, Sojori en informe le Client et dispose d'un délai de quinze jours avant toute suspension. La suspension ne supprime aucune donnée.",
+    ],
+  },
+  {
+    titre: 'Engagement et résiliation',
+    alineas: [
+      "La durée d'engagement figure au récapitulatif. À son terme, le contrat se renouvelle par tacite reconduction pour la même durée.",
+      "Chaque partie peut résilier à tout moment moyennant un préavis écrit de trente jours avant la prochaine date de facturation. Aucun remboursement n'est dû pour un mois entamé.",
+      "À la résiliation, le Client dispose de trente jours pour récupérer ses données dans un format exploitable. Passé ce délai, elles sont supprimées.",
+    ],
+  },
+  {
+    titre: 'Support et disponibilité',
+    alineas: [
+      "Le niveau de support correspond à l'offre souscrite et figure au récapitulatif.",
+      "Sojori s'engage à une disponibilité de la plateforme de 99 % sur le mois, hors maintenances programmées annoncées au moins quarante-huit heures à l'avance.",
+      "Les mises à jour de la plateforme sont comprises, sans supplément.",
+    ],
+  },
+  {
+    titre: 'Données et confidentialité',
+    alineas: [
+      "Le Client reste propriétaire de ses données — ses logements, ses réservations, ses voyageurs. Sojori les traite pour la seule exécution du présent contrat.",
+      "Les conditions tarifaires du présent contrat sont confidentielles. Chaque partie s'abstient de les communiquer à un tiers, sauf obligation légale.",
+      "Les conditions générales de Sojori complètent le présent contrat. En cas de contradiction, le présent contrat prévaut.",
+    ],
+  },
+];
+
 const PLAN_LABELS: Record<string, string> = {
   base: 'Base',
   confort: 'Confort',
@@ -275,6 +338,38 @@ function ContratContent() {
                 ))}
               </div>
             ) : null}
+
+            {/*
+              Les articles du contrat.
+
+              Un récapitulatif de prix n'est pas un contrat : il ne dit ni ce
+              que Sojori doit livrer, ni quand la facturation commence, ni
+              comment on en sort. Le signataire s'engage alors sur un montant
+              sans savoir sur quoi il s'engage — et au premier désaccord, il n'y
+              a rien à relire.
+
+              Six articles, dans l'ordre où les questions se posent : ce qu'on
+              achète, ce qu'on paie, quand, ce qui se passe si ça se passe mal,
+              et comment partir.
+            */}
+            <div style={{ ...card, marginBottom: 16 }}>
+              <h2 style={{ fontSize: 13, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#a8a29e', margin: '0 0 18px' }}>
+                Conditions
+              </h2>
+
+              {ARTICLES.map((art, i) => (
+                <div key={art.titre} style={{ marginBottom: i === ARTICLES.length - 1 ? 0 : 20 }}>
+                  <h3 style={{ fontSize: 14.5, fontWeight: 700, color: '#1c1917', margin: '0 0 8px' }}>
+                    {i + 1}. {art.titre}
+                  </h3>
+                  {art.alineas.map((al) => (
+                    <p key={al} style={{ fontSize: 13.5, color: '#57534e', lineHeight: 1.75, margin: '0 0 8px' }}>
+                      {al}
+                    </p>
+                  ))}
+                </div>
+              ))}
+            </div>
 
             {signed ? (
               <div style={{ ...card, background: '#f0f9f7', borderColor: '#1e5b57' }}>
