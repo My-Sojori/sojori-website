@@ -31,6 +31,17 @@ type Contract = {
   commitmentMonths: number;
   signedAt: string | null;
   signedByName: string | null;
+  /** Le détail de ce qui est souscrit — recopié du devis à la signature. */
+  lines?: Array<{
+    designation: string;
+    quantity: number;
+    unitPriceMad: number;
+    totalMad: number;
+    resume?: string;
+    inclus?: string[];
+  }> | null;
+  /** Ce que le gestionnaire gagne, à côté de ce qu'il paie. */
+  revenusPartages?: Array<{ taux: string; label: string; resume: string }> | null;
 };
 
 const PLAN_LABELS: Record<string, string> = {
@@ -203,6 +214,67 @@ function ContratContent() {
                 <span>{mad(contract.annualValueMad)}</span>
               </div>
             </div>
+
+            {/*
+              Le détail de ce qui est souscrit.
+
+              Un contrat qui dit « Offre Confort, 14 875 MAD » engage sur un
+              nom : trois mois plus tard, personne ne sait si TeamFlow en
+              faisait partie. Le signataire doit lire ce qu'il achète AVANT de
+              signer, pas le découvrir à la première facture.
+            */}
+            {contract.lines?.length ? (
+              <div style={{ ...card, marginBottom: 16 }}>
+                <h2 style={{ fontSize: 13, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#a8a29e', margin: '0 0 16px' }}>
+                  Le détail
+                </h2>
+                {contract.lines.map((l) => (
+                  <div key={l.designation} style={{ padding: '14px 0', borderBottom: '1px solid #f5f0e6' }}>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', gap: 16 }}>
+                      <span style={{ fontSize: 15, fontWeight: 700, color: '#1c1917' }}>{l.designation}</span>
+                      <span style={{ fontSize: 15, color: '#44403c', whiteSpace: 'nowrap' }}>{mad(l.totalMad)}</span>
+                    </div>
+                    {l.resume ? (
+                      <p style={{ fontSize: 13.5, color: '#78716c', margin: '4px 0 0', lineHeight: 1.6 }}>{l.resume}</p>
+                    ) : null}
+                    {l.inclus?.length ? (
+                      <ul style={{ margin: '10px 0 0', paddingLeft: 18, listStyle: 'none' }}>
+                        {l.inclus.map((item) => (
+                          <li key={item} style={{ fontSize: 13.5, color: '#57534e', lineHeight: 1.85, position: 'relative' }}>
+                            <span style={{ position: 'absolute', left: -14, color: '#b8881a' }}>·</span>
+                            {item}
+                          </li>
+                        ))}
+                      </ul>
+                    ) : null}
+                  </div>
+                ))}
+              </div>
+            ) : null}
+
+            {/*
+              Ce que le gestionnaire GAGNE.
+
+              Écrit dans le contrat parce que c'est un engagement, pas un
+              argument de vente : promettre 10 % à l'oral et ne rien signer est
+              la meilleure façon de se fâcher au premier versement.
+            */}
+            {contract.revenusPartages?.length ? (
+              <div style={{ ...card, marginBottom: 16 }}>
+                <h2 style={{ fontSize: 13, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#a8a29e', margin: '0 0 16px' }}>
+                  Ce que vous gagnez
+                </h2>
+                {contract.revenusPartages.map((r) => (
+                  <div key={r.label} style={{ display: 'flex', gap: 14, padding: '12px 0', borderBottom: '1px solid #f5f0e6' }}>
+                    <span style={{ fontSize: 20, fontWeight: 800, color: '#b8881a', minWidth: 52 }}>{r.taux}</span>
+                    <div>
+                      <div style={{ fontSize: 15, fontWeight: 700, color: '#1c1917' }}>{r.label}</div>
+                      <p style={{ fontSize: 13.5, color: '#78716c', margin: '2px 0 0', lineHeight: 1.6 }}>{r.resume}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            ) : null}
 
             {signed ? (
               <div style={{ ...card, background: '#f0f9f7', borderColor: '#1e5b57' }}>
