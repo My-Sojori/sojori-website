@@ -531,7 +531,7 @@ function DemoPageContent() {
                       <p style={{ fontSize: 15, color: 'var(--text-2)', lineHeight: 1.55, marginBottom: 4, maxWidth: 400 }}>
                         {t('step1.loadingDescription')}
                       </p>
-                      <p style={{ fontSize: 13, fontWeight: 500, color: 'var(--primary-deep)' }}>
+                      <p style={{ fontSize: 13, fontWeight: 500, color: '#c99212', fontWeight: 700 }}>
                         {t('step1.loadingWait')}
                       </p>
                       <div className="demo-cal-dots" aria-hidden>
@@ -691,7 +691,7 @@ function DemoPageContent() {
                       <p style={{ fontSize: 15, color: 'var(--text-2)', lineHeight: 1.55, marginBottom: 4 }}>
                         {t('step2.loadingDescription')}
                       </p>
-                      <p style={{ fontSize: 13, fontWeight: 500, color: 'var(--primary-deep)' }}>
+                      <p style={{ fontSize: 13, fontWeight: 500, color: '#c99212', fontWeight: 700 }}>
                         {t('step2.loadingWait')}
                       </p>
                       <div className="demo-cal-dots" aria-hidden>
