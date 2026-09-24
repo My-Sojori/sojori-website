@@ -7,7 +7,7 @@ import { BackgroundEffects } from '@/components/BackgroundEffects';
 import { PageHeader, PageFooter } from '@/components/SharedComponents';
 import { Link } from '@/i18n/routing';
 import { PhoneDialSelect } from '@/components/demo/PhoneDialSelect';
-import { QualificationForm, type QualificationPayload } from '@/components/demo/QualificationForm';
+import { QualificationForm, type FollowUpQuestion, type QualificationPayload } from '@/components/demo/QualificationForm';
 import { normalizeDemoBackendResponse, demoResponseErrorMessage } from '@/lib/demoApiResponse';
 import { trackDemoLead, trackDemoScheduled, trackDemoQualified } from '@/lib/analytics';
 
@@ -130,6 +130,8 @@ function DemoPageContent() {
   const [demoRequestId, setDemoRequestId] = useState<string>('');
   /** Remis par le backend à l'étape 1 ; exigé pour envoyer le questionnaire. */
   const [qualificationToken, setQualificationToken] = useState<string>('');
+  /** Jeton du rendez-vous, pour les questions de suivi choisies par l'IA. */
+  const [appointmentToken, setAppointmentToken] = useState<string>('');
   const [error, setError] = useState<string>('');
 
   const [bookingChecking, setBookingChecking] = useState(true);
@@ -349,6 +351,8 @@ function DemoPageContent() {
       }
       setError('');
       setCalendarSkippedAlreadyBooked(false);
+      const bookToken = (bookData as { data?: { qualificationToken?: string } }).data?.qualificationToken;
+      if (bookToken) setAppointmentToken(String(bookToken));
       if (!rescheduledFromId) trackDemoScheduled(source);
       setRescheduledFromId(null);
       setStep(3);
@@ -357,6 +361,26 @@ function DemoPageContent() {
       console.error('Error confirming slot:', err);
     } finally {
       setLoading(false);
+    }
+  };
+
+  const demanderQuestions = async (payload: QualificationPayload): Promise<FollowUpQuestion[]> => {
+    if (!appointmentToken) return [];
+    try {
+      const res = await fetch(
+        `${DEMO_API}/request/follow-up-by-token?t=${encodeURIComponent(appointmentToken)}`,
+        {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload),
+        },
+      );
+      const data = normalizeDemoBackendResponse(await res.json()) as {
+        data?: { questions?: FollowUpQuestion[] };
+      };
+      return Array.isArray(data.data?.questions) ? data.data.questions : [];
+    } catch {
+      return [];
     }
   };
 
@@ -961,6 +985,7 @@ function DemoPageContent() {
 
                   <QualificationForm
                     onSubmit={handleQualificationSubmit}
+                    onRequestFollowUp={demanderQuestions}
                     loading={loading}
                     error={error}
                     submitLabel={t('step3.submitButton')}
