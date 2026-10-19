@@ -5,8 +5,8 @@
       "description": "Moteur d'orchestration de l'hospitalité. Réservation, client, ménage, maintenance, revenu — coordonnés par IA, pilotés depuis WhatsApp. PMS inclus, ou connecté au vôtre."
     },
     "pricing": {
-      "title": "Tarifs Sojori — Orchestration de l'hospitalité | Maroc",
-      "description": "Prix publics, en dirhams. Base 200 MAD, Confort 350 MAD, Premium 550 MAD par logement et par mois. Remises dès 20 logements."
+      "title": "Offres Sojori | Devis sur mesure",
+      "description": "Trois offres, sans tarif public. Le montant se demande sur devis."
     }
   },
   "common": {
@@ -88,10 +88,10 @@
   },
   "pricing": {
     "hero": {
-      "badge": "● Tarifs publics · par logement",
+      "badge": "● Offres · sur devis",
       "title": "Trois offres.",
-      "titleGradient": "Un prix par logement.",
-      "subtitle": "Base pour digitaliser. Confort pour orchestrer. Premium pour aller au bout. Prix affichés, en dirhams — parce que personne d'autre ne le fait."
+      "titleGradient": "Le montant, sur devis.",
+      "subtitle": "Base pour digitaliser. Confort pour orchestrer. Premium pour aller au bout. Pas de tarif public."
     },
     "toggles": {
       "monthly": "Mensuel",
@@ -123,7 +123,6 @@
       "minimumLabel": "Minimum {count} logements",
       "base": {
         "name": "Base",
-        "price": 200,
         "tagline": "Pour digitaliser.",
         "description": "Tout ce qu'un PMS fait — plus les trois surfaces WhatsApp. Vos équipes et vos clients sont déjà sur WhatsApp : Sojori y est aussi.",
         "features": {
@@ -142,7 +141,6 @@
       },
       "confort": {
         "name": "Confort",
-        "price": 350,
         "tagline": "Pour orchestrer.",
         "description": "Votre voyageur ne choisit plus dans un menu : il parle. L'IA prend le relais, les équipes suivent, le revenu s'ajuste.",
         "features": {
@@ -158,7 +156,6 @@
       },
       "premium": {
         "name": "Premium",
-        "price": 550,
         "tagline": "Pour aller au bout.",
         "description": "L'orchestration complète : les modules se déclenchent les uns les autres, et vos données deviennent interrogeables par votre IA.",
         "features": {
@@ -183,22 +180,22 @@
       "items": {
         "checkin": {
           "name": "Check-in WhatsApp",
-          "price": "+50",
+          "price": "",
           "description": "Le passeport est lu automatiquement, la fiche de police est préparée."
         },
         "concierge": {
           "name": "Conciergerie",
-          "price": "+100",
+          "price": "",
           "description": "Transport, room service, courses, excursions — commandés sur WhatsApp."
         },
         "dynamicPricing": {
           "name": "Pricing dynamique",
-          "price": "+100",
+          "price": "",
           "description": "Le marché décide, dans les bornes que vous fixez."
         },
         "crm": {
           "name": "CRM",
-          "price": "+80",
+          "price": "",
           "description": "Vos clients, leur historique, leurs préférences."
         },
         "marketing": {
@@ -237,14 +234,14 @@
       "titleGradient": "à votre place ?",
       "customerService": {
         "name": "Service client externalisé",
-        "price": "3 000 MAD",
-        "unit": "par tranche de 25 logements",
+        "price": "Demander un devis",
+        "unit": "",
         "description": "Notre équipe répond à vos voyageurs, en votre nom, sur tous vos canaux."
       },
       "whiteLabel": {
         "name": "Marque blanche WhatsApp",
-        "price": "5 000 MAD",
-        "unit": "une fois",
+        "price": "Demander un devis",
+        "unit": "",
         "description": "Votre numéro, votre logo. Vos voyageurs ne voient que votre marque."
       }
     },
@@ -269,9 +266,9 @@
     "onboarding": {
       "title": "Onboarding",
       "description": "Migration depuis votre outil actuel, setup du Channel Manager et de WhatsApp, configuration des parcours, formation de vos équipes.",
-      "base": "2 000 MAD",
-      "confort": "4 000 MAD",
-      "premium": "6 000 MAD",
+      "base": "Demander un devis",
+      "confort": "Demander un devis",
+      "premium": "Demander un devis",
       "oneTime": "une fois"
     },
     "faq": {
@@ -280,8 +277,8 @@
       "badge": "● FAQ",
       "questions": {
         "whyMad": {
-          "q": "Pourquoi vos prix sont-ils affichés, et en dirhams ?",
-          "a": "Parce que vous facturez en dirhams et que comparer des euros à un budget en MAD n'aide personne. Et parce qu'aucun autre acteur du marché n'affiche ses prix — nous préférons que vous sachiez avant d'entrer en rendez-vous."
+          "q": "Pourquoi ne publiez-vous pas de tarif ?",
+          "a": "Chaque exploitation n’a pas le même périmètre. Le devis part de vos logements, de vos canaux et de ce que vous branchez vraiment."
         },
         "minimum": {
           "q": "Pourquoi un minimum de logements sur Confort et Premium ?",
@@ -289,11 +286,11 @@
         },
         "engagement": {
           "q": "Y a-t-il un engagement ?",
-          "a": "Mensuel : aucun engagement, annulable à tout moment. Annuel : 12 mois en échange de −20 %."
+          "a": "La durée se décide dans le devis. Rien n’est signé avant que vous ayez le montant."
         },
         "onboarding": {
           "q": "Comment se passe l'onboarding ?",
-          "a": "Migration depuis votre outil actuel, setup du Channel Manager et de WhatsApp Cloud API, configuration des parcours, formation de vos équipes. Comptez 5 à 7 jours ouvrés. De 2 000 MAD sur Base à 6 000 MAD sur Premium, selon le nombre de surfaces à brancher."
+          "a": "Migration depuis votre outil actuel, setup du Channel Manager et de WhatsApp Cloud API, configuration des parcours, formation de vos équipes. Comptez 5 à 7 jours ouvrés. Le montant de l’onboarding est dans le devis."
         },
         "concierge": {
           "q": "Comment fonctionnent les 10 % sur la conciergerie ?",
@@ -325,7 +322,8 @@
       "title": "Prêt à orchestrer ? {gradient}",
       "titleGradient": "1 mois offert.",
       "subtitle": "Migration comprise dans l'onboarding. Aucune carte bancaire pour l'essai. Setup en moins de 7 jours."
-    }
+    },
+    "quote": "Demander un devis"
   },
   "home": {
     "hero": {
@@ -573,15 +571,15 @@
     },
     "pricingPreview": {
       "badge": "Tarification",
-      "title": "Affichée. En dirhams.",
-      "subtitle": "Pas de frais cachés, pas de « nous consulter ». 1 mois d'essai offert, annulable à tout moment.",
+      "title": "Sur devis.",
+      "subtitle": "Les trois offres restent visibles. Le montant se décide avec vous.",
       "tiers": [
         {
           "name": "BASE",
           "tagline": "Pour digitaliser.",
           "range": "à partir de 1 logement",
-          "price": "200",
-          "period": "MAD/logement/mois",
+          "price": "",
+          "period": "",
           "items": [
             "PMS + calendrier",
             "Channel Manager illimité",
@@ -589,14 +587,14 @@
             "WhatsApp Voyageur, Équipes, Gérant",
             "Taxe de séjour"
           ],
-          "cta": "Essayer gratuitement"
+          "cta": "Demander un devis"
         },
         {
           "name": "CONFORT",
           "tagline": "Pour orchestrer.",
           "range": "à partir de 10 logements",
-          "price": "350",
-          "period": "MAD/logement/mois",
+          "price": "",
+          "period": "",
           "badge": "★ LE PLUS CHOISI",
           "items": [
             "Tout Base +",
@@ -607,14 +605,14 @@
             "Smart Analytics",
             "Support prioritaire"
           ],
-          "cta": "Essayer gratuitement"
+          "cta": "Demander un devis"
         },
         {
           "name": "PREMIUM",
           "tagline": "Pour aller au bout.",
           "range": "à partir de 50 logements",
-          "price": "550",
-          "period": "MAD/logement/mois",
+          "price": "",
+          "period": "",
           "items": [
             "Tout Confort +",
             "Orchestration avancée",
@@ -623,10 +621,11 @@
             "MCP AI — ChatGPT, Claude",
             "API & webhooks · SSO"
           ],
-          "cta": "Contacter les ventes"
+          "cta": "Demander un devis"
         }
       ],
-      "footer": "✓ 1 mois offert · ✓ Remises dès 20 logements · ✓ Setup en moins de 7 jours"
+      "footer": "✓ Démo personnalisée · ✓ Sans engagement · ✓ Setup en moins de 7 jours",
+      "quote": "Demander un devis"
     },
     "finalCTA": {
       "title": "Prêt à",
@@ -634,7 +633,7 @@
       "titleEnd": "votre établissement ?",
       "subtitle": "Rejoignez des centaines d'établissements qui orchestrent leurs opérations avec Sojori.",
       "ctaPrimary": "Demander une démo gratuite →",
-      "ctaSecondary": "Voir le pricing",
+      "ctaSecondary": "Voir les offres",
       "footer": "✓ Démo personnalisée · ✓ Sans engagement · ✓ Setup en <7 jours"
     }
   },
@@ -2309,8 +2308,8 @@
       "description": "Sojori se connecte à votre PMS existant, dont Mews, aux OTA et à vos outils. API disponible. Orchestrez sans remplacer votre système de réservation."
     },
     "pricing": {
-      "title": "Tarifs Sojori | Prix publics en dirhams, par logement",
-      "description": "Base 200 MAD, Confort 350 MAD, Premium 550 MAD par logement et par mois. Remises dès 20 logements, un mois d'essai offert."
+      "title": "Offres Sojori | Devis sur mesure",
+      "description": "Trois offres, sans tarif public. Le montant se demande sur devis."
     },
     "pmsMarrakech": {
       "title": "PMS Hôtel Marrakech — Logiciel de gestion hôtelière | Sojori",

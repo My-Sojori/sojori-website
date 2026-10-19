@@ -12,8 +12,6 @@ export function Pricing() {
       name: t('tiers.0.name'),
       tagline: t('tiers.0.tagline'),
       range: t('tiers.0.range'),
-      price: t('tiers.0.price'),
-      period: t('tiers.0.period'),
       items: [
         t('tiers.0.items.0'),
         t('tiers.0.items.1'),
@@ -28,8 +26,6 @@ export function Pricing() {
       name: t('tiers.1.name'),
       tagline: t('tiers.1.tagline'),
       range: t('tiers.1.range'),
-      price: t('tiers.1.price'),
-      period: t('tiers.1.period'),
       items: [
         t('tiers.1.items.0'),
         t('tiers.1.items.1'),
@@ -47,8 +43,6 @@ export function Pricing() {
       name: t('tiers.2.name'),
       tagline: t('tiers.2.tagline'),
       range: t('tiers.2.range'),
-      price: t('tiers.2.price'),
-      period: '',
       items: [
         t('tiers.2.items.0'),
         t('tiers.2.items.1'),
@@ -124,20 +118,21 @@ export function Pricing() {
               </div>
               <div style={{ fontSize: 13, color: 'var(--text-3)', fontStyle: 'italic', marginBottom: 8 }}>{tier.tagline}</div>
               <div style={{ fontSize: 14, color: 'var(--text-2)', marginBottom: 20 }}>{tier.range}</div>
-              <div
-                style={{ marginBottom: 28, display: 'flex', alignItems: 'baseline', justifyContent: 'center', gap: 4, flexWrap: 'wrap' }}
+              <Link
+                href={{ pathname: '/demo', query: { source: `homepage-pricing-tier-${i}` } }}
                 className="pricing-amount"
+                style={{
+                  marginBottom: 28,
+                  fontSize: 22,
+                  fontWeight: 750,
+                  letterSpacing: '-0.03em',
+                  lineHeight: 1.25,
+                  color: 'var(--text)',
+                  textDecoration: 'none',
+                }}
               >
-                {tier.price === 'Sur mesure' ? (
-                  <span style={{ fontSize: 32, fontWeight: 800, letterSpacing: '-0.03em', color: 'var(--text)' }}>{tier.price}</span>
-                ) : (
-                  <>
-                    {/* En MAD la devise suit le montant : elle est portée par `period`. */}
-                    <span style={{ fontSize: 48, fontWeight: 800, letterSpacing: '-0.04em', lineHeight: 1, color: 'var(--text)' }}>{tier.price}</span>
-                    <span style={{ fontSize: 13, color: 'var(--text-3)', marginLeft: 5 }}>{tier.period}</span>
-                  </>
-                )}
-              </div>
+                {t('quote')}
+              </Link>
               <ul
                 style={{
                   listStyle: 'none',
@@ -172,7 +167,7 @@ export function Pricing() {
                 ))}
               </ul>
               <Link
-                href={{ pathname: '/pricing', query: { source: `homepage-pricing-tier-${i}` } }}
+                href={{ pathname: '/demo', query: { source: `homepage-pricing-tier-${i}` } }}
                 className={`btn ${tier.popular ? 'btn-primary' : 'btn-ghost'}`}
                 style={{ width: '100%', justifyContent: 'center' }}
               >

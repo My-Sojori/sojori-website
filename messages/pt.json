@@ -5,8 +5,8 @@
       "description": "Software de orquestração para gestores de aluguéis de temporada. Reserva, hóspede, equipe, proprietário — coordenados por IA, controlados pelo WhatsApp. Lançamento no Marrocos."
     },
     "pricing": {
-      "title": "Preços Sojori — Orquestração hoteleira | Marrocos",
-      "description": "Preços públicos, em dirhams. Base 200 MAD, Confort 350 MAD, Premium 550 MAD por alojamento e por mês. Descontos a partir de 20 alojamentos."
+      "title": "Ofertas Sojori | Orçamento à medida",
+      "description": "Três ofertas, sem tarifa pública. O montante pede-se por orçamento."
     }
   },
   "common": {
@@ -88,10 +88,10 @@
   },
   "pricing": {
     "hero": {
-      "badge": "● Preços públicos · por alojamento",
+      "badge": "● Ofertas · sob orçamento",
       "title": "Três planos.",
-      "titleGradient": "Um preço por alojamento.",
-      "subtitle": "Base para digitalizar. Confort para orquestrar. Premium para ir até ao fim. Preços publicados, em dirhams — porque mais ninguém o faz."
+      "titleGradient": "O montante, sob orçamento.",
+      "subtitle": "Base para digitalizar. Confort para orquestrar. Premium para ir até ao fim. Sem tarifa pública."
     },
     "toggles": {
       "monthly": "Mensal",
@@ -182,22 +182,22 @@
       "items": {
         "checkin": {
           "name": "Check-in por WhatsApp",
-          "price": "+50",
+          "price": "",
           "description": "O passaporte é lido automaticamente e a ficha policial fica preparada."
         },
         "concierge": {
           "name": "Concierge",
-          "price": "+100",
+          "price": "",
           "description": "Transferes, room service, compras, excursões — pedidos por WhatsApp."
         },
         "dynamicPricing": {
           "name": "Preços dinâmicos",
-          "price": "+100",
+          "price": "",
           "description": "É o mercado que decide, dentro dos limites que definir."
         },
         "crm": {
           "name": "CRM",
-          "price": "+80",
+          "price": "",
           "description": "Os seus clientes, o seu histórico, as suas preferências."
         },
         "marketing": {
@@ -236,14 +236,14 @@
       "titleGradient": "por si?",
       "customerService": {
         "name": "Apoio ao hóspede externalizado",
-        "price": "3 000 MAD",
-        "unit": "por cada 25 alojamentos",
+        "price": "Pedir um orçamento",
+        "unit": "",
         "description": "A nossa equipa responde aos seus hóspedes, em seu nome, em todos os canais."
       },
       "whiteLabel": {
         "name": "Marca branca WhatsApp",
-        "price": "5 000 MAD",
-        "unit": "pagamento único",
+        "price": "Pedir um orçamento",
+        "unit": "",
         "description": "O seu número, o seu logótipo. Os seus hóspedes só veem a sua marca."
       }
     },
@@ -268,9 +268,9 @@
     "onboarding": {
       "title": "Onboarding",
       "description": "Migração a partir da sua ferramenta atual, configuração do Channel Manager e do WhatsApp, definição dos percursos, formação das suas equipas.",
-      "base": "2 000 MAD",
-      "confort": "4 000 MAD",
-      "premium": "6 000 MAD",
+      "base": "Pedir um orçamento",
+      "confort": "Pedir um orçamento",
+      "premium": "Pedir um orçamento",
       "oneTime": "pagamento único"
     },
     "faq": {
@@ -279,8 +279,8 @@
       "badge": "● FAQ",
       "questions": {
         "whyMad": {
-          "q": "Porque é que publicam os preços, e em dirhams?",
-          "a": "Porque fatura em dirhams e comparar euros com um orçamento em MAD não ajuda ninguém. E porque nenhum outro player do mercado publica os seus preços — preferimos que saiba antes de entrar numa reunião."
+          "q": "Porque não publicam um preço?",
+          "a": "Cada exploração tem um perímetro diferente. O orçamento parte dos seus alojamentos, dos seus canais e do que liga realmente."
         },
         "minimum": {
           "q": "Porquê um mínimo de alojamentos no Confort e no Premium?",
@@ -288,11 +288,11 @@
         },
         "engagement": {
           "q": "Existe fidelização?",
-          "a": "Mensal: sem fidelização, cancelável a qualquer momento. Anual: 12 meses em troca de −20%."
+          "a": "A duração decide-se no orçamento. Nada é assinado antes de ter o montante."
         },
         "onboarding": {
           "q": "Como funciona o onboarding?",
-          "a": "Migração a partir da sua ferramenta atual, configuração do Channel Manager e da WhatsApp Cloud API, definição dos percursos, formação das suas equipas. Conte com 5 a 7 dias úteis. De 2 000 MAD no Base a 6 000 MAD no Premium, consoante o número de superfícies a ligar."
+          "a": "Migração a partir da sua ferramenta atual, configuração do Channel Manager e da WhatsApp Cloud API, definição dos percursos, formação das suas equipas. Conte com 5 a 7 dias úteis. O montante da instalação está no orçamento."
         },
         "concierge": {
           "q": "Como funcionam os 10 % do concierge?",
@@ -324,7 +324,8 @@
       "title": "Pronto para orquestrar? {gradient}",
       "titleGradient": "Primeiro mês grátis.",
       "subtitle": "Migração incluída no onboarding. Sem cartão para o teste. Implementação em menos de 7 dias."
-    }
+    },
+    "quote": "Pedir um orçamento"
   },
   "home": {
     "hero": {
@@ -571,15 +572,15 @@
     },
     "pricingPreview": {
       "badge": "Preços",
-      "title": "Publicados. Em dirhams.",
-      "subtitle": "Sem custos ocultos, sem «consulte-nos». Primeiro mês grátis, cancelável a qualquer momento.",
+      "title": "Sob orçamento.",
+      "subtitle": "As três ofertas continuam visíveis. O montante decide-se consigo.",
       "tiers": [
         {
           "name": "BASE",
           "tagline": "Para digitalizar.",
           "range": "a partir de 1 alojamento",
-          "price": "200",
-          "period": "MAD/alojamento/mês",
+          "price": "",
+          "period": "",
           "items": [
             "PMS + calendário",
             "Channel Manager ilimitado",
@@ -587,14 +588,14 @@
             "WhatsApp Hóspede, Equipas, Gerente",
             "Taxa turística"
           ],
-          "cta": "Experimentar grátis"
+          "cta": "Pedir um orçamento"
         },
         {
           "name": "CONFORT",
           "tagline": "Para orquestrar.",
           "range": "a partir de 10 alojamentos",
-          "price": "350",
-          "period": "MAD/alojamento/mês",
+          "price": "",
+          "period": "",
           "badge": "★ O MAIS ESCOLHIDO",
           "items": [
             "Tudo o Base +",
@@ -605,14 +606,14 @@
             "Smart Analytics",
             "Suporte prioritário"
           ],
-          "cta": "Experimentar grátis"
+          "cta": "Pedir um orçamento"
         },
         {
           "name": "PREMIUM",
           "tagline": "Para ir até ao fim.",
           "range": "a partir de 50 alojamentos",
-          "price": "550",
-          "period": "MAD/alojamento/mês",
+          "price": "",
+          "period": "",
           "items": [
             "Tudo o Confort +",
             "Orquestração avançada",
@@ -621,10 +622,11 @@
             "MCP AI — ChatGPT, Claude",
             "API e webhooks · SSO"
           ],
-          "cta": "Falar com vendas"
+          "cta": "Pedir um orçamento"
         }
       ],
-      "footer": "✓ Primeiro mês grátis · ✓ Descontos a partir de 20 alojamentos · ✓ Implementação em menos de 7 dias"
+      "footer": "✓ Demonstração personalizada · ✓ Sem compromisso · ✓ Instalação em menos de 7 dias",
+      "quote": "Pedir um orçamento"
     },
     "finalCTA": {
       "title": "Pronto para",
@@ -632,7 +634,7 @@
       "titleEnd": "seus aluguéis?",
       "subtitle": "Junte-se a centenas de estabelecimentos que automatizam suas operações com Sojori.",
       "ctaPrimary": "Solicitar uma demo gratuita →",
-      "ctaSecondary": "Ver preços",
+      "ctaSecondary": "Ver as ofertas",
       "footer": "✓ Demo personalizada · ✓ Sem compromisso · ✓ Configuração em <7 dias"
     }
   },
@@ -2209,8 +2211,8 @@
       "description": "Conectores e API da Sojori: Airbnb, Booking.com, Expedia, Vrbo, WhatsApp Business, contabilidade. Sincronização em tempo real."
     },
     "pricing": {
-      "title": "Preços Sojori | Preços públicos em dirhams, por alojamento",
-      "description": "Base 200 MAD, Confort 350 MAD, Premium 550 MAD por alojamento e por mês. Descontos a partir de 20 alojamentos, primeiro mês grátis."
+      "title": "Ofertas Sojori | Orçamento à medida",
+      "description": "Três ofertas, sem tarifa pública. O montante pede-se por orçamento."
     },
     "pmsMarrakech": {
       "title": "PMS Hotel Marrakech — Software de gestão hoteleira | Sojori",

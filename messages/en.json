@@ -5,8 +5,8 @@
       "description": "The hospitality orchestration engine. Bookings, guests, housekeeping, maintenance, owners — coordinated by AI, driven from WhatsApp. PMS included, or connected to yours."
     },
     "pricing": {
-      "title": "Sojori Pricing — Hospitality Orchestration | Morocco",
-      "description": "Public pricing, in dirhams. Base 200 MAD, Confort 350 MAD, Premium 550 MAD per property per month. Discounts from 20 properties."
+      "title": "Sojori plans | Quote on request",
+      "description": "Three plans, no public price. The amount is on quote."
     }
   },
   "common": {
@@ -88,10 +88,10 @@
   },
   "pricing": {
     "hero": {
-      "badge": "● Public pricing · per property",
+      "badge": "● Plans · on quote",
       "title": "Three plans.",
-      "titleGradient": "One price per property.",
-      "subtitle": "Base to digitise. Confort to orchestrate. Premium to go all the way. Prices shown, in dirhams — because no one else does."
+      "titleGradient": "The amount, on quote.",
+      "subtitle": "Base to digitise. Confort to orchestrate. Premium to go all the way. No public price."
     },
     "toggles": {
       "monthly": "Monthly",
@@ -182,22 +182,22 @@
       "items": {
         "checkin": {
           "name": "WhatsApp check-in",
-          "price": "+50",
+          "price": "",
           "description": "The passport is read automatically, the police form is prepared."
         },
         "concierge": {
           "name": "Concierge",
-          "price": "+100",
+          "price": "",
           "description": "Transfers, room service, groceries, excursions — ordered on WhatsApp."
         },
         "dynamicPricing": {
           "name": "Dynamic pricing",
-          "price": "+100",
+          "price": "",
           "description": "The market decides, within the bounds you set."
         },
         "crm": {
           "name": "CRM",
-          "price": "+80",
+          "price": "",
           "description": "Your guests, their history, their preferences."
         },
         "marketing": {
@@ -236,14 +236,14 @@
       "titleGradient": "on your behalf?",
       "customerService": {
         "name": "Outsourced guest support",
-        "price": "3,000 MAD",
-        "unit": "per 25 properties",
+        "price": "Request a quote",
+        "unit": "",
         "description": "Our team answers your guests, in your name, across all your channels."
       },
       "whiteLabel": {
         "name": "WhatsApp white label",
-        "price": "5,000 MAD",
-        "unit": "one-time",
+        "price": "Request a quote",
+        "unit": "",
         "description": "Your number, your logo. Your guests only ever see your brand."
       }
     },
@@ -268,9 +268,9 @@
     "onboarding": {
       "title": "Onboarding",
       "description": "Migration from your current tool, Channel Manager and WhatsApp setup, journey configuration, team training.",
-      "base": "2,000 MAD",
-      "confort": "4,000 MAD",
-      "premium": "6,000 MAD",
+      "base": "Request a quote",
+      "confort": "Request a quote",
+      "premium": "Request a quote",
       "oneTime": "one-time"
     },
     "faq": {
@@ -279,8 +279,8 @@
       "badge": "● FAQ",
       "questions": {
         "whyMad": {
-          "q": "Why are your prices public, and in dirhams?",
-          "a": "Because you invoice in dirhams, and comparing euros to a MAD budget helps no one. And because no other player in this market shows their prices — we'd rather you knew before walking into a meeting."
+          "q": "Why don’t you publish a price?",
+          "a": "Every operation has a different scope. The quote starts from your properties, your channels and what you actually connect."
         },
         "minimum": {
           "q": "Why a minimum number of properties on Confort and Premium?",
@@ -288,11 +288,11 @@
         },
         "engagement": {
           "q": "Is there a commitment?",
-          "a": "Monthly: no commitment, cancel any time. Annual: 12 months in exchange for −20%."
+          "a": "The term is decided in the quote. Nothing is signed before you have the amount."
         },
         "onboarding": {
           "q": "How does onboarding work?",
-          "a": "Migration from your current tool, Channel Manager and WhatsApp Cloud API setup, journey configuration, team training. Allow 5 to 7 working days. From 2,000 MAD on Base to 6,000 MAD on Premium, depending on how many surfaces need connecting."
+          "a": "Migration from your current tool, Channel Manager and WhatsApp Cloud API setup, journey configuration, team training. Allow 5 to 7 working days. The onboarding amount is in the quote."
         },
         "concierge": {
           "q": "How does the 10% on concierge work?",
@@ -324,7 +324,8 @@
       "title": "Ready to orchestrate? {gradient}",
       "titleGradient": "First month free.",
       "subtitle": "Migration included in the onboarding. No card for the trial. Setup in under 7 days."
-    }
+    },
+    "quote": "Request a quote"
   },
   "home": {
     "hero": {
@@ -572,15 +573,15 @@
     },
     "pricingPreview": {
       "badge": "Pricing",
-      "title": "Public. In dirhams.",
-      "subtitle": "No hidden fees, no “contact us”. First month free, cancel any time.",
+      "title": "On quote.",
+      "subtitle": "The three plans stay visible. The amount is agreed with you.",
       "tiers": [
         {
           "name": "BASE",
           "tagline": "To digitise.",
           "range": "from 1 property",
-          "price": "200",
-          "period": "MAD/property/month",
+          "price": "",
+          "period": "",
           "items": [
             "PMS + calendar",
             "Unlimited Channel Manager",
@@ -588,14 +589,14 @@
             "WhatsApp Guest, Teams, Manager",
             "City tax"
           ],
-          "cta": "Try it free"
+          "cta": "Request a quote"
         },
         {
           "name": "CONFORT",
           "tagline": "To orchestrate.",
           "range": "from 10 properties",
-          "price": "350",
-          "period": "MAD/property/month",
+          "price": "",
+          "period": "",
           "badge": "★ MOST CHOSEN",
           "items": [
             "Everything in Base +",
@@ -606,14 +607,14 @@
             "Smart Analytics",
             "Priority support"
           ],
-          "cta": "Try it free"
+          "cta": "Request a quote"
         },
         {
           "name": "PREMIUM",
           "tagline": "To go all the way.",
           "range": "from 50 properties",
-          "price": "550",
-          "period": "MAD/property/month",
+          "price": "",
+          "period": "",
           "items": [
             "Everything in Confort +",
             "Advanced orchestration",
@@ -622,10 +623,11 @@
             "MCP AI — ChatGPT, Claude",
             "API & webhooks · SSO"
           ],
-          "cta": "Talk to sales"
+          "cta": "Request a quote"
         }
       ],
-      "footer": "✓ First month free · ✓ Discounts from 20 properties · ✓ Setup in under 7 days"
+      "footer": "✓ Personalised demo · ✓ No commitment · ✓ Setup in under 7 days",
+      "quote": "Request a quote"
     },
     "finalCTA": {
       "title": "Ready to",
@@ -633,7 +635,7 @@
       "titleEnd": "your rentals?",
       "subtitle": "Join hundreds of properties orchestrating their operations with Sojori.",
       "ctaPrimary": "Request a free demo →",
-      "ctaSecondary": "See pricing",
+      "ctaSecondary": "See the plans",
       "footer": "✓ Personalized demo · ✓ No commitment · ✓ Setup in <7 days"
     }
   },
@@ -2307,8 +2309,8 @@
       "description": "Sojori connectors and API: Airbnb, Booking.com, Expedia, Vrbo, WhatsApp Business, accounting. Real-time sync."
     },
     "pricing": {
-      "title": "Sojori pricing | Public prices in dirhams, per property",
-      "description": "Base 200 MAD, Confort 350 MAD, Premium 550 MAD per property per month. Discounts from 20 properties, first month free."
+      "title": "Sojori plans | Quote on request",
+      "description": "Three plans, no public price. The amount is on quote."
     },
     "pmsMarrakech": {
       "title": "Hotel PMS Marrakech — Hotel management software | Sojori",

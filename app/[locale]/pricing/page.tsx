@@ -1,6 +1,5 @@
 'use client';
 
-import { useState } from 'react';
 import { Link } from '@/i18n/routing';
 import { useTranslations } from 'next-intl';
 import { BackgroundEffects } from '@/components/BackgroundEffects';
@@ -11,10 +10,8 @@ import { FaqSection } from '@/components/FaqSection';
 interface Tier {
   key: 'base' | 'confort' | 'premium';
   name: string;
-  price: number;
   /** Nombre de logements en dessous duquel l'offre n'est pas proposée. */
   minListings: number;
-  onboarding: string;
   tagline: string;
   description: string;
   accent: string;
@@ -23,36 +20,16 @@ interface Tier {
   features: { key: string }[];
 }
 
-/**
- * Remises sur volume — appliquées au prix unitaire, avant la remise annuelle.
- * Seuils alignés sur la grille commerciale (20–50 puis 51+).
- */
-const VOLUME_TIERS: { min: number; discount: number }[] = [
-  { min: 51, discount: 0.25 },
-  { min: 20, discount: 0.15 },
-  { min: 1, discount: 0 },
-];
-
-function volumeDiscount(listings: number): number {
-  return VOLUME_TIERS.find(v => listings >= v.min)?.discount ?? 0;
-}
-
 const ADDON_KEYS = ['checkin', 'concierge', 'dynamicPricing', 'crm', 'marketing', 'b2bSales'] as const;
 
 export default function PricingPage() {
   const t = useTranslations('pricing');
 
-  const [listings, setListings] = useState(15);
-  const [annual, setAnnual] = useState(false);
-
-  // Les prix sont des constantes en MAD — identiques quelle que soit la langue.
   const TIERS: Tier[] = [
     {
       key: 'base',
       name: t('tiers.base.name'),
-      price: 200,
       minListings: 1,
-      onboarding: t('onboarding.base'),
       tagline: t('tiers.base.tagline'),
       description: t('tiers.base.description'),
       accent: '#06b6d4',
@@ -74,9 +51,7 @@ export default function PricingPage() {
     {
       key: 'confort',
       name: t('tiers.confort.name'),
-      price: 350,
       minListings: 10,
-      onboarding: t('onboarding.confort'),
       tagline: t('tiers.confort.tagline'),
       description: t('tiers.confort.description'),
       accent: '#f4cf5e',
@@ -95,9 +70,7 @@ export default function PricingPage() {
     {
       key: 'premium',
       name: t('tiers.premium.name'),
-      price: 550,
       minListings: 50,
-      onboarding: t('onboarding.premium'),
       tagline: t('tiers.premium.tagline'),
       description: t('tiers.premium.description'),
       accent: '#8b5cf6',
@@ -115,16 +88,6 @@ export default function PricingPage() {
     },
   ];
 
-  const computeUnitPrice = (basePrice: number) => {
-    let price = basePrice * (1 - volumeDiscount(listings));
-    if (annual) price = price * 0.8;
-    return price;
-  };
-
-  const computeTotal = (basePrice: number) => Math.round(computeUnitPrice(basePrice) * listings);
-
-  const currentVolumeDiscount = volumeDiscount(listings);
-
   return (
     <>
       <BackgroundEffects />
@@ -136,93 +99,11 @@ export default function PricingPage() {
           subtitle={t('hero.subtitle')}
         />
 
-        {/* Toggle mensuel / annuel */}
-        <section className="pricing-toggle-section" style={{ padding: '16px 32px 22px' }}>
-          <div style={{ maxWidth: 1280, margin: '0 auto', display: 'flex', justifyContent: 'center' }}>
-            <div style={{ display: 'inline-flex', background: 'rgba(255,255,255,0.04)', border: '1px solid var(--glass-border)', borderRadius: 999, padding: 3 }}>
-              {[
-                { k: false, l: t('toggles.monthly') },
-                { k: true, l: t('toggles.annual') },
-              ].map(o => (
-                <button
-                  key={o.l}
-                  type="button"
-                  onClick={() => setAnnual(o.k)}
-                  style={{
-                    padding: '7px 16px',
-                    borderRadius: 999,
-                    border: 'none',
-                    fontSize: 12,
-                    fontWeight: 600,
-                    cursor: 'pointer',
-                    background: annual === o.k ? 'rgba(244,207,94,0.18)' : 'transparent',
-                    color: annual === o.k ? '#f4cf5e' : 'var(--text-2)',
-                  }}
-                >
-                  {o.l}
-                  {o.k && (
-                    <span style={{ marginLeft: 5, fontSize: 9, padding: '2px 5px', background: 'rgba(16,185,129,0.2)', color: '#10b981', borderRadius: 4 }}>
-                      {t('toggles.annualSave')}
-                    </span>
-                  )}
-                </button>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Curseur — nombre de logements */}
-        <section className="pricing-calculator-section" style={{ padding: '0 32px 24px' }}>
-          <div style={{ maxWidth: 720, margin: '0 auto', textAlign: 'center' }}>
-            <div style={{ marginBottom: 16, color: 'var(--text-3)', fontSize: 13, fontFamily: 'var(--font-mono)', letterSpacing: '0.1em', textTransform: 'uppercase' }}>
-              {t('calculator.yourProperties')}
-            </div>
-            <div className="calculator-wrapper" style={{ display: 'flex', alignItems: 'center', gap: 16, justifyContent: 'center' }}>
-              <input
-                type="range"
-                min={1}
-                max={200}
-                value={listings}
-                onChange={e => setListings(parseInt(e.target.value))}
-                style={{ flex: 1, maxWidth: 400 }}
-              />
-              <input
-                type="number"
-                min={1}
-                max={500}
-                value={listings}
-                onChange={e => setListings(parseInt(e.target.value) || 1)}
-                style={{
-                  width: 90,
-                  padding: '10px 14px',
-                  background: 'rgba(255,255,255,0.04)',
-                  border: '1px solid var(--glass-border)',
-                  borderRadius: 8,
-                  color: 'var(--text)',
-                  fontSize: 16,
-                  fontWeight: 700,
-                  textAlign: 'center',
-                }}
-              />
-              <span style={{ color: 'var(--text-3)', fontSize: 13 }}>{t('calculator.listings')}</span>
-            </div>
-            {currentVolumeDiscount > 0 && (
-              <div style={{ marginTop: 12, fontSize: 12, color: '#10b981', fontWeight: 600 }}>
-                −{Math.round(currentVolumeDiscount * 100)}% {t('discounts.title').toLowerCase()}
-              </div>
-            )}
-          </div>
-        </section>
-
         {/* Offres — 3 slides (peek mobile, grille desktop) */}
         <section className="pricing-carousel-section" style={{ padding: '0 0 32px' }}>
           <div className="pricing-tier-row-cap" style={{ maxWidth: 1280, margin: '0 auto', width: '100%' }}>
             <ScrollPaginationDots itemCount={3} gap={14} peekCarousel className="pricing-tier-carousel-scroll">
               {TIERS.map(tier => {
-                const unitPrice = computeUnitPrice(tier.price);
-                const totalMonth = computeTotal(tier.price);
-                const available = listings >= tier.minListings;
-
                 return (
                   <div
                     key={tier.key}
@@ -239,7 +120,6 @@ export default function PricingPage() {
                       boxShadow: tier.popular ? '0 20px 56px rgba(244,207,94,0.1)' : 'none',
                       transform: tier.popular ? 'scale(1.01)' : 'none',
                       transition: 'all 0.2s ease',
-                      opacity: available ? 1 : 0.55,
                     }}
                   >
                     {tier.popular && (
@@ -266,52 +146,22 @@ export default function PricingPage() {
                     <div style={{ marginBottom: 3, fontSize: 21, fontWeight: 800, letterSpacing: '-0.02em' }}>{tier.name}</div>
                     <div style={{ marginBottom: 14, color: tier.accent, fontSize: 12, fontWeight: 600 }}>{tier.tagline}</div>
 
-                    {unitPrice < tier.price && (
-                      <div style={{ marginBottom: 5, fontSize: 11, color: 'var(--text-3)', textDecoration: 'line-through' }}>
-                        {tier.price} MAD
-                      </div>
-                    )}
-                    <div style={{ marginBottom: 3 }}>
-                      <span className="pricing-unit-price" style={{ fontSize: 38, fontWeight: 800, letterSpacing: '-0.03em' }}>
-                        {Math.round(unitPrice)}
-                      </span>
-                      <span style={{ fontSize: 15, fontWeight: 700, marginLeft: 4 }}>MAD</span>
-                      <span style={{ fontSize: 12, color: 'var(--text-3)', marginLeft: 5 }}>{t('calculator.perListing')}</span>
-                    </div>
-                    <div style={{ marginBottom: 14, fontSize: 11, color: 'var(--text-3)' }}>
-                      {t('calculator.billing', { period: annual ? t('calculator.periodAnnual') : t('calculator.periodMonthly') })}
-                      {tier.minListings > 1 && ` · ${t('tiers.minimumLabel', { count: tier.minListings })}`}
-                    </div>
-
-                    {/* Total calculé */}
-                    <div
+                    <Link
+                      href={{ pathname: '/demo', query: { source: `pricing-${tier.key}` } }}
                       style={{
-                        padding: '11px 13px',
-                        marginBottom: 14,
-                        background: 'rgba(255,255,255,0.03)',
-                        borderRadius: 9,
-                        border: '1px solid var(--glass-border)',
+                        display: 'inline-block',
+                        marginBottom: 8,
+                        fontSize: 22,
+                        fontWeight: 800,
+                        letterSpacing: '-0.03em',
+                        color: 'var(--text)',
+                        textDecoration: 'none',
                       }}
                     >
-                      {available ? (
-                        <>
-                          <div style={{ fontSize: 10, color: 'var(--text-3)', marginBottom: 3, letterSpacing: '0.05em', textTransform: 'uppercase' }}>
-                            {t('calculator.forListings', { count: listings, plural: listings > 1 ? t('calculator.unitPlural') : t('calculator.unitSingular') })}
-                          </div>
-                          <div style={{ fontSize: 18, fontWeight: 700 }}>
-                            {totalMonth.toLocaleString('fr-FR')} {t('calculator.perMonth')}
-                          </div>
-                          {annual && (
-                            <div style={{ fontSize: 10, color: 'var(--text-3)', marginTop: 2 }}>
-                              {t('calculator.perYear', { amount: (totalMonth * 12).toLocaleString('fr-FR') })}
-                            </div>
-                          )}
-                        </>
-                      ) : (
-                        <div style={{ fontSize: 13, fontWeight: 600, color: 'var(--text-3)' }}>
-                          {t('calculator.unavailable', { count: tier.minListings })}
-                        </div>
-                      )}
+                      {t('quote')}
+                    </Link>
+                    <div style={{ marginBottom: 14, fontSize: 11, color: 'var(--text-3)' }}>
+                      {tier.minListings > 1 ? t('tiers.minimumLabel', { count: tier.minListings }) : null}
                     </div>
 
                     <p style={{ fontSize: 12, color: 'var(--text-2)', lineHeight: 1.45, marginBottom: 14 }}>
@@ -331,15 +181,15 @@ export default function PricingPage() {
                     </ul>
 
                     <div style={{ marginBottom: 14, fontSize: 11, color: 'var(--text-3)' }}>
-                      {t('onboarding.title')} : <strong style={{ color: 'var(--text-2)' }}>{tier.onboarding}</strong> {t('onboarding.oneTime')}
+                      {t('onboarding.title')} : <strong style={{ color: 'var(--text-2)' }}>{t('quote')}</strong>
                     </div>
 
                     <Link
-                      href="/demo"
+                      href={{ pathname: '/demo', query: { source: `pricing-${tier.key}` } }}
                       className={tier.popular ? 'btn btn-primary' : 'btn btn-ghost'}
                       style={{ width: '100%', justifyContent: 'center', padding: '11px 18px', fontSize: 13 }}
                     >
-                      {t(`tiers.${tier.key}.cta`)}
+                      {t('quote')}
                     </Link>
                   </div>
                 );
@@ -347,33 +197,6 @@ export default function PricingPage() {
             </ScrollPaginationDots>
           </div>
 
-          {/* Remises sur volume */}
-          <div style={{ maxWidth: 1280, margin: '16px auto 0', padding: '0 32px' }}>
-            <div
-              style={{
-                padding: '14px 18px',
-                borderRadius: 11,
-                background: 'rgba(255,255,255,0.02)',
-                border: '1px solid var(--glass-border)',
-                display: 'flex',
-                flexWrap: 'wrap',
-                alignItems: 'center',
-                justifyContent: 'center',
-                gap: 18,
-                fontSize: 12,
-                color: 'var(--text-2)',
-              }}
-            >
-              <strong style={{ color: 'var(--text)' }}>{t('discounts.title')}</strong>
-              {(['small', 'medium', 'large'] as const).map(k => (
-                <span key={k}>
-                  {t(`discounts.tiers.${k}.range`)} ·{' '}
-                  <strong style={{ color: '#10b981' }}>{t(`discounts.tiers.${k}.value`)}</strong>
-                </span>
-              ))}
-              <span style={{ color: 'var(--text-3)' }}>{t('discounts.annual')}</span>
-            </div>
-          </div>
         </section>
 
         {/* Add-ons */}
@@ -391,7 +214,6 @@ export default function PricingPage() {
 
             <div className="pricing-addons-grid">
               {ADDON_KEYS.map(key => {
-                const price = t(`addons.items.${key}.price`);
                 return (
                   <div
                     key={key}
@@ -400,7 +222,7 @@ export default function PricingPage() {
                   >
                     <div style={{ fontSize: 14, fontWeight: 700 }}>{t(`addons.items.${key}.name`)}</div>
                     <div style={{ fontSize: 13, fontWeight: 700, color: '#f4cf5e' }}>
-                      {price ? `${price} ${t('addons.perListing')}` : t('addons.onQuote')}
+                      {t('quote')}
                     </div>
                     <div style={{ fontSize: 12, color: 'var(--text-2)', lineHeight: 1.5 }}>
                       {t(`addons.items.${key}.description`)}
@@ -463,10 +285,12 @@ export default function PricingPage() {
               {(['customerService', 'whiteLabel'] as const).map(key => (
                 <div key={key} className="card" style={{ padding: 22 }}>
                   <div style={{ fontSize: 15, fontWeight: 700, marginBottom: 6 }}>{t(`services.${key}.name`)}</div>
-                  <div style={{ fontSize: 20, fontWeight: 800, color: '#f4cf5e', letterSpacing: '-0.02em' }}>
-                    {t(`services.${key}.price`)}
-                  </div>
-                  <div style={{ fontSize: 11, color: 'var(--text-3)', marginBottom: 10 }}>{t(`services.${key}.unit`)}</div>
+                  <Link
+                    href={{ pathname: '/demo', query: { source: `pricing-service-${key}` } }}
+                    style={{ display: 'inline-block', marginBottom: 10, fontSize: 16, fontWeight: 750, color: '#f4cf5e', textDecoration: 'none' }}
+                  >
+                    {t('quote')}
+                  </Link>
                   <div style={{ fontSize: 13, color: 'var(--text-2)', lineHeight: 1.55 }}>
                     {t(`services.${key}.description`)}
                   </div>
@@ -506,15 +330,15 @@ export default function PricingPage() {
           items={[
             {
               q: 'Comment le prix est-il calculé ?',
-              a: "Par logement, sur trois offres, en dirhams. Vous payez le nombre de logements que vous exploitez, sans palier caché ni surcoût par utilisateur : vos équipes de ménage, votre gouvernante et votre réception accèdent tous à ce qui les concerne.",
+              a: "Il n'est pas affiché. Le devis part du nombre de logements, des canaux et de ce que vous branchez. Vos équipes accèdent à ce qui les concerne, sans surcoût par utilisateur.",
             },
             {
               q: 'Y a-t-il des frais de mise en route ?',
-              a: "Oui, l'onboarding va de 2 000 MAD sur Base à 6 000 MAD sur Premium, selon le nombre de surfaces à brancher. Il couvre la migration depuis votre outil actuel, le setup du Channel Manager et de WhatsApp, et la formation de vos équipes. Un mois d'essai gratuit permet de juger sur votre propre exploitation plutôt que sur une démonstration.",
+              a: "L'onboarding est dans le devis. Il couvre la migration depuis votre outil actuel, le setup du Channel Manager et de WhatsApp, et la formation de vos équipes.",
             },
             {
               q: 'Faut-il s’engager sur la durée ?',
-              a: "Non en mensuel, annulable à tout moment. L'engagement annuel donne 20 % de remise supplémentaire, qui s'ajoute à la remise sur volume.",
+              a: "La durée se décide dans le devis. Rien n'est signé avant que vous ayez le montant.",
             },
             {
               q: 'Le programme Go Siyaha peut-il financer l’abonnement ?',
