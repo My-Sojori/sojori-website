@@ -28,6 +28,12 @@ type Contract = {
   monthlyMad: number;
   setupFeeMad: number;
   annualValueMad: number;
+  /**
+   * `EUR` : un contrat de la grille de prix en euros (28/10/2026) — ses montants sont en euros.
+   * Absente = MAD. `annualValueMad` reste en MAD côté serveur : la valeur à montrer est `annualValue`.
+   */
+  devise?: 'EUR' | 'MAD';
+  annualValue?: number;
   commitmentMonths: number;
   signedAt: string | null;
   signedByName: string | null;
@@ -116,6 +122,14 @@ const PLAN_LABELS: Record<string, string> = {
 function mad(n?: number | null): string {
   if (!n) return '—';
   return `${Math.round(n).toLocaleString('fr-FR')} MAD`;
+}
+
+/** Dans la devise du contrat : en euros, au centime quand il y en a (« 26,10 € ») ; en MAD, au dirham. */
+function montant(n: number | null | undefined, devise?: string): string {
+  if (devise !== 'EUR') return mad(n);
+  if (!n) return '—';
+  const centimes = Math.round(n * 100) % 100 !== 0;
+  return `${n.toLocaleString('fr-FR', { minimumFractionDigits: centimes ? 2 : 0, maximumFractionDigits: centimes ? 2 : 0 })} €`;
 }
 
 function ContratContent() {
@@ -239,8 +253,8 @@ function ContratContent() {
               {[
                 ['Offre', contract.plan ? PLAN_LABELS[contract.plan] ?? contract.plan : '—'],
                 ['Logements', contract.unitsCount ? String(contract.unitsCount) : '—'],
-                ['Abonnement mensuel', mad(contract.monthlyMad)],
-                ['Frais d’installation', `${mad(contract.setupFeeMad)} — une seule fois`],
+                ['Abonnement mensuel', montant(contract.monthlyMad, contract.devise)],
+                ['Frais d’installation', `${montant(contract.setupFeeMad, contract.devise)} — une seule fois`],
                 [
                   'Engagement',
                   contract.commitmentMonths > 0
@@ -274,7 +288,7 @@ function ContratContent() {
                 }}
               >
                 <span>Total annuel</span>
-                <span>{mad(contract.annualValueMad)}</span>
+                <span>{montant(contract.annualValue ?? contract.annualValueMad, contract.devise)}</span>
               </div>
             </div>
 
@@ -295,7 +309,7 @@ function ContratContent() {
                   <div key={l.designation} style={{ padding: '14px 0', borderBottom: '1px solid #f5f0e6' }}>
                     <div style={{ display: 'flex', justifyContent: 'space-between', gap: 16 }}>
                       <span style={{ fontSize: 15, fontWeight: 700, color: '#1c1917' }}>{l.designation}</span>
-                      <span style={{ fontSize: 15, color: '#44403c', whiteSpace: 'nowrap' }}>{mad(l.totalMad)}</span>
+                      <span style={{ fontSize: 15, color: '#44403c', whiteSpace: 'nowrap' }}>{montant(l.totalMad, contract.devise)}</span>
                     </div>
                     {l.resume ? (
                       <p style={{ fontSize: 13.5, color: '#78716c', margin: '4px 0 0', lineHeight: 1.6 }}>{l.resume}</p>
