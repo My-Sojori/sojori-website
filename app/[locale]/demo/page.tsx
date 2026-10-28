@@ -7,6 +7,8 @@ import { BackgroundEffects } from '@/components/BackgroundEffects';
 import { PageHeader, PageFooter } from '@/components/SharedComponents';
 import { Link } from '@/i18n/routing';
 import { QualificationForm, type FollowUpQuestion, type QualificationPayload } from '@/components/demo/QualificationForm';
+import { ACTIVITIES } from '@/lib/demoQualification';
+import { PhoneDialSelect } from '@/components/demo/PhoneDialSelect';
 import { normalizeDemoBackendResponse, demoResponseErrorMessage } from '@/lib/demoApiResponse';
 import { trackDemoLead, trackDemoScheduled, trackDemoQualified } from '@/lib/analytics';
 
@@ -15,6 +17,9 @@ const DEMO_API = '/api/v1/demo';
 
 /** Le calendrier staff est coupé : le mini-formulaire enchaîne sur le questionnaire. */
 const PRISE_DE_RENDEZ_VOUS = false;
+
+/** Taille du compte, en chambres ou en biens selon le type (Tawfiq, 28/10/2026). */
+const TRANCHES = ['1', '2-5', '6-10', '11-20', '21-50', '51+'];
 
 /** Tag BCP 47 pour `Intl` (aligné sur les locales du site). */
 const BOOKING_INTL_LOCALE: Record<string, string> = {
@@ -85,6 +90,11 @@ function DemoPageContent() {
     email: '',
     phone: '',
     numberOfProperties: '',
+    // Le petit formulaire, comme Hostaway (Tawfiq, 28/10/2026) : nom, téléphone, consentement, puis le type.
+    activity: '',
+    // Selon le type : nombre de chambres (hôtel, riad…) ou de biens (conciergerie, villa…).
+    taille: '',
+    consentementMessages: false,
     // Step 2
     fullName: '',
     company: '',
@@ -238,8 +248,38 @@ function DemoPageContent() {
     };
   }, [step, demoRequestId]);
 
-  const handleSubmitStep1 = async (e: React.FormEvent) => {
+  /** Le petit formulaire en deux écrans : coordonnées, puis le type d'établissement. */
+  const [miniEtape, setMiniEtape] = useState<'contact' | 'type'>('contact');
+
+  const handleContact = (e: React.FormEvent) => {
     e.preventDefault();
+    if (formData.phone.replace(/\D/g, '').length < 8) {
+      setError(t('step1.phoneInvalid'));
+      return;
+    }
+    setError('');
+    setMiniEtape('type');
+  };
+
+  const choisirActivite = (id: string) => {
+    setFormData(prev => ({ ...prev, activity: id, taille: '' }));
+  };
+
+  const handleSubmitStep1 = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!formData.taille) {
+      setError(t('step1.tailleRequired'));
+      return;
+    }
+    void envoyerDemande(formData.activity);
+  };
+
+  const envoyerDemande = async (activityId: string) => {
+    const activite = ACTIVITIES.find(item => item.id === activityId);
+    if (!activite) {
+      setError(t('step1.activityRequired'));
+      return;
+    }
     setError('');
     setStep(PRISE_DE_RENDEZ_VOUS ? 2 : 3);
 
@@ -256,6 +296,14 @@ function DemoPageContent() {
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
             email: formData.email,
+            fullName: formData.fullName.trim(),
+            phone: formData.phone.replace(/\D/g, ''),
+            countryCode: formData.countryCode,
+            // L'activité dans les mots du CRM : l'agent de prospection s'en sert pour choisir le commercial.
+            segment: activite.crmSegment,
+            // Une tranche (« 6-10 ») : chambres pour un établissement, biens pour des locations.
+            numberOfProperties: formData.taille,
+            consentementMessages: formData.consentementMessages,
             source: source,
             // La langue de la page : celle du prospect, lue par l'agent de prospection (28/10/2026).
             langue: locale,
@@ -297,6 +345,7 @@ function DemoPageContent() {
           : '';
       setError(`${msg}${hint}`);
       setStep(1);
+      setMiniEtape('type');
       console.error('Error submitting step 1:', err);
     }
   };
@@ -483,29 +532,131 @@ function DemoPageContent() {
                     </div>
                   )}
 
-                  <form onSubmit={handleSubmitStep1}>
-                    <div style={{ marginBottom: 20 }}>
-                      <label style={labelStyle as React.CSSProperties}>{t('step1.emailLabel')}</label>
-                      <input
-                        type="email"
-                        name="email"
-                        required
-                        autoFocus
-                        value={formData.email}
-                        onChange={handleChange}
-                        placeholder={t('step1.emailPlaceholder')}
-                        style={inputStyle}
-                      />
-                    </div>
-
-                    <button type="submit" className="btn btn-primary" style={{ width: '100%', padding: '16px', fontSize: 15, fontWeight: 600 }}>
-                      {loading ? t('step1.submitButtonLoading') : t('step1.submitButton')}
-                    </button>
-
-                    <p style={{ fontSize: 11, color: 'var(--text-3)', textAlign: 'center', marginTop: 16 }}>
-                      {t('step1.disclaimer')}
-                    </p>
-                  </form>
+                  {miniEtape === 'contact' ? (
+                    <form onSubmit={handleContact}>
+                      <div style={{ marginBottom: 18 }}>
+                        <label style={labelStyle as React.CSSProperties}>{t('step1.emailLabel')}</label>
+                        <input
+                          type="email"
+                          name="email"
+                          required
+                          autoFocus
+                          autoComplete="email"
+                          value={formData.email}
+                          onChange={handleChange}
+                          placeholder={t('step1.emailPlaceholder')}
+                          style={inputStyle}
+                        />
+                      </div>
+                      <div style={{ marginBottom: 18 }}>
+                        <label style={labelStyle as React.CSSProperties}>{t('step1.fullNameLabel')}</label>
+                        <input
+                          type="text"
+                          name="fullName"
+                          required
+                          autoComplete="name"
+                          value={formData.fullName}
+                          onChange={handleChange}
+                          placeholder={t('step1.fullNamePlaceholder')}
+                          style={inputStyle}
+                        />
+                      </div>
+                      <div style={{ display: 'flex', flexWrap: 'wrap', gap: 14, marginBottom: 18, alignItems: 'flex-start' }}>
+                        <div style={{ flex: '1 1 220px', minWidth: 200 }}>
+                          <PhoneDialSelect
+                            dial={formData.countryCode}
+                            iso={formData.dialCountryIso}
+                            onSelect={(d, iso) => setFormData(prev => ({ ...prev, countryCode: d, dialCountryIso: iso }))}
+                            inputStyle={inputStyle}
+                            labelStyle={labelStyle as React.CSSProperties}
+                            dialLabel={t('step1.dialLabel')}
+                            dialSearchPlaceholder={t('step1.dialSearchPlaceholder')}
+                            dialNoResults={t('step1.dialNoResults')}
+                          />
+                        </div>
+                        <div style={{ flex: '2 1 220px', minWidth: 180 }}>
+                          <label style={labelStyle as React.CSSProperties}>{t('step1.phoneLabel')}</label>
+                          <input
+                            type="tel"
+                            name="phone"
+                            required
+                            autoComplete="tel-national"
+                            value={formData.phone}
+                            onChange={handleChange}
+                            placeholder={t('step1.phonePlaceholder')}
+                            style={inputStyle}
+                          />
+                        </div>
+                      </div>
+                      <label style={{ display: 'flex', gap: 10, alignItems: 'flex-start', fontSize: 14, color: 'var(--text-2)', marginBottom: 22, cursor: 'pointer' }}>
+                        <input
+                          type="checkbox"
+                          checked={formData.consentementMessages}
+                          onChange={e => setFormData(prev => ({ ...prev, consentementMessages: e.target.checked }))}
+                          style={{ marginTop: 3, width: 18, height: 18 }}
+                        />
+                        <span>{t('step1.consentLabel')}</span>
+                      </label>
+                      <button type="submit" className="btn btn-primary" style={{ width: '100%', padding: '16px', fontSize: 15, fontWeight: 600 }}>
+                        {t('step1.submitButton')}
+                      </button>
+                      <p style={{ fontSize: 11, color: 'var(--text-3)', textAlign: 'center', marginTop: 16 }}>
+                        {t('step1.disclaimer')}
+                      </p>
+                    </form>
+                  ) : (
+                    <form onSubmit={handleSubmitStep1} className="demo-mini">
+                      <h3 style={{ fontSize: 22, marginBottom: 8 }}>{t('step1.typeTitle')}</h3>
+                      <p style={{ fontSize: 14, color: 'var(--text-2)', marginBottom: 18 }}>{t('step1.typeSubtitle')}</p>
+                      <div className="qf-pills" style={{ marginBottom: 22 }}>
+                        {ACTIVITIES.map(item => (
+                          <button
+                            key={item.id}
+                            type="button"
+                            disabled={loading}
+                            onClick={() => choisirActivite(item.id)}
+                            className={formData.activity === item.id ? 'qf-pill qf-pill-on' : 'qf-pill'}
+                          >
+                            {t(`step1.activities.${item.id}`)}
+                          </button>
+                        ))}
+                      </div>
+                      {formData.activity && (
+                        <>
+                          <h3 style={{ fontSize: 18, marginBottom: 12 }}>
+                            {ACTIVITIES.find(item => item.id === formData.activity)?.segment === 'hotel'
+                              ? t('step1.tailleChambres')
+                              : t('step1.tailleBiens')}
+                          </h3>
+                          <div className="qf-pills" style={{ marginBottom: 22 }}>
+                            {TRANCHES.map(tranche => (
+                              <button
+                                key={tranche}
+                                type="button"
+                                onClick={() => setFormData(prev => ({ ...prev, taille: tranche }))}
+                                className={formData.taille === tranche ? 'qf-pill qf-pill-on' : 'qf-pill'}
+                              >
+                                {tranche}
+                              </button>
+                            ))}
+                          </div>
+                        </>
+                      )}
+                      <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
+                        <button type="button" className="btn" onClick={() => setMiniEtape('contact')} style={{ fontSize: 14 }}>
+                          {t('step1.back')}
+                        </button>
+                        <button
+                          type="submit"
+                          className="btn btn-primary"
+                          disabled={loading || !formData.activity || !formData.taille}
+                          style={{ flex: 1, padding: '14px', fontSize: 15, fontWeight: 600 }}
+                        >
+                          {t('step1.submitButton')}
+                        </button>
+                      </div>
+                    </form>
+                  )}
                 </div>
               </>
             )}
@@ -869,6 +1020,10 @@ function DemoPageContent() {
                   )}
 
                   <QualificationForm
+                    initialActivityId={formData.activity || undefined}
+                    initialPhone={formData.phone.replace(/\D/g, '') || undefined}
+                    initialCountryCode={formData.countryCode}
+                    initialNumberOfProperties={formData.taille || undefined}
                     onSubmit={handleQualificationSubmit}
                     onRequestFollowUp={demanderQuestions}
                     loading={loading}

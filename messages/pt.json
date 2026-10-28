@@ -1920,7 +1920,7 @@
       "badge": "Demo gratuita",
       "title": "Prepare a sua ",
       "titleGradient": "demo gratuita",
-      "subtitle": "Descubra como Sojori orquestra automaticamente mais de 20 tarefas da reserva ao checkout.",
+      "subtitle": "Alguns dados e depois um breve questionário.",
       "emailLabel": "E-mail *",
       "emailPlaceholder": "voce@empresa.com",
       "dialLabel": "País / indicativo *",
@@ -1954,7 +1954,17 @@
       "disclaimer": "Ao fornecer seus dados, você concorda em receber informações sobre Sojori. Você pode cancelar a inscrição a qualquer momento.",
       "loadingTitle": "A abrir o questionário",
       "loadingDescription": "Algumas perguntas, adaptadas à atividade que acabou de escolher.",
-      "loadingWait": "Um instante…"
+      "loadingWait": "Um instante…",
+      "fullNameLabel": "Nome completo *",
+      "fullNamePlaceholder": "Nome Apelido",
+      "consentLabel": "Aceito receber mensagens da Sojori (WhatsApp, SMS) sobre o meu pedido.",
+      "typeTitle": "O seu tipo de alojamento",
+      "typeSubtitle": "Para lhe apresentar a oferta certa.",
+      "back": "← Voltar",
+      "phoneInvalid": "Indique um número de telefone válido.",
+      "tailleRequired": "Indique a dimensão para continuar.",
+      "tailleChambres": "Quantos quartos?",
+      "tailleBiens": "Quantas propriedades?"
     },
     "step2": {
       "badge": "Passo 2/4 · Horário",

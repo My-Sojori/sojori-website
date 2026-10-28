@@ -2018,7 +2018,7 @@
       "badge": "Free demo",
       "title": "Prepare your ",
       "titleGradient": "free demo",
-      "subtitle": "Your email is enough. The questionnaire opens right after.",
+      "subtitle": "A few details, then a short questionnaire.",
       "emailLabel": "Email *",
       "emailPlaceholder": "you@company.com",
       "dialLabel": "Country / dial code *",
@@ -2052,7 +2052,17 @@
       "disclaimer": "By providing your details, you agree to receive information about Sojori. Unsubscribe anytime.",
       "loadingTitle": "Opening the questionnaire",
       "loadingDescription": "A few questions, shaped around the activity you just chose.",
-      "loadingWait": "One moment…"
+      "loadingWait": "One moment…",
+      "fullNameLabel": "Full name *",
+      "fullNamePlaceholder": "First Last",
+      "consentLabel": "I agree to receive messages from Sojori (WhatsApp, SMS) about my request.",
+      "typeTitle": "Your type of property",
+      "typeSubtitle": "So we can show you the right offer.",
+      "back": "← Back",
+      "phoneInvalid": "Please enter a valid phone number.",
+      "tailleRequired": "Please choose a size to continue.",
+      "tailleChambres": "How many rooms?",
+      "tailleBiens": "How many properties?"
     },
     "step2": {
       "badge": "Step 2/4 · Schedule",

@@ -126,6 +126,10 @@ export function QualificationForm({
   submitLabel,
   initialSegment,
   initialPropertyTypes,
+  initialActivityId,
+  initialPhone,
+  initialCountryCode,
+  initialNumberOfProperties,
 }: {
   onSubmit: (payload: QualificationPayload) => void;
   /**
@@ -139,15 +143,27 @@ export function QualificationForm({
   /** Activité déjà choisie au mini-formulaire : on n'y revient pas. */
   initialSegment?: Segment;
   initialPropertyTypes?: string[];
+  /** Le petit formulaire a déjà demandé l'activité et le téléphone (28/10/2026) : on n'y revient pas. */
+  initialActivityId?: string;
+  initialPhone?: string;
+  initialCountryCode?: string;
+  /** La taille déjà donnée au petit formulaire (tranche « 6-10 ») : la question n'est pas reposée. */
+  initialNumberOfProperties?: string;
 }) {
-  const [segment, setSegment] = useState<Segment | ''>(initialSegment ?? '');
-  const [activityId, setActivityId] = useState('');
-  const [phone, setPhone] = useState('');
+  const activiteInitiale = ACTIVITIES.find(item => item.id === initialActivityId);
+  const [segment, setSegment] = useState<Segment | ''>(
+    initialSegment ?? activiteInitiale?.segment ?? '',
+  );
+  const [activityId, setActivityId] = useState(activiteInitiale?.id ?? '');
+  const [phone, setPhone] = useState(initialPhone ?? '');
   const [pays, setPays] = useState('');
   const [ville, setVille] = useState('');
   const [fullName, setFullName] = useState('');
   const [company, setCompany] = useState('');
-  const [propertyTypes, setPropertyTypes] = useState<string[]>(initialPropertyTypes ?? []);
+  const [propertyTypes, setPropertyTypes] = useState<string[]>(
+    initialPropertyTypes ??
+      (activiteInitiale?.propertyType ? [activiteInitiale.propertyType] : []),
+  );
   const [size, setSize] = useState('');
   const [hasPms, setHasPms] = useState('');
   const [pms, setPms] = useState('');
@@ -188,7 +204,7 @@ export function QualificationForm({
       company: company.trim(),
       roleType: segment === 'hotel' ? 'hotel' : 'property-manager',
       propertyTypes: cfg ? propertyTypes.map(v => labelOf(cfg.propertyTypes, v)) : [],
-      numberOfProperties: cfg && size ? labelOf(cfg.sizes, size) : '',
+      numberOfProperties: cfg && size ? labelOf(cfg.sizes, size) : (initialNumberOfProperties ?? ''),
       currentPMS:
         hasPms === 'yes' && cfg
           ? resolve(cfg.pms, pms, pmsOther)
@@ -205,7 +221,7 @@ export function QualificationForm({
       hearAboutUs,
       promoCode: promoCode.trim(),
       phone: phone.replace(/\D/g, ''),
-      countryCode: PAYS.find(item => item.id === pays)?.indicatif || '+212',
+      countryCode: initialCountryCode || PAYS.find(item => item.id === pays)?.indicatif || '+212',
       segment:
         ACTIVITIES.find(item => item.id === activityId)?.crmSegment ??
         (segment === 'hotel' ? 'hotel' : segment === 'str' ? 'conciergerie' : undefined),
@@ -219,7 +235,7 @@ export function QualificationForm({
     const list: Step[] = [
       {
         id: 'segment',
-        skip: Boolean(initialSegment),
+        skip: Boolean(initialSegment || activiteInitiale),
         render: () => (
           <Question title="Vous gérez quoi&nbsp;?">
             <Pills>
@@ -268,6 +284,7 @@ export function QualificationForm({
       },
       {
         id: 'phone',
+        skip: (initialPhone ?? '').replace(/\D/g, '').length >= 8,
         render: () => (
           <Question title="Votre téléphone&nbsp;?" hint="Pour vous joindre si besoin. Vous pouvez passer.">
             <input
@@ -327,6 +344,7 @@ export function QualificationForm({
       },
       {
         id: 'size',
+        skip: Boolean(initialNumberOfProperties),
         render: () => (
           <Question title={`Combien de ${cfg?.unitLabel ?? 'bien'}s ?`}>
             <Pills>

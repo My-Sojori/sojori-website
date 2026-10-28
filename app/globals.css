@@ -2053,3 +2053,9 @@ html.sj-mobile-menu-scroll-lock {
     transition: none;
   }
 }
+
+/* Petit formulaire de démo (28/10/2026) : le choix retenu reste lisible sur le fond clair. */
+.demo-mini .qf-pill-on,
+.demo-mini .qf-pill-on:hover {
+  color: #6b4e08;
+}

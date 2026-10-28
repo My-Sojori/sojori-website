@@ -1920,7 +1920,7 @@
       "badge": "عرض مجاني",
       "title": "جهّز ",
       "titleGradient": "عرضك المجاني",
-      "subtitle": "اكتشف كيف ينسق Sojori تلقائيًا أكثر من 20 مهمة من الحجز إلى المغادرة.",
+      "subtitle": "بعض المعلومات، ثم استبيان قصير.",
       "emailLabel": "البريد الإلكتروني *",
       "emailPlaceholder": "انت@شركة.com",
       "dialLabel": "البلد / رمز الاتصال *",
@@ -1954,7 +1954,17 @@
       "disclaimer": "بتقديم بياناتك، فإنك توافق على تلقي معلومات حول Sojori. يمكنك إلغاء الاشتراك في أي وقت.",
       "loadingTitle": "نفتح الاستبيان",
       "loadingDescription": "بعض الأسئلة، حسب النشاط الذي اخترتموه.",
-      "loadingWait": "لحظة…"
+      "loadingWait": "لحظة…",
+      "fullNameLabel": "الاسم الكامل *",
+      "fullNamePlaceholder": "الاسم واللقب",
+      "consentLabel": "أوافق على تلقي رسائل من Sojori (واتساب، رسائل قصيرة) بخصوص طلبي.",
+      "typeTitle": "نوع مؤسستك",
+      "typeSubtitle": "لنقدّم لك العرض المناسب.",
+      "back": "→ رجوع",
+      "phoneInvalid": "أدخل رقم هاتف صحيحاً.",
+      "tailleRequired": "حدّد الحجم للمتابعة.",
+      "tailleChambres": "كم عدد الغرف؟",
+      "tailleBiens": "كم عدد العقارات؟"
     },
     "step2": {
       "badge": "الخطوة 2/4 · الجدول",
