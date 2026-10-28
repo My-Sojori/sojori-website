@@ -17,7 +17,12 @@ export async function GET(request: NextRequest) {
     const url = `${backendBase}/api/v1/demo/rdv/semaine?t=${encodeURIComponent(t)}`;
     const response = await demoProxyFetch(url, {
       method: 'GET',
-      headers: { 'cache-control': 'no-store' },
+      headers: {
+        'cache-control': 'no-store',
+        // L'adresse du visiteur : sans elle, le serveur compte une seule IP (celle de Vercel) pour tout le
+        // site et sa limite de 120 requêtes par heure tombe sur tout le monde (revue de #12).
+        'x-forwarded-for': request.headers.get('x-forwarded-for') || '',
+      },
     });
     let raw: unknown;
     try {
