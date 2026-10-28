@@ -5,6 +5,7 @@ import { useSearchParams } from 'next/navigation';
 import { BackgroundEffects } from '@/components/BackgroundEffects';
 import { PageHeader, PageFooter } from '@/components/SharedComponents';
 import { normalizeDemoBackendResponse } from '@/lib/demoApiResponse';
+import { type Abonnement, ContratAbonnement } from './ContratAbonnement';
 
 /**
  * Signature d'un contrat Sojori, par son jeton.
@@ -48,6 +49,12 @@ type Contract = {
   }> | null;
   /** Ce que le gestionnaire gagne, à côté de ce qu'il paie. */
   revenusPartages?: Array<{ taux: string; label: string; resume: string }> | null;
+  /**
+   * Le contrat d'abonnement figé (C1/C3, 28/10/2026) : conditions générales versionnées et bon de
+   * commande. Présent, la page le montre et fait signer par fiche + signature dessinée ; absent,
+   * c'est un contrat d'avant, avec l'ancien affichage.
+   */
+  abonnement?: Abonnement | null;
 };
 
 /**
@@ -236,7 +243,21 @@ function ContratContent() {
           </div>
         )}
 
-        {!loading && contract && (
+        {!loading && contract && contract.abonnement && (
+          <ContratAbonnement
+            token={token}
+            reference={contract.reference}
+            abonnement={contract.abonnement}
+            signe={signed}
+            signePar={contract.signedByName}
+            onSigne={async () => {
+              setSigned(true);
+              await load();
+            }}
+          />
+        )}
+
+        {!loading && contract && !contract.abonnement && (
           <>
             <h1 style={{ fontSize: 28, fontWeight: 800, color: '#1c1917', margin: '0 0 6px' }}>
               {signed ? 'Contrat signé' : 'Votre contrat Sojori'}
