@@ -2013,10 +2013,10 @@
       "qualify": "Échec de l'envoi du questionnaire."
     },
     "step1": {
-      "badge": "Démo gratuite · 30 minutes",
-      "title": "Réservez votre ",
+      "badge": "Démo gratuite",
+      "title": "Préparez votre ",
       "titleGradient": "démo gratuite",
-      "subtitle": "Découvrez comment Sojori orchestre automatiquement +20 tâches de la réservation au checkout.",
+      "subtitle": "Quelques informations, puis un court questionnaire.",
       "emailLabel": "Adresse e-mail *",
       "emailPlaceholder": "vous@entreprise.com",
       "dialLabel": "Pays / indicatif *",
@@ -2024,7 +2024,19 @@
       "dialNoResults": "Aucun résultat",
       "phoneLabel": "Téléphone *",
       "phonePlaceholder": "6 12 34 56 78",
-      "propertiesLabel": "Nombre de chambres *",
+      "propertiesLabel": "Votre activité *",
+      "activityRequired": "Choisissez votre activité pour continuer.",
+      "activities": {
+        "conciergerie": "Conciergerie",
+        "hotel": "Hôtel",
+        "riad": "Riad",
+        "guesthouse": "Maison d'hôtes",
+        "resort": "Resort",
+        "aparthotel": "Résidence hôtelière",
+        "villa": "Villa",
+        "apartment": "Appartement",
+        "autre": "Autre"
+      },
       "propertiesPlaceholder": "Sélectionnez...",
       "propertiesOptions": {
         "1": "1 chambre",
@@ -2034,12 +2046,22 @@
         "21-50": "21-50 chambres",
         "51+": "51+ chambres"
       },
-      "submitButton": "Réserver ma démo →",
+      "submitButton": "Continuer →",
       "submitButtonLoading": "Envoi en cours...",
       "disclaimer": "En fournissant vos coordonnées, vous acceptez de recevoir des informations sur Sojori. Désinscription possible à tout moment.",
-      "loadingTitle": "Enregistrement de votre demande",
-      "loadingDescription": "Nous vérifions vos coordonnées et préparons la suite du parcours (choix d'un créneau avec l'équipe).",
-      "loadingWait": "Merci de patienter environ 5 secondes…"
+      "loadingTitle": "On ouvre le questionnaire",
+      "loadingDescription": "Quelques questions, adaptées à l'activité que vous venez de choisir.",
+      "loadingWait": "Un instant…",
+      "fullNameLabel": "Nom complet *",
+      "fullNamePlaceholder": "Prénom Nom",
+      "consentLabel": "J'accepte de recevoir des messages de Sojori (WhatsApp, SMS) au sujet de ma demande.",
+      "typeTitle": "Votre type d'établissement",
+      "typeSubtitle": "Pour vous présenter la bonne offre.",
+      "back": "← Retour",
+      "phoneInvalid": "Indiquez un numéro de téléphone valide.",
+      "tailleRequired": "Indiquez la taille pour continuer.",
+      "tailleChambres": "Combien de chambres ?",
+      "tailleBiens": "Combien de biens ?"
     },
     "step2": {
       "badge": "Étape 2/4 · Horaire",
@@ -2066,10 +2088,10 @@
       "noAgentNotice": "Aucun créneau en ligne pour le moment. Vous devriez recevoir un e-mail de Sarah (Sojori) avec un lien pour prendre rendez-vous — pensez à vérifier vos courriers indésirables."
     },
     "step3": {
-      "badge": "Étape 3/4 · Personnalisation",
-      "title": "Votre créneau est ",
-      "titleGradient": "réservé",
-      "subtitle": "Rien d'obligatoire de stressant ici : quelques questions pour adapter la démo à votre contexte. Vous pouvez les remplir tranquillement.",
+      "badge": "Quelques questions",
+      "title": "Parlons de ",
+      "titleGradient": "votre activité",
+      "subtitle": "Rien n'est obligatoire. Vos réponses servent à préparer un échange utile.",
       "appointmentLabel": "Rendez-vous :",
       "basicInfoTitle": "📋 Informations de base",
       "fullNameLabel": "Nom complet *",
@@ -2161,7 +2183,7 @@
       "confirmed": {
         "title": "Demande ",
         "titleGradient": "confirmée !",
-        "message": "Votre demande et votre créneau sont enregistrés. Notre équipe peut vous recontacter sous",
+        "message": "Votre demande est enregistrée. Notre équipe peut vous recontacter sous",
         "contactTime": "2 h ouvrées",
         "ifNeeded": "si besoin.",
         "appointmentLabel": "Rendez-vous :",

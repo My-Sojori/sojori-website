@@ -6,13 +6,20 @@ import { useTranslations, useMessages, useLocale } from 'next-intl';
 import { BackgroundEffects } from '@/components/BackgroundEffects';
 import { PageHeader, PageFooter } from '@/components/SharedComponents';
 import { Link } from '@/i18n/routing';
-import { PhoneDialSelect } from '@/components/demo/PhoneDialSelect';
 import { QualificationForm, type FollowUpQuestion, type QualificationPayload } from '@/components/demo/QualificationForm';
+import { ACTIVITIES } from '@/lib/demoQualification';
+import { PhoneDialSelect } from '@/components/demo/PhoneDialSelect';
 import { normalizeDemoBackendResponse, demoResponseErrorMessage } from '@/lib/demoApiResponse';
 import { trackDemoLead, trackDemoScheduled, trackDemoQualified } from '@/lib/analytics';
 
 /** API démo via routes Next.js → srv-crm (même origine que le site). */
 const DEMO_API = '/api/v1/demo';
+
+/** Le calendrier staff est coupé : le mini-formulaire enchaîne sur le questionnaire. */
+const PRISE_DE_RENDEZ_VOUS = false;
+
+/** Taille du compte, en chambres ou en biens selon le type (Tawfiq, 28/10/2026). */
+const TRANCHES = ['1', '2-5', '6-10', '11-20', '21-50', '51+'];
 
 /** Tag BCP 47 pour `Intl` (aligné sur les locales du site). */
 const BOOKING_INTL_LOCALE: Record<string, string> = {
@@ -83,6 +90,11 @@ function DemoPageContent() {
     email: '',
     phone: '',
     numberOfProperties: '',
+    // Le petit formulaire, comme Hostaway (Tawfiq, 28/10/2026) : nom, téléphone, consentement, puis le type.
+    activity: '',
+    // Selon le type : nombre de chambres (hôtel, riad…) ou de biens (conciergerie, villa…).
+    taille: '',
+    consentementMessages: false,
     // Step 2
     fullName: '',
     company: '',
@@ -155,7 +167,8 @@ function DemoPageContent() {
   const [rescheduledFromId, setRescheduledFromId] = useState<string | null>(null);
 
   useEffect(() => {
-    if (step !== 2) return;
+    // Sans prise de rendez-vous, l'étape 2 n'existe plus : handleSubmitStep1 passe directement à 3.
+    if (!PRISE_DE_RENDEZ_VOUS || step !== 2) return;
     let cancelled = false;
     (async () => {
       setError('');
@@ -235,41 +248,65 @@ function DemoPageContent() {
     };
   }, [step, demoRequestId]);
 
-  const handleSubmitStep1 = async (e: React.FormEvent) => {
+  /** Le petit formulaire en deux écrans : coordonnées, puis le type d'établissement. */
+  const [miniEtape, setMiniEtape] = useState<'contact' | 'type'>('contact');
+
+  const handleContact = (e: React.FormEvent) => {
     e.preventDefault();
-    setLoading(true);
+    if (formData.phone.replace(/\D/g, '').length < 8) {
+      setError(t('step1.phoneInvalid'));
+      return;
+    }
     setError('');
+    setMiniEtape('type');
+  };
 
-    const t0 = Date.now();
-    const MIN_STEP1_MS = 5000;
+  const choisirActivite = (id: string) => {
+    setFormData(prev => ({ ...prev, activity: id, taille: '' }));
+  };
 
-    const waitRemainingMin = async () => {
-      const elapsed = Date.now() - t0;
-      if (elapsed < MIN_STEP1_MS) {
-        await new Promise((r) => setTimeout(r, MIN_STEP1_MS - elapsed));
-      }
-    };
+  const handleSubmitStep1 = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!formData.taille) {
+      setError(t('step1.tailleRequired'));
+      return;
+    }
+    void envoyerDemande(formData.activity);
+  };
+
+  const envoyerDemande = async (activityId: string) => {
+    const activite = ACTIVITIES.find(item => item.id === activityId);
+    if (!activite) {
+      setError(t('step1.activityRequired'));
+      return;
+    }
+    setError('');
+    setStep(PRISE_DE_RENDEZ_VOUS ? 2 : 3);
 
     try {
       const USE_MOCK = false;
 
       if (USE_MOCK) {
-        await new Promise((resolve) => setTimeout(resolve, 800));
         const mockId = `demo-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`;
         setDemoRequestId(mockId);
         setCalendarSkippedAlreadyBooked(false);
-        await waitRemainingMin();
-        setStep(2);
       } else {
         const response = await fetch(`${DEMO_API}/request`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
             email: formData.email,
-            phone: formData.phone,
+            fullName: formData.fullName.trim(),
+            phone: formData.phone.replace(/\D/g, ''),
             countryCode: formData.countryCode,
-            numberOfProperties: formData.numberOfProperties,
+            // L'activité dans les mots du CRM : l'agent de prospection s'en sert pour choisir le commercial.
+            ...(activite.crmSegment ? { segment: activite.crmSegment } : {}),
+            // Une tranche (« 6-10 ») : chambres pour un établissement, biens pour des locations.
+            numberOfProperties: formData.taille,
+            consentementMessages: formData.consentementMessages,
             source: source,
+            // La langue de la page : celle du prospect, lue par l'agent de prospection (28/10/2026).
+            langue: locale,
           }),
         });
 
@@ -297,8 +334,6 @@ function DemoPageContent() {
         setQualificationToken(String(data.data?.qualificationToken ?? ''));
         setCalendarSkippedAlreadyBooked(false);
         trackDemoLead(source);
-        await waitRemainingMin();
-        setStep(2);
       }
     } catch (err: unknown) {
       const msg =
@@ -309,9 +344,9 @@ function DemoPageContent() {
           ? ' Sans `SRV_CRM_URL`, `next dev` utilise https://dev.sojori.com. Si vous voyez 127.0.0.1:4013, supprimez ou corrigez `SRV_CRM_URL` dans `.env.local` et redémarrez Next. Pour srv-crm local : `SRV_CRM_URL=http://127.0.0.1:4013` + `pnpm --filter srv-crm dev`. Sur Vercel : définir `SRV_CRM_URL` en HTTPS public.'
           : '';
       setError(`${msg}${hint}`);
+      setStep(1);
+      setMiniEtape('type');
       console.error('Error submitting step 1:', err);
-    } finally {
-      setLoading(false);
     }
   };
 
@@ -491,142 +526,143 @@ function DemoPageContent() {
                 </div>
 
                 <div className="glass demo-glass-panel" style={{ padding: 40, borderRadius: 16, position: 'relative' }}>
-                  {error && !loading && (
+                  {error && (
                     <div style={{ padding: 16, borderRadius: 8, background: 'rgba(239,68,68,0.15)', border: '1px solid rgba(239,68,68,0.3)', marginBottom: 20, color: '#fca5a5', fontSize: 14 }}>
                       {error}
                     </div>
                   )}
 
-                  {loading && (
-                    <div
-                      role="status"
-                      aria-live="polite"
-                      style={{
-                        position: 'absolute',
-                        inset: 0,
-                        zIndex: 12,
-                        borderRadius: 16,
-                        background: 'var(--glass-strong)',
-                        backdropFilter: 'blur(8px)',
-                        display: 'flex',
-                        flexDirection: 'column',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        padding: 28,
-                        textAlign: 'center',
-                      }}
-                    >
-                      <div className="demo-cal-spinner" aria-hidden />
-                      <p
-                        style={{
-                          fontSize: 18,
-                          fontWeight: 600,
-                          color: 'var(--text)',
-                          marginBottom: 8,
-                          marginTop: 8,
-                        }}
-                      >
-                        {t('step1.loadingTitle')}
-                      </p>
-                      <p style={{ fontSize: 15, color: 'var(--text-2)', lineHeight: 1.55, marginBottom: 4, maxWidth: 400 }}>
-                        {t('step1.loadingDescription')}
-                      </p>
-                      <p style={{ fontSize: 13, color: '#c99212', fontWeight: 700 }}>
-                        {t('step1.loadingWait')}
-                      </p>
-                      <div className="demo-cal-dots" aria-hidden>
-                        <span className="demo-cal-dot" />
-                        <span className="demo-cal-dot" />
-                        <span className="demo-cal-dot" />
-                      </div>
-                      <div className="demo-cal-shimmer-track" aria-hidden style={{ maxWidth: 280, width: '100%', marginTop: 8 }} />
-                    </div>
-                  )}
-
-                  <form onSubmit={handleSubmitStep1} style={{ opacity: loading ? 0.35 : 1, pointerEvents: loading ? 'none' : 'auto' }}>
-                    <div style={{ marginBottom: 20 }}>
-                      <label style={labelStyle as React.CSSProperties}>{t('step1.emailLabel')}</label>
-                      <input
-                        type="email"
-                        name="email"
-                        required
-                        value={formData.email}
-                        onChange={handleChange}
-                        placeholder={t('step1.emailPlaceholder')}
-                        style={inputStyle}
-                      />
-                    </div>
-
-                    <div
-                      style={{
-                        display: 'flex',
-                        flexWrap: 'wrap',
-                        gap: 14,
-                        marginBottom: 28,
-                        alignItems: 'flex-start',
-                      }}
-                    >
-                      <div style={{ flex: '1 1 280px', minWidth: 220 }}>
-                        <PhoneDialSelect
-                          dial={formData.countryCode}
-                          iso={formData.dialCountryIso}
-                          onSelect={(d, iso) =>
-                            setFormData((prev) => ({ ...prev, countryCode: d, dialCountryIso: iso }))
-                          }
-                          inputStyle={inputStyle}
-                          labelStyle={labelStyle as React.CSSProperties}
-                          dialLabel={t('step1.dialLabel')}
-                          dialSearchPlaceholder={t('step1.dialSearchPlaceholder')}
-                          dialNoResults={t('step1.dialNoResults')}
-                        />
-                      </div>
-                      <div style={{ flex: '2 1 220px', minWidth: 180 }}>
-                        <label style={labelStyle as React.CSSProperties}>{t('step1.phoneLabel')}</label>
+                  {miniEtape === 'contact' ? (
+                    <form onSubmit={handleContact}>
+                      <div style={{ marginBottom: 18 }}>
+                        <label style={labelStyle as React.CSSProperties}>{t('step1.emailLabel')}</label>
                         <input
-                          type="tel"
-                          name="phone"
+                          type="email"
+                          name="email"
                           required
-                          value={formData.phone}
+                          autoFocus
+                          autoComplete="email"
+                          value={formData.email}
                           onChange={handleChange}
-                          placeholder={t('step1.phonePlaceholder')}
+                          placeholder={t('step1.emailPlaceholder')}
                           style={inputStyle}
                         />
                       </div>
-                    </div>
-
-                    <div style={{ marginBottom: 28 }}>
-                      <label style={labelStyle as React.CSSProperties}>{t('step1.propertiesLabel')}</label>
-                      <select
-                        name="numberOfProperties"
-                        value={formData.numberOfProperties}
-                        onChange={handleChange}
-                        required
-                        style={inputStyle}
-                      >
-                        <option value="">{t('step1.propertiesPlaceholder')}</option>
-                        <option value="1">{t('step1.propertiesOptions.1')}</option>
-                        <option value="2-5">{t('step1.propertiesOptions.2-5')}</option>
-                        <option value="6-10">{t('step1.propertiesOptions.6-10')}</option>
-                        <option value="11-20">{t('step1.propertiesOptions.11-20')}</option>
-                        <option value="21-50">{t('step1.propertiesOptions.21-50')}</option>
-                        <option value="51+">{t('step1.propertiesOptions.51+')}</option>
-                      </select>
-                    </div>
-
-                    <button type="submit" disabled={loading} className="btn btn-primary" style={{ width: '100%', padding: '16px', fontSize: 15, fontWeight: 600, opacity: loading ? 0.6 : 1, cursor: loading ? 'not-allowed' : 'pointer' }}>
-                      {loading ? t('step1.submitButtonLoading') : t('step1.submitButton')}
-                    </button>
-
-                    <p style={{ fontSize: 11, color: 'var(--text-3)', textAlign: 'center', marginTop: 16 }}>
-                      {t('step1.disclaimer')}
-                    </p>
-                  </form>
+                      <div style={{ marginBottom: 18 }}>
+                        <label style={labelStyle as React.CSSProperties}>{t('step1.fullNameLabel')}</label>
+                        <input
+                          type="text"
+                          name="fullName"
+                          required
+                          autoComplete="name"
+                          value={formData.fullName}
+                          onChange={handleChange}
+                          placeholder={t('step1.fullNamePlaceholder')}
+                          style={inputStyle}
+                        />
+                      </div>
+                      <div style={{ display: 'flex', flexWrap: 'wrap', gap: 14, marginBottom: 18, alignItems: 'flex-start' }}>
+                        <div style={{ flex: '1 1 220px', minWidth: 200 }}>
+                          <PhoneDialSelect
+                            dial={formData.countryCode}
+                            iso={formData.dialCountryIso}
+                            onSelect={(d, iso) => setFormData(prev => ({ ...prev, countryCode: d, dialCountryIso: iso }))}
+                            inputStyle={inputStyle}
+                            labelStyle={labelStyle as React.CSSProperties}
+                            dialLabel={t('step1.dialLabel')}
+                            dialSearchPlaceholder={t('step1.dialSearchPlaceholder')}
+                            dialNoResults={t('step1.dialNoResults')}
+                          />
+                        </div>
+                        <div style={{ flex: '2 1 220px', minWidth: 180 }}>
+                          <label style={labelStyle as React.CSSProperties}>{t('step1.phoneLabel')}</label>
+                          <input
+                            type="tel"
+                            name="phone"
+                            required
+                            autoComplete="tel-national"
+                            value={formData.phone}
+                            onChange={handleChange}
+                            placeholder={t('step1.phonePlaceholder')}
+                            style={inputStyle}
+                          />
+                        </div>
+                      </div>
+                      <label style={{ display: 'flex', gap: 10, alignItems: 'flex-start', fontSize: 14, color: 'var(--text-2)', marginBottom: 22, cursor: 'pointer' }}>
+                        <input
+                          type="checkbox"
+                          checked={formData.consentementMessages}
+                          onChange={e => setFormData(prev => ({ ...prev, consentementMessages: e.target.checked }))}
+                          style={{ marginTop: 3, width: 18, height: 18 }}
+                        />
+                        <span>{t('step1.consentLabel')}</span>
+                      </label>
+                      <button type="submit" className="btn btn-primary" style={{ width: '100%', padding: '16px', fontSize: 15, fontWeight: 600 }}>
+                        {t('step1.submitButton')}
+                      </button>
+                      <p style={{ fontSize: 11, color: 'var(--text-3)', textAlign: 'center', marginTop: 16 }}>
+                        {t('step1.disclaimer')}
+                      </p>
+                    </form>
+                  ) : (
+                    <form onSubmit={handleSubmitStep1} className="demo-mini">
+                      <h3 style={{ fontSize: 22, marginBottom: 8 }}>{t('step1.typeTitle')}</h3>
+                      <p style={{ fontSize: 14, color: 'var(--text-2)', marginBottom: 18 }}>{t('step1.typeSubtitle')}</p>
+                      <div className="qf-pills" style={{ marginBottom: 22 }}>
+                        {ACTIVITIES.map(item => (
+                          <button
+                            key={item.id}
+                            type="button"
+                            disabled={loading}
+                            onClick={() => choisirActivite(item.id)}
+                            className={formData.activity === item.id ? 'qf-pill qf-pill-on' : 'qf-pill'}
+                          >
+                            {t(`step1.activities.${item.id}`)}
+                          </button>
+                        ))}
+                      </div>
+                      {formData.activity && (
+                        <>
+                          <h3 style={{ fontSize: 18, marginBottom: 12 }}>
+                            {ACTIVITIES.find(item => item.id === formData.activity)?.segment === 'hotel'
+                              ? t('step1.tailleChambres')
+                              : t('step1.tailleBiens')}
+                          </h3>
+                          <div className="qf-pills" style={{ marginBottom: 22 }}>
+                            {TRANCHES.map(tranche => (
+                              <button
+                                key={tranche}
+                                type="button"
+                                onClick={() => setFormData(prev => ({ ...prev, taille: tranche }))}
+                                className={formData.taille === tranche ? 'qf-pill qf-pill-on' : 'qf-pill'}
+                              >
+                                {tranche}
+                              </button>
+                            ))}
+                          </div>
+                        </>
+                      )}
+                      <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
+                        <button type="button" className="btn" onClick={() => setMiniEtape('contact')} style={{ fontSize: 14 }}>
+                          {t('step1.back')}
+                        </button>
+                        <button
+                          type="submit"
+                          className="btn btn-primary"
+                          disabled={loading || !formData.activity || !formData.taille}
+                          style={{ flex: 1, padding: '14px', fontSize: 15, fontWeight: 600 }}
+                        >
+                          {t('step1.submitButton')}
+                        </button>
+                      </div>
+                    </form>
+                  )}
                 </div>
               </>
             )}
 
             {/* STEP 2 : choix du créneau (semaine à partir de demain, fuseau Paris / backend) */}
-            {step === 2 && (
+            {PRISE_DE_RENDEZ_VOUS && step === 2 && (
               <>
                 <div style={{ textAlign: 'center', marginBottom: 32 }}>
                   <span className="badge" style={{ marginBottom: 20 }}>
@@ -956,7 +992,7 @@ function DemoPageContent() {
 
             {/* STEP 3: Detailed Qualification Form */}
             {step === 3 && (
-              <>
+              <div className="demo-step-in">
                 <div style={{ textAlign: 'center', marginBottom: 40 }}>
                   <span className="badge" style={{ marginBottom: 20 }}>
                     <span className="badge-dot"></span> {t('step3.badge')}
@@ -984,6 +1020,10 @@ function DemoPageContent() {
                   )}
 
                   <QualificationForm
+                    initialActivityId={formData.activity || undefined}
+                    initialPhone={formData.phone.replace(/\D/g, '') || undefined}
+                    initialCountryCode={formData.countryCode}
+                    initialNumberOfProperties={formData.taille || undefined}
                     onSubmit={handleQualificationSubmit}
                     onRequestFollowUp={demanderQuestions}
                     loading={loading}
@@ -991,7 +1031,7 @@ function DemoPageContent() {
                     submitLabel={t('step3.submitButton')}
                   />
                 </div>
-              </>
+              </div>
             )}
 
             {/* STEP 4: Confirmation (parcours complet ou RDV déjà en place sans questionnaire) */}

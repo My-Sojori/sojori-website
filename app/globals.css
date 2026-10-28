@@ -1807,6 +1807,21 @@ html.sj-mobile-menu-scroll-lock {
   font-weight: 600;
 }
 
+@keyframes demoStepIn {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.demo-step-in {
+  animation: demoStepIn 0.22s ease;
+}
+
 /* ── la question d'entrée ─────────────────────────────────────────────── */
 
 .qf-segments {
@@ -2037,4 +2052,10 @@ html.sj-mobile-menu-scroll-lock {
   .qf-progress-bar {
     transition: none;
   }
+}
+
+/* Petit formulaire de démo (28/10/2026) : le choix retenu reste lisible sur le fond clair. */
+.demo-mini .qf-pill-on,
+.demo-mini .qf-pill-on:hover {
+  color: #6b4e08;
 }
