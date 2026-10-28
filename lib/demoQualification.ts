@@ -18,6 +18,17 @@
 
 export type Segment = 'hotel' | 'str';
 
+/** Choix du petit formulaire. Le long questionnaire ne le redemande pas. */
+export const ACTIVITIES: { id: string; segment: Segment; propertyType?: string; label: string }[] = [
+  { id: 'conciergerie', segment: 'str', label: 'Conciergerie' },
+  { id: 'hotel', segment: 'hotel', propertyType: 'hotel', label: 'Hôtel' },
+  { id: 'riad', segment: 'hotel', propertyType: 'riad', label: 'Riad' },
+  { id: 'guesthouse', segment: 'hotel', propertyType: 'guesthouse', label: "Maison d'hôtes" },
+  { id: 'villa', segment: 'str', propertyType: 'villa', label: 'Villa' },
+  { id: 'apartment', segment: 'str', propertyType: 'apartment', label: 'Appartement' },
+  { id: 'autre', segment: 'str', label: 'Autre' },
+];
+
 export interface Choice {
   value: string;
   label: string;

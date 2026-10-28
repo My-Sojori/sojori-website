@@ -2015,10 +2015,10 @@
       "qualify": "Could not submit the questionnaire."
     },
     "step1": {
-      "badge": "Free demo · 30 minutes",
-      "title": "Book your ",
+      "badge": "Free demo",
+      "title": "Prepare your ",
       "titleGradient": "free demo",
-      "subtitle": "Discover how Sojori automatically orchestrates +20 tasks from booking to checkout.",
+      "subtitle": "Your email is enough. The questionnaire opens right after.",
       "emailLabel": "Email *",
       "emailPlaceholder": "you@company.com",
       "dialLabel": "Country / dial code *",
@@ -2026,7 +2026,17 @@
       "dialNoResults": "No matches",
       "phoneLabel": "Phone *",
       "phonePlaceholder": "6 12 34 56 78",
-      "propertiesLabel": "Number of properties *",
+      "propertiesLabel": "Type",
+      "activityRequired": "Choose your activity to continue.",
+      "activities": {
+        "conciergerie": "Concierge company",
+        "hotel": "Hotel",
+        "riad": "Riad",
+        "guesthouse": "Guest house",
+        "villa": "Villa",
+        "apartment": "Apartment",
+        "autre": "Other"
+      },
       "propertiesPlaceholder": "Select...",
       "propertiesOptions": {
         "1": "1 property",
@@ -2036,12 +2046,12 @@
         "21-50": "21-50 properties",
         "51+": "51+ properties"
       },
-      "submitButton": "Book my demo →",
+      "submitButton": "Continue →",
       "submitButtonLoading": "Sending...",
       "disclaimer": "By providing your details, you agree to receive information about Sojori. Unsubscribe anytime.",
-      "loadingTitle": "Recording your request",
-      "loadingDescription": "We're verifying your details and preparing the next steps (choosing a time slot with the team).",
-      "loadingWait": "Please wait approximately 5 seconds…"
+      "loadingTitle": "Opening the questionnaire",
+      "loadingDescription": "A few questions, shaped around the activity you just chose.",
+      "loadingWait": "One moment…"
     },
     "step2": {
       "badge": "Step 2/4 · Schedule",
@@ -2068,10 +2078,10 @@
       "noAgentNotice": "No online slots are available right now. You should receive an email from Sarah (Sojori) with a link to book a time — please check your spam folder."
     },
     "step3": {
-      "badge": "Step 3/4 · Personalization",
-      "title": "Your slot is ",
-      "titleGradient": "reserved",
-      "subtitle": "Nothing stressful here: a few questions to tailor the demo to your context. You can fill them out at your leisure.",
+      "badge": "A few questions",
+      "title": "Let's talk about ",
+      "titleGradient": "your activity",
+      "subtitle": "Nothing is required. Your answers help us prepare a useful conversation.",
       "appointmentLabel": "Appointment:",
       "basicInfoTitle": "📋 Basic information",
       "fullNameLabel": "Full name *",
@@ -2162,7 +2172,7 @@
       "confirmed": {
         "title": "Request ",
         "titleGradient": "confirmed!",
-        "message": "Your request and time slot are saved. Our team may reach out within",
+        "message": "Your request is saved. Our team may reach out within",
         "contactTime": "2 business hours",
         "ifNeeded": "if needed.",
         "appointmentLabel": "Appointment:",
