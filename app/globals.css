@@ -1807,6 +1807,21 @@ html.sj-mobile-menu-scroll-lock {
   font-weight: 600;
 }
 
+@keyframes demoStepIn {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.demo-step-in {
+  animation: demoStepIn 0.22s ease;
+}
+
 /* ── la question d'entrée ─────────────────────────────────────────────── */
 
 .qf-segments {

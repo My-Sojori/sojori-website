@@ -18,6 +18,46 @@
 
 export type Segment = 'hotel' | 'str';
 
+/** Première question du long formulaire. Le petit formulaire, lui, ne demande que l'e-mail. */
+/**
+ * `crmSegment` : le même métier dans les mots du CRM de Sojori (Account.segment). C'est lui que
+ * l'agent de prospection lit pour confier la demande au bon commercial (28/10/2026).
+ */
+export const ACTIVITIES: {
+  id: string;
+  segment: Segment;
+  crmSegment: string;
+  propertyType?: string;
+  label: string;
+}[] = [
+  { id: 'conciergerie', segment: 'str', crmSegment: 'conciergerie', label: 'Conciergerie' },
+  { id: 'hotel', segment: 'hotel', crmSegment: 'hotel', propertyType: 'hotel', label: 'Hôtel' },
+  { id: 'riad', segment: 'hotel', crmSegment: 'riad_maison_hotes', propertyType: 'riad', label: 'Riad' },
+  { id: 'guesthouse', segment: 'hotel', crmSegment: 'riad_maison_hotes', propertyType: 'guesthouse', label: "Maison d'hôtes" },
+  { id: 'resort', segment: 'hotel', crmSegment: 'hotel', propertyType: 'resort', label: 'Resort' },
+  { id: 'aparthotel', segment: 'hotel', crmSegment: 'residence_aparthotel', propertyType: 'aparthotel', label: 'Résidence hôtelière' },
+  { id: 'villa', segment: 'str', crmSegment: 'proprietaire', propertyType: 'villa', label: 'Villa' },
+  { id: 'apartment', segment: 'str', crmSegment: 'proprietaire', propertyType: 'apartment', label: 'Appartement' },
+];
+
+/**
+ * Le pays d'activité (28/10/2026) : avec la ville, c'est ce qui désigne le commercial. L'indicatif
+ * sert au téléphone. « Autre » laisse le pays vide : la demande va au superviseur.
+ */
+export const PAYS: { id: string; label: string; indicatif: string }[] = [
+  { id: 'Maroc', label: 'Maroc', indicatif: '+212' },
+  { id: 'France', label: 'France', indicatif: '+33' },
+  { id: 'Espagne', label: 'Espagne', indicatif: '+34' },
+  { id: 'Belgique', label: 'Belgique', indicatif: '+32' },
+  { id: 'Suisse', label: 'Suisse', indicatif: '+41' },
+  { id: 'Émirats arabes unis', label: 'Émirats', indicatif: '+971' },
+  { id: 'Arabie saoudite', label: 'Arabie saoudite', indicatif: '+966' },
+  { id: 'Qatar', label: 'Qatar', indicatif: '+974' },
+  { id: 'États-Unis', label: 'États-Unis', indicatif: '+1' },
+  { id: 'Canada', label: 'Canada', indicatif: '+1' },
+  { id: 'Autre', label: 'Autre pays', indicatif: '' },
+];
+
 export interface Choice {
   value: string;
   label: string;

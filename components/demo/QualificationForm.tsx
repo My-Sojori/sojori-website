@@ -2,6 +2,8 @@
 
 import { useEffect, useMemo, useRef, useState } from 'react';
 import {
+  ACTIVITIES,
+  PAYS,
   SEGMENTS,
   COMMON_TIMELINE,
   HEAR_ABOUT_US,
@@ -60,6 +62,13 @@ export interface QualificationPayload {
   newPropertiesNext12Months: number;
   hearAboutUs: string;
   promoCode: string;
+  phone?: string;
+  countryCode?: string;
+  /** Dans les mots du CRM (conciergerie, hotel, riad_maison_hotes…) : sert à choisir le commercial. */
+  segment?: string;
+  /** Pays d'activité et ville : ce qui désigne le commercial (28/10/2026). */
+  country?: string;
+  cities?: string[];
   /** Réponses aux questions de suivi, gardées avec leur intitulé. */
   followUpAnswers?: { question: string; answer: string; axis?: string }[];
 }
@@ -115,6 +124,8 @@ export function QualificationForm({
   loading,
   error,
   submitLabel,
+  initialSegment,
+  initialPropertyTypes,
 }: {
   onSubmit: (payload: QualificationPayload) => void;
   /**
@@ -125,11 +136,18 @@ export function QualificationForm({
   loading?: boolean;
   error?: string;
   submitLabel: string;
+  /** Activité déjà choisie au mini-formulaire : on n'y revient pas. */
+  initialSegment?: Segment;
+  initialPropertyTypes?: string[];
 }) {
-  const [segment, setSegment] = useState<Segment | ''>('');
+  const [segment, setSegment] = useState<Segment | ''>(initialSegment ?? '');
+  const [activityId, setActivityId] = useState('');
+  const [phone, setPhone] = useState('');
+  const [pays, setPays] = useState('');
+  const [ville, setVille] = useState('');
   const [fullName, setFullName] = useState('');
   const [company, setCompany] = useState('');
-  const [propertyTypes, setPropertyTypes] = useState<string[]>([]);
+  const [propertyTypes, setPropertyTypes] = useState<string[]>(initialPropertyTypes ?? []);
   const [size, setSize] = useState('');
   const [hasPms, setHasPms] = useState('');
   const [pms, setPms] = useState('');
@@ -186,6 +204,13 @@ export function QualificationForm({
       newPropertiesNext12Months: growth ? (growthMap[growth] ?? 0) : 0,
       hearAboutUs,
       promoCode: promoCode.trim(),
+      phone: phone.replace(/\D/g, ''),
+      countryCode: PAYS.find(item => item.id === pays)?.indicatif || '+212',
+      segment:
+        ACTIVITIES.find(item => item.id === activityId)?.crmSegment ??
+        (segment === 'hotel' ? 'hotel' : segment === 'str' ? 'conciergerie' : undefined),
+      ...(pays && pays !== 'Autre' ? { country: pays } : {}),
+      ...(ville.trim() ? { cities: [ville.trim().slice(0, 60)] } : {}),
       ...(answers.length ? { followUpAnswers: answers } : {}),
     };
   };
@@ -194,26 +219,65 @@ export function QualificationForm({
     const list: Step[] = [
       {
         id: 'segment',
+        skip: Boolean(initialSegment),
         render: () => (
           <Question title="Vous gérez quoi&nbsp;?">
-            <div className="qf-segments">
-              <button
-                type="button"
-                onClick={() => setSegment('hotel')}
-                className={segment === 'hotel' ? 'qf-seg qf-seg-on' : 'qf-seg'}
-              >
-                <span className="qf-seg-title">Un établissement</span>
-                <span className="qf-seg-desc">Hôtel, riad, maison d&apos;hôtes</span>
-              </button>
-              <button
-                type="button"
-                onClick={() => setSegment('str')}
-                className={segment === 'str' ? 'qf-seg qf-seg-on' : 'qf-seg'}
-              >
-                <span className="qf-seg-title">Des locations courte durée</span>
-                <span className="qf-seg-desc">Pour vous ou pour des propriétaires</span>
-              </button>
-            </div>
+            <Pills>
+              {ACTIVITIES.map(item => (
+                <Pill
+                  key={item.id}
+                  label={item.label}
+                  selected={activityId === item.id}
+                  onClick={() => {
+                    setActivityId(item.id);
+                    setSegment(item.segment);
+                    setPropertyTypes(item.propertyType ? [item.propertyType] : []);
+                  }}
+                />
+              ))}
+            </Pills>
+          </Question>
+        ),
+      },
+      {
+        id: 'pays',
+        render: () => (
+          <Question title="Dans quel pays&nbsp;?">
+            <Pills>
+              {PAYS.map(item => (
+                <Pill key={item.id} label={item.label} selected={pays === item.id} onClick={() => setPays(item.id)} />
+              ))}
+            </Pills>
+          </Question>
+        ),
+      },
+      {
+        id: 'ville',
+        render: () => (
+          <Question title="Dans quelle ville&nbsp;?" hint="Marrakech, Casablanca, Paris… Vous pouvez passer.">
+            <input
+              type="text"
+              value={ville}
+              onChange={e => setVille(e.target.value)}
+              placeholder="Marrakech"
+              className="qf-input"
+              autoComplete="address-level2"
+            />
+          </Question>
+        ),
+      },
+      {
+        id: 'phone',
+        render: () => (
+          <Question title="Votre téléphone&nbsp;?" hint="Pour vous joindre si besoin. Vous pouvez passer.">
+            <input
+              type="tel"
+              value={phone}
+              onChange={e => setPhone(e.target.value)}
+              placeholder="6 12 34 56 78"
+              className="qf-input"
+              autoComplete="tel"
+            />
           </Question>
         ),
       },
@@ -242,6 +306,7 @@ export function QualificationForm({
       },
       {
         id: 'types',
+        skip: Boolean(ACTIVITIES.find(item => item.id === activityId)?.propertyType),
         render: () => (
           <Question
             title={segment === 'hotel' ? 'Quel type d’établissement ?' : 'Quels types de biens ?'}
@@ -516,6 +581,7 @@ export function QualificationForm({
     return list;
   }, [
     segment, cfg, fullName, company, propertyTypes, size, hasPms, pms, pmsOther,
+    initialSegment, activityId, phone, pays, ville,
     cm, cmOther, pricing, pricingOther, challenges, expectations, growth,
     timeline, hearAboutUs, promoCode, followUps, followUpAnswers,
   ]);
@@ -534,6 +600,13 @@ export function QualificationForm({
     }
     switch (current.id) {
       case 'segment': return Boolean(segment);
+      case 'pays': return Boolean(pays);
+      case 'ville': return true;
+      // « Vous pouvez passer » : vide, ou un vrai numéro.
+      case 'phone': {
+        const chiffres = phone.replace(/\D/g, '').length;
+        return chiffres === 0 || chiffres >= 8;
+      }
       case 'identity': return Boolean(fullName.trim() || company.trim());
       case 'types': return propertyTypes.length > 0;
       case 'size': return Boolean(size);
@@ -566,7 +639,7 @@ export function QualificationForm({
     const t = setTimeout(() => setIndex(i => Math.min(i + 1, visible.length - 1)), 300);
     return () => clearTimeout(t);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [segment, size, hasPms, pms, cm, pricing, growth, timeline, followUpAnswers]);
+  }, [segment, activityId, pays, size, hasPms, pms, cm, pricing, growth, timeline, followUpAnswers]);
 
   // Le changement d'étape est porté aux lecteurs d'écran.
   useEffect(() => {

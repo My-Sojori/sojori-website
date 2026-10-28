@@ -1917,8 +1917,8 @@
       "qualify": "Não foi possível enviar o questionário."
     },
     "step1": {
-      "badge": "Demo gratuita · 30 minutos",
-      "title": "Reserve sua ",
+      "badge": "Demo gratuita",
+      "title": "Prepare a sua ",
       "titleGradient": "demo gratuita",
       "subtitle": "Descubra como Sojori orquestra automaticamente mais de 20 tarefas da reserva ao checkout.",
       "emailLabel": "E-mail *",
@@ -1928,7 +1928,18 @@
       "dialNoResults": "Sem resultados",
       "phoneLabel": "Telefone *",
       "phonePlaceholder": "6 12 34 56 78",
-      "propertiesLabel": "Número de propriedades *",
+      "propertiesLabel": "A sua atividade *",
+      "activityRequired": "Escolha a sua atividade para continuar.",
+      "activities": {
+        "conciergerie": "Concierge",
+        "hotel": "Hotel",
+        "riad": "Riad",
+        "guesthouse": "Casa de hóspedes",
+        "resort": "Resort",
+        "aparthotel": "Residência hoteleira",
+        "villa": "Villa",
+        "apartment": "Apartamento"
+      },
       "propertiesPlaceholder": "Selecione...",
       "propertiesOptions": {
         "1": "1 propriedade",
@@ -1938,12 +1949,12 @@
         "21-50": "21-50 propriedades",
         "51+": "51+ propriedades"
       },
-      "submitButton": "Reservar minha demo →",
+      "submitButton": "Continuar →",
       "submitButtonLoading": "Enviando...",
       "disclaimer": "Ao fornecer seus dados, você concorda em receber informações sobre Sojori. Você pode cancelar a inscrição a qualquer momento.",
-      "loadingTitle": "Registrando sua solicitação",
-      "loadingDescription": "Estamos verificando seus dados e preparando os próximos passos (escolher um horário com a equipe).",
-      "loadingWait": "Por favor, aguarde aproximadamente 5 segundos…"
+      "loadingTitle": "A abrir o questionário",
+      "loadingDescription": "Algumas perguntas, adaptadas à atividade que acabou de escolher.",
+      "loadingWait": "Um instante…"
     },
     "step2": {
       "badge": "Passo 2/4 · Horário",
@@ -1970,10 +1981,10 @@
       "noAgentNotice": "Não há horários online no momento. Você deve receber um e-mail da Sarah (Sojori) com um link para agendar — verifique também o spam."
     },
     "step3": {
-      "badge": "Passo 3/4 · Personalização",
-      "title": "Seu horário está ",
-      "titleGradient": "reservado",
-      "subtitle": "Nada estressante aqui: algumas perguntas para adaptar a demo ao seu contexto. Você pode preenchê-las com calma.",
+      "badge": "Algumas perguntas",
+      "title": "Falemos da ",
+      "titleGradient": "sua atividade",
+      "subtitle": "Nada é obrigatório. As suas respostas servem para preparar uma conversa útil.",
       "appointmentLabel": "Compromisso:",
       "basicInfoTitle": "📋 Informações básicas",
       "fullNameLabel": "Nome completo *",
@@ -2064,7 +2075,7 @@
       "confirmed": {
         "title": "Solicitação ",
         "titleGradient": "confirmada!",
-        "message": "O seu pedido e horário estão registados. A nossa equipa pode contactá-lo em",
+        "message": "O seu pedido está registado. A nossa equipa pode contactá-lo em",
         "contactTime": "2 horas úteis",
         "ifNeeded": "se necessário.",
         "appointmentLabel": "Compromisso:",

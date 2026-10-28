@@ -1917,8 +1917,8 @@
       "qualify": "تعذر إرسال الاستبيان."
     },
     "step1": {
-      "badge": "عرض مجاني · 30 دقيقة",
-      "title": "احجز ",
+      "badge": "عرض مجاني",
+      "title": "جهّز ",
       "titleGradient": "عرضك المجاني",
       "subtitle": "اكتشف كيف ينسق Sojori تلقائيًا أكثر من 20 مهمة من الحجز إلى المغادرة.",
       "emailLabel": "البريد الإلكتروني *",
@@ -1928,7 +1928,18 @@
       "dialNoResults": "لا توجد نتائج",
       "phoneLabel": "الهاتف *",
       "phonePlaceholder": "6 12 34 56 78",
-      "propertiesLabel": "عدد العقارات *",
+      "propertiesLabel": "نشاطكم *",
+      "activityRequired": "اختاروا نشاطكم للمتابعة.",
+      "activities": {
+        "conciergerie": "كونسيرجري",
+        "hotel": "فندق",
+        "riad": "رياض",
+        "guesthouse": "دار ضيافة",
+        "resort": "منتجع",
+        "aparthotel": "إقامة فندقية",
+        "villa": "فيلا",
+        "apartment": "شقة"
+      },
       "propertiesPlaceholder": "اختر...",
       "propertiesOptions": {
         "1": "عقار واحد",
@@ -1938,12 +1949,12 @@
         "21-50": "21-50 عقار",
         "51+": "51+ عقار"
       },
-      "submitButton": "احجز عرضي →",
+      "submitButton": "متابعة →",
       "submitButtonLoading": "جارٍ الإرسال...",
       "disclaimer": "بتقديم بياناتك، فإنك توافق على تلقي معلومات حول Sojori. يمكنك إلغاء الاشتراك في أي وقت.",
-      "loadingTitle": "تسجيل طلبك",
-      "loadingDescription": "نحن نتحقق من بياناتك ونحضر الخطوات التالية (اختيار موعد مع الفريق).",
-      "loadingWait": "يرجى الانتظار حوالي 5 ثوانٍ…"
+      "loadingTitle": "نفتح الاستبيان",
+      "loadingDescription": "بعض الأسئلة، حسب النشاط الذي اخترتموه.",
+      "loadingWait": "لحظة…"
     },
     "step2": {
       "badge": "الخطوة 2/4 · الجدول",
@@ -1970,10 +1981,10 @@
       "noAgentNotice": "لا توجد مواعيد متاحة عبر الإنترنت حاليًا. يفترض أن تصلك رسالة من Sarah (Sojori) تحوي رابطًا لحجز موعد — تحقق أيضًا من مجلد الرسائل غير المرغوب فيها."
     },
     "step3": {
-      "badge": "الخطوة 3/4 · التخصيص",
-      "title": "موعدك ",
-      "titleGradient": "محجوز",
-      "subtitle": "لا شيء مرهق هنا: بعض الأسئلة لتكييف العرض مع سياقك. يمكنك ملؤها براحة.",
+      "badge": "بعض الأسئلة",
+      "title": "لنتحدث عن ",
+      "titleGradient": "نشاطكم",
+      "subtitle": "لا شيء إلزامي. إجاباتكم تساعدنا على تحضير تبادل مفيد.",
       "appointmentLabel": "الموعد:",
       "basicInfoTitle": "📋 معلومات أساسية",
       "fullNameLabel": "الاسم الكامل *",
@@ -2064,7 +2075,7 @@
       "confirmed": {
         "title": "طلب ",
         "titleGradient": "مؤكد!",
-        "message": "تم حفظ طلبك والموعد. قد يتواصل فريقنا خلال",
+        "message": "تم حفظ طلبكم. قد يتواصل فريقنا خلال",
         "contactTime": "ساعتَي عمل",
         "ifNeeded": "إذا لزم الأمر.",
         "appointmentLabel": "الموعد:",
