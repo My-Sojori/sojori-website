@@ -7,7 +7,7 @@ import { BackgroundEffects } from '@/components/BackgroundEffects';
 import { PageHeader, PageFooter } from '@/components/SharedComponents';
 import { Link } from '@/i18n/routing';
 import { QualificationForm, type FollowUpQuestion, type QualificationPayload } from '@/components/demo/QualificationForm';
-import { ACTIVITIES } from '@/lib/demoQualification';
+import { ACTIVITIES, paysDeLIso } from '@/lib/demoQualification';
 import { PhoneDialSelect } from '@/components/demo/PhoneDialSelect';
 import { normalizeDemoBackendResponse, demoResponseErrorMessage } from '@/lib/demoApiResponse';
 import { trackDemoLead, trackDemoScheduled, trackDemoQualified } from '@/lib/analytics';
@@ -1006,6 +1006,7 @@ function DemoPageContent() {
                     initialPhone={formData.phone.replace(/\D/g, '') || undefined}
                     initialCountryCode={formData.countryCode}
                     initialNumberOfProperties={formData.taille || undefined}
+                    initialCountry={paysDeLIso(formData.dialCountryIso)}
                     onSubmit={handleQualificationSubmit}
                     onRequestFollowUp={demanderQuestions}
                     loading={loading}

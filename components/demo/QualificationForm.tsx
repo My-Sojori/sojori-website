@@ -130,6 +130,7 @@ export function QualificationForm({
   initialPhone,
   initialCountryCode,
   initialNumberOfProperties,
+  initialCountry,
 }: {
   onSubmit: (payload: QualificationPayload) => void;
   /**
@@ -149,6 +150,8 @@ export function QualificationForm({
   initialCountryCode?: string;
   /** La taille déjà donnée au petit formulaire (tranche « 6-10 ») : la question n'est pas reposée. */
   initialNumberOfProperties?: string;
+  /** Le pays de l'indicatif du téléphone, préselectionné (le prospect peut le changer). */
+  initialCountry?: string;
 }) {
   const activiteInitiale = ACTIVITIES.find(item => item.id === initialActivityId);
   const [segment, setSegment] = useState<Segment | ''>(
@@ -156,7 +159,8 @@ export function QualificationForm({
   );
   const [activityId, setActivityId] = useState(activiteInitiale?.id ?? '');
   const [phone, setPhone] = useState(initialPhone ?? '');
-  const [pays, setPays] = useState('');
+  const [pays, setPays] = useState(initialCountry ?? '');
+  const [paysAutre, setPaysAutre] = useState('');
   const [ville, setVille] = useState('');
   const [fullName, setFullName] = useState('');
   const [company, setCompany] = useState('');
@@ -226,6 +230,7 @@ export function QualificationForm({
         ACTIVITIES.find(item => item.id === activityId)?.crmSegment ??
         (segment === 'hotel' ? 'hotel' : segment === 'str' ? 'conciergerie' : undefined),
       ...(pays && pays !== 'Autre' ? { country: pays } : {}),
+      ...(pays === 'Autre' && paysAutre.trim() ? { country: paysAutre.trim().slice(0, 60) } : {}),
       ...(ville.trim() ? { cities: [ville.trim().slice(0, 60)] } : {}),
       ...(answers.length ? { followUpAnswers: answers } : {}),
     };
@@ -264,6 +269,17 @@ export function QualificationForm({
                 <Pill key={item.id} label={item.label} selected={pays === item.id} onClick={() => setPays(item.id)} />
               ))}
             </Pills>
+            {pays === 'Autre' && (
+              <input
+                type="text"
+                value={paysAutre}
+                onChange={e => setPaysAutre(e.target.value)}
+                placeholder="Précisez le pays"
+                className="qf-input"
+                style={{ marginTop: 14 }}
+                autoComplete="country-name"
+              />
+            )}
           </Question>
         ),
       },
@@ -599,7 +615,7 @@ export function QualificationForm({
     return list;
   }, [
     segment, cfg, fullName, company, propertyTypes, size, hasPms, pms, pmsOther,
-    initialSegment, activityId, phone, pays, ville,
+    initialSegment, activityId, phone, pays, paysAutre, ville,
     cm, cmOther, pricing, pricingOther, challenges, expectations, growth,
     timeline, hearAboutUs, promoCode, followUps, followUpAnswers,
   ]);
@@ -618,7 +634,7 @@ export function QualificationForm({
     }
     switch (current.id) {
       case 'segment': return Boolean(segment);
-      case 'pays': return Boolean(pays);
+      case 'pays': return Boolean(pays) && (pays !== 'Autre' || paysAutre.trim().length > 1);
       case 'ville': return true;
       // « Vous pouvez passer » : vide, ou un vrai numéro.
       case 'phone': {
