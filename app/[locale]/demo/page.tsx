@@ -248,25 +248,21 @@ function DemoPageContent() {
     };
   }, [step, demoRequestId]);
 
-  /** Le petit formulaire en deux écrans : coordonnées, puis le type d'établissement. */
-  const [miniEtape, setMiniEtape] = useState<'contact' | 'type'>('contact');
+  const choisirActivite = (id: string) => {
+    setFormData(prev => ({ ...prev, activity: id, taille: '' }));
+  };
 
-  const handleContact = (e: React.FormEvent) => {
+  /** Le petit formulaire sur UN écran (Tawfiq, 28/10/2026) : coordonnées, type d'établissement, taille. */
+  const handleSubmitStep1 = (e: React.FormEvent) => {
     e.preventDefault();
     if (formData.phone.replace(/\D/g, '').length < 8) {
       setError(t('step1.phoneInvalid'));
       return;
     }
-    setError('');
-    setMiniEtape('type');
-  };
-
-  const choisirActivite = (id: string) => {
-    setFormData(prev => ({ ...prev, activity: id, taille: '' }));
-  };
-
-  const handleSubmitStep1 = (e: React.FormEvent) => {
-    e.preventDefault();
+    if (!formData.activity) {
+      setError(t('step1.activityRequired'));
+      return;
+    }
     if (!formData.taille) {
       setError(t('step1.tailleRequired'));
       return;
@@ -345,7 +341,6 @@ function DemoPageContent() {
           : '';
       setError(`${msg}${hint}`);
       setStep(1);
-      setMiniEtape('type');
       console.error('Error submitting step 1:', err);
     }
   };
@@ -532,8 +527,7 @@ function DemoPageContent() {
                     </div>
                   )}
 
-                  {miniEtape === 'contact' ? (
-                    <form onSubmit={handleContact}>
+                    <form onSubmit={handleSubmitStep1} className="demo-mini">
                       <div style={{ marginBottom: 18 }}>
                         <label style={labelStyle as React.CSSProperties}>{t('step1.emailLabel')}</label>
                         <input
@@ -597,16 +591,7 @@ function DemoPageContent() {
                         />
                         <span>{t('step1.consentLabel')}</span>
                       </label>
-                      <button type="submit" className="btn btn-primary" style={{ width: '100%', padding: '16px', fontSize: 15, fontWeight: 600 }}>
-                        {t('step1.submitButton')}
-                      </button>
-                      <p style={{ fontSize: 11, color: 'var(--text-3)', textAlign: 'center', marginTop: 16 }}>
-                        {t('step1.disclaimer')}
-                      </p>
-                    </form>
-                  ) : (
-                    <form onSubmit={handleSubmitStep1} className="demo-mini">
-                      <h3 style={{ fontSize: 22, marginBottom: 8 }}>{t('step1.typeTitle')}</h3>
+                      <h3 style={{ fontSize: 20, marginBottom: 6 }}>{t('step1.typeTitle')}</h3>
                       <p style={{ fontSize: 14, color: 'var(--text-2)', marginBottom: 18 }}>{t('step1.typeSubtitle')}</p>
                       <div className="qf-pills" style={{ marginBottom: 22 }}>
                         {ACTIVITIES.map(item => (
@@ -642,21 +627,18 @@ function DemoPageContent() {
                           </div>
                         </>
                       )}
-                      <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
-                        <button type="button" className="btn" onClick={() => setMiniEtape('contact')} style={{ fontSize: 14 }}>
-                          {t('step1.back')}
-                        </button>
-                        <button
-                          type="submit"
-                          className="btn btn-primary"
-                          disabled={loading || !formData.activity || !formData.taille}
-                          style={{ flex: 1, padding: '14px', fontSize: 15, fontWeight: 600 }}
-                        >
-                          {t('step1.submitButton')}
-                        </button>
-                      </div>
+                      <button
+                        type="submit"
+                        className="btn btn-primary"
+                        disabled={loading}
+                        style={{ width: '100%', padding: '16px', fontSize: 15, fontWeight: 600 }}
+                      >
+                        {loading ? t('step1.submitButtonLoading') : t('step1.submitButton')}
+                      </button>
+                      <p style={{ fontSize: 11, color: 'var(--text-3)', textAlign: 'center', marginTop: 16 }}>
+                        {t('step1.disclaimer')}
+                      </p>
                     </form>
-                  )}
                 </div>
               </>
             )}
