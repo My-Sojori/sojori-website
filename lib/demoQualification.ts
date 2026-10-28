@@ -38,6 +38,8 @@ export const ACTIVITIES: {
   { id: 'aparthotel', segment: 'hotel', crmSegment: 'residence_aparthotel', propertyType: 'aparthotel', label: 'Résidence hôtelière' },
   { id: 'villa', segment: 'str', crmSegment: 'proprietaire', propertyType: 'villa', label: 'Villa' },
   { id: 'apartment', segment: 'str', crmSegment: 'proprietaire', propertyType: 'apartment', label: 'Appartement' },
+  // « Autre » : pas de segment du CRM, la demande va au superviseur (Cursor l'avait prévu, 28/10/2026).
+  { id: 'autre', segment: 'str', crmSegment: '', label: 'Autre' },
 ];
 
 /**

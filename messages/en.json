@@ -2036,7 +2036,8 @@
         "resort": "Resort",
         "aparthotel": "Aparthotel",
         "villa": "Villa",
-        "apartment": "Apartment"
+        "apartment": "Apartment",
+        "autre": "Other"
       },
       "propertiesPlaceholder": "Select...",
       "propertiesOptions": {

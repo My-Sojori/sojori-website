@@ -1938,7 +1938,8 @@
         "resort": "منتجع",
         "aparthotel": "إقامة فندقية",
         "villa": "فيلا",
-        "apartment": "شقة"
+        "apartment": "شقة",
+        "autre": "أخرى"
       },
       "propertiesPlaceholder": "اختر...",
       "propertiesOptions": {

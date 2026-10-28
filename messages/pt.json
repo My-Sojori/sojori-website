@@ -1938,7 +1938,8 @@
         "resort": "Resort",
         "aparthotel": "Residência hoteleira",
         "villa": "Villa",
-        "apartment": "Apartamento"
+        "apartment": "Apartamento",
+        "autre": "Outro"
       },
       "propertiesPlaceholder": "Selecione...",
       "propertiesOptions": {

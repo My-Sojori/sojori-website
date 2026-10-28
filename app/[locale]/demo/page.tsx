@@ -300,7 +300,7 @@ function DemoPageContent() {
             phone: formData.phone.replace(/\D/g, ''),
             countryCode: formData.countryCode,
             // L'activité dans les mots du CRM : l'agent de prospection s'en sert pour choisir le commercial.
-            segment: activite.crmSegment,
+            ...(activite.crmSegment ? { segment: activite.crmSegment } : {}),
             // Une tranche (« 6-10 ») : chambres pour un établissement, biens pour des locations.
             numberOfProperties: formData.taille,
             consentementMessages: formData.consentementMessages,
