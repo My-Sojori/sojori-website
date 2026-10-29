@@ -7,7 +7,7 @@ import { BackgroundEffects } from '@/components/BackgroundEffects';
 import { PageHeader, PageFooter } from '@/components/SharedComponents';
 import { Link } from '@/i18n/routing';
 import { QualificationForm, type FollowUpQuestion, type QualificationPayload } from '@/components/demo/QualificationForm';
-import { ACTIVITIES, paysDeLIso } from '@/lib/demoQualification';
+import { ACTIVITIES, PAYS_DEMO, VILLES_PAR_DEFAUT, VILLES_SUGGEREES, paysDeLIso } from '@/lib/demoQualification';
 import { PhoneDialSelect } from '@/components/demo/PhoneDialSelect';
 import { normalizeDemoBackendResponse, demoResponseErrorMessage } from '@/lib/demoApiResponse';
 import { trackDemoLead, trackDemoScheduled, trackDemoQualified } from '@/lib/analytics';
@@ -19,7 +19,10 @@ const DEMO_API = '/api/v1/demo';
 const PRISE_DE_RENDEZ_VOUS = false;
 
 /** Taille du compte, en chambres ou en biens selon le type (Tawfiq, 28/10/2026). */
-const TRANCHES = ['1', '2-5', '6-10', '11-20', '21-50', '51+'];
+const TRANCHES = ['1-5', '6-20', '21-50', '51+'];
+
+/** Les types du petit formulaire (Tawfiq, 29/10/2026) : conciergerie, hôtel, riad / maison d'hôtes, villa / appartement, autre. */
+const TYPES_FORMULAIRE = ['conciergerie', 'hotel', 'riad', 'villa', 'autre'];
 
 /** Tag BCP 47 pour `Intl` (aligné sur les locales du site). */
 const BOOKING_INTL_LOCALE: Record<string, string> = {
@@ -87,6 +90,10 @@ function DemoPageContent() {
     // Step 1
     countryCode: '+212',
     dialCountryIso: 'MA',
+    // Pays et ville du petit formulaire : des indications que Scout recoupe avec l'indicatif.
+    pays: '',
+    paysAutre: '',
+    ville: '',
     email: '',
     phone: '',
     numberOfProperties: '',
@@ -255,6 +262,14 @@ function DemoPageContent() {
   /** Le petit formulaire sur UN écran (Tawfiq, 28/10/2026) : coordonnées, type d'établissement, taille. */
   const handleSubmitStep1 = (e: React.FormEvent) => {
     e.preventDefault();
+    if (!formData.pays || (formData.pays === 'Autre' && formData.paysAutre.trim().length < 2)) {
+      setError(t('step1.paysRequired'));
+      return;
+    }
+    if (formData.ville.trim().length < 2) {
+      setError(t('step1.villeRequired'));
+      return;
+    }
     if (formData.phone.replace(/\D/g, '').length < 8) {
       setError(t('step1.phoneInvalid'));
       return;
@@ -295,6 +310,8 @@ function DemoPageContent() {
             fullName: formData.fullName.trim(),
             phone: formData.phone.replace(/\D/g, ''),
             countryCode: formData.countryCode,
+            country: formData.pays === 'Autre' ? formData.paysAutre.trim().slice(0, 60) : formData.pays,
+            city: formData.ville.trim().slice(0, 60),
             // L'activité dans les mots du CRM : l'agent de prospection s'en sert pour choisir le commercial.
             ...(activite.crmSegment ? { segment: activite.crmSegment } : {}),
             // Une tranche (« 6-10 ») : chambres pour un établissement, biens pour des locations.
@@ -557,6 +574,63 @@ function DemoPageContent() {
                       </div>
                       <div style={{ display: 'flex', flexWrap: 'wrap', gap: 14, marginBottom: 18, alignItems: 'flex-start' }}>
                         <div style={{ flex: '1 1 220px', minWidth: 200 }}>
+                          <label style={labelStyle as React.CSSProperties}>{t('step1.paysLabel')}</label>
+                          <select
+                            name="pays"
+                            required
+                            value={formData.pays}
+                            onChange={e => {
+                              const choisi = PAYS_DEMO.find(item => item.id === e.target.value);
+                              // L'indicatif suit le pays choisi (modifiable ensuite) ; « Autre » ne le touche pas.
+                              setFormData(prev => ({
+                                ...prev,
+                                pays: e.target.value,
+                                ...(choisi?.indicatif ? { countryCode: choisi.indicatif, dialCountryIso: choisi.iso ?? prev.dialCountryIso } : {}),
+                              }));
+                            }}
+                            style={inputStyle}
+                          >
+                            <option value="">{t('step1.paysPlaceholder')}</option>
+                            {PAYS_DEMO.map(item => (
+                              <option key={item.id} value={item.id}>
+                                {item.id === 'Autre' ? t('step1.paysAutre') : item.label}
+                              </option>
+                            ))}
+                          </select>
+                          {formData.pays === 'Autre' && (
+                            <input
+                              type="text"
+                              name="paysAutre"
+                              value={formData.paysAutre}
+                              onChange={handleChange}
+                              placeholder={t('step1.paysAutrePlaceholder')}
+                              autoComplete="country-name"
+                              style={{ ...inputStyle, marginTop: 8 }}
+                            />
+                          )}
+                        </div>
+                        <div style={{ flex: '1 1 220px', minWidth: 200 }}>
+                          <label style={labelStyle as React.CSSProperties}>{t('step1.villeLabel')}</label>
+                          <input
+                            type="text"
+                            name="ville"
+                            required
+                            list="demo-villes"
+                            autoComplete="address-level2"
+                            value={formData.ville}
+                            onChange={handleChange}
+                            placeholder={t('step1.villePlaceholder')}
+                            style={inputStyle}
+                          />
+                          <datalist id="demo-villes">
+                            {(VILLES_SUGGEREES[formData.pays] ?? VILLES_PAR_DEFAUT).map(v => (
+                              <option key={v} value={v} />
+                            ))}
+                          </datalist>
+                        </div>
+                      </div>
+                      <div style={{ display: 'flex', flexWrap: 'wrap', gap: 14, marginBottom: 18, alignItems: 'flex-start' }}>
+                        <div style={{ flex: '1 1 220px', minWidth: 200 }}>
                           <PhoneDialSelect
                             dial={formData.countryCode}
                             iso={formData.dialCountryIso}
@@ -594,7 +668,7 @@ function DemoPageContent() {
                       <h3 style={{ fontSize: 20, marginBottom: 6 }}>{t('step1.typeTitle')}</h3>
                       <p style={{ fontSize: 14, color: 'var(--text-2)', marginBottom: 18 }}>{t('step1.typeSubtitle')}</p>
                       <div className="qf-pills" style={{ marginBottom: 22 }}>
-                        {ACTIVITIES.map(item => (
+                        {ACTIVITIES.filter(item => TYPES_FORMULAIRE.includes(item.id)).map(item => (
                           <button
                             key={item.id}
                             type="button"
@@ -1006,13 +1080,20 @@ function DemoPageContent() {
                     initialPhone={formData.phone.replace(/\D/g, '') || undefined}
                     initialCountryCode={formData.countryCode}
                     initialNumberOfProperties={formData.taille || undefined}
-                    initialCountry={paysDeLIso(formData.dialCountryIso)}
+                    initialCountry={formData.pays || paysDeLIso(formData.dialCountryIso)}
+                    initialFullName={formData.fullName.trim() || undefined}
+                    compact
                     onSubmit={handleQualificationSubmit}
                     onRequestFollowUp={demanderQuestions}
                     loading={loading}
                     error={error}
                     submitLabel={t('step3.submitButton')}
                   />
+                  <div style={{ textAlign: 'center', marginTop: 18 }}>
+                    <button type="button" onClick={() => setStep(4)} className="qf-skip" disabled={loading}>
+                      {t('step3.skipAll')}
+                    </button>
+                  </div>
                 </div>
               </div>
             )}
