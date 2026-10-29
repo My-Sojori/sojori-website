@@ -43,22 +43,34 @@ export const ACTIVITIES: {
 ];
 
 /**
- * Le pays d'activité (28/10/2026) : avec la ville, c'est ce qui désigne le commercial. L'indicatif
- * sert au téléphone. « Autre » laisse le pays vide : la demande va au superviseur.
+ * Le pays d'activité (28/10/2026) : avec la ville, c'est ce qui désigne le commercial. `iso` rattache
+ * le pays à l'indicatif du téléphone (préselection) ; « Autre » demande de préciser le pays au lieu de
+ * l'oublier : un prospect du Portugal restait « pays inconnu » et allait au superviseur.
  */
-export const PAYS: { id: string; label: string; indicatif: string }[] = [
-  { id: 'Maroc', label: 'Maroc', indicatif: '+212' },
-  { id: 'France', label: 'France', indicatif: '+33' },
-  { id: 'Espagne', label: 'Espagne', indicatif: '+34' },
-  { id: 'Belgique', label: 'Belgique', indicatif: '+32' },
-  { id: 'Suisse', label: 'Suisse', indicatif: '+41' },
-  { id: 'Émirats arabes unis', label: 'Émirats', indicatif: '+971' },
-  { id: 'Arabie saoudite', label: 'Arabie saoudite', indicatif: '+966' },
-  { id: 'Qatar', label: 'Qatar', indicatif: '+974' },
-  { id: 'États-Unis', label: 'États-Unis', indicatif: '+1' },
-  { id: 'Canada', label: 'Canada', indicatif: '+1' },
+export const PAYS: { id: string; label: string; indicatif: string; iso?: string }[] = [
+  { id: 'Maroc', label: 'Maroc', indicatif: '+212', iso: 'MA' },
+  { id: 'France', label: 'France', indicatif: '+33', iso: 'FR' },
+  { id: 'Espagne', label: 'Espagne', indicatif: '+34', iso: 'ES' },
+  { id: 'Portugal', label: 'Portugal', indicatif: '+351', iso: 'PT' },
+  { id: 'Italie', label: 'Italie', indicatif: '+39', iso: 'IT' },
+  { id: 'Belgique', label: 'Belgique', indicatif: '+32', iso: 'BE' },
+  { id: 'Suisse', label: 'Suisse', indicatif: '+41', iso: 'CH' },
+  { id: 'Royaume-Uni', label: 'Royaume-Uni', indicatif: '+44', iso: 'GB' },
+  { id: 'Allemagne', label: 'Allemagne', indicatif: '+49', iso: 'DE' },
+  { id: 'Émirats arabes unis', label: 'Émirats', indicatif: '+971', iso: 'AE' },
+  { id: 'Arabie saoudite', label: 'Arabie saoudite', indicatif: '+966', iso: 'SA' },
+  { id: 'Qatar', label: 'Qatar', indicatif: '+974', iso: 'QA' },
+  { id: 'Tunisie', label: 'Tunisie', indicatif: '+216', iso: 'TN' },
+  { id: 'Sénégal', label: 'Sénégal', indicatif: '+221', iso: 'SN' },
+  { id: 'Côte d’Ivoire', label: 'Côte d’Ivoire', indicatif: '+225', iso: 'CI' },
+  { id: 'États-Unis', label: 'États-Unis', indicatif: '+1', iso: 'US' },
+  { id: 'Canada', label: 'Canada', indicatif: '+1', iso: 'CA' },
   { id: 'Autre', label: 'Autre pays', indicatif: '' },
 ];
+
+/** Le pays qui correspond à l'indicatif du téléphone du visiteur, s'il est dans la liste. */
+export const paysDeLIso = (iso: string | null | undefined): string | undefined =>
+  PAYS.find(item => item.iso && item.iso === String(iso ?? '').toUpperCase())?.id;
 
 export interface Choice {
   value: string;
