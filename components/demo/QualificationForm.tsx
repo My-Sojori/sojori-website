@@ -131,6 +131,8 @@ export function QualificationForm({
   initialCountryCode,
   initialNumberOfProperties,
   initialCountry,
+  initialFullName,
+  compact,
 }: {
   onSubmit: (payload: QualificationPayload) => void;
   /**
@@ -152,6 +154,13 @@ export function QualificationForm({
   initialNumberOfProperties?: string;
   /** Le pays de l'indicatif du téléphone, préselectionné (le prospect peut le changer). */
   initialCountry?: string;
+  /** Le nom déjà donné au petit formulaire. */
+  initialFullName?: string;
+  /**
+   * « Aller plus loin » (Tawfiq, 29/10/2026) : le petit formulaire a déjà demandé pays, ville, type, taille,
+   * nom et téléphone ; il ne reste que le PMS, ce que le prospect cherche et un message libre. Rien de redemandé.
+   */
+  compact?: boolean;
 }) {
   const activiteInitiale = ACTIVITIES.find(item => item.id === initialActivityId);
   const [segment, setSegment] = useState<Segment | ''>(
@@ -162,7 +171,8 @@ export function QualificationForm({
   const [pays, setPays] = useState(initialCountry ?? '');
   const [paysAutre, setPaysAutre] = useState('');
   const [ville, setVille] = useState('');
-  const [fullName, setFullName] = useState('');
+  const [fullName, setFullName] = useState(initialFullName ?? '');
+  const [message, setMessage] = useState('');
   const [company, setCompany] = useState('');
   const [propertyTypes, setPropertyTypes] = useState<string[]>(
     initialPropertyTypes ??
@@ -220,7 +230,10 @@ export function QualificationForm({
       currentWhatsApp: '',
       timeline,
       biggestChallenges: cfg ? labelsOf(cfg.challenges, challenges) : '',
-      expectations: cfg ? labelsOf(cfg.expectations, expectations) : '',
+      expectations: [cfg ? labelsOf(cfg.expectations, expectations) : '', message.trim()]
+        .filter(Boolean)
+        .join(' — ')
+        .slice(0, 1000),
       newPropertiesNext12Months: growth ? (growthMap[growth] ?? 0) : 0,
       hearAboutUs,
       promoCode: promoCode.trim(),
@@ -229,9 +242,11 @@ export function QualificationForm({
       segment:
         ACTIVITIES.find(item => item.id === activityId)?.crmSegment ??
         (segment === 'hotel' ? 'hotel' : segment === 'str' ? 'conciergerie' : undefined),
-      ...(pays && pays !== 'Autre' ? { country: pays } : {}),
-      ...(pays === 'Autre' && paysAutre.trim() ? { country: paysAutre.trim().slice(0, 60) } : {}),
-      ...(ville.trim() ? { cities: [ville.trim().slice(0, 60)] } : {}),
+      // En mode « Aller plus loin », pays et ville sont déjà partis avec le petit formulaire (indications que Scout
+      // recoupe) : on ne les renvoie pas, le questionnaire les marquerait « sûrs ».
+      ...(!compact && pays && pays !== 'Autre' ? { country: pays } : {}),
+      ...(!compact && pays === 'Autre' && paysAutre.trim() ? { country: paysAutre.trim().slice(0, 60) } : {}),
+      ...(!compact && ville.trim() ? { cities: [ville.trim().slice(0, 60)] } : {}),
       ...(answers.length ? { followUpAnswers: answers } : {}),
     };
   };
@@ -262,6 +277,7 @@ export function QualificationForm({
       },
       {
         id: 'pays',
+        skip: Boolean(compact || initialCountry),
         render: () => (
           <Question title="Dans quel pays&nbsp;?">
             <Pills>
@@ -285,6 +301,7 @@ export function QualificationForm({
       },
       {
         id: 'ville',
+        skip: Boolean(compact),
         render: () => (
           <Question title="Dans quelle ville&nbsp;?" hint="Marrakech, Casablanca, Paris… Vous pouvez passer.">
             <input
@@ -316,6 +333,7 @@ export function QualificationForm({
       },
       {
         id: 'identity',
+        skip: Boolean(compact || initialFullName),
         render: () => (
           <Question title="Comment vous appelez-vous&nbsp;?">
             <div className="qf-inputs">
@@ -339,7 +357,9 @@ export function QualificationForm({
       },
       {
         id: 'types',
-        skip: Boolean(ACTIVITIES.find(item => item.id === activityId)?.propertyType),
+        skip:
+          Boolean(compact) ||
+          Boolean(ACTIVITIES.find(item => item.id === activityId)?.propertyType),
         render: () => (
           <Question
             title={segment === 'hotel' ? 'Quel type d’établissement ?' : 'Quels types de biens ?'}
@@ -437,6 +457,7 @@ export function QualificationForm({
       },
       {
         id: 'channels',
+        skip: Boolean(compact),
         render: () => (
           <Question title="Et pour vos canaux de distribution&nbsp;?">
             <Pills>
@@ -463,6 +484,7 @@ export function QualificationForm({
       },
       {
         id: 'pricing',
+        skip: Boolean(compact),
         render: () => (
           <Question title="Comment fixez-vous vos prix&nbsp;?">
             <Pills>
@@ -489,6 +511,7 @@ export function QualificationForm({
       },
       {
         id: 'challenges',
+        skip: Boolean(compact),
         render: () => (
           <Question
             title="Qu’est-ce qui vous prend le plus de temps&nbsp;?"
@@ -526,7 +549,7 @@ export function QualificationForm({
       },
       {
         id: 'growth',
-        skip: !cfg?.growth,
+        skip: Boolean(compact) || !cfg?.growth,
         render: () => (
           <Question title="Combien de biens en plus dans les douze mois&nbsp;?">
             <Pills>
@@ -544,6 +567,7 @@ export function QualificationForm({
       },
       {
         id: 'timeline',
+        skip: Boolean(compact),
         render: () => (
           <Question title="Quand souhaitez-vous démarrer&nbsp;?">
             <Pills>
@@ -587,8 +611,27 @@ export function QualificationForm({
       });
     }
 
+    if (compact) {
+      list.push({
+        id: 'message',
+        render: () => (
+          <Question title="Un mot pour nous&nbsp;?" hint="Facultatif. Une question, un contexte, une date.">
+            <textarea
+              value={message}
+              onChange={e => setMessage(e.target.value)}
+              rows={4}
+              maxLength={600}
+              className="qf-input"
+              placeholder="Votre message"
+            />
+          </Question>
+        ),
+      });
+    }
+
     list.push({
       id: 'source',
+      skip: Boolean(compact),
       render: () => (
         <Question title="Comment nous avez-vous connus&nbsp;?">
           <Pills>
@@ -616,7 +659,7 @@ export function QualificationForm({
   }, [
     segment, cfg, fullName, company, propertyTypes, size, hasPms, pms, pmsOther,
     initialSegment, activityId, phone, pays, paysAutre, ville,
-    cm, cmOther, pricing, pricingOther, challenges, expectations, growth,
+    cm, cmOther, pricing, pricingOther, challenges, expectations, growth, message, compact, initialFullName, initialCountry,
     timeline, hearAboutUs, promoCode, followUps, followUpAnswers,
   ]);
 
@@ -653,6 +696,7 @@ export function QualificationForm({
       case 'growth': return Boolean(growth);
       case 'timeline': return Boolean(timeline);
       case 'source': return Boolean(hearAboutUs);
+      case 'message': return true;
       default: return false;
     }
   })();

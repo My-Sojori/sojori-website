@@ -68,6 +68,29 @@ export const PAYS: { id: string; label: string; indicatif: string; iso?: string 
   { id: 'Autre', label: 'Autre pays', indicatif: '' },
 ];
 
+/**
+ * Les pays du petit formulaire (Tawfiq, 29/10/2026) : la liste de l'équipe commerciale, « Autre » en texte
+ * libre (Scout le lit et l'écrit correctement). Le pays choisi est une indication, jamais un verdict.
+ */
+const PAYS_DU_FORMULAIRE = ['Maroc', 'France', 'Émirats arabes unis', 'Arabie saoudite', 'Espagne', 'Italie', 'Canada', 'États-Unis', 'Tunisie', 'Autre'];
+export const PAYS_DEMO = PAYS_DU_FORMULAIRE.map(id => PAYS.find(item => item.id === id)).filter(
+  (item): item is (typeof PAYS)[number] => Boolean(item),
+);
+
+/** Des villes à suggérer selon le pays choisi ; la saisie reste libre. */
+export const VILLES_SUGGEREES: Record<string, string[]> = {
+  Maroc: ['Marrakech', 'Casablanca', 'Rabat', 'Tanger', 'Agadir', 'Fès'],
+  France: ['Paris', 'Lyon', 'Nice', 'Marseille', 'Bordeaux'],
+  'Émirats arabes unis': ['Dubaï', 'Abu Dhabi', 'Sharjah'],
+  'Arabie saoudite': ['Riyad', 'Djeddah', 'La Mecque'],
+  Espagne: ['Madrid', 'Barcelone', 'Málaga', 'Valence'],
+  Italie: ['Rome', 'Milan', 'Florence', 'Venise'],
+  Canada: ['Montréal', 'Toronto', 'Vancouver'],
+  'États-Unis': ['New York', 'Miami', 'Los Angeles'],
+  Tunisie: ['Tunis', 'Sousse', 'Djerba'],
+};
+export const VILLES_PAR_DEFAUT = ['Paris', 'Dubaï', 'Marrakech', 'Casablanca'];
+
 /** Le pays qui correspond à l'indicatif du téléphone du visiteur, s'il est dans la liste. */
 export const paysDeLIso = (iso: string | null | undefined): string | undefined =>
   PAYS.find(item => item.iso && item.iso === String(iso ?? '').toUpperCase())?.id;
