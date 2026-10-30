@@ -58,7 +58,7 @@ const TEXTES: Record<string, Textes> = {
     choisir: 'Votre créneau',
     confirmer: 'Confirmer ce rendez-vous',
     annuler: 'Changer',
-    envoi: 'Réservation…',
+    envoi: 'Confirmation en cours…',
     confirmeTitre: 'Rendez-vous confirmé',
     confirmeTexte: 'Votre démonstration est réservée :',
     email: 'Un e-mail de confirmation vient de vous être envoyé.',
@@ -81,7 +81,7 @@ const TEXTES: Record<string, Textes> = {
     choisir: 'Your slot',
     confirmer: 'Confirm this appointment',
     annuler: 'Change',
-    envoi: 'Booking…',
+    envoi: 'Confirming…',
     confirmeTitre: 'Appointment confirmed',
     confirmeTexte: 'Your demo is booked:',
     email: 'A confirmation email has just been sent to you.',
@@ -104,7 +104,7 @@ const TEXTES: Record<string, Textes> = {
     choisir: 'Su hora',
     confirmer: 'Confirmar esta cita',
     annuler: 'Cambiar',
-    envoi: 'Reservando…',
+    envoi: 'Confirmando…',
     confirmeTitre: 'Cita confirmada',
     confirmeTexte: 'Su demostración está reservada:',
     email: 'Acabamos de enviarle un correo de confirmación.',
@@ -127,7 +127,7 @@ const TEXTES: Record<string, Textes> = {
     choisir: 'A sua hora',
     confirmer: 'Confirmar esta marcação',
     annuler: 'Alterar',
-    envoi: 'A reservar…',
+    envoi: 'A confirmar…',
     confirmeTitre: 'Marcação confirmada',
     confirmeTexte: 'A sua demonstração está reservada:',
     email: 'Acabámos de lhe enviar um e-mail de confirmação.',
@@ -150,7 +150,7 @@ const TEXTES: Record<string, Textes> = {
     choisir: 'موعدك',
     confirmer: 'تأكيد هذا الموعد',
     annuler: 'تغيير',
-    envoi: 'جارٍ الحجز…',
+    envoi: 'جارٍ التأكيد…',
     confirmeTitre: 'تم تأكيد الموعد',
     confirmeTexte: 'تم حجز العرض التوضيحي:',
     email: 'أرسلنا لك للتو رسالة تأكيد بالبريد الإلكتروني.',
@@ -214,13 +214,14 @@ function RdvContent() {
       month: 'long',
       timeZone: fuseau,
     }).format(new Date(iso));
-  const jourCourt = (cle: string) =>
-    new Intl.DateTimeFormat(intlLocale, {
-      weekday: 'short',
-      day: 'numeric',
-      month: 'short',
-      timeZone: 'UTC',
-    }).format(new Date(`${cle}T12:00:00Z`));
+  const jourParts = (cle: string) => {
+    const d = new Date(`${cle}T12:00:00Z`);
+    return {
+      dow: new Intl.DateTimeFormat(intlLocale, { weekday: 'short', timeZone: 'UTC' }).format(d),
+      day: new Intl.DateTimeFormat(intlLocale, { day: 'numeric', timeZone: 'UTC' }).format(d),
+      mon: new Intl.DateTimeFormat(intlLocale, { month: 'short', timeZone: 'UTC' }).format(d),
+    };
+  };
   const heureLisible = (iso: string) =>
     new Intl.DateTimeFormat(intlLocale, {
       hour: '2-digit',
@@ -345,7 +346,7 @@ function RdvContent() {
       <BackgroundEffects />
       <div style={{ position: 'relative', zIndex: 1 }} dir={locale === 'ar' ? 'rtl' : 'ltr'}>
         <PageHeader pageTitle={t.titre} />
-        <section style={{ padding: '48px 24px 100px', minHeight: '70vh', maxWidth: 880, margin: '0 auto' }}>
+        <section style={{ padding: '40px 20px 80px', minHeight: '70vh', maxWidth: 640, margin: '0 auto' }}>
           {etat === 'chargement' && <p style={{ color: 'var(--text-2)' }}>{t.chargement}</p>}
 
           {etat === 'indisponible' && <div style={{ ...boite, color: 'var(--text)' }}>{erreur || t.indisponible}</div>}
@@ -426,7 +427,17 @@ function RdvContent() {
                               .join(' ')}
                             onClick={() => choisirJour(cle)}
                           >
-                            {jourCourt(cle)}
+                            {(() => {
+                              const p = jourParts(cle);
+                              return (
+                                <>
+                                  <span className="rdv-jour-dow">{p.dow}</span>
+                                  <span className="rdv-jour-num">
+                                    {p.day} {p.mon}
+                                  </span>
+                                </>
+                              );
+                            })()}
                           </button>
                         );
                       })}
@@ -461,29 +472,34 @@ function RdvContent() {
                             </button>
                           ))}
                         </div>
+                        {choisi && (
+                          <div className="rdv-confirm">
+                            <p style={{ fontSize: 12, color: 'var(--text-3)', marginBottom: 2 }}>{t.choisir}</p>
+                            <p style={{ fontSize: 16, fontWeight: 700, marginBottom: 12 }}>{complet(choisi.debut)}</p>
+                            <div className="rdv-confirm-actions">
+                              <button
+                                type="button"
+                                className="btn btn-ghost"
+                                disabled={envoi}
+                                onClick={() => setChoisi(null)}
+                                style={{ fontSize: 14 }}
+                              >
+                                {t.annuler}
+                              </button>
+                              <button
+                                type="button"
+                                className="btn btn-primary"
+                                disabled={envoi}
+                                onClick={reserver}
+                                style={{ flex: 1, minWidth: 160, padding: '12px 16px', fontSize: 14, fontWeight: 600 }}
+                              >
+                                {envoi ? t.envoi : t.confirmer}
+                              </button>
+                            </div>
+                          </div>
+                        )}
                       </>
                     )}
-                  </div>
-                </div>
-              )}
-
-              {choisi && (
-                <div style={{ ...boite, marginTop: 20, position: 'sticky', bottom: 16 }}>
-                  <p style={{ fontSize: 13, color: 'var(--text-3)', marginBottom: 4 }}>{t.choisir}</p>
-                  <p style={{ fontSize: 18, fontWeight: 700, marginBottom: 14 }}>{complet(choisi.debut)}</p>
-                  <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
-                    <button type="button" className="btn btn-ghost" onClick={() => setChoisi(null)} style={{ fontSize: 14 }}>
-                      {t.annuler}
-                    </button>
-                    <button
-                      type="button"
-                      className="btn btn-primary"
-                      disabled={envoi}
-                      onClick={reserver}
-                      style={{ flex: 1, padding: '14px', fontSize: 15, fontWeight: 600 }}
-                    >
-                      {envoi ? t.envoi : t.confirmer}
-                    </button>
                   </div>
                 </div>
               )}
