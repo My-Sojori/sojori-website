@@ -1,116 +1,212 @@
 "use client";
 
+import { useTranslations } from 'next-intl';
+import { Link } from '@/i18n/routing';
 import { Check, SectionHead } from '../SharedComponents';
+import { ScrollPaginationDots } from '@/components/shared/ScrollPaginationDots';
 
 export function Pricing() {
+  const t = useTranslations('home.pricingPreview');
   const tiers = [
     {
-      name: 'STARTER',
-      range: '2-10 propriétés',
-      price: '49',
-      period: '/propriété/mois',
-      items: ['PMS complet', 'Channel Manager (5 OTAs)', 'WhatsApp AI basique', 'Support email', '1 utilisateur staff'],
-      cta: 'Essayer gratuitement',
+      name: t('tiers.0.name'),
+      tagline: t('tiers.0.tagline'),
+      range: t('tiers.0.range'),
+      items: [
+        t('tiers.0.items.0'),
+        t('tiers.0.items.1'),
+        t('tiers.0.items.2'),
+        t('tiers.0.items.3'),
+        t('tiers.0.items.4')
+      ],
+      cta: t('tiers.0.cta'),
       popular: false,
     },
     {
-      name: 'GROWTH',
-      range: '11-50 propriétés',
-      price: '39',
-      period: '/propriété/mois',
-      items: ['Tout Starter +', 'Channel Manager illimité (20+ OTAs)', 'WhatsApp AI avancé', 'API access', 'White label', 'Multi-utilisateurs', 'Support prioritaire 24/7'],
-      cta: 'Essayer gratuitement',
+      name: t('tiers.1.name'),
+      tagline: t('tiers.1.tagline'),
+      range: t('tiers.1.range'),
+      items: [
+        t('tiers.1.items.0'),
+        t('tiers.1.items.1'),
+        t('tiers.1.items.2'),
+        t('tiers.1.items.3'),
+        t('tiers.1.items.4'),
+        t('tiers.1.items.5'),
+        t('tiers.1.items.6')
+      ],
+      cta: t('tiers.1.cta'),
       popular: true,
+      badge: t('tiers.1.badge'),
     },
     {
-      name: 'SCALE',
-      range: '51-2000+ propriétés',
-      price: 'Sur mesure',
-      period: '',
-      items: ['Tout Growth +', 'Account manager dédié', 'SLA premium 99.99%', 'Intégrations custom', 'Onboarding sur site', 'Formation équipe'],
-      cta: 'Contacter les ventes',
+      name: t('tiers.2.name'),
+      tagline: t('tiers.2.tagline'),
+      range: t('tiers.2.range'),
+      items: [
+        t('tiers.2.items.0'),
+        t('tiers.2.items.1'),
+        t('tiers.2.items.2'),
+        t('tiers.2.items.3'),
+        t('tiers.2.items.4'),
+        t('tiers.2.items.5')
+      ],
+      cta: t('tiers.2.cta'),
       popular: false,
     },
   ];
 
   return (
-    <section style={{ padding: '110px 32px', background: 'rgba(15,15,20,0.6)' }} id="pricing">
-      <div style={{ maxWidth: 1280, margin: '0 auto' }}>
-        <SectionHead badge="Tarification" title="Transparente. Sans surprises." subtitle="Pas de frais cachés. Annulation facile à tout moment. 14 jours d'essai gratuit." />
+    <section
+      style={{
+        padding: '80px 32px',
+        // Aurora Soft : remplace l'ancien fond dark `rgba(15,15,20,0.6)`
+        background: 'linear-gradient(180deg, transparent, rgba(245,243,236,0.6) 30%, rgba(245,243,236,0.6) 70%, transparent)',
+      }}
+      id="pricing"
+      className="pricing-section"
+    >
+      <div style={{ maxWidth: 1280, margin: '0 auto', width: '100%' }}>
+        <SectionHead
+          badge={t('badge')}
+          title={t('title')}
+          subtitle={t('subtitle')}
+        />
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 20, marginTop: 56, alignItems: 'stretch' }} className="grid-resp">
-          {tiers.map((t, i) => (
+        <ScrollPaginationDots
+          itemCount={3}
+          gap={20}
+          style={{ marginTop: 56 }}
+          className="pricing-grid"
+        >
+          {tiers.map((tier, i) => (
             <div
               key={i}
-              className="glass"
+              className="glass pricing-card"
               style={{
                 padding: '36px 30px',
                 borderRadius: 20,
                 position: 'relative',
-                borderColor: t.popular ? 'var(--primary)' : undefined,
-                borderWidth: t.popular ? 2 : 1,
-                background: t.popular ? 'linear-gradient(180deg, rgba(230,176,34,0.10) 0%, rgba(230,176,34,0.03) 100%)' : undefined,
-                transform: t.popular ? 'scale(1.03)' : 'none',
-                zIndex: t.popular ? 2 : 1,
+                borderColor: tier.popular ? 'rgba(230,176,34,0.55)' : undefined,
+                borderWidth: tier.popular ? 2 : 1,
+                background: tier.popular
+                  ? 'linear-gradient(180deg, rgba(244,207,94,0.18) 0%, rgba(255,255,255,0.85) 100%)'
+                  : undefined,
+                transform: tier.popular ? 'scale(1.03)' : 'none',
+                zIndex: tier.popular ? 2 : 1,
                 display: 'flex',
                 flexDirection: 'column',
+                alignItems: 'center',
+                textAlign: 'center',
+                boxShadow: tier.popular
+                  ? '0 1px 0 rgba(255,255,255,.9) inset, 0 30px 60px -20px rgba(230,176,34,0.30)'
+                  : undefined,
               }}
             >
-              {t.popular && (
-                <span
-                  style={{
-                    position: 'absolute',
-                    top: -14,
-                    left: '50%',
-                    transform: 'translateX(-50%)',
-                    padding: '5px 14px',
-                    borderRadius: 999,
-                    background: 'linear-gradient(135deg, #f4cf5e, #e6b022)',
-                    color: '#1a1408',
-                    fontSize: 11,
-                    fontWeight: 700,
-                    letterSpacing: 0.6,
-                    whiteSpace: 'nowrap',
-                    boxShadow: '0 6px 16px rgba(230,176,34,0.4)',
-                  }}
-                >
-                  ★ POPULAR
-                </span>
+              {tier.popular && (
+                <span style={{
+                  position: 'absolute', top: -14, left: '50%', transform: 'translateX(-50%)',
+                  padding: '5px 14px', borderRadius: 999,
+                  background: 'linear-gradient(135deg, #f4cf5e, #e6b022)',
+                  color: '#1a1408', fontSize: 11, fontWeight: 700, letterSpacing: 0.6,
+                  whiteSpace: 'nowrap',
+                  boxShadow: '0 6px 16px rgba(230,176,34,0.4)',
+                }}>{tier.badge}</span>
               )}
-              <div className="uppercase-sm" style={{ color: t.popular ? 'var(--primary)' : 'var(--text-3)', marginBottom: 8 }}>
-                {t.name}
+              <div className="uppercase-sm" style={{ color: tier.popular ? 'var(--primary-deep)' : 'var(--text-3)', marginBottom: 8 }}>
+                {tier.name}
               </div>
-              <div style={{ fontSize: 14, color: 'var(--text-2)', marginBottom: 20 }}>{t.range}</div>
-              <div style={{ marginBottom: 28, display: 'flex', alignItems: 'baseline', gap: 4 }}>
-                {t.price === 'Sur mesure' ? (
-                  <span style={{ fontSize: 32, fontWeight: 800, letterSpacing: '-0.03em' }}>{t.price}</span>
-                ) : (
-                  <>
-                    <span style={{ fontSize: 18, color: 'var(--text-3)' }}>€</span>
-                    <span style={{ fontSize: 48, fontWeight: 800, letterSpacing: '-0.04em', lineHeight: 1 }}>{t.price}</span>
-                    <span style={{ fontSize: 13, color: 'var(--text-3)', marginLeft: 4 }}>{t.period}</span>
-                  </>
-                )}
-              </div>
-              <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 28px', flex: 1, display: 'flex', flexDirection: 'column', gap: 10 }}>
-                {t.items.map((it) => (
-                  <li key={it} style={{ display: 'flex', alignItems: 'flex-start', gap: 10, fontSize: 14, color: 'var(--text-2)', lineHeight: 1.5 }}>
+              <div style={{ fontSize: 13, color: 'var(--text-3)', fontStyle: 'italic', marginBottom: 8 }}>{tier.tagline}</div>
+              <div style={{ fontSize: 14, color: 'var(--text-2)', marginBottom: 20 }}>{tier.range}</div>
+              <Link
+                href={{ pathname: '/demo', query: { source: `homepage-pricing-tier-${i}` } }}
+                className="pricing-amount"
+                style={{
+                  marginBottom: 28,
+                  fontSize: 22,
+                  fontWeight: 750,
+                  letterSpacing: '-0.03em',
+                  lineHeight: 1.25,
+                  color: 'var(--text)',
+                  textDecoration: 'none',
+                }}
+              >
+                {t('quote')}
+              </Link>
+              <ul
+                style={{
+                  listStyle: 'none',
+                  padding: 0,
+                  margin: '0 0 28px',
+                  flex: 1,
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: 10,
+                  width: '100%',
+                  maxWidth: 340,
+                  alignSelf: 'center',
+                }}
+              >
+                {tier.items.map((it) => (
+                  <li
+                    key={it}
+                    style={{
+                      display: 'flex',
+                      alignItems: 'flex-start',
+                      justifyContent: 'center',
+                      gap: 10,
+                      fontSize: 14,
+                      color: 'var(--text-2)',
+                      lineHeight: 1.5,
+                      textAlign: 'left',
+                    }}
+                  >
                     <Check />
-                    <span style={{ flex: 1, minWidth: 0 }}>{it}</span>
+                    <span style={{ flex: '0 1 auto', minWidth: 0, maxWidth: '100%' }}>{it}</span>
                   </li>
                 ))}
               </ul>
-              <a href="#" className={`btn ${t.popular ? 'btn-primary' : 'btn-ghost'}`} style={{ width: '100%', justifyContent: 'center' }}>
-                {t.cta} →
-              </a>
+              <Link
+                href={{ pathname: '/demo', query: { source: `homepage-pricing-tier-${i}` } }}
+                className={`btn ${tier.popular ? 'btn-primary' : 'btn-ghost'}`}
+                style={{ width: '100%', justifyContent: 'center' }}
+              >
+                {tier.cta} →
+              </Link>
             </div>
           ))}
-        </div>
+        </ScrollPaginationDots>
 
         <div style={{ textAlign: 'center', marginTop: 32, fontSize: 13, color: 'var(--text-3)' }}>
-          ✓ 14 jours d'essai gratuit · ✓ Annulation facile · ✓ Setup en moins de 7 jours
+          {t('footer')}
         </div>
       </div>
+      <style jsx>{`
+        .pricing-grid {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          justify-items: stretch;
+        }
+
+        .pricing-card {
+          width: 100%;
+        }
+
+        @media (max-width: 768px) {
+          .pricing-section { padding: 56px 20px !important; }
+
+          .pricing-grid {
+            display: flex !important;
+            grid-template-columns: none !important;
+          }
+
+          .pricing-card {
+            padding: 28px 24px !important;
+            transform: none !important;
+          }
+          .pricing-amount span:nth-child(2) { font-size: 40px !important; }
+        }
+      `}</style>
     </section>
   );
 }

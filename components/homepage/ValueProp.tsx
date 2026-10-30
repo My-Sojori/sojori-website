@@ -1,59 +1,91 @@
 "use client";
 
+import { useTranslations } from 'next-intl';
+import { Link } from '@/i18n/routing';
 import { Check, SectionHead } from '../SharedComponents';
+import { ScrollPaginationDots } from '@/components/shared/ScrollPaginationDots';
 
 export function ValueProp() {
+  const t = useTranslations('home.valueProp');
   const pillars = [
     {
-      icon: '🏠',
+      icon: t('modules.icon'),
       accent: 'var(--accent)',
       accentRgb: '6, 182, 212',
-      title: 'PMS Complet',
-      sub: 'La base. Solide.',
-      items: ['Calendrier unifié multi-propriétés', 'Réservations & paiements', 'Facturation automatique', 'Contrats digitaux signés', 'Inbox unifiée'],
-      cta: 'Découvrir le PMS',
+      title: t('modules.title'),
+      sub: t('modules.sub'),
+      items: [
+        t('modules.items.0'),
+        t('modules.items.1'),
+        t('modules.items.2'),
+        t('modules.items.3'),
+        t('modules.items.4')
+      ],
+      cta: t('modules.cta'),
+      href: '/pms' as const,
     },
     {
-      icon: '📡',
-      accent: 'var(--secondary)',
-      accentRgb: '139, 92, 246',
-      title: 'Channel Manager',
-      sub: 'Sync 20+ OTAs.',
-      items: ['Sync temps réel Airbnb, Booking, Expedia', 'iCal 2-way sync', 'Pricing dynamique', 'Anti-overbooking garanti', 'Messaging unifié'],
-      cta: 'Voir les intégrations',
-    },
-    {
-      icon: '🤖',
+      icon: t('orchestration.icon'),
       accent: 'var(--primary)',
       accentRgb: '230, 176, 34',
-      title: 'Orchestration AI',
-      sub: 'Notre signature.',
-      items: ['WhatsApp AI 24/7 (GPT-4)', 'Coordination staff automatique', '23 tâches orchestrées', 'Zéro oubli, zéro retard', 'Analytics live temps réel'],
-      cta: 'Voir la démo live',
+      title: t('orchestration.title'),
+      sub: t('orchestration.sub'),
+      items: [
+        t('orchestration.items.0'),
+        t('orchestration.items.1'),
+        t('orchestration.items.2'),
+        t('orchestration.items.3'),
+        t('orchestration.items.4')
+      ],
+      cta: t('orchestration.cta'),
       featured: true,
+      href: '/inbox' as const,
+    },
+    {
+      icon: t('whatsapp.icon'),
+      accent: 'var(--secondary)',
+      accentRgb: '139, 92, 246',
+      title: t('whatsapp.title'),
+      sub: t('whatsapp.sub'),
+      items: [
+        t('whatsapp.items.0'),
+        t('whatsapp.items.1'),
+        t('whatsapp.items.2'),
+        t('whatsapp.items.3')
+      ],
+      cta: t('whatsapp.cta'),
+      href: '/whatsapp' as const,
     },
   ];
 
   return (
-    <section style={{ padding: '110px 32px' }} id="features">
+    <section style={{ padding: '80px 32px' }} id="features" className="value-prop-section">
       <div style={{ maxWidth: 1280, margin: '0 auto' }}>
         <SectionHead
-          badge="Tout-en-un"
+          badge={t('badge')}
           title={
             <>
-              Tout ce dont vous avez besoin.
+              {t('title')}
               <br />
-              <span style={{ color: 'var(--text-3)', fontWeight: 600 }}>En une plateforme.</span>
+              <span style={{ color: 'var(--text-3)', fontWeight: 600 }}>{t('titleSub')}</span>
             </>
           }
-          subtitle="PMS complet, Channel Manager certifié, et Orchestration AI. Sans oublier WhatsApp, Staff Management, Analytics."
+          subtitle={t('subtitle')}
         />
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 20, marginTop: 56 }} className="grid-resp">
+        <ScrollPaginationDots
+          itemCount={pillars.length}
+          gap={16}
+          peekCarousel
+          className="value-prop-carousel"
+          style={{ marginTop: 48 }}
+        >
+          <div className="value-prop-slides-row">
           {pillars.map((p, i) => (
             <div
               key={i}
-              className="glass"
+              data-carousel-slide
+              className="glass value-prop-card"
               style={{
                 padding: 32,
                 borderRadius: 20,
@@ -88,7 +120,7 @@ export function ValueProp() {
                     letterSpacing: 0.5,
                   }}
                 >
-                  SIGNATURE
+                  {t('orchestration.badge')}
                 </span>
               )}
               <div
@@ -117,14 +149,34 @@ export function ValueProp() {
                   </li>
                 ))}
               </ul>
-              <a href="#" style={{ color: p.accent, textDecoration: 'none', fontSize: 13, fontWeight: 500 }}>
+              <Link
+                href={{ pathname: p.href, query: { source: 'homepage-value-prop' } }}
+                style={{ color: p.accent, textDecoration: 'none', fontSize: 13, fontWeight: 500 }}
+              >
                 {p.cta} →
-              </a>
+              </Link>
             </div>
           ))}
-        </div>
+          </div>
+        </ScrollPaginationDots>
       </div>
-      <style>{`@media (max-width: 900px) { .grid-resp { grid-template-columns: 1fr !important; } }`}</style>
+      <style jsx>{`
+        .value-prop-slides-row {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 20px;
+          width: 100%;
+        }
+
+        @media (max-width: 768px) {
+          .value-prop-section { padding: 56px 20px !important; }
+          .value-prop-carousel {
+            margin-top: 36px !important;
+          }
+          .value-prop-card { padding: 24px !important; }
+          .value-prop-card:hover { transform: none !important; }
+        }
+      `}</style>
     </section>
   );
 }

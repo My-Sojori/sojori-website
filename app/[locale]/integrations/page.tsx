@@ -1,0 +1,344 @@
+"use client";
+
+import { Link } from '@/i18n/routing';
+import { useState } from 'react';
+import { useTranslations } from 'next-intl';
+import { BackgroundEffects } from '@/components/BackgroundEffects';
+import { InFlow } from '@/components/InFlow';
+import { PageHeader, PageFooter, PageHero, StatsBar, FinalCTA } from '@/components/SharedComponents';
+import { ScrollPaginationDots } from '@/components/shared/ScrollPaginationDots';
+import { FaqSection } from '@/components/FaqSection';
+
+interface Category {
+  id: string;
+  l: string;
+  n: number;
+  c?: string;
+}
+
+type ConnectMode = 'native' | 'automatable' | 'config';
+
+interface Integration {
+  n: string;
+  cat: string;
+  s: string;
+  logo: string;
+  color: string;
+  popular?: boolean;
+  /** native = connecté stack Sojori ; automatable = Zapier/Make ; config = selon matériel */
+  connectMode?: ConnectMode;
+}
+
+export default function IntegrationsPage() {
+  const t = useTranslations('integrations');
+  const [cat, setCat] = useState('all');
+
+  const CATEGORIES: Category[] = [
+    { id: 'all', l: t('categories.all'), n: 17 },
+    { id: 'core', l: t('categories.core'), n: 6, c: '#f4cf5e' },
+    { id: 'msg', l: t('categories.msg'), n: 3, c: '#25D366' },
+    { id: 'pay', l: t('categories.pay'), n: 1, c: '#10b981' },
+    { id: 'data', l: t('categories.data'), n: 3, c: '#8b5cf6' },
+    { id: 'ai', l: t('categories.ai'), n: 4, c: '#ec4899' },
+  ];
+
+  const INTEGRATIONS: Integration[] = [
+    // Intégrations natives (vraies)
+    { n: 'Rentals United', cat: 'core', s: t('integrationDescriptions.rentalsUnited'), logo: 'R', color: '#6c5ce7', popular: true },
+    { n: 'Channex', cat: 'core', s: t('integrationDescriptions.channex'), logo: 'C', color: '#0052cc', popular: true },
+    { n: 'Minut', cat: 'core', s: t('integrationDescriptions.minut'), logo: 'M', color: '#00c9a7', popular: true },
+    { n: 'Chekin', cat: 'core', s: t('integrationDescriptions.chekin'), logo: 'C', color: '#0ea5e9', popular: true },
+    { n: 'TTLock', cat: 'core', s: t('integrationDescriptions.ttlock'), logo: 'T', color: '#ff6b35', popular: true, connectMode: 'config' },
+    { n: 'Hostaway', cat: 'core', s: t('integrationDescriptions.hostaway'), logo: 'H', color: '#4a90e2' },
+
+    // Messagerie
+    { n: 'WhatsApp Business', cat: 'msg', s: t('integrationDescriptions.whatsapp'), logo: 'W', color: '#25D366', popular: true },
+    { n: 'SMS / Twilio', cat: 'msg', s: t('integrationDescriptions.sms'), logo: 'T', color: '#F22F46' },
+    { n: 'Email', cat: 'msg', s: t('integrationDescriptions.email'), logo: '✉', color: '#6366f1' },
+
+    // Paiements
+    { n: 'Stripe', cat: 'pay', s: t('integrationDescriptions.stripe'), logo: 'S', color: '#635BFF', popular: true },
+
+    // Automation & API
+    { n: 'Zapier', cat: 'data', s: t('integrationDescriptions.zapier'), logo: 'Z', color: '#FF4A00', popular: true, connectMode: 'automatable' },
+    { n: 'Make.com', cat: 'data', s: t('integrationDescriptions.make'), logo: 'M', color: '#6D00CC', connectMode: 'automatable' },
+    { n: 'REST API', cat: 'data', s: t('integrationDescriptions.restApi'), logo: '{}', color: '#8b5cf6', popular: true },
+
+    // IA & Analytics
+    { n: 'OpenAI GPT-4', cat: 'ai', s: t('integrationDescriptions.openai'), logo: '🤖', color: '#10a37f', popular: true },
+    { n: 'Anthropic Claude', cat: 'ai', s: t('integrationDescriptions.claude'), logo: 'C', color: '#D97757', popular: true },
+    { n: 'Google Gemini', cat: 'ai', s: t('integrationDescriptions.gemini'), logo: 'G', color: '#4285F4' },
+    { n: 'Google Analytics', cat: 'ai', s: t('integrationDescriptions.analytics'), logo: 'G', color: '#4285F4' },
+  ];
+
+  function footerForMode(mode: ConnectMode | undefined): { label: string; detail: string; color: string } {
+    if (mode === 'automatable') return { label: t('connectModes.automatable.label'), detail: t('connectModes.automatable.detail'), color: '#60a5fa' };
+    if (mode === 'config') return { label: t('connectModes.config.label'), detail: t('connectModes.config.detail'), color: '#fbbf24' };
+    return { label: t('connectModes.native.label'), detail: t('connectModes.native.detail'), color: '#10b981' };
+  }
+
+  interface CardProps {
+    i: Integration;
+  }
+
+  function Card({ i }: CardProps) {
+    const foot = footerForMode(i.connectMode);
+    return (
+      <div className="card" style={{ padding: 18, position: 'relative' }}>
+        {i.popular && (
+          <div style={{
+            position: 'absolute',
+            top: 10,
+            right: 10,
+            fontSize: 9,
+            padding: '2px 6px',
+            background: 'rgba(244,207,94,0.18)',
+            color: '#f4cf5e',
+            borderRadius: 4,
+            fontWeight: 700,
+            letterSpacing: 0.5
+          }}>
+            {t('popular')}
+          </div>
+        )}
+        <div style={{ display: 'flex', gap: 12, alignItems: 'center' }}>
+          <div style={{
+            width: 44,
+            height: 44,
+            borderRadius: 10,
+            background: i.color,
+            color: '#fff',
+            fontSize: 18,
+            fontWeight: 800,
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            flexShrink: 0
+          }}>
+            {i.logo}
+          </div>
+          <div style={{ minWidth: 0, flex: 1 }}>
+            <div style={{
+              fontSize: 14,
+              fontWeight: 600,
+              color: 'var(--text-1)',
+              whiteSpace: 'nowrap',
+              overflow: 'hidden',
+              textOverflow: 'ellipsis'
+            }}>
+              {i.n}
+            </div>
+            <div style={{ fontSize: 11.5, color: 'var(--text-3)', marginTop: 2 }}>{i.s}</div>
+          </div>
+        </div>
+        <div style={{ display: 'flex', gap: 8, marginTop: 12, fontSize: 10, color: 'var(--text-3)' }}>
+          <span style={{ color: foot.color }}>● {foot.label}</span>
+          <span>·</span>
+          <span style={{ fontFamily: 'Geist Mono' }}>{foot.detail}</span>
+        </div>
+      </div>
+    );
+  }
+
+  const list = cat === 'all' ? INTEGRATIONS : INTEGRATIONS.filter(i => i.cat === cat);
+
+  return (
+    <>
+      <style jsx>{`
+        @media (max-width: 768px) {
+          section { padding: 22px 16px !important; }
+
+          div[style*="gridTemplateColumns: 'repeat(auto-fill, minmax(260px, 1fr))'"] {
+            display: flex !important;
+            overflow-x: auto !important;
+            scroll-snap-type: x mandatory !important;
+            -webkit-overflow-scrolling: touch !important;
+            gap: 16px !important;
+            padding-bottom: 20px !important;
+          }
+
+          div[style*="gridTemplateColumns: 'repeat(auto-fill, minmax(260px, 1fr))'"] > * {
+            flex-shrink: 0 !important;
+            scroll-snap-align: center !important;
+          }
+
+          div[style*="gridTemplateColumns: '1fr 1fr'"] {
+            grid-template-columns: 1fr !important;
+            gap: 32px !important;
+          }
+
+          div[style*="display: 'flex'"][style*="flexWrap: 'wrap'"] {
+            gap: 6px !important;
+          }
+
+          .btn {
+            min-height: 44px !important;
+            padding: 12px 20px !important;
+          }
+
+          button {
+            min-height: 44px !important;
+          }
+        }
+      `}</style>
+      <BackgroundEffects />
+      <div style={{ position: 'relative', zIndex: 1 }}>
+        <PageHeader pageTitle={t('pageTitle')} />
+        <PageHero
+          badge={t('hero.badge')}
+          title={<>{t('hero.title')}{' '}<br /><span className="gradient-text">{t('hero.titleGradient')}</span></>}
+          subtitle={t('hero.subtitle')}
+          cta1={t('hero.cta1')}
+          cta2={t('hero.cta2')}
+        />
+
+        <section style={{ padding: '12px 32px 24px' }}>
+          <div style={{ maxWidth: 1280, margin: '0 auto' }}>
+            {/* Filters */}
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8, marginBottom: 32 }}>
+              {CATEGORIES.map(c => (
+                <button
+                  key={c.id}
+                  onClick={() => setCat(c.id)}
+                  style={{
+                    padding: '8px 14px',
+                    borderRadius: 999,
+                    fontSize: 12,
+                    fontWeight: 600,
+                    cursor: 'pointer',
+                    background: cat === c.id ? 'rgba(244,207,94,0.14)' : 'rgba(255,255,255,0.03)',
+                    border: '1px solid',
+                    borderColor: cat === c.id ? 'rgba(244,207,94,0.4)' : 'var(--glass-border)',
+                    color: cat === c.id ? '#f4cf5e' : 'var(--text-2)',
+                    display: 'flex',
+                    gap: 6,
+                    alignItems: 'center',
+                  }}
+                >
+                  {c.c && <span style={{ width: 8, height: 8, borderRadius: '50%', background: c.c }}></span>}
+                  {c.l} <span style={{ opacity: 0.6, fontFamily: 'Geist Mono', fontSize: 10 }}>{c.n}</span>
+                </button>
+              ))}
+            </div>
+            {/* Grid */}
+            <ScrollPaginationDots itemCount={list.length} gap={14} peekCarousel>
+              {list.map(i => (
+                <div key={i.n} data-carousel-slide style={{ flexShrink: 0 }}>
+                  <Card i={i} />
+                </div>
+              ))}
+            </ScrollPaginationDots>
+          </div>
+        </section>
+
+        {/* API CTA */}
+        <section style={{ padding: '36px 32px', borderTop: '1px solid var(--glass-border)' }}>
+          <div className="integrations-api-split" style={{
+            maxWidth: 1100,
+            margin: '0 auto',
+            display: 'grid',
+            gridTemplateColumns: '1fr 1fr',
+            gap: 50,
+            alignItems: 'center'
+          }}>
+            <div>
+              <div className="uppercase-sm" style={{ color: 'var(--text-3)', marginBottom: 12 }}>
+                {t('apiSection.label')}
+              </div>
+              <h2 style={{ fontSize: 36, marginBottom: 16, letterSpacing: '-0.02em' }}>
+                {t('apiSection.title')} <span className="gradient-text">{t('apiSection.titleGradient')}</span>
+              </h2>
+              <p style={{ color: 'var(--text-3)', lineHeight: 1.7, fontSize: 15, marginBottom: 24 }}>
+                {t('apiSection.description')}
+              </p>
+              <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
+                <Link href={{ pathname: '/demo', query: { source: 'integrations-api-docs' } }} className="btn btn-primary">{t('apiSection.cta1')}</Link>
+                <a href="https://zapier.com" target="_blank" rel="noopener noreferrer" className="btn btn-ghost">{t('apiSection.cta2')}</a>
+              </div>
+            </div>
+            <div className="integrations-api-code" style={{
+              background: '#0a0a10',
+              border: '1px solid var(--glass-border)',
+              borderRadius: 12,
+              overflow: 'hidden',
+              fontFamily: 'Geist Mono',
+              fontSize: 12,
+              minWidth: 0
+            }}>
+              <div style={{
+                background: 'rgba(255,255,255,0.04)',
+                padding: '8px 14px',
+                borderBottom: '1px solid var(--glass-border)',
+                display: 'flex',
+                gap: 6,
+                alignItems: 'center'
+              }}>
+                <span style={{ width: 9, height: 9, borderRadius: '50%', background: '#ef4444' }}></span>
+                <span style={{ width: 9, height: 9, borderRadius: '50%', background: '#f59e0b' }}></span>
+                <span style={{ width: 9, height: 9, borderRadius: '50%', background: '#10b981' }}></span>
+                <span style={{ marginLeft: 10, color: 'var(--text-3)', fontSize: 11 }}>Exemple illustratif</span>
+              </div>
+              <pre style={{ padding: 18, margin: 0, color: 'var(--text-2)', lineHeight: 1.6 }}>
+{`${t('apiSection.codeComment1')}
+curl -X POST \\
+  "https://<votre-environnement>/api/v1/..." \\
+  -H "Authorization: Bearer $TOKEN" \\
+  -H "Content-Type: application/json" \\
+  -d '{ "listing_id": "...", "from": "2026-05-01" }'
+
+`}<span style={{ color: '#94a3b8' }}>{t('apiSection.codeComment2')}</span>
+              </pre>
+            </div>
+          </div>
+        </section>
+
+        <StatsBar stats={[
+          { k: t('stats.stat1Key'), l: t('stats.stat1Label') },
+          { k: t('stats.stat2Key'), l: t('stats.stat2Label') },
+          { k: t('stats.stat3Key'), l: t('stats.stat3Label') },
+          { k: t('stats.stat4Key'), l: t('stats.stat4Label') }
+        ]} />
+
+        <InFlow
+          domain="Le moteur"
+          domainColor="#e6b022"
+          self="Les intégrations branchent Sojori sur ce que vous utilisez déjà — dont votre PMS."
+          upstream={[{ label: 'Mews et autres PMS' }, { label: 'OTA et channel managers', href: '/channel-manager' }, { label: 'Paiement et sources de données' }]}
+          downstream={[{ label: 'Réservations récupérées', href: '/pms' }, { label: 'Orchestration active', href: '/orchestration' }]}
+        />
+
+        <FaqSection
+          badge="Intégrations"
+          title="Questions fréquentes"
+          items={[
+  {
+    "q": "Sojori se connecte-t-il à Mews ?",
+    "a": "Oui. Sojori récupère les réservations et les états de chambre depuis Mews, puis orchestre autour — accueil, ménage, maintenance, messages clients, tarification. Vous n'avez pas à remplacer votre PMS pour orchestrer."
+  },
+  {
+    "q": "Et les autres PMS ?",
+    "a": "L'interfaçage dépend de ce que le système expose. Dites-nous lequel vous utilisez : c'est la première question à trancher, avant toute discussion de périmètre."
+  },
+  {
+    "q": "Y a-t-il une API ?",
+    "a": "Oui, pour les échanges avec vos propres outils. Les intégrations courantes — OTA, channel managers, paiement — sont déjà en place et ne demandent pas de développement."
+  },
+  {
+    "q": "Que se passe-t-il si un système tombe ?",
+    "a": "Les échanges sont conçus pour reprendre sans perte ni doublon lorsque le système revient. C'est un point à vérifier chez tout éditeur : une synchronisation qui rejoue mal crée des surréservations."
+  }
+]}
+        />
+
+
+
+        <FinalCTA
+          title={<>{t('finalCTA.title')} <span className="gradient-text">{t('finalCTA.titleGradient')}</span></>}
+          subtitle={t('finalCTA.subtitle')}
+        />
+
+        <PageFooter />
+      </div>
+    </>
+  );
+}

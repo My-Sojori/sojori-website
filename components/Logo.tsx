@@ -1,7 +1,9 @@
 "use client";
 
+import { useId } from 'react';
+
 export function SojoriMark({ size = 36 }: { size?: number }) {
-  const id = `mg-${size}-${Math.random().toString(36).slice(2, 7)}`;
+  const id = useId();
 
   return (
     <svg width={size} height={size} viewBox="0 0 40 40" fill="none">

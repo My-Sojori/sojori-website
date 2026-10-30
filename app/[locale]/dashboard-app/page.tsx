@@ -1,0 +1,17 @@
+import type { Metadata } from 'next';
+import { getTranslations } from 'next-intl/server';
+import DashboardAppPageClient from './DashboardAppPageClient';
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: 'seoPages' });
+  return {
+    title: t('dashboardApp.title'),
+    description: t('dashboardApp.description'),
+    alternates: { canonical: `/${locale}/dashboard-app` },
+  };
+}
+
+export default function DashboardAppPage() {
+  return <DashboardAppPageClient />;
+}

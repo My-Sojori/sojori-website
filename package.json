@@ -1,27 +1,35 @@
 {
   "name": "sojori-website",
-  "version": "0.1.0",
+  "version": "1.0.0",
+  "packageManager": "pnpm@10.18.1",
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "dev:3001": "next dev -p 3001",
+    "dev:5001": "next dev -p 5001",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "gen:dial-codes": "node scripts/gen-phone-dial-data.mjs",
+    "seo:indexnow": "node scripts/indexnow-submit.mjs",
+    "i18n:merge-seo-pages": "node scripts/merge-seo-pages.mjs",
+    "i18n:merge-pms-page": "node scripts/merge-pms-page.mjs"
   },
   "dependencies": {
     "geist": "^1.7.0",
-    "next": "16.2.4",
+    "next": "16.3.4",
+    "next-intl": "^4.11.1",
     "next-themes": "^0.4.6",
     "react": "19.2.4",
     "react-dom": "19.2.4"
   },
   "devDependencies": {
-    "@tailwindcss/postcss": "^4",
+    "@tailwindcss/postcss": "^4.3.3",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "eslint": "^9",
-    "eslint-config-next": "16.2.4",
+    "eslint": "^9.39.4",
+    "eslint-config-next": "16.3.5",
     "tailwindcss": "^4",
     "typescript": "^5"
   }

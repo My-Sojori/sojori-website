@@ -1,0 +1,6590 @@
+{
+  "yourListing": {
+    "airbnbListingId": "971173497411012422",
+    "name": "Votre appartement — Guéliz, Marrakech",
+    "photoUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-971173497411012422/original/1d1177e1-6480-4e79-87a4-7d54dd0553bc.jpeg",
+    "photoUrls": [
+      "https://a0.muscache.com/im/pictures/hosting/Hosting-971173497411012422/original/1d1177e1-6480-4e79-87a4-7d54dd0553bc.jpeg",
+      "https://a0.muscache.com/im/pictures/hosting/Hosting-971173497411012422/original/2f3ee908-8f9a-4177-ab95-3e5b43c6bebc.jpeg",
+      "https://a0.muscache.com/im/pictures/hosting/Hosting-971173497411012422/original/73740c47-2209-4813-b39b-33d52a8c4a1c.jpeg",
+      "https://a0.muscache.com/im/pictures/hosting/Hosting-971173497411012422/original/de0736dd-a4d1-4512-95a5-39979434ad90.jpeg",
+      "https://a0.muscache.com/im/pictures/14613115-a30b-4ac2-a148-c9d489068c5e.jpg",
+      "https://a0.muscache.com/im/pictures/hosting/Hosting-971173497411012422/original/be862e9c-114d-4c78-b52a-2ac401a731f3.jpeg"
+    ],
+    "bedrooms": 2,
+    "beds": 3,
+    "baths": 2,
+    "guests": 4,
+    "rating": 4.94,
+    "reviewsCount": 174,
+    "superhost": true,
+    "adrUsd": 83.7,
+    "adrMad": 837,
+    "occupancy": 0.71,
+    "revenueTtmUsd": 22396,
+    "revenueTtmMad": 223960,
+    "revparMad": 599,
+    "latitude": 31.64197608,
+    "longitude": -8.00247761,
+    "amenities": [
+      "Bathtub",
+      "Hair dryer",
+      "Cleaning products",
+      "Outdoor shower",
+      "Hot water",
+      "Washer",
+      "Essentials",
+      "Hangers",
+      "Bed linens",
+      "Extra pillows and blankets",
+      "Room-darkening shades",
+      "Iron",
+      "Drying rack for clothing",
+      "Clothing storage",
+      "TV",
+      "Pack ’n play/Travel crib",
+      "Air conditioning",
+      "Heating",
+      "Wifi",
+      "Dedicated workspace",
+      "Kitchen",
+      "Refrigerator",
+      "Microwave",
+      "Cooking basics",
+      "Dishes and silverware",
+      "Freezer",
+      "Stove",
+      "Oven",
+      "Hot water kettle",
+      "Coffee maker",
+      "Baking sheet",
+      "Dining table",
+      "Patio or balcony",
+      "Outdoor furniture",
+      "Free parking on premises",
+      "Pool",
+      "Elevator",
+      "Self check-in",
+      "Lockbox"
+    ]
+  },
+  "estimatedMarketPriceUsd": 119,
+  "estimatedMarketPriceMad": 1190,
+  "estimatedMarketRevenueTtmMad": 168301,
+  "competitorsCount": 20,
+  "competitors": [
+    {
+      "airbnbListingId": "1082586647051061433",
+      "name": "Appartement design · Guéliz Centre",
+      "photoUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1082586647051061433/original/a0120758-2cee-412c-b07a-f1fb6d209057.jpeg",
+      "photoUrls": [
+        "https://a0.muscache.com/im/pictures/hosting/Hosting-1082586647051061433/original/a0120758-2cee-412c-b07a-f1fb6d209057.jpeg",
+        "https://a0.muscache.com/im/pictures/4ec6d9ed-34e9-417e-b822-72e5f9ddd2ac.jpg",
+        "https://a0.muscache.com/im/pictures/hosting/Hosting-1082586647051061433/original/bc0e9422-ae62-4eb7-9ffb-4dff48ab21af.jpeg",
+        "https://a0.muscache.com/im/pictures/hosting/Hosting-1082586647051061433/original/d7b87302-460a-4c0f-8621-7cae0d7342ff.jpeg",
+        "https://a0.muscache.com/im/pictures/hosting/Hosting-1082586647051061433/original/36ac2728-959f-46be-a419-ee985f115083.jpeg",
+        "https://a0.muscache.com/im/pictures/miso/Hosting-1082586647051061433/original/8f30dda9-968a-41b1-a05a-2cf2c419e323.jpeg"
+      ],
+      "bedrooms": 2,
+      "beds": 2,
+      "baths": 2,
+      "guests": 4,
+      "rating": 4.83,
+      "reviewsCount": 18,
+      "superhost": false,
+      "adrUsd": 265.8,
+      "adrMad": 2658,
+      "occupancy": 0.255,
+      "revenueTtmUsd": 26153,
+      "revenueTtmMad": 261530,
+      "revparMad": 694,
+      "locality": "Marrakesh",
+      "latitude": 31.6341,
+      "longitude": -8.0058,
+      "distanceMeters": 931,
+      "amenities": [
+        "Hair dryer",
+        "Cleaning products",
+        "Shampoo",
+        "Body soap",
+        "Outdoor shower",
+        "Hot water",
+        "Shower gel",
+        "Washer",
+        "Essentials",
+        "Hangers",
+        "Bed linens",
+        "Room-darkening shades",
+        "Iron",
+        "Drying rack for clothing",
+        "Safe",
+        "Clothing storage",
+        "TV",
+        "Sound system",
+        "Books and reading material",
+        "Pack ’n play/Travel crib",
+        "Baby bath",
+        "Air conditioning",
+        "Exterior security cameras on property",
+        "First aid kit",
+        "Wifi",
+        "Dedicated workspace",
+        "Kitchen",
+        "Refrigerator",
+        "Microwave",
+        "Cooking basics",
+        "Dishes and silverware",
+        "Mini fridge",
+        "Freezer",
+        "Dishwasher",
+        "Stove",
+        "Oven",
+        "Hot water kettle",
+        "Coffee maker",
+        "Wine glasses",
+        "Toaster",
+        "Baking sheet",
+        "Barbecue utensils",
+        "Dining table",
+        "Coffee",
+        "Patio or balcony",
+        "Outdoor furniture",
+        "Outdoor dining area",
+        "Outdoor kitchen",
+        "Free parking on premises",
+        "Pool",
+        "Hot tub",
+        "Elevator",
+        "Host greets you"
+      ]
+    },
+    {
+      "airbnbListingId": "1250167201313112093",
+      "name": "Riad moderne · Hivernage",
+      "photoUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1250167201313112093/original/0333bad1-021a-480b-923d-5f90bfdea579.jpeg",
+      "photoUrls": [
+        "https://a0.muscache.com/im/pictures/hosting/Hosting-1250167201313112093/original/0333bad1-021a-480b-923d-5f90bfdea579.jpeg",
+        "https://a0.muscache.com/im/pictures/hosting/Hosting-1250167201313112093/original/e15a8e13-a944-496d-9624-c56038b1f4df.jpeg",
+        "https://a0.muscache.com/im/pictures/hosting/Hosting-1250167201313112093/original/a148c701-9b36-4458-aeaf-845736dbf6f7.jpeg",
+        "https://a0.muscache.com/im/pictures/hosting/Hosting-1227754642484457195/original/9b6d5e12-e084-498f-9b0f-60630b26b360.jpeg",
+        "https://a0.muscache.com/im/pictures/hosting/Hosting-1227754642484457195/original/732d15c5-ec8c-47e6-9767-d1ff34810a07.jpeg",
+        "https://a0.muscache.com/im/pictures/hosting/Hosting-1227754642484457195/original/fdef102a-40c6-4ba6-ac5d-f4eeca01774b.jpeg"
+      ],
+      "bedrooms": 2,
+      "beds": 3,
+      "baths": 2,
+      "guests": 4,
+      "rating": 4.92,
+      "reviewsCount": 73,
+      "superhost": true,
+      "adrUsd": 93.8,
+      "adrMad": 938,
+      "occupancy": 0.425,
+      "revenueTtmUsd": 14832,
+      "revenueTtmMad": 148320,
+      "revparMad": 390,
+      "locality": "Marrakesh",
+      "latitude": 31.63466,
+      "longitude": -8.01041,
+      "distanceMeters": 1107,
+      "amenities": [
+        "Hot water",
+        "Washer",
+        "Hangers",
+        "Bed linens",
+        "Drying rack for clothing",
+        "Clothing storage",
+        "TV",
+        "Changing table",
+        "Air conditioning",
+        "Wifi",
+        "Pocket wifi",
+        "Kitchen",
+        "Refrigerator",
+        "Cooking basics",
+        "Dishes and silverware",
+        "Oven",
+        "Coffee maker",
+        "Free parking on premises",
+        "Elevator",
+        "Long term stays allowed"
+      ]
+    },
+    {
+      "airbnbListingId": "1432126268683289272",
+      "name": "Penthouse vue Atlas · Guéliz",
+      "photoUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1432126268683289272/original/372c9797-b0c7-4173-96a9-fba9df9a7324.jpeg",
+      "photoUrls": [
+        "https://a0.muscache.com/im/pictures/hosting/Hosting-1432126268683289272/original/372c9797-b0c7-4173-96a9-fba9df9a7324.jpeg",
+        "https://a0.muscache.com/im/pictures/hosting/Hosting-1432126268683289272/original/f4b62042-80f4-4330-bc28-3138dc88caf0.jpeg",
+        "https://a0.muscache.com/im/pictures/hosting/Hosting-1432126268683289272/original/b1b19974-bfee-4c3f-85cf-156643332f41.jpeg",
+        "https://a0.muscache.com/im/pictures/hosting/Hosting-1432126268683289272/original/3d99eb42-91d9-4d7f-85c6-5e7d5c3c8753.jpeg",
+        "https://a0.muscache.com/im/pictures/hosting/Hosting-1432126268683289272/original/10c6a41e-8451-4ef9-9c23-3f30afe994bb.jpeg",
+        "https://a0.muscache.com/im/pictures/hosting/Hosting-1432126268683289272/original/edc36b92-84f4-44eb-bb8d-e6fe83c0f9db.jpeg"
+      ],
+      "bedrooms": 2,
+      "beds": 2,
+      "baths": 2,
+      "guests": 4,
+      "rating": 4.89,
+      "reviewsCount": 27,
+      "superhost": false,
+      "adrUsd": 151.4,
+      "adrMad": 1514,
+      "occupancy": 0.575,
+      "revenueTtmUsd": 30090,
+      "revenueTtmMad": 300900,
+      "revparMad": 816,
+      "locality": "Marrakesh",
+      "latitude": 31.64051242,
+      "longitude": -8.00255529,
+      "distanceMeters": 163,
+      "amenities": [
+        "Bathtub",
+        "Hair dryer",
+        "Outdoor shower",
+        "Hot water",
+        "Washer",
+        "Hangers",
+        "TV",
+        "Air conditioning",
+        "Wifi",
+        "Kitchen",
+        "Hot water kettle",
+        "Outdoor dining area",
+        "Free parking on premises",
+        "Pool",
+        "Elevator",
+        "Smoking allowed",
+        "Host greets you"
+      ]
+    },
+    {
+      "airbnbListingId": "1530397371427537490",
+      "name": "Suite piscine · Majorelle",
+      "photoUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1530397371427537490/original/d71b38a1-d11e-4143-91ae-ce9ea9c376f7.jpeg",
+      "photoUrls": [
+        "https://a0.muscache.com/im/pictures/hosting/Hosting-1530397371427537490/original/d71b38a1-d11e-4143-91ae-ce9ea9c376f7.jpeg",
+        "https://a0.muscache.com/im/pictures/hosting/Hosting-1530397371427537490/original/1aad2565-284c-4f0f-ae12-374918900b3f.jpeg",
+        "https://a0.muscache.com/im/pictures/hosting/Hosting-1530397371427537490/original/19ab0213-f958-4539-9bf2-b690bc5f16d3.png",
+        "https://a0.muscache.com/im/pictures/hosting/Hosting-1530397371427537490/original/3bb50bb7-b16e-4f2d-afd9-248458bff074.jpeg",
+        "https://a0.muscache.com/im/pictures/hosting/Hosting-1530397371427537490/original/f26efce8-24bf-4230-ae31-df71ecb94192.jpeg",
+        "https://a0.muscache.com/im/pictures/hosting/Hosting-1530397371427537490/original/1d4459de-44f6-4114-a763-1a4b9ee29ef3.jpeg"
+      ],
+      "bedrooms": 2,
+      "beds": 2,
+      "baths": 2,
+      "guests": 4,
+      "rating": 4.97,
+      "reviewsCount": 30,
+      "superhost": true,
+      "adrUsd": 175.7,
+      "adrMad": 1757,
+      "occupancy": 0.301,
+      "revenueTtmUsd": 18264,
+      "revenueTtmMad": 182640,
+      "revparMad": 486,
+      "locality": "Marrakesh",
+      "latitude": 31.64642683,
+      "longitude": -8.01682324,
+      "distanceMeters": 1445,
+      "amenities": [
+        "Pool view",
+        "Garden view",
+        "Pets allowed",
+        "Bathtub",
+        "Hair dryer",
+        "Hot water",
+        "Washer",
+        "Essentials",
+        "Hangers",
+        "Bed linens",
+        "Iron",
+        "Drying rack for clothing",
+        "Clothing storage",
+        "TV",
+        "Sound system",
+        "Exercise equipment",
+        "Books and reading material",
+        "Crib",
+        "Window guards",
+        "Air conditioning",
+        "Heating",
+        "Smoke alarm",
+        "Carbon monoxide alarm",
+        "Wifi",
+        "Kitchen",
+        "Refrigerator",
+        "Microwave",
+        "Cooking basics",
+        "Dishes and silverware",
+        "Mini fridge",
+        "Freezer",
+        "Stove",
+        "Oven",
+        "Hot water kettle",
+        "Coffee maker",
+        "Wine glasses",
+        "Dining table",
+        "Coffee",
+        "Private entrance",
+        "Patio or balcony",
+        "Outdoor furniture",
+        "Hammock",
+        "Outdoor dining area",
+        "Free street parking",
+        "Pool",
+        "Elevator",
+        "Gym",
+        "Luggage dropoff allowed",
+        "Long term stays allowed",
+        "Self check-in",
+        "Smart lock"
+      ]
+    },
+    {
+      "airbnbListingId": "1336919964131087979",
+      "name": "Studio cosy · Gueliz",
+      "photoUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1336919964131087979/original/6b07863c-d0fd-4cdb-92e4-ee00658663d8.jpeg",
+      "photoUrls": [
+        "https://a0.muscache.com/im/pictures/hosting/Hosting-1336919964131087979/original/6b07863c-d0fd-4cdb-92e4-ee00658663d8.jpeg",
+        "https://a0.muscache.com/im/pictures/hosting/Hosting-1336919964131087979/original/fed42cc6-853f-434b-8f7b-ff227b62cc95.jpeg",
+        "https://a0.muscache.com/im/pictures/hosting/Hosting-1336919964131087979/original/7feb9830-c011-47b2-8e51-a006dfaf46f4.jpeg",
+        "https://a0.muscache.com/im/pictures/hosting/Hosting-1336919964131087979/original/27b92e3c-3321-47f5-8203-fbc80a02a26a.jpeg",
+        "https://a0.muscache.com/im/pictures/hosting/Hosting-1336919964131087979/original/47584745-88cd-4d3f-9d4e-19d59c7cf7ab.jpeg",
+        "https://a0.muscache.com/im/pictures/hosting/Hosting-1336919964131087979/original/eaa9d205-a31c-417c-87bd-23b9829fc40f.jpeg"
+      ],
+      "bedrooms": 2,
+      "beds": 3,
+      "baths": 2,
+      "guests": 4,
+      "rating": 4.96,
+      "reviewsCount": 108,
+      "superhost": true,
+      "adrUsd": 83.1,
+      "adrMad": 831,
+      "occupancy": 0.778,
+      "revenueTtmUsd": 23574,
+      "revenueTtmMad": 235740,
+      "revparMad": 646,
+      "locality": "Marrakesh",
+      "latitude": 31.6409,
+      "longitude": -8.0114,
+      "distanceMeters": 853,
+      "amenities": [
+        "Air conditioning",
+        "Hair dryer",
+        "Cleaning products",
+        "Shampoo",
+        "Body soap",
+        "Hot water",
+        "Shower gel",
+        "Washer",
+        "Dryer",
+        "Essentials",
+        "Hangers",
+        "Bed linens",
+        "Extra pillows and blankets",
+        "Room-darkening shades",
+        "Iron",
+        "Drying rack for clothing",
+        "Clothing storage",
+        "TV",
+        "Crib",
+        "Air conditioning",
+        "Heating",
+        "First aid kit",
+        "Wifi",
+        "Dedicated workspace",
+        "Kitchen",
+        "Refrigerator",
+        "Microwave",
+        "Cooking basics",
+        "Dishes and silverware",
+        "Freezer",
+        "Stove",
+        "Oven",
+        "Hot water kettle",
+        "Coffee maker",
+        "Wine glasses",
+        "Toaster",
+        "Baking sheet",
+        "Dining table",
+        "Coffee",
+        "Bread maker",
+        "Private entrance",
+        "Laundromat nearby",
+        "Free parking on premises",
+        "Free street parking",
+        "Self check-in",
+        "Lockbox"
+      ]
+    },
+    {
+      "airbnbListingId": "22595485",
+      "name": "Loft lumineux · Centre-ville",
+      "photoUrl": "https://a0.muscache.com/im/pictures/miso/Hosting-22595485/original/2c330db2-927e-480e-8ea5-3b4b954d8f47.jpeg",
+      "photoUrls": [
+        "https://a0.muscache.com/im/pictures/miso/Hosting-22595485/original/2c330db2-927e-480e-8ea5-3b4b954d8f47.jpeg",
+        "https://a0.muscache.com/im/pictures/04ce28e2-413d-4b5d-a8dc-f517758a5bd8.jpg",
+        "https://a0.muscache.com/im/pictures/miso/Hosting-22595485/original/fdfea61f-8e10-4ac9-9015-cac3892c3301.jpeg",
+        "https://a0.muscache.com/im/pictures/miso/Hosting-22595485/original/529e389a-4988-437a-85b8-fb767e31cf08.jpeg",
+        "https://a0.muscache.com/im/pictures/miso/Hosting-22595485/original/601e044e-f911-4c07-8bcb-a3d81df561ce.jpeg"
+      ],
+      "bedrooms": 2,
+      "beds": 2,
+      "baths": 2,
+      "guests": 4,
+      "rating": 4.91,
+      "reviewsCount": 44,
+      "superhost": true,
+      "adrUsd": 73.8,
+      "adrMad": 738,
+      "occupancy": 0.266,
+      "revenueTtmUsd": 6818,
+      "revenueTtmMad": 68180,
+      "revparMad": 178,
+      "locality": "Marrakesh",
+      "latitude": 31.6386,
+      "longitude": -8.0143,
+      "distanceMeters": 1180,
+      "amenities": [
+        "Pool view",
+        "Garden view",
+        "Hair dryer",
+        "Hot water",
+        "Washer",
+        "Essentials",
+        "Hangers",
+        "Bed linens",
+        "Extra pillows and blankets",
+        "Iron",
+        "TV",
+        "Air conditioning",
+        "Indoor fireplace",
+        "Heating",
+        "Exterior security cameras on property",
+        "Wifi",
+        "Dedicated workspace",
+        "Kitchen",
+        "Refrigerator",
+        "Microwave",
+        "Cooking basics",
+        "Dishes and silverware",
+        "Stove",
+        "Oven",
+        "Patio or balcony",
+        "Backyard",
+        "Free parking on premises",
+        "Free street parking",
+        "Pool",
+        "Elevator",
+        "Long term stays allowed",
+        "Host greets you"
+      ]
+    },
+    {
+      "airbnbListingId": null,
+      "name": "Duplex terrasse · Guéliz",
+      "photoUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTEzNDU5OTA2ODM4Nzc3MzY2Ng==/original/22ae669c-7091-49c5-9643-9606d904954b.jpeg",
+      "photoUrls": [
+        "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTEzNDU5OTA2ODM4Nzc3MzY2Ng==/original/22ae669c-7091-49c5-9643-9606d904954b.jpeg",
+        "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTEzNDU5OTA2ODM4Nzc3MzY2Ng==/original/7526392d-71f6-44c7-a4d8-b83bb7fc4000.jpeg",
+        "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTEzNDU5OTA2ODM4Nzc3MzY2Ng==/original/6f670dc1-c161-4a9b-8541-f9c705a789db.jpeg",
+        "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTEzNDU5OTA2ODM4Nzc3MzY2Ng==/original/d04b3c85-3a87-4c52-8f06-2c5c859dadf6.jpeg",
+        "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTEzNDU5OTA2ODM4Nzc3MzY2Ng==/original/96b74a58-7320-44dd-96ff-fec87348fac4.jpeg",
+        "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTEzNDU5OTA2ODM4Nzc3MzY2Ng==/original/0e1671ed-f349-4f09-9e82-d54514e30438.jpeg"
+      ],
+      "bedrooms": 2,
+      "beds": 3,
+      "baths": 2,
+      "guests": 4,
+      "rating": 4.84,
+      "reviewsCount": 25,
+      "superhost": true,
+      "adrUsd": 113.8,
+      "adrMad": 1138,
+      "occupancy": 0.23,
+      "revenueTtmUsd": 10309,
+      "revenueTtmMad": 103090,
+      "revparMad": 261,
+      "locality": "Marrakesh",
+      "latitude": 31.63715557,
+      "longitude": -8.01788746,
+      "distanceMeters": 1554,
+      "amenities": [
+        "Hair dryer",
+        "Hot water",
+        "Essentials",
+        "Hangers",
+        "Bed linens",
+        "Room-darkening shades",
+        "Iron",
+        "Drying rack for clothing",
+        "TV",
+        "Crib",
+        "Air conditioning",
+        "Heating",
+        "Wifi",
+        "Kitchen",
+        "Refrigerator",
+        "Cooking basics",
+        "Dishes and silverware",
+        "Stove",
+        "Oven",
+        "Hot water kettle",
+        "Baking sheet",
+        "Blender",
+        "Trash compactor",
+        "Dining table",
+        "Free parking on premises",
+        "Pool",
+        "Gym"
+      ]
+    },
+    {
+      "airbnbListingId": "1229652099930946962",
+      "name": "Appartement familial · Hivernage",
+      "photoUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1229652099930946962/original/15db4d47-f855-49d7-afb1-d4c1b4a9a39c.jpeg",
+      "photoUrls": [
+        "https://a0.muscache.com/im/pictures/hosting/Hosting-1229652099930946962/original/15db4d47-f855-49d7-afb1-d4c1b4a9a39c.jpeg",
+        "https://a0.muscache.com/im/pictures/hosting/Hosting-1229652099930946962/original/ea3d6250-9783-4df6-83a4-d4ed8b820863.jpeg",
+        "https://a0.muscache.com/im/pictures/hosting/Hosting-1229652099930946962/original/96cfceaf-caca-4a2f-aa9f-9d48c9070827.jpeg",
+        "https://a0.muscache.com/im/pictures/hosting/Hosting-1229652099930946962/original/b29e07bc-7e78-445f-bc3a-b8b1bb747bb1.jpeg",
+        "https://a0.muscache.com/im/pictures/hosting/Hosting-1229652099930946962/original/3cb4a56e-932e-4cf9-8376-fb8159e4962e.jpeg",
+        "https://a0.muscache.com/im/pictures/hosting/Hosting-1229652099930946962/original/fa2ac3b8-5f60-4552-9bf0-8d6618104f40.jpeg"
+      ],
+      "bedrooms": 2,
+      "beds": 2,
+      "baths": 2,
+      "guests": 4,
+      "rating": 4.96,
+      "reviewsCount": 56,
+      "superhost": true,
+      "adrUsd": 89.1,
+      "adrMad": 891,
+      "occupancy": 0.526,
+      "revenueTtmUsd": 18359,
+      "revenueTtmMad": 183590,
+      "revparMad": 487,
+      "locality": "Marrakesh",
+      "latitude": 31.6447,
+      "longitude": -8.0113,
+      "distanceMeters": 888,
+      "amenities": [
+        "Hair dryer",
+        "Cleaning products",
+        "Bidet",
+        "Hot water",
+        "Shower gel",
+        "Washer",
+        "Essentials",
+        "Iron",
+        "TV",
+        "Air conditioning",
+        "Heating",
+        "Exterior security cameras on property",
+        "First aid kit",
+        "Wifi",
+        "Dedicated workspace",
+        "Kitchen",
+        "Refrigerator",
+        "Microwave",
+        "Cooking basics",
+        "Dishes and silverware",
+        "Freezer",
+        "Dishwasher",
+        "Stove",
+        "Oven",
+        "Hot water kettle",
+        "Coffee maker",
+        "Wine glasses",
+        "Blender",
+        "Trash compactor",
+        "Coffee",
+        "Free parking on premises",
+        "Pets allowed",
+        "Self check-in",
+        "Building staff"
+      ]
+    },
+    {
+      "airbnbListingId": "8857943",
+      "name": "Nid douillet · Majorelle",
+      "photoUrl": "https://a0.muscache.com/im/pictures/19142fa2-b6f3-4217-8b70-1918f7e4aebf.jpg",
+      "photoUrls": [
+        "https://a0.muscache.com/im/pictures/19142fa2-b6f3-4217-8b70-1918f7e4aebf.jpg",
+        "https://a0.muscache.com/im/pictures/a7d6982d-1b79-481b-9b93-796a6fab728d.jpg",
+        "https://a0.muscache.com/im/pictures/79d72cfb-bab4-4c1d-bdea-37b23a790173.jpg",
+        "https://a0.muscache.com/im/pictures/c2ce385c-4987-4613-9a62-ac64ac3e1542.jpg",
+        "https://a0.muscache.com/im/pictures/501ffca2-76ef-4884-b30a-610d3c19ab20.jpg",
+        "https://a0.muscache.com/im/pictures/5d4dc2f1-6db5-4faf-817c-f319a2fa3f33.jpg"
+      ],
+      "bedrooms": 2,
+      "beds": 3,
+      "baths": 2,
+      "guests": 4,
+      "rating": 4.85,
+      "reviewsCount": 176,
+      "superhost": false,
+      "adrUsd": 113.4,
+      "adrMad": 1134,
+      "occupancy": 0.378,
+      "revenueTtmUsd": 16759,
+      "revenueTtmMad": 167590,
+      "revparMad": 428,
+      "locality": "Marrakesh",
+      "latitude": 31.63491,
+      "longitude": -8.01329,
+      "distanceMeters": 1290,
+      "amenities": [
+        "Wifi",
+        "Bathtub",
+        "Hair dryer",
+        "Hot water",
+        "Washer",
+        "Hangers",
+        "Bed linens",
+        "Extra pillows and blankets",
+        "Iron",
+        "Clothing storage",
+        "TV",
+        "High chair",
+        "Air conditioning",
+        "Heating",
+        "Smoke alarm",
+        "Carbon monoxide alarm",
+        "Fire extinguisher",
+        "First aid kit",
+        "Wifi",
+        "Dedicated workspace",
+        "Pocket wifi",
+        "Kitchen",
+        "Refrigerator",
+        "Microwave",
+        "Cooking basics",
+        "Dishes and silverware",
+        "Freezer",
+        "Stove",
+        "Oven",
+        "Hot water kettle",
+        "Coffee maker",
+        "Baking sheet",
+        "Dining table",
+        "Patio or balcony",
+        "Outdoor furniture",
+        "Elevator",
+        "Doorman",
+        "Luggage dropoff allowed",
+        "Smoking allowed",
+        "Self check-in",
+        "Keypad",
+        "Cleaning before checkout"
+      ]
+    },
+    {
+      "airbnbListingId": "1261724349237343538",
+      "name": "Résidence piscine · Guéliz",
+      "photoUrl": "https://a0.muscache.com/im/pictures/miso/Hosting-1261724349237343538/original/1a473a0e-e43f-48d6-add8-e843456b8946.jpeg",
+      "photoUrls": [
+        "https://a0.muscache.com/im/pictures/miso/Hosting-1261724349237343538/original/1a473a0e-e43f-48d6-add8-e843456b8946.jpeg",
+        "https://a0.muscache.com/im/pictures/miso/Hosting-1261724349237343538/original/0cfee570-1970-4085-b56f-76a1af3a8b3e.jpeg",
+        "https://a0.muscache.com/im/pictures/miso/Hosting-1261724349237343538/original/98ce0afc-7170-4524-84ba-736bb660c0de.jpeg",
+        "https://a0.muscache.com/im/pictures/miso/Hosting-1261724349237343538/original/e9af4304-25a0-4a63-a296-c9a41352eba1.jpeg",
+        "https://a0.muscache.com/im/pictures/miso/Hosting-1261724349237343538/original/fe3a252b-7370-47a4-a7d2-23a1c7a54918.jpeg",
+        "https://a0.muscache.com/im/pictures/miso/Hosting-1261724349237343538/original/d43396c7-40c4-49bc-b9a1-2bc403df41d5.jpeg"
+      ],
+      "bedrooms": 2,
+      "beds": 2,
+      "baths": 2,
+      "guests": 4,
+      "rating": 4.92,
+      "reviewsCount": 25,
+      "superhost": true,
+      "adrUsd": 209.2,
+      "adrMad": 2092,
+      "occupancy": 0.477,
+      "revenueTtmUsd": 37247,
+      "revenueTtmMad": 372470,
+      "revparMad": 993,
+      "locality": "Marrakesh",
+      "latitude": 31.6333,
+      "longitude": -8.0095,
+      "distanceMeters": 1172,
+      "amenities": [
+        "Hair dryer",
+        "Washer",
+        "Iron",
+        "TV",
+        "Crib",
+        "Air conditioning",
+        "Heating",
+        "Carbon monoxide alarm",
+        "Fire extinguisher",
+        "First aid kit",
+        "Wifi",
+        "Dedicated workspace",
+        "Kitchen",
+        "Cooking basics",
+        "Ski-in/Ski-out",
+        "Fire pit",
+        "Free parking on premises",
+        "Pets allowed",
+        "Self check-in",
+        "Lockbox"
+      ]
+    },
+    {
+      "airbnbListingId": "48928897",
+      "name": "Appart chic · Centre",
+      "photoUrl": "https://a0.muscache.com/im/pictures/ed470db6-88fa-438f-b99a-a0fd805a8de4.jpg",
+      "photoUrls": [
+        "https://a0.muscache.com/im/pictures/ed470db6-88fa-438f-b99a-a0fd805a8de4.jpg",
+        "https://a0.muscache.com/im/pictures/c270caf8-c046-4f11-82d3-1aa7e63c4191.jpg",
+        "https://a0.muscache.com/im/pictures/5437be6b-dbce-48e2-930f-fa8991146e4c.jpg",
+        "https://a0.muscache.com/im/pictures/32d8e98d-d29a-4ce4-9267-876ef2240d09.jpg",
+        "https://a0.muscache.com/im/pictures/6f9cc831-c2c8-4858-bfa3-cbb7351cbe32.jpg",
+        "https://a0.muscache.com/im/pictures/70dd488c-be08-4eff-ad08-b2b57868020a.jpg"
+      ],
+      "bedrooms": 2,
+      "beds": 2,
+      "baths": 2,
+      "guests": 4,
+      "rating": 4.83,
+      "reviewsCount": 103,
+      "superhost": true,
+      "adrUsd": 101.9,
+      "adrMad": 1019,
+      "occupancy": 0.222,
+      "revenueTtmUsd": 8475,
+      "revenueTtmMad": 84750,
+      "revparMad": 219,
+      "locality": "Marrakesh",
+      "latitude": 31.63369,
+      "longitude": -8.01343,
+      "distanceMeters": 1387,
+      "amenities": [
+        "Cleaning products",
+        "Hot water",
+        "Washer",
+        "Essentials",
+        "Hangers",
+        "Bed linens",
+        "Iron",
+        "Drying rack for clothing",
+        "Clothing storage",
+        "TV",
+        "Sound system",
+        "Crib",
+        "Pack ’n play/Travel crib",
+        "Air conditioning",
+        "Heating",
+        "Smoke alarm",
+        "Carbon monoxide alarm",
+        "Fire extinguisher",
+        "First aid kit",
+        "Wifi",
+        "Kitchen",
+        "Refrigerator",
+        "Microwave",
+        "Cooking basics",
+        "Dishes and silverware",
+        "Freezer",
+        "Dishwasher",
+        "Stove",
+        "Oven",
+        "Hot water kettle",
+        "Coffee maker",
+        "Barbecue utensils",
+        "Lake access",
+        "Private entrance",
+        "Patio or balcony",
+        "Outdoor furniture",
+        "BBQ grill",
+        "Hot tub",
+        "Paid parking off premises",
+        "Paid parking on premises",
+        "Single level home"
+      ]
+    },
+    {
+      "airbnbListingId": "1432109319729956188",
+      "name": "Villa urbaine · Hivernage",
+      "photoUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1432109319729956188/original/15d3aa4c-41c2-4e14-ba69-3abe95d150a6.jpeg",
+      "photoUrls": [
+        "https://a0.muscache.com/im/pictures/hosting/Hosting-1432109319729956188/original/15d3aa4c-41c2-4e14-ba69-3abe95d150a6.jpeg",
+        "https://a0.muscache.com/im/pictures/hosting/Hosting-1432109319729956188/original/1ebd37e2-4ccc-41da-a6ae-94bed625c107.png",
+        "https://a0.muscache.com/im/pictures/hosting/Hosting-1432109319729956188/original/57add174-a907-48b2-b3af-9f5190dfc8cd.jpeg",
+        "https://a0.muscache.com/im/pictures/hosting/Hosting-1432109319729956188/original/b245c384-ae7d-4f26-b581-f985f258f6ba.jpeg",
+        "https://a0.muscache.com/im/pictures/hosting/Hosting-1432109319729956188/original/6df6e23d-1700-45c0-8b23-88225333fce2.jpeg",
+        "https://a0.muscache.com/im/pictures/hosting/Hosting-1432109319729956188/original/c50fa5a8-e801-4df5-8262-e60dd388f3ab.jpeg"
+      ],
+      "bedrooms": 2,
+      "beds": 3,
+      "baths": 2,
+      "guests": 4,
+      "rating": 5,
+      "reviewsCount": 31,
+      "superhost": true,
+      "adrUsd": 93.8,
+      "adrMad": 938,
+      "occupancy": 0.553,
+      "revenueTtmUsd": 20011,
+      "revenueTtmMad": 200110,
+      "revparMad": 522,
+      "locality": "Marrakesh",
+      "latitude": 31.6519,
+      "longitude": -8.0059,
+      "distanceMeters": 1150,
+      "amenities": [
+        "Hair dryer",
+        "Cleaning products",
+        "Shampoo",
+        "Conditioner",
+        "Body soap",
+        "Hot water",
+        "Shower gel",
+        "Washer",
+        "Dryer",
+        "Essentials",
+        "Hangers",
+        "Bed linens",
+        "Room-darkening shades",
+        "Drying rack for clothing",
+        "Clothing storage",
+        "Ethernet connection",
+        "TV",
+        "Air conditioning",
+        "Heating",
+        "Heating",
+        "Noise decibel monitors on property",
+        "First aid kit",
+        "Wifi",
+        "Dedicated workspace",
+        "Kitchen",
+        "Refrigerator",
+        "Microwave",
+        "Cooking basics",
+        "Dishes and silverware",
+        "Freezer",
+        "Dishwasher",
+        "Oven",
+        "Hot water kettle",
+        "Coffee maker",
+        "Wine glasses",
+        "Blender",
+        "Trash compactor",
+        "Dining table",
+        "Coffee",
+        "Private entrance",
+        "Laundromat nearby",
+        "Patio or balcony",
+        "Outdoor furniture",
+        "Outdoor dining area",
+        "Free parking on premises",
+        "Free street parking",
+        "Single level home",
+        "Self check-in",
+        "Lockbox"
+      ]
+    },
+    {
+      "airbnbListingId": null,
+      "name": "Perle du Guéliz",
+      "photoUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6NjIyOTk5MjYyNDIxMjgyNzU3/original/2c506738-21e1-4841-916c-ba993d284748.jpeg",
+      "photoUrls": [
+        "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6NjIyOTk5MjYyNDIxMjgyNzU3/original/2c506738-21e1-4841-916c-ba993d284748.jpeg"
+      ],
+      "bedrooms": 2,
+      "beds": 2,
+      "baths": 2,
+      "guests": 4,
+      "rating": 4.77,
+      "reviewsCount": 171,
+      "superhost": false,
+      "adrUsd": 57.7,
+      "adrMad": 577,
+      "occupancy": 0.23,
+      "revenueTtmUsd": 4937,
+      "revenueTtmMad": 49370,
+      "revparMad": 135,
+      "locality": "Marrakesh",
+      "latitude": 31.63298,
+      "longitude": -8.00378,
+      "distanceMeters": 1008,
+      "amenities": [
+        "Blender",
+        "Wifi",
+        "Air conditioning",
+        "Kitchen",
+        "Free parking on premises",
+        "Hot water kettle",
+        "Pets allowed",
+        "Hot water",
+        "Elevator",
+        "Bed linens",
+        "Cleaning products",
+        "Coffee maker",
+        "Refrigerator",
+        "Drying rack for clothing",
+        "Dishwasher",
+        "Dishes and silverware",
+        "Heating",
+        "Cooking basics",
+        "Oven",
+        "Clothing storage",
+        "Stove",
+        "Washer",
+        "Shower gel",
+        "Patio or balcony",
+        "Bidet",
+        "Essentials",
+        "Hangers",
+        "Dining table",
+        "Hair dryer",
+        "Iron",
+        "Dedicated workspace",
+        "Self check-in",
+        "Outdoor dining area",
+        "Freezer",
+        "Building staff",
+        "Toaster",
+        "Bathtub"
+      ]
+    },
+    {
+      "airbnbListingId": "1274061210527917040",
+      "name": "Havre calme · Majorelle",
+      "photoUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1274061210527917040/original/afe5e2db-70cd-495b-9402-b220f03280ea.jpeg",
+      "photoUrls": [
+        "https://a0.muscache.com/im/pictures/hosting/Hosting-1274061210527917040/original/afe5e2db-70cd-495b-9402-b220f03280ea.jpeg",
+        "https://a0.muscache.com/im/pictures/hosting/Hosting-1274061210527917040/original/07bf9266-e616-4854-b61e-9bf20fc18d52.jpeg",
+        "https://a0.muscache.com/im/pictures/hosting/Hosting-1274061210527917040/original/4256668e-4f4d-4c1f-839c-30e5b94bc628.jpeg",
+        "https://a0.muscache.com/im/pictures/hosting/Hosting-1274061210527917040/original/b0cea42a-88ca-40fc-a705-ab526a0e4723.jpeg",
+        "https://a0.muscache.com/im/pictures/hosting/Hosting-1274061210527917040/original/925f2e55-0609-4cf6-850a-0efedb289015.jpeg",
+        "https://a0.muscache.com/im/pictures/hosting/Hosting-1274061210527917040/original/f4e960a3-a094-4968-a7d0-2a5e7a3d2a43.jpeg"
+      ],
+      "bedrooms": 2,
+      "beds": 2,
+      "baths": 2,
+      "guests": 4,
+      "rating": 4.89,
+      "reviewsCount": 18,
+      "superhost": true,
+      "adrUsd": 100.5,
+      "adrMad": 1005,
+      "occupancy": 0.219,
+      "revenueTtmUsd": 8151,
+      "revenueTtmMad": 81510,
+      "revparMad": 221,
+      "locality": "Marrakesh",
+      "latitude": 31.6406,
+      "longitude": -8.0187,
+      "distanceMeters": 1543,
+      "amenities": [
+        "Hair dryer",
+        "Cleaning products",
+        "Shampoo",
+        "Body soap",
+        "Hot water",
+        "Shower gel",
+        "Washer",
+        "Essentials",
+        "Hangers",
+        "Bed linens",
+        "Room-darkening shades",
+        "Iron",
+        "Drying rack for clothing",
+        "Clothing storage",
+        "TV",
+        "Books and reading material",
+        "Air conditioning",
+        "Heating",
+        "Exterior security cameras on property",
+        "Smoke alarm",
+        "Carbon monoxide alarm",
+        "Fire extinguisher",
+        "First aid kit",
+        "Wifi",
+        "Dedicated workspace",
+        "Kitchen",
+        "Refrigerator",
+        "Cooking basics",
+        "Dishes and silverware",
+        "Freezer",
+        "Stove",
+        "Oven",
+        "Hot water kettle",
+        "Coffee maker",
+        "Toaster",
+        "Blender",
+        "Trash compactor",
+        "Dining table",
+        "Coffee",
+        "Private entrance",
+        "Free parking on premises",
+        "Paid parking on premises",
+        "Luggage dropoff allowed",
+        "Long term stays allowed",
+        "Self check-in",
+        "Smart lock",
+        "Cleaning before checkout"
+      ]
+    },
+    {
+      "airbnbListingId": "1581805413855311392",
+      "name": "Cocon moderne · Centre",
+      "photoUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1581805413855311392/original/889ac94b-c8b6-4d9f-bc33-891982a4211a.jpeg",
+      "photoUrls": [
+        "https://a0.muscache.com/im/pictures/hosting/Hosting-1581805413855311392/original/889ac94b-c8b6-4d9f-bc33-891982a4211a.jpeg",
+        "https://a0.muscache.com/im/pictures/hosting/Hosting-1581805413855311392/original/f668acd6-0133-4ed6-889b-e23454431a74.jpeg",
+        "https://a0.muscache.com/im/pictures/hosting/Hosting-1581805413855311392/original/16eecb05-8f04-4669-b8b3-706b6a475874.jpeg",
+        "https://a0.muscache.com/im/pictures/hosting/Hosting-1581805413855311392/original/101c4f44-121b-4044-8453-4d80ba6469f0.jpeg",
+        "https://a0.muscache.com/im/pictures/hosting/Hosting-1581805413855311392/original/58be60e1-80f9-4864-b906-d578a53d53df.jpeg",
+        "https://a0.muscache.com/im/pictures/hosting/Hosting-1581805413855311392/original/2afbf76a-b83e-4c24-affc-cc97f385d1a6.jpeg"
+      ],
+      "bedrooms": 2,
+      "beds": 4,
+      "baths": 2,
+      "guests": 4,
+      "rating": 4.86,
+      "reviewsCount": 7,
+      "superhost": true,
+      "adrUsd": 166.5,
+      "adrMad": 1665,
+      "occupancy": 0.17,
+      "revenueTtmUsd": 10594,
+      "revenueTtmMad": 105940,
+      "revparMad": 285,
+      "locality": "Marrakesh",
+      "latitude": 31.6357,
+      "longitude": -7.989,
+      "distanceMeters": 1454,
+      "amenities": [
+        "Hair dryer",
+        "Cleaning products",
+        "Shampoo",
+        "Conditioner",
+        "Body soap",
+        "Outdoor shower",
+        "Hot water",
+        "Shower gel",
+        "Essentials",
+        "Hangers",
+        "Bed linens",
+        "Extra pillows and blankets",
+        "Iron",
+        "Drying rack for clothing",
+        "Clothing storage",
+        "Ethernet connection",
+        "Books and reading material",
+        "Crib",
+        "Pack ’n play/Travel crib",
+        "Air conditioning",
+        "Indoor fireplace",
+        "Portable fans",
+        "Heating",
+        "Smoke alarm",
+        "Wifi",
+        "Dedicated workspace",
+        "Kitchen",
+        "Refrigerator",
+        "Cooking basics",
+        "Dishes and silverware",
+        "Freezer",
+        "Stove",
+        "Oven",
+        "Hot water kettle",
+        "Coffee maker",
+        "Wine glasses",
+        "Toaster",
+        "Barbecue utensils",
+        "Dining table",
+        "Coffee",
+        "Private entrance",
+        "Patio or balcony",
+        "Outdoor furniture",
+        "Hammock",
+        "Outdoor dining area",
+        "BBQ grill",
+        "Beach essentials",
+        "Free street parking",
+        "Paid parking off premises",
+        "Breakfast",
+        "Long term stays allowed",
+        "Self check-in",
+        "Building staff",
+        "Cleaning before checkout"
+      ]
+    },
+    {
+      "airbnbListingId": "1482181225662017868",
+      "name": "Séjour prestige · Guéliz",
+      "photoUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1482181225662017868/original/e9844b5a-ee6c-41b8-9634-559427efb519.jpeg",
+      "photoUrls": [
+        "https://a0.muscache.com/im/pictures/hosting/Hosting-1482181225662017868/original/e9844b5a-ee6c-41b8-9634-559427efb519.jpeg",
+        "https://a0.muscache.com/im/pictures/hosting/Hosting-1482181225662017868/original/c2b27529-afbd-4617-90c3-aa9f5f43ab80.jpeg",
+        "https://a0.muscache.com/im/pictures/hosting/Hosting-1482181225662017868/original/d15e9e21-bbb9-4c47-8343-a0adf8647a92.jpeg",
+        "https://a0.muscache.com/im/pictures/hosting/Hosting-1482181225662017868/original/9d3c7ddb-3b1a-45e0-9c90-8f3ab2d049cd.jpeg",
+        "https://a0.muscache.com/im/pictures/hosting/Hosting-1482181225662017868/original/875ad074-6368-4f81-848e-34da0444ea28.jpeg",
+        "https://a0.muscache.com/im/pictures/hosting/Hosting-1482181225662017868/original/6be8f701-df40-4cc7-a253-6c01fe17fbe8.png"
+      ],
+      "bedrooms": 2,
+      "beds": 3,
+      "baths": 2,
+      "guests": 4,
+      "rating": 4.85,
+      "reviewsCount": 41,
+      "superhost": false,
+      "adrUsd": 97.2,
+      "adrMad": 972,
+      "occupancy": 0.195,
+      "revenueTtmUsd": 7019,
+      "revenueTtmMad": 70190,
+      "revparMad": 192,
+      "locality": "Marrakesh",
+      "latitude": 31.6327,
+      "longitude": -8.0037,
+      "distanceMeters": 1038,
+      "amenities": [
+        "Hair dryer",
+        "Hot water",
+        "Washer",
+        "Dryer",
+        "Bed linens",
+        "Extra pillows and blankets",
+        "Room-darkening shades",
+        "Iron",
+        "Mosquito net",
+        "Clothing storage",
+        "Ethernet connection",
+        "TV",
+        "Sound system",
+        "Air conditioning",
+        "Heating",
+        "Fire extinguisher",
+        "Wifi",
+        "Kitchen",
+        "Refrigerator",
+        "Cooking basics",
+        "Dishes and silverware",
+        "Freezer",
+        "Stove",
+        "Oven",
+        "Coffee maker",
+        "Wine glasses",
+        "Baking sheet",
+        "Blender",
+        "Trash compactor",
+        "Dining table",
+        "Coffee",
+        "Laundromat nearby",
+        "Patio or balcony",
+        "Backyard",
+        "Outdoor furniture",
+        "Outdoor dining area",
+        "Sun loungers",
+        "Free parking on premises",
+        "Elevator",
+        "Single level home",
+        "Long term stays allowed",
+        "Self check-in",
+        "Keypad"
+      ]
+    },
+    {
+      "airbnbListingId": "1014995271439356361",
+      "name": "Oasis urbaine · Hivernage",
+      "photoUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1014995271439356361/original/c8eb18be-5978-43ff-aa11-dcdb07d37550.jpeg",
+      "photoUrls": [
+        "https://a0.muscache.com/im/pictures/hosting/Hosting-1014995271439356361/original/c8eb18be-5978-43ff-aa11-dcdb07d37550.jpeg",
+        "https://a0.muscache.com/im/pictures/hosting/Hosting-1014995271439356361/original/d0e48518-96c8-4f2e-b4f2-2a197fe6e91f.jpeg",
+        "https://a0.muscache.com/im/pictures/hosting/Hosting-1014995271439356361/original/175a18b4-5e7a-4a98-b10c-c3c01cb31380.jpeg",
+        "https://a0.muscache.com/im/pictures/hosting/Hosting-1014995271439356361/original/36b4548b-cbaf-43b4-a15c-b40bc58dc38b.jpeg",
+        "https://a0.muscache.com/im/pictures/hosting/Hosting-1014995271439356361/original/3329d0c5-b4a6-43f1-9a1c-6d61840b0eab.jpeg",
+        "https://a0.muscache.com/im/pictures/hosting/Hosting-1014995271439356361/original/d2e5334b-2131-4f99-aa0e-9d563ca62c63.jpeg"
+      ],
+      "bedrooms": 2,
+      "beds": 2,
+      "baths": 2,
+      "guests": 4,
+      "rating": 5,
+      "reviewsCount": 110,
+      "superhost": true,
+      "adrUsd": 102.5,
+      "adrMad": 1025,
+      "occupancy": 0.493,
+      "revenueTtmUsd": 19878,
+      "revenueTtmMad": 198780,
+      "revparMad": 504,
+      "locality": "Marrakesh",
+      "latitude": 31.6312,
+      "longitude": -8.0042,
+      "distanceMeters": 1209,
+      "amenities": [
+        "Wifi",
+        "Hair dryer",
+        "Cleaning products",
+        "Body soap",
+        "Hot water",
+        "Washer",
+        "Dryer",
+        "Essentials",
+        "Hangers",
+        "Bed linens",
+        "Room-darkening shades",
+        "Iron",
+        "Drying rack for clothing",
+        "Clothing storage",
+        "TV",
+        "Air conditioning",
+        "Heating",
+        "Smoke alarm",
+        "Carbon monoxide alarm",
+        "Fire extinguisher",
+        "First aid kit",
+        "Wifi",
+        "Dedicated workspace",
+        "Kitchen",
+        "Refrigerator",
+        "Microwave",
+        "Cooking basics",
+        "Dishes and silverware",
+        "Freezer",
+        "Stove",
+        "Oven",
+        "Hot water kettle",
+        "Wine glasses",
+        "Baking sheet",
+        "Blender",
+        "Dining table",
+        "Laundromat nearby",
+        "Free parking on premises",
+        "Free street parking",
+        "Elevator",
+        "Long term stays allowed",
+        "Self check-in",
+        "Keypad"
+      ]
+    },
+    {
+      "airbnbListingId": "1220977214138740533",
+      "name": "Appartement zen · Majorelle",
+      "photoUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1220977214138740533/original/937397cf-b43e-4427-9033-09e21cce758d.jpeg",
+      "photoUrls": [
+        "https://a0.muscache.com/im/pictures/hosting/Hosting-1220977214138740533/original/937397cf-b43e-4427-9033-09e21cce758d.jpeg",
+        "https://a0.muscache.com/im/pictures/hosting/Hosting-1220977214138740533/original/e54c2041-89f2-4342-a955-07a8677193ba.jpeg",
+        "https://a0.muscache.com/im/pictures/hosting/Hosting-1220977214138740533/original/73bcecf2-8614-417a-b0a0-1e7d080665d1.jpeg",
+        "https://a0.muscache.com/im/pictures/hosting/Hosting-1220977214138740533/original/8aa6f859-adf1-4a6e-b9e7-cf477b3d863e.jpeg",
+        "https://a0.muscache.com/im/pictures/hosting/Hosting-1220977214138740533/original/755537d8-eff0-4fb6-a72e-8cd52e1c6195.jpeg",
+        "https://a0.muscache.com/im/pictures/hosting/Hosting-1220977214138740533/original/6cf3723b-d4e1-4133-84aa-da9ceafecf9a.jpeg"
+      ],
+      "bedrooms": 2,
+      "beds": 1,
+      "baths": 2,
+      "guests": 4,
+      "rating": 4.42,
+      "reviewsCount": 19,
+      "superhost": false,
+      "adrUsd": 110,
+      "adrMad": 1100,
+      "occupancy": 0.247,
+      "revenueTtmUsd": 9967,
+      "revenueTtmMad": 99670,
+      "revparMad": 273,
+      "locality": "Marrakesh",
+      "latitude": 31.6367,
+      "longitude": -8.0124,
+      "distanceMeters": 1107,
+      "amenities": [
+        "Washer",
+        "TV",
+        "Air conditioning",
+        "Exterior security cameras on property",
+        "First aid kit",
+        "Wifi",
+        "Dedicated workspace",
+        "Kitchen",
+        "Outdoor dining area",
+        "BBQ grill",
+        "Hot tub"
+      ]
+    },
+    {
+      "airbnbListingId": "1291973905507279747",
+      "name": "Refuge élégant · Guéliz",
+      "photoUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTI5MTk3MzkwNTUwNzI3OTc0Nw%3D%3D/original/ec02e28e-343f-494d-832c-fd3b812abdf3.jpeg",
+      "photoUrls": [
+        "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTI5MTk3MzkwNTUwNzI3OTc0Nw%3D%3D/original/ec02e28e-343f-494d-832c-fd3b812abdf3.jpeg",
+        "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTI5MTk3MzkwNTUwNzI3OTc0Nw%3D%3D/original/72857808-b4be-487f-bd63-61907765a350.jpeg",
+        "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTI5MTk3MzkwNTUwNzI3OTc0Nw%3D%3D/original/4cf74b27-ab6d-40cf-b9e8-2bee7214d385.jpeg",
+        "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTI5MTk3MzkwNTUwNzI3OTc0Nw%3D%3D/original/d464dd8c-f1e3-4d7b-9b32-8d2ec437b982.jpeg",
+        "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTI5MTk3MzkwNTUwNzI3OTc0Nw%3D%3D/original/f65af6ca-f55a-4f8d-aada-0826153f9b57.jpeg",
+        "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTI5MTk3MzkwNTUwNzI3OTc0Nw%3D%3D/original/7fe9dd48-938c-4ead-a046-e7686c3b94b0.jpeg"
+      ],
+      "bedrooms": 2,
+      "beds": 2,
+      "baths": 2,
+      "guests": 4,
+      "rating": 4.44,
+      "reviewsCount": 9,
+      "superhost": true,
+      "adrUsd": 122.2,
+      "adrMad": 1222,
+      "occupancy": 0.318,
+      "revenueTtmUsd": 13780,
+      "revenueTtmMad": 137800,
+      "revparMad": 358,
+      "locality": "Marrakesh",
+      "latitude": 31.6408,
+      "longitude": -8.0048,
+      "distanceMeters": 256,
+      "amenities": [
+        "Hair dryer",
+        "Cleaning products",
+        "Shampoo",
+        "Conditioner",
+        "Body soap",
+        "Hot water",
+        "Shower gel",
+        "Washer",
+        "Essentials",
+        "Hangers",
+        "Bed linens",
+        "Extra pillows and blankets",
+        "Room-darkening shades",
+        "Iron",
+        "Drying rack for clothing",
+        "Clothing storage",
+        "Ethernet connection",
+        "TV",
+        "Books and reading material",
+        "Air conditioning",
+        "Indoor fireplace",
+        "Heating",
+        "Carbon monoxide alarm",
+        "First aid kit",
+        "Wifi",
+        "Kitchen",
+        "Refrigerator",
+        "Microwave",
+        "Cooking basics",
+        "Dishes and silverware",
+        "Mini fridge",
+        "Freezer",
+        "Stove",
+        "Oven",
+        "Hot water kettle",
+        "Coffee maker",
+        "Wine glasses",
+        "Toaster",
+        "Baking sheet",
+        "Dining table",
+        "Coffee",
+        "Private entrance",
+        "Patio or balcony",
+        "Outdoor furniture",
+        "Outdoor dining area",
+        "Free parking on premises",
+        "Elevator",
+        "Long term stays allowed",
+        "Self check-in",
+        "Lockbox",
+        "Cleaning before checkout"
+      ]
+    },
+    {
+      "airbnbListingId": "933367602568646656",
+      "name": "Escale premium · Centre",
+      "photoUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-933367602568646656/original/3ee15ffc-c25a-4688-832f-ed7544390019.jpeg",
+      "photoUrls": [
+        "https://a0.muscache.com/im/pictures/hosting/Hosting-933367602568646656/original/3ee15ffc-c25a-4688-832f-ed7544390019.jpeg",
+        "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6OTMzMzY3NjAyNTY4NjQ2NjU2/original/e4407be0-9cc1-416d-b0e7-6d8d07fbea3b.jpeg",
+        "https://a0.muscache.com/im/pictures/miso/Hosting-933367602568646656/original/568e133e-f506-4c0f-bf57-21e8748d329c.jpeg",
+        "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6OTMzMzY3NjAyNTY4NjQ2NjU2/original/b9528bb6-abf6-4919-9cf9-ea7ca14994ca.jpeg",
+        "https://a0.muscache.com/im/pictures/miso/Hosting-933367602568646656/original/31c8dd3b-4ec3-41b5-9349-def386928b7c.jpeg",
+        "https://a0.muscache.com/im/pictures/miso/Hosting-933367602568646656/original/869356b4-9971-4ab5-b65d-e4ec5b070f9d.jpeg"
+      ],
+      "bedrooms": 2,
+      "beds": 3,
+      "baths": 2,
+      "guests": 4,
+      "rating": 4.92,
+      "reviewsCount": 106,
+      "superhost": true,
+      "adrUsd": 121.2,
+      "adrMad": 1212,
+      "occupancy": 0.414,
+      "revenueTtmUsd": 18591,
+      "revenueTtmMad": 185910,
+      "revparMad": 509,
+      "locality": "Marrakesh",
+      "latitude": 31.6509,
+      "longitude": -8.011,
+      "distanceMeters": 1279,
+      "amenities": [
+        "Cleaning products",
+        "Hot water",
+        "Washer",
+        "Essentials",
+        "Hangers",
+        "Bed linens",
+        "Room-darkening shades",
+        "Drying rack for clothing",
+        "Clothing storage",
+        "TV",
+        "Outdoor playground",
+        "Air conditioning",
+        "Heating",
+        "Wifi",
+        "Kitchen",
+        "Refrigerator",
+        "Cooking basics",
+        "Dishes and silverware",
+        "Freezer",
+        "Dishwasher",
+        "Oven",
+        "Hot water kettle",
+        "Coffee maker",
+        "Baking sheet",
+        "Dining table",
+        "Coffee",
+        "Laundromat nearby",
+        "Patio or balcony",
+        "Backyard",
+        "Free parking on premises",
+        "Pool",
+        "Elevator",
+        "Paid parking off premises",
+        "Self check-in",
+        "Lockbox"
+      ]
+    }
+  ],
+  "bestCompetitor": {
+    "airbnbListingId": "1261724349237343538",
+    "name": "Le Prestige · Guéliz Rooftop",
+    "photoUrl": "https://a0.muscache.com/im/pictures/miso/Hosting-1261724349237343538/original/1a473a0e-e43f-48d6-add8-e843456b8946.jpeg",
+    "photoUrls": [
+      "https://a0.muscache.com/im/pictures/miso/Hosting-1261724349237343538/original/1a473a0e-e43f-48d6-add8-e843456b8946.jpeg",
+      "https://a0.muscache.com/im/pictures/miso/Hosting-1261724349237343538/original/0cfee570-1970-4085-b56f-76a1af3a8b3e.jpeg",
+      "https://a0.muscache.com/im/pictures/miso/Hosting-1261724349237343538/original/98ce0afc-7170-4524-84ba-736bb660c0de.jpeg",
+      "https://a0.muscache.com/im/pictures/miso/Hosting-1261724349237343538/original/e9af4304-25a0-4a63-a296-c9a41352eba1.jpeg",
+      "https://a0.muscache.com/im/pictures/miso/Hosting-1261724349237343538/original/fe3a252b-7370-47a4-a7d2-23a1c7a54918.jpeg",
+      "https://a0.muscache.com/im/pictures/miso/Hosting-1261724349237343538/original/d43396c7-40c4-49bc-b9a1-2bc403df41d5.jpeg"
+    ],
+    "bedrooms": 2,
+    "beds": 2,
+    "baths": 2,
+    "guests": 4,
+    "rating": 4.92,
+    "reviewsCount": 25,
+    "superhost": true,
+    "adrUsd": 209.2,
+    "adrMad": 2092,
+    "occupancy": 0.477,
+    "revenueTtmUsd": 37247,
+    "revenueTtmMad": 372470,
+    "revparMad": 993,
+    "locality": "Marrakesh",
+    "latitude": 31.6333,
+    "longitude": -8.0095,
+    "distanceMeters": 1172,
+    "amenities": [
+      "Hair dryer",
+      "Washer",
+      "Iron",
+      "TV",
+      "Crib",
+      "Air conditioning",
+      "Heating",
+      "Carbon monoxide alarm",
+      "Fire extinguisher",
+      "First aid kit",
+      "Wifi",
+      "Dedicated workspace",
+      "Kitchen",
+      "Cooking basics",
+      "Ski-in/Ski-out",
+      "Fire pit",
+      "Free parking on premises",
+      "Pets allowed",
+      "Self check-in",
+      "Lockbox"
+    ]
+  },
+  "amenitiesDiff": {
+    "shared": [
+      "Hair dryer",
+      "Washer",
+      "Iron",
+      "TV",
+      "Air conditioning",
+      "Heating",
+      "Wifi",
+      "Dedicated workspace",
+      "Kitchen",
+      "Cooking basics",
+      "Free parking on premises",
+      "Self check-in",
+      "Lockbox"
+    ],
+    "onlyYours": [
+      "Bathtub",
+      "Cleaning products",
+      "Outdoor shower",
+      "Hot water",
+      "Essentials",
+      "Hangers",
+      "Bed linens",
+      "Extra pillows and blankets",
+      "Room-darkening shades",
+      "Drying rack for clothing",
+      "Clothing storage",
+      "Pack ’n play/Travel crib",
+      "Refrigerator",
+      "Microwave",
+      "Dishes and silverware",
+      "Freezer",
+      "Stove",
+      "Oven",
+      "Hot water kettle",
+      "Coffee maker",
+      "Baking sheet",
+      "Dining table",
+      "Patio or balcony",
+      "Outdoor furniture",
+      "Pool",
+      "Elevator"
+    ],
+    "onlyTheirs": [
+      "Crib",
+      "Carbon monoxide alarm",
+      "Fire extinguisher",
+      "First aid kit",
+      "Ski-in/Ski-out",
+      "Fire pit",
+      "Pets allowed"
+    ]
+  },
+  "bilan": {
+    "headline": "Superhost 4,94★ avec piscine à Guéliz : 71% d'occupation mais ADR 60% sous le marché premium",
+    "strengths": [
+      "Taux d'occupation solide à 71% vs 47,7% pour le meilleur concurrent, preuve d'une forte demande pour votre bien",
+      "Note exceptionnelle 4,94★ sur 174 avis – crédibilité bien supérieure au concurrent leader (25 avis seulement)",
+      "Équipements supérieurs : piscine, baignoire, balcon, cuisine complète (réfrigérateur, micro-ondes, four) que le concurrent n'a pas",
+      "Revenu TTM 223 960 MAD, déjà 33% au-dessus de la moyenne marché (168 301 MAD)"
+    ],
+    "gaps": [
+      "ADR à 837 MAD très loin sous le concurrent top-revenu (2 092 MAD, soit +150%) et sous l'ADR marché (1 190 MAD, -30%)",
+      "Le concurrent à 163 m avec piscine et rooftop facture 1 514 MAD (+81%) pour une note inférieure (4,89★, 27 avis)",
+      "Absence d'équipements sécurité valorisants : alarme CO, extincteur, trousse de secours – freins potentiels pour certains voyageurs",
+      "Pas d'option 'Pets allowed' ni parking gratuit mentionné, deux filtres de recherche utilisés par les concurrents haut de gamme"
+    ],
+    "actions": [
+      "Augmenter l'ADR progressivement vers 1 200-1 400 MAD en ciblant d'abord les weekends et périodes haute saison (hiver européen, Ramadan, été) – même à 1 200 MAD avec 71% d'occupation le revenu gagnerait ~100 000 MAD/an",
+      "Revaloriser la piscine et le balcon dans le titre et les photos : ce sont des différenciateurs absents chez le concurrent à 2 092 MAD, justifiant une hausse de prix immédiate",
+      "Ajouter extincteur, trousse de premiers secours et alarme CO (investissement <500 MAD) pour rassurer et cocher des filtres de recherche Airbnb",
+      "Tester une tarification dynamique avec prix plancher à 1 000 MAD (vs 837 MAD actuel) sur les 60 prochains jours pour évaluer l'impact sur l'occupation sans la faire chuter sous 60%"
+    ],
+    "bestCompetitorWhy": "ZARA Gueliz Luxe Center No. 2 génère 372 470 MAD TTM (+66% vs vous) grâce à un ADR 2,5x supérieur (2 092 MAD) malgré seulement 25 avis et une occupation 34 points plus faible : il mise sur le positionnement luxe et des équipements différenciants (fire pit, pets allowed, parking) plutôt que sur le volume de nuits vendues."
+  },
+  "yourPriceSeries": {
+    "estimate12m": {
+      "revenueMad": 223960,
+      "adrMad": 837,
+      "occupancy": 0.71,
+      "revparMad": 599
+    },
+    "monthlyHistory": [
+      {
+        "month": "2025-07",
+        "revenueMad": 22380,
+        "adrMad": 895,
+        "occupancy": 0.806,
+        "revparMad": 722
+      },
+      {
+        "month": "2025-08",
+        "revenueMad": 27880,
+        "adrMad": 899,
+        "occupancy": 1,
+        "revparMad": 899
+      },
+      {
+        "month": "2025-09",
+        "revenueMad": 17110,
+        "adrMad": 744,
+        "occupancy": 0.767,
+        "revparMad": 570
+      },
+      {
+        "month": "2025-10",
+        "revenueMad": 17760,
+        "adrMad": 740,
+        "occupancy": 0.774,
+        "revparMad": 573
+      },
+      {
+        "month": "2025-11",
+        "revenueMad": 14910,
+        "adrMad": 710,
+        "occupancy": 0.7,
+        "revparMad": 497
+      },
+      {
+        "month": "2025-12",
+        "revenueMad": 16250,
+        "adrMad": 1161,
+        "occupancy": 0.452,
+        "revparMad": 524
+      },
+      {
+        "month": "2026-01",
+        "revenueMad": 21370,
+        "adrMad": 1187,
+        "occupancy": 0.581,
+        "revparMad": 689
+      },
+      {
+        "month": "2026-02",
+        "revenueMad": 7480,
+        "adrMad": 748,
+        "occupancy": 0.357,
+        "revparMad": 267
+      },
+      {
+        "month": "2026-03",
+        "revenueMad": 17690,
+        "adrMad": 769,
+        "occupancy": 0.742,
+        "revparMad": 571
+      },
+      {
+        "month": "2026-04",
+        "revenueMad": 17110,
+        "adrMad": 744,
+        "occupancy": 0.767,
+        "revparMad": 570
+      },
+      {
+        "month": "2026-05",
+        "revenueMad": 19790,
+        "adrMad": 792,
+        "occupancy": 0.806,
+        "revparMad": 638
+      },
+      {
+        "month": "2026-06",
+        "revenueMad": 18830,
+        "adrMad": 856,
+        "occupancy": 0.733,
+        "revparMad": 628
+      }
+    ],
+    "calendarDays": [
+      {
+        "date": "2026-07-23",
+        "rateUsd": 58,
+        "rateMad": 580,
+        "available": false,
+        "minNights": 1
+      },
+      {
+        "date": "2026-07-24",
+        "rateUsd": 58,
+        "rateMad": 580,
+        "available": false,
+        "minNights": 1
+      },
+      {
+        "date": "2026-07-25",
+        "rateUsd": 58,
+        "rateMad": 580,
+        "available": false,
+        "minNights": 1
+      },
+      {
+        "date": "2026-07-26",
+        "rateUsd": 58,
+        "rateMad": 580,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-07-27",
+        "rateUsd": 65.6,
+        "rateMad": 656,
+        "available": false,
+        "minNights": 1
+      },
+      {
+        "date": "2026-07-28",
+        "rateUsd": 73.2,
+        "rateMad": 732,
+        "available": false,
+        "minNights": 1
+      },
+      {
+        "date": "2026-07-29",
+        "rateUsd": 80.8,
+        "rateMad": 808,
+        "available": false,
+        "minNights": 1
+      },
+      {
+        "date": "2026-07-30",
+        "rateUsd": 88.4,
+        "rateMad": 884,
+        "available": false,
+        "minNights": 1
+      },
+      {
+        "date": "2026-07-31",
+        "rateUsd": 96,
+        "rateMad": 960,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-08-01",
+        "rateUsd": 103,
+        "rateMad": 1030,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-08-02",
+        "rateUsd": 103,
+        "rateMad": 1030,
+        "available": false,
+        "minNights": 1
+      },
+      {
+        "date": "2026-08-03",
+        "rateUsd": 103,
+        "rateMad": 1030,
+        "available": false,
+        "minNights": 1
+      },
+      {
+        "date": "2026-08-04",
+        "rateUsd": 103,
+        "rateMad": 1030,
+        "available": false,
+        "minNights": 1
+      },
+      {
+        "date": "2026-08-05",
+        "rateUsd": 103,
+        "rateMad": 1030,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-08-06",
+        "rateUsd": 103,
+        "rateMad": 1030,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-08-07",
+        "rateUsd": 103,
+        "rateMad": 1030,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-08-08",
+        "rateUsd": 103,
+        "rateMad": 1030,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-08-09",
+        "rateUsd": 103,
+        "rateMad": 1030,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-08-10",
+        "rateUsd": 103,
+        "rateMad": 1030,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-08-11",
+        "rateUsd": 103,
+        "rateMad": 1030,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-08-12",
+        "rateUsd": 103,
+        "rateMad": 1030,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-08-13",
+        "rateUsd": 103,
+        "rateMad": 1030,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-08-14",
+        "rateUsd": 103,
+        "rateMad": 1030,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-08-15",
+        "rateUsd": 103,
+        "rateMad": 1030,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-08-16",
+        "rateUsd": 103,
+        "rateMad": 1030,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-08-17",
+        "rateUsd": 103,
+        "rateMad": 1030,
+        "available": false,
+        "minNights": 1
+      },
+      {
+        "date": "2026-08-18",
+        "rateUsd": 103,
+        "rateMad": 1030,
+        "available": false,
+        "minNights": 1
+      },
+      {
+        "date": "2026-08-19",
+        "rateUsd": 103,
+        "rateMad": 1030,
+        "available": false,
+        "minNights": 1
+      },
+      {
+        "date": "2026-08-20",
+        "rateUsd": 103,
+        "rateMad": 1030,
+        "available": false,
+        "minNights": 1
+      },
+      {
+        "date": "2026-08-21",
+        "rateUsd": 103,
+        "rateMad": 1030,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-08-22",
+        "rateUsd": 103,
+        "rateMad": 1030,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-08-23",
+        "rateUsd": 103,
+        "rateMad": 1030,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-08-24",
+        "rateUsd": 103,
+        "rateMad": 1030,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-08-25",
+        "rateUsd": 103,
+        "rateMad": 1030,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-08-26",
+        "rateUsd": 103,
+        "rateMad": 1030,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-08-27",
+        "rateUsd": 103,
+        "rateMad": 1030,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-08-28",
+        "rateUsd": 103,
+        "rateMad": 1030,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-08-29",
+        "rateUsd": 103,
+        "rateMad": 1030,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-08-30",
+        "rateUsd": 103,
+        "rateMad": 1030,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-08-31",
+        "rateUsd": 103,
+        "rateMad": 1030,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-09-01",
+        "rateUsd": 83,
+        "rateMad": 830,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-09-02",
+        "rateUsd": 83,
+        "rateMad": 830,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-09-03",
+        "rateUsd": 83,
+        "rateMad": 830,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-09-04",
+        "rateUsd": 83,
+        "rateMad": 830,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-09-05",
+        "rateUsd": 83,
+        "rateMad": 830,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-09-06",
+        "rateUsd": 83,
+        "rateMad": 830,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-09-07",
+        "rateUsd": 83,
+        "rateMad": 830,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-09-08",
+        "rateUsd": 83,
+        "rateMad": 830,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-09-09",
+        "rateUsd": 83,
+        "rateMad": 830,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-09-10",
+        "rateUsd": 83,
+        "rateMad": 830,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-09-11",
+        "rateUsd": 83,
+        "rateMad": 830,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-09-12",
+        "rateUsd": 83,
+        "rateMad": 830,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-09-13",
+        "rateUsd": 83,
+        "rateMad": 830,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-09-14",
+        "rateUsd": 83,
+        "rateMad": 830,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-09-15",
+        "rateUsd": 83,
+        "rateMad": 830,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-09-16",
+        "rateUsd": 83,
+        "rateMad": 830,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-09-17",
+        "rateUsd": 83,
+        "rateMad": 830,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-09-18",
+        "rateUsd": 83,
+        "rateMad": 830,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-09-19",
+        "rateUsd": 83,
+        "rateMad": 830,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-09-20",
+        "rateUsd": 83,
+        "rateMad": 830,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-09-21",
+        "rateUsd": 83,
+        "rateMad": 830,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-09-22",
+        "rateUsd": 83,
+        "rateMad": 830,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-09-23",
+        "rateUsd": 83,
+        "rateMad": 830,
+        "available": false,
+        "minNights": 1
+      },
+      {
+        "date": "2026-09-24",
+        "rateUsd": 83,
+        "rateMad": 830,
+        "available": false,
+        "minNights": 1
+      },
+      {
+        "date": "2026-09-25",
+        "rateUsd": 83,
+        "rateMad": 830,
+        "available": false,
+        "minNights": 1
+      },
+      {
+        "date": "2026-09-26",
+        "rateUsd": 83,
+        "rateMad": 830,
+        "available": false,
+        "minNights": 1
+      },
+      {
+        "date": "2026-09-27",
+        "rateUsd": 83,
+        "rateMad": 830,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-09-28",
+        "rateUsd": 83,
+        "rateMad": 830,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-09-29",
+        "rateUsd": 83,
+        "rateMad": 830,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-09-30",
+        "rateUsd": 83,
+        "rateMad": 830,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-10-01",
+        "rateUsd": 83,
+        "rateMad": 830,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-10-02",
+        "rateUsd": 83,
+        "rateMad": 830,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-10-03",
+        "rateUsd": 83,
+        "rateMad": 830,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-10-04",
+        "rateUsd": 83,
+        "rateMad": 830,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-10-05",
+        "rateUsd": 83,
+        "rateMad": 830,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-10-06",
+        "rateUsd": 83,
+        "rateMad": 830,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-10-07",
+        "rateUsd": 83,
+        "rateMad": 830,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-10-08",
+        "rateUsd": 83,
+        "rateMad": 830,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-10-09",
+        "rateUsd": 83,
+        "rateMad": 830,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-10-10",
+        "rateUsd": 83,
+        "rateMad": 830,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-10-11",
+        "rateUsd": 83,
+        "rateMad": 830,
+        "available": false,
+        "minNights": 1
+      },
+      {
+        "date": "2026-10-12",
+        "rateUsd": 83,
+        "rateMad": 830,
+        "available": false,
+        "minNights": 1
+      },
+      {
+        "date": "2026-10-13",
+        "rateUsd": 83,
+        "rateMad": 830,
+        "available": false,
+        "minNights": 1
+      },
+      {
+        "date": "2026-10-14",
+        "rateUsd": 83,
+        "rateMad": 830,
+        "available": false,
+        "minNights": 1
+      },
+      {
+        "date": "2026-10-15",
+        "rateUsd": 83,
+        "rateMad": 830,
+        "available": false,
+        "minNights": 1
+      },
+      {
+        "date": "2026-10-16",
+        "rateUsd": 83,
+        "rateMad": 830,
+        "available": false,
+        "minNights": 1
+      },
+      {
+        "date": "2026-10-17",
+        "rateUsd": 83,
+        "rateMad": 830,
+        "available": false,
+        "minNights": 1
+      },
+      {
+        "date": "2026-10-18",
+        "rateUsd": 83,
+        "rateMad": 830,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-10-19",
+        "rateUsd": 83,
+        "rateMad": 830,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-10-20",
+        "rateUsd": 83,
+        "rateMad": 830,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-10-21",
+        "rateUsd": 83,
+        "rateMad": 830,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-10-22",
+        "rateUsd": 83,
+        "rateMad": 830,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-10-23",
+        "rateUsd": 83,
+        "rateMad": 830,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-10-24",
+        "rateUsd": 83,
+        "rateMad": 830,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-10-25",
+        "rateUsd": 83,
+        "rateMad": 830,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-10-26",
+        "rateUsd": 83,
+        "rateMad": 830,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-10-27",
+        "rateUsd": 83,
+        "rateMad": 830,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-10-28",
+        "rateUsd": 83,
+        "rateMad": 830,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-10-29",
+        "rateUsd": 83,
+        "rateMad": 830,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-10-30",
+        "rateUsd": 83,
+        "rateMad": 830,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-10-31",
+        "rateUsd": 83,
+        "rateMad": 830,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-11-01",
+        "rateUsd": 82,
+        "rateMad": 820,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-11-02",
+        "rateUsd": 82,
+        "rateMad": 820,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-11-03",
+        "rateUsd": 82,
+        "rateMad": 820,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-11-04",
+        "rateUsd": 82,
+        "rateMad": 820,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-11-05",
+        "rateUsd": 82,
+        "rateMad": 820,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-11-06",
+        "rateUsd": 82,
+        "rateMad": 820,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-11-07",
+        "rateUsd": 82,
+        "rateMad": 820,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-11-08",
+        "rateUsd": 82,
+        "rateMad": 820,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-11-09",
+        "rateUsd": 82,
+        "rateMad": 820,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-11-10",
+        "rateUsd": 82,
+        "rateMad": 820,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-11-11",
+        "rateUsd": 82,
+        "rateMad": 820,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-11-12",
+        "rateUsd": 82,
+        "rateMad": 820,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-11-13",
+        "rateUsd": 82,
+        "rateMad": 820,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-11-14",
+        "rateUsd": 82,
+        "rateMad": 820,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-11-15",
+        "rateUsd": 82,
+        "rateMad": 820,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-11-16",
+        "rateUsd": 82,
+        "rateMad": 820,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-11-17",
+        "rateUsd": 82,
+        "rateMad": 820,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-11-18",
+        "rateUsd": 82,
+        "rateMad": 820,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-11-19",
+        "rateUsd": 82,
+        "rateMad": 820,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-11-20",
+        "rateUsd": 82,
+        "rateMad": 820,
+        "available": false,
+        "minNights": 1
+      },
+      {
+        "date": "2026-11-21",
+        "rateUsd": 82,
+        "rateMad": 820,
+        "available": false,
+        "minNights": 1
+      },
+      {
+        "date": "2026-11-22",
+        "rateUsd": 82,
+        "rateMad": 820,
+        "available": false,
+        "minNights": 1
+      },
+      {
+        "date": "2026-11-23",
+        "rateUsd": 82,
+        "rateMad": 820,
+        "available": false,
+        "minNights": 1
+      },
+      {
+        "date": "2026-11-24",
+        "rateUsd": 82,
+        "rateMad": 820,
+        "available": false,
+        "minNights": 1
+      },
+      {
+        "date": "2026-11-25",
+        "rateUsd": 82,
+        "rateMad": 820,
+        "available": false,
+        "minNights": 1
+      },
+      {
+        "date": "2026-11-26",
+        "rateUsd": 82,
+        "rateMad": 820,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-11-27",
+        "rateUsd": 82,
+        "rateMad": 820,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-11-28",
+        "rateUsd": 82,
+        "rateMad": 820,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-11-29",
+        "rateUsd": 82,
+        "rateMad": 820,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-11-30",
+        "rateUsd": 82,
+        "rateMad": 820,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-12-01",
+        "rateUsd": 82,
+        "rateMad": 820,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-12-02",
+        "rateUsd": 82,
+        "rateMad": 820,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-12-03",
+        "rateUsd": 82,
+        "rateMad": 820,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-12-04",
+        "rateUsd": 82,
+        "rateMad": 820,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-12-05",
+        "rateUsd": 82,
+        "rateMad": 820,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-12-06",
+        "rateUsd": 82,
+        "rateMad": 820,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-12-07",
+        "rateUsd": 82,
+        "rateMad": 820,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-12-08",
+        "rateUsd": 82,
+        "rateMad": 820,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-12-09",
+        "rateUsd": 82,
+        "rateMad": 820,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-12-10",
+        "rateUsd": 82,
+        "rateMad": 820,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-12-11",
+        "rateUsd": 82,
+        "rateMad": 820,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-12-12",
+        "rateUsd": 82,
+        "rateMad": 820,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-12-13",
+        "rateUsd": 82,
+        "rateMad": 820,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-12-14",
+        "rateUsd": 82,
+        "rateMad": 820,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-12-15",
+        "rateUsd": 82,
+        "rateMad": 820,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-12-16",
+        "rateUsd": 82,
+        "rateMad": 820,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-12-17",
+        "rateUsd": 82,
+        "rateMad": 820,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-12-18",
+        "rateUsd": 82,
+        "rateMad": 820,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-12-19",
+        "rateUsd": 82,
+        "rateMad": 820,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-12-20",
+        "rateUsd": 82,
+        "rateMad": 820,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-12-21",
+        "rateUsd": 81.3,
+        "rateMad": 813,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-12-22",
+        "rateUsd": 80.7,
+        "rateMad": 807,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-12-23",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-12-24",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-12-25",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-12-26",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-12-27",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-12-28",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-12-29",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-12-30",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-12-31",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-01-01",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-01-02",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-01-03",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-01-04",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-01-05",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-01-06",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-01-07",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-01-08",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-01-09",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-01-10",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-01-11",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-01-12",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-01-13",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-01-14",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-01-15",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-01-16",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-01-17",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-01-18",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-01-19",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-01-20",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-01-21",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-01-22",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-01-23",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-01-24",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-01-25",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-01-26",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-01-27",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-01-28",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-01-29",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-01-30",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-01-31",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-02-01",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-02-02",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-02-03",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-02-04",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-02-05",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-02-06",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-02-07",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-02-08",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-02-09",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-02-10",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-02-11",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-02-12",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-02-13",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-02-14",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-02-15",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-02-16",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-02-17",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-02-18",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-02-19",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-02-20",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-02-21",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-02-22",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-02-23",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-02-24",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-02-25",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-02-26",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-02-27",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-02-28",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-03-01",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-03-02",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-03-03",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-03-04",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-03-05",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-03-06",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-03-07",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-03-08",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-03-09",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-03-10",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-03-11",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-03-12",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-03-13",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-03-14",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-03-15",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-03-16",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-03-17",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-03-18",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-03-19",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-03-20",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-03-21",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-03-22",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-03-23",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-03-24",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-03-25",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-03-26",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-03-27",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-03-28",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-03-29",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-03-30",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-03-31",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-04-01",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-04-02",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-04-03",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-04-04",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-04-05",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-04-06",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-04-07",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-04-08",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-04-09",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-04-10",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-04-11",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-04-12",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-04-13",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-04-14",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-04-15",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-04-16",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-04-17",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-04-18",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-04-19",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-04-20",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-04-21",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-04-22",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-04-23",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-04-24",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-04-25",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-04-26",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-04-27",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-04-28",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-04-29",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-04-30",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-05-01",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-05-02",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-05-03",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-05-04",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-05-05",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-05-06",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-05-07",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-05-08",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-05-09",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-05-10",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-05-11",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-05-12",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-05-13",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-05-14",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-05-15",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-05-16",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-05-17",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-05-18",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-05-19",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-05-20",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-05-21",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-05-22",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-05-23",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-05-24",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-05-25",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-05-26",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-05-27",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-05-28",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-05-29",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-05-30",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-05-31",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-06-01",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-06-02",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-06-03",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-06-04",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-06-05",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-06-06",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-06-07",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-06-08",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-06-09",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-06-10",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-06-11",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-06-12",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-06-13",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-06-14",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-06-15",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-06-16",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-06-17",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-06-18",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-06-19",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-06-20",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-06-21",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-06-22",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-06-23",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-06-24",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-06-25",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-06-26",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-06-27",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-06-28",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-06-29",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-06-30",
+        "rateUsd": 80,
+        "rateMad": 800,
+        "available": true,
+        "minNights": 1
+      }
+    ],
+    "calendarDaysCount": 343,
+    "currencySource": "USD"
+  },
+  "bestCompetitorPriceSeries": {
+    "estimate12m": {
+      "revenueMad": 372470,
+      "adrMad": 2092,
+      "occupancy": 0.477,
+      "revparMad": 993
+    },
+    "monthlyHistory": [
+      {
+        "month": "2025-07",
+        "revenueMad": 17840,
+        "adrMad": 1982,
+        "occupancy": 0.29,
+        "revparMad": 575
+      },
+      {
+        "month": "2025-08",
+        "revenueMad": 35660,
+        "adrMad": 2098,
+        "occupancy": 0.548,
+        "revparMad": 1150
+      },
+      {
+        "month": "2025-09",
+        "revenueMad": 32080,
+        "adrMad": 2005,
+        "occupancy": 0.533,
+        "revparMad": 1069
+      },
+      {
+        "month": "2025-10",
+        "revenueMad": 45820,
+        "adrMad": 2182,
+        "occupancy": 0.677,
+        "revparMad": 1478
+      },
+      {
+        "month": "2025-11",
+        "revenueMad": 17050,
+        "adrMad": 2131,
+        "occupancy": 0.267,
+        "revparMad": 568
+      },
+      {
+        "month": "2025-12",
+        "revenueMad": 36430,
+        "adrMad": 2602,
+        "occupancy": 0.452,
+        "revparMad": 1175
+      },
+      {
+        "month": "2026-01",
+        "revenueMad": 39300,
+        "adrMad": 2312,
+        "occupancy": 0.548,
+        "revparMad": 1268
+      },
+      {
+        "month": "2026-02",
+        "revenueMad": 36700,
+        "adrMad": 1932,
+        "occupancy": 0.679,
+        "revparMad": 1311
+      },
+      {
+        "month": "2026-03",
+        "revenueMad": 15280,
+        "adrMad": 1910,
+        "occupancy": 0.258,
+        "revparMad": 493
+      },
+      {
+        "month": "2026-04",
+        "revenueMad": 34600,
+        "adrMad": 1922,
+        "occupancy": 0.6,
+        "revparMad": 1153
+      },
+      {
+        "month": "2026-05",
+        "revenueMad": 34240,
+        "adrMad": 1902,
+        "occupancy": 0.581,
+        "revparMad": 1105
+      },
+      {
+        "month": "2026-06",
+        "revenueMad": 17320,
+        "adrMad": 1924,
+        "occupancy": 0.3,
+        "revparMad": 577
+      }
+    ],
+    "calendarDays": [
+      {
+        "date": "2026-07-23",
+        "rateUsd": 103,
+        "rateMad": 1030,
+        "available": false,
+        "minNights": 1
+      },
+      {
+        "date": "2026-07-24",
+        "rateUsd": 103,
+        "rateMad": 1030,
+        "available": false,
+        "minNights": 1
+      },
+      {
+        "date": "2026-07-25",
+        "rateUsd": 103,
+        "rateMad": 1030,
+        "available": false,
+        "minNights": 1
+      },
+      {
+        "date": "2026-07-26",
+        "rateUsd": 103,
+        "rateMad": 1030,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-07-27",
+        "rateUsd": 106.8,
+        "rateMad": 1068,
+        "available": false,
+        "minNights": 1
+      },
+      {
+        "date": "2026-07-28",
+        "rateUsd": 110.6,
+        "rateMad": 1106,
+        "available": false,
+        "minNights": 1
+      },
+      {
+        "date": "2026-07-29",
+        "rateUsd": 114.4,
+        "rateMad": 1144,
+        "available": false,
+        "minNights": 1
+      },
+      {
+        "date": "2026-07-30",
+        "rateUsd": 118.2,
+        "rateMad": 1182,
+        "available": false,
+        "minNights": 1
+      },
+      {
+        "date": "2026-07-31",
+        "rateUsd": 122,
+        "rateMad": 1220,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-08-01",
+        "rateUsd": 163,
+        "rateMad": 1630,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-08-02",
+        "rateUsd": 163,
+        "rateMad": 1630,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-08-03",
+        "rateUsd": 163,
+        "rateMad": 1630,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-08-04",
+        "rateUsd": 163,
+        "rateMad": 1630,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-08-05",
+        "rateUsd": 163,
+        "rateMad": 1630,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-08-06",
+        "rateUsd": 163,
+        "rateMad": 1630,
+        "available": false,
+        "minNights": 1
+      },
+      {
+        "date": "2026-08-07",
+        "rateUsd": 163,
+        "rateMad": 1630,
+        "available": false,
+        "minNights": 1
+      },
+      {
+        "date": "2026-08-08",
+        "rateUsd": 163,
+        "rateMad": 1630,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-08-09",
+        "rateUsd": 163,
+        "rateMad": 1630,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-08-10",
+        "rateUsd": 163,
+        "rateMad": 1630,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-08-11",
+        "rateUsd": 163,
+        "rateMad": 1630,
+        "available": false,
+        "minNights": 1
+      },
+      {
+        "date": "2026-08-12",
+        "rateUsd": 163,
+        "rateMad": 1630,
+        "available": false,
+        "minNights": 1
+      },
+      {
+        "date": "2026-08-13",
+        "rateUsd": 163,
+        "rateMad": 1630,
+        "available": false,
+        "minNights": 1
+      },
+      {
+        "date": "2026-08-14",
+        "rateUsd": 163,
+        "rateMad": 1630,
+        "available": false,
+        "minNights": 1
+      },
+      {
+        "date": "2026-08-15",
+        "rateUsd": 163,
+        "rateMad": 1630,
+        "available": false,
+        "minNights": 1
+      },
+      {
+        "date": "2026-08-16",
+        "rateUsd": 163,
+        "rateMad": 1630,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-08-17",
+        "rateUsd": 163,
+        "rateMad": 1630,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-08-18",
+        "rateUsd": 163,
+        "rateMad": 1630,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-08-19",
+        "rateUsd": 163,
+        "rateMad": 1630,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-08-20",
+        "rateUsd": 163,
+        "rateMad": 1630,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-08-21",
+        "rateUsd": 163,
+        "rateMad": 1630,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-08-22",
+        "rateUsd": 155,
+        "rateMad": 1550,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-08-23",
+        "rateUsd": 155,
+        "rateMad": 1550,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-08-24",
+        "rateUsd": 155,
+        "rateMad": 1550,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-08-25",
+        "rateUsd": 155,
+        "rateMad": 1550,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-08-26",
+        "rateUsd": 155,
+        "rateMad": 1550,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-08-27",
+        "rateUsd": 155,
+        "rateMad": 1550,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-08-28",
+        "rateUsd": 155,
+        "rateMad": 1550,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-08-29",
+        "rateUsd": 155,
+        "rateMad": 1550,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-08-30",
+        "rateUsd": 155,
+        "rateMad": 1550,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-08-31",
+        "rateUsd": 155,
+        "rateMad": 1550,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-09-01",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-09-02",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-09-03",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-09-04",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-09-05",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-09-06",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-09-07",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-09-08",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-09-09",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-09-10",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-09-11",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-09-12",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-09-13",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-09-14",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-09-15",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-09-16",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-09-17",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-09-18",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-09-19",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-09-20",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-09-21",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-09-22",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-09-23",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-09-24",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-09-25",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-09-26",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-09-27",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-09-28",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-09-29",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-09-30",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-10-01",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-10-02",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-10-03",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-10-04",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-10-05",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-10-06",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-10-07",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-10-08",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-10-09",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-10-10",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-10-11",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-10-12",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-10-13",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-10-14",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-10-15",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-10-16",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-10-17",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-10-18",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-10-19",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-10-20",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-10-21",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-10-22",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-10-23",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-10-24",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-10-25",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-10-26",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-10-27",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-10-28",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-10-29",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-10-30",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-10-31",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-11-01",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-11-02",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-11-03",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-11-04",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-11-05",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-11-06",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-11-07",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-11-08",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-11-09",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-11-10",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-11-11",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-11-12",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-11-13",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-11-14",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-11-15",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-11-16",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-11-17",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-11-18",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-11-19",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-11-20",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-11-21",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-11-22",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-11-23",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-11-24",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-11-25",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-11-26",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-11-27",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-11-28",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-11-29",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-11-30",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-12-01",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-12-02",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-12-03",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-12-04",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-12-05",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-12-06",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-12-07",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-12-08",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-12-09",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-12-10",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-12-11",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-12-12",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-12-13",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-12-14",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-12-15",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-12-16",
+        "rateUsd": 197,
+        "rateMad": 1970,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-12-17",
+        "rateUsd": 220,
+        "rateMad": 2200,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-12-18",
+        "rateUsd": 243,
+        "rateMad": 2430,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-12-19",
+        "rateUsd": 246.7,
+        "rateMad": 2467,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-12-20",
+        "rateUsd": 250.3,
+        "rateMad": 2503,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-12-21",
+        "rateUsd": 254,
+        "rateMad": 2540,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-12-22",
+        "rateUsd": 254,
+        "rateMad": 2540,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-12-23",
+        "rateUsd": 254,
+        "rateMad": 2540,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-12-24",
+        "rateUsd": 254,
+        "rateMad": 2540,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-12-25",
+        "rateUsd": 254,
+        "rateMad": 2540,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-12-26",
+        "rateUsd": 254,
+        "rateMad": 2540,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-12-27",
+        "rateUsd": 254,
+        "rateMad": 2540,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-12-28",
+        "rateUsd": 254,
+        "rateMad": 2540,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-12-29",
+        "rateUsd": 254,
+        "rateMad": 2540,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-12-30",
+        "rateUsd": 254,
+        "rateMad": 2540,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2026-12-31",
+        "rateUsd": 254,
+        "rateMad": 2540,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-01-01",
+        "rateUsd": 254,
+        "rateMad": 2540,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-01-02",
+        "rateUsd": 254,
+        "rateMad": 2540,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-01-03",
+        "rateUsd": 254,
+        "rateMad": 2540,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-01-04",
+        "rateUsd": 254,
+        "rateMad": 2540,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-01-05",
+        "rateUsd": 254,
+        "rateMad": 2540,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-01-06",
+        "rateUsd": 227.3,
+        "rateMad": 2273,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-01-07",
+        "rateUsd": 200.7,
+        "rateMad": 2007,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-01-08",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-01-09",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-01-10",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-01-11",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-01-12",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-01-13",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-01-14",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-01-15",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-01-16",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-01-17",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-01-18",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-01-19",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-01-20",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-01-21",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-01-22",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-01-23",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-01-24",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-01-25",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-01-26",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-01-27",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-01-28",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-01-29",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-01-30",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-01-31",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-02-01",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-02-02",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-02-03",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-02-04",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-02-05",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-02-06",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-02-07",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-02-08",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-02-09",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-02-10",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-02-11",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-02-12",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-02-13",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-02-14",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-02-15",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-02-16",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-02-17",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-02-18",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-02-19",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-02-20",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-02-21",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-02-22",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-02-23",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-02-24",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-02-25",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-02-26",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-02-27",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-02-28",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-03-01",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-03-02",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-03-03",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-03-04",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-03-05",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-03-06",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-03-07",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-03-08",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-03-09",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-03-10",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-03-11",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-03-12",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-03-13",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-03-14",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-03-15",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-03-16",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-03-17",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-03-18",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-03-19",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-03-20",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-03-21",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-03-22",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-03-23",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-03-24",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-03-25",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-03-26",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-03-27",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-03-28",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-03-29",
+        "rateUsd": 177.8,
+        "rateMad": 1778,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-03-30",
+        "rateUsd": 181.6,
+        "rateMad": 1816,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-03-31",
+        "rateUsd": 185.4,
+        "rateMad": 1854,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-04-01",
+        "rateUsd": 189.2,
+        "rateMad": 1892,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-04-02",
+        "rateUsd": 193,
+        "rateMad": 1930,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-04-03",
+        "rateUsd": 193,
+        "rateMad": 1930,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-04-04",
+        "rateUsd": 193,
+        "rateMad": 1930,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-04-05",
+        "rateUsd": 193,
+        "rateMad": 1930,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-04-06",
+        "rateUsd": 193,
+        "rateMad": 1930,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-04-07",
+        "rateUsd": 193,
+        "rateMad": 1930,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-04-08",
+        "rateUsd": 193,
+        "rateMad": 1930,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-04-09",
+        "rateUsd": 193,
+        "rateMad": 1930,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-04-10",
+        "rateUsd": 193,
+        "rateMad": 1930,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-04-11",
+        "rateUsd": 193,
+        "rateMad": 1930,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-04-12",
+        "rateUsd": 193,
+        "rateMad": 1930,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-04-13",
+        "rateUsd": 193,
+        "rateMad": 1930,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-04-14",
+        "rateUsd": 193,
+        "rateMad": 1930,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-04-15",
+        "rateUsd": 193,
+        "rateMad": 1930,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-04-16",
+        "rateUsd": 193,
+        "rateMad": 1930,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-04-17",
+        "rateUsd": 193,
+        "rateMad": 1930,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-04-18",
+        "rateUsd": 193,
+        "rateMad": 1930,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-04-19",
+        "rateUsd": 193,
+        "rateMad": 1930,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-04-20",
+        "rateUsd": 193,
+        "rateMad": 1930,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-04-21",
+        "rateUsd": 193,
+        "rateMad": 1930,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-04-22",
+        "rateUsd": 193,
+        "rateMad": 1930,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-04-23",
+        "rateUsd": 193,
+        "rateMad": 1930,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-04-24",
+        "rateUsd": 193,
+        "rateMad": 1930,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-04-25",
+        "rateUsd": 193,
+        "rateMad": 1930,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-04-26",
+        "rateUsd": 193,
+        "rateMad": 1930,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-04-27",
+        "rateUsd": 193,
+        "rateMad": 1930,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-04-28",
+        "rateUsd": 189.2,
+        "rateMad": 1892,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-04-29",
+        "rateUsd": 185.4,
+        "rateMad": 1854,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-04-30",
+        "rateUsd": 181.6,
+        "rateMad": 1816,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-05-01",
+        "rateUsd": 177.8,
+        "rateMad": 1778,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-05-02",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-05-03",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-05-04",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-05-05",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-05-06",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-05-07",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-05-08",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-05-09",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-05-10",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-05-11",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-05-12",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-05-13",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-05-14",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-05-15",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-05-16",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-05-17",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-05-18",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-05-19",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-05-20",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-05-21",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-05-22",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-05-23",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-05-24",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-05-25",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-05-26",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-05-27",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-05-28",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-05-29",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-05-30",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-05-31",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-06-01",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-06-02",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-06-03",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-06-04",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-06-05",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-06-06",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-06-07",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-06-08",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-06-09",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-06-10",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-06-11",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-06-12",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-06-13",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-06-14",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-06-15",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-06-16",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-06-17",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-06-18",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-06-19",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-06-20",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-06-21",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-06-22",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-06-23",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-06-24",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-06-25",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-06-26",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-06-27",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-06-28",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-06-29",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      },
+      {
+        "date": "2027-06-30",
+        "rateUsd": 174,
+        "rateMad": 1740,
+        "available": true,
+        "minNights": 1
+      }
+    ],
+    "calendarDaysCount": 343,
+    "currencySource": "USD"
+  }
+}

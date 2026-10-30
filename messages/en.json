@@ -1,0 +1,2592 @@
+{
+  "metadata": {
+    "home": {
+      "title": "Sojori — The Hospitality Orchestrator",
+      "description": "The hospitality orchestration engine. Bookings, guests, housekeeping, maintenance, owners — coordinated by AI, driven from WhatsApp. PMS included, or connected to yours."
+    },
+    "pricing": {
+      "title": "Sojori plans | Quote on request",
+      "description": "Three plans, no public price. The amount is on quote."
+    }
+  },
+  "common": {
+    "nav": {
+      "product": "Product",
+      "whatsapp": "WhatsApp AI",
+      "pricing": "Pricing",
+      "integrations": "Integrations",
+      "about": "About",
+      "login": "Login",
+      "getDemo": "Get demo",
+      "openMenu": "Open navigation menu",
+      "closeMenu": "Close menu",
+      "menuTitle": "Navigation menu"
+    },
+    "cta": {
+      "getStarted": "Get Started",
+      "learnMore": "Learn More",
+      "seeDetails": "See Details",
+      "watchDemo": "Watch Demo",
+      "bookDemo": "Book a Demo"
+    },
+    "productMenu": {
+      "platform": "Platform",
+      "guest": "Guest experience",
+      "operations": "Operations",
+      "company": "Company",
+      "pms": "PMS",
+      "pmsDesc": "Multi-property management",
+      "mcp": "MCP",
+      "mcpDesc": "Your AI reads your figures",
+      "channelManager": "Channel Manager",
+      "channelManagerDesc": "Multi-OTA sync",
+      "dynamicPricing": "Dynamic Pricing",
+      "dynamicPricingDesc": "Rules & calendar",
+      "analytics": "Smart Analytics",
+      "analyticsDesc": "Real-time metrics",
+      "whatsappBot": "WhatsApp Bot",
+      "whatsappBotDesc": "AI & guest journey",
+      "inbox": "Unified Inbox",
+      "inboxDesc": "All channels",
+      "guestExp": "Guest Experience",
+      "guestExpDesc": "Guest journey",
+      "teamflow": "TeamFlow",
+      "teamflowDesc": "Staff & cleaning",
+      "ownerPortal": "Owner Portal",
+      "ownerPortalDesc": "Owner dashboard",
+      "dashboardApp": "Dashboard App",
+      "dashboardAppDesc": "Manager control",
+      "pricing": "Pricing",
+      "pricingDesc": "Plans & pricing",
+      "integrations": "Integrations",
+      "integrationsDesc": "Connectors & API",
+      "about": "About",
+      "aboutDesc": "The Sojori team",
+      "engine": "The engine",
+      "revenue": "Sales & revenue",
+      "orchestration": "Orchestration",
+      "orchestrationDesc": "What Sojori orchestrates",
+      "comparatif": "Comparisons",
+      "comparatifDesc": "Sojori vs other PMS"
+    },
+    "cityMenu": {
+      "heading": "Cities",
+      "marrakech": "Marrakech",
+      "casablanca": "Casablanca",
+      "agadir": "Agadir",
+      "tanger": "Tangier",
+      "rabat": "Rabat"
+    },
+    "footer": {
+      "tagline": "The hospitality orchestrator.",
+      "copyright": "© 2026 Sojori SAS · All rights reserved"
+    },
+    "finalCta": {
+      "demoButton": "Request a demo →",
+      "homeButton": "← Back to homepage"
+    }
+  },
+  "pricing": {
+    "hero": {
+      "badge": "● Plans · on quote",
+      "title": "Three plans.",
+      "titleGradient": "The amount, on quote.",
+      "subtitle": "Base to digitise. Confort to orchestrate. Premium to go all the way. No public price."
+    },
+    "toggles": {
+      "monthly": "Monthly",
+      "annual": "Annual",
+      "annualSave": "−20%"
+    },
+    "carousel": {
+      "hint": "Swipe · 3 plans",
+      "navLabel": "Navigate between plans",
+      "goToTier": "Show {name}"
+    },
+    "calculator": {
+      "yourProperties": "Your properties",
+      "listings": "properties",
+      "forListings": "For {count} {plural}",
+      "perListing": "/property/month",
+      "perMonth": "MAD / month",
+      "perYear": "that's {amount} MAD / year",
+      "billing": "{period} billing",
+      "minimum": "From {count} properties",
+      "unavailable": "Minimum {count} properties",
+      "periodMonthly": "monthly",
+      "periodAnnual": "annual",
+      "unitSingular": "property",
+      "unitPlural": "properties"
+    },
+    "billingMonthly": "monthly",
+    "billingAnnual": "annual",
+    "tiers": {
+      "popularBadge": "Most chosen",
+      "minimumLabel": "Minimum {count} properties",
+      "base": {
+        "name": "Base",
+        "tagline": "To digitise.",
+        "description": "Everything a PMS does — plus the three WhatsApp surfaces. Your teams and your guests are already on WhatsApp: Sojori is there too.",
+        "features": {
+          "pms": "Multi-property PMS (calendar, bookings, payments)",
+          "channelManager": "Unlimited Channel Manager — Booking, Expedia, Airbnb",
+          "inbox": "Unified inbox",
+          "ownerPortal": "Owner Portal",
+          "whatsappGuest": "WhatsApp Guest — service menu",
+          "whatsappStaff": "WhatsApp Teams — tasks and providers",
+          "whatsappAdmin": "WhatsApp Manager — the PMS in your pocket",
+          "rulesPricing": "Rule-based pricing (season, weekend, min stay)",
+          "cityTax": "City tax",
+          "support": "Email support"
+        },
+        "cta": "Choose Base"
+      },
+      "confort": {
+        "name": "Confort",
+        "tagline": "To orchestrate.",
+        "description": "Your guest no longer picks from a menu: they speak. AI takes over, teams follow, revenue adjusts.",
+        "features": {
+          "allBase": "Everything in Base, +",
+          "whatsappAi": "WhatsApp AI 24/7 — 12 languages",
+          "whatsappOwner": "WhatsApp Owner — reports & revenue",
+          "teamflow": "TeamFlow — housekeeping, maintenance, teams",
+          "analytics": "Smart Analytics",
+          "bookingEngine": "Booking engine (website)",
+          "support": "Priority support"
+        },
+        "cta": "Start with Confort"
+      },
+      "premium": {
+        "name": "Premium",
+        "tagline": "To go all the way.",
+        "description": "Full orchestration: modules trigger one another, and your data becomes queryable by your own AI.",
+        "features": {
+          "allConfort": "Everything in Confort, +",
+          "orchestration": "Advanced orchestration — modules trigger each other",
+          "whatsappBooking": "WhatsApp booking engine",
+          "sojoriPay": "Sojori Pay — your guest pays without leaving the conversation",
+          "mcp": "MCP AI — query your business from ChatGPT or Claude",
+          "api": "API & webhooks · multi-brand · SSO",
+          "csm": "Dedicated Customer Success"
+        },
+        "cta": "Choose Premium"
+      }
+    },
+    "addons": {
+      "badge": "● Add-ons",
+      "title": "À la carte.",
+      "titleGradient": "Minimum 10 properties.",
+      "subtitle": "Available on Base and Confort alike. You only pay for what you use.",
+      "perListing": "MAD / property / month",
+      "onQuote": "on request",
+      "items": {
+        "checkin": {
+          "name": "WhatsApp check-in",
+          "price": "",
+          "description": "The passport is read automatically, the police form is prepared."
+        },
+        "concierge": {
+          "name": "Concierge",
+          "price": "",
+          "description": "Transfers, room service, groceries, excursions — ordered on WhatsApp."
+        },
+        "dynamicPricing": {
+          "name": "Dynamic pricing",
+          "price": "",
+          "description": "The market decides, within the bounds you set."
+        },
+        "crm": {
+          "name": "CRM",
+          "price": "",
+          "description": "Your guests, their history, their preferences."
+        },
+        "marketing": {
+          "name": "Marketing",
+          "price": "",
+          "description": "Filling your properties — acquisition, content, campaigns."
+        },
+        "b2bSales": {
+          "name": "B2B Sales",
+          "price": "",
+          "description": "The sales agent qualifies, quotes, follows up and closes."
+        }
+      }
+    },
+    "earn": {
+      "badge": "● What you earn",
+      "title": "Sojori doesn't only cost.",
+      "titleGradient": "It pays you.",
+      "subtitle": "Two revenue streams you didn't have before.",
+      "items": {
+        "concierge": {
+          "percent": "10 %",
+          "name": "Concierge",
+          "description": "On every service your guests order. The airport transfer, the excursion, the room service: you take your share."
+        },
+        "affiliation": {
+          "percent": "5 %",
+          "name": "Affiliation",
+          "description": "On every client you bring us, for as long as they stay with Sojori."
+        }
+      }
+    },
+    "services": {
+      "badge": "● Services",
+      "title": "What if we answered",
+      "titleGradient": "on your behalf?",
+      "customerService": {
+        "name": "Outsourced guest support",
+        "price": "Request a quote",
+        "unit": "",
+        "description": "Our team answers your guests, in your name, across all your channels."
+      },
+      "whiteLabel": {
+        "name": "WhatsApp white label",
+        "price": "Request a quote",
+        "unit": "",
+        "description": "Your number, your logo. Your guests only ever see your brand."
+      }
+    },
+    "discounts": {
+      "title": "Volume discounts",
+      "tiers": {
+        "small": {
+          "range": "1 – 19 properties",
+          "value": "full price"
+        },
+        "medium": {
+          "range": "20 – 50 properties",
+          "value": "−15 %"
+        },
+        "large": {
+          "range": "51 properties and up",
+          "value": "−25 %"
+        }
+      },
+      "annual": "Annual commitment: a further −20 %."
+    },
+    "onboarding": {
+      "title": "Onboarding",
+      "description": "Migration from your current tool, Channel Manager and WhatsApp setup, journey configuration, team training.",
+      "base": "Request a quote",
+      "confort": "Request a quote",
+      "premium": "Request a quote",
+      "oneTime": "one-time"
+    },
+    "faq": {
+      "title": "Frequently asked {gradient}",
+      "titleGradient": "questions.",
+      "badge": "● FAQ",
+      "questions": {
+        "whyMad": {
+          "q": "Why don’t you publish a price?",
+          "a": "Every operation has a different scope. The quote starts from your properties, your channels and what you actually connect."
+        },
+        "minimum": {
+          "q": "Why a minimum number of properties on Confort and Premium?",
+          "a": "Confort requires 10 properties, Premium requires 50. Below that, orchestration costs more than it returns: with two or three properties, you can still run things yourself without losing out. Base has no minimum."
+        },
+        "engagement": {
+          "q": "Is there a commitment?",
+          "a": "The term is decided in the quote. Nothing is signed before you have the amount."
+        },
+        "onboarding": {
+          "q": "How does onboarding work?",
+          "a": "Migration from your current tool, Channel Manager and WhatsApp Cloud API setup, journey configuration, team training. Allow 5 to 7 working days. The onboarding amount is in the quote."
+        },
+        "concierge": {
+          "q": "How does the 10% on concierge work?",
+          "a": "Your guest orders a transfer, an excursion or room service from WhatsApp. The partner delivers, and you take 10% of the service. It's revenue you weren't capturing: today you make the call and the guest pays the driver directly."
+        },
+        "addons": {
+          "q": "Are add-ons mandatory?",
+          "a": "No. They activate individually, on Base as well as Confort, with a minimum of 10 properties each. You can start without them and add them when the need appears."
+        },
+        "whatsappCost": {
+          "q": "Is the WhatsApp cost included?",
+          "a": "Yes, service conversations are included in the subscription. Only high-volume marketing campaigns are rebilled at Meta cost, with no markup."
+        },
+        "changeTier": {
+          "q": "Can I change plan mid-year?",
+          "a": "Yes, in both directions and free of charge. Billing is prorated from the following month."
+        },
+        "keepPms": {
+          "q": "What if I keep my current PMS?",
+          "a": "That works: Sojori integrates with your existing PMS and orchestrates on top. You then lose the point of the base layer, so we discuss it case by case."
+        },
+        "freeTrial": {
+          "q": "Is there a free trial?",
+          "a": "The first month is free on every plan, no card required. Migration is included in the onboarding."
+        }
+      }
+    },
+    "finalCTA": {
+      "title": "Ready to orchestrate? {gradient}",
+      "titleGradient": "First month free.",
+      "subtitle": "Migration included in the onboarding. No card for the trial. Setup in under 7 days."
+    },
+    "quote": "Request a quote"
+  },
+  "home": {
+    "hero": {
+      "badge": "● Orchestrator · Hospitality",
+      "title": "The orchestration engine",
+      "titleGradient": "for hospitality",
+      "subtitle": "Sojori coordinates your property like a human would — reservation, guest, staff, owner. Except it never sleeps.",
+      "subtitleStrong": "And it doesn't ask you to drive.",
+      "ctaPrimary": "See the orchestration →",
+      "ctaSecondary": "Request a demo",
+      "flow": "RESERVATION → GUEST → STAFF → OWNER · ONE SINGLE THREAD"
+    },
+    "trustBar": {
+      "title": "Integrated with the best platforms",
+      "moreChannels": "+ more channels",
+      "features": "Real-time sync · Prevents overbooking · 2 to 2,000+ properties"
+    },
+    "valueProp": {
+      "badge": "Architecture",
+      "title": "Three layers of architecture.",
+      "titleSub": "Zero layers of complexity.",
+      "subtitle": "The modules work. The AI decides. WhatsApp simplifies.",
+      "closing": "You pilot.",
+      "modules": {
+        "icon": "⚙️",
+        "title": "The modules work",
+        "sub": "The foundation.",
+        "items": [
+          "PMS · multi-property calendar",
+          "Channel Manager · 20+ OTAs",
+          "Dynamic pricing",
+          "Owner Portal",
+          "Real-time analytics"
+        ],
+        "cta": "See modules"
+      },
+      "orchestration": {
+        "icon": "🧠",
+        "title": "The AI decides",
+        "sub": "The engine.",
+        "badge": "SIGNATURE",
+        "items": [
+          "Understands every reservation",
+          "Decides who does what, when, why",
+          "Coordinates guest, staff, owner",
+          "Learns from every stay",
+          "+20 decisions per stay, no intervention"
+        ],
+        "cta": "See the engine in action"
+      },
+      "whatsapp": {
+        "icon": "💬",
+        "title": "WhatsApp simplifies",
+        "sub": "The surface.",
+        "items": [
+          "Guest — the traveler, in 12 languages",
+          "Staff — the field team",
+          "Admin — your PMS in your pocket",
+          "Booking Direct — booking without intermediaries"
+        ],
+        "cta": "See the 4 surfaces"
+      }
+    },
+    "whatsappCase": {
+      "badge": "💬 Real use case",
+      "title": "Your guests speak.",
+      "titleGradient": "Sojori responds.",
+      "subtitle": "Sarah (USA) books via Airbnb for an apartment in Paris. Sojori AI handles everything, 24/7, in English.",
+      "header": {
+        "name": "Sojori AI",
+        "status": "Online · responds in seconds"
+      },
+      "timeline": {
+        "title": "Actions orchestrated in parallel",
+        "actions": [
+          {
+            "t": "D-7",
+            "icon": "📨",
+            "text": "Welcome message sent"
+          },
+          {
+            "t": "D-3",
+            "icon": "🔐",
+            "text": "Passport scan via AI · KYC validated"
+          },
+          {
+            "t": "D+2",
+            "icon": "🔧",
+            "text": "AC maintenance · staff auto-notified"
+          },
+          {
+            "t": "D+4",
+            "icon": "🚗",
+            "text": "Airport transport organized"
+          },
+          {
+            "t": "D+1",
+            "icon": "⭐",
+            "text": "Review request · 5★ obtained"
+          }
+        ]
+      },
+      "metrics": {
+        "response": {
+          "k": "<15s",
+          "l": "AI Response"
+        },
+        "rating": {
+          "k": "5/5",
+          "l": "Guest Rating"
+        },
+        "intervention": {
+          "k": "0",
+          "l": "Human Intervention"
+        }
+      },
+      "cta": "Test the live chatbot →"
+    },
+    "featuresAccordion": {
+      "badge": "Features",
+      "title": "Everything you expect. And everything others don't have.",
+      "subtitle": "Six native modules. Designed to work together, never one without the other.",
+      "features": [
+        {
+          "icon": "🖥️",
+          "title": "Dashboard App",
+          "items": [
+            "Unified sidebar navigation",
+            "Real-time KPI cards",
+            "Live activity feed",
+            "Today's arrivals",
+            "Dark + light mode"
+          ],
+          "cta": "Discover this page →",
+          "comingSoon": "Dedicated page coming soon"
+        },
+        {
+          "icon": "📡",
+          "title": "Channel Manager",
+          "items": [
+            "OTAs via channel manager (real-time sync)",
+            "Bidirectional iCal",
+            "Anti-overbooking",
+            "Unified reporting",
+            "Availability-oriented architecture"
+          ],
+          "cta": "Discover this page →",
+          "comingSoon": "Dedicated page coming soon"
+        },
+        {
+          "icon": "💬",
+          "title": "WhatsApp AI Bot",
+          "items": [
+            "AI available on WhatsApp (configurable)",
+            "Multilingual",
+            "Check-in flow (QR, instructions)",
+            "Contextual responses",
+            "Escalation to your team"
+          ],
+          "cta": "Discover this page →",
+          "comingSoon": "Dedicated page coming soon"
+        },
+        {
+          "icon": "📈",
+          "title": "Dynamic Pricing",
+          "items": [
+            "Rules by month, day, events, occupancy",
+            "Price push to your channels",
+            "Long-stay & last-minute discounts (configurable)",
+            "Visible calendar and coefficients",
+            "Implementation support"
+          ],
+          "cta": "Discover this page →",
+          "comingSoon": "Dedicated page coming soon"
+        },
+        {
+          "icon": "👤",
+          "title": "Owner Portal",
+          "items": [
+            "Owner portal (web)",
+            "Revenue & occupancy view",
+            "Documents and exports (per plan)",
+            "Commission transparency",
+            "Secure delegated access"
+          ],
+          "cta": "Discover this page →",
+          "comingSoon": "Dedicated page coming soon"
+        },
+        {
+          "icon": "👥",
+          "title": "TeamFlow (Staff Management)",
+          "items": [
+            "Auto-assignment based on availability",
+            "In-app + WhatsApp notifications",
+            "Pre/post cleaning check photos",
+            "Real-time tracking",
+            "KPIs per team member"
+          ],
+          "cta": "Discover this page →",
+          "comingSoon": "Dedicated page coming soon"
+        }
+      ]
+    },
+    "socialProof": {
+      "badge": "⭐ They trust us",
+      "title": "Properties already orchestrating.",
+      "testimonials": [
+        {
+          "quote": "Before Sojori: 4h/day on WhatsApp messages. After Sojori: 20 min/day. The rest is automatic.",
+          "name": "Marie L.",
+          "role": "Property Manager · 12 properties",
+          "loc": "Paris"
+        },
+        {
+          "quote": "The only PMS that truly talks to guests. My 5★ went from 78% to 94% in 3 months.",
+          "name": "Thomas D.",
+          "role": "Property owner · 7 properties",
+          "loc": "Paris"
+        },
+        {
+          "quote": "Channel Manager, AI, staff coordination… we replaced 4 tools with Sojori. And it works better.",
+          "name": "Thomas R.",
+          "role": "CEO · 84 properties",
+          "loc": "Lisbon"
+        }
+      ],
+      "metrics": [
+        {
+          "k": "STR",
+          "l": "France & Morocco"
+        },
+        {
+          "k": "Real-time",
+          "l": "Sync & teams"
+        },
+        {
+          "k": "WhatsApp",
+          "l": "Guest channel"
+        },
+        {
+          "k": "Orchestration",
+          "l": "Single thread"
+        }
+      ]
+    },
+    "pricingPreview": {
+      "badge": "Pricing",
+      "title": "On quote.",
+      "subtitle": "The three plans stay visible. The amount is agreed with you.",
+      "tiers": [
+        {
+          "name": "BASE",
+          "tagline": "To digitise.",
+          "range": "from 1 property",
+          "price": "",
+          "period": "",
+          "items": [
+            "PMS + calendar",
+            "Unlimited Channel Manager",
+            "Unified inbox",
+            "WhatsApp Guest, Teams, Manager",
+            "City tax"
+          ],
+          "cta": "Request a quote"
+        },
+        {
+          "name": "CONFORT",
+          "tagline": "To orchestrate.",
+          "range": "from 10 properties",
+          "price": "",
+          "period": "",
+          "badge": "★ MOST CHOSEN",
+          "items": [
+            "Everything in Base +",
+            "WhatsApp AI 24/7 — 12 languages",
+            "WhatsApp Owner",
+            "TeamFlow — housekeeping & maintenance",
+            "Booking engine",
+            "Smart Analytics",
+            "Priority support"
+          ],
+          "cta": "Request a quote"
+        },
+        {
+          "name": "PREMIUM",
+          "tagline": "To go all the way.",
+          "range": "from 50 properties",
+          "price": "",
+          "period": "",
+          "items": [
+            "Everything in Confort +",
+            "Advanced orchestration",
+            "WhatsApp direct booking",
+            "Sojori Pay",
+            "MCP AI — ChatGPT, Claude",
+            "API & webhooks · SSO"
+          ],
+          "cta": "Request a quote"
+        }
+      ],
+      "footer": "✓ Personalised demo · ✓ No commitment · ✓ Setup in under 7 days",
+      "quote": "Request a quote"
+    },
+    "finalCTA": {
+      "title": "Ready to",
+      "titleGradient": "orchestrate",
+      "titleEnd": "your rentals?",
+      "subtitle": "Join hundreds of properties orchestrating their operations with Sojori.",
+      "ctaPrimary": "Request a free demo →",
+      "ctaSecondary": "See the plans",
+      "footer": "✓ Personalized demo · ✓ No commitment · ✓ Setup in <7 days"
+    }
+  },
+  "whatsapp": {
+    "pageTitle": "WhatsApp Systems",
+    "hero": {
+      "badge": "💬 WhatsApp · At the heart of Sojori",
+      "title": "4 WhatsApp systems.",
+      "titleGradient": "One unified platform.",
+      "subtitle": "Sojori uses WhatsApp as the main channel to communicate with your guests, your team, and to let you manage your business from your phone. No app to download. Just WhatsApp."
+    },
+    "sectionNav": {
+      "hint": "Scroll the chips to jump to each flow — every use case is on this page."
+    },
+    "guestMenu": {
+      "more": "More menu options",
+      "less": "Hide extra options"
+    },
+    "systems": {
+      "guest": {
+        "label": "WhatsApp Guest",
+        "badge": "💬 Travelers",
+        "stat": "87% autonomous"
+      },
+      "staff": {
+        "label": "WhatsApp Staff",
+        "badge": "👷 Team",
+        "stat": "Real-time"
+      },
+      "admin": {
+        "label": "WhatsApp Admin",
+        "badge": "🎯 PMS Light",
+        "stat": "6 functions"
+      },
+      "booking": {
+        "label": "Direct Booking",
+        "badge": "💰 No OTA",
+        "stat": "0% commission"
+      }
+    },
+    "phone": {
+      "guest": {
+        "title": "Sojori AI",
+        "subtitle": "Online · responds in seconds"
+      },
+      "staff": {
+        "title": "Sojori Staff",
+        "subtitle": "Real-time planning & tasks"
+      },
+      "admin": {
+        "title": "Sojori Admin",
+        "subtitle": "PMS Light via WhatsApp"
+      },
+      "booking": {
+        "title": "Sojori Booking",
+        "subtitle": "Direct booking without OTA"
+      }
+    },
+    "messages": {
+      "guest": {
+        "today": "Today",
+        "welcome": "Hello Sarah! 👋 Welcome to Paris.\n\nYour check-in is in 2h at the Montmartre apartment. Here are your access details:",
+        "access": "🔑 Door code: 4729\n📍 47 Rue des Abbesses\n🚇 Metro: Abbesses (line 12)",
+        "wifi": "WiFi: SOJORI_PARIS\nPassword: paris2024",
+        "userQuestion": "Thanks! Can I arrive earlier around 2pm?",
+        "aiResponse": "Perfect ✓ The apartment will be ready at 2pm.\n\nI've notified the team. Lucas will wait for you in front of the building to welcome you 🙂",
+        "userThanks": "Great, thank you so much! 🙏",
+        "checkinComplete": "Check-in completed · QR code scanned"
+      },
+      "staff": {
+        "today": "Today · 08:30",
+        "tasks": "Good morning Sophie 👋\n\n*📋 Your tasks for today (3)*\n\n1️⃣ Cleaning · Montmartre Apt\n   Check-out 11am · Arrival 3pm\n   ⏱️ 2h estimated\n\n2️⃣ Maintenance · Marais Apt\n   AC to check · Guest report\n   ⏱️ 30 min\n\n3️⃣ Linen · Bastille Studio\n   Change sheets · Before 2pm\n   ⏱️ 45 min",
+        "received": "Got it! Starting with Montmartre ✓",
+        "confirmation": "Perfect 🙌 I've set the task to in progress.\n\nDon't forget to scan the QR on arrival to start the timer.",
+        "taskStarted": "Task #1 started · Geolocation OK",
+        "taskComplete": "Cleaning done! Photos sent 📸",
+        "validation": "Great Sophie! ⭐\n\nTask validated · 1h50 (10 min early)\nNext task: Marais Apt at 11am"
+      },
+      "admin": {
+        "monday": "Monday 3:00pm",
+        "dashboard": "Hello Marc 👋\n\n*🎯 Dashboard*\n\nType the corresponding letter:\n\n*T* - Pending tasks (3)\n*D* - Arrival/departure declarations (2)\n*R* - Check-in/out reservations (5)\n*M* - Guest messages (7)\n*V* - Reviews to respond (2)\n*L* - Booking requests (4)",
+        "userCommand": "M",
+        "messagesList": "💬 *Pending messages (7)*\n\n1. Sarah · Montmartre Apt\n   \"WiFi code?\" · 15 min ago\n   [Reply]\n\n2. Marco · Barcelona Villa\n   \"AC doesn't work\" · 32 min ago\n   [URGENT]\n\n3. Emma · Marais Studio\n   \"Late checkout possible?\" · 1h ago\n   [Reply]",
+        "userChoice": "I'll take Marco as priority",
+        "transferred": "Conversation transferred ✓\n\nYou can now chat directly with Marco.\n\nAI has already suggested: check circuit breaker + send technician if needed."
+      },
+      "booking": {
+        "tuesday": "Tuesday 10:00am",
+        "userRequest": "Hello, I'm looking for an apartment in Paris from June 15 to 20 for 2 people",
+        "available": "Hello! 👋\n\nI found *3 available apartments* for your dates:\n\n🏠 *Montmartre Apt* · 65m²\n   €120/night · 2 people\n   ⭐ 4.9 (47 reviews)\n   [View photos]\n\n🏠 *Marais Studio* · 45m²\n   €95/night · 2 people\n   ⭐ 4.8 (32 reviews)\n   [View photos]\n\n🏠 *République Loft* · 80m²\n   €150/night · 4 people\n   ⭐ 5.0 (12 reviews)\n   [View photos]",
+        "userInterest": "The Montmartre apartment interests me! What's the total?",
+        "pricing": "🏠 *Montmartre Apartment*\n5 nights · June 15-20, 2025\n\n💰 *Pricing*\n€120 × 5 nights = €600\nCleaning fee = €40\n*Total = €640*\n\n✨ Direct booking:\n❌ No Airbnb commission\n💳 Secure payment\n🎁 Flexible check-in\n\n[Book now]",
+        "userBook": "Perfect, I'll book!",
+        "paymentReceived": "Payment received €640 · Booking confirmed",
+        "confirmed": "🎉 *Booking confirmed!*\n\nYou'll receive within 5 min:\n✉️ Confirmation email\n📱 Guest app access\n📍 Paris guidebook\n\nLooking forward to welcoming you Sarah! 🙂"
+      }
+    },
+    "details": {
+      "guest": {
+        "title": "WhatsApp Guest",
+        "titleGradient": "Intelligence",
+        "description": "Sojori AI responds to your travelers 24/7 on WhatsApp. Autonomous check-in, instant support, smart upsell, review requests. All in 12 languages.",
+        "menuTitle": "Main menu",
+        "menu": [
+          {
+            "key": "A",
+            "label": "Main menu"
+          },
+          {
+            "key": "B",
+            "label": "Change language"
+          },
+          {
+            "key": "C",
+            "label": "My reservation"
+          },
+          {
+            "key": "E",
+            "label": "Guest registration"
+          },
+          {
+            "key": "F",
+            "label": "Access & codes"
+          },
+          {
+            "key": "G",
+            "label": "Property & WiFi"
+          },
+          {
+            "key": "H",
+            "label": "Rules & about"
+          },
+          {
+            "key": "I",
+            "label": "Cleaning request"
+          },
+          {
+            "key": "J",
+            "label": "Concierge services"
+          },
+          {
+            "key": "K",
+            "label": "Support"
+          }
+        ],
+        "stats": [
+          {
+            "key": "<2 sec",
+            "label": "Response time"
+          },
+          {
+            "key": "12",
+            "label": "Languages"
+          },
+          {
+            "key": "87%",
+            "label": "Autonomous"
+          }
+        ]
+      },
+      "staff": {
+        "title": "WhatsApp Staff",
+        "titleGradient": "Coordination",
+        "description": "Your team (cleaning, maintenance, concierge) receives their tasks, schedule and notifications in real-time on WhatsApp. No app or training needed.",
+        "featuresTitle": "Features",
+        "features": [
+          {
+            "label": "Real-time assigned tasks",
+            "detail": "Check-in, cleaning, maintenance"
+          },
+          {
+            "label": "Daily visual schedule",
+            "detail": "Timeline view with estimates"
+          },
+          {
+            "label": "Integrated GPS navigation",
+            "detail": "Route to each property"
+          },
+          {
+            "label": "WhatsApp location sharing",
+            "detail": "Auto-verify arrival + damage photos"
+          },
+          {
+            "label": "Automatic timer",
+            "detail": "Real vs estimated time · analytics"
+          },
+          {
+            "label": "Urgent alerts",
+            "detail": "Blocked guest, reported issue"
+          }
+        ],
+        "stats": [
+          {
+            "key": "€0",
+            "label": "Per staff"
+          },
+          {
+            "key": "Real-time",
+            "label": "Notifications"
+          },
+          {
+            "key": "QR",
+            "label": "Validation"
+          }
+        ]
+      },
+      "admin": {
+        "title": "WhatsApp Admin",
+        "titleGradient": "PMS Light",
+        "description": "Manage your business from your phone. Tasks, declarations, reservations, messages, reviews, leads. Everything on WhatsApp, without opening the dashboard.",
+        "menuTitle": "Admin menu",
+        "menu": [
+          {
+            "key": "T",
+            "label": "Tasks to manage"
+          },
+          {
+            "key": "D",
+            "label": "Arrival/departure declarations"
+          },
+          {
+            "key": "R",
+            "label": "Reservations (check-in/out)"
+          },
+          {
+            "key": "M",
+            "label": "Pending messages"
+          },
+          {
+            "key": "V",
+            "label": "Reviews to respond"
+          },
+          {
+            "key": "L",
+            "label": "Booking requests (Leads)"
+          }
+        ],
+        "stats": [
+          {
+            "key": "6",
+            "label": "Functions"
+          },
+          {
+            "key": "Mobile",
+            "label": "PMS"
+          },
+          {
+            "key": "Instant",
+            "label": "Notifications"
+          }
+        ]
+      },
+      "booking": {
+        "title": "WhatsApp Direct",
+        "titleGradient": "Booking",
+        "description": "Your returning guests can book directly via WhatsApp. No OTA commission. Secure payment. Instant confirmation.",
+        "advantagesTitle": "Advantages",
+        "advantages": [
+          {
+            "label": "0% commission",
+            "detail": "Keep 100% of revenue"
+          },
+          {
+            "label": "Guest loyalty",
+            "detail": "Direct return without OTA"
+          },
+          {
+            "label": "Secure payment",
+            "detail": "Stripe integrated · PCI compliant"
+          },
+          {
+            "label": "Instant confirmation",
+            "detail": "Real-time availability"
+          },
+          {
+            "label": "Dynamic pricing",
+            "detail": "Automatic dynamic pricing"
+          },
+          {
+            "label": "Integrated upsell",
+            "detail": "Additional services in flow"
+          }
+        ],
+        "stats": [
+          {
+            "key": "0%",
+            "label": "Commission"
+          },
+          {
+            "key": "€0",
+            "label": "Setup"
+          },
+          {
+            "key": "24/7",
+            "label": "Available"
+          }
+        ]
+      }
+    },
+    "benefits": {
+      "badge": "💎 Benefits",
+      "title": "Everything from WhatsApp.",
+      "titleGradient": "Zero complexity.",
+      "subtitle": "One single app everyone knows. No training, no new software to install.",
+      "items": [
+        {
+          "title": "Artificial Intelligence",
+          "description": "Natural conversation · 12 languages · Available 24/7"
+        },
+        {
+          "title": "Instant Response",
+          "description": "Less than 2 seconds · No waiting · Guaranteed satisfaction"
+        },
+        {
+          "title": "Auto Sync",
+          "description": "Real-time updates · Instant notifications"
+        },
+        {
+          "title": "Integrated Analytics",
+          "description": "Complete history · Performance tracking · Customer insights"
+        },
+        {
+          "title": "Maximum Security",
+          "description": "Encrypted data · GDPR compliant · France hosting"
+        },
+        {
+          "title": "24/7 Monitoring",
+          "description": "Continuous supervision · Automatic alerts · 99.9% uptime"
+        }
+      ]
+    },
+    "useCases": {
+      "badge": "✨ Use cases",
+      "title": "What Sojori does",
+      "titleGradient": "automatically.",
+      "subtitle": "Complex workflows orchestrated by AI, without human intervention.",
+      "cases": [
+        {
+          "title": "Autonomous check-in D-7 → D+1",
+          "steps": [
+            "D-7: Welcome message + language detected",
+            "D-3: Passport request · OCR + KYC in 30 sec",
+            "D-1: Door code + WiFi + GPS",
+            "D: Arrival check · WhatsApp + shared GPS",
+            "D+1: Review request · pre-filled link"
+          ]
+        },
+        {
+          "title": "24/7 multilingual support",
+          "steps": [
+            "Guest sends message (any language)",
+            "AI detects language + category (WiFi, AC, code...)",
+            "Responds in <2 sec with solution",
+            "If urgent → escalate to human staff",
+            "Ticket created + tracking until resolution"
+          ]
+        },
+        {
+          "title": "Smart upsell",
+          "steps": [
+            "AI analyzes profile + ongoing stay",
+            "Detects opportunities (late checkout, services...)",
+            "Proposes at the right time (non-intrusive)",
+            "Payment integrated in WhatsApp",
+            "Confirmation + sync with team"
+          ]
+        },
+        {
+          "title": "Staff task management",
+          "steps": [
+            "Check-out detected → cleaning task created",
+            "Staff receives WhatsApp notif with details",
+            "GPS to property · link shared in WhatsApp",
+            "Arrival confirmed in WhatsApp → timer starts",
+            "Photos flag snags for fixes · team reads in any language · validation → payout"
+          ]
+        }
+      ]
+    },
+    "fullCycle": {
+      "badge": "🔄 Full cycle",
+      "title": "Airbnb → Sojori → WhatsApp + AI →",
+      "titleGradient": "Automatic response",
+      "subtitle": "The message arrives from Airbnb or Booking.com, goes through AI WhatsApp with translation, PM validation, then returns automatically to the original platform. The entire cycle in seconds.",
+      "steps": [
+        {
+          "title": "Airbnb",
+          "description": "Guest message\non platform",
+          "message": "\"Where is WiFi?\""
+        },
+        {
+          "title": "Sojori",
+          "description": "Centralized\ningestion",
+          "message": "<1 sec\nAPI sync"
+        },
+        {
+          "title": "WhatsApp",
+          "description": "Flow displayed\non mobile",
+          "message": "PM Interface"
+        },
+        {
+          "title": "AI + 🌍",
+          "description": "Analysis + Translation\nto your language",
+          "message": "FR: \"Where WiFi?\"\n→ \"Code: XXX\""
+        },
+        {
+          "title": "Validation",
+          "description": "PM validates\nor modifies",
+          "message": "✓ / ✏️"
+        },
+        {
+          "title": "Sojori",
+          "description": "Response\nauto API",
+          "message": "Translated EN\n→ Airbnb"
+        },
+        {
+          "title": "Airbnb",
+          "description": "Response\nto guest",
+          "message": "\"WiFi: XXX\""
+        }
+      ],
+      "autopilot": {
+        "title": "Mode",
+        "titleGradient": "Autopilot",
+        "description": "For simple questions (WiFi, codes, schedules...), activate autopilot mode. AI responds directly without validation. You supervise in the background and intervene if necessary.",
+        "features": [
+          {
+            "label": "Instant response"
+          },
+          {
+            "label": "Works 24/7"
+          },
+          {
+            "label": "Active supervision"
+          },
+          {
+            "label": "Alert if urgent"
+          }
+        ]
+      }
+    },
+    "stats": [
+      {
+        "key": "4 systems",
+        "label": "WhatsApp"
+      },
+      {
+        "key": "87%",
+        "label": "AI Autonomous"
+      },
+      {
+        "key": "<2 sec",
+        "label": "Response time"
+      },
+      {
+        "key": "12 languages",
+        "label": "Native support"
+      }
+    ],
+    "finalCTA": {
+      "title": "Activate WhatsApp.",
+      "titleGradient": "Today.",
+      "subtitle": "4 WhatsApp systems included from the Orchestre plan. 5-minute setup. Unlimited technical support."
+    }
+  },
+  "integrations": {
+    "pageTitle": "Integrations",
+    "hero": {
+      "badge": "🔌 API-first · Infinitely extensible",
+      "title": "Sojori integrates",
+      "titleGradient": "with your ecosystem.",
+      "subtitle": "Native integrations (Rentals United, Channex, Minut, Chekin, Hostaway, etc.). Everything else: REST API, webhooks, or no-code tools via HTTP. No vendor lock-in.",
+      "cta1": "See the API",
+      "cta2": "Request integration"
+    },
+    "categories": {
+      "all": "All",
+      "core": "Native integrations",
+      "msg": "Messaging",
+      "pay": "Payments",
+      "data": "Automation & API",
+      "ai": "AI & Analytics"
+    },
+    "integrationDescriptions": {
+      "rentalsUnited": "Channel distribution",
+      "channex": "Channel Manager API",
+      "minut": "Noise & occupancy sensors",
+      "chekin": "Online check-in",
+      "ttlock": "Locks & codes (config-based)",
+      "hostaway": "PMS integration",
+      "whatsapp": "Channel + AI Bot",
+      "sms": "Automated SMS",
+      "email": "Transactional email",
+      "stripe": "Online payments",
+      "zapier": "No-code automation (HTTP)",
+      "make": "Advanced scenarios (HTTP)",
+      "restApi": "Complete API",
+      "openai": "Multilingual chatbot",
+      "claude": "Conversational AI",
+      "gemini": "Multimodal AI",
+      "analytics": "Web analytics"
+    },
+    "connectModes": {
+      "automatable": {
+        "label": "Automatable",
+        "detail": "HTTP / webhooks"
+      },
+      "config": {
+        "label": "On configuration",
+        "detail": "hardware-dependent"
+      },
+      "native": {
+        "label": "Connected",
+        "detail": "Sojori stack"
+      }
+    },
+    "popular": "★ POPULAR",
+    "apiSection": {
+      "label": "● API & Webhooks",
+      "title": "Not on the list?",
+      "titleGradient": "Build it.",
+      "description": "REST API and webhooks (business events) according to your contract; authentication via keys/tokens. No-code automation possible via HTTP (Zapier, Make, etc.).",
+      "cta1": "Request API docs access →",
+      "cta2": "Zapier.com ↗",
+      "codeComment1": "# Example — URL and paths provided at integration",
+      "codeComment2": "# Schema and rights: partner documentation"
+    },
+    "stats": {
+      "stat1Key": "6",
+      "stat1Label": "listed native connectors",
+      "stat2Key": "API-first",
+      "stat2Label": "open architecture",
+      "stat3Key": "40+",
+      "stat3Label": "webhook events (contract scope)",
+      "stat4Key": "HTTP",
+      "stat4Label": "Zapier / Make compatible"
+    },
+    "finalCTA": {
+      "title": "Connect your stack.",
+      "titleGradient": "In 5 minutes.",
+      "subtitle": "OTAs, payments, locks — plug everything in, configure once, forget."
+    }
+  },
+  "teamflow": {
+    "pageTitle": "TeamFlow",
+    "hero": {
+      "badge": "👥 TeamFlow · Staff Management",
+      "title": "Your field team.",
+      "titleGradient": "Orchestrated. Not managed.",
+      "subtitle": "Auto-assignment based on availability and geolocation. WhatsApp + in-app notifications. Pre/post check photos. Real-time tracking and KPIs per member.",
+      "cta1": "Watch demo",
+      "cta2": "Invite my team"
+    },
+    "board": {
+      "sectionBadge": "● Real-time Kanban board",
+      "sectionTitle": "Who does what.",
+      "sectionTitleGradient": "Now.",
+      "columns": {
+        "todo": "TO DO",
+        "inProgress": "IN PROGRESS",
+        "done": "DONE"
+      },
+      "urgentLabel": "URGENT",
+      "tasks": {
+        "task1": "Cleaning Paris 15 Apartment",
+        "task2": "Check-in Marco · Montmartre Loft",
+        "task3": "AC Maintenance · Barcelona Villa",
+        "task4": "Cleaning Marais Studio",
+        "task5": "Cleaning Lyon Duplex",
+        "task6": "Check-out James P.",
+        "task7": "Grocery shopping · Apartment"
+      }
+    },
+    "kpis": {
+      "sectionBadge": "● KPIs per member",
+      "sectionTitle": "Individual performance.",
+      "sectionSubtitle": "Measured, not guessed.",
+      "labels": {
+        "tasks": "Tasks",
+        "rating": "Rating",
+        "avgTime": "Average time"
+      },
+      "staff": {
+        "sophie": {
+          "name": "Sophie",
+          "role": "Cleaning"
+        },
+        "lucas": {
+          "name": "Lucas",
+          "role": "Check-in"
+        },
+        "marc": {
+          "name": "Marc",
+          "role": "Maintenance"
+        },
+        "julie": {
+          "name": "Julie",
+          "role": "Cleaning"
+        }
+      }
+    },
+    "capabilities": {
+      "sectionBadge": "● Capabilities",
+      "sectionTitle": "Everything a field team needs.",
+      "items": [
+        {
+          "icon": "⚡",
+          "title": "Auto-assignment",
+          "description": "Algorithm matching availability + geolocation + skills. Task assigned in <2 sec."
+        },
+        {
+          "icon": "📲",
+          "title": "Native WhatsApp",
+          "description": "No app to install. Tasks received on WhatsApp + photos returned."
+        },
+        {
+          "icon": "📷",
+          "title": "Pre/post photos",
+          "description": "Before/after each cleaning. Auto-archived. Disputes resolved in 30 sec."
+        },
+        {
+          "icon": "📍",
+          "title": "GPS check-in",
+          "description": "Staff validates on-site presence. Anti-fraud, anti-no-show."
+        },
+        {
+          "icon": "⏱️",
+          "title": "Real-time tracking",
+          "description": "Duration of each task. Comparable. Optimizable. Without micromanagement."
+        },
+        {
+          "icon": "⭐",
+          "title": "Guest ratings",
+          "description": "Mapped to the member who did the cleaning. Performance bonus."
+        }
+      ]
+    },
+    "stats": [
+      {
+        "key": "<2 sec",
+        "label": "Auto-assignment"
+      },
+      {
+        "key": "WhatsApp",
+        "label": "No app to install"
+      },
+      {
+        "key": "100%",
+        "label": "Photos archived"
+      },
+      {
+        "key": "4.87★",
+        "label": "Average staff rating"
+      }
+    ],
+    "finalCTA": {
+      "title": "Invite your team.",
+      "titleGradient": "In 60 seconds.",
+      "subtitle": "One WhatsApp message, they accept, they're operational. No app, no training."
+    }
+  },
+  "guestExperience": {
+    "pageTitle": "Guest Experience",
+    "hero": {
+      "badge": "💬 Guest Experience · 100% WhatsApp",
+      "title": "Zero app. Zero download. 100% WhatsApp.",
+      "subtitle": "Your travelers receive everything via WhatsApp: door code, WiFi, AI guidebook, bookings. No app to download, no account to create. Just their phone number.",
+      "cta1": "Watch demo",
+      "cta2": "Test WhatsApp"
+    },
+    "interactive": {
+      "badge": "● INTERACTIVE VIEW",
+      "title": "The traveler experience, 100% WhatsApp.",
+      "subtitle": "No web app to develop. Everything happens in WhatsApp. Your guests already have WhatsApp on their phone. That's where they receive everything."
+    },
+    "tabs": {
+      "home": {
+        "label": "Home",
+        "description": "Door code, WiFi, practical info"
+      },
+      "guide": {
+        "label": "Guidebook",
+        "description": "AI-powered local recommendations"
+      },
+      "experiences": {
+        "label": "Bookings",
+        "description": "Experience reservations"
+      },
+      "help": {
+        "label": "Help",
+        "description": "24/7 instant support"
+      }
+    },
+    "phone": {
+      "header": {
+        "name": "Sojori · Riad El Fenn",
+        "status": "online"
+      },
+      "input": "Message...",
+      "home": {
+        "welcome": "Hello Sarah! 👋 Welcome to Riad El Fenn in Marrakech.\n\nYour stay: April 3-5 (2 nights)\nCheck-out tomorrow at 11:00am",
+        "doorCode": "🔑 DOOR CODE",
+        "doorCodeValue": "4729",
+        "wifi": "📶 WIFI",
+        "wifiNetwork": "RiadElFenn_Guest",
+        "wifiPassword": "password: marrakech2025",
+        "recommendations": "🤖 My recommendations for you:",
+        "rec1Title": "🍽️ Nomad — dinner",
+        "rec1Detail": "5 min walk · view of Jemaa el-Fna square",
+        "rec2Title": "🧘 Hammam La Maison Arabe",
+        "rec2Detail": "15 min · booking required · 4.9★"
+      },
+      "guide": {
+        "title": "📖 Your Marrakech guide (47 spots):",
+        "cat1Emoji": "🌅",
+        "cat1Title": "Sunrise",
+        "cat1Count": "4 spots",
+        "cat2Emoji": "🌙",
+        "cat2Title": "Nightlife",
+        "cat2Count": "6 spots",
+        "cat3Emoji": "🍵",
+        "cat3Title": "Cozy cafes",
+        "cat3Count": "8 spots",
+        "cat4Emoji": "🛍️",
+        "cat4Title": "Must-see souks",
+        "cat4Count": "5 spots"
+      },
+      "experiences": {
+        "title": "✨ Your bookings:",
+        "booking1Date": "Today 7:30pm",
+        "booking1Title": "Nomad Dinner",
+        "booking1Status": "✓ Confirmed",
+        "booking2Date": "Tomorrow 10:00am",
+        "booking2Title": "Cooking class",
+        "booking2Status": "⏳ Pending",
+        "booking3Date": "Tomorrow 2:00pm",
+        "booking3Title": "Hammam",
+        "booking3Status": "✓ Confirmed"
+      },
+      "help": {
+        "title": "💬 How can I help you?",
+        "option1": "My code doesn't work",
+        "option2": "WiFi not working",
+        "option3": "Late check-out",
+        "option4": "Talk to the team",
+        "footer": "Type a number or write your question"
+      }
+    },
+    "features": {
+      "badge": "● All-inclusive",
+      "title": "Everything a traveler needs. In WhatsApp.",
+      "items": [
+        {
+          "icon": "💬",
+          "title": "100% WhatsApp",
+          "description": "No app to download, no account"
+        },
+        {
+          "icon": "🔑",
+          "title": "Auto door code",
+          "description": "Sent on arrival day, expires at check-out"
+        },
+        {
+          "icon": "📶",
+          "title": "Instant WiFi",
+          "description": "Network + password in the conversation"
+        },
+        {
+          "icon": "🤖",
+          "title": "24/7 AI Bot",
+          "description": "Answers questions in 12 languages"
+        },
+        {
+          "icon": "📍",
+          "title": "Personalized guidebook",
+          "description": "AI-generated recommendations"
+        },
+        {
+          "icon": "🎁",
+          "title": "Built-in upsell",
+          "description": "Late check-out, experiences, transfers"
+        },
+        {
+          "icon": "📞",
+          "title": "Human support",
+          "description": "Escalate to your team in 1 click"
+        },
+        {
+          "icon": "⭐",
+          "title": "Automatic reviews",
+          "description": "Post-stay request + OTA redirect"
+        }
+      ]
+    },
+    "stats": [
+      {
+        "key": "98%",
+        "label": "WhatsApp open rate"
+      },
+      {
+        "key": "2.4×",
+        "label": "upsell vs email"
+      },
+      {
+        "key": "<2min",
+        "label": "average response time"
+      },
+      {
+        "key": "4.9★",
+        "label": "guest satisfaction"
+      }
+    ],
+    "finalCTA": {
+      "title": "Launch WhatsApp for your guests. In 5 minutes.",
+      "subtitle": "Included from the Orchestre plan. No development required. Your guests already have WhatsApp."
+    }
+  },
+  "dynamicPricing": {
+    "pageTitle": "Dynamic Pricing",
+    "hero": {
+      "badge": "📈 Dynamic Pricing · Intelligent pricing",
+      "title": "The right price.",
+      "titleGradient": "At the right time.",
+      "subtitle": "Sojori combines real market data with flexible rules to optimize your rates. Track competitors, analyze demand across Marrakech & Paris, and maximize revenue across your portfolio.",
+      "cta1": "Request a demo",
+      "cta2": "Contact us"
+    },
+    "calendar": {
+      "title": "March 2025 · Paris 15 Apartment",
+      "labels": {
+        "event": "Event",
+        "highDemand": "High demand",
+        "lowDemand": "Low demand"
+      },
+      "days": [
+        "M",
+        "T",
+        "W",
+        "T",
+        "F",
+        "S",
+        "S"
+      ],
+      "section": {
+        "badge": "● Real-time calendar pricing",
+        "title": "Your rates follow your rules and the calendar.",
+        "titleHighlight": "your rules and the calendar",
+        "subtitle": "Updated when rules, inventory and channel syncs change — not a promise of minute-by-minute 'market pricing'."
+      }
+    },
+    "factors": {
+      "badge": "● Pricing factors",
+      "title": "Flexible configuration to maximize your revenue.",
+      "titleHighlight": "maximize your revenue",
+      "list": [
+        {
+          "icon": "📅",
+          "label": "Monthly seasonality",
+          "description": "Coefficient per month · Configurable high/low season",
+          "impact": "Variable"
+        },
+        {
+          "icon": "📆",
+          "label": "Day of week",
+          "description": "Coefficient per day · Customizable Mon-Sun",
+          "impact": "Variable"
+        },
+        {
+          "icon": "🎉",
+          "label": "Configured events",
+          "description": "School holidays, special events · Manual config",
+          "impact": "Configurable"
+        },
+        {
+          "icon": "📊",
+          "label": "Occupancy rate",
+          "description": "Price adjusted according to calendar fill",
+          "impact": "Variable"
+        },
+        {
+          "icon": "🛏️",
+          "label": "Length of stay",
+          "description": "Coefficient based on number of nights booked",
+          "impact": "Configurable"
+        },
+        {
+          "icon": "⏱️",
+          "label": "Last minute",
+          "description": "Adjustment for bookings close to check-in",
+          "impact": "Configurable"
+        }
+      ],
+      "comingSoon": {
+        "icon": "🚀",
+        "title": "Coming soon: Automatic Supply & Demand",
+        "description": "Dynamic adjustment based on real-time market analysis"
+      }
+    },
+    "revenue": {
+      "badge": "● Impact illustration",
+      "title": "Potential to structure your rules",
+      "titleHighlight": "structure your rules",
+      "subtitle": "Curve and percentages below: visual demonstration only, not guaranteed results.",
+      "chart": {
+        "illustrationLabel": "Illustration · monthly revenue",
+        "trendLabel": "Typical trend (not measured here)",
+        "withoutSojori": "Without Sojori",
+        "withSojori": "With Sojori",
+        "months": [
+          "Jan",
+          "Feb",
+          "Mar",
+          "Apr",
+          "May",
+          "Jun"
+        ]
+      },
+      "impact": [
+        {
+          "icon": "↑",
+          "label": "Revenue",
+          "description": "based on seasonality & occupancy"
+        },
+        {
+          "icon": "↔",
+          "label": "Occupancy",
+          "description": "managing min. durations / windows"
+        },
+        {
+          "icon": "⏱",
+          "label": "Team time",
+          "description": "less manual entry"
+        }
+      ]
+    },
+    "stats": {
+      "stat1": {
+        "key": "6 factors",
+        "label": "Configurable"
+      },
+      "stat2": {
+        "key": "Monthly + Day",
+        "label": "Double coefficient"
+      },
+      "stat3": {
+        "key": "Events",
+        "label": "Configurable"
+      },
+      "stat4": {
+        "key": "Occupancy-based",
+        "label": "Auto adjustment"
+      }
+    },
+    "finalCTA": {
+      "title": "Optimize your revenue.",
+      "titleGradient": "revenue",
+      "subtitle": "Discover how Sojori dynamic pricing can maximize your rental revenue."
+    },
+    "marketIntel": {
+      "badge": "● Market Intelligence · Real data",
+      "title": "See the market. Price accordingly.",
+      "titleHighlight": "See the market",
+      "subtitle": "Sojori connects to market data providers to give you real-time insights on occupancy, ADR, supply growth, and competitive positioning across Marrakech and Paris.",
+      "updatedRecently": "Updated 6 hours ago",
+      "occupancy": "Occupancy",
+      "medianADR": "Median ADR",
+      "activeListings": "Active listings",
+      "supplyGrowth": "Supply growth (24m)",
+      "zoneBreakdown": "Zone-level breakdown"
+    },
+    "portfolio": {
+      "badge": "● Portfolio Management",
+      "title": "All your properties. One dashboard.",
+      "titleHighlight": "One dashboard",
+      "subtitle": "Manage multiple listings across cities and zones. Compare performance, track revenue, and optimize pricing strategies at a glance.",
+      "totalProperties": "Total properties",
+      "cities": "cities",
+      "ttmRevenue": "TTM Revenue",
+      "trailing12months": "Trailing 12 months",
+      "avgOccupancy": "Avg. Occupancy",
+      "acrossPortfolio": "Across portfolio",
+      "property": "Property",
+      "location": "Location",
+      "occupancy": "Occupancy",
+      "revenueTTM": "Revenue (TTM)",
+      "status": "Status",
+      "active": "Active",
+      "benefits": [
+        {
+          "icon": "📊",
+          "title": "Multi-property comparison",
+          "description": "Compare ADR, occupancy, and revenue across all your listings in real-time"
+        },
+        {
+          "icon": "🎯",
+          "title": "Zone performance",
+          "description": "Understand which neighborhoods and cities drive the best returns"
+        },
+        {
+          "icon": "⚡",
+          "title": "Quick optimization",
+          "description": "Identify underperforming properties and adjust pricing instantly"
+        }
+      ]
+    },
+    "competitive": {
+      "badge": "● Competitive Intelligence",
+      "title": "Know your market. Beat your competitors.",
+      "titleHighlight": "Beat your competitors",
+      "subtitle": "Track comparable listings, analyze their pricing strategies, and position yourself competitively in the market. Generate shareable reports for owners and investors.",
+      "compSet": "Your Comp Set",
+      "comps": "comps",
+      "avgCompADR": "Avg. Comp ADR",
+      "avgCompOcc": "Avg. Comp Occ",
+      "yourPosition": "Your Market Position",
+      "adrPosition": "ADR vs Market",
+      "adrAboveMarket": "Your ADR is 8% above comparable listings",
+      "occPosition": "Occupancy vs Market",
+      "occBelowMarket": "Room to improve occupancy by 3 points",
+      "revenueRank": "Revenue Rank",
+      "rankDescription": "Out of 5 tracked comps in your zone",
+      "shareReports": "Share Market Reports",
+      "shareDescription": "Generate shareable links with occupancy by zone, ADR trends, supply growth charts, and pacing forecasts. Perfect for owner reports and investment decisions.",
+      "shareTypes": [
+        {
+          "icon": "📊",
+          "label": "Market analysis by city & zone"
+        },
+        {
+          "icon": "📈",
+          "label": "Competitive positioning report"
+        },
+        {
+          "icon": "💰",
+          "label": "Revenue opportunity assessment"
+        }
+      ],
+      "insights": [
+        {
+          "icon": "🎯",
+          "title": "Position strategically",
+          "description": "Know exactly where you stand vs. competitors in pricing and performance"
+        },
+        {
+          "icon": "📡",
+          "title": "Track in real-time",
+          "description": "Market data refreshed continuously from listings and booking channels"
+        },
+        {
+          "icon": "🔗",
+          "title": "Share with stakeholders",
+          "description": "Generate professional reports for property owners, investors, and partners"
+        }
+      ]
+    }
+  },
+  "inbox": {
+    "pageTitle": "Unified Inbox",
+    "hero": {
+      "badge": "💬 Unified Inbox · All channels. One box.",
+      "title": "WhatsApp, Airbnb, Booking, email.",
+      "titleGradient": "In one place.",
+      "subtitle": "Every guest message, regardless of channel, in a single inbox. AI-suggested responses. Complete history. Custom templates. Never miss a message again.",
+      "cta1": "Watch demo",
+      "cta2": "Connect my channels"
+    },
+    "channels": {
+      "all": "All",
+      "whatsapp": "WhatsApp",
+      "airbnb": "Airbnb",
+      "booking": "Booking",
+      "email": "Email"
+    },
+    "threadList": {
+      "title": "Unified inbox",
+      "searchPlaceholder": "Search…"
+    },
+    "threads": {
+      "thread1": "Thanks! I'm in the taxi 🚕",
+      "thread2": "Question about the AC unit, it stopped...",
+      "thread3": "We'll take it for 6! 🙌",
+      "thread4": "Thanks again, amazing stay!",
+      "thread5": "Need to extend my stay by 2 nights",
+      "thread6": "Could you arrange airport pickup?",
+      "thread7": "Re: Invoice for stay March 12-18"
+    },
+    "conversation": {
+      "header": {
+        "name": "Sarah Johnson",
+        "details": "WhatsApp · Paris Apartment 15 · check-in 3:00pm"
+      },
+      "buttons": {
+        "guestProfile": "Guest profile",
+        "aiAssist": "AI assist"
+      },
+      "messages": {
+        "message1": "Hello! I'm Sarah, arriving at 3pm for check-in.",
+        "message2": "Hello Sarah! 👋 Welcome to Paris. Here's your code: 4729. 47 Rue des Abbesses.",
+        "message3": "Thanks! I'm in the taxi 🚕",
+        "message4": "Perfect ✓ I've notified the team. Lucas is waiting for you at the building.",
+        "aiLabel": "SOJORI AI · auto-response"
+      },
+      "quickActions": {
+        "confirmArrival": "👍 Confirm arrival",
+        "resendGPS": "🗺️ Resend GPS",
+        "suggestDinner": "✨ Suggest dinner"
+      },
+      "input": {
+        "placeholder": "Type your message…"
+      }
+    },
+    "capabilities": {
+      "badge": "● Capabilities",
+      "title": "One inbox.",
+      "titleGradient": "All communication.",
+      "items": [
+        {
+          "icon": "✨",
+          "title": "AI-suggested responses",
+          "description": "AI proposes 3 contextual responses. You choose. You send."
+        },
+        {
+          "icon": "👤",
+          "title": "360° guest profile",
+          "description": "Stay history, preferences, birthdays, language. With every message."
+        },
+        {
+          "icon": "📝",
+          "title": "Dynamic templates",
+          "description": "Auto variables (name, date, WiFi code). Multi-language. Reusable."
+        },
+        {
+          "icon": "🌍",
+          "title": "Native translation",
+          "description": "You write in English, they receive in Mandarin. And vice-versa."
+        },
+        {
+          "icon": "⏰",
+          "title": "Snooze & reminders",
+          "description": "No time now? Set aside, reminded at the right time."
+        },
+        {
+          "icon": "📊",
+          "title": "SLA tracking",
+          "description": "Average response time, resolution rate. By channel, by member."
+        }
+      ]
+    },
+    "stats": {
+      "stat1": {
+        "key": "4 channels",
+        "label": "WA, Airbnb, Booking, Email"
+      },
+      "stat2": {
+        "key": "<2 min",
+        "label": "Average response time"
+      },
+      "stat3": {
+        "key": "12 languages",
+        "label": "Auto translation"
+      },
+      "stat4": {
+        "key": "0",
+        "label": "Forgotten message"
+      }
+    },
+    "finalCTA": {
+      "title": "Connect your channels.",
+      "titleGradient": "In 5 minutes.",
+      "subtitle": "WhatsApp, Airbnb, Booking, email — all in one. Instant setup, secure OAuth."
+    }
+  },
+  "about": {
+    "pageTitle": "About",
+    "hero": {
+      "badge": "About Sojori",
+      "titlePart1": "The ",
+      "titleGradient": "intelligent orchestrator",
+      "titlePart2": "that hoteliers",
+      "titlePart3": "deserve.",
+      "description": "Hoteliers deserve better than tools that only manage calendars and payments. Sojori addresses the need for ",
+      "descriptionStrong": "orchestration",
+      "descriptionEnd": ": coordinating every interaction, anticipating every need, at the right time.",
+      "ctaDemo": "Request a demo →",
+      "ctaContact": "Contact us",
+      "stats": {
+        "launch": {
+          "value": "2025",
+          "label": "launch year"
+        },
+        "cities": {
+          "value": "2 cities",
+          "label": "Paris · Casablanca"
+        },
+        "multiCountry": {
+          "value": "Multi-country already adopted",
+          "label": "FR · ES · PT · MA"
+        }
+      }
+    },
+    "marquee": {
+      "items": [
+        "PARIS",
+        "CASABLANCA",
+        "FRANCE",
+        "SPAIN",
+        "PORTUGAL",
+        "MOROCCO",
+        "PMS",
+        "Channel Manager",
+        "WhatsApp AI",
+        "Orchestration"
+      ]
+    },
+    "mission": {
+      "badge": "Our mission",
+      "title": "Orchestrate every detail of the ",
+      "titleGradient": "guest journey",
+      "titleEnd": ".",
+      "subtitle": "Like the best concierge would.",
+      "goalTitle": "Not just managing bookings. But coordinating every interaction, anticipating every need, orchestrating every moment — with the precision of a 5-star concierge."
+    },
+    "origin": {
+      "badge": "Why Sojori exists",
+      "title": "The ",
+      "titleGradient": "problem",
+      "titleEnd": " we solve.",
+      "chapters": {
+        "ch1": {
+          "number": "i.",
+          "title": "The gap between ambition and tools.",
+          "p1": "Hoteliers want to offer ",
+          "p1Strong": "an exceptional experience",
+          "p1End": ": hospitality, attention to detail, anticipating needs.",
+          "p2": "But traditional PMS systems are limited to managing ",
+          "p2Strong": "calendars and payments",
+          "p2End": " — without coordinating the experience."
+        },
+        "ch2": {
+          "number": "ii.",
+          "title": "The need for orchestration, not automation.",
+          "p1": "Traditional PMS manage calendars, bookings, payments — but they ",
+          "p1Strong": "coordinate nothing",
+          "p1End": ".",
+          "p2": "The market needs an orchestrator: a platform that knows a welcome message must be sent D-7, a door code must be generated 4 hours before check-in, that cleaning must be verified before 2 PM."
+        },
+        "ch3": {
+          "number": "iii.",
+          "title": "PMS automate. Sojori ",
+          "titleGradient": "orchestrates",
+          "titleEnd": ".",
+          "p1": "It's the difference between a robot following rules and a ",
+          "p1Strong": "conductor",
+          "p1End": " coordinating each instrument at the right time.",
+          "commitmentLabel": "Our commitment:",
+          "commitment": " you never have to chase a check-in, cleaning, or unsent message again. We orchestrate — you welcome."
+        }
+      }
+    },
+    "values": {
+      "badge": "Our values",
+      "title": "What ",
+      "titleStrong": "guides",
+      "titleEnd": " us.",
+      "subtitle": "Four principles we revisit with each feature, each hire, each product decision.",
+      "value1": {
+        "number": "01 — Priority",
+        "title": "Hosts ",
+        "titleStrong": "first",
+        "titleEnd": ".",
+        "description": "We build for those who wake up at 6 AM to manage a check-in. Not for VC slides."
+      },
+      "value2": {
+        "number": "02 — Method",
+        "title": "Orchestration, not ",
+        "titleStrong": "automation",
+        "titleEnd": ".",
+        "description": "Traditional PMS automate. We orchestrate. Every task, at the right time, to the right person."
+      },
+      "value3": {
+        "number": "03 — Geography",
+        "title": "Local ",
+        "titleStrong": "presence",
+        "titleEnd": ".",
+        "description": "Offices in Paris & Casablanca. Clients in France, Spain, Portugal, Morocco. Sojori adapts to the rules, languages, and customs of each market."
+      },
+      "value4": {
+        "number": "04 — Pace",
+        "title": "Ship fast, ",
+        "titleStrong": "iterate faster",
+        "titleEnd": ".",
+        "description": "The market moves fast. We ship every week, we listen, we improve. Every host feedback becomes a feature, not a Jira ticket."
+      }
+    },
+    "timeline": {
+      "badge": "Our journey",
+      "title": "From a vision to ",
+      "titleStrong": "a platform",
+      "titleEnd": ".",
+      "subtitle": "Founded in 2024, launched in 2025, expanding multi-country.",
+      "milestones": {
+        "2024": {
+          "year": "2024",
+          "label": "Foundation",
+          "description": "Sojori is founded to address the orchestration need in hospitality management. The goal: go beyond traditional PMS by coordinating every step of the guest journey."
+        },
+        "2025": {
+          "year": "2025",
+          "label": "Launch",
+          "description": "Sojori is launched. First properties adopt the platform to orchestrate their daily operations."
+        },
+        "today": {
+          "year": "Today",
+          "label": "Expansion",
+          "description": "Clients across different countries use Sojori. We continue improving the product with their feedback — week after week."
+        }
+      }
+    },
+    "founder": {
+      "badge": "The team",
+      "title": "Who builds ",
+      "titleStrong": "Sojori",
+      "titleEnd": ".",
+      "subtitle": "A team building tomorrow's orchestration platform.",
+      "name": "Tawfiq Gouach",
+      "role": "CEO & Founder",
+      "bio": "Tech entrepreneur based between ",
+      "bioStrong": "Paris & Casablanca",
+      "bioEnd": ". Leads the development of the Sojori orchestration platform.",
+      "linkedinCta": "→ View LinkedIn profile"
+    },
+    "social": {
+      "badge": "Follow us",
+      "title": "Join the ",
+      "titleStrong": "community",
+      "titleEnd": ".",
+      "linkedin": {
+        "title": "LinkedIn",
+        "description": "Follow our news"
+      },
+      "instagram": {
+        "title": "Instagram",
+        "description": "Discover our behind-the-scenes"
+      }
+    },
+    "bigStats": {
+      "badge": "In numbers",
+      "stat1": {
+        "value": "2025",
+        "label": "Launch year"
+      },
+      "stat2": {
+        "value": "2 cities",
+        "label": "Paris & Casablanca"
+      },
+      "stat3": {
+        "value": "Multi-country",
+        "label": "Already adopted"
+      }
+    },
+    "finalCTA": {
+      "title": "Ready to ",
+      "titleStrong": "orchestrate like never before",
+      "titleEnd": "?",
+      "subtitle": "Discover how Sojori transforms the daily management of your hospitalitys.",
+      "ctaDemo": "Request a demo →",
+      "ctaHome": "← Back to homepage"
+    }
+  },
+  "demo": {
+    "pageTitle": "Request a demo",
+    "errors": {
+      "submitStep1": "We couldn't save your request. Try again or email Sarah at Sojori: contact@sojori.com.",
+      "invalidResponse": "Unexpected server response. Please try again.",
+      "availability": "Could not load availability.",
+      "bookSlot": "Could not book this time slot.",
+      "qualify": "Could not submit the questionnaire."
+    },
+    "step1": {
+      "badge": "Free demo",
+      "title": "Prepare your ",
+      "titleGradient": "free demo",
+      "subtitle": "A few details, then a short questionnaire.",
+      "emailLabel": "Email *",
+      "emailPlaceholder": "you@company.com",
+      "dialLabel": "Country / dial code *",
+      "dialSearchPlaceholder": "Search country or +33…",
+      "dialNoResults": "No matches",
+      "phoneLabel": "Phone *",
+      "phonePlaceholder": "6 12 34 56 78",
+      "propertiesLabel": "Your activity *",
+      "activityRequired": "Choose your activity to continue.",
+      "activities": {
+        "conciergerie": "Concierge company",
+        "hotel": "Hotel",
+        "riad": "Riad / guest house",
+        "guesthouse": "Guest house",
+        "resort": "Resort",
+        "aparthotel": "Aparthotel",
+        "villa": "Villa / apartment",
+        "apartment": "Apartment",
+        "autre": "Other"
+      },
+      "propertiesPlaceholder": "Select...",
+      "propertiesOptions": {
+        "1": "1 property",
+        "2-5": "2-5 properties",
+        "6-10": "6-10 properties",
+        "11-20": "11-20 properties",
+        "21-50": "21-50 properties",
+        "51+": "51+ properties"
+      },
+      "submitButton": "Continue →",
+      "submitButtonLoading": "Sending...",
+      "disclaimer": "By providing your details, you agree to receive information about Sojori. Unsubscribe anytime.",
+      "loadingTitle": "Opening the questionnaire",
+      "loadingDescription": "A few questions, shaped around the activity you just chose.",
+      "loadingWait": "One moment…",
+      "fullNameLabel": "Full name *",
+      "fullNamePlaceholder": "First Last",
+      "consentLabel": "I agree to receive messages from Sojori (WhatsApp, SMS) about my request.",
+      "typeTitle": "Your type of property",
+      "typeSubtitle": "So we can show you the right offer.",
+      "back": "← Back",
+      "phoneInvalid": "Please enter a valid phone number.",
+      "tailleRequired": "Please choose a size to continue.",
+      "paysLabel": "Country *",
+      "paysPlaceholder": "Choose your country",
+      "paysAutre": "Other country",
+      "paysAutrePlaceholder": "Which country?",
+      "villeLabel": "City *",
+      "villePlaceholder": "Marrakech, Paris, Dubai…",
+      "paysRequired": "Please choose your country.",
+      "villeRequired": "Please enter your city.",
+      "tailleChambres": "How many rooms?",
+      "tailleBiens": "How many properties?"
+    },
+    "step2": {
+      "badge": "Step 2/4 · Schedule",
+      "title": "Choose your ",
+      "titleGradient": "demo slot",
+      "titleEnd": " (30 min)",
+      "subtitle": "First a simple time slot — the detailed questionnaire will come right after, once your schedule is secured.",
+      "agentLabel": "Demo host",
+      "chooseDayLabel": "Choose a day",
+      "thisWeekLabel": "This week",
+      "nextWeekLabel": "Next week",
+      "availableSlotsLabel": "Available slots on this day",
+      "fullLabel": "Full",
+      "availableLabel": "available",
+      "availablePluralLabel": "available",
+      "noSlotsMessage": "No slots available on this day — choose another date above.",
+      "selectDatePrompt": "Select a date to display available times.",
+      "backButton": "← Back",
+      "confirmButton": "Confirm this slot →",
+      "confirmButtonLoading": "Confirming…",
+      "loadingTitle": "Checking availability",
+      "loadingDescription": "We're synchronizing the team's schedule with actually available slots.",
+      "loadingWait": "Please wait approximately 5 seconds…",
+      "noAgentNotice": "No online slots are available right now. You should receive an email from Sarah (Sojori) with a link to book a time — please check your spam folder."
+    },
+    "step3": {
+      "badge": "To go further",
+      "title": "One last ",
+      "titleGradient": "optional step",
+      "subtitle": "Three quick questions, or skip: your request is already saved.",
+      "skipAll": "Skip, I'm done",
+      "appointmentLabel": "Appointment:",
+      "basicInfoTitle": "📋 Basic information",
+      "fullNameLabel": "Full name *",
+      "fullNamePlaceholder": "Your name",
+      "companyLabel": "Company *",
+      "companyPlaceholder": "Your company name",
+      "roleLabel": "You are? *",
+      "rolePlaceholder": "Select...",
+      "roleOptions": {
+        "property-manager": "Property Manager",
+        "owner": "Owner (manages own properties)",
+        "agency": "Real Estate Agency",
+        "hotel": "Hotel / Residence"
+      },
+      "propertyTypesLabel": "Property types (multiple choice)",
+      "propertyTypeOptions": [
+        "Apartment",
+        "Villa",
+        "House",
+        "Hotel room",
+        "Residence",
+        "Other"
+      ],
+      "currentToolsTitle": "🛠️ Current tools",
+      "currentPMSLabel": "Current PMS",
+      "currentPMSPlaceholder": "e.g., Lodgify, Smoobu, Excel...",
+      "currentChannelManagerLabel": "Current Channel Manager",
+      "currentChannelManagerPlaceholder": "e.g., Rentals United, SiteMinder...",
+      "currentDynamicPricingLabel": "Dynamic Pricing",
+      "currentDynamicPricingPlaceholder": "e.g., PriceLabs, Beyond, Manual...",
+      "currentWhatsAppLabel": "Guest communication",
+      "currentWhatsAppPlaceholder": "e.g., Manual WhatsApp, Email...",
+      "needsTitle": "🎯 Your needs",
+      "timelineLabel": "When would you like to launch Sojori? *",
+      "timelinePlaceholder": "Select...",
+      "timelineOptions": {
+        "asap": "As soon as possible (less than 2 weeks)",
+        "1month": "Within a month",
+        "1-3months": "1-3 months",
+        "3-6months": "3-6 months",
+        "exploring": "Exploring (no specific date)"
+      },
+      "newPropertiesLabel": "How many new properties do you plan to manage in the next 12 months?",
+      "newPropertiesPlaceholder": "0",
+      "challengesLabel": "What are your biggest current challenges? *",
+      "challengesPlaceholder": "e.g., Time on WhatsApp, calendar sync errors, manual pricing, staff coordination...",
+      "expectationsLabel": "What do you expect from Sojori? *",
+      "expectationsPlaceholder": "e.g., Automate WhatsApp, centralize all channels, save time on daily management...",
+      "additionalInfoTitle": "ℹ️ Additional information",
+      "hearAboutUsLabel": "How did you hear about Sojori? *",
+      "hearAboutUsPlaceholder": "Select...",
+      "hearAboutUsOptions": {
+        "google": "Google Search",
+        "linkedin": "LinkedIn",
+        "facebook": "Facebook / Instagram",
+        "referral": "Partner referral",
+        "blog": "Blog / Article",
+        "event": "Event / Trade show",
+        "other": "Other"
+      },
+      "promoCodeLabel": "Promo code (if you have one)",
+      "promoCodePlaceholder": "PROMO2025",
+      "disclaimer": "Your schedule is already recorded. To modify it, reply to the confirmation email or contact us.",
+      "submitButton": "Send questionnaire →",
+      "submitButtonLoading": "Sending...",
+      "scheduleNote": "The information above helps us tailor your demo. You can complete it at your own pace."
+    },
+    "step4": {
+      "alreadyBooked": {
+        "badge": "Appointment already booked",
+        "title": "Your demo is ",
+        "titleGradient": "already scheduled",
+        "appointmentPrefix": "Appointment scheduled",
+        "appointmentOn": "for",
+        "appointmentFrom": "from",
+        "appointmentTo": "to",
+        "appointmentForRequest": "according to your saved request",
+        "checkEmail": "You can reschedule or cancel your appointment from the link sent by email (from Sarah, Sojori).",
+        "noFormNeeded": "No additional questionnaire is required for",
+        "backToHome": "← Back to home",
+        "viewPricing": "View pricing",
+        "reschedule": "Reschedule appointment",
+        "rescheduling": "Rescheduling…",
+        "cancel": "Cancel appointment",
+        "cancelling": "Cancelling…",
+        "cancelledMessage": "Your appointment has been cancelled. You can come back later to book a new one."
+      },
+      "confirmed": {
+        "title": "Request ",
+        "titleGradient": "confirmed!",
+        "message": "Your request is saved. Our team may reach out within",
+        "contactTime": "2 business hours",
+        "ifNeeded": "if needed.",
+        "appointmentLabel": "Appointment:",
+        "appointmentAt": "at",
+        "emailSent": "Sarah (Sojori) sent a confirmation email to",
+        "backToHome": "← Back to home",
+        "viewPricing": "View pricing",
+        "feature1Title": "7-day setup",
+        "feature1Desc": "Data import included",
+        "feature2Title": "Personalized demo",
+        "feature2Desc": "Tailored to your PMS and channels",
+        "feature3Title": "1 month free",
+        "feature3Desc": "No commitment"
+      },
+      "trustIndicators": {
+        "setup": {
+          "title": "7-day setup",
+          "description": "Data import included"
+        },
+        "personalized": {
+          "title": "Personalized demo",
+          "description": "Based on your context"
+        },
+        "trial": {
+          "title": "1 month free",
+          "description": "No commitment"
+        }
+      }
+    },
+    "trustCards": {
+      "setup": {
+        "title": "Quick setup",
+        "description": "Deployed in less than 7 days"
+      },
+      "secure": {
+        "title": "100% secure",
+        "description": "GDPR compliant · Hosted in France"
+      },
+      "trial": {
+        "title": "No commitment",
+        "description": "1-month free trial"
+      }
+    }
+  },
+  "seoPages": {
+    "pms": {
+      "title": "PMS Marrakech & Casablanca | Property management software Morocco",
+      "description": "Full PMS for hospitality in Marrakech, Casablanca and Paris. Bookings, unified calendar, multi-property."
+    },
+    "channelManager": {
+      "title": "Channel Manager | Multi-OTA sync",
+      "description": "Unified distribution: Airbnb, Booking, Vrbo and more. Real-time calendar and rates, anti-overbooking."
+    },
+    "analytics": {
+      "title": "Analytics | Hospitality BI",
+      "description": "Revenue, occupancy, ADR, RevPAR. Dashboards and exports."
+    },
+    "dashboardApp": {
+      "title": "Sojori dashboard | Manager workspace",
+      "description": "Post-login workspace: navigation, KPIs, live activity, arrivals."
+    },
+    "ownerPortal": {
+      "title": "Owner portal | Revenue transparency",
+      "description": "Revenue views and documents for owners and co-hosts."
+    },
+    "brand": {
+      "title": "Sojori — Brand system",
+      "description": "Visual identity: logo, colours, typography for partners."
+    },
+    "gestionLocativeMarrakech": {
+      "title": "Property management Marrakech | PMS for riads & villas",
+      "description": "PMS and hospitality orchestration in Marrakech: channel manager, WhatsApp, teams."
+    },
+    "conciergerieMarrakech": {
+      "title": "Concierge Marrakech | WhatsApp & guest services",
+      "description": "Digital concierge for riads and villas: WhatsApp, check-in, local services."
+    },
+    "gestionLocativeCasablanca": {
+      "title": "Property Management Casablanca | PMS apartments",
+      "description": "PMS and hospitality orchestration in Casablanca: channel manager, WhatsApp, teams."
+    },
+    "conciergerieCasablanca": {
+      "title": "Concierge Casablanca | WhatsApp & guest services",
+      "description": "Digital concierge for apartments: WhatsApp, check-in, local services."
+    },
+    "gestionLocativeAgadir": {
+      "title": "Property Management Agadir | PMS beach residences",
+      "description": "PMS and orchestration for seasonal rentals in Agadir: channel manager, WhatsApp, teams."
+    },
+    "conciergerieAgadir": {
+      "title": "Concierge Agadir | WhatsApp & guest services",
+      "description": "Digital concierge for beach residences: WhatsApp, check-in, local services."
+    },
+    "gestionLocativeTanger": {
+      "title": "Property Management Tangier | PMS medina & modern Tangier",
+      "description": "PMS and hospitality orchestration in Tangier: channel manager, WhatsApp, teams."
+    },
+    "conciergerieTanger": {
+      "title": "Concierge Tangier | WhatsApp & guest services",
+      "description": "Digital concierge for properties in Tangier: WhatsApp, check-in, local services."
+    },
+    "gestionLocativeRabat": {
+      "title": "Property Management Rabat | PMS capital apartments",
+      "description": "PMS and hospitality orchestration in Rabat: channel manager, WhatsApp, teams."
+    },
+    "conciergerieRabat": {
+      "title": "Concierge Rabat | WhatsApp & guest services",
+      "description": "Digital concierge for apartments in Rabat: WhatsApp, check-in, local services."
+    },
+    "dynamicPricing": {
+      "title": "Dynamic pricing | Rules & calendar",
+      "description": "Rates by seasonality, occupancy and channels — pushed to your OTAs."
+    },
+    "guestExperience": {
+      "title": "Guest experience Marrakech | Guest journey",
+      "description": "Premium guest journey: guidebook, services, smooth check-in."
+    },
+    "whatsapp": {
+      "title": "WhatsApp AI Marrakech | 24/7 automated concierge Morocco",
+      "description": "24/7 WhatsApp AI for hospitality in Marrakech: automated concierge, instant guest replies, FR/AR/EN, digital check-in."
+    },
+    "inbox": {
+      "title": "Unified inbox Marrakech | Centralised multi-OTA messaging Morocco",
+      "description": "One inbox for Airbnb, Booking, WhatsApp and email. AI replies, FR/AR/EN translation, no missed messages."
+    },
+    "teamflow": {
+      "title": "Staff management Marrakech | Teams for riads & villas Morocco",
+      "description": "Housekeeping planning, tasks and performance. Coordinate cleaning, concierge and maintenance."
+    },
+    "about": {
+      "title": "About Sojori | The hospitality orchestrator",
+      "description": "Sojori builds hospitality orchestration engine: PMS, channel manager, WhatsApp AI, dynamic pricing. Based in Marrakech, Casablanca and Paris."
+    },
+    "demo": {
+      "title": "Request a Sojori demo | PMS & hospitality orchestrator",
+      "description": "Book a personalized Sojori demo: PMS, Channel Manager, WhatsApp AI. Setup in under 7 days, 1 month free trial."
+    },
+    "demoRdv": {
+      "title": "Confirm your demo appointment | Sojori",
+      "description": "Pick your time slot for a personalized Sojori demo with a product expert."
+    },
+    "integrations": {
+      "title": "Sojori integrations | Booking, Expedia, Airbnb, WhatsApp & API",
+      "description": "Sojori connectors and API: Airbnb, Booking.com, Expedia, Vrbo, WhatsApp Business, accounting. Real-time sync."
+    },
+    "pricing": {
+      "title": "Sojori plans | Quote on request",
+      "description": "Three plans, no public price. The amount is on quote."
+    },
+    "pmsMarrakech": {
+      "title": "Hotel PMS Marrakech — Hotel management software | Sojori",
+      "description": "PMS and hospitality orchestration engine for hotels, riads and residences in Marrakech: bookings, housekeeping, maintenance, channel manager, police form and city tax. Also connects to your existing PMS."
+    },
+    "pmsCasablanca": {
+      "title": "Hotel PMS Casablanca — Hotel management software | Sojori",
+      "description": "PMS and hospitality orchestration engine for hotels, riads and residences in Casablanca: bookings, housekeeping, maintenance, channel manager, police form and city tax. Also connects to your existing PMS."
+    },
+    "pmsRabat": {
+      "title": "Hotel PMS Rabat — Hotel management software | Sojori",
+      "description": "PMS and hospitality orchestration engine for hotels, riads and residences in Rabat: bookings, housekeeping, maintenance, channel manager, police form and city tax. Also connects to your existing PMS."
+    },
+    "pmsTanger": {
+      "title": "Hotel PMS Tanger — Hotel management software | Sojori",
+      "description": "PMS and hospitality orchestration engine for hotels, riads and residences in Tanger: bookings, housekeeping, maintenance, channel manager, police form and city tax. Also connects to your existing PMS."
+    },
+    "pmsAgadir": {
+      "title": "Hotel PMS Agadir — Hotel management software | Sojori",
+      "description": "PMS and hospitality orchestration engine for hotels, riads and residences in Agadir: bookings, housekeeping, maintenance, channel manager, police form and city tax. Also connects to your existing PMS."
+    },
+    "goSiyaha": {
+      "title": "Go Siyaha 2026 — Morocco tourism digitalisation grant | Sojori",
+      "description": "The Go Siyaha programme supports the digitalisation of Moroccan tourism businesses: scope, rates, eligibility and covered expenses. Where Sojori fits in, with no grant promises."
+    },
+    "altCloudbeds": {
+      "title": "Cloudbeds alternative in Morocco — Sojori vs Cloudbeds | Sojori",
+      "description": "Cloudbeds vs Sojori for hotels and riads in Morocco: PMS versus hospitality orchestration engine. Honest comparison, including when Cloudbeds is the better choice."
+    },
+    "altPluriel": {
+      "title": "Pluriel alternative in Morocco — Sojori vs Pluriel | Sojori",
+      "description": "Pluriel vs Sojori for hotels and riads in Morocco: PMS versus hospitality orchestration engine. Honest comparison, including when Pluriel is the better choice."
+    },
+    "altNozoul": {
+      "title": "Nozoul alternative in Morocco — Sojori vs Nozoul | Sojori",
+      "description": "Nozoul vs Sojori for hotels and riads in Morocco: PMS versus hospitality orchestration engine. Honest comparison, including when Nozoul is the better choice."
+    },
+    "altWelcomax": {
+      "title": "Welcomax alternative in Morocco — Sojori vs Welcomax | Sojori",
+      "description": "Welcomax vs Sojori for hotels and riads in Morocco: PMS versus hospitality orchestration engine. Honest comparison, including when Welcomax is the better choice."
+    },
+    "comparatifPmsMaroc": {
+      "title": "Hotel PMS comparison Morocco 2026 — Which software? | Sojori",
+      "description": "Comparison of hotel management software in Morocco: Cloudbeds, Pluriel, Nozoul, Welcomax and Sojori. Profiles, architectures and when each is the right fit."
+    },
+    "orchestration": {
+      "title": "Hospitality orchestration — What is an orchestration engine? | Sojori",
+      "description": "A PMS records; an orchestrator makes things happen. How Sojori orchestrates guest experience, operations and revenue by connecting systems, guests, teams and partners."
+    },
+    "mcp": {
+      "title": "AI-connected PMS — MCP | Query Sojori from ChatGPT or Claude",
+      "description": "The first hotel PMS with an MCP server. Ask ChatGPT or Claude, get your real figures. Read-only, with no guest-identifying data."
+    }
+  },
+  "pmsPage": {
+    "pageTitle": "PMS",
+    "hero": {
+      "badge": "📋 PMS · Property management system",
+      "titleLine1": "All your properties.",
+      "titleGradient": "One calendar.",
+      "subtitle": "Multi-property bookings, automated payments, invoicing, digital contracts. The nerve centre of your operations — clean, fast, quiet.",
+      "cta1": "Book a demo",
+      "cta2": "Import my PMS"
+    },
+    "calendar": {
+      "header": "Property · March 2025"
+    },
+    "properties": [
+      "Paris 15 apartment",
+      "Barcelona villa",
+      "Montmartre loft",
+      "Marais studio",
+      "Lyon duplex"
+    ],
+    "sectionCalendar": {
+      "eyebrow": "● Multi-property calendar in real time",
+      "title": "Overview.",
+      "titleGradient": "At a glance."
+    },
+    "sectionModules": {
+      "eyebrow": "● PMS modules",
+      "title": "Everything.",
+      "titleMuted": "Really everything."
+    },
+    "modules": [
+      {
+        "title": "Unified calendar",
+        "desc": "All your properties, one calendar. Drag-and-drop, month/week/day views."
+      },
+      {
+        "title": "Automated payments",
+        "desc": "Stripe + bank transfers. Charge on booking, one-click refunds."
+      },
+      {
+        "title": "Invoices & contracts",
+        "desc": "Generated automatically. E-signed. Compliant archiving."
+      },
+      {
+        "title": "Financial dashboard",
+        "desc": "Revenue, costs, margin per property. Monthly accounting export."
+      },
+      {
+        "title": "Tourist tax automation",
+        "desc": "Calculated, collected, filed. Multi-city, multi-country."
+      },
+      {
+        "title": "2-way iCal sync",
+        "desc": "With your channel manager + direct Airbnb/Booking. No double entry."
+      }
+    ],
+    "stats": [
+      {
+        "k": "1 calendar",
+        "l": "All properties"
+      },
+      {
+        "k": "<3 sec",
+        "l": "Create booking"
+      },
+      {
+        "k": "100%",
+        "l": "Auto invoicing"
+      },
+      {
+        "k": "42k+",
+        "l": "Bookings handled"
+      }
+    ],
+    "finalCTA": {
+      "titleBefore": "Migrate your PMS.",
+      "titleGradient": "In 7 days.",
+      "subtitle": "Migration from Hostfully, Smoobu, Lodgify included. Guided onboarding. 1-month free trial."
+    }
+  },
+  "legal": {
+    "nav": {
+      "terms": "Terms of Service",
+      "privacy": "Privacy Policy",
+      "backHome": "Back to homepage"
+    },
+    "terms": {
+      "pageTitle": "Terms of Service",
+      "effectiveDate": "Effective date: March 1, 2025",
+      "intro": "These Terms of Service govern the use of Sojori's platform and services. By accessing or using our services, you agree to comply with and be bound by these Terms.",
+      "sections": [
+        {
+          "title": "1. Service Scope",
+          "content": "Sojori provides property management and orchestration software for hospitality operators. The platform enables users to manage properties, reservations, guest communication, staff coordination, dynamic pricing and owner reporting through a centralised interface. Sojori acts as a technology provider and is not a party to any rental agreement between hosts and guests."
+        },
+        {
+          "title": "2. Account & Access",
+          "content": "You must provide accurate and complete information when registering. Your account is personal, non-transferable and may not be shared. You are solely responsible for maintaining the confidentiality of your credentials and for all activity that occurs under your account. You agree to notify Sojori immediately of any unauthorised use."
+        },
+        {
+          "title": "3. Subscription, Fees & Payment",
+          "content": "Subscription fees are billed monthly or annually according to the plan selected. All prices are listed exclusive of applicable taxes unless stated otherwise. Payments are due in advance. In the event of non-payment, Sojori reserves the right to suspend or terminate access to the platform after reasonable notice. Refunds are not provided except as required by applicable law or as specified in your plan's trial terms."
+        },
+        {
+          "title": "4. Free Trial",
+          "content": "New accounts may benefit from a free trial period of one (1) month. During the trial no payment information is required. At the end of the trial the account will be suspended unless a paid plan is activated. No data is deleted during suspension; you may reactivate at any time."
+        },
+        {
+          "title": "5. User Responsibilities",
+          "content": "Users must use the platform in compliance with all applicable laws, including local hospitality regulations. Users are responsible for the accuracy of property listings, descriptions, pricing and availability. Sojori is not responsible for double bookings, pricing errors, regulatory fines, or disputes arising from inaccurate user-provided data."
+        },
+        {
+          "title": "6. Data Protection & Privacy",
+          "content": "Sojori collects and processes personal data solely for the purpose of providing, improving and securing the service. We do not sell personal data to third parties. Guest data processed through the platform (passport scans, contact details) is handled in accordance with GDPR and Moroccan data-protection law (Loi 09-08). Full details are provided in our Privacy Policy."
+        },
+        {
+          "title": "7. Integrations & Third-Party Services",
+          "content": "The platform integrates with third-party services including but not limited to WhatsApp Business API, Channex, Rentals United and payment gateways. Sojori is not responsible for the availability, accuracy or policies of these third-party services. Your use of integrated services is subject to their own terms."
+        },
+        {
+          "title": "8. Service Availability",
+          "content": "Sojori aims to maintain high availability but does not guarantee uninterrupted access. Planned maintenance windows will be communicated in advance when possible. Sojori shall not be liable for outages caused by circumstances beyond its reasonable control, including internet disruptions, third-party API failures, or force majeure events."
+        },
+        {
+          "title": "9. Limitation of Liability",
+          "content": "The platform is provided \"as is\" and \"as available\". To the fullest extent permitted by law, Sojori's total liability for any claim arising from or related to the service shall not exceed the fees paid by the user in the twelve (12) months preceding the claim. Sojori shall not be liable for indirect, incidental, consequential or punitive damages."
+        },
+        {
+          "title": "10. Intellectual Property",
+          "content": "All software, content, trademarks, logos and documentation remain the exclusive property of Sojori SAS. Users may not copy, decompile, reverse-engineer, modify, redistribute or create derivative works from any part of the platform without prior written consent."
+        },
+        {
+          "title": "11. Termination",
+          "content": "Users may cancel their subscription at any time from the dashboard or by contacting support. Cancellation takes effect at the end of the current billing period. Sojori may terminate or suspend accounts for material breach of these Terms, non-payment, or illegal activity, with or without prior notice depending on severity."
+        },
+        {
+          "title": "12. Governing Law & Disputes",
+          "content": "These Terms are governed by the laws of the Kingdom of Morocco. Any dispute shall first be submitted to good-faith mediation. If mediation fails, the competent courts of Casablanca shall have exclusive jurisdiction."
+        },
+        {
+          "title": "13. Changes to These Terms",
+          "content": "Sojori may update these Terms from time to time. Material changes will be notified via email or in-app notification at least thirty (30) days before they take effect. Continued use of the platform after the effective date constitutes acceptance of the updated Terms."
+        }
+      ],
+      "contact": "For any enquiries: support@sojori.com"
+    },
+    "privacy": {
+      "pageTitle": "Privacy Policy",
+      "effectiveDate": "Effective date: March 1, 2025",
+      "intro": "At Sojori, your privacy is our priority. This policy explains what personal data we collect, why we collect it, how we use it and the rights you have over it.",
+      "sections": [
+        {
+          "title": "1. Data We Collect",
+          "content": "We collect the minimum data necessary to provide and improve the service:\n\n• Contact details (name, email, phone) provided during sign-up or demo requests.\n• Business information (company name, number of properties, role) shared when engaging with our services.\n• Guest data (names, passport scans, contact details) processed on behalf of our users for check-in and identity verification.\n• Technical data (IP address, browser type, device, access logs) collected automatically for security and performance."
+        },
+        {
+          "title": "2. How We Use Your Data",
+          "content": "Your data is used to:\n\n• Provide and operate the Sojori platform.\n• Process demo requests and appointment scheduling.\n• Send transactional notifications (booking confirmations, task alerts).\n• Improve service quality, fix bugs and develop new features.\n• Ensure platform security and prevent fraud.\n• Comply with legal and regulatory requirements.\n\nWe do not sell or rent your personal data to third parties for marketing purposes."
+        },
+        {
+          "title": "3. Data Sharing",
+          "content": "We share data only when necessary:\n\n• With infrastructure providers (Google Cloud, MongoDB Atlas, AWS) that process data on our behalf under strict contractual safeguards.\n• With integrated services (WhatsApp Business API, Channex, Rentals United) to the extent required for their operation.\n• With legal authorities when required by law or court order.\n\nAll sub-processors are bound by data-processing agreements compliant with GDPR and Moroccan data-protection law."
+        },
+        {
+          "title": "4. Data Hosting & Security",
+          "content": "Your data is hosted in France (Google Cloud europe-west9, Paris) and encrypted both in transit (TLS 1.2+) and at rest. We implement access controls, audit logging and regular security reviews to protect against unauthorised access, alteration or destruction."
+        },
+        {
+          "title": "5. Cookies",
+          "content": "Our website uses:\n\n• Strictly necessary cookies to enable core functionality.\n• Performance cookies to analyse website usage (anonymised).\n• Optional cookies for personalisation.\n\nYou can manage cookie preferences through your browser settings at any time."
+        },
+        {
+          "title": "6. Data Retention",
+          "content": "We retain personal data only as long as necessary for the purposes described in this policy or as required by law. Account data is retained for the duration of the subscription plus six (6) months. Guest data processed on behalf of users is retained according to the user's settings and applicable local regulations."
+        },
+        {
+          "title": "7. Your Rights",
+          "content": "Under GDPR and Moroccan law (Loi 09-08), you have the right to:\n\n• Access the personal data we hold about you.\n• Rectify inaccurate or incomplete data.\n• Request deletion of your data (right to be forgotten).\n• Restrict or object to certain processing.\n• Data portability — receive your data in a structured, machine-readable format.\n• Withdraw consent for optional processing at any time.\n\nTo exercise these rights, contact us at support@sojori.com. We will respond within thirty (30) days."
+        },
+        {
+          "title": "8. Changes to This Policy",
+          "content": "We may update this policy to reflect regulatory changes or service improvements. Material changes will be communicated via email or on our website at least thirty (30) days in advance."
+        }
+      ],
+      "contact": "For any data-related enquiries: support@sojori.com",
+      "dpo": "Data Protection Officer: privacy@sojori.com"
+    },
+    "footer": {
+      "terms": "Terms of Service",
+      "privacy": "Privacy Policy",
+      "status": "Status"
+    }
+  }
+}

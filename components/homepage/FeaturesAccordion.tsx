@@ -1,62 +1,96 @@
 "use client";
 
 import { useState } from 'react';
+import { useTranslations } from 'next-intl';
+import { Link } from '@/i18n/routing';
 import { Check, SectionHead } from '../SharedComponents';
 
 export function FeaturesAccordion() {
+  const t = useTranslations('home.featuresAccordion');
   const [open, setOpen] = useState(2);
+
   const features = [
     {
-      icon: '🖥️',
-      title: 'Dashboard App',
-      items: ['Sidebar navigation unifiée', 'KPI cards temps réel', 'Activity feed live', 'Arrivées du jour', 'Dark + light mode'],
-      link: '/dashboard-app',
-    },
-    {
-      icon: '📡',
-      title: 'Channel Manager',
-      items: ['18 OTAs sync en temps réel', 'iCal 2-way sync', 'Anti-overbooking garanti', 'Reporting unifié', '99.97% uptime API'],
-      link: '/channel-manager',
-    },
-    {
-      icon: '💬',
-      title: 'WhatsApp Bot AI',
-      items: ['IA disponible 24/7 sur WhatsApp', '12 langues natives', 'Check-in autonome (QR + GPS)', 'Upsell intelligent contextuel', '87% résolu sans humain'],
-      link: '/whatsapp',
-    },
-    {
-      icon: '📈',
-      title: 'Dynamic Pricing',
-      items: ['47 signaux analysés par jour', 'Sync 18 OTAs simultanée', '+32% revenu net moyen', 'Calendar pricing temps réel', 'Audit pricing gratuit'],
-      link: '/dynamic-pricing',
-    },
-    {
-      icon: '👤',
-      title: 'Owner Portal',
-      items: ['App mobile native iOS/Android', 'Dashboard revenus temps réel', 'Statements PDF automatiques', 'Virements sous 48h', '12 langues traduites'],
-      link: '/owner-portal',
-    },
-    {
-      icon: '👥',
-      title: 'TeamFlow (Staff Management)',
+      icon: t('features.0.icon'),
+      title: t('features.0.title'),
       items: [
-        'Assignation auto selon disponibilité',
-        'Notifications in-app + WhatsApp',
-        'Photos check pré/post ménage',
-        'Tracking temps réel',
-        "KPIs par membre d'équipe",
+        t('features.0.items.0'),
+        t('features.0.items.1'),
+        t('features.0.items.2'),
+        t('features.0.items.3'),
+        t('features.0.items.4')
+      ],
+      link: '/dashboard-app' as const,
+    },
+    {
+      icon: t('features.1.icon'),
+      title: t('features.1.title'),
+      items: [
+        t('features.1.items.0'),
+        t('features.1.items.1'),
+        t('features.1.items.2'),
+        t('features.1.items.3'),
+        t('features.1.items.4')
+      ],
+      link: '/channel-manager' as const,
+    },
+    {
+      icon: t('features.2.icon'),
+      title: t('features.2.title'),
+      items: [
+        t('features.2.items.0'),
+        t('features.2.items.1'),
+        t('features.2.items.2'),
+        t('features.2.items.3'),
+        t('features.2.items.4')
+      ],
+      link: '/whatsapp' as const,
+    },
+    {
+      icon: t('features.3.icon'),
+      title: t('features.3.title'),
+      items: [
+        t('features.3.items.0'),
+        t('features.3.items.1'),
+        t('features.3.items.2'),
+        t('features.3.items.3'),
+        t('features.3.items.4')
+      ],
+      link: '/dynamic-pricing' as const,
+    },
+    {
+      icon: t('features.4.icon'),
+      title: t('features.4.title'),
+      items: [
+        t('features.4.items.0'),
+        t('features.4.items.1'),
+        t('features.4.items.2'),
+        t('features.4.items.3'),
+        t('features.4.items.4')
+      ],
+      link: '/owner-portal' as const,
+    },
+    {
+      icon: t('features.5.icon'),
+      title: t('features.5.title'),
+      items: [
+        t('features.5.items.0'),
+        t('features.5.items.1'),
+        t('features.5.items.2'),
+        t('features.5.items.3'),
+        t('features.5.items.4')
       ],
       link: undefined,
     },
   ];
 
   return (
-    <section style={{ padding: '110px 32px' }}>
+    <section style={{ padding: '80px 32px' }} className="features-accordion-section">
       <div style={{ maxWidth: 920, margin: '0 auto' }}>
         <SectionHead
-          badge="Fonctionnalités"
-          title="Tout ce que vous attendez. Et tout ce que les autres n'ont pas."
-          subtitle="Six modules natifs. Pensés pour fonctionner ensemble, jamais l'un sans l'autre."
+          badge={t('badge')}
+          title={t('title')}
+          subtitle={t('subtitle')}
         />
         <div style={{ marginTop: 48, display: 'flex', flexDirection: 'column', gap: 12 }}>
           {features.map((f, i) => {
@@ -74,6 +108,7 @@ export function FeaturesAccordion() {
               >
                 <button
                   onClick={() => setOpen(isOpen ? -1 : i)}
+                  className="accordion-button"
                   style={{
                     width: '100%',
                     textAlign: 'left',
@@ -86,10 +121,11 @@ export function FeaturesAccordion() {
                     cursor: 'pointer',
                     color: '#fff',
                     fontFamily: 'inherit',
+                    minHeight: 44,
                   }}
                 >
-                  <span style={{ fontSize: 22 }}>{f.icon}</span>
-                  <span style={{ flex: 1, fontSize: 16, fontWeight: 600 }}>{f.title}</span>
+                  <span style={{ fontSize: 22 }} className="accordion-icon">{f.icon}</span>
+                  <span style={{ flex: 1, fontSize: 16, fontWeight: 600 }} className="accordion-title">{f.title}</span>
                   <span
                     style={{
                       width: 28,
@@ -110,8 +146,8 @@ export function FeaturesAccordion() {
                   </span>
                 </button>
                 {isOpen && (
-                  <div style={{ padding: '0 28px 24px 68px', animation: 'fade-up 0.4s ease' }}>
-                    <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8px 24px' }}>
+                  <div style={{ padding: '0 28px 24px 68px', animation: 'fade-up 0.4s ease' }} className="accordion-content">
+                    <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8px 24px' }} className="accordion-items sj-mobile-hscroll">
                       {f.items.map((it) => (
                         <li key={it} style={{ display: 'flex', alignItems: 'flex-start', gap: 8, fontSize: 14, color: 'var(--text-2)' }}>
                           <Check />
@@ -120,8 +156,8 @@ export function FeaturesAccordion() {
                       ))}
                     </ul>
                     {f.link ? (
-                      <a
-                        href={f.link}
+                      <Link
+                        href={{ pathname: f.link, query: { source: 'homepage-features-accordion' } }}
                         style={{
                           color: 'var(--primary)',
                           textDecoration: 'none',
@@ -137,11 +173,11 @@ export function FeaturesAccordion() {
                           border: '1px solid rgba(244,207,94,0.3)',
                         }}
                       >
-                        Découvrir cette page →
-                      </a>
+                        {t('features.0.cta')}
+                      </Link>
                     ) : (
                       <span style={{ color: 'var(--text-3)', fontSize: 13, fontWeight: 500, marginTop: 16, display: 'inline-block', fontStyle: 'italic' }}>
-                        Page dédiée à venir
+                        {t('features.0.comingSoon')}
                       </span>
                     )}
                   </div>
@@ -151,6 +187,31 @@ export function FeaturesAccordion() {
           })}
         </div>
       </div>
+      <style jsx>{`
+        @media (max-width: 900px) {
+          .accordion-items {
+            display: flex !important;
+            overflow-x: auto !important;
+            scroll-snap-type: x mandatory !important;
+            -webkit-overflow-scrolling: touch !important;
+            gap: 16px !important;
+            padding-bottom: 20px !important;
+          }
+          .accordion-items > * {
+            min-width: min(280px, 85vw) !important;
+            max-width: min(300px, 90vw) !important;
+            flex-shrink: 0 !important;
+            scroll-snap-align: center !important;
+          }
+        }
+        @media (max-width: 768px) {
+          .features-accordion-section { padding: 56px 20px !important; }
+          .accordion-button { padding: 16px 20px !important; gap: 12px !important; }
+          .accordion-icon { font-size: 20px !important; }
+          .accordion-title { font-size: 15px !important; }
+          .accordion-content { padding: 0 20px 20px 20px !important; }
+        }
+      `}</style>
     </section>
   );
 }

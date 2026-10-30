@@ -1,0 +1,195 @@
+/** Homepage hero animation — UI strings (acts 1–2 + core strip), all routing locales. */
+export type HeroAnimUi = {
+  headerIncoming: string;
+  headerIngest: string;
+  webhookOk: string;
+  webhookIdle: string;
+  ingestCaption: string;
+  sojoriCoreActiveWord: string;
+  badgeNewBooking: string;
+  timeAgo: string;
+  nightsLabel: string;
+  footerDate: string;
+  footerGuests: string;
+  footerConfirmed: string;
+  handoff: string;
+  stageIncoming: string;
+  stageIngest: string;
+  stageTimeline: string;
+  channelsLive: string;
+  /** Entre canaux et carte, uniquement utile en layout mobile empilé. */
+  incomingMobileBridge: string;
+  demoPropertyName: string;
+  demoPropertyTagline: string;
+  channelDirect: string;
+  /** Guest line when locale ≠ fr (no superscript). */
+  guestMetaPlain: string;
+  coreTitle: string;
+  /** Demo guest full name (Latin). */
+  demoGuestName: string;
+  /** After name, e.g. "· 🇺🇸 New York". */
+  demoGuestOrigin: string;
+  /** Price on booking card (mono). */
+  demoTotalPrice: string;
+  /** Small line under name in ingest act (route + price). */
+  demoIngestSummary: string;
+  /** Acte 3 : sous-titre tant que seule la carte « Réservation Airbnb » est mise en avant au lancement du graphe. */
+  timelineKickoffLine: string;
+};
+
+const heroAnimByLocale: Record<string, HeroAnimUi> = {
+  fr: {
+    headerIncoming: 'Réservation entrante',
+    headerIngest: 'Ingestion en cours',
+    webhookOk: '✓ webhook reçu',
+    webhookIdle: 'en veille · synchro',
+    ingestCaption: 'Ingestion · génération des tâches orchestrées…',
+    sojoriCoreActiveWord: 'actives',
+    badgeNewBooking: 'Nouvelle résa · Booking',
+    timeAgo: 'il y a 2s',
+    nightsLabel: '3 nuits',
+    footerDate: '📅 15 → 18 juin',
+    footerGuests: '👥 2 adultes',
+    footerConfirmed: '✓ confirmée',
+    handoff: '↓ Sojori prend le relai',
+    stageIncoming: '🟡 RÉSERVATION ENTRANTE',
+    stageIngest: '⚡ INGESTION',
+    stageTimeline: '🟢 ORCHESTRATION',
+    channelsLive: '● CANAUX · EN DIRECT',
+    incomingMobileBridge: '→ Détail du séjour',
+    demoPropertyName: 'Riad Dar Zellige',
+    demoPropertyTagline: "MARRAKECH · MÉDINA · 12 chambres · riad",
+    channelDirect: 'Direct',
+    guestMetaPlain: '',
+    coreTitle: 'SOJORI · CORE',
+    demoGuestName: 'Sarah Johnson',
+    demoGuestOrigin: '· 🇫🇷 Paris',
+    demoTotalPrice: '4 200 MAD',
+    demoIngestSummary: 'Paris → Marrakech · 4 200 MAD',
+    timelineKickoffLine: 'Le graphe démarre sur cette réservation Booking — quelques secondes avant la suite du parcours.',
+  },
+  en: {
+    headerIncoming: 'Incoming booking',
+    headerIngest: 'Ingesting…',
+    webhookOk: '✓ Webhook received',
+    webhookIdle: 'standby · synced',
+    ingestCaption: 'Ingesting · generating 20+ orchestrated tasks…',
+    sojoriCoreActiveWord: 'active',
+    badgeNewBooking: 'New booking · Airbnb',
+    timeAgo: '2s ago',
+    nightsLabel: '7 nights',
+    footerDate: '📅 Jun 15–22',
+    footerGuests: '👥 2 guests',
+    footerConfirmed: '✓ confirmed',
+    handoff: '↓ Sojori takes over',
+    stageIncoming: '🟡 INCOMING BOOKING',
+    stageIngest: '⚡ INGESTING',
+    stageTimeline: '🟢 ORCHESTRATING',
+    channelsLive: '● CHANNELS · LIVE',
+    incomingMobileBridge: '→ Stay details',
+    demoPropertyName: 'Villa Belvédère',
+    demoPropertyTagline: 'NICE · FRENCH RIVIERA · 4 bd · pool',
+    channelDirect: 'Direct',
+    guestMetaPlain: 'EN · 1st stay · verified',
+    coreTitle: 'SOJORI · CORE',
+    demoGuestName: 'Sarah Johnson',
+    demoGuestOrigin: '· 🇺🇸 New York',
+    demoTotalPrice: '€1,840',
+    demoIngestSummary: 'NYC → Nice · €1,840',
+    timelineKickoffLine: 'The timeline starts from this Airbnb booking — a few seconds before the rest unfolds.',
+  },
+  es: {
+    headerIncoming: 'Reserva entrante',
+    headerIngest: 'Ingesta en curso',
+    webhookOk: '✓ Webhook recibido',
+    webhookIdle: 'en espera · sinc.',
+    ingestCaption: 'Ingesta · generación de +20 tareas orquestadas…',
+    sojoriCoreActiveWord: 'activas',
+    badgeNewBooking: 'Nueva reserva · Airbnb',
+    timeAgo: 'hace 2s',
+    nightsLabel: '7 noches',
+    footerDate: '📅 15–22 jun',
+    footerGuests: '👥 2 huéspedes',
+    footerConfirmed: '✓ confirmada',
+    handoff: '↓ Sojori toma el relevo',
+    stageIncoming: '🟡 RESERVA ENTRANTE',
+    stageIngest: '⚡ INGESTA',
+    stageTimeline: '🟢 ORQUESTACIÓN',
+    channelsLive: '● CANALES · EN DIRECTO',
+    incomingMobileBridge: '→ Detalle de la estancia',
+    demoPropertyName: 'Villa Belvédère',
+    demoPropertyTagline: 'NIZA · COSTA AZUL · 4 hab · piscina',
+    channelDirect: 'Directo',
+    guestMetaPlain: 'EN · 1.ª estancia · verificada',
+    coreTitle: 'SOJORI · CORE',
+    demoGuestName: 'Sarah Johnson',
+    demoGuestOrigin: '· 🇺🇸 Nueva York',
+    demoTotalPrice: '1.840 €',
+    demoIngestSummary: 'Nueva York → Niza · 1.840 €',
+    timelineKickoffLine: 'La línea de tiempo arranca con esta reserva de Airbnb — unos segundos antes del resto.',
+  },
+  pt: {
+    headerIncoming: 'Reserva recebida',
+    headerIngest: 'Ingestão em curso',
+    webhookOk: '✓ Webhook recebido',
+    webhookIdle: 'em espera · sinc.',
+    ingestCaption: 'Ingestão · geração de +20 tarefas orquestradas…',
+    sojoriCoreActiveWord: 'ativas',
+    badgeNewBooking: 'Nova reserva · Airbnb',
+    timeAgo: 'há 2s',
+    nightsLabel: '7 noites',
+    footerDate: '📅 15–22 jun',
+    footerGuests: '👥 2 hóspedes',
+    footerConfirmed: '✓ confirmada',
+    handoff: '↓ Sojori assume a gestão',
+    stageIncoming: '🟡 NOVA RESERVA',
+    stageIngest: '⚡ INGESTÃO',
+    stageTimeline: '🟢 ORQUESTRAÇÃO',
+    channelsLive: '● CANAIS · AO VIVO',
+    incomingMobileBridge: '→ Detalhes da estadia',
+    demoPropertyName: 'Villa Belvédère',
+    demoPropertyTagline: 'NICE · COSTA AZUL · 4 qts · piscina',
+    channelDirect: 'Direto',
+    guestMetaPlain: 'EN · 1.ª estadia · verificada',
+    coreTitle: 'SOJORI · CORE',
+    demoGuestName: 'Sarah Johnson',
+    demoGuestOrigin: '· 🇺🇸 Nova Iorque',
+    demoTotalPrice: '1 840 €',
+    demoIngestSummary: 'Nova Iorque → Nice · 1 840 €',
+    timelineKickoffLine: 'A linha do tempo começa com esta reserva Airbnb — alguns segundos antes do restante.',
+  },
+  ar: {
+    headerIncoming: 'حجز وارد',
+    headerIngest: 'جاري الاستيعاب…',
+    webhookOk: '✓ تم استلام الـ webhook',
+    webhookIdle: 'خامل · متزامن',
+    ingestCaption: 'استيعاب · توليد أكثر من 20 مهمة منسّقة…',
+    sojoriCoreActiveWord: 'نشطة',
+    badgeNewBooking: 'حجز جديد · Airbnb',
+    timeAgo: 'منذ ثانيتين',
+    nightsLabel: '7 ليالٍ',
+    footerDate: '📅 15–22 يونيو',
+    footerGuests: '👥 ضيفان',
+    footerConfirmed: '✓ مؤكد',
+    handoff: '↓ يتولّى Sojori المتابعة',
+    stageIncoming: '🟡 حجز وارد',
+    stageIngest: '⚡ استيعاب',
+    stageTimeline: '🟢 تنسيق العمليات',
+    channelsLive: '● القنوات · مباشر',
+    incomingMobileBridge: '→ تفاصيل الإقامة',
+    demoPropertyName: 'Villa Belvédère',
+    demoPropertyTagline: 'نيس · الريفييرا · ٤ غرف · مسبح',
+    channelDirect: 'مباشر',
+    guestMetaPlain: 'الإنجليزية · إقامة أولى · تم التحقق',
+    coreTitle: 'SOJORI · CORE',
+    demoGuestName: 'Sarah Johnson',
+    demoGuestOrigin: '· 🇺🇸 نيويورك',
+    demoTotalPrice: '1840 €',
+    demoIngestSummary: 'نيويورك → نيس · 1840 €',
+    timelineKickoffLine: 'يبدأ المخطط من حجز Airbnb هذا — بضع ثوانٍ قبل بقية المسار.',
+  },
+};
+
+export function getHeroAnimUi(locale: string): HeroAnimUi {
+  return heroAnimByLocale[locale] ?? heroAnimByLocale.en;
+}
