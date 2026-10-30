@@ -7,12 +7,13 @@ import { PageHeader, PageFooter } from '@/components/SharedComponents';
 import { normalizeDemoBackendResponse, demoResponseErrorMessage } from '@/lib/demoApiResponse';
 
 /**
- * La page de rendez-vous du lien envoyé au prospect (Tawfiq, 28/10/2026) : le planning du commercial
- * SANS son nom, des créneaux de 30 minutes affichés dans le fuseau du visiteur. Calendrier d'abord,
- * puis les heures du jour choisi (parcours type Calendly). Le jeton signé (`?t=`) est la seule clé.
+ * Page de rendez-vous du lien prospect (Tawfiq, 30/10/2026) : les 15 prochains jours
+ * À PARTIR DE DEMAIN en haut (pas de calendrier mois, pas aujourd’hui), puis les heures
+ * du jour choisi. Planning du commercial SANS son nom. Jeton `?t=` seul.
  */
 
 const DEMO_API = '/api/v1/demo/rdv';
+const JOURS_FENETRE = 15;
 
 type Creneau = { debut: string; fin: string };
 type Semaine = {
@@ -38,17 +39,16 @@ type Textes = {
   deja: string;
   pris: string;
   reseau: string;
-  moisPrecedent: string;
-  moisSuivant: string;
   choisirJour: string;
   heuresDuJour: string;
   aucunCeJour: string;
+  fenetre: string;
 };
 
 const TEXTES: Record<string, Textes> = {
   fr: {
     titre: 'Choisissez votre créneau',
-    intro: 'Une démonstration de Sojori en visio, 30 minutes. Choisissez le moment qui vous convient.',
+    intro: 'Une démonstration de Sojori en visio, 30 minutes. Dès demain — pas aujourd’hui.',
     chargement: 'Chargement du planning…',
     indisponible:
       'Ce lien n’est plus valide. Répondez à l’e-mail que vous avez reçu et nous vous en enverrons un nouveau.',
@@ -66,15 +66,14 @@ const TEXTES: Record<string, Textes> = {
     deja: 'Vous avez déjà un rendez-vous :',
     pris: 'Ce créneau vient d’être pris. Choisissez-en un autre.',
     reseau: 'Erreur réseau. Rechargez la page.',
-    moisPrecedent: 'Mois précédent',
-    moisSuivant: 'Mois suivant',
     choisirJour: 'Choisissez un jour',
     heuresDuJour: 'Horaires disponibles',
     aucunCeJour: 'Aucun créneau ce jour-là.',
+    fenetre: 'Les 15 prochains jours (dès demain)',
   },
   en: {
     titre: 'Pick your time',
-    intro: 'A 30-minute Sojori demo by video. Choose the time that suits you.',
+    intro: 'A 30-minute Sojori demo by video. From tomorrow — not today.',
     chargement: 'Loading the schedule…',
     indisponible: 'This link is no longer valid. Reply to the email you received and we will send you a new one.',
     aucunCreneau: 'No time slot is free right now. Reply to the email you received and we will find a time together.',
@@ -90,15 +89,14 @@ const TEXTES: Record<string, Textes> = {
     deja: 'You already have an appointment:',
     pris: 'This slot was just taken. Please choose another.',
     reseau: 'Network error. Please reload the page.',
-    moisPrecedent: 'Previous month',
-    moisSuivant: 'Next month',
     choisirJour: 'Pick a day',
     heuresDuJour: 'Available times',
     aucunCeJour: 'No times available on this day.',
+    fenetre: 'Next 15 days (from tomorrow)',
   },
   es: {
     titre: 'Elija su hora',
-    intro: 'Una demostración de Sojori por videollamada, 30 minutos. Elija el momento que le convenga.',
+    intro: 'Una demostración de Sojori por videollamada, 30 minutos. Desde mañana — no hoy.',
     chargement: 'Cargando el calendario…',
     indisponible: 'Este enlace ya no es válido. Responda al correo que recibió y le enviaremos uno nuevo.',
     aucunCreneau: 'No hay ninguna hora libre por ahora. Responda al correo que recibió y buscaremos un momento juntos.',
@@ -114,15 +112,14 @@ const TEXTES: Record<string, Textes> = {
     deja: 'Ya tiene una cita:',
     pris: 'Esa hora acaba de ocuparse. Elija otra.',
     reseau: 'Error de red. Recargue la página.',
-    moisPrecedent: 'Mes anterior',
-    moisSuivant: 'Mes siguiente',
     choisirJour: 'Elija un día',
     heuresDuJour: 'Horarios disponibles',
     aucunCeJour: 'No hay horas disponibles ese día.',
+    fenetre: 'Los 15 próximos días (desde mañana)',
   },
   pt: {
     titre: 'Escolha a sua hora',
-    intro: 'Uma demonstração da Sojori por vídeo, 30 minutos. Escolha o momento que lhe convém.',
+    intro: 'Uma demonstração da Sojori por vídeo, 30 minutos. A partir de amanhã — não hoje.',
     chargement: 'A carregar o calendário…',
     indisponible: 'Esta ligação já não é válida. Responda ao e-mail que recebeu e enviaremos uma nova.',
     aucunCreneau: 'Não há nenhuma hora livre de momento. Responda ao e-mail que recebeu e encontraremos um momento juntos.',
@@ -138,15 +135,14 @@ const TEXTES: Record<string, Textes> = {
     deja: 'Já tem uma marcação:',
     pris: 'Essa hora acabou de ser ocupada. Escolha outra.',
     reseau: 'Erro de rede. Recarregue a página.',
-    moisPrecedent: 'Mês anterior',
-    moisSuivant: 'Mês seguinte',
     choisirJour: 'Escolha um dia',
     heuresDuJour: 'Horários disponíveis',
     aucunCeJour: 'Sem horários neste dia.',
+    fenetre: 'Os 15 próximos dias (a partir de amanhã)',
   },
   ar: {
     titre: 'اختر موعدك',
-    intro: 'عرض توضيحي لـ Sojori عبر الفيديو، 30 دقيقة. اختر الوقت المناسب لك.',
+    intro: 'عرض توضيحي لـ Sojori عبر الفيديو، 30 دقيقة. من الغد — وليس اليوم.',
     chargement: 'جارٍ تحميل المواعيد…',
     indisponible: 'هذا الرابط لم يعد صالحاً. ردّ على البريد الذي وصلك وسنرسل لك رابطاً جديداً.',
     aucunCreneau: 'لا يوجد موعد متاح حالياً. ردّ على البريد الذي وصلك وسنجد وقتاً مناسباً معاً.',
@@ -162,11 +158,10 @@ const TEXTES: Record<string, Textes> = {
     deja: 'لديك موعد بالفعل:',
     pris: 'تم حجز هذا الموعد للتو. اختر موعداً آخر.',
     reseau: 'خطأ في الشبكة. أعد تحميل الصفحة.',
-    moisPrecedent: 'الشهر السابق',
-    moisSuivant: 'الشهر التالي',
     choisirJour: 'اختر يوماً',
     heuresDuJour: 'الأوقات المتاحة',
     aucunCeJour: 'لا توجد أوقات في هذا اليوم.',
+    fenetre: 'الـ 15 يوماً القادمة (من الغد)',
   },
 };
 
@@ -175,14 +170,17 @@ function cleJour(iso: string, fuseau: string): string {
   return new Intl.DateTimeFormat('en-CA', { timeZone: fuseau }).format(new Date(iso));
 }
 
-/** Premier jour du mois affiché (AAAA-MM-01) et nombre de jours. */
-function infosMois(annee: number, mois: number): { premier: Date; jours: number; debutSemaine: number } {
-  const premier = new Date(Date.UTC(annee, mois, 1));
-  const jours = new Date(Date.UTC(annee, mois + 1, 0)).getUTCDate();
-  // Lundi = 0 … Dimanche = 6 (calendrier européen).
-  const js = premier.getUTCDay();
-  const debutSemaine = js === 0 ? 6 : js - 1;
-  return { premier, jours, debutSemaine };
+/** Aujourd’hui civil dans `fuseau`, puis demain + 14 (= 15 jours). */
+function clesDepuisDemain(fuseau: string, n = JOURS_FENETRE): string[] {
+  const aujourdhui = new Intl.DateTimeFormat('en-CA', { timeZone: fuseau }).format(new Date());
+  const out: string[] = [];
+  const d = new Date(`${aujourdhui}T12:00:00Z`);
+  for (let i = 1; i <= n; i++) {
+    const x = new Date(d);
+    x.setUTCDate(d.getUTCDate() + i);
+    out.push(x.toISOString().slice(0, 10));
+  }
+  return out;
 }
 
 function RdvContent() {
@@ -216,6 +214,13 @@ function RdvContent() {
       month: 'long',
       timeZone: fuseau,
     }).format(new Date(iso));
+  const jourCourt = (cle: string) =>
+    new Intl.DateTimeFormat(intlLocale, {
+      weekday: 'short',
+      day: 'numeric',
+      month: 'short',
+      timeZone: 'UTC',
+    }).format(new Date(`${cle}T12:00:00Z`));
   const heureLisible = (iso: string) =>
     new Intl.DateTimeFormat(intlLocale, {
       hour: '2-digit',
@@ -233,10 +238,6 @@ function RdvContent() {
       hour12: false,
       timeZone: fuseau,
     }).format(new Date(iso));
-  const titreMois = (annee: number, mois: number) =>
-    new Intl.DateTimeFormat(intlLocale, { month: 'long', year: 'numeric', timeZone: 'UTC' }).format(
-      new Date(Date.UTC(annee, mois, 1)),
-    );
 
   const [rechargement, setRechargement] = useState(0);
 
@@ -266,36 +267,38 @@ function RdvContent() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [jeton, rechargement]);
 
+  const fenetreCles = useMemo(() => clesDepuisDemain(fuseau), [fuseau]);
+
   const parJour = useMemo(() => {
+    const aujourdhui = new Intl.DateTimeFormat('en-CA', { timeZone: fuseau }).format(new Date());
     const groupes = new Map<string, Creneau[]>();
     for (const j of semaine?.jours ?? []) {
       for (const c of j.creneaux) {
         const cle = cleJour(c.debut, fuseau);
+        if (cle <= aujourdhui) continue;
+        if (!fenetreCles.includes(cle)) continue;
         groupes.set(cle, [...(groupes.get(cle) ?? []), c]);
       }
     }
-    return [...groupes.entries()].sort(([a], [b]) => a.localeCompare(b));
-  }, [semaine, fuseau]);
+    return groupes;
+  }, [semaine, fuseau, fenetreCles]);
 
-  const joursDispo = useMemo(() => new Set(parJour.map(([cle]) => cle)), [parJour]);
-
-  const premierDispo = parJour[0]?.[0] ?? null;
-  const ancre = premierDispo ? new Date(`${premierDispo}T12:00:00Z`) : new Date();
-  const [vueAnnee, setVueAnnee] = useState(ancre.getUTCFullYear());
-  const [vueMois, setVueMois] = useState(ancre.getUTCMonth());
+  const premierDispo = fenetreCles.find((cle) => (parJour.get(cle)?.length ?? 0) > 0) ?? null;
 
   useEffect(() => {
     if (!premierDispo) return;
-    const d = new Date(`${premierDispo}T12:00:00Z`);
-    setVueAnnee(d.getUTCFullYear());
-    setVueMois(d.getUTCMonth());
     setJourChoisi((prev) => prev ?? premierDispo);
   }, [premierDispo]);
 
-  const creneauxDuJour = useMemo(() => {
-    if (!jourChoisi) return [];
-    return parJour.find(([cle]) => cle === jourChoisi)?.[1] ?? [];
-  }, [parJour, jourChoisi]);
+  const creneauxDuJour = jourChoisi ? (parJour.get(jourChoisi) ?? []) : [];
+  const aDesCreneaux = fenetreCles.some((cle) => (parJour.get(cle)?.length ?? 0) > 0);
+
+  const choisirJour = (cle: string) => {
+    if (!(parJour.get(cle)?.length ?? 0)) return;
+    setJourChoisi(cle);
+    setChoisi(null);
+    setErreur('');
+  };
 
   const reserver = async () => {
     if (!choisi) return;
@@ -336,28 +339,6 @@ function RdvContent() {
     border: '1px solid var(--glass-border)',
     boxShadow: 'var(--shadow-card)',
   } as const;
-
-  const { jours: nbJours, debutSemaine } = infosMois(vueAnnee, vueMois);
-  const nomsJours = useMemo(() => {
-    const base = new Date(Date.UTC(2024, 0, 1)); // lundi
-    return Array.from({ length: 7 }, (_, i) => {
-      const d = new Date(base);
-      d.setUTCDate(1 + i);
-      return new Intl.DateTimeFormat(intlLocale, { weekday: 'short', timeZone: 'UTC' }).format(d);
-    });
-  }, [intlLocale]);
-
-  const allerMois = (delta: number) => {
-    const d = new Date(Date.UTC(vueAnnee, vueMois + delta, 1));
-    setVueAnnee(d.getUTCFullYear());
-    setVueMois(d.getUTCMonth());
-  };
-
-  const choisirJour = (cle: string) => {
-    setJourChoisi(cle);
-    setChoisi(null);
-    setErreur('');
-  };
 
   return (
     <>
@@ -420,33 +401,16 @@ function RdvContent() {
                 </div>
               )}
 
-              {parJour.length === 0 && <div style={boite}>{t.aucunCreneau}</div>}
+              {!aDesCreneaux && <div style={boite}>{t.aucunCreneau}</div>}
 
-              {parJour.length > 0 && (
+              {aDesCreneaux && (
                 <div className="rdv-layout">
-                  <div className="rdv-cal" style={boite}>
-                    <div className="rdv-cal-nav">
-                      <button type="button" className="rdv-cal-nav-btn" aria-label={t.moisPrecedent} onClick={() => allerMois(-1)}>
-                        ‹
-                      </button>
-                      <p className="rdv-cal-mois">{titreMois(vueAnnee, vueMois)}</p>
-                      <button type="button" className="rdv-cal-nav-btn" aria-label={t.moisSuivant} onClick={() => allerMois(1)}>
-                        ›
-                      </button>
-                    </div>
-                    <div className="rdv-cal-grille">
-                      {nomsJours.map((n) => (
-                        <div key={n} className="rdv-cal-dow">
-                          {n}
-                        </div>
-                      ))}
-                      {Array.from({ length: debutSemaine }, (_, i) => (
-                        <div key={`pad-${i}`} className="rdv-cal-jour rdv-cal-jour-vide" />
-                      ))}
-                      {Array.from({ length: nbJours }, (_, i) => {
-                        const jour = i + 1;
-                        const cle = `${vueAnnee}-${String(vueMois + 1).padStart(2, '0')}-${String(jour).padStart(2, '0')}`;
-                        const dispo = joursDispo.has(cle);
+                  <div className="rdv-jours" style={boite}>
+                    <p className="rdv-jours-titre">{t.fenetre}</p>
+                    <div className="rdv-jours-liste">
+                      {fenetreCles.map((cle) => {
+                        const n = parJour.get(cle)?.length ?? 0;
+                        const dispo = n > 0;
                         const actif = jourChoisi === cle;
                         return (
                           <button
@@ -454,15 +418,15 @@ function RdvContent() {
                             type="button"
                             disabled={!dispo}
                             className={[
-                              'rdv-cal-jour',
-                              dispo ? 'rdv-cal-jour-dispo' : '',
-                              actif ? 'rdv-cal-jour-on' : '',
+                              'rdv-jour',
+                              dispo ? 'rdv-jour-dispo' : '',
+                              actif ? 'rdv-jour-on' : '',
                             ]
                               .filter(Boolean)
                               .join(' ')}
-                            onClick={() => dispo && choisirJour(cle)}
+                            onClick={() => choisirJour(cle)}
                           >
-                            {jour}
+                            {jourCourt(cle)}
                           </button>
                         );
                       })}
