@@ -261,7 +261,7 @@ export function QualificationForm({
         id: 'segment',
         skip: Boolean(initialSegment || activiteInitiale),
         render: () => (
-          <Question title="Vous gérez quoi&nbsp;?">
+          <Question title="Vous gérez quoi\u00a0?">
             <Pills>
               {ACTIVITIES.map(item => (
                 <Pill
@@ -283,7 +283,7 @@ export function QualificationForm({
         id: 'pays',
         skip: Boolean(compact || initialCountry),
         render: () => (
-          <Question title="Dans quel pays&nbsp;?">
+          <Question title="Dans quel pays\u00a0?">
             <Pills>
               {PAYS.map(item => (
                 <Pill key={item.id} label={item.label} selected={pays === item.id} onClick={() => setPays(item.id)} />
@@ -307,7 +307,7 @@ export function QualificationForm({
         id: 'ville',
         skip: Boolean(compact),
         render: () => (
-          <Question title="Dans quelle ville&nbsp;?" hint="Marrakech, Casablanca, Paris… Vous pouvez passer.">
+          <Question title="Dans quelle ville\u00a0?" hint="Marrakech, Casablanca, Paris… Vous pouvez passer.">
             <input
               type="text"
               value={ville}
@@ -323,7 +323,7 @@ export function QualificationForm({
         id: 'phone',
         skip: (initialPhone ?? '').replace(/\D/g, '').length >= 8,
         render: () => (
-          <Question title="Votre téléphone&nbsp;?" hint="Pour vous joindre si besoin. Vous pouvez passer.">
+          <Question title="Votre téléphone\u00a0?" hint="Pour vous joindre si besoin. Vous pouvez passer.">
             <input
               type="tel"
               value={phone}
@@ -339,7 +339,7 @@ export function QualificationForm({
         id: 'identity',
         skip: Boolean(compact || initialFullName),
         render: () => (
-          <Question title="Comment vous appelez-vous&nbsp;?">
+          <Question title="Comment vous appelez-vous\u00a0?">
             <div className="qf-inputs">
               <input
                 type="text"
@@ -406,8 +406,8 @@ export function QualificationForm({
           <Question
             title={
               compact
-                ? 'Que voulez-vous faire avec Sojori&nbsp;?'
-                : 'Qu’attendez-vous de Sojori&nbsp;?'
+                ? 'Que voulez-vous faire avec Sojori\u00a0?'
+                : 'Qu’attendez-vous de Sojori\u00a0?'
             }
             hint="Plusieurs réponses possibles."
           >
@@ -430,10 +430,10 @@ export function QualificationForm({
           <Question
             title={
               segment === 'hotel'
-                ? 'Avez-vous déjà un PMS&nbsp;?'
-                : 'Avez-vous déjà un logiciel de gestion&nbsp;?'
+                ? 'Avez-vous déjà un PMS\u00a0?'
+                : 'Avez-vous déjà un logiciel de gestion\u00a0?'
             }
-            hint="Facultatif — Sojori s’y connecte, ou vous en fournit un."
+            hint="Facultatif. Sojori s’y connecte à votre outil, ou vous en fournit un."
           >
             <Pills>
               {HAS_PMS.map(c => (
@@ -459,7 +459,7 @@ export function QualificationForm({
         id: 'pms',
         skip: hasPms !== 'yes',
         render: () => (
-          <Question title="Lequel&nbsp;?">
+          <Question title="Lequel\u00a0?">
             <Pills>
               {cfg?.pms.map(c => (
                 <Pill
@@ -486,7 +486,7 @@ export function QualificationForm({
         id: 'channels',
         skip: Boolean(compact),
         render: () => (
-          <Question title="Et pour vos canaux de distribution&nbsp;?">
+          <Question title="Et pour vos canaux de distribution\u00a0?">
             <Pills>
               {cfg?.channelManager.map(c => (
                 <Pill
@@ -513,7 +513,7 @@ export function QualificationForm({
         id: 'pricing',
         skip: Boolean(compact),
         render: () => (
-          <Question title="Comment fixez-vous vos prix&nbsp;?">
+          <Question title="Comment fixez-vous vos prix\u00a0?">
             <Pills>
               {cfg?.pricing.map(c => (
                 <Pill
@@ -541,7 +541,7 @@ export function QualificationForm({
         skip: Boolean(compact),
         render: () => (
           <Question
-            title="Qu’est-ce qui vous prend le plus de temps&nbsp;?"
+            title="Qu’est-ce qui vous prend le plus de temps\u00a0?"
             hint="Plusieurs réponses possibles."
           >
             <Pills>
@@ -561,7 +561,7 @@ export function QualificationForm({
         id: 'growth',
         skip: Boolean(compact) || !cfg?.growth,
         render: () => (
-          <Question title="Combien de biens en plus dans les douze mois&nbsp;?">
+          <Question title="Combien de biens en plus dans les douze mois\u00a0?">
             <Pills>
               {cfg?.growth?.map(c => (
                 <Pill
@@ -579,7 +579,7 @@ export function QualificationForm({
         id: 'timeline',
         skip: Boolean(compact),
         render: () => (
-          <Question title="Quand souhaitez-vous démarrer&nbsp;?">
+          <Question title="Quand souhaitez-vous démarrer\u00a0?">
             <Pills>
               {COMMON_TIMELINE.map(c => (
                 <Pill
@@ -626,7 +626,7 @@ export function QualificationForm({
         id: 'message',
         render: () => (
           <Question
-            title="Un message pour Sojori&nbsp;?"
+            title="Un message pour Sojori\u00a0?"
             hint="Facultatif. Contexte, dates, questions — autant de détail que vous voulez."
           >
             <textarea
@@ -646,7 +646,7 @@ export function QualificationForm({
       id: 'source',
       skip: Boolean(compact),
       render: () => (
-        <Question title="Comment nous avez-vous connus&nbsp;?">
+        <Question title="Comment nous avez-vous connus\u00a0?">
           <Pills>
             {HEAR_ABOUT_US.map(c => (
               <Pill
