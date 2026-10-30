@@ -2039,12 +2039,12 @@
       },
       "propertiesPlaceholder": "Sélectionnez...",
       "propertiesOptions": {
-        "1": "1 chambre",
-        "2-5": "2-5 chambres",
-        "6-10": "6-10 chambres",
-        "11-20": "11-20 chambres",
-        "21-50": "21-50 chambres",
-        "51+": "51+ chambres"
+        "1-5": "1-5 biens",
+        "6-20": "6-20 biens",
+        "21-50": "21-50 biens",
+        "51-100": "51-100 biens",
+        "100-200": "100-200 biens",
+        "200+": "200+ biens"
       },
       "submitButton": "Continuer →",
       "submitButtonLoading": "Envoi en cours...",

@@ -18,8 +18,8 @@ const DEMO_API = '/api/v1/demo';
 /** Le calendrier staff est coupé : le mini-formulaire enchaîne sur le questionnaire. */
 const PRISE_DE_RENDEZ_VOUS = false;
 
-/** Taille du compte, en chambres ou en biens selon le type (Tawfiq, 28/10/2026). */
-const TRANCHES = ['1-5', '6-20', '21-50', '51+'];
+/** Taille du compte, en chambres ou en biens selon le type (Tawfiq, 30/10/2026). */
+const TRANCHES = ['1-5', '6-20', '21-50', '51-100', '100-200', '200+'];
 
 /** Les types du petit formulaire (Tawfiq, 29/10/2026) : conciergerie, hôtel, riad / maison d'hôtes, villa / appartement, autre. */
 const TYPES_FORMULAIRE = ['conciergerie', 'hotel', 'riad', 'villa', 'autre'];
