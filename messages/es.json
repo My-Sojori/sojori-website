@@ -1943,12 +1943,12 @@
       },
       "propertiesPlaceholder": "Selecciona...",
       "propertiesOptions": {
-        "1": "1 propiedad",
-        "2-5": "2-5 propiedades",
-        "6-10": "6-10 propiedades",
-        "11-20": "11-20 propiedades",
+        "1-5": "1-5 propiedades",
+        "6-20": "6-20 propiedades",
         "21-50": "21-50 propiedades",
-        "51+": "51+ propiedades"
+        "51-100": "51-100 propiedades",
+        "100-200": "100-200 propiedades",
+        "200+": "200+ propiedades"
       },
       "submitButton": "Continuar →",
       "submitButtonLoading": "Enviando...",
