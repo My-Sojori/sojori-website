@@ -8,8 +8,8 @@ import { normalizeDemoBackendResponse, demoResponseErrorMessage } from '@/lib/de
 
 /**
  * La page de rendez-vous du lien envoyé au prospect (Tawfiq, 28/10/2026) : le planning du commercial
- * SANS son nom, des créneaux de 30 minutes affichés dans le fuseau du visiteur. Le jeton signé du lien
- * (`?t=`) est la seule clé ; le serveur ne rend jamais le nom ni l'identifiant du commercial.
+ * SANS son nom, des créneaux de 30 minutes affichés dans le fuseau du visiteur. Calendrier d'abord,
+ * puis les heures du jour choisi (parcours type Calendly). Le jeton signé (`?t=`) est la seule clé.
  */
 
 const DEMO_API = '/api/v1/demo/rdv';
@@ -38,6 +38,11 @@ type Textes = {
   deja: string;
   pris: string;
   reseau: string;
+  moisPrecedent: string;
+  moisSuivant: string;
+  choisirJour: string;
+  heuresDuJour: string;
+  aucunCeJour: string;
 };
 
 const TEXTES: Record<string, Textes> = {
@@ -45,8 +50,10 @@ const TEXTES: Record<string, Textes> = {
     titre: 'Choisissez votre créneau',
     intro: 'Une démonstration de Sojori en visio, 30 minutes. Choisissez le moment qui vous convient.',
     chargement: 'Chargement du planning…',
-    indisponible: 'Ce lien n’est plus valide. Répondez à l’e-mail que vous avez reçu et nous vous en enverrons un nouveau.',
-    aucunCreneau: 'Aucun créneau n’est libre pour le moment. Répondez à l’e-mail que vous avez reçu : nous trouverons un moment ensemble.',
+    indisponible:
+      'Ce lien n’est plus valide. Répondez à l’e-mail que vous avez reçu et nous vous en enverrons un nouveau.',
+    aucunCreneau:
+      'Aucun créneau n’est libre pour le moment. Répondez à l’e-mail que vous avez reçu : nous trouverons un moment ensemble.',
     fuseau: 'Heures affichées dans votre fuseau :',
     choisir: 'Votre créneau',
     confirmer: 'Confirmer ce rendez-vous',
@@ -59,6 +66,11 @@ const TEXTES: Record<string, Textes> = {
     deja: 'Vous avez déjà un rendez-vous :',
     pris: 'Ce créneau vient d’être pris. Choisissez-en un autre.',
     reseau: 'Erreur réseau. Rechargez la page.',
+    moisPrecedent: 'Mois précédent',
+    moisSuivant: 'Mois suivant',
+    choisirJour: 'Choisissez un jour',
+    heuresDuJour: 'Horaires disponibles',
+    aucunCeJour: 'Aucun créneau ce jour-là.',
   },
   en: {
     titre: 'Pick your time',
@@ -78,6 +90,11 @@ const TEXTES: Record<string, Textes> = {
     deja: 'You already have an appointment:',
     pris: 'This slot was just taken. Please choose another.',
     reseau: 'Network error. Please reload the page.',
+    moisPrecedent: 'Previous month',
+    moisSuivant: 'Next month',
+    choisirJour: 'Pick a day',
+    heuresDuJour: 'Available times',
+    aucunCeJour: 'No times available on this day.',
   },
   es: {
     titre: 'Elija su hora',
@@ -97,6 +114,11 @@ const TEXTES: Record<string, Textes> = {
     deja: 'Ya tiene una cita:',
     pris: 'Esa hora acaba de ocuparse. Elija otra.',
     reseau: 'Error de red. Recargue la página.',
+    moisPrecedent: 'Mes anterior',
+    moisSuivant: 'Mes siguiente',
+    choisirJour: 'Elija un día',
+    heuresDuJour: 'Horarios disponibles',
+    aucunCeJour: 'No hay horas disponibles ese día.',
   },
   pt: {
     titre: 'Escolha a sua hora',
@@ -116,6 +138,11 @@ const TEXTES: Record<string, Textes> = {
     deja: 'Já tem uma marcação:',
     pris: 'Essa hora acabou de ser ocupada. Escolha outra.',
     reseau: 'Erro de rede. Recarregue a página.',
+    moisPrecedent: 'Mês anterior',
+    moisSuivant: 'Mês seguinte',
+    choisirJour: 'Escolha um dia',
+    heuresDuJour: 'Horários disponíveis',
+    aucunCeJour: 'Sem horários neste dia.',
   },
   ar: {
     titre: 'اختر موعدك',
@@ -135,8 +162,28 @@ const TEXTES: Record<string, Textes> = {
     deja: 'لديك موعد بالفعل:',
     pris: 'تم حجز هذا الموعد للتو. اختر موعداً آخر.',
     reseau: 'خطأ في الشبكة. أعد تحميل الصفحة.',
+    moisPrecedent: 'الشهر السابق',
+    moisSuivant: 'الشهر التالي',
+    choisirJour: 'اختر يوماً',
+    heuresDuJour: 'الأوقات المتاحة',
+    aucunCeJour: 'لا توجد أوقات في هذا اليوم.',
   },
 };
+
+/** « AAAA-MM-JJ » du jour civil dans `fuseau` pour un instant ISO. */
+function cleJour(iso: string, fuseau: string): string {
+  return new Intl.DateTimeFormat('en-CA', { timeZone: fuseau }).format(new Date(iso));
+}
+
+/** Premier jour du mois affiché (AAAA-MM-01) et nombre de jours. */
+function infosMois(annee: number, mois: number): { premier: Date; jours: number; debutSemaine: number } {
+  const premier = new Date(Date.UTC(annee, mois, 1));
+  const jours = new Date(Date.UTC(annee, mois + 1, 0)).getUTCDate();
+  // Lundi = 0 … Dimanche = 6 (calendrier européen).
+  const js = premier.getUTCDay();
+  const debutSemaine = js === 0 ? 6 : js - 1;
+  return { premier, jours, debutSemaine };
+}
 
 function RdvContent() {
   const searchParams = useSearchParams();
@@ -149,11 +196,11 @@ function RdvContent() {
   const [etat, setEtat] = useState<'chargement' | 'pret' | 'indisponible'>(jeton ? 'chargement' : 'indisponible');
   const [semaine, setSemaine] = useState<Semaine | null>(null);
   const [choisi, setChoisi] = useState<Creneau | null>(null);
+  const [jourChoisi, setJourChoisi] = useState<string | null>(null);
   const [envoi, setEnvoi] = useState(false);
   const [erreur, setErreur] = useState('');
   const [fait, setFait] = useState<{ debut: string; lienMeet: string | null } | null>(null);
 
-  // Le fuseau du visiteur : c'est dans CE fuseau que les heures s'affichent et que l'e-mail est écrit.
   const fuseau = useMemo(() => {
     try {
       return Intl.DateTimeFormat().resolvedOptions().timeZone || 'UTC';
@@ -163,17 +210,37 @@ function RdvContent() {
   }, []);
   const intlLocale = locale === 'ar' ? 'ar-MA-u-nu-latn' : locale;
   const jourLisible = (iso: string) =>
-    new Intl.DateTimeFormat(intlLocale, { weekday: 'long', day: 'numeric', month: 'long', timeZone: fuseau }).format(new Date(iso));
+    new Intl.DateTimeFormat(intlLocale, {
+      weekday: 'long',
+      day: 'numeric',
+      month: 'long',
+      timeZone: fuseau,
+    }).format(new Date(iso));
   const heureLisible = (iso: string) =>
-    new Intl.DateTimeFormat(intlLocale, { hour: '2-digit', minute: '2-digit', hour12: false, timeZone: fuseau }).format(new Date(iso));
+    new Intl.DateTimeFormat(intlLocale, {
+      hour: '2-digit',
+      minute: '2-digit',
+      hour12: false,
+      timeZone: fuseau,
+    }).format(new Date(iso));
   const complet = (iso: string) =>
-    new Intl.DateTimeFormat(intlLocale, { weekday: 'long', day: 'numeric', month: 'long', hour: '2-digit', minute: '2-digit', hour12: false, timeZone: fuseau }).format(new Date(iso));
+    new Intl.DateTimeFormat(intlLocale, {
+      weekday: 'long',
+      day: 'numeric',
+      month: 'long',
+      hour: '2-digit',
+      minute: '2-digit',
+      hour12: false,
+      timeZone: fuseau,
+    }).format(new Date(iso));
+  const titreMois = (annee: number, mois: number) =>
+    new Intl.DateTimeFormat(intlLocale, { month: 'long', year: 'numeric', timeZone: 'UTC' }).format(
+      new Date(Date.UTC(annee, mois, 1)),
+    );
 
-  // Un compteur relance le chargement (un créneau vient d'être pris : on relit le planning).
   const [rechargement, setRechargement] = useState(0);
 
   useEffect(() => {
-    // Sans jeton : l'état initial est déjà « indisponible », rien à charger.
     if (!jeton) return;
     let annule = false;
     fetch(`${DEMO_API}/semaine?t=${encodeURIComponent(jeton)}`, { cache: 'no-store' })
@@ -199,17 +266,36 @@ function RdvContent() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [jeton, rechargement]);
 
-  // Les créneaux regroupés par jour DU VISITEUR (un créneau du soir peut tomber le lendemain chez lui).
   const parJour = useMemo(() => {
     const groupes = new Map<string, Creneau[]>();
     for (const j of semaine?.jours ?? []) {
       for (const c of j.creneaux) {
-        const cle = new Intl.DateTimeFormat('en-CA', { timeZone: fuseau }).format(new Date(c.debut));
+        const cle = cleJour(c.debut, fuseau);
         groupes.set(cle, [...(groupes.get(cle) ?? []), c]);
       }
     }
     return [...groupes.entries()].sort(([a], [b]) => a.localeCompare(b));
   }, [semaine, fuseau]);
+
+  const joursDispo = useMemo(() => new Set(parJour.map(([cle]) => cle)), [parJour]);
+
+  const premierDispo = parJour[0]?.[0] ?? null;
+  const ancre = premierDispo ? new Date(`${premierDispo}T12:00:00Z`) : new Date();
+  const [vueAnnee, setVueAnnee] = useState(ancre.getUTCFullYear());
+  const [vueMois, setVueMois] = useState(ancre.getUTCMonth());
+
+  useEffect(() => {
+    if (!premierDispo) return;
+    const d = new Date(`${premierDispo}T12:00:00Z`);
+    setVueAnnee(d.getUTCFullYear());
+    setVueMois(d.getUTCMonth());
+    setJourChoisi((prev) => prev ?? premierDispo);
+  }, [premierDispo]);
+
+  const creneauxDuJour = useMemo(() => {
+    if (!jourChoisi) return [];
+    return parJour.find(([cle]) => cle === jourChoisi)?.[1] ?? [];
+  }, [parJour, jourChoisi]);
 
   const reserver = async () => {
     if (!choisi) return;
@@ -243,19 +329,45 @@ function RdvContent() {
     }
   };
 
-  const boite = { padding: 20, borderRadius: 12, background: 'var(--glass-strong)', border: '1px solid var(--glass-border)' } as const;
+  const boite = {
+    padding: 20,
+    borderRadius: 16,
+    background: 'var(--glass-strong)',
+    border: '1px solid var(--glass-border)',
+    boxShadow: 'var(--shadow-card)',
+  } as const;
+
+  const { jours: nbJours, debutSemaine } = infosMois(vueAnnee, vueMois);
+  const nomsJours = useMemo(() => {
+    const base = new Date(Date.UTC(2024, 0, 1)); // lundi
+    return Array.from({ length: 7 }, (_, i) => {
+      const d = new Date(base);
+      d.setUTCDate(1 + i);
+      return new Intl.DateTimeFormat(intlLocale, { weekday: 'short', timeZone: 'UTC' }).format(d);
+    });
+  }, [intlLocale]);
+
+  const allerMois = (delta: number) => {
+    const d = new Date(Date.UTC(vueAnnee, vueMois + delta, 1));
+    setVueAnnee(d.getUTCFullYear());
+    setVueMois(d.getUTCMonth());
+  };
+
+  const choisirJour = (cle: string) => {
+    setJourChoisi(cle);
+    setChoisi(null);
+    setErreur('');
+  };
 
   return (
     <>
       <BackgroundEffects />
       <div style={{ position: 'relative', zIndex: 1 }} dir={locale === 'ar' ? 'rtl' : 'ltr'}>
         <PageHeader pageTitle={t.titre} />
-        <section style={{ padding: '60px 24px 100px', minHeight: '70vh', maxWidth: 720, margin: '0 auto' }}>
+        <section style={{ padding: '48px 24px 100px', minHeight: '70vh', maxWidth: 880, margin: '0 auto' }}>
           {etat === 'chargement' && <p style={{ color: 'var(--text-2)' }}>{t.chargement}</p>}
 
-          {etat === 'indisponible' && (
-            <div style={{ ...boite, color: 'var(--text)' }}>{erreur || t.indisponible}</div>
-          )}
+          {etat === 'indisponible' && <div style={{ ...boite, color: 'var(--text)' }}>{erreur || t.indisponible}</div>}
 
           {etat === 'pret' && fait && (
             <div style={{ ...boite, textAlign: 'center' }}>
@@ -288,45 +400,115 @@ function RdvContent() {
 
           {etat === 'pret' && !fait && !semaine?.existant && (
             <>
-              <h1 style={{ fontSize: 32, marginBottom: 10 }}>{t.titre}</h1>
+              <h1 style={{ fontSize: 32, marginBottom: 10, letterSpacing: '-0.02em' }}>{t.titre}</h1>
               <p style={{ fontSize: 16, color: 'var(--text-2)', marginBottom: 6 }}>{t.intro}</p>
-              <p style={{ fontSize: 13, color: 'var(--text-3)', marginBottom: 24 }}>
+              <p style={{ fontSize: 13, color: 'var(--text-3)', marginBottom: 28 }}>
                 {t.fuseau} <strong>{fuseau}</strong>
               </p>
 
               {erreur && (
-                <div style={{ ...boite, marginBottom: 20, color: '#fecaca', border: '1px solid rgba(239,68,68,0.35)' }}>{erreur}</div>
+                <div
+                  style={{
+                    ...boite,
+                    marginBottom: 20,
+                    color: '#b91c1c',
+                    border: '1px solid rgba(239,68,68,0.35)',
+                    background: 'rgba(254,226,226,0.55)',
+                  }}
+                >
+                  {erreur}
+                </div>
               )}
 
               {parJour.length === 0 && <div style={boite}>{t.aucunCreneau}</div>}
 
-              {parJour.map(([cle, creneaux]) => (
-                <div key={cle} style={{ marginBottom: 22 }}>
-                  <h2 style={{ fontSize: 16, marginBottom: 10, textTransform: 'capitalize' }}>{jourLisible(creneaux[0].debut)}</h2>
-                  <div className="qf-pills">
-                    {creneaux.map((c) => (
-                      <button
-                        key={c.debut}
-                        type="button"
-                        className={choisi?.debut === c.debut ? 'qf-pill qf-pill-on' : 'qf-pill'}
-                        onClick={() => {
-                          setChoisi(c);
-                          setErreur('');
-                        }}
-                      >
-                        {heureLisible(c.debut)}
+              {parJour.length > 0 && (
+                <div className="rdv-layout">
+                  <div className="rdv-cal" style={boite}>
+                    <div className="rdv-cal-nav">
+                      <button type="button" className="rdv-cal-nav-btn" aria-label={t.moisPrecedent} onClick={() => allerMois(-1)}>
+                        ‹
                       </button>
-                    ))}
+                      <p className="rdv-cal-mois">{titreMois(vueAnnee, vueMois)}</p>
+                      <button type="button" className="rdv-cal-nav-btn" aria-label={t.moisSuivant} onClick={() => allerMois(1)}>
+                        ›
+                      </button>
+                    </div>
+                    <div className="rdv-cal-grille">
+                      {nomsJours.map((n) => (
+                        <div key={n} className="rdv-cal-dow">
+                          {n}
+                        </div>
+                      ))}
+                      {Array.from({ length: debutSemaine }, (_, i) => (
+                        <div key={`pad-${i}`} className="rdv-cal-jour rdv-cal-jour-vide" />
+                      ))}
+                      {Array.from({ length: nbJours }, (_, i) => {
+                        const jour = i + 1;
+                        const cle = `${vueAnnee}-${String(vueMois + 1).padStart(2, '0')}-${String(jour).padStart(2, '0')}`;
+                        const dispo = joursDispo.has(cle);
+                        const actif = jourChoisi === cle;
+                        return (
+                          <button
+                            key={cle}
+                            type="button"
+                            disabled={!dispo}
+                            className={[
+                              'rdv-cal-jour',
+                              dispo ? 'rdv-cal-jour-dispo' : '',
+                              actif ? 'rdv-cal-jour-on' : '',
+                            ]
+                              .filter(Boolean)
+                              .join(' ')}
+                            onClick={() => dispo && choisirJour(cle)}
+                          >
+                            {jour}
+                          </button>
+                        );
+                      })}
+                    </div>
+                  </div>
+
+                  <div className="rdv-slots" style={boite}>
+                    {!jourChoisi && <p style={{ color: 'var(--text-3)' }}>{t.choisirJour}</p>}
+                    {jourChoisi && (
+                      <>
+                        <h2 className="rdv-slots-titre">
+                          {t.heuresDuJour}
+                          <span>
+                            {creneauxDuJour[0] ? jourLisible(creneauxDuJour[0].debut) : jourChoisi}
+                          </span>
+                        </h2>
+                        {creneauxDuJour.length === 0 && (
+                          <p style={{ color: 'var(--text-3)', marginTop: 8 }}>{t.aucunCeJour}</p>
+                        )}
+                        <div className="rdv-slots-liste">
+                          {creneauxDuJour.map((c) => (
+                            <button
+                              key={c.debut}
+                              type="button"
+                              className={choisi?.debut === c.debut ? 'rdv-slot rdv-slot-on' : 'rdv-slot'}
+                              onClick={() => {
+                                setChoisi(c);
+                                setErreur('');
+                              }}
+                            >
+                              {heureLisible(c.debut)}
+                            </button>
+                          ))}
+                        </div>
+                      </>
+                    )}
                   </div>
                 </div>
-              ))}
+              )}
 
               {choisi && (
-                <div style={{ ...boite, marginTop: 8, position: 'sticky', bottom: 16 }}>
+                <div style={{ ...boite, marginTop: 20, position: 'sticky', bottom: 16 }}>
                   <p style={{ fontSize: 13, color: 'var(--text-3)', marginBottom: 4 }}>{t.choisir}</p>
                   <p style={{ fontSize: 18, fontWeight: 700, marginBottom: 14 }}>{complet(choisi.debut)}</p>
                   <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
-                    <button type="button" className="btn" onClick={() => setChoisi(null)} style={{ fontSize: 14 }}>
+                    <button type="button" className="btn btn-ghost" onClick={() => setChoisi(null)} style={{ fontSize: 14 }}>
                       {t.annuler}
                     </button>
                     <button

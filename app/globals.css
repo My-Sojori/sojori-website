@@ -2059,3 +2059,175 @@ html.sj-mobile-menu-scroll-lock {
 .demo-mini .qf-pill-on:hover {
   color: #6b4e08;
 }
+
+/* ── Page /rdv : calendrier puis créneaux (parcours type Calendly, design Sojori) ─ */
+
+.rdv-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+  gap: 18px;
+  align-items: start;
+}
+
+.rdv-cal-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.rdv-cal-mois {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  text-transform: capitalize;
+  color: var(--text);
+}
+
+.rdv-cal-nav-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  border: 1px solid var(--glass-border);
+  background: rgba(255, 255, 255, 0.65);
+  color: var(--text);
+  font-size: 22px;
+  line-height: 1;
+  cursor: pointer;
+  transition: border-color 0.15s ease, background 0.15s ease, transform 0.15s ease;
+}
+
+.rdv-cal-nav-btn:hover {
+  border-color: rgba(230, 176, 34, 0.55);
+  background: var(--tint-yellow);
+  transform: translateY(-1px);
+}
+
+.rdv-cal-grille {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 6px;
+}
+
+.rdv-cal-dow {
+  text-align: center;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-3);
+  padding: 4px 0 8px;
+  text-transform: capitalize;
+}
+
+.rdv-cal-jour {
+  aspect-ratio: 1;
+  min-height: 40px;
+  border-radius: 12px;
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--text-muted);
+  font-size: 14px;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: default;
+}
+
+.rdv-cal-jour-vide {
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.rdv-cal-jour-dispo {
+  background: rgba(255, 255, 255, 0.72);
+  border-color: var(--glass-border);
+  color: var(--text);
+  cursor: pointer;
+  transition: border-color 0.15s ease, background 0.15s ease, box-shadow 0.15s ease, transform 0.15s ease;
+}
+
+.rdv-cal-jour-dispo:hover {
+  border-color: rgba(230, 176, 34, 0.55);
+  background: var(--tint-yellow);
+  transform: translateY(-1px);
+}
+
+.rdv-cal-jour-on,
+.rdv-cal-jour-on:hover {
+  background: linear-gradient(180deg, #f4cf5e 0%, #e6b022 100%);
+  border-color: rgba(184, 136, 26, 0.35);
+  color: #1a1408;
+  box-shadow: var(--shadow-button);
+  transform: none;
+}
+
+.rdv-slots-titre {
+  margin: 0 0 14px;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.rdv-slots-titre span {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-2);
+  text-transform: capitalize;
+}
+
+.rdv-slots-liste {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  max-height: 420px;
+  overflow-y: auto;
+  padding-right: 2px;
+}
+
+.rdv-slot {
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid var(--glass-border);
+  background: rgba(255, 255, 255, 0.72);
+  color: var(--text);
+  font-size: 15px;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+  transition: border-color 0.15s ease, background 0.15s ease, box-shadow 0.15s ease, transform 0.15s ease;
+}
+
+.rdv-slot:hover {
+  border-color: rgba(230, 176, 34, 0.55);
+  background: var(--tint-yellow);
+  transform: translateY(-1px);
+}
+
+.rdv-slot-on,
+.rdv-slot-on:hover {
+  background: linear-gradient(180deg, #f4cf5e 0%, #e6b022 100%);
+  border-color: rgba(184, 136, 26, 0.35);
+  color: #1a1408;
+  box-shadow: var(--shadow-button);
+  transform: none;
+}
+
+@media (max-width: 720px) {
+  .rdv-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .rdv-slots-liste {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    max-height: none;
+  }
+}
+
+@media (max-width: 420px) {
+  .rdv-slots-liste {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
