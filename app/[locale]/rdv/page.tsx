@@ -37,6 +37,12 @@ type Textes = {
   email: string;
   visio: string;
   deja: string;
+  dejaActions: string;
+  changerCreneau: string;
+  annulerRdv: string;
+  actionEnCours: string;
+  annuleTitre: string;
+  annuleTexte: string;
   pris: string;
   reseau: string;
   choisirJour: string;
@@ -64,6 +70,12 @@ const TEXTES: Record<string, Textes> = {
     email: 'Un e-mail de confirmation vient de vous être envoyé.',
     visio: 'Lien de la visio :',
     deja: 'Vous avez déjà un rendez-vous :',
+    dejaActions: 'Vous pouvez l’annuler ou choisir un autre créneau.',
+    changerCreneau: 'Changer de créneau',
+    annulerRdv: 'Annuler le rendez-vous',
+    actionEnCours: 'Un instant…',
+    annuleTitre: 'Rendez-vous annulé',
+    annuleTexte: 'Votre démonstration n’est plus réservée. Vous pouvez en choisir une nouvelle quand vous voulez.',
     pris: 'Ce créneau vient d’être pris. Choisissez-en un autre.',
     reseau: 'Erreur réseau. Rechargez la page.',
     choisirJour: 'Choisissez un jour',
@@ -87,6 +99,12 @@ const TEXTES: Record<string, Textes> = {
     email: 'A confirmation email has just been sent to you.',
     visio: 'Video link:',
     deja: 'You already have an appointment:',
+    dejaActions: 'You can cancel it or pick another time.',
+    changerCreneau: 'Change time',
+    annulerRdv: 'Cancel appointment',
+    actionEnCours: 'One moment…',
+    annuleTitre: 'Appointment cancelled',
+    annuleTexte: 'Your demo is no longer booked. You can pick a new time whenever you like.',
     pris: 'This slot was just taken. Please choose another.',
     reseau: 'Network error. Please reload the page.',
     choisirJour: 'Pick a day',
@@ -110,6 +128,12 @@ const TEXTES: Record<string, Textes> = {
     email: 'Acabamos de enviarle un correo de confirmación.',
     visio: 'Enlace de la videollamada:',
     deja: 'Ya tiene una cita:',
+    dejaActions: 'Puede cancelarla o elegir otra hora.',
+    changerCreneau: 'Cambiar de hora',
+    annulerRdv: 'Cancelar la cita',
+    actionEnCours: 'Un momento…',
+    annuleTitre: 'Cita cancelada',
+    annuleTexte: 'Su demostración ya no está reservada. Puede elegir otra hora cuando quiera.',
     pris: 'Esa hora acaba de ocuparse. Elija otra.',
     reseau: 'Error de red. Recargue la página.',
     choisirJour: 'Elija un día',
@@ -133,6 +157,12 @@ const TEXTES: Record<string, Textes> = {
     email: 'Acabámos de lhe enviar um e-mail de confirmação.',
     visio: 'Ligação do vídeo:',
     deja: 'Já tem uma marcação:',
+    dejaActions: 'Pode cancelá-la ou escolher outra hora.',
+    changerCreneau: 'Mudar de hora',
+    annulerRdv: 'Cancelar a marcação',
+    actionEnCours: 'Um momento…',
+    annuleTitre: 'Marcação cancelada',
+    annuleTexte: 'A sua demonstração já não está reservada. Pode escolher outra hora quando quiser.',
     pris: 'Essa hora acabou de ser ocupada. Escolha outra.',
     reseau: 'Erro de rede. Recarregue a página.',
     choisirJour: 'Escolha um dia',
@@ -156,6 +186,12 @@ const TEXTES: Record<string, Textes> = {
     email: 'أرسلنا لك للتو رسالة تأكيد بالبريد الإلكتروني.',
     visio: 'رابط الفيديو:',
     deja: 'لديك موعد بالفعل:',
+    dejaActions: 'يمكنك إلغاءه أو اختيار موعد آخر.',
+    changerCreneau: 'تغيير الموعد',
+    annulerRdv: 'إلغاء الموعد',
+    actionEnCours: 'لحظة…',
+    annuleTitre: 'تم إلغاء الموعد',
+    annuleTexte: 'لم يعد عرضك التوضيحي محجوزاً. يمكنك اختيار موعد جديد متى شئت.',
     pris: 'تم حجز هذا الموعد للتو. اختر موعداً آخر.',
     reseau: 'خطأ في الشبكة. أعد تحميل الصفحة.',
     choisirJour: 'اختر يوماً',
@@ -198,6 +234,8 @@ function RdvContent() {
   const [envoi, setEnvoi] = useState(false);
   const [erreur, setErreur] = useState('');
   const [fait, setFait] = useState<{ debut: string; lienMeet: string | null } | null>(null);
+  const [annule, setAnnule] = useState(false);
+  const [actionExistant, setActionExistant] = useState<'annuler' | 'changer' | null>(null);
 
   const fuseau = useMemo(() => {
     try {
@@ -333,6 +371,35 @@ function RdvContent() {
     }
   };
 
+  const gererExistant = async (action: 'annuler' | 'changer') => {
+    if (!jeton || actionExistant) return;
+    setActionExistant(action);
+    setErreur('');
+    try {
+      const res = await fetch(`${DEMO_API}/annuler`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ t: jeton, action }),
+      });
+      const parsed = normalizeDemoBackendResponse(await res.json()) as { success?: boolean };
+      if (!parsed.success) {
+        setErreur(demoResponseErrorMessage(parsed) || t.reseau);
+        return;
+      }
+      if (action === 'annuler') {
+        setAnnule(true);
+        setSemaine((s) => (s ? { ...s, existant: null } : s));
+      } else {
+        setSemaine((s) => (s ? { ...s, existant: null } : s));
+        setRechargement((n) => n + 1);
+      }
+    } catch {
+      setErreur(t.reseau);
+    } finally {
+      setActionExistant(null);
+    }
+  };
+
   const boite = {
     padding: 20,
     borderRadius: 16,
@@ -368,19 +435,69 @@ function RdvContent() {
             </div>
           )}
 
-          {etat === 'pret' && !fait && semaine?.existant && (
+          {etat === 'pret' && !fait && annule && (
+            <div style={{ ...boite, textAlign: 'center' }}>
+              <h1 style={{ fontSize: 26, marginBottom: 12 }}>{t.annuleTitre}</h1>
+              <p style={{ fontSize: 16, color: 'var(--text-2)', marginBottom: 20 }}>{t.annuleTexte}</p>
+              <button
+                type="button"
+                className="btn btn-primary"
+                onClick={() => {
+                  setAnnule(false);
+                  setRechargement((n) => n + 1);
+                }}
+                style={{ padding: '14px 22px', fontSize: 15, fontWeight: 600 }}
+              >
+                {t.changerCreneau}
+              </button>
+            </div>
+          )}
+
+          {etat === 'pret' && !fait && !annule && semaine?.existant && (
             <div style={{ ...boite, textAlign: 'center' }}>
               <h1 style={{ fontSize: 26, marginBottom: 12 }}>{t.deja}</h1>
               <p style={{ fontSize: 20, fontWeight: 700, marginBottom: 12 }}>{complet(semaine.existant.debut)}</p>
               {semaine.existant.lienMeet && (
-                <a href={semaine.existant.lienMeet} target="_blank" rel="noopener noreferrer">
-                  {semaine.existant.lienMeet}
-                </a>
+                <p style={{ marginBottom: 8 }}>
+                  {t.visio}{' '}
+                  <a href={semaine.existant.lienMeet} target="_blank" rel="noopener noreferrer">
+                    {semaine.existant.lienMeet}
+                  </a>
+                </p>
               )}
+              <p style={{ fontSize: 15, color: 'var(--text-2)', margin: '16px 0 20px' }}>{t.dejaActions}</p>
+              {erreur && (
+                <p style={{ color: '#b91c1c', marginBottom: 16, fontSize: 14 }}>{erreur}</p>
+              )}
+              <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', justifyContent: 'center' }}>
+                <button
+                  type="button"
+                  className="btn btn-primary"
+                  disabled={Boolean(actionExistant)}
+                  onClick={() => gererExistant('changer')}
+                  style={{ padding: '14px 22px', fontSize: 15, fontWeight: 600 }}
+                >
+                  {actionExistant === 'changer' ? t.actionEnCours : t.changerCreneau}
+                </button>
+                <button
+                  type="button"
+                  className="btn btn-ghost"
+                  disabled={Boolean(actionExistant)}
+                  onClick={() => gererExistant('annuler')}
+                  style={{
+                    padding: '14px 22px',
+                    fontSize: 15,
+                    borderColor: 'rgba(239,68,68,0.4)',
+                    color: '#b91c1c',
+                  }}
+                >
+                  {actionExistant === 'annuler' ? t.actionEnCours : t.annulerRdv}
+                </button>
+              </div>
             </div>
           )}
 
-          {etat === 'pret' && !fait && !semaine?.existant && (
+          {etat === 'pret' && !fait && !annule && !semaine?.existant && (
             <>
               <h1 style={{ fontSize: 32, marginBottom: 10, letterSpacing: '-0.02em' }}>{t.titre}</h1>
               <p style={{ fontSize: 16, color: 'var(--text-2)', marginBottom: 6 }}>{t.intro}</p>
