@@ -1914,6 +1914,13 @@ html.sj-mobile-menu-scroll-lock {
   max-width: 280px;
 }
 
+.qf-message {
+  width: 100%;
+  min-height: 160px;
+  resize: vertical;
+  line-height: 1.45;
+}
+
 .qf-promo {
   margin-top: 16px;
   display: block;

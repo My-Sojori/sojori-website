@@ -1082,6 +1082,7 @@ function DemoPageContent() {
                     initialNumberOfProperties={formData.taille || undefined}
                     initialCountry={formData.pays || paysDeLIso(formData.dialCountryIso)}
                     initialFullName={formData.fullName.trim() || undefined}
+                    initialCity={formData.ville.trim() || undefined}
                     compact
                     onSubmit={handleQualificationSubmit}
                     onRequestFollowUp={demanderQuestions}
