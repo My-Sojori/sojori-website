@@ -132,6 +132,7 @@ export function QualificationForm({
   initialNumberOfProperties,
   initialCountry,
   initialFullName,
+  initialCity,
   compact,
 }: {
   onSubmit: (payload: QualificationPayload) => void;
@@ -156,9 +157,11 @@ export function QualificationForm({
   initialCountry?: string;
   /** Le nom déjà donné au petit formulaire. */
   initialFullName?: string;
+  /** Ville déjà saisie au mini-formulaire — renvoyée au qualify pour la fiche CRM. */
+  initialCity?: string;
   /**
-   * « Aller plus loin » (Tawfiq, 29/10/2026) : le petit formulaire a déjà demandé pays, ville, type, taille,
-   * nom et téléphone ; il ne reste que le PMS, ce que le prospect cherche et un message libre. Rien de redemandé.
+   * « Aller plus loin » : pays, ville, type, taille, nom et téléphone déjà saisis ;
+   * on demande d’abord les besoins, puis l’outil actuel (optionnel) et un message.
    */
   compact?: boolean;
 }) {
@@ -170,7 +173,7 @@ export function QualificationForm({
   const [phone, setPhone] = useState(initialPhone ?? '');
   const [pays, setPays] = useState(initialCountry ?? '');
   const [paysAutre, setPaysAutre] = useState('');
-  const [ville, setVille] = useState('');
+  const [ville, setVille] = useState(initialCity ?? '');
   const [fullName, setFullName] = useState(initialFullName ?? '');
   const [message, setMessage] = useState('');
   const [company, setCompany] = useState('');
@@ -212,6 +215,11 @@ export function QualificationForm({
     const answers = (followUps ?? [])
       .filter(q => followUpAnswers[q.id])
       .map(q => ({ question: q.question, answer: followUpAnswers[q.id], axis: q.axis }));
+    const besoinsLibelles = cfg ? labelsOf(cfg.expectations, expectations) : '';
+    const msg = message.trim();
+    const paysFinal =
+      pays === 'Autre' ? paysAutre.trim().slice(0, 60) : pays && pays !== 'Autre' ? pays : undefined;
+    const villeFinale = ville.trim().slice(0, 60);
 
     return {
       fullName: fullName.trim(),
@@ -229,11 +237,10 @@ export function QualificationForm({
       currentDynamicPricing: cfg ? resolve(cfg.pricing, pricing, pricingOther) : '',
       currentWhatsApp: '',
       timeline,
-      biggestChallenges: cfg ? labelsOf(cfg.challenges, challenges) : '',
-      expectations: [cfg ? labelsOf(cfg.expectations, expectations) : '', message.trim()]
-        .filter(Boolean)
-        .join(' — ')
-        .slice(0, 1000),
+      biggestChallenges: cfg
+        ? labelsOf(cfg.challenges, challenges.length ? challenges : expectations)
+        : '',
+      expectations: [besoinsLibelles, msg].filter(Boolean).join(' — ').slice(0, 2000),
       newPropertiesNext12Months: growth ? (growthMap[growth] ?? 0) : 0,
       hearAboutUs,
       promoCode: promoCode.trim(),
@@ -242,11 +249,8 @@ export function QualificationForm({
       segment:
         ACTIVITIES.find(item => item.id === activityId)?.crmSegment ??
         (segment === 'hotel' ? 'hotel' : segment === 'str' ? 'conciergerie' : undefined),
-      // En mode « Aller plus loin », pays et ville sont déjà partis avec le petit formulaire (indications que Scout
-      // recoupe) : on ne les renvoie pas, le questionnaire les marquerait « sûrs ».
-      ...(!compact && pays && pays !== 'Autre' ? { country: pays } : {}),
-      ...(!compact && pays === 'Autre' && paysAutre.trim() ? { country: paysAutre.trim().slice(0, 60) } : {}),
-      ...(!compact && ville.trim() ? { cities: [ville.trim().slice(0, 60)] } : {}),
+      ...(paysFinal ? { country: paysFinal } : {}),
+      ...(villeFinale ? { cities: [villeFinale] } : {}),
       ...(answers.length ? { followUpAnswers: answers } : {}),
     };
   };
@@ -397,15 +401,39 @@ export function QualificationForm({
         ),
       },
       {
+        id: 'expectations',
+        render: () => (
+          <Question
+            title={
+              compact
+                ? 'Que voulez-vous faire avec Sojori&nbsp;?'
+                : 'Qu’attendez-vous de Sojori&nbsp;?'
+            }
+            hint="Plusieurs réponses possibles."
+          >
+            <Pills>
+              {cfg?.expectations.map(c => (
+                <Pill
+                  key={c.value}
+                  label={c.label}
+                  selected={expectations.includes(c.value)}
+                  onClick={() => toggle(expectations, setExpectations, c.value)}
+                />
+              ))}
+            </Pills>
+          </Question>
+        ),
+      },
+      {
         id: 'has-pms',
         render: () => (
           <Question
             title={
               segment === 'hotel'
-                ? 'Avez-vous un PMS aujourd’hui ?'
-                : 'Avez-vous un logiciel de gestion aujourd’hui ?'
+                ? 'Avez-vous déjà un PMS&nbsp;?'
+                : 'Avez-vous déjà un logiciel de gestion&nbsp;?'
             }
-            hint="Sojori s’y connecte, ou vous en fournit un."
+            hint="Facultatif — Sojori s’y connecte, ou vous en fournit un."
           >
             <Pills>
               {HAS_PMS.map(c => (
@@ -416,7 +444,6 @@ export function QualificationForm({
                   onClick={() => {
                     const next = hasPms === c.value ? '' : c.value;
                     setHasPms(next);
-                    // Changer d'avis ne doit pas laisser un éditeur fantôme.
                     if (next !== 'yes') {
                       setPms('');
                       setPmsOther('');
@@ -531,23 +558,6 @@ export function QualificationForm({
         ),
       },
       {
-        id: 'expectations',
-        render: () => (
-          <Question title="Qu’attendez-vous de Sojori&nbsp;?" hint="Plusieurs réponses possibles.">
-            <Pills>
-              {cfg?.expectations.map(c => (
-                <Pill
-                  key={c.value}
-                  label={c.label}
-                  selected={expectations.includes(c.value)}
-                  onClick={() => toggle(expectations, setExpectations, c.value)}
-                />
-              ))}
-            </Pills>
-          </Question>
-        ),
-      },
-      {
         id: 'growth',
         skip: Boolean(compact) || !cfg?.growth,
         render: () => (
@@ -615,13 +625,16 @@ export function QualificationForm({
       list.push({
         id: 'message',
         render: () => (
-          <Question title="Un mot pour nous&nbsp;?" hint="Facultatif. Une question, un contexte, une date.">
+          <Question
+            title="Un message pour Sojori&nbsp;?"
+            hint="Facultatif. Contexte, dates, questions — autant de détail que vous voulez."
+          >
             <textarea
               value={message}
               onChange={e => setMessage(e.target.value)}
-              rows={4}
-              maxLength={600}
-              className="qf-input"
+              rows={8}
+              maxLength={1200}
+              className="qf-input qf-message"
               placeholder="Votre message"
             />
           </Question>
