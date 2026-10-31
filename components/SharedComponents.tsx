@@ -721,10 +721,11 @@ export function PageHeader(_props: { pageTitle?: string }) {
   );
 }
 
-export function PageFooter() {
+/** `bande={false}` : pages à lien signé (devis, contrat, commande, rdv), où rien ne doit se glisser sous le document. */
+export function PageFooter({ bande = true }: { bande?: boolean } = {}) {
   return (
     <div className="sj2 sj2--chrome">
-      <OfferBand />
+      {bande && <OfferBand />}
       <SiteFooter />
     </div>
   );

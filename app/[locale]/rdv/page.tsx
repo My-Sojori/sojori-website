@@ -623,7 +623,7 @@ function RdvContent() {
             </>
           )}
         </section>
-        <PageFooter />
+        <PageFooter bande={false} />
       </div>
     </>
   );

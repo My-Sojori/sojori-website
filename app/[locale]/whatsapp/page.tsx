@@ -112,7 +112,7 @@ function Bubble({ from, text, time, type = "text", ext, status }: Message) {
       {ext && <div style={{marginTop: 7, padding: 9, background: "rgba(0,0,0,0.05)", borderRadius: 7, fontSize: 11.5, color: "#111", lineHeight: 1.4, border: "1px solid rgba(0,0,0,0.08)"}}>{ext}</div>}
       <div style={{display: "flex", justifyContent: "flex-end", alignItems: "center", gap: 3, marginTop: 3, fontSize: 9.5, color: "#54656f"}}>
         <span>{time}</span>
-        {isUser && <span style={{color: status === "read" ? "#53bdeb" : "#54656f"}}>✓✓</span>}
+        {isUser && <span style={{color: status === "read" ? "#1f7a9e" : "#54656f"}}>✓✓</span>}
       </div>
     </div>
   );
