@@ -2587,5 +2587,54 @@
       "privacy": "Confidentialité",
       "status": "Statut"
     }
+  },
+  "refonte": {
+    "nav": {
+      "pms": "Le PMS",
+      "agents": "Les agents",
+      "modules": "Les modules",
+      "stay": "Un séjour",
+      "offer": "Votre offre",
+      "demo": "Demander une démo",
+      "main": "Navigation principale",
+      "lang": "Langue",
+      "homeAria": "Sojori, accueil",
+      "menuOpen": "Ouvrir le menu",
+      "menuClose": "Fermer le menu",
+      "skip": "Aller au contenu"
+    },
+    "footer": {
+      "tagline": "AI workforce for hospitality. Pensé pour le Maroc, utile partout où l’on loue en courte durée.",
+      "product": "Produit",
+      "agents": "Les agents",
+      "whatsapp": "WhatsApp",
+      "pms": "PMS et channel manager",
+      "offer": "Votre offre",
+      "resources": "Ressources",
+      "competitors": "Analyse gratuite de vos concurrents",
+      "compare": "Comparatif des PMS au Maroc",
+      "orchestration": "Orchestration",
+      "mcp": "MCP",
+      "about": "À propos",
+      "cities": "Par ville",
+      "city": {
+        "marrakech": "Sojori à Marrakech",
+        "casablanca": "Sojori à Casablanca",
+        "rabat": "Sojori à Rabat",
+        "tanger": "Sojori à Tanger",
+        "agadir": "Sojori à Agadir"
+      },
+      "copyright": "© 2026 Sojori. Paiement marocain accepté.",
+      "terms": "Mentions légales",
+      "privacy": "Confidentialité"
+    },
+    "home": {
+      "hero": {
+        "keywords": "PMS et agents WhatsApp pour locations courte durée et hôtels",
+        "sub": "Vous décidez, vos agents font le reste. Le PMS Sojori, ou le vôtre : onze agents et des modules WhatsApp s’y branchent. Regardez une journée type dans une conciergerie ou dans un hôtel.",
+        "seeAgents": "Voir les agents au travail",
+        "demo": "Demander une démo"
+      }
+    }
   }
 }

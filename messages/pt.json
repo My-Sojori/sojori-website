@@ -2490,5 +2490,54 @@
       "privacy": "Privacidade",
       "status": "Estado"
     }
+  },
+  "refonte": {
+    "nav": {
+      "pms": "O PMS",
+      "agents": "Os agentes",
+      "modules": "Os módulos",
+      "stay": "Uma estadia",
+      "offer": "A sua oferta",
+      "demo": "Pedir uma demonstração",
+      "main": "Navegação principal",
+      "lang": "Idioma",
+      "homeAria": "Sojori, início",
+      "menuOpen": "Abrir o menu",
+      "menuClose": "Fechar o menu",
+      "skip": "Ir para o conteúdo"
+    },
+    "footer": {
+      "tagline": "AI workforce for hospitality. Pensado para Marrocos, útil onde quer que se alugue por curta duração.",
+      "product": "Produto",
+      "agents": "Os agentes",
+      "whatsapp": "WhatsApp",
+      "pms": "PMS e channel manager",
+      "offer": "A sua oferta",
+      "resources": "Recursos",
+      "competitors": "Análise gratuita dos seus concorrentes",
+      "compare": "Comparativo de PMS em Marrocos",
+      "orchestration": "Orquestração",
+      "mcp": "MCP",
+      "about": "Sobre",
+      "cities": "Por cidade",
+      "city": {
+        "marrakech": "Sojori em Marraquexe",
+        "casablanca": "Sojori em Casablanca",
+        "rabat": "Sojori em Rabat",
+        "tanger": "Sojori em Tânger",
+        "agadir": "Sojori em Agadir"
+      },
+      "copyright": "© 2026 Sojori. Pagamento marroquino aceite.",
+      "terms": "Aviso legal",
+      "privacy": "Privacidade"
+    },
+    "home": {
+      "hero": {
+        "keywords": "PMS e agentes de WhatsApp para arrendamento de curta duração e hotéis",
+        "sub": "Você decide, os seus agentes fazem o resto. O PMS Sojori, ou o seu: onze agentes e módulos de WhatsApp ligam-se a ele. Veja um dia típico numa conciergerie ou num hotel.",
+        "seeAgents": "Ver os agentes a trabalhar",
+        "demo": "Pedir uma demonstração"
+      }
+    }
   }
 }

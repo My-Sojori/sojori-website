@@ -2588,5 +2588,54 @@
       "privacy": "Privacy Policy",
       "status": "Status"
     }
+  },
+  "refonte": {
+    "nav": {
+      "pms": "The PMS",
+      "agents": "The agents",
+      "modules": "The modules",
+      "stay": "A stay",
+      "offer": "Your offer",
+      "demo": "Request a demo",
+      "main": "Main navigation",
+      "lang": "Language",
+      "homeAria": "Sojori, home",
+      "menuOpen": "Open the menu",
+      "menuClose": "Close the menu",
+      "skip": "Skip to content"
+    },
+    "footer": {
+      "tagline": "AI workforce for hospitality. Built for Morocco, useful wherever short stays are rented.",
+      "product": "Product",
+      "agents": "The agents",
+      "whatsapp": "WhatsApp",
+      "pms": "PMS and channel manager",
+      "offer": "Your offer",
+      "resources": "Resources",
+      "competitors": "Free analysis of your competitors",
+      "compare": "PMS comparison for Morocco",
+      "orchestration": "Orchestration",
+      "mcp": "MCP",
+      "about": "About",
+      "cities": "By city",
+      "city": {
+        "marrakech": "Sojori in Marrakech",
+        "casablanca": "Sojori in Casablanca",
+        "rabat": "Sojori in Rabat",
+        "tanger": "Sojori in Tangier",
+        "agadir": "Sojori in Agadir"
+      },
+      "copyright": "© 2026 Sojori. Moroccan payment accepted.",
+      "terms": "Legal notice",
+      "privacy": "Privacy"
+    },
+    "home": {
+      "hero": {
+        "keywords": "PMS and WhatsApp agents for short-term rentals and hotels",
+        "sub": "You decide, your agents do the rest. The Sojori PMS, or your own: eleven agents and WhatsApp modules plug into it. Watch a typical day in a concierge company or a hotel.",
+        "seeAgents": "See the agents at work",
+        "demo": "Request a demo"
+      }
+    }
   }
 }
