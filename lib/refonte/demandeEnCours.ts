@@ -1,17 +1,22 @@
 /**
- * La demande en cours, gardée dans la page (sessionStorage) entre /demo et /offre : le jeton de qualification et l'identité déjà
- * saisie. « Composer mon offre » complète la MÊME demande (un seul lead) sans rien redemander. Effacée dès que la demande est
- * terminée. Jamais dans l'adresse.
+ * La demande en cours, gardée dans la page (sessionStorage) entre /demo et /offre : seulement le jeton de qualification, le prénom et
+ * ce que le visiteur a répondu sur le métier (aucune coordonnée : ni e-mail, ni nom complet, ni pays, ni téléphone). « Composer mon
+ * offre » complète la MÊME demande (un seul lead). Effacée dès que la demande est terminée. Jamais dans l'adresse.
  */
 export type DemandeEnCours = {
   id: string;
   jeton: string;
-  email: string;
-  nom: string;
-  paysIso: string;
-  dialIso: string;
-  tel: string;
-  /** La visite de rendez-vous a déjà été demandée (parcours /demo). */
+  /** Le prénom, pour « Au nom de … ». */
+  prenom: string;
+  /** Le type choisi sur /demo (id de ACTIVITIES : conciergerie, hotel, riad, villa, apartment, autre) et son libellé, ou vides. */
+  activiteId: string;
+  typeLibelle: string;
+  /** Le segment CRM et le PMS déjà envoyés par /demo : /offre ne les écrase pas s'ils ne sont pas modifiés. */
+  segment: string;
+  currentPMS: string;
+  /** La précision saisie pour « Autre », ou vide. */
+  typeAutre: string;
+  /** Un rendez-vous a déjà été demandé (parcours /demo). */
   dejaDemo: boolean;
 };
 

@@ -14,11 +14,19 @@ import { useHydrate } from '@/lib/useHydrate';
 import { garderDemande, LIBELLE_INTENTION, lireDemande, oublierDemande, type DemandeEnCours, type Intention } from '@/lib/refonte/demandeEnCours';
 import {
   estChoisi, estExterne, estHotel, PAR_COMPTE, PRODUITS, PROFILS, resume, segmentCrm,
+  type ProfilId,
   SELECTION_PAR_DEFAUT, SITES, UTILISATEURS, VALEURS_RAPIDES,
   type ProduitId, type Selection, type SiteId, type UtilisateurId,
 } from '@/lib/refonte/offre';
 
 const DEMO_API = '/api/v1/demo';
+
+/** Le profil de composition le plus proche de ce que le visiteur a répondu sur /demo (villa, appartement, « Autre » : le bloc conciergerie). */
+function profilDepuis(c: DemandeEnCours): ProfilId {
+  const hotel = ['hotel', 'riad', 'guesthouse', 'resort', 'aparthotel'].includes(c.activiteId);
+  const externe = Boolean(c.currentPMS) && c.currentPMS !== 'Sojori';
+  return `${hotel ? 'hotel' : 'conc'}_${externe ? 'ext' : 'sojori'}` as ProfilId;
+}
 
 /** Un petit compteur − n + : 44 px de haut, annoncé par un nom. */
 function Compteur({ n, onMoins, onPlus, moinsAria, plusAria }: { n: number; onMoins: () => void; onPlus: () => void; moinsAria: string; plusAria: string }) {
@@ -54,6 +62,8 @@ export function OffreComposer() {
   const [tel, setTel] = useState('');
   const [tente, setTente] = useState(false);
   const [connue, setConnue] = useState<DemandeEnCours | null>(null);
+  // le profil préselectionné d'après ce que le visiteur a répondu sur /demo : l'envoi n'écrase segment et PMS que s'il le change
+  const [profilInitial, setProfilInitial] = useState<ProfilId | null>(null);
   const [demande, setDemande] = useState<{ id: string; jeton: string } | null>(null);
   const [rdvDemande, setRdvDemande] = useState(false);
   const [erreur, setErreur] = useState('');
@@ -71,7 +81,13 @@ export function OffreComposer() {
 
   // la demande créée sur /demo (lue après l'hydratation) ; l'ancienne adresse /offre#contact mène à /demo
   useEffect(() => {
-    setConnue(lireDemande());
+    const c = lireDemande();
+    if (c) {
+      setConnue(c);
+      const p = profilDepuis(c);
+      setProfilInitial(p);
+      setS((x) => ({ ...x, profil: p }));
+    }
     if (window.location.hash === '#contact') router.replace('/demo');
   }, [router]);
 
@@ -98,50 +114,37 @@ export function OffreComposer() {
   const choisis = PRODUITS.filter((id) => estChoisi(s, id) && id !== 'pms').slice(0, 3).map((id) => t(`products.${id}.name`));
   const cas = [t(`profile.label.${hotel ? 'hotel' : 'conc'}`), t(`selection.detail${unite}`, { n: s.n }), ...choisis].join(', ');
 
-  /** Le résumé de la sélection : il part en UN seul `qualify` (le CRM remplace `expectations` à chaque appel), l'intention en tête. */
-  const corpsSelection = (intention: Intention) => ({
-    intent: intention,
-    numberOfProperties: String(s.n),
-    expectations: `${LIBELLE_INTENTION[intention]}\n${resume(s)}`,
-    hearAboutUs: 'sojori.com · Votre offre',
-    segment: segmentCrm(s.profil),
-    currentPMS: externe ? 'Garde son PMS actuel' : 'Sojori',
-  });
+  /**
+   * Le résumé de la sélection : il part en UN seul `qualify` (le CRM remplace `expectations` à chaque appel), l'intention et le type
+   * déclaré sur /demo en tête. Le segment et le PMS ne partent que si /offre les fixe (visite directe) ou si le visiteur a changé de
+   * profil : sinon le CRM garde ce que /demo lui a déjà donné (« Autre : Auberge », PMS « Cloudbeds »…).
+   */
+  const corpsSelection = (intention: Intention, ancienne?: DemandeEnCours | null) => {
+    const profilModifie = !ancienne || (profilInitial !== null && s.profil !== profilInitial);
+    const type = ancienne?.typeLibelle ? [`Type déclaré : ${ancienne.typeLibelle}${ancienne.typeAutre ? ` — ${ancienne.typeAutre}` : ''}.`] : [];
+    return {
+      intent: intention,
+      numberOfProperties: String(s.n),
+      expectations: [LIBELLE_INTENTION[intention], ...type, resume(s)].join('\n'),
+      hearAboutUs: 'sojori.com · Votre offre',
+      ...(profilModifie ? { segment: segmentCrm(s.profil), currentPMS: externe ? 'Garde son PMS actuel' : 'Sojori' } : {}),
+    };
+  };
 
+  /** `qualify` de la demande : succès, ou le code HTTP du refus (401/403/404 : jeton refusé ; autre : réseau ou serveur). */
   const patchQualify = async (d: { id: string; jeton: string }, corps: Record<string, unknown>) => {
-    const r = await fetch(`${DEMO_API}/request/${d.id}/qualify`, { method: 'PATCH', headers: enTetesDemande({ 'Content-Type': 'application/json' }), body: JSON.stringify({ qualificationToken: d.jeton, ...corps }) });
-    const x = normalizeDemoBackendResponse(await r.json().catch(() => ({}))) as { success?: boolean };
-    return x.success === true;
+    try {
+      const r = await fetch(`${DEMO_API}/request/${d.id}/qualify`, { method: 'PATCH', headers: enTetesDemande({ 'Content-Type': 'application/json' }), body: JSON.stringify({ qualificationToken: d.jeton, ...corps }) });
+      const x = normalizeDemoBackendResponse(await r.json().catch(() => ({}))) as { success?: boolean };
+      return { ok: x.success === true, statut: r.status };
+    } catch { return { ok: false, statut: 0 }; }
   };
 
   /**
-   * Un seul envoi pour tout le monde : la demande existe déjà (jeton) → on la complète ; sinon (ou si le jeton est refusé) on la crée avec
-   * l'identité, puis on la qualifie. Le CRM renvoie la demande existante (avec un jeton) pour un même e-mail dans les 24 h : un seul lead.
-   * Si seule la qualification échoue, la demande de base est enregistrée : on le dit et un nouveau clic ne refait que le `qualify`.
+   * Sans demande préalable : les quatre coordonnées, un seul clic. Deux appels : la demande (POST, avec les coordonnées), puis la
+   * qualification (PATCH, avec la sélection). Si seul le PATCH échoue, la demande de base est enregistrée : on le dit, et un
+   * nouveau clic refait seulement le PATCH (jamais un second POST).
    */
-  const envoyerOffre = async (id: { email: string; nom: string; paysIso: string; dialIso: string; tel: string }, existante: { id: string; jeton: string } | null, intention: Intention) => {
-    const identite = { email: id.email, nom: id.nom, paysIso: id.paysIso, tel: id.tel, consent: true };
-    const corps = { ...champsIdentite(identite, id.dialIso), ...corpsSelection(intention) };
-    let cour = existante;
-    if (cour && (await patchQualify(cour, corps).catch(() => false))) return cour;
-    {
-      const r = await fetch(`${DEMO_API}/request`, {
-        method: 'POST',
-        headers: enTetesDemande({ 'Content-Type': 'application/json' }),
-        body: JSON.stringify({ email: id.email.trim(), ...champsIdentite(identite, id.dialIso), consentementMessages: true, source: 'website-offre', intent: intention, langue: locale }),
-      });
-      const data = normalizeDemoBackendResponse(await r.json().catch(() => ({}))) as { success?: boolean; data?: { id?: string; qualificationToken?: string } };
-      if (data.success !== true || !data.data?.id) throw new Error(demoResponseErrorMessage(data) || 'request');
-      cour = { id: String(data.data.id), jeton: data.data.qualificationToken ?? '' };
-      setDemande(cour);
-      // Mode test (aperçus) : aucune conversion publicitaire.
-      if (!(data.data as { test?: boolean } | undefined)?.test && !existante) trackDemoLead('website-offre');
-    }
-    if (!(await patchQualify(cour, corps))) { setDemande(cour); throw new Error('partial'); }
-    return cour;
-  };
-
-  /** Sans demande préalable : les quatre coordonnées, un seul clic. */
   const continuer = async (e: React.FormEvent) => {
     e.preventDefault();
     if (statut === 'envoi') return;
@@ -150,32 +153,47 @@ export function OffreComposer() {
     setErreur('');
     setStatut('envoi');
     try {
-      const cour = await envoyerOffre({ email, nom, paysIso, dialIso, tel }, demande, 'offre');
+      let cour = demande;
+      if (!cour) {
+        const r = await fetch(`${DEMO_API}/request`, {
+          method: 'POST',
+          headers: enTetesDemande({ 'Content-Type': 'application/json' }),
+          body: JSON.stringify({ email: email.trim(), ...champsIdentite(ident, dialIso), consentementMessages: true, source: 'website-offre', intent: 'offre', langue: locale }),
+        });
+        const data = normalizeDemoBackendResponse(await r.json().catch(() => ({}))) as { success?: boolean; data?: { id?: string; qualificationToken?: string } };
+        if (data.success !== true || !data.data?.id) throw new Error(demoResponseErrorMessage(data) || 'request');
+        cour = { id: String(data.data.id), jeton: data.data.qualificationToken ?? '' };
+        setDemande(cour);
+        // Mode test (aperçus) : aucune conversion publicitaire.
+        if (!(data.data as { test?: boolean } | undefined)?.test) trackDemoLead('website-offre');
+      }
+      const q = await patchQualify(cour, { ...champsIdentite(ident, dialIso), ...corpsSelection('offre') });
+      if (!q.ok) { setErreur(t('form.errors.partial')); return; }
       // le jeton reste dans la page jusqu'à la fin : « Demander aussi un rendez-vous » complète la même demande
-      garderDemande({ id: cour.id, jeton: cour.jeton, email: email.trim(), nom: nom.trim(), paysIso, dialIso, tel, dejaDemo: false });
-      setDemande(cour);
+      garderDemande({ id: cour.id, jeton: cour.jeton, prenom: nom.trim().split(/\s+/)[0] ?? '', activiteId: '', typeLibelle: '', segment: segmentCrm(s.profil), currentPMS: externe ? 'Garde son PMS actuel' : 'Sojori', typeAutre: '', dejaDemo: false });
       setEtape(3);
-    } catch (err) {
-      setErreur(err instanceof Error && err.message === 'partial' ? t('form.errors.partial') : t('selection.errorGeneric'));
+    } catch {
+      setErreur(t('selection.errorGeneric'));
     } finally {
       setStatut('libre');
     }
   };
 
-  /** La demande vient de /demo : « Envoyer mon offre » la complète, rien n'est redemandé. */
+  /** La demande vient de /demo : « Envoyer mon offre » la complète, rien n'est redemandé. Jeton refusé : on redemande les coordonnées. */
   const envoyerConnue = async () => {
     if (!connue || statut === 'envoi') return;
     setErreur('');
     setStatut('envoi');
-    try {
-      await envoyerOffre(connue, { id: connue.id, jeton: connue.jeton }, connue.dejaDemo ? 'demo+offre' : 'offre');
+    const q = await patchQualify(connue, corpsSelection(connue.dejaDemo ? 'demo+offre' : 'offre', connue));
+    setStatut('libre');
+    if (q.ok) { oublierDemande(); setEtape(3); return; }
+    if (q.statut === 401 || q.statut === 403 || q.statut === 404) {
       oublierDemande();
-      setEtape(3);
-    } catch (err) {
-      setErreur(err instanceof Error && err.message === 'partial' ? t('form.errors.partial') : t('selection.errorGeneric'));
-    } finally {
-      setStatut('libre');
+      setConnue(null);
+      setErreur(t('form.known.expired'));
+      return;
     }
+    setErreur(t('selection.errorGeneric'));
   };
 
   /** Après l'envoi direct : le visiteur demande aussi un rendez-vous (même demande, intention « démo + offre »). */
@@ -183,15 +201,11 @@ export function OffreComposer() {
     if (!demande || statut === 'envoi') return;
     setErreur('');
     setStatut('envoi');
-    try {
-      if (!(await patchQualify(demande, corpsSelection('demo+offre')))) throw new Error('qualify');
-      oublierDemande();
-      setRdvDemande(true);
-    } catch {
-      setErreur(t('selection.errorGeneric'));
-    } finally {
-      setStatut('libre');
-    }
+    const q = await patchQualify(demande, corpsSelection('demo+offre'));
+    setStatut('libre');
+    if (!q.ok) { setErreur(t('selection.errorGeneric')); return; }
+    oublierDemande();
+    setRdvDemande(true);
   };
 
   // le rendez-vous est demandé (sur /demo avant, ou après l'envoi) : les textes parlent du créneau ; sinon de la proposition
@@ -319,7 +333,7 @@ export function OffreComposer() {
           {etape === 1 && connue && (
             <div className="sj2-form__champs">
               <strong className="sj2-form__titre">{t('form.known.title')}</strong>
-              <p className="sj2-form__aide">{t('form.known.lead', { name: connue.nom.split(' ')[0] || connue.email })}</p>
+              <p className="sj2-form__aide">{connue.prenom ? t('form.known.lead', { name: connue.prenom }) : t('form.known.leadNoName')}</p>
               {erreur && <p className="sj2-erreur" role="alert">{erreur}</p>}
               <button type="button" className="sj2-btn sj2-btn--lg sj2-form__envoi" disabled={statut === 'envoi' || !hydrate} onClick={() => void envoyerConnue()}>
                 {!hydrate ? t('form.pageLoading') : statut === 'envoi' ? t('selection.sending') : t('form.known.send')}
@@ -364,10 +378,10 @@ export function OffreComposer() {
 
           {etape === 3 && (
             <div className="sj2-merci" role="status">
-              <strong>{(nom || connue?.nom || '').trim() ? t('form.sent.thanksName', { name: (nom || connue?.nom || '').trim().split(' ')[0] }) : t('form.sent.thanks')}</strong>
+              <strong>{(nom.trim().split(/\s+/)[0] || connue?.prenom || '') ? t('form.sent.thanksName', { name: nom.trim().split(/\s+/)[0] || connue?.prenom || '' }) : t('form.sent.thanks')}</strong>
               <ol className="sj2-merci__etapes">
                 <li><span className="sj2-merci__n" aria-hidden="true">1</span><span>{t('form.sent.s1', { cas: cas })}</span></li>
-                <li><span className="sj2-merci__n" aria-hidden="true">2</span><span>{avecRdv ? t('form.sent.s2', { email: (email || connue?.email || '').trim() }) : t('form.sent.s2Offer', { email: (email || connue?.email || '').trim() })}</span></li>
+                <li><span className="sj2-merci__n" aria-hidden="true">2</span><span>{avecRdv ? (email.trim() ? t('form.sent.s2', { email: email.trim() }) : t('form.sent.s2Generic')) : t('form.sent.s2Offer', { email: email.trim() })}</span></li>
                 <li><span className="sj2-merci__n" aria-hidden="true">3</span><span>{avecRdv ? t('form.sent.s3') : t('form.sent.s3Offer')}</span></li>
               </ol>
               {erreur && <p className="sj2-erreur" role="alert">{erreur}</p>}

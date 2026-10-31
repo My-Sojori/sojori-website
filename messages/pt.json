@@ -3122,7 +3122,8 @@
           "alsoMeeting": "Pedir também uma reunião",
           "meetingAsked": "Reunião pedida: um consultor responde-lhe.",
           "s2Offer": "Recebe a sua proposta por e-mail, em {email}.",
-          "s3Offer": "Para falar com um consultor, peça também uma reunião abaixo."
+          "s3Offer": "Para falar com um consultor, peça também uma reunião abaixo.",
+          "s2Generic": "Recebe por e-mail uma ligação para escolher o seu horário na agenda do consultor."
         },
         "errors": {
           "email": "Indique um e-mail válido.",
@@ -3137,7 +3138,9 @@
         "known": {
           "title": "O seu pedido já está guardado",
           "lead": "Em nome de {name}. A sua oferta junta-se a este mesmo pedido.",
-          "send": "Enviar a minha oferta"
+          "send": "Enviar a minha oferta",
+          "expired": "O seu pedido anterior não foi encontrado: indique novamente os seus dados para enviar a sua oferta.",
+          "leadNoName": "A sua oferta junta-se a este mesmo pedido."
         }
       }
     },
