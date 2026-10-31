@@ -3260,8 +3260,7 @@
         "agents": "3 · YOUR AGENTS AND OPTIONS",
         "users": "4 · YOUR USERS",
         "site": "5 · YOUR WEBSITE",
-        "service": "6 · SETUP",
-        "soon": "7 · COMING SOON"
+        "service": "6 · SETUP"
       },
       "parc": {
         "unitOne": "property or room",
@@ -3323,7 +3322,19 @@
           "desc": "Prepares your account and payment follow-ups, which you approve."
         },
         "blocked": "Not available with your PMS: dynamic pricing only applies to Sojori PMS properties.",
-        "forAccount": "per account"
+        "forAccount": "per account",
+        "agent_booking_call": {
+          "name": "Booking Agent Call",
+          "desc": "Takes a booking by voice, in a live call on WhatsApp."
+        },
+        "agent_guest_service_call": {
+          "name": "Guest Service Agent Call",
+          "desc": "Answers a guest who calls, live on WhatsApp."
+        },
+        "agent_staff_call": {
+          "name": "Staff calls",
+          "desc": "The Operations Agent calls your team to confirm an urgent task."
+        }
       },
       "users": {
         "intro": "One Studio Agent user is included in every account. WhatsApp access for staff, admin and owners is counted per person and per role.",
@@ -3391,24 +3402,6 @@
           "desc": "A tool or PMS to connect that is not supported yet.",
           "detail": "to be reviewed with you"
         }
-      },
-      "soon": {
-        "intro": "Live calls on WhatsApp are under construction, with no promised date. Tell us which ones interest you: you will be the first to know.",
-        "agent_booking_call": {
-          "name": "Booking Agent Call",
-          "desc": "Takes a booking by voice, live on WhatsApp."
-        },
-        "agent_guest_service_call": {
-          "name": "Guest Service Agent Call",
-          "desc": "Answers a guest who calls."
-        },
-        "agent_staff_call": {
-          "name": "Staff calls",
-          "desc": "The Operations Agent calls your team."
-        },
-        "interested": "I'm interested",
-        "interestedOn": "✓ I'm interested",
-        "detail": "coming soon · you are interested"
       },
       "selection": {
         "aria": "Your selection",

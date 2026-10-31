@@ -7,9 +7,9 @@ import { PAYS_DEMO } from '@/lib/demoQualification';
 import { demoResponseErrorMessage, normalizeDemoBackendResponse } from '@/lib/demoApiResponse';
 import { trackDemoLead } from '@/lib/analytics';
 import {
-  BIENTOT, estChoisi, estExterne, estHotel, PAR_COMPTE, PRODUITS, PROFILS, QUANDS, QUANDS_FR, resume, segmentCrm,
+  estChoisi, estExterne, estHotel, PAR_COMPTE, PRODUITS, PROFILS, QUANDS, QUANDS_FR, resume, segmentCrm,
   SELECTION_PAR_DEFAUT, SITES, UTILISATEURS, VALEURS_RAPIDES,
-  type BientotId, type ProduitId, type QuandId, type Selection, type SiteId, type UtilisateurId,
+  type ProduitId, type QuandId, type Selection, type SiteId, type UtilisateurId,
 } from '@/lib/refonte/offre';
 
 const DEMO_API = '/api/v1/demo';
@@ -82,7 +82,6 @@ export function OffreComposer() {
   if (s.onboarding) lignes.push({ nom: t('service.onboarding.name'), detail: t('service.onboarding.detail') });
   if (s.numeros > 0) lignes.push({ nom: t('service.branding.name'), detail: t('service.branding.detail', { n: s.numeros }) });
   if (s.connexion) lignes.push({ nom: t('service.connection.name'), detail: t('service.connection.detail') });
-  BIENTOT.forEach((b) => { if (s.bientot[b]) lignes.push({ nom: t(`soon.${b}.name`), detail: t('soon.detail') }); });
 
   // « conciergerie, 25 biens, Agent Opérations, WhatsApp Check-in » : le cas du visiteur, repris à l'étape « envoyé »
   const choisis = PRODUITS.filter((id) => estChoisi(s, id) && id !== 'pms').slice(0, 3).map((id) => t(`products.${id}.name`));
@@ -250,23 +249,6 @@ export function OffreComposer() {
             <button type="button" className="sj2-choix" aria-pressed={s.connexion} onClick={() => maj({ connexion: !s.connexion })}>
               <strong>{t('service.connection.name')}</strong><span>{t('service.connection.desc')}</span>
             </button>
-          </div>
-        </fieldset>
-
-        {/* 7 · bientôt */}
-        <fieldset className="sj2-etape-offre">
-          <legend className="sj2-eyebrow sj2-eyebrow--sm sj2-eyebrow--dim">{t('steps.soon')}</legend>
-          <p className="sj2-offre__intro">{t('soon.intro')}</p>
-          <div className="sj2-grille3">
-            {BIENTOT.map((b: BientotId) => {
-              const a = !!s.bientot[b];
-              return (
-                <button key={b} type="button" className="sj2-choix sj2-choix--soon" aria-pressed={a} onClick={() => maj({ bientot: { ...s.bientot, [b]: !a } })}>
-                  <strong>{t(`soon.${b}.name`)}</strong><span>{t(`soon.${b}.desc`)}</span>
-                  <em>{a ? t('soon.interestedOn') : t('soon.interested')}</em>
-                </button>
-              );
-            })}
           </div>
         </fieldset>
       </div>

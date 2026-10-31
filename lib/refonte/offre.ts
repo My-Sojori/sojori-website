@@ -3,6 +3,7 @@ export const PRODUITS = [
   'pms', 'whatsapp_checkin', 'whatsapp_stay', 'whatsapp_concierge',
   'agent_booking', 'agent_guest_service', 'agent_operations', 'dynamic_pricing',
   'agent_commercial_crm', 'agent_prospecting', 'agent_marketing', 'agent_finance',
+  'agent_booking_call', 'agent_guest_service_call', 'agent_staff_call',
 ] as const;
 export type ProduitId = (typeof PRODUITS)[number];
 /** Ceux qui se facturent pour le compte, pas au bien. */
@@ -12,8 +13,6 @@ export const UTILISATEURS = ['studio', 'staff', 'admin', 'owner'] as const;
 export type UtilisateurId = (typeof UTILISATEURS)[number];
 export const SITES = ['none', 'template', 'ai', 'custom'] as const;
 export type SiteId = (typeof SITES)[number];
-export const BIENTOT = ['agent_booking_call', 'agent_guest_service_call', 'agent_staff_call'] as const;
-export type BientotId = (typeof BIENTOT)[number];
 export const VALEURS_RAPIDES = [5, 10, 25, 50, 100, 200];
 
 /** Le profil du visiteur : type d'établissement + socle. Il fixe le segment du CRM et le socle (Tawfiq, 31/10/2026). */
@@ -33,7 +32,6 @@ export type Selection = {
   onboarding: boolean;
   numeros: number;
   connexion: boolean;
-  bientot: Partial<Record<BientotId, boolean>>;
 };
 
 export const SELECTION_PAR_DEFAUT: Selection = {
@@ -45,7 +43,6 @@ export const SELECTION_PAR_DEFAUT: Selection = {
   onboarding: true,
   numeros: 0,
   connexion: false,
-  bientot: {},
 };
 
 /** Un produit est-il réellement choisi ? (la tarification dynamique est exclue hors PMS Sojori, le PMS aussi.) */
@@ -59,10 +56,10 @@ const NOMS_FR: Record<ProduitId, string> = {
   agent_booking: 'Agent Réservation', agent_guest_service: 'Agent Service client', agent_operations: 'Agent Opérations',
   dynamic_pricing: 'Tarification dynamique', agent_commercial_crm: 'Agent Commercial avec CRM', agent_prospecting: 'Agent Prospection',
   agent_marketing: 'Agent Marketing', agent_finance: 'Agent Finance',
+  agent_booking_call: 'Agent Réservation Call', agent_guest_service_call: 'Agent Service client Call', agent_staff_call: 'Appels au staff',
 };
 const SIEGES_FR: Record<UtilisateurId, string> = { studio: 'utilisateurs Agent Studio', staff: 'accès WhatsApp staff', admin: 'accès WhatsApp admin', owner: 'accès WhatsApp propriétaire' };
 const SITES_FR: Record<SiteId, string> = { none: 'pas de site', template: 'site modèle', ai: 'Agent Site web', custom: 'site sur mesure' };
-const BIENTOT_FR: Record<BientotId, string> = { agent_booking_call: 'Agent Réservation Call', agent_guest_service_call: 'Agent Service client Call', agent_staff_call: 'Appels au staff' };
 
 /**
  * Le résumé de la sélection, en français, lu par le conseiller (dans « attentes » de la demande).
@@ -84,8 +81,6 @@ export function resume(s: Selection): string {
   if (s.numeros > 0) service.push(`branding WhatsApp (${s.numeros} numéro(s))`);
   if (s.connexion) service.push('connexion spécifique à étudier');
   l.push(`Mise en service : ${service.length ? service.join(', ') : 'rien de demandé'}.`);
-  const bientot = BIENTOT.filter((b) => s.bientot[b]);
-  if (bientot.length) l.push(`Intéressé par (bientôt) : ${bientot.map((b) => BIENTOT_FR[b]).join(', ')}.`);
   return l.join('\n');
 }
 

@@ -3260,8 +3260,7 @@
         "agents": "3 · SUS AGENTES Y SUS OPCIONES",
         "users": "4 · SUS USUARIOS",
         "site": "5 · SU SITIO WEB",
-        "service": "6 · LA PUESTA EN MARCHA",
-        "soon": "7 · PRÓXIMAMENTE"
+        "service": "6 · LA PUESTA EN MARCHA"
       },
       "parc": {
         "unitOne": "propiedad o habitación",
@@ -3323,7 +3322,19 @@
           "desc": "Prepara el seguimiento de sus cuentas y de sus pagos, que usted valida."
         },
         "blocked": "No disponible con su PMS: los precios dinámicos solo se aplican a las propiedades del PMS Sojori.",
-        "forAccount": "para su cuenta"
+        "forAccount": "para su cuenta",
+        "agent_booking_call": {
+          "name": "Agente de Reservas Call",
+          "desc": "Toma una reserva por voz, en llamada directa por WhatsApp."
+        },
+        "agent_guest_service_call": {
+          "name": "Agente de Atención al Cliente Call",
+          "desc": "Responde a un huésped que llama, en directo por WhatsApp."
+        },
+        "agent_staff_call": {
+          "name": "Llamadas al equipo",
+          "desc": "El Agente de Operaciones llama a su equipo para confirmar una tarea urgente."
+        }
       },
       "users": {
         "intro": "Cada cuenta incluye un usuario de Agente Studio. Los accesos de WhatsApp del equipo, del administrador y de los propietarios se cuentan por persona y por rol.",
@@ -3391,24 +3402,6 @@
           "desc": "Una herramienta o un PMS por conectar que aún no es compatible.",
           "detail": "a estudiar con usted"
         }
-      },
-      "soon": {
-        "intro": "Las llamadas en directo por WhatsApp están en construcción, sin fecha prometida. Díganos cuáles le interesan: se le avisará en primer lugar.",
-        "agent_booking_call": {
-          "name": "Agente de Reservas Call",
-          "desc": "Toma una reserva por voz, en directo por WhatsApp."
-        },
-        "agent_guest_service_call": {
-          "name": "Agente de Atención al Cliente Call",
-          "desc": "Responde a un huésped que llama."
-        },
-        "agent_staff_call": {
-          "name": "Llamadas al equipo",
-          "desc": "El Agente de Operaciones llama a su equipo."
-        },
-        "interested": "Me interesa",
-        "interestedOn": "✓ Me interesa",
-        "detail": "próximamente · le interesa"
       },
       "selection": {
         "aria": "Su selección",

@@ -3260,8 +3260,7 @@
         "agents": "3 · VOS AGENTS ET VOS OPTIONS",
         "users": "4 · VOS UTILISATEURS",
         "site": "5 · VOTRE SITE",
-        "service": "6 · LA MISE EN SERVICE",
-        "soon": "7 · BIENTÔT"
+        "service": "6 · LA MISE EN SERVICE"
       },
       "parc": {
         "unitOne": "bien ou chambre",
@@ -3323,7 +3322,19 @@
           "desc": "Prépare vos suivis de comptes et de paiements, que vous validez."
         },
         "blocked": "Non disponible avec votre PMS : la tarification dynamique ne s’applique qu’aux biens du PMS Sojori.",
-        "forAccount": "pour votre compte"
+        "forAccount": "pour votre compte",
+        "agent_booking_call": {
+          "name": "Agent Réservation Call",
+          "desc": "Prend une réservation à la voix, en appel direct sur WhatsApp."
+        },
+        "agent_guest_service_call": {
+          "name": "Agent Service client Call",
+          "desc": "Répond à un voyageur qui appelle, en direct sur WhatsApp."
+        },
+        "agent_staff_call": {
+          "name": "Appels au staff",
+          "desc": "L’Agent Opérations appelle votre équipe pour confirmer une tâche urgente."
+        }
       },
       "users": {
         "intro": "Un utilisateur Agent Studio est inclus dans chaque compte. Les accès WhatsApp du staff, de l’admin et des propriétaires se comptent par personne et par rôle.",
@@ -3391,24 +3402,6 @@
           "desc": "Un outil ou un PMS à brancher qui n’est pas encore pris en charge.",
           "detail": "à étudier avec vous"
         }
-      },
-      "soon": {
-        "intro": "Les appels en direct sur WhatsApp sont en construction, sans date promise. Dites-nous lesquels vous intéressent : vous serez prévenu en premier.",
-        "agent_booking_call": {
-          "name": "Agent Réservation Call",
-          "desc": "Prend une réservation à la voix, en direct sur WhatsApp."
-        },
-        "agent_guest_service_call": {
-          "name": "Agent Service client Call",
-          "desc": "Répond à un voyageur qui appelle."
-        },
-        "agent_staff_call": {
-          "name": "Appels au staff",
-          "desc": "L’Agent Opérations appelle votre équipe."
-        },
-        "interested": "Ça m’intéresse",
-        "interestedOn": "✓ Ça m’intéresse",
-        "detail": "bientôt · vous êtes intéressé"
       },
       "selection": {
         "aria": "Votre sélection",
