@@ -50,8 +50,8 @@ export async function renderOg(locale: string) {
         <div style={{ display: 'flex', flexDirection: 'column', gap: 28 }}>
           {arabe ? (
             // Satori ne gère pas le bidi : les mots arabes sont posés un à un, en ligne inversée, avec un écart fixe.
-            <div style={{ display: 'flex', flexDirection: 'row-reverse', flexWrap: 'wrap', justifyContent: 'flex-start', columnGap: 12, rowGap: 4, fontFamily: 'Plex Arabic', fontSize: 34, color: '#E6B022' }}>
-              {keywords.split(' ').map((w, i) => <div key={i} style={{ display: 'flex' }}>{w}</div>)}
+            <div style={{ display: 'flex', flexDirection: 'row-reverse', flexWrap: 'wrap', justifyContent: 'flex-start', columnGap: 14, rowGap: 4, fontFamily: 'Plex Arabic', fontSize: 34, color: '#E6B022' }}>
+              {keywords.split(/\s+/).filter(Boolean).map((w, i) => <div key={i} style={{ display: 'flex', whiteSpace: 'nowrap' }}>{w.trim()}</div>)}
             </div>
           ) : (
             <div style={{ fontFamily: 'Geist Mono', fontSize: 21, letterSpacing: 2.2, color: '#E6B022', display: 'flex' }}>{keywords}</div>
