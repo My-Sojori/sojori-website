@@ -613,3 +613,7 @@ html[dir='rtl'] .sj2-rapport__marque { letter-spacing: 0; }
 .sj2-footer__social svg { flex: none; }
 .sj2-footer__note { font-size: 13.5px; color: var(--sj-text-3); }
 
+/* pied de page : une liste par colonne, sous un titre de niveau 2 */
+.sj2-footer__col ul { display: flex; flex-direction: column; gap: 2px; margin: 0; padding: 0; list-style: none; }
+.sj2-footer .sj2-footer__titre { margin: 0 0 8px; font-weight: inherit; color: var(--sj-text-3); }
+

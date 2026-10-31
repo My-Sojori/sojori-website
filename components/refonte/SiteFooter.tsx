@@ -35,6 +35,7 @@ const VILLES = [
 export function SiteFooter() {
   const t = useTranslations('refonte.footer');
   const p = useTranslations('refonte.pages.common.links');
+  const n = useTranslations('refonte.nav');
   return (
     <footer className="sj2-footer">
       <div className="sj2-wrap sj2-footer__grid">
@@ -47,43 +48,61 @@ export function SiteFooter() {
             <bdi lang="en" dir="ltr">AI workforce for hospitality.</bdi> {t('tagline')}
           </p>
         </div>
-        <nav className="sj2-footer__col" aria-label={t('product')}>
-          <span className="sj2-eyebrow sj2-eyebrow--sm sj2-eyebrow--dim" style={{ marginBottom: 8 }}>{t('product')}</span>
-          <Link href={{ pathname: '/', hash: 'agents' }} prefetch={false}>{t('agents')}</Link>
-          <Link href={{ pathname: '/', hash: 'whatsapp' }} prefetch={false}>{t('whatsapp')}</Link>
-          <Link href={{ pathname: '/', hash: 'socle' }} prefetch={false}>{t('pms')}</Link>
-          <Link href="/offre" prefetch={false}>{t('offer')}</Link>
+        <nav className="sj2-footer__col" aria-labelledby="sj2-foot-produit">
+          <h2 id="sj2-foot-produit" className="sj2-eyebrow sj2-eyebrow--sm sj2-eyebrow--dim sj2-footer__titre">{t('product')}</h2>
+          <ul>
+            <li><Link href={{ pathname: '/', hash: 'socle' }} prefetch={false}>{n('pms')}</Link></li>
+            <li><Link href={{ pathname: '/', hash: 'agents' }} prefetch={false}>{t('agents')}</Link></li>
+            <li><Link href={{ pathname: '/', hash: 'whatsapp' }} prefetch={false}>{t('modules')}</Link></li>
+            <li><Link href="/check-in-whatsapp" prefetch={false}>{p('checkin')}</Link></li>
+            <li><Link href="/offre" prefetch={false}>{t('offer')}</Link></li>
+          </ul>
         </nav>
-        <nav className="sj2-footer__col" aria-label={t('resources')}>
-          <span className="sj2-eyebrow sj2-eyebrow--sm sj2-eyebrow--dim" style={{ marginBottom: 8 }}>{t('resources')}</span>
-          <Link href="/analyse-concurrents" prefetch={false}>{t('competitors')}</Link>
-          <Link href="/comparatif-pms-maroc" prefetch={false}>{t('compare')}</Link>
-          <Link href="/pms-maroc" prefetch={false}>{p('pmsMaroc')}</Link>
-          <Link href="/conciergerie-maroc" prefetch={false}>{p('conciergerieMaroc')}</Link>
-          <Link href="/agents" prefetch={false}>{p('agents')}</Link>
-          <Link href="/check-in-whatsapp" prefetch={false}>{p('checkin')}</Link>
-          <Link href="/orchestration" prefetch={false}>{t('orchestration')}</Link>
-          <Link href="/mcp" prefetch={false}>{t('mcp')}</Link>
-          <Link href="/about" prefetch={false}>{t('about')}</Link>
+        <nav className="sj2-footer__col" aria-labelledby="sj2-foot-guides">
+          <h2 id="sj2-foot-guides" className="sj2-eyebrow sj2-eyebrow--sm sj2-eyebrow--dim sj2-footer__titre">{t('guides')}</h2>
+          <ul>
+            <li><Link href="/pms-maroc" prefetch={false}>{p('pmsMaroc')}</Link></li>
+            <li><Link href="/conciergerie-maroc" prefetch={false}>{p('conciergerieMaroc')}</Link></li>
+            <li><Link href="/comparatif-pms-maroc" prefetch={false}>{t('compare')}</Link></li>
+            <li><Link href="/analyse-concurrents" prefetch={false}>{t('competitors')}</Link></li>
+          </ul>
         </nav>
-        <nav className="sj2-footer__col" aria-label={t('cities')}>
-          <span className="sj2-eyebrow sj2-eyebrow--sm sj2-eyebrow--dim" style={{ marginBottom: 8 }}>{t('cities')}</span>
-          {VILLES.map(([id, href]) => (
-            <Link key={id} href={href} prefetch={false}>{t(`city.${id}`)}</Link>
-          ))}
+        <nav className="sj2-footer__col" aria-labelledby="sj2-foot-sojori">
+          <h2 id="sj2-foot-sojori" className="sj2-eyebrow sj2-eyebrow--sm sj2-eyebrow--dim sj2-footer__titre">{t('company')}</h2>
+          <ul>
+            <li><Link href="/about" prefetch={false}>{t('about')}</Link></li>
+            <li><Link href="/orchestration" prefetch={false}>{t('orchestration')}</Link></li>
+            <li><Link href="/mcp" prefetch={false}>{t('mcpDev')}</Link></li>
+          </ul>
+        </nav>
+        <nav className="sj2-footer__col" aria-labelledby="sj2-foot-villes">
+          <h2 id="sj2-foot-villes" className="sj2-eyebrow sj2-eyebrow--sm sj2-eyebrow--dim sj2-footer__titre">{t('cities')}</h2>
+          <ul>
+            {VILLES.map(([id, href]) => (
+              <li key={id}><Link href={href} prefetch={false}>{t(`city.${id}`)}</Link></li>
+            ))}
+          </ul>
         </nav>
         <div className="sj2-footer__col sj2-footer__contact">
-          <span className="sj2-eyebrow sj2-eyebrow--sm sj2-eyebrow--dim" style={{ marginBottom: 8 }}>{t('follow')}</span>
-          <a href={LINKEDIN} target="_blank" rel="noopener noreferrer" className="sj2-footer__social">
-            <IconeLinkedin /><span>LinkedIn</span><span className="sj2-sr">{t('newTab')}</span>
-          </a>
-          <a href={INSTAGRAM} target="_blank" rel="noopener noreferrer" className="sj2-footer__social">
-            <IconeInstagram /><span>Instagram</span><span className="sj2-sr">{t('newTab')}</span>
-          </a>
-          <span className="sj2-eyebrow sj2-eyebrow--sm sj2-eyebrow--dim" style={{ margin: '18px 0 4px' }}>{t('contact')}</span>
+          <h2 className="sj2-eyebrow sj2-eyebrow--sm sj2-eyebrow--dim sj2-footer__titre">{t('follow')}</h2>
+          <ul>
+            <li>
+              <a href={LINKEDIN} target="_blank" rel="noopener noreferrer" className="sj2-footer__social">
+                <IconeLinkedin /><span>LinkedIn</span><span className="sj2-sr">{t('newTab')}</span>
+              </a>
+            </li>
+            <li>
+              <a href={INSTAGRAM} target="_blank" rel="noopener noreferrer" className="sj2-footer__social">
+                <IconeInstagram /><span>Instagram</span><span className="sj2-sr">{t('newTab')}</span>
+              </a>
+            </li>
+          </ul>
+          <h2 className="sj2-eyebrow sj2-eyebrow--sm sj2-eyebrow--dim sj2-footer__titre" style={{ marginTop: 18 }}>{t('contact')}</h2>
           <span className="sj2-footer__note">{t('emailLabel')}</span>
-          <a href={`mailto:${EMAIL}`}><bdi dir="ltr">{EMAIL}</bdi></a>
-          <Link href={{ pathname: '/offre', hash: 'contact' }} prefetch={false}>{t('demo')}</Link>
+          <ul>
+            <li><a href={`mailto:${EMAIL}`}><bdi dir="ltr">{EMAIL}</bdi></a></li>
+            <li><Link href={{ pathname: '/offre', hash: 'contact' }} prefetch={false}>{t('demo')}</Link></li>
+          </ul>
         </div>
         <div className="sj2-footer__legal">
           <span>{t('copyright')}</span>
