@@ -2602,10 +2602,12 @@
       "homeAria": "Sojori, home",
       "menuOpen": "Open the menu",
       "menuClose": "Close the menu",
-      "skip": "Skip to content"
+      "skip": "Skip to content",
+      "menu": "Menu",
+      "demoShort": "Demo"
     },
     "footer": {
-      "tagline": "AI workforce for hospitality. Built for Morocco, useful wherever short stays are rented.",
+      "tagline": "Built for Morocco, useful wherever short stays are rented.",
       "product": "Product",
       "agents": "The agents",
       "whatsapp": "WhatsApp",

@@ -11,7 +11,7 @@ export function Hero() {
           <div className="sj2-hero__text">
             <h1 id="sj2-h1" className="sj2-h1">
               <span className="sj2-eyebrow">{t('keywords')}</span>
-              AI workforce <em>for hospitality.</em>
+              <bdi lang="en" dir="ltr">AI workforce <em>for hospitality.</em></bdi>
             </h1>
             <p className="sj2-hero__sub">{t('sub')}</p>
             <div className="sj2-hero__cta">

@@ -2601,10 +2601,12 @@
       "homeAria": "Sojori, accueil",
       "menuOpen": "Ouvrir le menu",
       "menuClose": "Fermer le menu",
-      "skip": "Aller au contenu"
+      "skip": "Aller au contenu",
+      "menu": "Menu",
+      "demoShort": "Démo"
     },
     "footer": {
-      "tagline": "AI workforce for hospitality. Pensé pour le Maroc, utile partout où l’on loue en courte durée.",
+      "tagline": "Pensé pour le Maroc, utile partout où l’on loue en courte durée.",
       "product": "Produit",
       "agents": "Les agents",
       "whatsapp": "WhatsApp",

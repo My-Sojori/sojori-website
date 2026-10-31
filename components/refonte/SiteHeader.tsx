@@ -52,7 +52,8 @@ export function SiteHeader() {
           <div className="sj2-header__spacer" />
           <LangSwitch />
           <Link href={{ pathname: '/offre', hash: 'contact' }} className="sj2-btn sj2-btn--sm" prefetch={false}>
-            {t('demo')}
+            <span className="sj2-demo-long">{t('demo')}</span>
+            <span className="sj2-demo-short" aria-hidden="true">{t('demoShort')}</span>
           </Link>
           <button
             type="button"
@@ -69,7 +70,7 @@ export function SiteHeader() {
             </svg>
           </button>
         </div>
-        <nav id="sj2-menu" className="sj2-menu" aria-label={t('main')} hidden={!ouvert}>
+        <nav id="sj2-menu" className="sj2-menu" aria-label={t('menu')} hidden={!ouvert}>
           {liens}
           <LangSwitch />
         </nav>

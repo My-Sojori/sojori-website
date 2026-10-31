@@ -36,8 +36,12 @@
   overflow-x: clip;
   -webkit-font-smoothing: antialiased;
 }
+/* Geist n'a que le latin : l'arabe prend IBM Plex Sans Arabic (next/font, variable posée sur <html>). */
+html[lang='ar'] .sj2 { --sj-sans: var(--font-plex-arabic), var(--font-geist-sans), system-ui, sans-serif; }
 .sj2 *, .sj2 *::before, .sj2 *::after { box-sizing: border-box; }
 .sj2 h1, .sj2 h2, .sj2 h3, .sj2 p, .sj2 ul, .sj2 ol { margin: 0; padding: 0; }
+/* Les titres de l'ancien thème clair posent une encre sombre : on la remplace. */
+.sj2 h1, .sj2 h2, .sj2 h3, .sj2 h4 { color: var(--sj-text); }
 .sj2 ul, .sj2 ol { list-style: none; }
 .sj2 a { color: var(--sj-gold); text-decoration: none; }
 .sj2 button { font-family: inherit; cursor: pointer; color: inherit; }
@@ -60,6 +64,7 @@
 .sj2-h2 { font-size: clamp(30px, 4.4vw, 60px); font-weight: 600; letter-spacing: -0.04em; line-height: 1.04; text-wrap: balance; }
 .sj2-h3 { font-size: 24px; font-weight: 600; letter-spacing: -0.03em; line-height: 1.15; }
 .sj2-lead { font-size: 19px; color: var(--sj-text-2); text-wrap: pretty; }
+html[dir='rtl'] .sj2-eyebrow { letter-spacing: 0; font-family: var(--sj-sans); text-transform: none; }
 html[dir='rtl'] .sj2-h2, html[dir='rtl'] .sj2-h3, html[dir='rtl'] .sj2 h1 { letter-spacing: 0; }
 .sj2-section { padding-block: 100px 24px; scroll-margin-top: 24px; }
 @media (max-width: 640px) { .sj2-section { padding-block: 64px 16px; } }
@@ -81,8 +86,8 @@ html[dir='rtl'] .sj2-h2, html[dir='rtl'] .sj2-h3, html[dir='rtl'] .sj2 h1 { lett
 /* ---------- cartes et pastilles ---------- */
 .sj2-card { border: 1px solid var(--sj-line); border-radius: 22px; background: var(--sj-surface); padding: 30px; }
 .sj2-card--gold { border-color: var(--sj-line-gold); background: var(--sj-surface-gold); }
-.sj2-card:hover { border-color: #3a362c; }
-.sj2-card--gold:hover { border-color: var(--sj-line-gold-2); }
+a.sj2-card:hover { border-color: #3a362c; }
+a.sj2-card--gold:hover { border-color: var(--sj-line-gold-2); }
 .sj2-pill { display: inline-flex; align-items: center; border: 1px solid var(--sj-line-gold); border-radius: 999px; padding: 4px 12px; font-size: 13.5px; color: #e6e1d6; }
 .sj2-pill--mono { font-family: var(--sj-mono); font-size: 12px; letter-spacing: 0.08em; color: var(--sj-gold); }
 .sj2-tab {
@@ -95,7 +100,7 @@ html[dir='rtl'] .sj2-h2, html[dir='rtl'] .sj2-h3, html[dir='rtl'] .sj2 h1 { lett
 /* ---------- en-tête ---------- */
 .sj2-header { position: relative; z-index: 40; }
 .sj2-header__bar { display: flex; align-items: center; gap: 12px 36px; padding-block: 22px; }
-.sj2-logo { display: flex; align-items: center; gap: 10px; color: var(--sj-text) !important; font-size: 22px; font-weight: 600; letter-spacing: -0.03em; }
+.sj2-logo { display: flex; align-items: center; min-height: 44px; gap: 10px; color: var(--sj-text) !important; font-size: 22px; font-weight: 600; letter-spacing: -0.03em; }
 .sj2-nav { display: flex; gap: 6px 28px; font-size: 15px; font-weight: 500; }
 .sj2-nav a { color: var(--sj-text-3); min-height: 44px; display: inline-flex; align-items: center; }
 .sj2-nav a:hover, .sj2-nav a[aria-current='page'] { color: var(--sj-text); }
@@ -121,7 +126,7 @@ html[dir='rtl'] .sj2-h2, html[dir='rtl'] .sj2-h3, html[dir='rtl'] .sj2 h1 { lett
 .sj2-footer__grid { display: flex; flex-wrap: wrap; gap: 40px 64px; }
 .sj2-footer__brand { flex: 1 1 260px; display: flex; flex-direction: column; gap: 14px; }
 .sj2-footer__col { flex: 0 1 220px; display: flex; flex-direction: column; gap: 2px; font-size: 15px; }
-.sj2-footer__col a { color: var(--sj-text-2); min-height: 40px; display: inline-flex; align-items: center; }
+.sj2-footer__col a { color: var(--sj-text-2); min-height: 44px; display: inline-flex; align-items: center; }
 .sj2-footer__col a:hover { color: var(--sj-text); }
 .sj2-footer__legal { flex: 1 1 100%; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 24px; border-top: 1px solid #1e1c16; padding-top: 24px; font-size: 13.5px; color: var(--sj-text-4); }
 .sj2-footer__legal a { color: var(--sj-text-4); text-decoration: underline; text-underline-offset: 3px; }
@@ -143,3 +148,7 @@ html[dir='rtl'] .sj2-h2, html[dir='rtl'] .sj2-h3, html[dir='rtl'] .sj2 h1 { lett
 .sj2-hero__sub { max-width: 580px; font-size: 20px; line-height: 1.5; color: var(--sj-text-2); text-wrap: pretty; }
 .sj2-hero__cta { display: flex; flex-wrap: wrap; gap: 12px; }
 @media (max-width: 640px) { .sj2-h1 { font-size: 46px; } .sj2-hero__sub { font-size: 17px; } .sj2-hero__cta { flex-direction: column; } }
+
+/* libellé court du bouton d'en-tête sur petit téléphone */
+.sj2-demo-short { display: none; }
+@media (max-width: 420px) { .sj2-demo-long { display: none; } .sj2-demo-short { display: inline; } }

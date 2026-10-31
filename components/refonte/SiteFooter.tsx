@@ -20,7 +20,9 @@ export function SiteFooter() {
             <SojoriMark size={30} />
             sojori
           </span>
-          <p style={{ fontSize: 15, color: 'var(--sj-text-3)', maxWidth: 300 }}>{t('tagline')}</p>
+          <p style={{ fontSize: 15, color: 'var(--sj-text-3)', maxWidth: 300 }}>
+            <bdi lang="en" dir="ltr">AI workforce for hospitality.</bdi> {t('tagline')}
+          </p>
         </div>
         <nav className="sj2-footer__col" aria-label={t('product')}>
           <span className="sj2-eyebrow sj2-eyebrow--sm sj2-eyebrow--dim" style={{ marginBottom: 8 }}>{t('product')}</span>

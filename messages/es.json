@@ -2504,10 +2504,12 @@
       "homeAria": "Sojori, inicio",
       "menuOpen": "Abrir el menú",
       "menuClose": "Cerrar el menú",
-      "skip": "Ir al contenido"
+      "skip": "Ir al contenido",
+      "menu": "Menú",
+      "demoShort": "Demo"
     },
     "footer": {
-      "tagline": "AI workforce for hospitality. Pensado para Marruecos, útil dondequiera que se alquile por temporadas cortas.",
+      "tagline": "Pensado para Marruecos, útil dondequiera que se alquile por temporadas cortas.",
       "product": "Producto",
       "agents": "Los agentes",
       "whatsapp": "WhatsApp",
