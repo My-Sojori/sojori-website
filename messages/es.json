@@ -2029,8 +2029,8 @@
       "description": "Sojori desarrolla software de orquestación para gestores de propiedades: PMS, channel manager, WhatsApp IA, precios dinámicos. Con sede en Marrakech, Casablanca y París."
     },
     "demo": {
-      "title": "Solicitar una demo de Sojori | PMS y orquestador de hostelería",
-      "description": "Reserva una demo personalizada de Sojori: PMS, Channel Manager, WhatsApp IA. Configuración en menos de 7 días, 1 mes de prueba gratis."
+      "title": "Solicitar una demo de Sojori · PMS y agentes de WhatsApp",
+      "description": "Solicite una demo de Sojori: el PMS de Sojori o el suyo, agentes y módulos de WhatsApp. Un asesor prepara la demo para su caso."
     },
     "demoRdv": {
       "title": "Confirma tu cita de demo | Sojori",
@@ -3255,7 +3255,7 @@
         "lead": "Díganos el tamaño de su parque y los agentes que necesita. Recibirá una propuesta con precios, adaptada a su caso."
       },
       "steps": {
-        "socle": "1 · SU BASE",
+        "socle": "1 · USTED ES",
         "parc": "2 · SU PARQUE",
         "agents": "3 · SUS AGENTES Y SUS OPCIONES",
         "users": "4 · SUS USUARIOS",
@@ -3263,22 +3263,15 @@
         "service": "6 · LA PUESTA EN MARCHA",
         "soon": "7 · PRÓXIMAMENTE"
       },
-      "mode": {
-        "aria": "Su sistema de gestión",
-        "sojori": {
-          "title": "Con el PMS Sojori",
-          "desc": "Alojamientos, reservas, channel manager, calendarios, inbox, informes."
-        },
-        "own": {
-          "title": "Con su PMS",
-          "desc": "Usted lo conserva. Mismas opciones, salvo los precios dinámicos."
-        }
-      },
       "parc": {
         "unitOne": "propiedad o habitación",
         "unitMany": "propiedades o habitaciones",
         "sliderAria": "Número de propiedades o de habitaciones",
-        "quickAria": "Valores rápidos"
+        "quickAria": "Valores rápidos",
+        "unitBiens": "{n, plural, one {propiedad} other {propiedades}}",
+        "unitChambres": "{n, plural, one {habitación} other {habitaciones}}",
+        "sliderAriaBiens": "Número de propiedades",
+        "sliderAriaChambres": "Número de habitaciones"
       },
       "products": {
         "pms": {
@@ -3441,7 +3434,11 @@
         "errorGeneric": "No se pudo completar el envío. Compruebe su conexión e inténtelo de nuevo.",
         "successTitle": "Gracias, su solicitud ha sido enviada.",
         "successText": "Un asesor le responderá con una propuesta con precios y le propondrá un horario para la demostración.",
-        "again": "Modificar mi selección"
+        "again": "Modificar mi selección",
+        "titleBiens": "{n, plural, one {# propiedad} other {# propiedades}}",
+        "titleChambres": "{n, plural, one {# habitación} other {# habitaciones}}",
+        "detailBiens": "{n, plural, one {# propiedad} other {# propiedades}}",
+        "detailChambres": "{n, plural, one {# habitación} other {# habitaciones}}"
       },
       "faq": {
         "title": "Preguntas sobre su oferta",
@@ -3464,78 +3461,78 @@
           }
         ]
       },
+      "profile": {
+        "aria": "Usted es",
+        "label": {
+          "conc": "empresa de conserjería",
+          "hotel": "hotel o riad"
+        },
+        "conc_sojori": {
+          "type": "EMPRESA DE CONSERJERÍA",
+          "socle": "Con el PMS de Sojori",
+          "desc": "Alojamientos, reservas, channel manager, calendarios, bandeja de entrada, informes."
+        },
+        "conc_ext": {
+          "type": "EMPRESA DE CONSERJERÍA",
+          "socle": "Con su PMS",
+          "desc": "Usted lo conserva. Mismos agentes y módulos, salvo los precios dinámicos."
+        },
+        "hotel_sojori": {
+          "type": "HOTEL O RIAD",
+          "socle": "Con el PMS de Sojori",
+          "desc": "Habitaciones, reservas, channel manager, recepción, informes."
+        },
+        "hotel_ext": {
+          "type": "HOTEL O RIAD",
+          "socle": "Con su PMS",
+          "desc": "Usted lo conserva. Mismos agentes y módulos, salvo los precios dinámicos."
+        }
+      },
       "form": {
         "stepsAria": "Pasos de su solicitud",
         "step": {
           "email": "Su correo electrónico",
-          "prepare": "Prepare su demo",
+          "reach": "Para contactarle",
           "sent": "Enviado"
         },
         "email": {
-          "title": "Solicite su demo",
-          "lead": "Basta con su correo electrónico para empezar. Después, unas preguntas opcionales para preparar la demo.",
+          "title": "Recibir su propuesta",
+          "lead": "Basta con su correo electrónico para empezar. Su actividad, su parque y sus elecciones se envían con su solicitud.",
           "label": "Su correo electrónico",
-          "consent": "Acepto que Sojori se ponga en contacto conmigo sobre mi demo.",
+          "consent": "Acepto que Sojori se ponga en contacto conmigo en relación con mi solicitud.",
           "submit": "Solicitar mi demo",
-          "saved": "Su solicitud queda registrada desde este paso.",
-          "help": "Indique un correo electrónico válido y marque la casilla de aceptación para continuar."
+          "saved": "Su solicitud y sus elecciones quedan guardadas desde este paso.",
+          "help": "Indique un correo electrónico válido y marque la casilla de conformidad para continuar."
         },
-        "prepare": {
-          "title": "Para preparar su demo",
-          "lead": "Recibido. Cuanto más nos cuente, más se parecerá la demo a su día a día. Todo es opcional.",
+        "reach": {
+          "title": "Recibido. Para contactarle",
+          "lead": "Todo es opcional. Su actividad, su parque y sus elecciones ya están en la solicitud.",
           "name": "Nombre y apellidos",
           "country": "País",
           "countryOther": "Su país",
+          "otherCountry": "Otro país",
           "phone": "Número de WhatsApp",
           "phoneHint": "recomendado",
           "dial": "Prefijo del país",
           "dialOption": "{dial} ({country})",
-          "otherCountry": "Otro país",
+          "pms": "El PMS que conserva",
           "city": "Su ciudad",
-          "send": "Enviar",
-          "skip": "Omitir este paso",
-          "noCommitment": "Sin compromiso. Sus respuestas solo sirven para preparar la demo."
-        },
-        "segment": {
-          "title": "Usted es",
-          "conciergerie": "Empresa de conserjería",
-          "proprietaire": "Propietario",
-          "hotel": "Hotel",
-          "riad_maison_hotes": "Riad / casa de huéspedes",
-          "residence_aparthotel": "Residencia / apartahotel",
-          "agence_immobiliere": "Agencia inmobiliaria"
-        },
-        "tool": {
-          "title": "Su herramienta actual",
-          "none": "Ninguna",
-          "excel": "Excel o papel",
-          "pms": "Un PMS",
-          "channel": "Un channel manager",
-          "pmsName": "Nombre de su PMS (opcional)"
-        },
-        "priorities": {
-          "title": "Lo que quiere resolver primero",
-          "hint": "máximo dos",
-          "answer": "Responder a los huéspedes",
-          "staff": "Coordinar al equipo",
-          "checkin": "Check-in y formulario de policía",
-          "pricing": "Fijar los precios adecuados",
-          "direct": "Vender en directo",
-          "owners": "Dar seguimiento a los propietarios"
-        },
-        "when": {
-          "title": "¿Cuándo quiere empezar?",
+          "whenTitle": "¿Cuándo quiere empezar?",
           "month": "Este mes",
           "quarter": "En los próximos 3 meses",
-          "looking": "Me estoy informando"
+          "looking": "Me estoy informando",
+          "send": "Enviar",
+          "skip": "Omitir este paso",
+          "note": "Sin compromiso. Tomado de sus elecciones anteriores."
         },
         "sent": {
-          "title": "Enviado.",
-          "s1": "Un asesor de Sojori recibe su solicitud y prepara la demo para su caso.",
+          "thanksName": "Gracias, {name}, hemos recibido su solicitud.",
+          "thanks": "Gracias, hemos recibido su solicitud.",
+          "s1": "Un asesor de Sojori se hace cargo de su solicitud y prepara la demo para su caso: {cas}.",
           "s2": "Recibirá por correo electrónico, en {email}, un enlace para elegir su horario en su agenda.",
-          "s3": "Treinta minutos de demo, por videollamada, sobre su establecimiento.",
-          "more": "Dos respuestas más y la demo se hará a su medida.",
-          "complete": "Completar"
+          "s3": "Treinta minutos de demo, por videollamada, con su propuesta con precios.",
+          "whatsapp": "Déjenos su WhatsApp: su asesor le responderá más rápido.",
+          "addWhatsapp": "Añadir mi WhatsApp"
         }
       }
     },

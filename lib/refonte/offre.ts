@@ -16,8 +16,16 @@ export const BIENTOT = ['agent_booking_call', 'agent_guest_service_call', 'agent
 export type BientotId = (typeof BIENTOT)[number];
 export const VALEURS_RAPIDES = [5, 10, 25, 50, 100, 200];
 
+/** Le profil du visiteur : type d'établissement + socle. Il fixe le segment du CRM et le socle (Tawfiq, 31/10/2026). */
+export const PROFILS = ['conc_sojori', 'conc_ext', 'hotel_sojori', 'hotel_ext'] as const;
+export type ProfilId = (typeof PROFILS)[number];
+export const estExterne = (p: ProfilId) => p.endsWith('_ext');
+export const estHotel = (p: ProfilId) => p.startsWith('hotel');
+/** Le segment du CRM (LEAD_SEGMENTS) : conciergerie, ou hotel (hôtel ou riad). */
+export const segmentCrm = (p: ProfilId): 'conciergerie' | 'hotel' => (estHotel(p) ? 'hotel' : 'conciergerie');
+
 export type Selection = {
-  mode: 'sojori' | 'externe';
+  profil: ProfilId;
   n: number;
   produits: Partial<Record<ProduitId, boolean>>;
   sieges: Record<UtilisateurId, number>;
@@ -29,7 +37,7 @@ export type Selection = {
 };
 
 export const SELECTION_PAR_DEFAUT: Selection = {
-  mode: 'sojori',
+  profil: 'conc_sojori',
   n: 25,
   produits: { pms: true, whatsapp_checkin: true, whatsapp_stay: true },
   sieges: { studio: 1, staff: 0, admin: 0, owner: 0 },
@@ -42,7 +50,7 @@ export const SELECTION_PAR_DEFAUT: Selection = {
 
 /** Un produit est-il réellement choisi ? (la tarification dynamique est exclue hors PMS Sojori, le PMS aussi.) */
 export function estChoisi(s: Selection, id: ProduitId): boolean {
-  if (s.mode === 'externe' && (id === 'dynamic_pricing' || id === 'pms')) return false;
+  if (estExterne(s.profil) && (id === 'dynamic_pricing' || id === 'pms')) return false;
   return !!s.produits[id];
 }
 
@@ -63,8 +71,9 @@ const BIENTOT_FR: Record<BientotId, string> = { agent_booking_call: 'Agent Rése
 export function resume(s: Selection): string {
   const l: string[] = [];
   l.push(`Demande depuis « Votre offre » (sojori.com).`);
-  l.push(`Socle : ${s.mode === 'sojori' ? 'PMS Sojori' : 'garde son PMS actuel'}.`);
-  l.push(`Parc : ${s.n} bien(s) ou chambre(s).`);
+  l.push(`Profil : ${estHotel(s.profil) ? 'hôtel ou riad' : 'conciergerie'}.`);
+  l.push(`Socle : ${estExterne(s.profil) ? 'garde son PMS actuel' : 'PMS Sojori'}.`);
+  l.push(`Parc : ${s.n} ${estHotel(s.profil) ? (s.n > 1 ? 'chambres' : 'chambre') : (s.n > 1 ? 'biens' : 'bien')}.`);
   const choisis = PRODUITS.filter((id) => estChoisi(s, id));
   l.push(`Agents et options : ${choisis.length ? choisis.map((id) => NOMS_FR[id] + (PAR_COMPTE.includes(id) ? ' (pour le compte)' : '')).join(', ') : 'aucun'}.`);
   const sieges = UTILISATEURS.filter((u) => (s.sieges[u] ?? 0) > (u === 'studio' ? 1 : 0));

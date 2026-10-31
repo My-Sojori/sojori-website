@@ -7,9 +7,9 @@ import { PAYS_DEMO } from '@/lib/demoQualification';
 import { demoResponseErrorMessage, normalizeDemoBackendResponse } from '@/lib/demoApiResponse';
 import { trackDemoLead } from '@/lib/analytics';
 import {
-  BIENTOT, estChoisi, OUTILS, OUTILS_FR, PAR_COMPTE, PRIORITES, PRIORITES_FR, PRODUITS, QUANDS, QUANDS_FR, resume,
-  SEGMENTS, SELECTION_PAR_DEFAUT, SITES, UTILISATEURS, VALEURS_RAPIDES,
-  type BientotId, type OutilId, type PrioriteId, type ProduitId, type QuandId, type SegmentId, type Selection, type SiteId, type UtilisateurId,
+  BIENTOT, estChoisi, estExterne, estHotel, PAR_COMPTE, PRODUITS, PROFILS, QUANDS, QUANDS_FR, resume, segmentCrm,
+  SELECTION_PAR_DEFAUT, SITES, UTILISATEURS, VALEURS_RAPIDES,
+  type BientotId, type ProduitId, type QuandId, type Selection, type SiteId, type UtilisateurId,
 } from '@/lib/refonte/offre';
 
 const DEMO_API = '/api/v1/demo';
@@ -31,7 +31,9 @@ export function OffreComposer() {
   const locale = useLocale();
   const [s, setS] = useState<Selection>(SELECTION_PAR_DEFAUT);
   const maj = (p: Partial<Selection>) => setS((x) => ({ ...x, ...p }));
-  const externe = s.mode === 'externe';
+  const externe = estExterne(s.profil);
+  const hotel = estHotel(s.profil);
+  const unite = hotel ? 'Chambres' : 'Biens';
 
   // le formulaire en trois étapes (Tawfiq, 31/10/2026) : l'e-mail d'abord, puis la préparation de la démo (facultative), puis « envoyé »
   const [etape, setEtape] = useState<1 | 2 | 3>(1);
@@ -42,10 +44,7 @@ export function OffreComposer() {
   const [paysAutre, setPaysAutre] = useState('');
   const [isoChoisi, setIso] = useState<string | null>(null);
   const [tel, setTel] = useState('');
-  const [segment, setSegment] = useState<SegmentId | null>(null);
-  const [outil, setOutil] = useState<OutilId | null>(null);
   const [pmsNom, setPmsNom] = useState('');
-  const [prios, setPrios] = useState<PrioriteId[]>([]);
   const [quand, setQuand] = useState<QuandId | null>(null);
   const [ville, setVille] = useState('');
   const [demande, setDemande] = useState<{ id: string; jeton: string } | null>(null);
@@ -68,12 +67,12 @@ export function OffreComposer() {
 
   const emailOk = EMAIL.test(email.trim());
   const ok1 = emailOk && consent;
-  const reponses = [segment, outil, prios.length ? 'p' : null, quand, tel.replace(/\D/g, '').length >= 8 ? 't' : null].filter(Boolean).length;
+  const sansWhatsapp = tel.replace(/\D/g, '').length < 8;
 
   // les lignes de la sélection
   const lignes: { nom: string; detail: string }[] = [];
   PRODUITS.forEach((id) => {
-    if (estChoisi(s, id)) lignes.push({ nom: t(`products.${id}.name`), detail: PAR_COMPTE.includes(id) ? t('products.forAccount') : t('selection.detailQty', { n: s.n }) });
+    if (estChoisi(s, id)) lignes.push({ nom: t(`products.${id}.name`), detail: PAR_COMPTE.includes(id) ? t('products.forAccount') : t(`selection.detail${unite}`, { n: s.n }) });
   });
   UTILISATEURS.forEach((u) => {
     const q = s.sieges[u];
@@ -84,6 +83,10 @@ export function OffreComposer() {
   if (s.numeros > 0) lignes.push({ nom: t('service.branding.name'), detail: t('service.branding.detail', { n: s.numeros }) });
   if (s.connexion) lignes.push({ nom: t('service.connection.name'), detail: t('service.connection.detail') });
   BIENTOT.forEach((b) => { if (s.bientot[b]) lignes.push({ nom: t(`soon.${b}.name`), detail: t('soon.detail') }); });
+
+  // « conciergerie, 25 biens, Agent Opérations, WhatsApp Check-in » : le cas du visiteur, repris à l'étape « envoyé »
+  const choisis = PRODUITS.filter((id) => estChoisi(s, id) && id !== 'pms').slice(0, 3).map((id) => t(`products.${id}.name`));
+  const cas = [t(`profile.label.${hotel ? 'hotel' : 'conc'}`), t(`selection.detail${unite}`, { n: s.n }), ...choisis].join(', ');
 
   /** Étape 1 : l'e-mail et l'accord seuls. La demande existe dès ici. */
   const continuer = async (e: React.FormEvent) => {
@@ -129,13 +132,12 @@ export function OffreComposer() {
           numberOfProperties: String(s.n),
           expectations: resume(s),
           hearAboutUs: 'sojori.com · Votre offre',
-          currentPMS: outil ? (outil === 'pms' && pmsNom.trim() ? pmsNom.trim() : OUTILS_FR[outil]) : (externe ? 'Garde son PMS actuel' : 'PMS Sojori'),
+          segment: segmentCrm(s.profil),
+          currentPMS: externe ? (pmsNom.trim() ? pmsNom.trim().slice(0, 80) : 'Garde son PMS actuel') : 'Sojori',
           ...(passer ? {} : {
             ...(nom.trim() ? { fullName: nom.trim() } : {}),
             ...(paysFinal ? { country: paysFinal } : {}),
             ...(chiffres.length >= 8 ? { phone: chiffres, countryCode: dial } : {}),
-            ...(segment ? { segment } : {}),
-            ...(prios.length ? { biggestChallenges: prios.map((x) => PRIORITES_FR[x]).join(' · ') } : {}),
             ...(quand ? { timeline: QUANDS_FR[quand] } : {}),
             ...(ville.trim() ? { cities: [ville.trim().slice(0, 60)] } : {}),
           }),
@@ -156,25 +158,26 @@ export function OffreComposer() {
   return (
     <div className="sj2-offre">
       <div className="sj2-offre__gauche">
-        {/* 1 · socle */}
+        {/* 1 · vous êtes : le profil fixe le segment du CRM et le socle */}
         <fieldset className="sj2-etape-offre">
           <legend className="sj2-eyebrow sj2-eyebrow--sm sj2-eyebrow--dim">{t('steps.socle')}</legend>
-          <div role="group" aria-label={t('mode.aria')} className="sj2-grille2">
-            {(['sojori', 'externe'] as const).map((m) => (
-              <button key={m} type="button" className="sj2-choix" aria-pressed={s.mode === m} onClick={() => maj({ mode: m })}>
-                <strong>{t(`mode.${m === 'sojori' ? 'sojori' : 'own'}.title`)}</strong>
-                <span>{t(`mode.${m === 'sojori' ? 'sojori' : 'own'}.desc`)}</span>
+          <div role="group" aria-label={t('profile.aria')} className="sj2-grille2">
+            {PROFILS.map((p) => (
+              <button key={p} type="button" className="sj2-choix sj2-choix--profil" aria-pressed={s.profil === p} onClick={() => maj({ profil: p })}>
+                <span className="sj2-choix__type">{t(`profile.${p}.type`)}</span>
+                <strong>{t(`profile.${p}.socle`)}</strong>
+                <span>{t(`profile.${p}.desc`)}</span>
               </button>
             ))}
           </div>
         </fieldset>
 
-        {/* 2 · parc */}
+        {/* 2 · parc : biens pour une conciergerie, chambres pour un hôtel ou un riad */}
         <fieldset className="sj2-etape-offre">
           <legend className="sj2-eyebrow sj2-eyebrow--sm sj2-eyebrow--dim">{t('steps.parc')}</legend>
           <div className="sj2-parc">
-            <div className="sj2-parc__n"><span className="sj2-parc__chiffre">{s.n}</span><span>{s.n > 1 ? t('parc.unitMany') : t('parc.unitOne')}</span></div>
-            <input type="range" min={1} max={250} step={1} value={s.n} aria-label={t('parc.sliderAria')} onChange={(e) => maj({ n: Math.min(250, Math.max(1, parseInt(e.target.value, 10) || 1)) })} />
+            <div className="sj2-parc__n"><span className="sj2-parc__chiffre">{s.n}</span><span>{t(`parc.unit${unite}`, { n: s.n })}</span></div>
+            <input type="range" min={1} max={250} step={1} value={s.n} aria-label={t(`parc.sliderAria${unite}`)} onChange={(e) => maj({ n: Math.min(250, Math.max(1, parseInt(e.target.value, 10) || 1)) })} />
             <div role="group" aria-label={t('parc.quickAria')} className="sj2-rapides">
               {VALEURS_RAPIDES.map((v) => (
                 <button key={v} type="button" aria-pressed={s.n === v} onClick={() => maj({ n: v })}>{v}</button>
@@ -272,7 +275,7 @@ export function OffreComposer() {
       <aside id="contact" className="sj2-offre__selection" aria-label={t('selection.aria')}>
         <div className="sj2-selection__tete">
           <span className="sj2-eyebrow sj2-eyebrow--sm sj2-eyebrow--dim">{t('selection.eyebrow')}</span>
-          <span className="sj2-selection__titre">{t('selection.title', { n: s.n })}</span>
+          <span className="sj2-selection__titre">{t(`selection.title${unite}`, { n: s.n })}</span>
           <span className="sj2-selection__sous">{externe ? t('selection.withOwn') : t('selection.withSojori')}</span>
         </div>
 
@@ -286,7 +289,7 @@ export function OffreComposer() {
 
         <div className="sj2-form">
           <ol className="sj2-pas sj2-pas--3" aria-label={t('form.stepsAria')}>
-            {(['email', 'prepare', 'sent'] as const).map((k, i) => (
+            {(['email', 'reach', 'sent'] as const).map((k, i) => (
               <li key={k} aria-current={etape === i + 1 ? 'step' : undefined} className={etape >= i + 1 ? 'is-on' : ''}>
                 <span className="sj2-pas__barre" aria-hidden="true" />
                 <span>{i + 1} · {t(`form.step.${k}`)}</span>
@@ -315,83 +318,63 @@ export function OffreComposer() {
 
           {etape === 2 && (
             <form onSubmit={(e) => { e.preventDefault(); void envoyer(false); }} noValidate className="sj2-form__champs">
-              <strong className="sj2-form__titre">{t('form.prepare.title')}</strong>
-              <p className="sj2-form__aide">{t('form.prepare.lead')}</p>
-              <label htmlFor="sj2-nom">{t('form.prepare.name')}</label>
+              <strong className="sj2-form__titre">{t('form.reach.title')}</strong>
+              <p className="sj2-form__aide">{t('form.reach.lead')}</p>
+              <label htmlFor="sj2-nom">{t('form.reach.name')}</label>
               <input id="sj2-nom" type="text" autoComplete="name" value={nom} onChange={(e) => setNom(e.target.value)} />
-              <label htmlFor="sj2-pays">{t('form.prepare.country')}</label>
+              <label htmlFor="sj2-pays">{t('form.reach.country')}</label>
               <select id="sj2-pays" value={pays} onChange={(e) => {
                 const v = e.target.value; setPays(v);
                 const p = PAYS_DEMO.find((x) => x.id === v);
                 if (p?.iso) setIso(p.iso);
               }}>
                 <option value="" />
-                {PAYS_DEMO.map((p) => <option key={p.id} value={p.id}>{p.iso ? nomPays(p.iso, p.label) : t('form.prepare.otherCountry')}</option>)}
+                {PAYS_DEMO.map((p) => <option key={p.id} value={p.id}>{p.iso ? nomPays(p.iso, p.label) : t('form.reach.otherCountry')}</option>)}
               </select>
               {pays === 'Autre' && (
-                <input type="text" aria-label={t('form.prepare.countryOther')} placeholder={t('form.prepare.countryOther')} value={paysAutre} onChange={(e) => setPaysAutre(e.target.value)} />
+                <input type="text" aria-label={t('form.reach.countryOther')} placeholder={t('form.reach.countryOther')} value={paysAutre} onChange={(e) => setPaysAutre(e.target.value)} />
               )}
-              <label htmlFor="sj2-tel">{t('form.prepare.phone')} <em className="sj2-hint">· {t('form.prepare.phoneHint')}</em></label>
+              <label htmlFor="sj2-tel">{t('form.reach.phone')} <em className="sj2-hint">· {t('form.reach.phoneHint')}</em></label>
               <div className="sj2-tel">
-                <select aria-label={t('form.prepare.dial')} value={iso} onChange={(e) => setIso(e.target.value)}>
-                  {PHONE_DIAL_ROWS.map((r) => <option key={r.iso} value={r.iso}>{t('form.prepare.dialOption', { dial: r.dial, country: nomPays(r.iso, r.nameFr) })}</option>)}
+                <select aria-label={t('form.reach.dial')} value={iso} onChange={(e) => setIso(e.target.value)}>
+                  {PHONE_DIAL_ROWS.map((r) => <option key={r.iso} value={r.iso}>{t('form.reach.dialOption', { dial: r.dial, country: nomPays(r.iso, r.nameFr) })}</option>)}
                 </select>
                 <input id="sj2-tel" type="tel" inputMode="tel" autoComplete="tel-national" value={tel} onChange={(e) => setTel(e.target.value)} />
               </div>
-
-              <fieldset className="sj2-q">
-                <legend>{t('form.segment.title')}</legend>
-                <div className="sj2-chips2">
-                  {SEGMENTS.map((x) => <button key={x} type="button" aria-pressed={segment === x} onClick={() => setSegment(segment === x ? null : x)}>{t(`form.segment.${x}`)}</button>)}
-                </div>
-              </fieldset>
-              <fieldset className="sj2-q">
-                <legend>{t('form.tool.title')}</legend>
-                <div className="sj2-chips2">
-                  {OUTILS.map((x) => <button key={x} type="button" aria-pressed={outil === x} onClick={() => setOutil(outil === x ? null : x)}>{t(`form.tool.${x}`)}</button>)}
-                </div>
-                {outil === 'pms' && (
-                  <input id="sj2-pms" type="text" aria-label={t('form.tool.pmsName')} placeholder={t('form.tool.pmsName')} value={pmsNom} onChange={(e) => setPmsNom(e.target.value)} />
-                )}
-              </fieldset>
-              <fieldset className="sj2-q">
-                <legend>{t('form.priorities.title')} <em className="sj2-hint">· {t('form.priorities.hint')}</em></legend>
-                <div className="sj2-chips2">
-                  {PRIORITES.map((x) => {
-                    const on = prios.includes(x);
-                    return <button key={x} type="button" aria-pressed={on} aria-disabled={(!on && prios.length >= 2) || undefined}
-                      onClick={() => setPrios((p) => (p.includes(x) ? p.filter((y) => y !== x) : p.length >= 2 ? p : [...p, x]))}>{t(`form.priorities.${x}`)}</button>;
-                  })}
-                </div>
-              </fieldset>
-              <fieldset className="sj2-q">
-                <legend>{t('form.when.title')}</legend>
-                <div className="sj2-chips2">
-                  {QUANDS.map((x) => <button key={x} type="button" aria-pressed={quand === x} onClick={() => setQuand(quand === x ? null : x)}>{t(`form.when.${x}`)}</button>)}
-                </div>
-              </fieldset>
-              <label htmlFor="sj2-ville">{t('form.prepare.city')}</label>
+              {externe && (
+                <>
+                  <label htmlFor="sj2-pms">{t('form.reach.pms')}</label>
+                  <input id="sj2-pms" type="text" value={pmsNom} onChange={(e) => setPmsNom(e.target.value)} />
+                </>
+              )}
+              <label htmlFor="sj2-ville">{t('form.reach.city')}</label>
               <input id="sj2-ville" type="text" autoComplete="address-level2" value={ville} onChange={(e) => setVille(e.target.value)} />
+              <fieldset className="sj2-q">
+                <legend>{t('form.reach.whenTitle')}</legend>
+                <div className="sj2-chips2">
+                  {QUANDS.map((x) => <button key={x} type="button" aria-pressed={quand === x} onClick={() => setQuand(quand === x ? null : x)}>{t(`form.reach.${x}`)}</button>)}
+                </div>
+              </fieldset>
 
               {erreur && <p className="sj2-erreur" role="alert">{erreur}</p>}
-              <button type="submit" className="sj2-btn sj2-btn--lg" disabled={statut === 'envoi'}>{statut === 'envoi' ? t('selection.sending') : t('form.prepare.send')}</button>
-              <button type="button" className="sj2-lien" onClick={() => void envoyer(true)} disabled={statut === 'envoi'}>{t('form.prepare.skip')}</button>
-              <p className="sj2-form__note">{t('form.prepare.noCommitment')}</p>
+              <button type="submit" className="sj2-btn sj2-btn--lg" disabled={statut === 'envoi'}>{statut === 'envoi' ? t('selection.sending') : t('form.reach.send')}</button>
+              <button type="button" className="sj2-lien" onClick={() => void envoyer(true)} disabled={statut === 'envoi'}>{t('form.reach.skip')}</button>
+              <p className="sj2-form__note">{t('form.reach.note')}</p>
             </form>
           )}
 
           {etape === 3 && (
             <div className="sj2-merci" role="status">
-              <strong>{t('form.sent.title')}</strong>
+              <strong>{nom.trim() ? t('form.sent.thanksName', { name: nom.trim().split(' ')[0] }) : t('form.sent.thanks')}</strong>
               <ol className="sj2-merci__etapes">
-                {(['s1', 's2', 's3'] as const).map((k, i) => (
-                  <li key={k}><span className="sj2-merci__n" aria-hidden="true">{i + 1}</span><span>{t(`form.sent.${k}`, { email: email.trim() })}</span></li>
-                ))}
+                <li><span className="sj2-merci__n" aria-hidden="true">1</span><span>{t('form.sent.s1', { cas: cas })}</span></li>
+                <li><span className="sj2-merci__n" aria-hidden="true">2</span><span>{t('form.sent.s2', { email: email.trim() })}</span></li>
+                <li><span className="sj2-merci__n" aria-hidden="true">3</span><span>{t('form.sent.s3')}</span></li>
               </ol>
-              {reponses < 4 && (
+              {sansWhatsapp && (
                 <div className="sj2-merci__plus">
-                  <p>{t('form.sent.more')}</p>
-                  <button type="button" className="sj2-btn sj2-btn--ghost sj2-btn--sm" onClick={() => setEtape(2)}>{t('form.sent.complete')}</button>
+                  <p>{t('form.sent.whatsapp')}</p>
+                  <button type="button" className="sj2-btn sj2-btn--ghost sj2-btn--sm" onClick={() => setEtape(2)}>{t('form.sent.addWhatsapp')}</button>
                 </div>
               )}
             </div>
