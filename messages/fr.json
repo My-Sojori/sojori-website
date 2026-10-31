@@ -3533,7 +3533,7 @@
         "email": {
           "title": "Demandez votre démo",
           "lead": "Votre e-mail suffit pour commencer. Ensuite, quelques questions facultatives pour préparer la démo.",
-          "label": "E-mail professionnel",
+          "label": "Votre e-mail",
           "consent": "J’accepte d’être recontacté par Sojori au sujet de ma démo.",
           "submit": "Demander ma démo",
           "saved": "Votre demande est enregistrée dès cette étape.",

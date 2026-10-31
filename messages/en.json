@@ -3532,7 +3532,7 @@
         "email": {
           "title": "Request your demo",
           "lead": "Your email is all we need to start. Then a few optional questions to prepare the demo.",
-          "label": "Work email",
+          "label": "Your email",
           "consent": "I agree to be contacted by Sojori about my demo.",
           "submit": "Request my demo",
           "saved": "Your request is saved from this step.",
