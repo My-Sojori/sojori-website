@@ -69,8 +69,10 @@ export function RapportAdmin() {
         <div className="sj2-rapport__jours">
           {JOURS.map((p, i) => (
             <div key={i} className="sj2-rapport__jour">
-              <span className="sj2-rapport__jour-pct">{t('pct', { n: p }).replace(/[\s\u00a0\u202f]/g, '')}</span>
-              <span className="sj2-rapport__barre" style={{ height: `${p}%` }} />
+              <div className="sj2-rapport__zone" style={{ ['--p' as string]: p }}>
+                <span className="sj2-rapport__jour-pct">{t('pct', { n: p }).replace(/[\s\u00a0\u202f]/g, '')}</span>
+                <span className="sj2-rapport__barre" />
+              </div>
               <span className="sj2-rapport__jour-nom">{jours[i]}</span>
             </div>
           ))}

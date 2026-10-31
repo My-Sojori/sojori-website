@@ -573,6 +573,9 @@ export default function WhatsAppPage() {
            */
           .whatsapp-page .wa-split-flow {
             gap: 22px !important;
+            /* une seule colonne : sinon le téléphone passe en seconde colonne, hors écran (défilement latéral) */
+            grid-template-columns: minmax(0, 1fr) !important;
+            overflow-x: visible !important;
           }
 
           .whatsapp-page .wa-split-copy {

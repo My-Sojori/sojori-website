@@ -417,7 +417,7 @@
       },
       "admin": {
         "monday": "Segunda 15:00",
-        "dashboard": "Olá Marc 👋\n\n*🎯 Painel de controle*\n\nDigite a letra correspondente:\n\n*T* - Tarefas pendentes (3)\n*D* - Declarações chegada/saída (2)\n*R* - Reservas check-in/out (5)\n*M* - Mensagens hóspedes (7)\n*V* - Avaliações a responder (2)\n*L* - Solicitações reserva (4)",
+        "dashboard": "Olá Karim\n\n*🎯 Painel de controle*\n\nDigite a letra correspondente:\n\n*T* - Tarefas pendentes (3)\n*D* - Declarações chegada/saída (2)\n*R* - Reservas check-in/out (5)\n*M* - Mensagens hóspedes (7)\n*V* - Avaliações a responder (2)\n*L* - Solicitações reserva (4)",
         "userCommand": "M",
         "messagesList": "💬 *Mensagens pendentes (7)*\n\n1. Sarah · Apto Montmartre\n   «Código WiFi?» · há 15 min\n   [Responder]\n\n2. Marco · Villa Barcelona\n   «AC não funciona» · há 32 min\n   [URGENTE]\n\n3. Emma · Estúdio Marais\n   «Late checkout possível?» · há 1h\n   [Responder]",
         "userChoice": "Pego Marco como prioridade",

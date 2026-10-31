@@ -417,7 +417,7 @@
       },
       "admin": {
         "monday": "Monday 3:00pm",
-        "dashboard": "Hello Marc 👋\n\n*🎯 Dashboard*\n\nType the corresponding letter:\n\n*T* - Pending tasks (3)\n*D* - Arrival/departure declarations (2)\n*R* - Check-in/out reservations (5)\n*M* - Guest messages (7)\n*V* - Reviews to respond (2)\n*L* - Booking requests (4)",
+        "dashboard": "Hello Karim\n\n*🎯 Dashboard*\n\nType the corresponding letter:\n\n*T* - Pending tasks (3)\n*D* - Arrival/departure declarations (2)\n*R* - Check-in/out reservations (5)\n*M* - Guest messages (7)\n*V* - Reviews to respond (2)\n*L* - Booking requests (4)",
         "userCommand": "M",
         "messagesList": "💬 *Pending messages (7)*\n\n1. Sarah · Montmartre Apt\n   \"WiFi code?\" · 15 min ago\n   [Reply]\n\n2. Marco · Barcelona Villa\n   \"AC doesn't work\" · 32 min ago\n   [URGENT]\n\n3. Emma · Marais Studio\n   \"Late checkout possible?\" · 1h ago\n   [Reply]",
         "userChoice": "I'll take Marco as priority",

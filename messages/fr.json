@@ -417,7 +417,7 @@
       },
       "admin": {
         "monday": "Lundi 15:00",
-        "dashboard": "Bonjour Marc 👋\n\n*🎯 Tableau de bord*\n\nTapez la lettre correspondante :\n\n*T* - Tâches en attente (3)\n*D* - Déclarations arrivée/départ (2)\n*R* - Réservations check-in/out (5)\n*M* - Messages guests (7)\n*V* - Avis à répondre (2)\n*L* - Demandes réservation (4)",
+        "dashboard": "Bonjour Karim\n\n*🎯 Tableau de bord*\n\nTapez la lettre correspondante :\n\n*T* - Tâches en attente (3)\n*D* - Déclarations arrivée/départ (2)\n*R* - Réservations check-in/out (5)\n*M* - Messages guests (7)\n*V* - Avis à répondre (2)\n*L* - Demandes réservation (4)",
         "userCommand": "M",
         "messagesList": "💬 *Messages en attente (7)*\n\n1. Sarah · Chambre 204\n   « Code WiFi ? » · il y a 15 min\n   [Répondre]\n\n2. Marco · Suite Junior\n   « AC doesn't work » · il y a 32 min\n   [URGENT]\n\n3. Emma · Chambre 118\n   « Late checkout possible? » · il y a 1h\n   [Répondre]\n",
         "userChoice": "Je prends Marco en priorité",
