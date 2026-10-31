@@ -180,7 +180,7 @@ export default async function PmsPageCasablanca({ params }: { params: Promise<{ 
           </div>
         </section>
 
-        <StatsBar stats={[{"k": "1-3", "l": tb('k071')}, {"k": "24/7", "l": tb('k072')}, {"k": "2-way", "l": tb('k073')}, {"k": tb('k074'), "l": tb('k075')}]} />
+        <StatsBar stats={[{"k": "1-3", "l": tb('k071')}, {"k": tb('k074'), "l": tb('k075')}]} />
 
         <FaqFromMessages page="pms-casablanca" />
 

@@ -4,7 +4,7 @@ import { useState } from "react";
 import { Metadata } from "next";
 import { useTranslations } from 'next-intl';
 import { BackgroundEffects } from "@/components/BackgroundEffects";
-import { PageHeader, PageFooter, PageHero, StatsBar, FinalCTA } from "@/components/SharedComponents";
+import { PageHeader, PageFooter, PageHero, FinalCTA } from "@/components/SharedComponents";
 import { ScrollPaginationDots } from "@/components/shared/ScrollPaginationDots";
 import { InFlow } from '@/components/InFlow';
 import { FaqFromMessages } from '@/components/FaqFromMessages';
@@ -247,13 +247,6 @@ export default function InboxPage() {
             </ScrollPaginationDots>
           </div>
         </section>
-        <StatsBar stats={[
-          {k: t('stats.stat1.key'), l: t('stats.stat1.label')},
-          {k: t('stats.stat2.key'), l: t('stats.stat2.label')},
-          {k: t('stats.stat3.key'), l: t('stats.stat3.label')},
-          {k: t('stats.stat4.key'), l: t('stats.stat4.label')}
-        ]} />
-
         <InFlow
           domain={tb('k001')}
           domainColor="#06b6d4"

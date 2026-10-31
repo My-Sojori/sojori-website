@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { useTranslations } from 'next-intl';
 import { BackgroundEffects } from "@/components/BackgroundEffects";
-import { PageHeader, PageFooter, PageHero, StatsBar, FinalCTA } from "@/components/SharedComponents";
+import { PageHeader, PageFooter, PageHero, FinalCTA } from "@/components/SharedComponents";
 import { ScrollPaginationDots } from "@/components/shared/ScrollPaginationDots";
 import { InFlow } from '@/components/InFlow';
 import { FaqFromMessages } from '@/components/FaqFromMessages';
@@ -266,11 +266,6 @@ export default function GuestExperiencePage() {
             </ScrollPaginationDots>
           </div>
         </section>
-
-        <StatsBar stats={Array.from({ length: 4 }).map((_, i) => {
-          const stat = t.raw(`stats.${i}`);
-          return { k: stat.key, l: stat.label };
-        })} />
 
         <InFlow
           domain={tb('k001')}

@@ -1057,7 +1057,7 @@
       },
       "help": {
         "label": "Help",
-        "description": "24/7 instant support"
+        "description": "Answers at any hour"
       }
     },
     "phone": {
@@ -1077,7 +1077,7 @@
         "rec1Title": "🍽️ Nomad — dinner",
         "rec1Detail": "5 min walk · view of Jemaa el-Fna square",
         "rec2Title": "🧘 Hammam La Maison Arabe",
-        "rec2Detail": "15 min · booking required · 4.9★"
+        "rec2Detail": "15 min · booking required"
       },
       "guide": {
         "title": "📖 Your Marrakech guide (47 spots):",
@@ -1131,13 +1131,13 @@
         },
         {
           "icon": "•",
-          "title": "Instant WiFi",
+          "title": "WiFi access",
           "description": "Network + password in the conversation"
         },
         {
           "icon": "•",
-          "title": "24/7 AI Bot",
-          "description": "Answers questions in 12 languages"
+          "title": "AI assistant",
+          "description": "Answers at any hour, in the guest's language"
         },
         {
           "icon": "•",
@@ -1152,7 +1152,7 @@
         {
           "icon": "•",
           "title": "Human support",
-          "description": "Escalate to your team in 1 click"
+          "description": "Hands over to your team"
         },
         {
           "icon": "•",
@@ -1211,7 +1211,7 @@
         "S"
       ],
       "section": {
-        "badge": "● Real-time calendar pricing",
+        "badge": "● Up-to-date calendar pricing",
         "title": "Your rates follow your rules and the calendar.",
         "titleHighlight": "your rules and the calendar",
         "subtitle": "Updated when rules, inventory and channel syncs change — not a promise of minute-by-minute 'market pricing'."
@@ -1324,7 +1324,7 @@
       "badge": "● Market Intelligence · Real data",
       "title": "See the market. Price accordingly.",
       "titleHighlight": "See the market",
-      "subtitle": "Sojori connects to market data providers to give you real-time insights on occupancy, ADR, supply growth, and competitive positioning across Marrakech and Paris.",
+      "subtitle": "Sojori connects to market data providers to give you up-to-date insights on occupancy, ADR, supply growth, and competitive positioning across Marrakech and Paris.",
       "updatedRecently": "Updated 6 hours ago",
       "occupancy": "Occupancy",
       "medianADR": "Median ADR",
@@ -1353,7 +1353,7 @@
         {
           "icon": "•",
           "title": "Multi-property comparison",
-          "description": "Compare ADR, occupancy, and revenue across all your listings in real-time"
+          "description": "Compare ADR, occupancy, and revenue across all your listings, up to date"
         },
         {
           "icon": "•",
@@ -1363,7 +1363,7 @@
         {
           "icon": "•",
           "title": "Quick optimization",
-          "description": "Identify underperforming properties and adjust pricing instantly"
+          "description": "Identify underperforming properties and adjust pricing"
         }
       ]
     },
@@ -1407,7 +1407,7 @@
         },
         {
           "icon": "•",
-          "title": "Track in real-time",
+          "title": "Up-to-date tracking",
           "description": "Market data refreshed continuously from listings and booking channels"
         },
         {
@@ -1531,7 +1531,7 @@
     "finalCTA": {
       "title": "Connect your channels.",
       "titleGradient": "In 5 minutes.",
-      "subtitle": "WhatsApp, Airbnb, Booking, email — all in one. Instant setup, secure OAuth."
+      "subtitle": "WhatsApp, Airbnb, Booking, email — all in one. Guided setup, secure OAuth."
     }
   },
   "about": {
@@ -5934,7 +5934,7 @@
       "k016": "Guest reviews",
       "k017": "All your OTA reviews in one place · replies suggested by AI.",
       "k018": "Automatic PDF statements",
-      "k019": "On the 1st of each month · paid out within 48 business hours.",
+      "k019": "Monthly report.",
       "k020": "● Monthly statement",
       "k021": ". No surprises.",
       "k022": "Every line explained. Every charge justified. The PDF statement is generated for each owner.",
@@ -6068,7 +6068,8 @@
       "k077": "1 month free trial.",
       "k078": "Guided onboarding in French. Migration from your current tool handled for you. Sojori also connects to your existing PMS.",
       "crumbHome": "Home",
-      "crumbSolutions": "Solutions"
+      "crumbSolutions": "Solutions",
+      "kWinter": "Winter"
     },
     "pms-casablanca": {
       "k001": "Hotel PMS Casablanca",
@@ -6313,7 +6314,8 @@
       "k076": "1 month free trial.",
       "k077": "Guided onboarding in French. Migration from your current tool handled for you. Sojori also connects to your existing PMS.",
       "crumbHome": "Home",
-      "crumbSolutions": "Solutions"
+      "crumbSolutions": "Solutions",
+      "kGroup": "Group"
     },
     "pms-tanger": {
       "k001": "Hotel PMS Tangier",

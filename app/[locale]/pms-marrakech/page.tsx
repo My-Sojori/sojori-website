@@ -4,7 +4,7 @@ import { Link } from '@/i18n/routing';
 import { FaqFromMessages } from '@/components/FaqFromMessages';
 import { PageSchema } from '@/components/PageSchema';
 import { BackgroundEffects } from '@/components/BackgroundEffects';
-import { PageHeader, PageFooter, PageHero, StatsBar, FinalCTA } from '@/components/SharedComponents';
+import { PageHeader, PageFooter, PageHero, FinalCTA } from '@/components/SharedComponents';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
@@ -179,8 +179,6 @@ export default async function PmsPageMarrakech({ params }: { params: Promise<{ l
             </div>
           </div>
         </section>
-
-        <StatsBar stats={[{"k": "500+", "l": tb('k071')}, {"k": "70+", "l": tb('k072')}, {"k": "13M", "l": tb('k073')}, {"k": tb('k074'), "l": tb('k075')}]} />
 
         <FaqFromMessages page="pms-marrakech" />
 

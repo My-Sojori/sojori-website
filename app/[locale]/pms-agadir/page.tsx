@@ -180,7 +180,7 @@ export default async function PmsPageAgadir({ params }: { params: Promise<{ loca
           </div>
         </section>
 
-        <StatsBar stats={[{"k": tb('k071'), "l": tb('k072')}, {"k": "Hiver", "l": tb('k073')}, {"k": "24/7", "l": tb('k074')}, {"k": "2-way", "l": tb('k075')}]} />
+        <StatsBar stats={[{"k": tb('k071'), "l": tb('k072')}, {"k": tb('kWinter'), "l": tb('k073')}]} />
 
         <FaqFromMessages page="pms-agadir" />
 

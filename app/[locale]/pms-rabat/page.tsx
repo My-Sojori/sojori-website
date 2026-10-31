@@ -180,7 +180,7 @@ export default async function PmsPageRabat({ params }: { params: Promise<{ local
           </div>
         </section>
 
-        <StatsBar stats={[{"k": "2", "l": tb('k071')}, {"k": "24/7", "l": tb('k072')}, {"k": "2-way", "l": tb('k073')}, {"k": "Groupe", "l": tb('k074')}]} />
+        <StatsBar stats={[{"k": "2", "l": tb('k071')}, {"k": tb('kGroup'), "l": tb('k074')}]} />
 
         <FaqFromMessages page="pms-rabat" />
 

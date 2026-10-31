@@ -1057,7 +1057,7 @@
       },
       "help": {
         "label": "Ajuda",
-        "description": "Suporte instantâneo 24/7"
+        "description": "Respostas a qualquer hora"
       }
     },
     "phone": {
@@ -1077,7 +1077,7 @@
         "rec1Title": "🍽️ Nomad — jantar",
         "rec1Detail": "5 min a pé · vista para praça Jemaa el-Fna",
         "rec2Title": "🧘 Hammam La Maison Arabe",
-        "rec2Detail": "15 min · reserva necessária · 4.9★"
+        "rec2Detail": "15 min · reserva necessária"
       },
       "guide": {
         "title": "📖 Seu guia Marrakech (47 locais):",
@@ -1131,13 +1131,13 @@
         },
         {
           "icon": "•",
-          "title": "WiFi instantâneo",
+          "title": "Acesso WiFi",
           "description": "Rede + senha na conversa"
         },
         {
           "icon": "•",
-          "title": "Bot IA 24/7",
-          "description": "Responde perguntas em 12 idiomas"
+          "title": "Assistente de IA",
+          "description": "Responde a qualquer hora, na língua do viajante"
         },
         {
           "icon": "•",
@@ -1152,7 +1152,7 @@
         {
           "icon": "•",
           "title": "Suporte humano",
-          "description": "Escalonamento para sua equipe em 1 clique"
+          "description": "Passa a mão à sua equipa"
         },
         {
           "icon": "•",
@@ -1211,7 +1211,7 @@
         "D"
       ],
       "section": {
-        "badge": "● Preços de calendário em tempo real",
+        "badge": "● Preços de calendário atualizados",
         "title": "Suas tarifas seguem suas regras e o calendário.",
         "titleHighlight": "suas regras e o calendário",
         "subtitle": "Atualizado quando as regras, o inventário e as sincronizações de canais mudam — não uma promessa de 'preços de mercado' minuto a minuto."
@@ -1324,7 +1324,7 @@
       "badge": "● Inteligência de Mercado · Dados reais",
       "title": "Veja o mercado. Ajuste os preços em conformidade.",
       "titleHighlight": "Veja o mercado",
-      "subtitle": "A Sojori liga-se a fornecedores de dados de mercado para lhe dar informações em tempo real sobre ocupação, ADR, crescimento da oferta e posicionamento competitivo em Marrakech e Paris.",
+      "subtitle": "A Sojori liga-se a fornecedores de dados de mercado para lhe dar informações atualizadas sobre ocupação, ADR, crescimento da oferta e posicionamento competitivo em Marrakech e Paris.",
       "updatedRecently": "Atualizado há 6 horas",
       "occupancy": "Ocupação",
       "medianADR": "ADR mediano",
@@ -1353,7 +1353,7 @@
         {
           "icon": "•",
           "title": "Comparação multipropriedade",
-          "description": "Compare ADR, ocupação e receita de todos os seus anúncios em tempo real"
+          "description": "Compare ADR, ocupação e receita de todos os seus anúncios, atualizados"
         },
         {
           "icon": "•",
@@ -1363,7 +1363,7 @@
         {
           "icon": "•",
           "title": "Otimização rápida",
-          "description": "Identifique as propriedades com menor desempenho e ajuste os preços de imediato"
+          "description": "Identifique as propriedades com menor desempenho e ajuste os preços"
         }
       ]
     },
@@ -1407,7 +1407,7 @@
         },
         {
           "icon": "•",
-          "title": "Acompanhe em tempo real",
+          "title": "Acompanhamento atualizado",
           "description": "Dados de mercado atualizados continuamente a partir de anúncios e canais de reserva"
         },
         {
@@ -1531,7 +1531,7 @@
     "finalCTA": {
       "title": "Conecte seus canais.",
       "titleGradient": "Em 5 minutos.",
-      "subtitle": "WhatsApp, Airbnb, Booking, email — tudo em um. Configuração instantânea, OAuth seguro."
+      "subtitle": "WhatsApp, Airbnb, Booking, email — tudo em um. Configuração guiada, OAuth seguro."
     }
   },
   "about": {
@@ -5934,7 +5934,7 @@
       "k016": "Avaliações de clientes",
       "k017": "Todas as suas avaliações das OTA centralizadas · respostas sugeridas por IA.",
       "k018": "Extratos PDF automáticos",
-      "k019": "No dia 1 de cada mês · transferência em 48 h úteis.",
+      "k019": "Relatório mensal.",
       "k020": "● Extrato mensal",
       "k021": ". Sem surpresas.",
       "k022": "Cada linha explicada. Cada encargo justificado. O extrato em PDF é gerado para cada proprietário.",
@@ -6068,7 +6068,8 @@
       "k077": "1 mês de teste gratuito.",
       "k078": "Arranque acompanhado em francês. Migração a partir da sua ferramenta atual a nosso cargo. A Sojori liga-se também ao seu PMS atual.",
       "crumbHome": "Início",
-      "crumbSolutions": "Soluções"
+      "crumbSolutions": "Soluções",
+      "kWinter": "Inverno"
     },
     "pms-casablanca": {
       "k001": "PMS Hotel Casablanca",
@@ -6313,7 +6314,8 @@
       "k076": "1 mês de teste gratuito.",
       "k077": "Arranque acompanhado em francês. Migração a partir da sua ferramenta atual a nosso cargo. A Sojori liga-se também ao seu PMS atual.",
       "crumbHome": "Início",
-      "crumbSolutions": "Soluções"
+      "crumbSolutions": "Soluções",
+      "kGroup": "Grupo"
     },
     "pms-tanger": {
       "k001": "PMS Hotel Tânger",
