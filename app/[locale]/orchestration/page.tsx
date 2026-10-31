@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { getTranslations } from 'next-intl/server';
 import { Link } from '@/i18n/routing';
-import { FaqSection } from '@/components/FaqSection';
+import { FaqFromMessages } from '@/components/FaqFromMessages';
 import { PageSchema } from '@/components/PageSchema';
 import { BackgroundEffects } from '@/components/BackgroundEffects';
 import { PageHeader, PageFooter, PageHero, StatsBar, FinalCTA } from '@/components/SharedComponents';
@@ -77,33 +77,6 @@ const CONNECTS = [
   { i: '•', t: 'Les clients', d: 'Sur WhatsApp d’abord, dans leur langue, sans application à installer ni compte à créer.' },
   { i: '•', t: 'Les équipes', d: 'Réception, gouvernante, femmes de chambre, maintenance — chacun reçoit ce qui le concerne, et son avancement remonte.' },
   { i: '•', t: 'Les partenaires', d: 'Chauffeurs, spa, restaurants, blanchisserie, excursions : ils entrent dans le flux plutôt que d’être appelés au téléphone.' },
-];
-
-const FAQ = [
-  {
-    q: "Qu'est-ce qu'un moteur d'orchestration hôtelière ?",
-    a: "C'est un système qui déclenche et coordonne ce qui doit arriver pendant un séjour, au lieu d'attendre qu'on le saisisse. Un PMS enregistre que la chambre 204 est libérée ; un orchestrateur envoie la mission de ménage à la bonne personne, la réassigne si elle n'est pas prise, ouvre un ticket si un équipement est signalé, prévient la réception que l'arrivée de 15 h risque d'attendre, et ajuste le prix des nuits restantes. L'un tient un état, l'autre conduit une opération.",
-  },
-  {
-    q: "En quoi est-ce différent d'un PMS ?",
-    a: "Le PMS est la mémoire du séjour : réservations, chambres, factures, canaux. L'orchestration est ce qui se passe autour — accueil, ménage, maintenance, messages clients, tarification. Sojori inclut son propre PMS pour un établissement qui n'en a pas, mais se connecte aussi aux PMS déjà en place. La différence se mesure les jours de forte rotation, quand plus personne n'a le temps de coordonner à la main.",
-  },
-  {
-    q: "Faut-il remplacer notre PMS actuel ?",
-    a: "Non. Sojori se connecte aux PMS existants, dont Mews : il récupère les réservations et les états de chambre, puis orchestre autour. C'est souvent le chemin le plus court pour mesurer l'apport de l'orchestration sans toucher à votre système de réservation. Le remplacement n'a de sens que pour un établissement sans PMS, ou dont le PMS ne suit plus.",
-  },
-  {
-    q: "Qu'est-ce qui déclenche une action dans Sojori ?",
-    a: "Des événements réels, pas un planning théorique : un départ constaté, une arrivée anticipée, une chambre signalée en panne, un message client, un retard de vol, un seuil d'occupation franchi. C'est ce qui distingue l'orchestration d'une liste de tâches — vous ne décidez pas quand chaque chose doit partir, vous décidez des règles.",
-  },
-  {
-    q: "L'orchestration décide-t-elle à notre place ?",
-    a: "Vous fixez les règles et les limites, le moteur agit dedans. Sur la tarification par exemple, le calcul reste algorithmique, borné par un minimum et un maximum que vous définissez, avec un niveau d'autonomie paramétrable : automatique sous un certain seuil, soumis à validation au-delà. Un modèle ne fixe pas vos prix seul.",
-  },
-  {
-    q: "Est-ce adapté à un petit établissement ?",
-    a: "L'orchestration prend sa valeur quand il y a des flux à coordonner — des équipes, des arrivées simultanées, plusieurs canaux, des demandes clients. Un riad de six chambres tenu par deux personnes tirera surtout parti du PMS et du channel manager. Nous préférons vous le dire plutôt que de vous vendre un outil surdimensionné.",
-  },
 ];
 
 export default async function OrchestrationPage({ params }: { params: Promise<{ locale: string }> }) {
@@ -272,7 +245,7 @@ export default async function OrchestrationPage({ params }: { params: Promise<{ 
           { k: 'FR/AR/EN', l: 'Langues des équipes' },
         ]} />
 
-        <FaqSection badge="Orchestration hôtelière" title="Questions fréquentes" items={FAQ} />
+        <FaqFromMessages page="orchestration" />
 
         {/* Maillage : cette page est le pilier, elle doit redistribuer. */}
         <section style={{ padding: '8px 32px 56px' }}>

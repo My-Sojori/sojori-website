@@ -6,7 +6,7 @@ import { Link } from '@/i18n/routing';
 import React from 'react';
 import { useTranslations } from 'next-intl';
 import { ScrollPaginationDots } from '@/components/shared/ScrollPaginationDots';
-import { FaqSection } from '@/components/FaqSection';
+import { FaqFromMessages } from '@/components/FaqFromMessages';
 
 export default function AboutPage() {
   const t = useTranslations('about');
@@ -1090,28 +1090,7 @@ export default function AboutPage() {
           </div>
         </section>
 
-        <FaqSection
-          badge="Sojori"
-          title="Questions fréquentes"
-          items={[
-  {
-    "q": "Qu'est-ce que Sojori, en une phrase ?",
-    "a": "Le moteur d'orchestration de l'hospitalité : il orchestre l'expérience client, les opérations et le revenu d'un établissement, en connectant les systèmes, les clients, les équipes et les partenaires."
-  },
-  {
-    "q": "En quoi est-ce différent d'un PMS ?",
-    "a": "Un PMS enregistre l'état d'un séjour ; un orchestrateur déclenche ce qui doit en découler. Sojori inclut son propre PMS, mais se connecte aussi aux PMS existants — vous n'avez pas à remplacer l'existant pour orchestrer."
-  },
-  {
-    "q": "Où Sojori est-il présent ?",
-    "a": "Le Maroc d'abord — Marrakech, Casablanca, Rabat, Tanger, Agadir — puis la France. Ce n'est pas un hasard : la fiche de police, la taxe de séjour et l'arabe comme langue de travail sont natifs, là où une plateforme internationale les traite comme des cas particuliers."
-  },
-  {
-    "q": "À qui s'adresse Sojori ?",
-    "a": "Aux hôtels, riads, maisons d'hôtes et résidences. L'orchestration prend sa valeur quand il y a des flux à coordonner — équipes, arrivées simultanées, plusieurs canaux. Pour un très petit établissement tenu par deux personnes, un bon PMS peut suffire."
-  }
-]}
-        />
+        <FaqFromMessages page="about" />
 
 
         <PageFooter />

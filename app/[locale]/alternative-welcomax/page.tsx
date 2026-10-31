@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { getTranslations } from 'next-intl/server';
 import { Link } from '@/i18n/routing';
-import { FaqSection } from '@/components/FaqSection';
+import { FaqFromMessages } from '@/components/FaqFromMessages';
 import { PageSchema } from '@/components/PageSchema';
 import { BackgroundEffects } from '@/components/BackgroundEffects';
 import { PageHeader, PageFooter, PageHero, FinalCTA } from '@/components/SharedComponents';
@@ -29,29 +29,6 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
  * Chaque page dit explicitement dans quel cas le concurrent est le bon choix.
  * Relevé effectué le 2026-09-11 sur le site de l'éditeur.
  */
-const FAQ = [
-  {
-    "q": "Sojori remplace-t-il Welcomax ?",
-    "a": "Il peut, puisqu'il inclut un PMS. Mais il peut aussi s'y ajouter si l'interfaçage le permet : Sojori se connecte aux PMS existants, récupère les réservations et les états de chambre et orchestre autour. C'est souvent le chemin le plus court pour mesurer l'apport avant toute décision de migration."
-  },
-  {
-    "q": "Quelle est la différence de fond ?",
-    "a": "Le périmètre. Une suite PMS centralise l'information ; un orchestrateur déclenche les actions qui en découlent. Savoir que la chambre est libérée, ou faire en sorte qu'elle soit prête avant l'arrivée suivante : ce ne sont pas les mêmes produits."
-  },
-  {
-    "q": "Les deux gèrent la conformité marocaine, où est l'écart ?",
-    "a": "Sur le moment où les données sont collectées. Chez Sojori, la fiche de police est remplie par le client avant son arrivée, depuis WhatsApp, avec sa pièce d'identité — la réception ne saisit rien. L'écart n'est pas dans le document produit, il est dans le travail évité."
-  },
-  {
-    "q": "Et la tarification ?",
-    "a": "Sojori pilote la tarification par règles, en gardant le calcul algorithmique et en signalant les recommandations plutôt qu'en les appliquant aveuglément, avec des bornes minimum et maximum. C'est un choix assumé : nous ne laissons pas un modèle fixer seul vos prix."
-  },
-  {
-    "q": "Comment comparer sérieusement les deux ?",
-    "a": "Demandez la même démonstration aux deux éditeurs, sur un scénario réel de votre établissement : un départ à 11 h, une arrivée anticipée à 13 h, une chambre signalée en panne, un client qui écrit en arabe. Vous verrez en quinze minutes ce que chaque outil fait réellement."
-  }
-];
-
 export default async function AltWelcomax({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   return (
@@ -172,7 +149,7 @@ export default async function AltWelcomax({ params }: { params: Promise<{ locale
           </div>
         </section>
 
-        <FaqSection badge="Sojori vs Welcomax" title="Questions fréquentes" items={FAQ} />
+        <FaqFromMessages page="alternative-welcomax" />
 
         <section style={{ padding: '8px 32px 40px' }}>
           <div style={{ maxWidth: 900, margin: '0 auto' }}>

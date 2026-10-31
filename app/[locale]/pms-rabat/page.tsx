@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { getTranslations } from 'next-intl/server';
 import { Link } from '@/i18n/routing';
-import { FaqSection } from '@/components/FaqSection';
+import { FaqFromMessages } from '@/components/FaqFromMessages';
 import { PageSchema } from '@/components/PageSchema';
 import { BackgroundEffects } from '@/components/BackgroundEffects';
 import { PageHeader, PageFooter, PageHero, StatsBar, FinalCTA } from '@/components/SharedComponents';
@@ -15,33 +15,6 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     alternates: { canonical: `/${locale}/pms-rabat` },
   };
 }
-
-const FAQ = [
-  {
-    "q": "Quel PMS choisir pour un hôtel à Rabat ?",
-    "a": "Le point de vigilance propre à Rabat est la double clientèle : institutionnelle en semaine, loisir le week-end. Vérifiez que le logiciel sépare ces segments dans la tarification et le reporting, plutôt que de les fondre dans une moyenne. Sojori inclut son PMS et se connecte aux PMS existants."
-  },
-  {
-    "q": "Sojori gère-t-il la facturation d'un organisme ou d'une administration ?",
-    "a": "Oui. Le séjour porte l'organisme de rattachement, la TVA s'applique selon le paramétrage, et les factures peuvent être regroupées ou éditées par séjour selon ce que demande le service comptable."
-  },
-  {
-    "q": "Sojori gère-t-il la fiche police marocaine ?",
-    "a": "Oui, pour la partie collecte. L'obligation vient du dahir du 14 janvier 1953, reprise par la loi 80-14 : un bulletin individuel par personne hébergée. Sojori fait remplir la fiche par le client lui-même avant son arrivée, depuis WhatsApp, avec sa pièce d'identité — vous récupérez des données complètes sans saisie au comptoir, et vous voyez quels séjours sont en règle. La déclaration aux autorités, aujourd'hui dématérialisée via la plateforme STDN, reste la démarche de l'établissement."
-  },
-  {
-    "q": "Comment préparer une arrivée de groupe ?",
-    "a": "Les chambres concernées sont regroupées dans une même vague de ménage plutôt que traitées au fil de l'eau, et l'avancement remonte en temps réel. Chaque intervenant reçoit sa mission sur WhatsApp, en français ou en arabe."
-  },
-  {
-    "q": "Faut-il remplacer le PMS déjà installé ?",
-    "a": "Non. Sojori se connecte à Mews et à d'autres PMS, récupère les réservations et les états de chambre, puis orchestre autour — accueil, ménage, maintenance, messages clients, tarification."
-  },
-  {
-    "q": "Comment valoriser le week-end touristique à Rabat ?",
-    "a": "En ouvrant le week-end à la distribution large pendant que l'inventaire de semaine reste protégé pour les comptes institutionnels. La tarification s'ajuste par jour sur la demande réelle, ce qui suppose de suivre les deux segments séparément."
-  }
-];
 
 export default async function PmsPageRabat({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
@@ -233,7 +206,7 @@ export default async function PmsPageRabat({ params }: { params: Promise<{ local
 
         <StatsBar stats={[{"k": "2", "l": "Clientèles distinctes"}, {"k": "24/7", "l": "Support FR/AR"}, {"k": "2-way", "l": "Synchronisation canaux"}, {"k": "Groupe", "l": "Arrivées coordonnées"}]} />
 
-        <FaqSection badge="PMS hôtel Rabat" title="Questions fréquentes" items={FAQ} />
+        <FaqFromMessages page="pms-rabat" />
 
         <FinalCTA
           title={<>Orchestrez votre établissement de Rabat.{' '}<span className="gradient-text">1 mois d&apos;essai gratuit.</span></>}

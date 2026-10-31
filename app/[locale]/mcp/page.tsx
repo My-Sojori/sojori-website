@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { getTranslations } from 'next-intl/server';
 import { Link } from '@/i18n/routing';
-import { FaqSection } from '@/components/FaqSection';
+import { FaqFromMessages } from '@/components/FaqFromMessages';
 import { PageSchema } from '@/components/PageSchema';
 import { BackgroundEffects } from '@/components/BackgroundEffects';
 import { PageHeader, PageFooter, PageHero, FinalCTA } from '@/components/SharedComponents';
@@ -51,37 +51,6 @@ const QUESTIONS = [
   'Combien de tâches de ménage sont en retard cette semaine, et sur qui ?',
   "Compare la durée moyenne des séjours entre l'été et l'hiver.",
   'Prépare-moi un rapport mensuel pour mes propriétaires.',
-];
-
-const FAQ = [
-  {
-    q: "Qu'est-ce que MCP, et pourquoi un PMS s'en servirait ?",
-    a: "MCP (Model Context Protocol) est un standard ouvert qui permet à une IA — ChatGPT, Claude, ou un agent maison — de lire des données applicatives et de s'en servir pour répondre. Appliqué à un PMS, cela veut dire poser une question en langage courant et obtenir une réponse construite sur vos chiffres réels, sans exporter un fichier ni ouvrir un tableau de bord. La différence avec une API classique : vous n'avez rien à développer, l'IA sait se servir du serveur toute seule.",
-  },
-  {
-    q: "Mes données partent-elles chez OpenAI ou Anthropic ?",
-    a: "Les données restent chez Sojori. Le serveur MCP répond à des questions précises et ne renvoie que le résultat : des agrégats, jamais votre base. Et ce résultat ne contient aucune donnée identifiant un voyageur — ni nom, ni contact, ni pièce d'identité, parce que ces champs n'existent pas dans le miroir interrogé. Ce qui circule, ce sont des chiffres d'exploitation : occupation, revenu, retards, mix canaux.",
-  },
-  {
-    q: "Pourquoi l'identité des voyageurs est-elle exclue par construction ?",
-    a: "Parce qu'une protection qui repose sur un filtre finit toujours par être contournée. Nous avons choisi l'inverse : les champs identifiants ne sont pas dans les données que le serveur peut lire. Il n'y a rien à filtrer, donc rien à oublier de filtrer. La loi 09-08 sur la protection des données personnelles s'applique à vos voyageurs ; nous préférons que l'architecture réponde à la question plutôt qu'une promesse.",
-  },
-  {
-    q: "Est-ce que l'IA peut modifier quelque chose ?",
-    a: "Non. Le serveur est en lecture seule sur ce périmètre : l'IA lit, analyse, restitue. Elle ne crée pas de réservation, ne change pas un prix, n'assigne pas une tâche. Les actions passent par les interfaces où il y a une trace et un responsable.",
-  },
-  {
-    q: "Comment savoir si un chiffre donné par l'IA est fiable ?",
-    a: "Chaque réponse porte la période réellement couverte par les données. Si vous demandez un comparatif sur deux ans et que le miroir ne commence qu'il y a huit mois, le serveur le signale plutôt que de produire un chiffre incomplet qui aurait l'air complet. C'est la principale cause d'erreur quand on branche une IA sur une base métier.",
-  },
-  {
-    q: "Faut-il être développeur pour l'utiliser ?",
-    a: "Non. Vous connectez Sojori à votre client IA une fois — Claude Desktop, ChatGPT, ou l'outil de votre choix compatible MCP — puis vous posez vos questions en français. Il s'ajoute à votre offre.",
-  },
-  {
-    q: "Quels PMS concurrents proposent la même chose ?",
-    a: "À notre connaissance, aucun à ce jour. Cloudbeds, Mews et Hostaway exposent des API, ce qui suppose un développement de votre côté. Un serveur MCP est d'une autre nature : c'est l'IA qui sait s'en servir, pas vous qui devez écrire le code. Si un concurrent en publie un, nous mettrons cette réponse à jour.",
-  },
 ];
 
 export default async function McpPage({ params }: { params: Promise<{ locale: string }> }) {
@@ -247,7 +216,7 @@ export default async function McpPage({ params }: { params: Promise<{ locale: st
           </div>
         </section>
 
-        <FaqSection badge="MCP" title="Questions fréquentes" items={FAQ} />
+        <FaqFromMessages page="mcp" />
 
         <FinalCTA
           title={<>Votre PMS, <span className="gradient-text">interrogeable.</span></>}

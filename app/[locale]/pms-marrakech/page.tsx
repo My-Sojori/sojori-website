@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { getTranslations } from 'next-intl/server';
 import { Link } from '@/i18n/routing';
-import { FaqSection } from '@/components/FaqSection';
+import { FaqFromMessages } from '@/components/FaqFromMessages';
 import { PageSchema } from '@/components/PageSchema';
 import { BackgroundEffects } from '@/components/BackgroundEffects';
 import { PageHeader, PageFooter, PageHero, StatsBar, FinalCTA } from '@/components/SharedComponents';
@@ -15,33 +15,6 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     alternates: { canonical: `/${locale}/pms-marrakech` },
   };
 }
-
-const FAQ = [
-  {
-    "q": "Quel PMS choisir pour un hôtel ou un riad à Marrakech ?",
-    "a": "Le critère décisif n'est pas le nombre de modules mais ce que le logiciel fait après la réservation. Un PMS enregistre le séjour ; l'orchestration déclenche le ménage, la maintenance et les messages clients qui en découlent. Sojori inclut son PMS et se connecte aux PMS existants : si le vôtre vous convient, gardez-le et ajoutez la couche d'orchestration."
-  },
-  {
-    "q": "Sojori gère-t-il la fiche police marocaine ?",
-    "a": "Oui, pour la partie collecte. L'obligation vient du dahir du 14 janvier 1953, reprise par la loi 80-14 : un bulletin individuel par personne hébergée. Sojori fait remplir la fiche par le client lui-même avant son arrivée, depuis WhatsApp, avec sa pièce d'identité — vous récupérez des données complètes sans saisie au comptoir, et vous voyez quels séjours sont en règle. La déclaration aux autorités, aujourd'hui dématérialisée via la plateforme STDN, reste la démarche de l'établissement."
-  },
-  {
-    "q": "Comment la taxe de séjour est-elle calculée ?",
-    "a": "Elle se paramètre par établissement : montant par adulte et par nuit, avec un calcul au séjour, à la nuit ou par personne et par nuit. Le mode de collecte se règle aussi — espèces à l'arrivée, carte à l'arrivée, ou inclus dans le prix affiché. Le montant est reporté sur la facture."
-  },
-  {
-    "q": "Faut-il remplacer Mews ou un PMS déjà installé ?",
-    "a": "Non. Sojori se connecte à Mews et récupère les réservations et les états de chambre, puis orchestre autour — accueil, ménage, maintenance, messages clients, tarification. Le remplacement n'a de sens que pour un établissement sans PMS, ou dont le PMS actuel ne suit plus."
-  },
-  {
-    "q": "Comment le housekeeping est-il organisé dans un riad sans réception permanente ?",
-    "a": "Les tâches se déclenchent sur les événements réels : départ constaté, arrivée anticipée, chambre signalée en panne. Chaque intervenant reçoit sa mission sur WhatsApp, en français ou en arabe, sans application à installer. L'état de chaque chambre est visible en temps réel plutôt que reconstitué en fin de journée."
-  },
-  {
-    "q": "Combien de temps prend la mise en route à Marrakech ?",
-    "a": "Comptez quelques jours pour un établissement seul, davantage si plusieurs riads et des historiques de réservation sont à reprendre. L'accompagnement se fait en français, et la migration depuis un outil existant est prise en charge."
-  }
-];
 
 export default async function PmsPageMarrakech({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
@@ -233,7 +206,7 @@ export default async function PmsPageMarrakech({ params }: { params: Promise<{ l
 
         <StatsBar stats={[{"k": "500+", "l": "Chambres orchestrées"}, {"k": "70+", "l": "Établissements"}, {"k": "13M", "l": "Visiteurs/an à Marrakech"}, {"k": "FR/AR/EN", "l": "Langues natives"}]} />
 
-        <FaqSection badge="PMS hôtel Marrakech" title="Questions fréquentes" items={FAQ} />
+        <FaqFromMessages page="pms-marrakech" />
 
         <FinalCTA
           title={<>Orchestrez votre établissement de Marrakech.{' '}<span className="gradient-text">1 mois d&apos;essai gratuit.</span></>}

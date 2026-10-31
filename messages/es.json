@@ -4003,5 +4003,859 @@
         "text": "Datos del PMS · generado automáticamente"
       }
     }
+  },
+  "faqPages": {
+    "title": "Preguntas frecuentes",
+    "about": {
+      "badge": "Sojori",
+      "items": [
+        {
+          "q": "¿Qué es Sojori, en una frase?",
+          "a": "El motor de orquestación de la hospitalidad: orquesta la experiencia del cliente, las operaciones y los ingresos de un establecimiento, conectando los sistemas, los clientes, los equipos y los socios."
+        },
+        {
+          "q": "¿En qué se diferencia de un PMS?",
+          "a": "Un PMS registra el estado de una estancia; un orquestador desencadena lo que debe derivarse de ello. Sojori incluye su propio PMS, pero también se conecta a los PMS existentes: no tiene que sustituir lo que ya usa para orquestar."
+        },
+        {
+          "q": "¿Dónde está presente Sojori?",
+          "a": "Primero Marruecos (Marrakech, Casablanca, Rabat, Tánger, Agadir) y después Francia. No es casualidad: la ficha de policía, la tasa turística y el árabe como idioma de trabajo son nativos, mientras que una plataforma internacional los trata como casos particulares."
+        },
+        {
+          "q": "¿A quién va dirigido Sojori?",
+          "a": "A hoteles, riads, casas de huéspedes y residencias. La orquestación aporta su valor cuando hay flujos que coordinar: equipos, llegadas simultáneas, varios canales. Para un establecimiento muy pequeño llevado por dos personas, un buen PMS puede bastar."
+        }
+      ]
+    },
+    "alternative-cloudbeds": {
+      "badge": "Sojori vs Cloudbeds",
+      "items": [
+        {
+          "q": "¿Sojori sustituye a Cloudbeds?",
+          "a": "No necesariamente. Sojori incluye su propio PMS, pero también se conecta a los PMS existentes: puede mantener Cloudbeds para las reservas y añadir la capa de orquestación por encima. Es una diferencia de fondo con las demás alternativas, que exigen todas una sustitución completa."
+        },
+        {
+          "q": "¿Cuál es la verdadera diferencia entre los dos?",
+          "a": "El alcance. Cloudbeds centraliza la información de la estancia; Sojori desencadena lo que se deriva de ella. Dicho de otro modo: Cloudbeds le avisa de que la habitación 12 ha quedado libre; Sojori envía la tarea de limpieza a la persona adecuada, se la recuerda si nadie la toma y le avisa si la siguiente llegada corre el riesgo de tener que esperar."
+        },
+        {
+          "q": "¿Cloudbeds gestiona la ficha de policía marroquí?",
+          "a": "No nos pronunciamos sobre el alcance exacto de un producto de la competencia, que evoluciona. Pregúnteles directamente y pida una demostración con su propio caso: una ficha recogida antes de la llegada, en árabe, con el documento de identidad. Verá enseguida lo que sabe hacer cada herramienta."
+        },
+        {
+          "q": "¿Es complicada la migración?",
+          "a": "Nos encargamos nosotros. Y si prefiere no migrar, sigue siendo posible conectarse a su PMS actual: suele ser el camino más corto para medir lo que aporta la orquestación antes de decidir nada sobre su sistema de reservas."
+        },
+        {
+          "q": "¿Cuánto tiempo se tarda en estar operativo?",
+          "a": "Unos días para un establecimiento individual. Lo que lleva tiempo nunca es la instalación, sino la recuperación de los históricos y la configuración de las reglas propias de su explotación: frecuencia de limpieza, reglas de tarificación, circuitos de validación."
+        }
+      ]
+    },
+    "alternative-nozoul": {
+      "badge": "Sojori vs Nozoul",
+      "items": [
+        {
+          "q": "¿Está Sojori homologado en Go Siyaha?",
+          "a": "No afirmamos ninguna homologación que no podamos documentar y, a día de hoy, no la mostramos. Nozoul, en cambio, muestra su inclusión en el programa: es una ventaja real para un hotelero que prepara un expediente, y preferimos decírselo. Si la financiación es su criterio decisivo, consulte a Maroc PME antes de elegir."
+        },
+        {
+          "q": "¿Cuál es la diferencia concreta con un PMS clásico?",
+          "a": "Un PMS espera a que se introduzcan los datos; un orquestador desencadena. La salida registrada genera la tarea de limpieza, la habitación notificada abre una incidencia, la estancia que se acerca envía sus mensajes. En un establecimiento tranquilo la diferencia es pequeña. En una jornada con veinte salidas, se nota."
+        },
+        {
+          "q": "¿Puedo mantener mi PMS actual?",
+          "a": "Sí, y a menudo es el camino más corto. Sojori se conecta a los PMS existentes, entre ellos Mews, recupera las reservas y el estado de las habitaciones, y orquesta a su alrededor. Usted mide lo que aporta sin poner en riesgo su sistema de reservas."
+        },
+        {
+          "q": "¿Sojori gestiona la ficha de policía y la tasa turística?",
+          "a": "Sí. La ficha se recoge antes de la llegada: el cliente la rellena desde WhatsApp con su documento de identidad. Sojori calcula la tasa turística por viajero y por noche, según la configuración de cada alojamiento. La declaración ante las autoridades sigue siendo trámite suyo."
+        },
+        {
+          "q": "¿Y si mi establecimiento es pequeño?",
+          "a": "Entonces compare con honestidad y fíjese primero en el precio y la sencillez. La orquestación aporta todo su valor cuando hay equipos que coordinar. En un riad de seis habitaciones llevado por dos personas, un buen PMS puede bastar: preferimos decírselo antes que venderle una herramienta sobredimensionada."
+        }
+      ]
+    },
+    "alternative-pluriel": {
+      "badge": "Sojori vs Pluriel",
+      "items": [
+        {
+          "q": "¿Hay que sustituir Pluriel para usar Sojori?",
+          "a": "No necesariamente. Sojori se conecta a los PMS existentes; según las posibilidades de interconexión de su instalación, la orquestación puede añadirse sin tocar su sistema de reservas. Hay que estudiarlo caso por caso: hablemos antes de plantear una migración."
+        },
+        {
+          "q": "¿Qué pasa con el historial de reservas?",
+          "a": "La recuperación de los datos corre de nuestra cuenta durante la puesta en marcha. Suele ser la etapa más larga del despliegue y la que hay que definir primero."
+        },
+        {
+          "q": "¿Es fiable la nube cuando la conexión es inestable?",
+          "a": "Es la pregunta correcta y merece una respuesta honesta: un corte prolongado afecta al acceso. Es el argumento histórico del software instalado en local. En la práctica, la orquestación pasa en gran parte por WhatsApp en los teléfonos de los equipos, que funcionan con datos móviles, independientemente del wifi del establecimiento."
+        },
+        {
+          "q": "Pluriel hace contabilidad y nóminas. ¿Sojori también?",
+          "a": "No. Sojori orquesta la explotación: reservas, limpieza, mantenimiento, relación con el cliente, ingresos. La contabilidad y las nóminas no entran en su alcance, y las exportaciones alimentan su herramienta contable. Si busca una suite administrativa completa de un solo proveedor, la suite de Pluriel cubre un terreno que nosotros no cubrimos."
+        },
+        {
+          "q": "¿Sojori habla árabe?",
+          "a": "Sí, y es fundamental. Las tareas que se envían a los equipos de campo van en francés o en árabe, por WhatsApp, sin aplicación que instalar ni cuenta que crear."
+        }
+      ]
+    },
+    "alternative-welcomax": {
+      "badge": "Sojori vs Welcomax",
+      "items": [
+        {
+          "q": "¿Sojori sustituye a Welcomax?",
+          "a": "Puede hacerlo, ya que incluye un PMS. Pero también puede añadirse a él si la interconexión lo permite: Sojori se conecta a los PMS existentes, recupera las reservas y el estado de las habitaciones y orquesta a su alrededor. Suele ser el camino más corto para medir lo que aporta antes de cualquier decisión de migración."
+        },
+        {
+          "q": "¿Cuál es la diferencia de fondo?",
+          "a": "El alcance. Una suite PMS centraliza la información; un orquestador desencadena las acciones que se derivan de ella. Saber que la habitación ha quedado libre o conseguir que esté lista antes de la siguiente llegada: no son los mismos productos."
+        },
+        {
+          "q": "Los dos gestionan el cumplimiento normativo marroquí, ¿dónde está la diferencia?",
+          "a": "En el momento en que se recogen los datos. En Sojori, la ficha de policía la rellena el cliente antes de su llegada, desde WhatsApp, con su documento de identidad: recepción no introduce nada. La diferencia no está en el documento que se genera, sino en el trabajo que se evita."
+        },
+        {
+          "q": "¿Y la tarificación?",
+          "a": "Sojori gestiona la tarificación mediante reglas, manteniendo el cálculo algorítmico y señalando las recomendaciones en lugar de aplicarlas a ciegas, con límites mínimo y máximo. Es una decisión asumida: no dejamos que un modelo fije solo sus precios."
+        },
+        {
+          "q": "¿Cómo comparar los dos con rigor?",
+          "a": "Pida la misma demostración a los dos proveedores, con un escenario real de su establecimiento: una salida a las 11 h, una llegada anticipada a las 13 h, una habitación notificada como averiada, un cliente que escribe en árabe. En quince minutos verá lo que hace realmente cada herramienta."
+        }
+      ]
+    },
+    "analytics": {
+      "badge": "Analytics",
+      "items": [
+        {
+          "q": "¿Qué indicadores conviene seguir en primer lugar?",
+          "a": "La tasa de ocupación, el precio medio y los ingresos por habitación disponible, pero sobre todo por período, por categoría y por canal, nunca como media global. Una media mensual oculta justo lo que hay que corregir: el valle del fin de semana en Casablanca, la temporada baja en Tánger."
+        },
+        {
+          "q": "¿Se pueden ver los ingresos que no son de alojamiento?",
+          "a": "Sí. Restauración, spa, traslados, mejoras de categoría y salidas tardías se siguen por separado. Suele ser la parte peor medida de una explotación, aunque crece cuando la relación con el cliente está orquestada."
+        },
+        {
+          "q": "¿Los datos están al día?",
+          "a": "Los indicadores de explotación (llegadas, salidas, estado de las habitaciones, mensajes pendientes) reflejan la situación actual. Los análisis de ingresos se consolidan sobre el período elegido."
+        },
+        {
+          "q": "¿Se puede exportar a nuestra contabilidad?",
+          "a": "Sí, hay exportaciones previstas para alimentar su herramienta contable. Sojori no es un software de contabilidad y no pretende sustituirlo: proporciona los datos de explotación."
+        },
+        {
+          "q": "¿Cómo comparar varios establecimientos?",
+          "a": "El reporting consolida los centros y permite compararlos entre sí: ocupación, precio medio, mix de canales, ingresos por habitación disponible. Es justo lo que hacen mal las herramientas pensadas para un único establecimiento."
+        }
+      ]
+    },
+    "comparatif-pms-maroc": {
+      "badge": "Comparativa de PMS en Marruecos",
+      "items": [
+        {
+          "q": "¿Cuál es el mejor PMS para un hotel en Marruecos?",
+          "a": "La pregunta está mal planteada, y es lo que hace perder tiempo. No existe un mejor PMS en términos absolutos: existe un producto adecuado a su tamaño, a su organización y a su problema real. Un riad de seis habitaciones llevado por dos personas y un grupo de cuatro establecimientos con treinta empleados no tienen la misma necesidad. Empiece por identificar lo que más le cuesta hoy (la introducción de reservas, la coordinación de los equipos o la distribución en las OTA) y compare después en ese punto."
+        },
+        {
+          "q": "¿Qué diferencia hay entre un PMS y un motor de orquestación?",
+          "a": "Un PMS registra y centraliza: reservas, habitaciones, facturas, canales. Un motor de orquestación desencadena lo que se deriva de ello: la salida registrada genera la tarea de limpieza, la habitación notificada abre una incidencia de mantenimiento, la estancia que se acerca envía sus mensajes al cliente. En un establecimiento tranquilo, la diferencia apenas se nota. En una jornada con veinte salidas, decide si las habitaciones están listas a tiempo."
+        },
+        {
+          "q": "¿Conviene un software marroquí o internacional?",
+          "a": "Un proveedor local trata de forma nativa la ficha de policía, la tasa turística, el dírham y el árabe, mientras que una plataforma internacional los gestiona como variantes locales. En contrapartida, las plataformas internacionales suelen ofrecer ecosistemas de integraciones más amplios. Si su explotación es íntegramente marroquí, el arraigo local pesa mucho. Si opera en varios países, el balance se invierte."
+        },
+        {
+          "q": "¿Nube o instalado en local?",
+          "a": "La nube se abre desde un navegador, se actualiza para todos y no requiere servidor ni copias de seguridad que vigilar. El software instalado en local sigue siendo accesible si se corta internet y permite una integración profunda con el equipamiento: cerraduras, centralitas telefónicas, sistemas de fichaje. Hoy la mayoría de los nuevos despliegues se hacen en la nube, pero un proyecto con una parte importante de infraestructura pesada puede justificar la otra opción."
+        },
+        {
+          "q": "¿El programa Go Siyaha financia estos programas informáticos?",
+          "a": "El apartado de transformación digital del programa cubre las herramientas digitales, y algunos proveedores muestran su inclusión en el programa. Las tasas, los límites y las condiciones dependen de Maroc PME, única habilitada para tramitar los expedientes. Compruébelo con ellos y desconfíe de un proveedor que le garantiza una subvención: esa decisión no le corresponde."
+        },
+        {
+          "q": "¿Cómo comparar con rigor dos soluciones?",
+          "a": "Pida la misma demostración a cada proveedor, con un escenario real de su establecimiento: una salida a las 11 h, una llegada anticipada a las 13 h, una habitación notificada como averiada, un cliente que escribe en árabe, un pago parcial y después una factura. En quince minutos verá lo que hace realmente cada herramienta, en lugar de lo que anuncia el folleto."
+        }
+      ]
+    },
+    "conciergerie-agadir": {
+      "badge": "Comunicación con el cliente en Agadir",
+      "items": [
+        {
+          "q": "¿Cómo automatizar la comunicación con el cliente de un hotel en Agadir?",
+          "a": "Los mensajes se envían por WhatsApp, el canal que los clientes ya utilizan: confirmación, instrucciones de llegada, información práctica, recordatorio para dejar una opinión. El asistente responde a las consultas habituales las 24 horas del día y pasa a su equipo lo que requiere una decisión humana."
+        },
+        {
+          "q": "¿El asistente habla árabe, francés e inglés?",
+          "a": "Sí, y también español. Detecta el idioma del cliente y responde en ese idioma. En Agadir, donde se mezclan clientela local e internacional, esto evita tener un recepcionista multilingüe disponible de forma continua."
+        },
+        {
+          "q": "¿Qué ocurre cuando el asistente no sabe responder?",
+          "a": "La conversación pasa a su equipo con todo el historial. La automatización se ocupa del volumen repetitivo (horarios, wifi, accesos, servicios) y le deja las situaciones que requieren criterio. Usted mantiene el control en todo momento."
+        },
+        {
+          "q": "¿Cómo gestionar las llegadas tardías y las solicitudes de última hora?",
+          "a": "Las instrucciones de acceso se envían automáticamente antes de la llegada. Si el cliente avisa de un retraso, el evento se registra y se alerta a su equipo de recepción, sin llamadas a las 23 h. Las solicitudes de servicio entran en el mismo flujo y se convierten en tareas asignadas."
+        },
+        {
+          "q": "¿Se pueden vender servicios adicionales durante la estancia?",
+          "a": "Sí: traslados, desayuno, salida tardía, experiencias, limpieza adicional. El cliente lo pide en la conversación y la solicitud llega al equipo correspondiente. Son ingresos adicionales sobre una estancia ya reservada, la palanca más rentable en hostelería."
+        },
+        {
+          "q": "¿Es adecuado para hoteles de playa, clubes y residencias turísticas?",
+          "a": "Sí. Lo que se orquesta son los momentos de la estancia: antes de la llegada, durante y después de la salida. El tamaño y el tipo de establecimiento cambian el volumen, no la lógica."
+        }
+      ]
+    },
+    "conciergerie-casablanca": {
+      "badge": "Comunicación con el cliente en Casablanca",
+      "items": [
+        {
+          "q": "¿Cómo automatizar la comunicación con el cliente de un hotel en Casablanca?",
+          "a": "Los mensajes se envían por WhatsApp, el canal que los clientes ya utilizan: confirmación, instrucciones de llegada, información práctica, recordatorio para dejar una opinión. El asistente responde a las consultas habituales las 24 horas del día y pasa a su equipo lo que requiere una decisión humana."
+        },
+        {
+          "q": "¿El asistente habla árabe, francés e inglés?",
+          "a": "Sí, y también español. Detecta el idioma del cliente y responde en ese idioma. En Casablanca, donde se mezclan clientela local e internacional, esto evita tener un recepcionista multilingüe disponible de forma continua."
+        },
+        {
+          "q": "¿Qué ocurre cuando el asistente no sabe responder?",
+          "a": "La conversación pasa a su equipo con todo el historial. La automatización se ocupa del volumen repetitivo (horarios, wifi, accesos, servicios) y le deja las situaciones que requieren criterio. Usted mantiene el control en todo momento."
+        },
+        {
+          "q": "¿Cómo gestionar las llegadas tardías y las solicitudes de última hora?",
+          "a": "Las instrucciones de acceso se envían automáticamente antes de la llegada. Si el cliente avisa de un retraso, el evento se registra y se alerta a su equipo de recepción, sin llamadas a las 23 h. Las solicitudes de servicio entran en el mismo flujo y se convierten en tareas asignadas."
+        },
+        {
+          "q": "¿Se pueden vender servicios adicionales durante la estancia?",
+          "a": "Sí: traslados, desayuno, salida tardía, experiencias, limpieza adicional. El cliente lo pide en la conversación y la solicitud llega al equipo correspondiente. Son ingresos adicionales sobre una estancia ya reservada, la palanca más rentable en hostelería."
+        },
+        {
+          "q": "¿Es adecuado para hoteles de negocios, apartahoteles y residencias de Anfa?",
+          "a": "Sí. Lo que se orquesta son los momentos de la estancia: antes de la llegada, durante y después de la salida. El tamaño y el tipo de establecimiento cambian el volumen, no la lógica."
+        }
+      ]
+    },
+    "conciergerie-marrakech": {
+      "badge": "Comunicación con el cliente en Marrakech",
+      "items": [
+        {
+          "q": "¿Cómo automatizar la comunicación con el cliente de un hotel en Marrakech?",
+          "a": "Los mensajes se envían por WhatsApp, el canal que los clientes ya utilizan: confirmación, instrucciones de llegada, información práctica, recordatorio para dejar una opinión. El asistente responde a las consultas habituales las 24 horas del día y pasa a su equipo lo que requiere una decisión humana."
+        },
+        {
+          "q": "¿El asistente habla árabe, francés e inglés?",
+          "a": "Sí, y también español. Detecta el idioma del cliente y responde en ese idioma. En Marrakech, donde se mezclan clientela local e internacional, esto evita tener un recepcionista multilingüe disponible de forma continua."
+        },
+        {
+          "q": "¿Qué ocurre cuando el asistente no sabe responder?",
+          "a": "La conversación pasa a su equipo con todo el historial. La automatización se ocupa del volumen repetitivo (horarios, wifi, accesos, servicios) y le deja las situaciones que requieren criterio. Usted mantiene el control en todo momento."
+        },
+        {
+          "q": "¿Cómo gestionar las llegadas tardías y las solicitudes de última hora?",
+          "a": "Las instrucciones de acceso se envían automáticamente antes de la llegada. Si el cliente avisa de un retraso, el evento se registra y se alerta a su equipo de recepción, sin llamadas a las 23 h. Las solicitudes de servicio entran en el mismo flujo y se convierten en tareas asignadas."
+        },
+        {
+          "q": "¿Se pueden vender servicios adicionales durante la estancia?",
+          "a": "Sí: traslados, desayuno, salida tardía, experiencias, limpieza adicional. El cliente lo pide en la conversación y la solicitud llega al equipo correspondiente. Son ingresos adicionales sobre una estancia ya reservada, la palanca más rentable en hostelería."
+        },
+        {
+          "q": "¿Es adecuado para hoteles con encanto, riads de la medina y villas de la Palmeraie?",
+          "a": "Sí. Lo que se orquesta son los momentos de la estancia: antes de la llegada, durante y después de la salida. El tamaño y el tipo de establecimiento cambian el volumen, no la lógica."
+        }
+      ]
+    },
+    "conciergerie-rabat": {
+      "badge": "Comunicación con el cliente en Rabat",
+      "items": [
+        {
+          "q": "¿Cómo automatizar la comunicación con el cliente de un hotel en Rabat?",
+          "a": "Los mensajes se envían por WhatsApp, el canal que los clientes ya utilizan: confirmación, instrucciones de llegada, información práctica, recordatorio para dejar una opinión. El asistente responde a las consultas habituales las 24 horas del día y pasa a su equipo lo que requiere una decisión humana."
+        },
+        {
+          "q": "¿El asistente habla árabe, francés e inglés?",
+          "a": "Sí, y también español. Detecta el idioma del cliente y responde en ese idioma. En Rabat, donde se mezclan clientela local e internacional, esto evita tener un recepcionista multilingüe disponible de forma continua."
+        },
+        {
+          "q": "¿Qué ocurre cuando el asistente no sabe responder?",
+          "a": "La conversación pasa a su equipo con todo el historial. La automatización se ocupa del volumen repetitivo (horarios, wifi, accesos, servicios) y le deja las situaciones que requieren criterio. Usted mantiene el control en todo momento."
+        },
+        {
+          "q": "¿Cómo gestionar las llegadas tardías y las solicitudes de última hora?",
+          "a": "Las instrucciones de acceso se envían automáticamente antes de la llegada. Si el cliente avisa de un retraso, el evento se registra y se alerta a su equipo de recepción, sin llamadas a las 23 h. Las solicitudes de servicio entran en el mismo flujo y se convierten en tareas asignadas."
+        },
+        {
+          "q": "¿Se pueden vender servicios adicionales durante la estancia?",
+          "a": "Sí: traslados, desayuno, salida tardía, experiencias, limpieza adicional. El cliente lo pide en la conversación y la solicitud llega al equipo correspondiente. Son ingresos adicionales sobre una estancia ya reservada, la palanca más rentable en hostelería."
+        },
+        {
+          "q": "¿Es adecuado para hoteles institucionales, riads de la medina y residencias de Agdal?",
+          "a": "Sí. Lo que se orquesta son los momentos de la estancia: antes de la llegada, durante y después de la salida. El tamaño y el tipo de establecimiento cambian el volumen, no la lógica."
+        }
+      ]
+    },
+    "conciergerie-tanger": {
+      "badge": "Comunicación con el cliente en Tánger",
+      "items": [
+        {
+          "q": "¿Cómo automatizar la comunicación con el cliente de un hotel en Tánger?",
+          "a": "Los mensajes se envían por WhatsApp, el canal que los clientes ya utilizan: confirmación, instrucciones de llegada, información práctica, recordatorio para dejar una opinión. El asistente responde a las consultas habituales las 24 horas del día y pasa a su equipo lo que requiere una decisión humana."
+        },
+        {
+          "q": "¿El asistente habla árabe, francés e inglés?",
+          "a": "Sí, y también español. Detecta el idioma del cliente y responde en ese idioma. En Tánger, donde se mezclan clientela local e internacional, esto evita tener un recepcionista multilingüe disponible de forma continua."
+        },
+        {
+          "q": "¿Qué ocurre cuando el asistente no sabe responder?",
+          "a": "La conversación pasa a su equipo con todo el historial. La automatización se ocupa del volumen repetitivo (horarios, wifi, accesos, servicios) y le deja las situaciones que requieren criterio. Usted mantiene el control en todo momento."
+        },
+        {
+          "q": "¿Cómo gestionar las llegadas tardías y las solicitudes de última hora?",
+          "a": "Las instrucciones de acceso se envían automáticamente antes de la llegada. Si el cliente avisa de un retraso, el evento se registra y se alerta a su equipo de recepción, sin llamadas a las 23 h. Las solicitudes de servicio entran en el mismo flujo y se convierten en tareas asignadas."
+        },
+        {
+          "q": "¿Se pueden vender servicios adicionales durante la estancia?",
+          "a": "Sí: traslados, desayuno, salida tardía, experiencias, limpieza adicional. El cliente lo pide en la conversación y la solicitud llega al equipo correspondiente. Son ingresos adicionales sobre una estancia ya reservada, la palanca más rentable en hostelería."
+        },
+        {
+          "q": "¿Es adecuado para hoteles frente al mar, residencias de Malabata y casas de huéspedes de la kasbah?",
+          "a": "Sí. Lo que se orquesta son los momentos de la estancia: antes de la llegada, durante y después de la salida. El tamaño y el tipo de establecimiento cambian el volumen, no la lógica."
+        }
+      ]
+    },
+    "dynamic-pricing": {
+      "badge": "Tarificación",
+      "items": [
+        {
+          "q": "¿La IA fija mis precios por sí sola?",
+          "a": "No, y es una decisión asumida. El cálculo sigue siendo algorítmico, a partir de reglas y señales medibles: ocupación, estacionalidad, eventos, ritmo de reservas. Un modelo de lenguaje puede interpretar y recomendar, pero nunca decidir solo el precio."
+        },
+        {
+          "q": "¿Cómo mantener el control?",
+          "a": "Mediante límites mínimo y máximo que usted fija, y un nivel de autonomía configurable: aplicación automática por debajo de cierta diferencia, validación obligatoria por encima. También puede quedarse en la simple recomendación, sin aplicación automática."
+        },
+        {
+          "q": "¿En qué se basa el nuevo cálculo del precio?",
+          "a": "En la ocupación real y futura, el ritmo de reservas comparado con el mismo período del año anterior, la estacionalidad de su ciudad y los eventos locales. En Marrakech un festival, en Tánger el pico estival, en Casablanca el efecto entre semana."
+        },
+        {
+          "q": "¿El nuevo precio se envía a los canales?",
+          "a": "Sí, a Booking, Expedia, Airbnb y los demás canales abiertos, así como a su canal directo. Un precio recalculado que se quedara dentro del software no serviría de nada."
+        },
+        {
+          "q": "¿Es adecuado para un establecimiento pequeño?",
+          "a": "La tarificación por reglas tiene más valor cuanto menos tiempo tiene usted para vigilar sus precios cada día. Pero en un riad con tarifa única todo el año, la aportación es escasa: preferimos decírselo."
+        },
+        {
+          "q": "¿Se puede medir lo que aporta?",
+          "a": "Sí, mediante los ingresos por habitación disponible comparados con el período anterior y mediante el peso del canal directo en el mix. Es la medida que cuenta: un aumento de ocupación logrado hundiendo los precios no es una ganancia."
+        }
+      ]
+    },
+    "gestion-locative-agadir": {
+      "badge": "Gestión hotelera en Agadir",
+      "items": [
+        {
+          "q": "¿Qué software de gestión hotelera elegir en Agadir?",
+          "a": "El criterio que cuenta no es la lista de funciones, sino lo que el software orquesta realmente: reservas, limpieza, mantenimiento, comunicación con el cliente e ingresos en un mismo flujo. Sojori incluye su propio PMS y también se conecta a los PMS ya instalados: no está obligado a sustituir lo que ya tiene para orquestar sus operaciones."
+        },
+        {
+          "q": "¿Sojori sustituye a mi PMS actual?",
+          "a": "No, salvo que usted lo desee. Sojori es un motor de orquestación: se conecta a su PMS existente (Mews y otros), recupera las reservas y el estado de las habitaciones, y después orquesta lo que ocurre a su alrededor: acogida, limpieza, mantenimiento, mensajes a los clientes, tarificación. Para un establecimiento sin PMS, basta el de Sojori."
+        },
+        {
+          "q": "¿Cómo organizar la limpieza y el mantenimiento en Agadir?",
+          "a": "Las tareas se desencadenan con los eventos reales: salida registrada, llegada anticipada, habitación notificada como averiada. Cada persona recibe su tarea por WhatsApp, en francés o en árabe, sin aplicación que instalar. Usted ve el estado de cada habitación al día a lo largo de la jornada, en lugar de reconstruirlo al final."
+        },
+        {
+          "q": "¿Cómo gestionar Booking.com, Expedia, Airbnb y las reservas directas?",
+          "a": "El channel manager sincroniza disponibilidad y tarifas en ambos sentidos con Booking, Expedia, Airbnb y los demás canales. Las reservas directas entran en el mismo flujo. Reduce el riesgo de sobreventa y, sobre todo, deja de gestionar cada canal por separado."
+        },
+        {
+          "q": "¿Qué indicadores seguir en un establecimiento de Agadir?",
+          "a": "Tasa de ocupación, precio medio, ingresos por habitación disponible y, sobre todo, el peso del canal directo en su mix. Agadir se apoya en un turismo de estancias largas, con una temporada extendida: gestionar estos indicadores por canal, y no de forma global, cambia las decisiones de tarificación."
+        },
+        {
+          "q": "¿Sojori es adecuado para hoteles de playa, clubes y residencias turísticas?",
+          "a": "Sí. La orquestación no depende del tipo de establecimiento, sino de los flujos que hay que coordinar: llegadas, limpieza, solicitudes de clientes, ingresos. Las reglas se configuran por establecimiento, no según un modelo impuesto."
+        }
+      ]
+    },
+    "gestion-locative-casablanca": {
+      "badge": "Gestión hotelera en Casablanca",
+      "items": [
+        {
+          "q": "¿Qué software de gestión hotelera elegir en Casablanca?",
+          "a": "El criterio que cuenta no es la lista de funciones, sino lo que el software orquesta realmente: reservas, limpieza, mantenimiento, comunicación con el cliente e ingresos en un mismo flujo. Sojori incluye su propio PMS y también se conecta a los PMS ya instalados: no está obligado a sustituir lo que ya tiene para orquestar sus operaciones."
+        },
+        {
+          "q": "¿Sojori sustituye a mi PMS actual?",
+          "a": "No, salvo que usted lo desee. Sojori es un motor de orquestación: se conecta a su PMS existente (Mews y otros), recupera las reservas y el estado de las habitaciones, y después orquesta lo que ocurre a su alrededor: acogida, limpieza, mantenimiento, mensajes a los clientes, tarificación. Para un establecimiento sin PMS, basta el de Sojori."
+        },
+        {
+          "q": "¿Cómo organizar la limpieza y el mantenimiento en Casablanca?",
+          "a": "Las tareas se desencadenan con los eventos reales: salida registrada, llegada anticipada, habitación notificada como averiada. Cada persona recibe su tarea por WhatsApp, en francés o en árabe, sin aplicación que instalar. Usted ve el estado de cada habitación al día a lo largo de la jornada, en lugar de reconstruirlo al final."
+        },
+        {
+          "q": "¿Cómo gestionar Booking.com, Expedia, Airbnb y las reservas directas?",
+          "a": "El channel manager sincroniza disponibilidad y tarifas en ambos sentidos con Booking, Expedia, Airbnb y los demás canales. Las reservas directas entran en el mismo flujo. Reduce el riesgo de sobreventa y, sobre todo, deja de gestionar cada canal por separado."
+        },
+        {
+          "q": "¿Qué indicadores seguir en un establecimiento de Casablanca?",
+          "a": "Tasa de ocupación, precio medio, ingresos por habitación disponible y, sobre todo, el peso del canal directo en su mix. Casablanca vive de una clientela de negocios entre semana, con estancias cortas y una alta tasa de repetición: gestionar estos indicadores por canal, y no de forma global, cambia las decisiones de tarificación."
+        },
+        {
+          "q": "¿Sojori es adecuado para hoteles de negocios, apartahoteles y residencias de Anfa?",
+          "a": "Sí. La orquestación no depende del tipo de establecimiento, sino de los flujos que hay que coordinar: llegadas, limpieza, solicitudes de clientes, ingresos. Las reglas se configuran por establecimiento, no según un modelo impuesto."
+        }
+      ]
+    },
+    "gestion-locative-marrakech": {
+      "badge": "Gestión hotelera en Marrakech",
+      "items": [
+        {
+          "q": "¿Qué software de gestión hotelera elegir en Marrakech?",
+          "a": "El criterio que cuenta no es la lista de funciones, sino lo que el software orquesta realmente: reservas, limpieza, mantenimiento, comunicación con el cliente e ingresos en un mismo flujo. Sojori incluye su propio PMS y también se conecta a los PMS ya instalados: no está obligado a sustituir lo que ya tiene para orquestar sus operaciones."
+        },
+        {
+          "q": "¿Sojori sustituye a mi PMS actual?",
+          "a": "No, salvo que usted lo desee. Sojori es un motor de orquestación: se conecta a su PMS existente (Mews y otros), recupera las reservas y el estado de las habitaciones, y después orquesta lo que ocurre a su alrededor: acogida, limpieza, mantenimiento, mensajes a los clientes, tarificación. Para un establecimiento sin PMS, basta el de Sojori."
+        },
+        {
+          "q": "¿Cómo organizar la limpieza y el mantenimiento en Marrakech?",
+          "a": "Las tareas se desencadenan con los eventos reales: salida registrada, llegada anticipada, habitación notificada como averiada. Cada persona recibe su tarea por WhatsApp, en francés o en árabe, sin aplicación que instalar. Usted ve el estado de cada habitación al día a lo largo de la jornada, en lugar de reconstruirlo al final."
+        },
+        {
+          "q": "¿Cómo gestionar Booking.com, Expedia, Airbnb y las reservas directas?",
+          "a": "El channel manager sincroniza disponibilidad y tarifas en ambos sentidos con Booking, Expedia, Airbnb y los demás canales. Las reservas directas entran en el mismo flujo. Reduce el riesgo de sobreventa y, sobre todo, deja de gestionar cada canal por separado."
+        },
+        {
+          "q": "¿Qué indicadores seguir en un establecimiento de Marrakech?",
+          "a": "Tasa de ocupación, precio medio, ingresos por habitación disponible y, sobre todo, el peso del canal directo en su mix. Marrakech concentra la mayor densidad de establecimientos independientes de Marruecos: gestionar estos indicadores por canal, y no de forma global, cambia las decisiones de tarificación."
+        },
+        {
+          "q": "¿Sojori es adecuado para hoteles con encanto, riads de la medina y villas de la Palmeraie?",
+          "a": "Sí. La orquestación no depende del tipo de establecimiento, sino de los flujos que hay que coordinar: llegadas, limpieza, solicitudes de clientes, ingresos. Las reglas se configuran por establecimiento, no según un modelo impuesto."
+        }
+      ]
+    },
+    "gestion-locative-rabat": {
+      "badge": "Gestión hotelera en Rabat",
+      "items": [
+        {
+          "q": "¿Qué software de gestión hotelera elegir en Rabat?",
+          "a": "El criterio que cuenta no es la lista de funciones, sino lo que el software orquesta realmente: reservas, limpieza, mantenimiento, comunicación con el cliente e ingresos en un mismo flujo. Sojori incluye su propio PMS y también se conecta a los PMS ya instalados: no está obligado a sustituir lo que ya tiene para orquestar sus operaciones."
+        },
+        {
+          "q": "¿Sojori sustituye a mi PMS actual?",
+          "a": "No, salvo que usted lo desee. Sojori es un motor de orquestación: se conecta a su PMS existente (Mews y otros), recupera las reservas y el estado de las habitaciones, y después orquesta lo que ocurre a su alrededor: acogida, limpieza, mantenimiento, mensajes a los clientes, tarificación. Para un establecimiento sin PMS, basta el de Sojori."
+        },
+        {
+          "q": "¿Cómo organizar la limpieza y el mantenimiento en Rabat?",
+          "a": "Las tareas se desencadenan con los eventos reales: salida registrada, llegada anticipada, habitación notificada como averiada. Cada persona recibe su tarea por WhatsApp, en francés o en árabe, sin aplicación que instalar. Usted ve el estado de cada habitación al día a lo largo de la jornada, en lugar de reconstruirlo al final."
+        },
+        {
+          "q": "¿Cómo gestionar Booking.com, Expedia, Airbnb y las reservas directas?",
+          "a": "El channel manager sincroniza disponibilidad y tarifas en ambos sentidos con Booking, Expedia, Airbnb y los demás canales. Las reservas directas entran en el mismo flujo. Reduce el riesgo de sobreventa y, sobre todo, deja de gestionar cada canal por separado."
+        },
+        {
+          "q": "¿Qué indicadores seguir en un establecimiento de Rabat?",
+          "a": "Tasa de ocupación, precio medio, ingresos por habitación disponible y, sobre todo, el peso del canal directo en su mix. Rabat combina clientela diplomática, administrativa y turística: gestionar estos indicadores por canal, y no de forma global, cambia las decisiones de tarificación."
+        },
+        {
+          "q": "¿Sojori es adecuado para hoteles institucionales, riads de la medina y residencias de Agdal?",
+          "a": "Sí. La orquestación no depende del tipo de establecimiento, sino de los flujos que hay que coordinar: llegadas, limpieza, solicitudes de clientes, ingresos. Las reglas se configuran por establecimiento, no según un modelo impuesto."
+        }
+      ]
+    },
+    "gestion-locative-tanger": {
+      "badge": "Gestión hotelera en Tánger",
+      "items": [
+        {
+          "q": "¿Qué software de gestión hotelera elegir en Tánger?",
+          "a": "El criterio que cuenta no es la lista de funciones, sino lo que el software orquesta realmente: reservas, limpieza, mantenimiento, comunicación con el cliente e ingresos en un mismo flujo. Sojori incluye su propio PMS y también se conecta a los PMS ya instalados: no está obligado a sustituir lo que ya tiene para orquestar sus operaciones."
+        },
+        {
+          "q": "¿Sojori sustituye a mi PMS actual?",
+          "a": "No, salvo que usted lo desee. Sojori es un motor de orquestación: se conecta a su PMS existente (Mews y otros), recupera las reservas y el estado de las habitaciones, y después orquesta lo que ocurre a su alrededor: acogida, limpieza, mantenimiento, mensajes a los clientes, tarificación. Para un establecimiento sin PMS, basta el de Sojori."
+        },
+        {
+          "q": "¿Cómo organizar la limpieza y el mantenimiento en Tánger?",
+          "a": "Las tareas se desencadenan con los eventos reales: salida registrada, llegada anticipada, habitación notificada como averiada. Cada persona recibe su tarea por WhatsApp, en francés o en árabe, sin aplicación que instalar. Usted ve el estado de cada habitación al día a lo largo de la jornada, en lugar de reconstruirlo al final."
+        },
+        {
+          "q": "¿Cómo gestionar Booking.com, Expedia, Airbnb y las reservas directas?",
+          "a": "El channel manager sincroniza disponibilidad y tarifas en ambos sentidos con Booking, Expedia, Airbnb y los demás canales. Las reservas directas entran en el mismo flujo. Reduce el riesgo de sobreventa y, sobre todo, deja de gestionar cada canal por separado."
+        },
+        {
+          "q": "¿Qué indicadores seguir en un establecimiento de Tánger?",
+          "a": "Tasa de ocupación, precio medio, ingreso por habitación disponible y, sobre todo, el peso de la venta directa en su mezcla de canales. Tánger tiene una estacionalidad marcada y una clientela europea de proximidad: seguir estos indicadores por canal, y no de forma global, cambia las decisiones de tarificación."
+        },
+        {
+          "q": "¿Sirve Sojori para hoteles frente al mar, residencias de Malabata y casas de huéspedes de la kasbah?",
+          "a": "Sí. La orquestación no depende del tipo de establecimiento, sino de los flujos que hay que coordinar: llegadas, limpieza, solicitudes de clientes, ingresos. Las reglas se configuran por establecimiento, no según un modelo impuesto."
+        }
+      ]
+    },
+    "go-siyaha": {
+      "badge": "Go Siyaha",
+      "items": [
+        {
+          "q": "¿Qué es el programa Go Siyaha?",
+          "a": "Go Siyaha es un programa público marroquí impulsado por el Ministerio de Turismo y desplegado por la agencia Maroc PME. Su objetivo es modernizar y digitalizar el tejido turístico: alojamiento, restauración, agencias de viajes y transporte turístico. Se articula en torno a tres ejes: el apoyo a la inversión, el crecimiento verde y la transformación digital con asistencia técnica."
+        },
+        {
+          "q": "¿Cuál es el porcentaje de subvención para la digitalización?",
+          "a": "Las fuentes profesionales del sector indican una cobertura de hasta el 90 % de los gastos de asesoría, consultoría, marketing y transformación digital, frente al 30 al 40 % de las inversiones físicas, como obras y equipamiento. Los porcentajes, límites y condiciones exactos aplicables a su expediente deben confirmarse con Maroc PME, el único organismo habilitado para fijarlos."
+        },
+        {
+          "q": "¿Es elegible mi establecimiento?",
+          "a": "El programa se dirige a empresas de derecho privado marroquí con capital 100 % privado que operan en el turismo, con una facturación sin impuestos inferior a 200 millones de dirhams de media en los tres últimos ejercicios. Desde julio de 2025 se han eliminado las barreras de tamaño: las microempresas, las casas de huéspedes, las cooperativas y los jóvenes emprendedores son elegibles, y se ha suprimido el umbral mínimo de inversión. Compruebe su situación con Maroc PME."
+        },
+        {
+          "q": "¿Entra un software de gestión hotelera entre los gastos elegibles?",
+          "a": "El apartado de transformación digital cubre la asesoría, la consultoría, el marketing y las herramientas digitales: sitio web, motor de reservas, posicionamiento, identidad de marca. Algunos actores del sector indican que las soluciones de PMS y channel manager entran en este ámbito. Sojori no se pronuncia sobre la elegibilidad de su expediente: es Maroc PME quien lo instruye y decide."
+        },
+        {
+          "q": "¿Está Sojori homologado o referenciado en el marco de Go Siyaha?",
+          "a": "No afirmamos ninguna homologación que no podamos documentar. Si usted prepara un expediente Go Siyaha, le facilitamos lo que su expediente necesite de nuestra parte (presupuesto detallado, descripción funcional, alcance del despliegue) y usted sigue siendo quien lleva el trámite ante Maroc PME. Consulte con ellos si un proveedor debe estar referenciado."
+        },
+        {
+          "q": "¿Cómo se prepara un expediente?",
+          "a": "El trámite se realiza a través de Maroc PME. Los documentos que se suelen pedir son el registro mercantil, el ICE, los estatutos, los balances de los tres últimos ejercicios, un plan de negocio y los presupuestos de proveedores. Podemos enviarle un presupuesto detallado que corresponda al alcance que usted contempla; el resto del expediente corresponde a usted y a su asesor."
+        }
+      ]
+    },
+    "guest-experience": {
+      "badge": "Experiencia del cliente",
+      "items": [
+        {
+          "q": "¿Tiene el cliente que instalar algo?",
+          "a": "No. Todo pasa por WhatsApp, que el cliente ya utiliza: confirmación, check-in digital, ficha de policía, información de acceso, solicitudes durante la estancia, instrucciones de salida, solicitud de opinión. Sin aplicación y sin cuenta."
+        },
+        {
+          "q": "¿Qué se envía automáticamente?",
+          "a": "Los mensajes se activan con los eventos de la estancia: la confirmación, la proximidad de la llegada, la entrega de los accesos, la salida, la opinión. Usted define el contenido y el momento; salen sin que tenga que ocuparse."
+        },
+        {
+          "q": "¿Sustituye el check-in digital a la recepción?",
+          "a": "Le quita la carga de la introducción de datos, no la de la atención al huésped. El cliente rellena su identidad y su ficha de policía antes de llegar; la recepción lo recibe en lugar de hacerle rellenar formularios. En un riad sin recepción permanente, el cambio es aún mayor."
+        },
+        {
+          "q": "¿Se pueden vender servicios durante la estancia?",
+          "a": "Sí: mejora de habitación, desayuno, spa, traslado, salida tardía. La solicitud se convierte en una tarea asignada y en una línea en la cuenta, sin volver a teclear nada. Ahí es donde se juega el ingreso que no procede del alojamiento."
+        },
+        {
+          "q": "¿Y los clientes que no hablan ni francés ni árabe?",
+          "a": "El asistente atiende en una docena de idiomas con traducción. Su equipo lee y responde en el suyo."
+        }
+      ]
+    },
+    "inbox": {
+      "badge": "Bandeja de entrada unificada",
+      "items": [
+        {
+          "q": "¿Qué canales llegan a la bandeja de entrada?",
+          "a": "WhatsApp, Booking, Expedia, Airbnb y el correo electrónico directo. Cada mensaje se incorpora al hilo de la estancia correspondiente, lo que evita reconstruir una conversación repartida entre cuatro extranets."
+        },
+        {
+          "q": "¿Responde la IA en lugar de mi equipo?",
+          "a": "Propone respuestas y gestiona las solicitudes habituales; usted conserva el control de lo que importa. La configuración define qué sale automáticamente y qué pasa por una validación: el nivel de autonomía lo decide usted."
+        },
+        {
+          "q": "¿En qué idiomas?",
+          "a": "Los clientes son atendidos en una docena de idiomas, con traducción. Los equipos de campo reciben sus tareas en francés o en árabe, según lo que utilicen realmente."
+        },
+        {
+          "q": "¿Puede un mensaje convertirse en una tarea?",
+          "a": "Sí, y esa es la diferencia con una simple bandeja de entrada unificada. Una petición de toallas o el aviso de una avería se convierte en una tarea asignada, con su responsable y su plazo, en lugar de quedarse en un mensaje que hay que acordarse de atender."
+        },
+        {
+          "q": "¿Qué ocurre cuando nadie responde?",
+          "a": "Los recordatorios y las escaladas siguen las reglas que usted ha definido. Lo importante no es la rapidez de respuesta en sí, sino que ninguna solicitud se pierda en un hilo."
+        }
+      ]
+    },
+    "integrations": {
+      "badge": "Integraciones",
+      "items": [
+        {
+          "q": "¿Se conecta Sojori a Mews?",
+          "a": "Sí. Sojori recupera las reservas y los estados de habitación desde Mews y orquesta a partir de ahí: recepción, limpieza, mantenimiento, mensajes a clientes, tarificación. No necesita sustituir su PMS para orquestar."
+        },
+        {
+          "q": "¿Y los demás PMS?",
+          "a": "La conexión depende de lo que exponga el sistema. Díganos cuál utiliza: es la primera cuestión que hay que resolver, antes de hablar del alcance."
+        },
+        {
+          "q": "¿Hay una API?",
+          "a": "Sí, para los intercambios con sus propias herramientas. Las integraciones habituales (OTA, channel managers, pago) ya están disponibles y no requieren desarrollo."
+        },
+        {
+          "q": "¿Qué ocurre si un sistema se cae?",
+          "a": "Los intercambios están diseñados para reanudarse sin pérdidas ni duplicados cuando el sistema vuelve. Es un punto que conviene comprobar con cualquier proveedor: una sincronización que se reproduce mal genera sobreventas."
+        }
+      ]
+    },
+    "mcp": {
+      "badge": "MCP",
+      "items": [
+        {
+          "q": "¿Qué es MCP y por qué lo usaría un PMS?",
+          "a": "MCP (Model Context Protocol) es un estándar abierto que permite a una IA (ChatGPT, Claude o un agente propio) leer datos de una aplicación y utilizarlos para responder. Aplicado a un PMS, significa hacer una pregunta en lenguaje corriente y obtener una respuesta construida sobre sus cifras reales, sin exportar un archivo ni abrir un panel de control. La diferencia con una API clásica: usted no tiene nada que desarrollar, la IA sabe usar el servidor por sí sola."
+        },
+        {
+          "q": "¿Salen mis datos hacia OpenAI o Anthropic?",
+          "a": "Los datos permanecen en Sojori. El servidor MCP responde a preguntas concretas y solo devuelve el resultado: datos agregados, nunca su base de datos. Y ese resultado no contiene ningún dato que identifique a un viajero (ni nombre, ni contacto, ni documento de identidad), porque esos campos no existen en el espejo consultado. Lo que circula son cifras de explotación: ocupación, ingresos, retrasos, mezcla de canales."
+        },
+        {
+          "q": "¿Por qué se excluye por diseño la identidad de los viajeros?",
+          "a": "Porque una protección basada en un filtro acaba siempre siendo eludida. Hemos elegido lo contrario: los campos identificativos no están en los datos que el servidor puede leer. No hay nada que filtrar, y por tanto nada que olvidar filtrar. La ley 09-08 sobre protección de datos personales se aplica a sus viajeros; preferimos que la arquitectura responda a la cuestión en lugar de una promesa."
+        },
+        {
+          "q": "¿Puede la IA modificar algo?",
+          "a": "No. El servidor es de solo lectura en este ámbito: la IA lee, analiza y presenta. No crea reservas, no cambia un precio, no asigna una tarea. Las acciones pasan por las interfaces donde hay un registro y un responsable."
+        },
+        {
+          "q": "¿Cómo saber si una cifra dada por la IA es fiable?",
+          "a": "Cada respuesta indica el periodo realmente cubierto por los datos. Si usted pide una comparación a dos años y el espejo solo empieza hace ocho meses, el servidor lo señala en lugar de producir una cifra incompleta que parezca completa. Es la principal causa de error cuando se conecta una IA a una base de datos del negocio."
+        },
+        {
+          "q": "¿Hay que ser desarrollador para utilizarlo?",
+          "a": "No. Usted conecta Sojori a su cliente de IA una sola vez (Claude Desktop, ChatGPT o la herramienta de su elección compatible con MCP) y después hace sus preguntas en español. Se añade a su oferta."
+        },
+        {
+          "q": "¿Qué PMS de la competencia ofrecen lo mismo?",
+          "a": "Que sepamos, ninguno hasta hoy. Cloudbeds, Mews y Hostaway exponen API, lo que supone un desarrollo por su parte. Un servidor MCP es de otra naturaleza: es la IA la que sabe usarlo, no usted quien debe escribir el código. Si un competidor publica uno, actualizaremos esta respuesta."
+        }
+      ]
+    },
+    "orchestration": {
+      "badge": "Orquestación hotelera",
+      "items": [
+        {
+          "q": "¿Qué es un motor de orquestación hotelera?",
+          "a": "Es un sistema que activa y coordina lo que debe ocurrir durante una estancia, en lugar de esperar a que alguien lo introduzca. Un PMS registra que la habitación 204 ha quedado libre; un orquestador envía la tarea de limpieza a la persona adecuada, la reasigna si nadie la toma, abre un ticket si se avisa de un equipo averiado, avisa a la recepción de que la llegada de las 15 h puede tener que esperar y ajusta el precio de las noches restantes. Uno mantiene un estado, el otro dirige una operación."
+        },
+        {
+          "q": "¿En qué se diferencia de un PMS?",
+          "a": "El PMS es la memoria de la estancia: reservas, habitaciones, facturas, canales. La orquestación es lo que sucede a su alrededor: recepción, limpieza, mantenimiento, mensajes a clientes, tarificación. Sojori incluye su propio PMS para un establecimiento que no tiene ninguno, pero también se conecta a los PMS ya instalados. La diferencia se mide en los días de mucha rotación, cuando ya nadie tiene tiempo de coordinar a mano."
+        },
+        {
+          "q": "¿Hay que sustituir nuestro PMS actual?",
+          "a": "No. Sojori se conecta a los PMS existentes, entre ellos Mews: recupera las reservas y los estados de habitación y orquesta a partir de ahí. Suele ser el camino más corto para medir la aportación de la orquestación sin tocar su sistema de reservas. La sustitución solo tiene sentido para un establecimiento sin PMS, o cuyo PMS ya no responde a sus necesidades."
+        },
+        {
+          "q": "¿Qué activa una acción en Sojori?",
+          "a": "Eventos reales, no un calendario teórico: una salida confirmada, una llegada anticipada, una habitación señalada como averiada, un mensaje de un cliente, un retraso de vuelo, un umbral de ocupación superado. Eso es lo que distingue la orquestación de una lista de tareas: usted no decide cuándo debe salir cada cosa, decide las reglas."
+        },
+        {
+          "q": "¿Decide la orquestación en nuestro lugar?",
+          "a": "Usted fija las reglas y los límites, y el motor actúa dentro de ellos. En la tarificación, por ejemplo, el cálculo sigue siendo algorítmico, acotado por un mínimo y un máximo que usted define, con un nivel de autonomía configurable: automático por debajo de cierto umbral, sujeto a validación por encima. Un modelo no fija sus precios por sí solo."
+        },
+        {
+          "q": "¿Es adecuado para un establecimiento pequeño?",
+          "a": "La orquestación aporta valor cuando hay flujos que coordinar: equipos, llegadas simultáneas, varios canales, solicitudes de clientes. Un riad de seis habitaciones llevado por dos personas aprovechará sobre todo el PMS y el channel manager. Preferimos decírselo antes que venderle una herramienta sobredimensionada."
+        }
+      ]
+    },
+    "owner-portal": {
+      "badge": "Portal del propietario",
+      "items": [
+        {
+          "q": "¿Para qué sirve el portal del propietario?",
+          "a": "Para rendir cuentas sin preparar un informe. El propietario consulta la ocupación, los ingresos, los gastos y los documentos de su establecimiento, con acceso libre, en lugar de pedirlos a final de mes."
+        },
+        {
+          "q": "¿Lo ve todo el propietario?",
+          "a": "Ve lo que le concierne, según la configuración. Los datos comerciales de la explotación y los de los demás establecimientos quedan fuera de su vista."
+        },
+        {
+          "q": "¿Son automáticos los extractos?",
+          "a": "Sí, se construyen a partir de los datos de explotación en lugar de volver a introducirse. Normalmente supone recuperar varios días al mes de un trabajo que no le aporta nada a nadie."
+        },
+        {
+          "q": "¿Es útil si soy propietario y gestor a la vez?",
+          "a": "Menos, ya que usted dispone del panel de control. El portal aporta valor cuando terceros esperan cuentas: propietarios arrendadores, copropietarios, inversores."
+        }
+      ]
+    },
+    "pms-agadir": {
+      "badge": "PMS para hotel en Agadir",
+      "items": [
+        {
+          "q": "¿Qué PMS elegir para un hotel o una residencia en Agadir?",
+          "a": "El criterio propio de Agadir es la gestión de la estancia larga: limpieza recurrente durante la ocupación, mantenimiento con seguimiento, pagos escalonados. Muchos PMS gestionan bien la llegada y la salida, pero mal lo que ocurre entre ambas. Sojori incluye su PMS y se conecta a los PMS existentes."
+        },
+        {
+          "q": "¿Cómo organizar la limpieza durante una estancia de varias semanas?",
+          "a": "La frecuencia se configura por alojamiento y las tareas se generan automáticamente en cada vencimiento, con el cambio de ropa de cama. Cada persona recibe su tarea por WhatsApp, en francés o en árabe, y el avance se actualiza a lo largo del día."
+        },
+        {
+          "q": "¿Gestiona Sojori los cupos de touroperadores?",
+          "a": "El inventario comprometido se mantiene separado de la disponibilidad abierta a la distribución, y el informe separa el ingreso por canal para que usted vea lo que aporta realmente el volumen negociado. La configuración precisa se ajusta en la puesta en marcha, según sus contratos."
+        },
+        {
+          "q": "¿Gestiona Sojori la ficha de policía marroquí?",
+          "a": "Sí, en la parte de recogida de datos. La obligación procede de la ley 80-14 (artículos 36 a 38) y del decreto 2-15-865 de 2016, que fija la teledeclaración: un boletín individual por persona alojada. Sojori hace que el propio cliente rellene la ficha antes de su llegada, desde WhatsApp, con su documento de identidad: usted obtiene datos completos sin introducirlos en el mostrador y ve qué estancias están en regla. La declaración a las autoridades, hoy desmaterializada a través de la plataforma STDN, sigue siendo un trámite del establecimiento."
+        },
+        {
+          "q": "¿Hay que sustituir el PMS ya instalado?",
+          "a": "No. Sojori se conecta a Mews y a otros PMS, recupera las reservas y los estados de habitación y orquesta a partir de ahí: limpieza, mantenimiento, mensajes a clientes, tarificación."
+        },
+        {
+          "q": "¿Cómo hacer el seguimiento del mantenimiento en un parque de alojamientos junto al mar?",
+          "a": "Un aviso, ya sea del cliente por WhatsApp o de un operario, abre un ticket vinculado al alojamiento, con su responsable y su plazo. El historial por alojamiento hace visible lo que se repite constantemente, que es el punto de partida para decidir entre reparar y sustituir."
+        }
+      ]
+    },
+    "pms-casablanca": {
+      "badge": "PMS para hotel en Casablanca",
+      "items": [
+        {
+          "q": "¿Qué PMS elegir para un hotel de negocios en Casablanca?",
+          "a": "Fíjese primero en la facturación a empresas y en la rotación diaria de las habitaciones: son los dos puntos donde un hotel de Casablanca pierde tiempo. Después, en lo que el software activa tras la reserva. Sojori incluye su PMS y se conecta a los PMS existentes, así que la orquestación puede añadirse sin sustituir su sistema actual."
+        },
+        {
+          "q": "¿Gestiona Sojori la facturación a nombre de una empresa?",
+          "a": "Sí. La estancia lleva la empresa asociada, el IVA se aplica según la configuración y las facturas pueden agruparse. Para los clientes recurrentes, el historial y las condiciones negociadas quedan vinculados a la cuenta."
+        },
+        {
+          "q": "¿Gestiona Sojori la ficha de policía marroquí?",
+          "a": "Sí, en la parte de recogida de datos. La obligación procede de la ley 80-14 (artículos 36 a 38) y del decreto 2-15-865 de 2016, que fija la teledeclaración: un boletín individual por persona alojada. Sojori hace que el propio cliente rellene la ficha antes de su llegada, desde WhatsApp, con su documento de identidad: usted obtiene datos completos sin introducirlos en el mostrador y ve qué estancias están en regla. La declaración a las autoridades, hoy desmaterializada a través de la plataforma STDN, sigue siendo un trámite del establecimiento."
+        },
+        {
+          "q": "¿Cómo llevar la rotación de habitaciones con salidas agrupadas por la mañana?",
+          "a": "Las tareas de limpieza se activan con la salida confirmada, no con un calendario teórico. Cada persona recibe su tarea por WhatsApp, en francés o en árabe, y el estado de cada habitación se actualiza a lo largo del día: usted sabe qué está listo antes de las llegadas de la tarde."
+        },
+        {
+          "q": "¿Hay que sustituir el PMS ya instalado?",
+          "a": "No. Sojori se conecta a Mews y a otros PMS, recupera las reservas y los estados de habitación y orquesta a partir de ahí. La sustitución solo se justifica si su PMS actual ya no responde a sus necesidades."
+        },
+        {
+          "q": "¿Cómo llenar los fines de semana en Casablanca?",
+          "a": "Tratando el fin de semana como un segmento distinto en lugar de una media. La tarificación se ajusta a la demanda real de cada día, y los clientes habituales de entre semana forman la base a la que dirigir una oferta de ocio. Eso sí, hace falta que el historial de clientes sea aprovechable: es lo que Sojori centraliza."
+        }
+      ]
+    },
+    "pms-marrakech": {
+      "badge": "PMS para hotel en Marrakech",
+      "items": [
+        {
+          "q": "¿Qué PMS elegir para un hotel o un riad en Marrakech?",
+          "a": "El criterio decisivo no es el número de módulos, sino lo que hace el software después de la reserva. Un PMS registra la estancia; la orquestación activa la limpieza, el mantenimiento y los mensajes a clientes que se derivan de ella. Sojori incluye su PMS y se conecta a los PMS existentes: si el suyo le conviene, consérvelo y añada la capa de orquestación."
+        },
+        {
+          "q": "¿Gestiona Sojori la ficha de policía marroquí?",
+          "a": "Sí, en la parte de recogida de datos. La obligación procede de la ley 80-14 (artículos 36 a 38) y del decreto 2-15-865 de 2016, que fija la teledeclaración: un boletín individual por persona alojada. Sojori hace que el propio cliente rellene la ficha antes de su llegada, desde WhatsApp, con su documento de identidad: usted obtiene datos completos sin introducirlos en el mostrador y ve qué estancias están en regla. La declaración a las autoridades, hoy desmaterializada a través de la plataforma STDN, sigue siendo un trámite del establecimiento."
+        },
+        {
+          "q": "¿Cómo se calcula la tasa turística?",
+          "a": "Se configura por establecimiento: un importe por viajero y por noche. Sojori calcula el importe; el cobro sigue el modo que usted configure."
+        },
+        {
+          "q": "¿Hay que sustituir Mews o un PMS ya instalado?",
+          "a": "No. Sojori se conecta a Mews y recupera las reservas y los estados de habitación, y después orquesta a partir de ahí: recepción, limpieza, mantenimiento, mensajes a clientes, tarificación. La sustitución solo tiene sentido para un establecimiento sin PMS, o cuyo PMS actual ya no responde a sus necesidades."
+        },
+        {
+          "q": "¿Cómo se organiza la limpieza en un riad sin recepción permanente?",
+          "a": "Las tareas se activan con eventos reales: salida confirmada, llegada anticipada, habitación señalada como averiada. Cada persona recibe su tarea por WhatsApp, en francés o en árabe, sin aplicación que instalar. El estado de cada habitación está al día a lo largo de la jornada en lugar de reconstruirse al final del día."
+        },
+        {
+          "q": "¿Cuánto tarda la puesta en marcha en Marrakech?",
+          "a": "Cuente con unos días para un establecimiento individual, y más si hay varios riads y historiales de reservas que recuperar. El acompañamiento se hace en francés, y la migración desde una herramienta existente corre de nuestra cuenta."
+        }
+      ]
+    },
+    "pms-rabat": {
+      "badge": "PMS para hotel en Rabat",
+      "items": [
+        {
+          "q": "¿Qué PMS elegir para un hotel en Rabat?",
+          "a": "El punto de atención propio de Rabat es la doble clientela: institucional entre semana, de ocio el fin de semana. Compruebe que el software separa estos segmentos en la tarificación y en los informes, en lugar de fundirlos en una media. Sojori incluye su PMS y se conecta a los PMS existentes."
+        },
+        {
+          "q": "¿Gestiona Sojori la facturación a un organismo o a una administración?",
+          "a": "Sí. La estancia lleva el organismo asociado, el IVA se aplica según la configuración y las facturas pueden agruparse o emitirse por estancia según lo que pida el departamento de contabilidad."
+        },
+        {
+          "q": "¿Gestiona Sojori la ficha de policía marroquí?",
+          "a": "Sí, en la parte de recogida de datos. La obligación procede de la ley 80-14 (artículos 36 a 38) y del decreto 2-15-865 de 2016, que fija la teledeclaración: un boletín individual por persona alojada. Sojori hace que el propio cliente rellene la ficha antes de su llegada, desde WhatsApp, con su documento de identidad: usted obtiene datos completos sin introducirlos en el mostrador y ve qué estancias están en regla. La declaración a las autoridades, hoy desmaterializada a través de la plataforma STDN, sigue siendo un trámite del establecimiento."
+        },
+        {
+          "q": "¿Cómo preparar la llegada de un grupo?",
+          "a": "Las habitaciones afectadas se agrupan en una misma tanda de limpieza en lugar de tratarse sobre la marcha, y el avance se actualiza a lo largo del día. Cada persona recibe su tarea por WhatsApp, en francés o en árabe."
+        },
+        {
+          "q": "¿Hay que sustituir el PMS ya instalado?",
+          "a": "No. Sojori se conecta a Mews y a otros PMS, recupera las reservas y los estados de habitación y orquesta a partir de ahí: recepción, limpieza, mantenimiento, mensajes a clientes, tarificación."
+        },
+        {
+          "q": "¿Cómo sacar partido al fin de semana turístico en Rabat?",
+          "a": "Abriendo el fin de semana a una distribución amplia mientras el inventario de entre semana se reserva para las cuentas institucionales. La tarificación se ajusta cada día a la demanda real, lo que supone seguir los dos segmentos por separado."
+        }
+      ]
+    },
+    "pms-tanger": {
+      "badge": "PMS para hotel en Tánger",
+      "items": [
+        {
+          "q": "¿Qué PMS elegir para un hotel en Tánger?",
+          "a": "Elija pensando en agosto, no en la media anual: es en la temporada alta cuando la herramienta se pone a prueba. Compruebe sobre todo qué se activa automáticamente después de la reserva, porque es entonces cuando el equipo ya no tiene tiempo de coordinar a mano. Sojori incluye su PMS y se conecta a los PMS existentes."
+        },
+        {
+          "q": "¿Cómo incorporar refuerzos de temporada sin formarlos durante mucho tiempo?",
+          "a": "Cada persona recibe su tarea por WhatsApp, en francés o en árabe, sin aplicación que instalar ni cuenta que crear. La tarea indica la habitación, lo que se espera y el plazo, lo que reduce la parte de instrucciones transmitidas de palabra."
+        },
+        {
+          "q": "¿Gestiona Sojori la ficha de policía marroquí?",
+          "a": "Sí, en la parte de recogida de datos. La obligación procede de la ley 80-14 (artículos 36 a 38) y del decreto 2-15-865 de 2016, que fija la teledeclaración: un boletín individual por persona alojada. Sojori hace que el propio cliente rellene la ficha antes de su llegada, desde WhatsApp, con su documento de identidad: usted obtiene datos completos sin introducirlos en el mostrador y ve qué estancias están en regla. La declaración a las autoridades, hoy desmaterializada a través de la plataforma STDN, sigue siendo un trámite del establecimiento."
+        },
+        {
+          "q": "¿Cómo evitar la sobreventa en temporada alta?",
+          "a": "El channel manager sincroniza la disponibilidad en ambos sentidos con Booking, Expedia, Airbnb y los demás canales, y las reservas directas entran en el mismo flujo. En temporada alta es el punto más sensible: no hay ninguna habitación de reserva para compensar una doble reserva."
+        },
+        {
+          "q": "¿Hay que sustituir el PMS ya instalado?",
+          "a": "No. Sojori se conecta a Mews y a otros PMS, recupera las reservas y los estados de habitación y orquesta a partir de ahí. Puede añadir la orquestación antes del verano sin tocar su sistema de reservas."
+        },
+        {
+          "q": "¿Qué hacer con la temporada baja en Tánger?",
+          "a": "Verla como un segmento distinto, con sus propios precios y sus propios objetivos: negocios, fines de semana, estancias largas. El seguimiento mensual en lugar de anual es la condición para ver lo que funciona realmente fuera del verano."
+        }
+      ]
+    },
+    "teamflow": {
+      "badge": "Limpieza y mantenimiento",
+      "items": [
+        {
+          "q": "¿Cómo se crean las tareas de limpieza?",
+          "a": "A partir de los eventos reales de la estancia, no de un calendario teórico. Una salida confirmada activa la limpieza de salida, una llegada anticipada sube la habitación en prioridad, un equipo averiado señalado abre un ticket de mantenimiento. Usted define las reglas; el motor las aplica sin que un responsable tenga que repartir el trabajo cada mañana."
+        },
+        {
+          "q": "¿Tienen que instalar una aplicación mis camareras de piso?",
+          "a": "No. Cada persona recibe su tarea por WhatsApp, en francés o en árabe, sin cuenta que crear ni aplicación que descargar. Eso es lo que permite que los equipos de campo entren realmente en el sistema: una herramienta que solo usa la recepción deja fuera a quienes ejecutan el trabajo."
+        },
+        {
+          "q": "¿Qué ocurre si nadie toma una tarea?",
+          "a": "Se envía un recordatorio y después se reasigna según las reglas que usted ha fijado. Lo importante no es la notificación en sí, sino que nadie tenga que comprobar si alguien se ha hecho cargo del trabajo."
+        },
+        {
+          "q": "¿Se pueden gestionar de forma distinta el repaso y la limpieza de salida?",
+          "a": "Sí, son dos tareas distintas. El repaso se hace durante la ocupación, con una frecuencia configurable, con cambio de ropa de cama. La limpieza de salida se activa al producirse la salida e incluye su propio control. Una estancia larga en Agadir y una rotación diaria en Casablanca no tienen las mismas necesidades."
+        },
+        {
+          "q": "¿Cómo se hace el seguimiento del mantenimiento?",
+          "a": "Un aviso, ya sea del cliente por WhatsApp o de un operario, abre un ticket vinculado al alojamiento y al equipo, con su responsable y su plazo. El historial por equipo hace visible lo que se repite constantemente: es el punto de partida para decidir entre reparar y sustituir."
+        },
+        {
+          "q": "¿Y si alguien falta?",
+          "a": "Las habitaciones sin cubrir se reparten entre el resto del equipo según las reglas definidas. Es el caso en el que más se nota la orquestación: la ausencia se absorbe sin que nadie tenga que hacer una llamada."
+        }
+      ]
+    }
   }
 }

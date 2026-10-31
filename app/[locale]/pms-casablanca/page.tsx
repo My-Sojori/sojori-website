@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { getTranslations } from 'next-intl/server';
 import { Link } from '@/i18n/routing';
-import { FaqSection } from '@/components/FaqSection';
+import { FaqFromMessages } from '@/components/FaqFromMessages';
 import { PageSchema } from '@/components/PageSchema';
 import { BackgroundEffects } from '@/components/BackgroundEffects';
 import { PageHeader, PageFooter, PageHero, StatsBar, FinalCTA } from '@/components/SharedComponents';
@@ -15,33 +15,6 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     alternates: { canonical: `/${locale}/pms-casablanca` },
   };
 }
-
-const FAQ = [
-  {
-    "q": "Quel PMS choisir pour un hôtel d'affaires à Casablanca ?",
-    "a": "Regardez d'abord la facturation entreprise et la rotation quotidienne des chambres : ce sont les deux points où un hôtel casablancais perd du temps. Ensuite, ce que le logiciel déclenche après la réservation. Sojori inclut son PMS et se connecte aux PMS existants, donc l'orchestration peut s'ajouter sans remplacer votre système actuel."
-  },
-  {
-    "q": "Sojori gère-t-il la facturation au nom d'une entreprise ?",
-    "a": "Oui. Le séjour porte la société de rattachement, la TVA s'applique selon le paramétrage, et les factures peuvent être regroupées. Pour les clients récurrents, l'historique et les conditions négociées restent attachés au compte."
-  },
-  {
-    "q": "Sojori gère-t-il la fiche police marocaine ?",
-    "a": "Oui, pour la partie collecte. L'obligation vient du dahir du 14 janvier 1953, reprise par la loi 80-14 : un bulletin individuel par personne hébergée. Sojori fait remplir la fiche par le client lui-même avant son arrivée, depuis WhatsApp, avec sa pièce d'identité — vous récupérez des données complètes sans saisie au comptoir, et vous voyez quels séjours sont en règle. La déclaration aux autorités, aujourd'hui dématérialisée via la plateforme STDN, reste la démarche de l'établissement."
-  },
-  {
-    "q": "Comment tenir la rotation des chambres avec des départs groupés le matin ?",
-    "a": "Les tâches de ménage se déclenchent au départ constaté, pas sur un planning théorique. Chaque intervenant reçoit sa mission sur WhatsApp, en français ou en arabe, et l'état de chaque chambre remonte en temps réel — vous savez ce qui est prêt avant l'arrivée de l'après-midi."
-  },
-  {
-    "q": "Faut-il remplacer le PMS déjà installé ?",
-    "a": "Non. Sojori se connecte à Mews et à d'autres PMS, récupère les réservations et les états de chambre, puis orchestre autour. Le remplacement ne se justifie que si votre PMS actuel ne suit plus."
-  },
-  {
-    "q": "Comment remplir les week-ends à Casablanca ?",
-    "a": "En traitant le week-end comme un segment distinct plutôt qu'une moyenne. La tarification s'ajuste sur la demande réelle par jour, et les habitués de la semaine constituent la base à qui adresser une offre loisir. Encore faut-il que l'historique client soit exploitable — c'est le point que Sojori centralise."
-  }
-];
 
 export default async function PmsPageCasablanca({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
@@ -233,7 +206,7 @@ export default async function PmsPageCasablanca({ params }: { params: Promise<{ 
 
         <StatsBar stats={[{"k": "1-3", "l": "Nuits par séjour type"}, {"k": "24/7", "l": "Support FR/AR"}, {"k": "2-way", "l": "Synchronisation canaux"}, {"k": "J+1", "l": "Facturation entreprise"}]} />
 
-        <FaqSection badge="PMS hôtel Casablanca" title="Questions fréquentes" items={FAQ} />
+        <FaqFromMessages page="pms-casablanca" />
 
         <FinalCTA
           title={<>Orchestrez votre établissement de Casablanca.{' '}<span className="gradient-text">1 mois d&apos;essai gratuit.</span></>}

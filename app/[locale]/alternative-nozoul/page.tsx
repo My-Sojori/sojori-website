@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { getTranslations } from 'next-intl/server';
 import { Link } from '@/i18n/routing';
-import { FaqSection } from '@/components/FaqSection';
+import { FaqFromMessages } from '@/components/FaqFromMessages';
 import { PageSchema } from '@/components/PageSchema';
 import { BackgroundEffects } from '@/components/BackgroundEffects';
 import { PageHeader, PageFooter, PageHero, FinalCTA } from '@/components/SharedComponents';
@@ -29,29 +29,6 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
  * Chaque page dit explicitement dans quel cas le concurrent est le bon choix.
  * Relevé effectué le 2026-09-11 sur le site de l'éditeur.
  */
-const FAQ = [
-  {
-    "q": "Sojori est-il référencé Go Siyaha ?",
-    "a": "Nous ne revendiquons aucun agrément que nous ne pouvons documenter, et à ce jour nous ne l'affichons pas. Nozoul, lui, affiche un référencement au programme : c'est un avantage réel pour un hôtelier qui monte un dossier, et nous préférons vous le dire. Si le financement est votre critère décisif, posez la question à Maroc PME avant de choisir."
-  },
-  {
-    "q": "Quelle est la différence concrète avec un PMS classique ?",
-    "a": "Un PMS attend qu'on saisisse ; un orchestrateur déclenche. Le départ constaté génère la mission de ménage, la chambre signalée ouvre un ticket, le séjour qui approche envoie ses messages. Sur un établissement calme la différence est faible. Sur une journée à vingt départs, elle est visible."
-  },
-  {
-    "q": "Puis-je garder mon PMS actuel ?",
-    "a": "Oui, c'est même souvent le chemin le plus court. Sojori se connecte aux PMS existants, dont Mews, récupère réservations et états de chambre, et orchestre autour. Vous mesurez l'apport sans risquer votre système de réservation."
-  },
-  {
-    "q": "Sojori gère-t-il la fiche de police et la taxe de séjour ?",
-    "a": "Oui. La fiche est collectée avant l'arrivée : le client la remplit depuis WhatsApp avec sa pièce d'identité. La taxe de séjour se paramètre par établissement, au séjour, à la nuit ou par personne et par nuit. La déclaration aux autorités reste votre démarche."
-  },
-  {
-    "q": "Et si mon établissement est petit ?",
-    "a": "Alors comparez honnêtement, et regardez d'abord le prix et la simplicité. L'orchestration prend toute sa valeur quand il y a des équipes à coordonner. Sur un riad de six chambres tenu par deux personnes, un bon PMS peut suffire — nous préférons vous le dire que vous vendre un outil surdimensionné."
-  }
-];
-
 export default async function AltNozoul({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   return (
@@ -172,7 +149,7 @@ export default async function AltNozoul({ params }: { params: Promise<{ locale: 
           </div>
         </section>
 
-        <FaqSection badge="Sojori vs Nozoul" title="Questions fréquentes" items={FAQ} />
+        <FaqFromMessages page="alternative-nozoul" />
 
         <section style={{ padding: '8px 32px 40px' }}>
           <div style={{ maxWidth: 900, margin: '0 auto' }}>

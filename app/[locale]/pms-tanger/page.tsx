@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { getTranslations } from 'next-intl/server';
 import { Link } from '@/i18n/routing';
-import { FaqSection } from '@/components/FaqSection';
+import { FaqFromMessages } from '@/components/FaqFromMessages';
 import { PageSchema } from '@/components/PageSchema';
 import { BackgroundEffects } from '@/components/BackgroundEffects';
 import { PageHeader, PageFooter, PageHero, StatsBar, FinalCTA } from '@/components/SharedComponents';
@@ -15,33 +15,6 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     alternates: { canonical: `/${locale}/pms-tanger` },
   };
 }
-
-const FAQ = [
-  {
-    "q": "Quel PMS choisir pour un hôtel à Tanger ?",
-    "a": "Choisissez en pensant au mois d'août, pas à la moyenne annuelle : c'est en pic que l'outil est mis à l'épreuve. Vérifiez surtout ce qui se déclenche automatiquement après la réservation, puisque c'est à ce moment que l'équipe n'a plus le temps de coordonner à la main. Sojori inclut son PMS et se connecte aux PMS existants."
-  },
-  {
-    "q": "Comment intégrer des renforts saisonniers sans les former longuement ?",
-    "a": "Chaque intervenant reçoit sa mission sur WhatsApp, en français ou en arabe, sans application à installer ni compte à créer. La tâche indique la chambre, ce qui est attendu et l'échéance, ce qui réduit la part de consignes transmises oralement."
-  },
-  {
-    "q": "Sojori gère-t-il la fiche police marocaine ?",
-    "a": "Oui, pour la partie collecte. L'obligation vient du dahir du 14 janvier 1953, reprise par la loi 80-14 : un bulletin individuel par personne hébergée. Sojori fait remplir la fiche par le client lui-même avant son arrivée, depuis WhatsApp, avec sa pièce d'identité — vous récupérez des données complètes sans saisie au comptoir, et vous voyez quels séjours sont en règle. La déclaration aux autorités, aujourd'hui dématérialisée via la plateforme STDN, reste la démarche de l'établissement."
-  },
-  {
-    "q": "Comment éviter la surréservation en haute saison ?",
-    "a": "Le channel manager synchronise les disponibilités dans les deux sens avec Booking, Expedia, Airbnb et les autres canaux, les réservations directes entrant dans le même flux. En pic, c'est le point le plus sensible : aucune chambre de secours n'est disponible pour rattraper une double réservation."
-  },
-  {
-    "q": "Faut-il remplacer le PMS déjà installé ?",
-    "a": "Non. Sojori se connecte à Mews et à d'autres PMS, récupère les réservations et les états de chambre, puis orchestre autour. Vous pouvez ajouter l'orchestration avant l'été sans toucher à votre système de réservation."
-  },
-  {
-    "q": "Que faire de la basse saison à Tanger ?",
-    "a": "La lire comme un segment distinct, avec ses propres prix et ses propres cibles — affaires, week-ends, séjours longs. Le pilotage mensuel plutôt qu'annuel est la condition pour voir ce qui fonctionne réellement hors été."
-  }
-];
 
 export default async function PmsPageTanger({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
@@ -233,7 +206,7 @@ export default async function PmsPageTanger({ params }: { params: Promise<{ loca
 
         <StatsBar stats={[{"k": "Été", "l": "Pic d'activité"}, {"k": "24/7", "l": "Support FR/AR/ES"}, {"k": "2-way", "l": "Synchronisation canaux"}, {"k": "WhatsApp", "l": "Équipes saisonnières"}]} />
 
-        <FaqSection badge="PMS hôtel Tanger" title="Questions fréquentes" items={FAQ} />
+        <FaqFromMessages page="pms-tanger" />
 
         <FinalCTA
           title={<>Orchestrez votre établissement de Tanger.{' '}<span className="gradient-text">1 mois d&apos;essai gratuit.</span></>}

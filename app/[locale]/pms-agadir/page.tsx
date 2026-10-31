@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { getTranslations } from 'next-intl/server';
 import { Link } from '@/i18n/routing';
-import { FaqSection } from '@/components/FaqSection';
+import { FaqFromMessages } from '@/components/FaqFromMessages';
 import { PageSchema } from '@/components/PageSchema';
 import { BackgroundEffects } from '@/components/BackgroundEffects';
 import { PageHeader, PageFooter, PageHero, StatsBar, FinalCTA } from '@/components/SharedComponents';
@@ -15,33 +15,6 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     alternates: { canonical: `/${locale}/pms-agadir` },
   };
 }
-
-const FAQ = [
-  {
-    "q": "Quel PMS choisir pour un hôtel ou une résidence à Agadir ?",
-    "a": "Le critère propre à Agadir est la gestion du séjour long : ménage récurrent en cours d'occupation, maintenance suivie, paiements échelonnés. Beaucoup de PMS traitent bien l'arrivée et le départ, mais mal ce qui se passe entre les deux. Sojori inclut son PMS et se connecte aux PMS existants."
-  },
-  {
-    "q": "Comment organiser le ménage pendant un séjour de plusieurs semaines ?",
-    "a": "La cadence se paramètre par logement et les tâches se génèrent automatiquement à chaque échéance, avec le change du linge. Chaque intervenant reçoit sa mission sur WhatsApp, en français ou en arabe, et l'avancement remonte en temps réel."
-  },
-  {
-    "q": "Sojori gère-t-il les allotements tour-opérateur ?",
-    "a": "L'inventaire engagé reste distinct des disponibilités ouvertes à la distribution, et le reporting sépare le revenu par canal pour que vous voyiez ce que rapporte réellement le volume négocié. Le paramétrage précis se règle à la mise en route, selon vos contrats."
-  },
-  {
-    "q": "Sojori gère-t-il la fiche police marocaine ?",
-    "a": "Oui, pour la partie collecte. L'obligation vient du dahir du 14 janvier 1953, reprise par la loi 80-14 : un bulletin individuel par personne hébergée. Sojori fait remplir la fiche par le client lui-même avant son arrivée, depuis WhatsApp, avec sa pièce d'identité — vous récupérez des données complètes sans saisie au comptoir, et vous voyez quels séjours sont en règle. La déclaration aux autorités, aujourd'hui dématérialisée via la plateforme STDN, reste la démarche de l'établissement."
-  },
-  {
-    "q": "Faut-il remplacer le PMS déjà installé ?",
-    "a": "Non. Sojori se connecte à Mews et à d'autres PMS, récupère les réservations et les états de chambre, puis orchestre autour — ménage, maintenance, messages clients, tarification."
-  },
-  {
-    "q": "Comment suivre la maintenance sur un parc en bord de mer ?",
-    "a": "Un signalement — par le client sur WhatsApp ou par un intervenant — ouvre un ticket rattaché au logement, avec son responsable et son échéance. L'historique par logement rend visible ce qui revient sans cesse, ce qui est le point de départ pour arbitrer entre réparer et remplacer."
-  }
-];
 
 export default async function PmsPageAgadir({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
@@ -233,7 +206,7 @@ export default async function PmsPageAgadir({ params }: { params: Promise<{ loca
 
         <StatsBar stats={[{"k": "1-2 sem.", "l": "Séjour type"}, {"k": "Hiver", "l": "Saison longue durée"}, {"k": "24/7", "l": "Support FR/AR/EN"}, {"k": "2-way", "l": "Synchronisation canaux"}]} />
 
-        <FaqSection badge="PMS hôtel Agadir" title="Questions fréquentes" items={FAQ} />
+        <FaqFromMessages page="pms-agadir" />
 
         <FinalCTA
           title={<>Orchestrez votre établissement d&apos;Agadir.{' '}<span className="gradient-text">1 mois d&apos;essai gratuit.</span></>}
