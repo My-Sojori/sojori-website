@@ -34,6 +34,8 @@ export function generateSEO({
 }: SEOProps): Metadata {
   const url = `${SITE_URL}${path}`;
   const ogLocale = OG_LOCALE[locale] || OG_LOCALE.fr;
+  // Sans `alternatesPath`, on le déduit du chemin (« /fr/pms » → « /pms ») : toute page a ses hreflang.
+  const altPath = alternatesPath ?? (/^\/(fr|en|es|pt|ar)(\/|$)/.test(path) ? path.replace(/^\/(fr|en|es|pt|ar)/, '') : undefined);
 
   return {
     title,
@@ -41,11 +43,11 @@ export function generateSEO({
     keywords,
     alternates: {
       canonical: url,
-      ...(alternatesPath !== undefined
+      ...(altPath !== undefined
         ? {
             languages: {
-              ...Object.fromEntries(LANGUES.map((l) => [l, `${SITE_URL}/${l}${alternatesPath}`])),
-              'x-default': `${SITE_URL}/fr${alternatesPath}`,
+              ...Object.fromEntries(LANGUES.map((l) => [l, `${SITE_URL}/${l}${altPath}`])),
+              'x-default': `${SITE_URL}/fr${altPath}`,
             },
           }
         : {}),
@@ -67,6 +69,22 @@ export function generateSEO({
       images: [image ?? `/${locale}/twitter-image`],
     },
   };
+}
+
+/**
+ * Complète un `metadata` de page (title, description, canonical) avec ses balises de partage : og:title,
+ * og:description, og:url, twitter:*, et ses hreflang (5 langues + x-default) ; sans quoi la page hérite de l'accueil
+ * ou n'en déclare pas.
+ */
+export function withShare(meta: Metadata, locale: string): Metadata {
+  const canonical = typeof meta.alternates?.canonical === 'string' ? meta.alternates.canonical : '';
+  const { alternates, openGraph, twitter } = generateSEO({
+    title: typeof meta.title === 'string' ? meta.title : '',
+    description: meta.description ?? '',
+    path: canonical,
+    locale,
+  });
+  return { ...meta, alternates: canonical ? alternates : meta.alternates, openGraph, twitter };
 }
 
 // Mots-clés locaux pour le Maroc (Marrakech focus)

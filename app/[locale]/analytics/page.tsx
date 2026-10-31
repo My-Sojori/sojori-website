@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { withShare } from '@/lib/seo';
 import { useTranslations } from 'next-intl';
 import { getTranslations } from 'next-intl/server';
 import { BackgroundEffects } from "@/components/BackgroundEffects";
@@ -14,11 +15,11 @@ import { Exemple } from '@/components/refonte/Exemple';
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'seoPages' });
-  return {
+  return withShare({
     title: t('analytics.title'),
     description: t('analytics.description'),
     alternates: { canonical: `/${locale}/analytics` },
-  };
+  }, locale);
 }
 
 export default function AnalyticsPage() {

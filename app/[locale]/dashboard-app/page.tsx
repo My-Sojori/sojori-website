@@ -1,15 +1,16 @@
 import type { Metadata } from 'next';
+import { withShare } from '@/lib/seo';
 import { getTranslations } from 'next-intl/server';
 import DashboardAppPageClient from './DashboardAppPageClient';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'seoPages' });
-  return {
+  return withShare({
     title: t('dashboardApp.title'),
     description: t('dashboardApp.description'),
     alternates: { canonical: `/${locale}/dashboard-app` },
-  };
+  }, locale);
 }
 
 export default function DashboardAppPage() {

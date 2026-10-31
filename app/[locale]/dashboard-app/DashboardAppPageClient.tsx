@@ -161,7 +161,7 @@ export default function DashboardAppPageClient() {
         <PageHero
           badge="Dashboard · L'interface principale"
           title={<>Tout votre business.<br /><span className="gradient-text">Une seule vue.</span></>}
-          subtitle="Le workspace post-login. Sidebar navigation, KPI cards, activity feed temps réel, arrivées du jour. Dark mode par défaut, light mode disponible."
+          subtitle="Le workspace post-login. Sidebar navigation, KPI cards, fil d’activité à jour, arrivées du jour. Dark mode par défaut, light mode disponible."
           cta1="Voir la démo"
           cta2="Essai gratuit"
         />
@@ -240,8 +240,7 @@ export default function DashboardAppPageClient() {
         <StatsBar stats={[
           { k: '<2min', l: 'Prise en main' },
           { k: '42k+', l: 'Réservations gérées' },
-          { k: '9 modules', l: 'Tout-en-un' },
-          { k: '99.97%', l: 'Uptime' }
+          { k: '9 modules', l: 'Tout-en-un' }
         ]} />
 
         <InFlow

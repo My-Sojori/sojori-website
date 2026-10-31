@@ -480,7 +480,7 @@ export default function BrandPage() {
                 marginTop: 8,
                 color: 'var(--text-3)'
               }}>
-                v2.4 · live demo · uptime 99.97%
+                v2.4
               </div>
             </div>
           </div>
@@ -555,7 +555,7 @@ export default function BrandPage() {
               </div>
               <h3>Orchestration AI</h3>
               <p style={{ marginTop: 8, fontSize: 14 }}>
-                +20 tâches automatisées. Zéro oubli. WhatsApp 24/7.
+                +20 tâches automatisées. Rien d'oublié. WhatsApp.
               </p>
             </div>
 
