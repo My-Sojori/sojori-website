@@ -3545,6 +3545,356 @@
       "cta": "Componer mi oferta",
       "home": "Ver la página de inicio de Sojori",
       "example": "Ejemplo"
+    },
+    "pages": {
+      "common": {
+        "answerLabel": "EN DOS FRASES",
+        "related": "Lea también",
+        "faqEyebrow": "FAQ",
+        "faqTitle": "Preguntas frecuentes",
+        "toConfirm": "[por confirmar]",
+        "breadcrumbHome": "Sojori",
+        "links": {
+          "home": "Inicio de Sojori",
+          "offer": "Su oferta",
+          "pmsMaroc": "PMS Marruecos",
+          "conciergerieMaroc": "Software de conserjería en Marruecos",
+          "agents": "Los agentes de Sojori",
+          "checkin": "Check-in por WhatsApp",
+          "fichePolice": "Ficha de policía en Marruecos",
+          "taxeSejour": "Tasa turística en Marruecos",
+          "channelManager": "Channel manager",
+          "dynamicPricing": "Precios dinámicos",
+          "comparatif": "Comparativa de PMS en Marruecos"
+        }
+      },
+      "pmsMaroc": {
+        "meta": {
+          "title": "PMS Marruecos: riads, hoteles, conserjerías · Sojori",
+          "description": "Sojori es un PMS pensado para Marruecos: ficha de policía, tasa turística, channel manager y agentes de WhatsApp. El PMS de Sojori, o el suyo."
+        },
+        "kicker": "PMS MARRUECOS",
+        "title": "PMS Marruecos: el PMS de Sojori, o el suyo.",
+        "answer": "Sojori es un PMS pensado para Marruecos, con agentes que responden a los huéspedes, coordinan al equipo y preparan la ficha de policía por WhatsApp. Usted puede usar el PMS de Sojori o conservar el suyo: los agentes y los módulos de WhatsApp funcionan con ambos.",
+        "sections": [
+          {
+            "title": "Qué incluye el PMS de Sojori",
+            "text": "El PMS de Sojori reúne en una sola herramienta lo que una empresa de conserjería, un riad o un hotel necesita a diario.",
+            "points": [
+              "Un calendario unificado para todas las propiedades, en vista de mes, semana y día.",
+              "Un channel manager: sincronización de canales en tiempo real, iCal en ambos sentidos y protección contra el overbooking.",
+              "Una bandeja de entrada que reúne los mensajes de las OTA compatibles.",
+              "Pagos automatizados, facturas y contratos generados y firmados en línea.",
+              "Un panel financiero: ingresos, gastos, margen por propiedad y exportación contable mensual.",
+              "La tasa turística, calculada y cobrada automáticamente.",
+              "Un Owner Portal para que los propietarios sigan sus ingresos y su ocupación.",
+              "Los equipos de campo: asignación según disponibilidad, notificaciones y fotos antes y después de la limpieza."
+            ]
+          },
+          {
+            "title": "Pensado para Marruecos",
+            "text": "Sojori se basa en las costumbres del mercado marroquí, no en la traducción de una herramienta extranjera.",
+            "points": [
+              "Ficha de policía preparada para cada huésped, desde WhatsApp.",
+              "Tasa turística configurable por establecimiento.",
+              "Pago marroquí aceptado.",
+              "Francés, árabe e inglés, además del idioma del huésped.",
+              "WhatsApp como canal principal, para el huésped, el equipo, el administrador y el propietario.",
+              "Cinco ciudades cubiertas con páginas dedicadas: Marrakech, Casablanca, Rabat, Tánger y Agadir."
+            ]
+          },
+          {
+            "title": "Para qué establecimientos",
+            "text": "Sojori está dirigido a empresas de conserjería, propietarios de villas y apartamentos, riads, casas de huéspedes, residencias y hoteles. La escena « La sala » de la página de inicio muestra una jornada tipo para una empresa de conserjería de 50 propiedades y para un hotel de 30 o de 100 habitaciones."
+          },
+          {
+            "title": "El PMS de Sojori, o el suyo",
+            "text": "No necesita cambiarlo todo para empezar. Los agentes de Sojori y los módulos de WhatsApp se conectan al PMS de Sojori igual que a su PMS actual. Los precios dinámicos, en cambio, siguen reservados a las propiedades gestionadas en el PMS de Sojori."
+          }
+        ],
+        "faq": [
+          {
+            "q": "¿Qué PMS elegir en Marruecos para una empresa de conserjería?",
+            "a": "Sojori está pensado para las empresas de conserjería de Marruecos: calendario unificado, channel manager, ficha de policía preparada por WhatsApp, tasa turística, portal del propietario y agentes que coordinan al equipo. Un asesor le responde con una propuesta adaptada al tamaño de su parque."
+          },
+          {
+            "q": "¿Qué software gestiona los riads de Marrakech?",
+            "a": "Sojori gestiona los riads y las casas de huéspedes de Marrakech: reservas, calendario, channel manager, tasa turística, ficha de policía y módulos de WhatsApp para los huéspedes y el equipo. Una página dedicada presenta el PMS para Marrakech."
+          },
+          {
+            "q": "¿Sojori sustituye a mi PMS?",
+            "a": "No necesariamente. Sojori ofrece su propio PMS, o trabaja con el suyo. Los agentes y los módulos de WhatsApp funcionan con ambos; los precios dinámicos están reservados a las propiedades del PMS de Sojori."
+          },
+          {
+            "q": "¿El PMS de Sojori incluye un channel manager?",
+            "a": "Sí. El channel manager de Sojori sincroniza los canales en tiempo real, intercambia calendarios iCal en ambos sentidos y evita las reservas duplicadas."
+          },
+          {
+            "q": "¿Cuánto cuesta el PMS de Sojori?",
+            "a": "Sojori se factura por propiedad, según los agentes y los módulos que usted elija. En este sitio no se muestra ningún importe: un asesor le envía una propuesta con precios después de componer su oferta."
+          }
+        ]
+      },
+      "conciergerieMaroc": {
+        "meta": {
+          "title": "Software de conserjería en Marruecos · Sojori",
+          "description": "Sojori ayuda a las empresas de conserjería de Marruecos: reservas, atención al cliente, equipo y propietarios por WhatsApp, con el PMS de Sojori o el suyo."
+        },
+        "kicker": "CONSERJERÍA · MARRUECOS",
+        "title": "Software de conserjería en Marruecos: sus agentes hacen el resto.",
+        "answer": "Sojori es un software para las empresas de conserjería de Marruecos: agentes que responden a los huéspedes, coordinan al equipo y preparan las decisiones que usted aprueba, todo por WhatsApp. Funciona con el PMS de Sojori o con el suyo.",
+        "sections": [
+          {
+            "title": "Lo que una empresa de conserjería delega en los agentes",
+            "text": "Cada tarea de la conserjería tiene su agente, y usted decide si actúa solo o si espera su aprobación.",
+            "points": [
+              "El Agente de Reservas recibe las solicitudes de reserva por WhatsApp, por texto o por mensaje de voz.",
+              "El Agente de Atención al Cliente responde a los huéspedes con el contexto de su estancia.",
+              "El Agente de Operaciones entiende los mensajes escritos o de voz del equipo y sigue las tareas hasta su cierre.",
+              "El Agente Asistente responde a sus preguntas sobre el parque y pasa el relevo al agente correspondiente.",
+              "El Agente Studio configura Sojori conversando: cada cambio llega en forma de tarjeta para aprobar."
+            ]
+          },
+          {
+            "title": "Los módulos de WhatsApp de una empresa de conserjería",
+            "text": "Nadie instala una aplicación: el huésped, el equipo, el administrador y el propietario usan WhatsApp.",
+            "points": [
+              "WhatsApp Check-in: registro, ficha de policía preparada, contrato firmado en línea y hora de llegada.",
+              "WhatsApp Estancia: guía, acceso, wifi, normas de la casa y solicitudes durante la estancia.",
+              "WhatsApp Conserjería: sus servicios a la venta, pedidos por el huésped y confirmados por el proveedor.",
+              "WhatsApp Equipo: tareas del día, fotos antes y después de la limpieza y alertas urgentes.",
+              "WhatsApp Propietario: propiedades, informes, ocupación e ingresos."
+            ]
+          },
+          {
+            "title": "Los propietarios y los equipos",
+            "text": "El PMS de Sojori incluye un Owner Portal: sus propietarios siguen sus ingresos y su ocupación con un acceso delegado y seguro. Los equipos de campo reciben sus tareas según su disponibilidad, con notificaciones y fotos antes y después de la limpieza."
+          },
+          {
+            "title": "En qué ciudades",
+            "text": "Sojori tiene páginas dedicadas para las empresas de conserjería de Marrakech, Casablanca, Rabat, Tánger y Agadir, y funciona dondequiera que usted alquile por corta duración."
+          }
+        ],
+        "faq": [
+          {
+            "q": "¿Qué software usar para gestionar una conserjería de Airbnb en Marruecos?",
+            "a": "Sojori es un software para las empresas de conserjería de Marruecos: channel manager, calendario unificado, agentes que responden a los huéspedes y coordinan al equipo, módulos de WhatsApp y portal del propietario. Se conecta al PMS de Sojori o al suyo."
+          },
+          {
+            "q": "¿Cómo hace una empresa de conserjería la ficha de policía con Sojori?",
+            "a": "Con Sojori, el huésped envía una foto de su documento de identidad por WhatsApp, que se lee automáticamente, y firma su ficha en línea. Sojori prepara la ficha de policía de cada huésped; el trámite ante las autoridades sigue siendo responsabilidad del establecimiento."
+          },
+          {
+            "q": "¿Pueden los propietarios seguir sus propiedades?",
+            "a": "Sí. Sojori ofrece un Owner Portal y un módulo WhatsApp Propietario: propiedades, informes disponibles, ocupación e ingresos, con bloqueo del alojamiento según el acuerdo establecido con el gestor."
+          },
+          {
+            "q": "¿Hay que instalar una aplicación?",
+            "a": "No. El huésped, el equipo, el administrador y el propietario usan WhatsApp, por escrito o con mensaje de voz."
+          }
+        ]
+      },
+      "agents": {
+        "meta": {
+          "title": "AI workforce for hospitality: los agentes de Sojori",
+          "description": "Los agentes de Sojori hacen el trabajo de un equipo: reservas, atención al cliente, operaciones, precios, studio. Usted decide, ellos hacen el resto."
+        },
+        "kicker": "AGENTES · WHATSAPP",
+        "title": "AI workforce for hospitality: los agentes de Sojori.",
+        "answer": "Sojori es una AI workforce for hospitality: un equipo de agentes, uno por oficio, que responden a los huéspedes, coordinan al equipo y preparan las decisiones por WhatsApp. Usted decide: cada agente actúa solo dentro de sus límites, o prepara una tarjeta y espera su clic.",
+        "sections": [
+          {
+            "title": "Un equipo de agentes, uno por oficio",
+            "text": "Los agentes trabajan sobre la misma estancia, el mismo alojamiento y el mismo equipo.",
+            "points": [
+              "Agente de Reservas: solicitudes de reserva por WhatsApp, hasta la reserva.",
+              "Agente de Atención al Cliente: respuestas a los huéspedes, con el contexto de su estancia.",
+              "Agente de Operaciones: instrucciones escritas o de voz del equipo y del administrador, con tareas seguidas hasta su cierre.",
+              "Precios dinámicos: precios recomendados según sus reglas y la demanda, aplicados solo con su autorización.",
+              "Agente Asistente: su punto de entrada al parque, lee, responde y pasa el relevo.",
+              "Agente Studio: usted configura Sojori conversando, cada cambio llega en forma de tarjeta.",
+              "Agente de Sitio web: un sitio para sus propiedades, creado y mantenido a partir de su catálogo.",
+              "Agente Comercial con CRM, Agente de Prospección, Agente de Marketing y Agente de Finanzas: los agentes especializados.",
+              "Agentes de Llamadas: por voz, en construcción, sin fecha prometida."
+            ]
+          },
+          {
+            "title": "Usted mantiene el control",
+            "text": "Para cada agente, usted elige si actúa solo o si prepara una tarjeta para aprobar. Cada acción queda registrada, los permisos se verifican y siempre hay una persona en el circuito: cuando el agente duda, le pasa el relevo a usted o a su equipo, con el contexto ya reunido."
+          },
+          {
+            "title": "Cómo hablan los agentes entre sí",
+            "text": "La escena « La sala » de la página de inicio muestra quién habla con quién durante una jornada tipo: el huésped escribe, el Agente de Atención al Cliente abre una solicitud, el Agente de Operaciones se la encomienda al equipo y luego la respuesta vuelve al huésped. Una tarjeta para aprobar le llega cuando una decisión le corresponde."
+          },
+          {
+            "title": "Las ganancias son estimaciones",
+            "text": "Sojori muestra estimaciones calculadas sobre una jornada tipo: 2 minutos por solicitud de huésped, 3 minutos por tarea de coordinación y 70 % de las solicitudes tratadas por el agente. Deben confirmarse con sus propias mediciones y no se garantiza ningún resultado."
+          }
+        ],
+        "faq": [
+          {
+            "q": "¿Qué es una AI workforce for hospitality?",
+            "a": "Sojori es una AI workforce for hospitality: un equipo de agentes, uno por oficio, que responden a los huéspedes, coordinan al equipo y preparan las decisiones por WhatsApp. Usted decide qué hace cada agente por su cuenta y qué espera su aprobación."
+          },
+          {
+            "q": "¿Qué hacen los agentes de Sojori?",
+            "a": "Sojori ofrece un agente por oficio: Reservas, Atención al Cliente, Operaciones, Precios dinámicos, Asistente, Studio, Sitio web, Comercial, Prospección, Marketing y Finanzas. Los agentes de llamadas están en construcción, sin fecha prometida."
+          },
+          {
+            "q": "¿Puede un agente actuar sin mi aprobación?",
+            "a": "Usted regula la autonomía de cada agente: actúa solo dentro de sus límites, o prepara una tarjeta y espera su clic. No se aplica nada sin su aprobación cuando usted ha elegido la validación."
+          },
+          {
+            "q": "¿Hay que instalar una aplicación?",
+            "a": "No. Los agentes trabajan por WhatsApp: el huésped, el equipo, el administrador y el propietario escriben o envían un mensaje de voz, como ya lo hacen."
+          }
+        ]
+      },
+      "checkin": {
+        "meta": {
+          "title": "Check-in por WhatsApp: ficha de policía y contrato · Sojori",
+          "description": "Con Sojori, el huésped se registra por WhatsApp antes de llegar: documento de identidad leído, ficha de policía preparada y contrato firmado en línea."
+        },
+        "kicker": "CHECK-IN POR WHATSAPP",
+        "title": "Check-in por WhatsApp: el huésped se registra antes de llegar.",
+        "answer": "Sojori hace el check-in por WhatsApp: cada huésped envía la foto de su documento de identidad, que se lee automáticamente, firma el contrato de estancia en línea y elige su hora de llegada. Sojori prepara la ficha de policía de cada huésped y envía un recordatorio automático si el registro no está hecho.",
+        "sections": [
+          {
+            "title": "Los pasos del check-in",
+            "text": "El huésped no rellena ni formulario en papel ni aplicación: todo ocurre en la conversación de WhatsApp, en su idioma.",
+            "points": [
+              "Cada huésped de la estancia se registra, uno por uno.",
+              "La foto del documento de identidad se lee automáticamente.",
+              "La ficha de policía se prepara para cada huésped.",
+              "El contrato de estancia se firma en línea.",
+              "El huésped elige su hora de llegada.",
+              "Se envía un recordatorio automático si el registro no está hecho.",
+              "Los códigos de acceso se envían solo una vez hecho el registro, si usted así lo decide."
+            ]
+          },
+          {
+            "title": "Lo que usted ve",
+            "text": "El registro es una etapa de la estancia que siguen el Agente de Atención al Cliente y el Agente de Operaciones. Mientras avanza, no se le pide nada. Cuando supera su plazo, aparece una línea en su panel con su causa, por ejemplo « faltan los documentos de identidad: el cliente no respondió al recordatorio »."
+          },
+          {
+            "title": "Para quién",
+            "text": "El check-in por WhatsApp funciona para empresas de conserjería, riads, casas de huéspedes, residencias y hoteles, con el PMS de Sojori o con el suyo."
+          }
+        ],
+        "faq": [
+          {
+            "q": "¿Cómo funciona el check-in por WhatsApp, con la ficha de policía y el contrato?",
+            "a": "Sojori hace el check-in por WhatsApp: cada huésped envía la foto de su documento de identidad, firma el contrato de estancia en línea y elige su hora de llegada. Sojori prepara la ficha de policía de cada huésped y envía un recordatorio si el registro no está hecho."
+          },
+          {
+            "q": "¿Debe el huésped instalar una aplicación?",
+            "a": "No. Todo pasa por WhatsApp, en el idioma del huésped, sin aplicación ni formulario en papel."
+          },
+          {
+            "q": "¿Cuándo se envían los códigos de acceso?",
+            "a": "Usted decide: los códigos pueden enviarse solo una vez hecho el registro."
+          },
+          {
+            "q": "¿Dónde encontrar más información sobre la ficha de policía?",
+            "a": "La guía « Ficha de policía en Marruecos » explica lo que Sojori prepara y lo que queda por confirmar en cuanto a la normativa."
+          }
+        ]
+      },
+      "fichePolice": {
+        "meta": {
+          "title": "Ficha de policía en Marruecos: lo que prepara Sojori",
+          "description": "Guía: la ficha de policía en Marruecos y lo que Sojori prepara por WhatsApp para cada huésped. Los puntos normativos están por confirmar."
+        },
+        "kicker": "GUÍA · FICHA DE POLICÍA",
+        "title": "Ficha de policía en Marruecos: lo que prepara Sojori.",
+        "answer": "Sojori prepara la ficha de policía de cada huésped a partir de la información que envía por WhatsApp, junto con su documento de identidad. La declaración ante las autoridades sigue siendo trámite del establecimiento.",
+        "sections": [
+          {
+            "title": "Lo que hace Sojori",
+            "text": "El huésped rellena su ficha antes de llegar, desde WhatsApp. Sojori prepara los datos y los conserva en la estancia.",
+            "points": [
+              "Cada huésped de la estancia se registra, uno por uno.",
+              "La foto del documento de identidad se lee automáticamente.",
+              "La ficha se prepara para cada huésped y se firma en línea.",
+              "Se envía un recordatorio automático si la ficha no está hecha.",
+              "En un hotel, la recepción puede controlar la identidad in situ; el envío de los códigos de acceso puede vincularse al registro."
+            ]
+          },
+          {
+            "title": "Lo que Sojori no hace",
+            "text": "Sojori prepara los datos, pero no hace la declaración en su lugar: el trámite ante las autoridades sigue siendo del establecimiento."
+          },
+          {
+            "title": "El marco normativo",
+            "text": "Los puntos siguientes dependen de la normativa marroquí y Sojori aún no los ha verificado. Se publicarán tras su verificación con una fuente oficial.",
+            "points": [
+              "Texto de referencia y obligaciones del establecimiento: [por confirmar].",
+              "Quién debe rellenar una ficha (cada adulto, menores acompañados): [por confirmar].",
+              "Información obligatoria en la ficha: [por confirmar].",
+              "Plazo de conservación y modalidades de transmisión: [por confirmar]."
+            ]
+          }
+        ],
+        "faq": [
+          {
+            "q": "¿Cómo hacer la ficha de policía de un huésped en Marruecos?",
+            "a": "Con Sojori, el huésped envía su documento de identidad por WhatsApp antes de llegar y firma su ficha en línea; Sojori prepara la ficha de cada huésped. Las obligaciones normativas exactas están por confirmar con una fuente oficial."
+          },
+          {
+            "q": "¿Sojori hace la declaración ante las autoridades?",
+            "a": "No. Sojori prepara los datos de la ficha de policía; la declaración ante las autoridades sigue siendo trámite del establecimiento."
+          },
+          {
+            "q": "¿Se puede hacer la ficha de policía por WhatsApp?",
+            "a": "Sí: con el módulo WhatsApp Check-in de Sojori, la recogida de datos se hace en la conversación de WhatsApp del huésped, sin aplicación ni papel."
+          }
+        ]
+      },
+      "taxeSejour": {
+        "meta": {
+          "title": "Tasa turística en Marruecos: lo que calcula Sojori",
+          "description": "Guía: la tasa turística en Marruecos y cómo Sojori la configura, la calcula y la cobra. Las tarifas y las normas están por confirmar."
+        },
+        "kicker": "GUÍA · TASA TURÍSTICA",
+        "title": "Tasa turística en Marruecos: lo que calcula Sojori.",
+        "answer": "Sojori calcula y cobra la tasa turística de cada establecimiento según el modo que usted configure. Las tarifas y las normas de la tasa turística en Marruecos están por confirmar con una fuente oficial.",
+        "sections": [
+          {
+            "title": "Lo que hace Sojori",
+            "text": "La tasa turística se configura por establecimiento y después se calcula en cada reserva.",
+            "points": [
+              "Configurable por establecimiento: por estancia, por noche, o por persona y por noche.",
+              "Modo de cobro elegido por el establecimiento.",
+              "Calculada y cobrada automáticamente en el PMS de Sojori.",
+              "Para una reserva recibida de un canal donde la tasa no está incluida en el total, Sojori detecta el importe que debe cobrarse in situ."
+            ]
+          },
+          {
+            "title": "El marco normativo",
+            "text": "Los puntos siguientes dependen de la normativa marroquí y Sojori aún no los ha verificado. Se publicarán tras su verificación con una fuente oficial.",
+            "points": [
+              "Texto de referencia y entidades locales afectadas: [por confirmar].",
+              "Importes por categoría de establecimiento: [por confirmar].",
+              "Establecimientos y huéspedes exentos: [por confirmar].",
+              "Calendario de declaración y de reembolso: [por confirmar]."
+            ]
+          }
+        ],
+        "faq": [
+          {
+            "q": "¿Cómo calcular la tasa turística en Marruecos?",
+            "a": "Sojori calcula la tasa turística según el modo que usted configure: por estancia, por noche, o por persona y por noche. Los importes y las normas oficiales están por confirmar con una fuente oficial."
+          },
+          {
+            "q": "¿Sojori cobra la tasa turística?",
+            "a": "Sí, el PMS de Sojori calcula y cobra la tasa turística automáticamente. Para un canal que no la incluye en el total, Sojori indica el importe que debe cobrarse in situ."
+          },
+          {
+            "q": "¿Sojori entrega la tasa a las autoridades?",
+            "a": "[por confirmar]: Sojori calcula y sigue la tasa; las modalidades de declaración y de entrega están por confirmar."
+          }
+        ]
+      }
     }
   }
 }
