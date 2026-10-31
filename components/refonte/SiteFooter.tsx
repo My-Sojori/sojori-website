@@ -65,6 +65,8 @@ export function SiteFooter() {
             <li><Link href="/conciergerie-maroc" prefetch={false}>{p('conciergerieMaroc')}</Link></li>
             <li><Link href="/comparatif-pms-maroc" prefetch={false}>{t('compare')}</Link></li>
             <li><Link href="/analyse-concurrents" prefetch={false}>{t('competitors')}</Link></li>
+            <li><Link href="/fiche-de-police-maroc" prefetch={false}>{p('fichePolice')}</Link></li>
+            <li><Link href="/facture-electronique-maroc" prefetch={false}>{p('factureElectronique')}</Link></li>
           </ul>
         </nav>
         <nav className="sj2-footer__col" aria-labelledby="sj2-foot-sojori">

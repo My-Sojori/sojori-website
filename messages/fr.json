@@ -3424,7 +3424,7 @@
           },
           {
             "q": "Sojori fait-il la déclaration à STDN ?",
-            "a": "Non : la déclaration reste la démarche de l'établissement. Sojori fait signer la fiche de police en ligne pendant le check-in WhatsApp et garde les fiches en PDF avec la réservation."
+            "a": "La déclaration reste la démarche de l'établissement. Sojori fait signer la fiche de police en ligne pendant le check-in WhatsApp et garde les fiches en PDF avec la réservation."
           },
           {
             "q": "Que faire si la plateforme STDN est en panne ?",
@@ -3538,8 +3538,7 @@
             "title": "Ce que fait Sojori aujourd'hui",
             "text": "Sojori garde des données de séjour propres et génère vos factures PDF. Le raccordement à la plateforme de la DGI se fera quand le décret sera publié.",
             "points": [
-              "Sojori génère une facture PDF par réservation, à partir des données du PMS.",
-              "Sojori n'est pas un prestataire agréé de facturation électronique."
+              "Sojori génère une facture PDF par réservation, à partir des données du PMS."
             ]
           }
         ],
@@ -3560,7 +3559,7 @@
           },
           {
             "q": "Sojori fait-il la facture électronique ?",
-            "a": "Sojori génère une facture PDF par réservation à partir des données du PMS. Sojori n'est pas un prestataire agréé de facturation électronique ; le raccordement à la plateforme de la DGI se fera quand le décret sera publié."
+            "a": "Sojori génère une facture PDF par réservation à partir des données du PMS. Le raccordement à la plateforme de la DGI se fera quand le décret sera publié."
           }
         ]
       }

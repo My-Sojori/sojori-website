@@ -15,12 +15,12 @@ export const SEO_PAGES = {
 export type SeoPageId = keyof typeof SEO_PAGES;
 
 /**
- * Les deux guides réglementaires restent dans le code mais ne sortent pas (ni sitemap, ni lien, ni llms) tant que
+ * Les deux articles (fiche de police, facture électronique) sont publiés (index, follow) ; le guide de la taxe de séjour reste caché (ni sitemap, ni lien, ni llms) tant que
  * leurs champs « [à confirmer] » ne sont pas remplis : aucune page publique ne sort avec un « à confirmer » visible.
  * Pour les publier d'un seul coup : passer ces deux valeurs à true.
  */
 export const PUBLIE: Record<SeoPageId, boolean> = {
-  pmsMaroc: true, conciergerieMaroc: true, agents: true, checkin: true, fichePolice: false, taxeSejour: false, factureElectronique: false,
+  pmsMaroc: true, conciergerieMaroc: true, agents: true, checkin: true, fichePolice: true, taxeSejour: false, factureElectronique: true,
 };
 
 /**

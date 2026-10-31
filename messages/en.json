@@ -3424,7 +3424,7 @@
           },
           {
             "q": "Does Sojori file the report with STDN?",
-            "a": "No: the filing remains the establishment's responsibility. Sojori has the police registration form signed online during the WhatsApp check-in and keeps the forms as PDFs with the booking."
+            "a": "The filing remains the establishment's responsibility. Sojori has the police registration form signed online during the WhatsApp check-in and keeps the forms as PDFs with the booking."
           },
           {
             "q": "What should I do if the STDN platform is down?",
@@ -3538,8 +3538,7 @@
             "title": "What Sojori does today",
             "text": "Sojori keeps clean stay data and generates your PDF invoices. The connection to the DGI platform will be made once the decree is published.",
             "points": [
-              "Sojori generates one PDF invoice per booking, from the PMS data.",
-              "Sojori is not an approved e-invoicing provider."
+              "Sojori generates one PDF invoice per booking, from the PMS data."
             ]
           }
         ],
@@ -3560,7 +3559,7 @@
           },
           {
             "q": "Does Sojori do e-invoicing?",
-            "a": "Sojori generates one PDF invoice per booking from the PMS data. Sojori is not an approved e-invoicing provider; the connection to the DGI platform will be made once the decree is published."
+            "a": "Sojori generates one PDF invoice per booking from the PMS data. The connection to the DGI platform will be made once the decree is published."
           }
         ]
       }
