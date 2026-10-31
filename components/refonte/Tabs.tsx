@@ -22,6 +22,12 @@ export function Tabs({ label, items, panels, orientation = 'vertical', className
     setActif(n);
     refs.current[n]?.focus();
   };
+  // les items se regroupent par lot, dans l'ordre ; les intitulés de lot sont décoratifs (la liste reste une suite d'onglets)
+  const lots: { groupe?: string; ks: number[] }[] = [];
+  items.forEach((it, k) => {
+    const dernier = lots[lots.length - 1];
+    if (dernier && dernier.groupe === it.groupe) dernier.ks.push(k); else lots.push({ groupe: it.groupe, ks: [k] });
+  });
   const surTouche = (e: React.KeyboardEvent, k: number) => {
     const suiv = orientation === 'vertical' ? 'ArrowDown' : 'ArrowRight';
     const prec = orientation === 'vertical' ? 'ArrowUp' : 'ArrowLeft';
@@ -34,14 +40,7 @@ export function Tabs({ label, items, panels, orientation = 'vertical', className
   return (
     <div className={`sj2-tabs sj2-tabs--${orientation} ${className}`}>
       <div role="tablist" aria-label={label} aria-orientation={orientation} className="sj2-tabs__list">
-        {(() => {
-          // les items se regroupent par lot, dans l'ordre ; les intitulés de lot sont décoratifs (la liste reste une suite d'onglets)
-          const lots: { groupe?: string; ks: number[] }[] = [];
-          items.forEach((it, k) => {
-            const dernier = lots[lots.length - 1];
-            if (dernier && dernier.groupe === it.groupe) dernier.ks.push(k); else lots.push({ groupe: it.groupe, ks: [k] });
-          });
-          return lots.map((lot, n) => (
+        {lots.map((lot, n) => (
             <div key={n} role="presentation" className={`sj2-tabs__lot${lot.groupe ? ` sj2-tabs__lot--${n === 0 ? 'principal' : 'plus'}` : ''}`}>
               {lot.groupe && <span className="sj2-tabs__groupe" aria-hidden="true">{lot.groupe}</span>}
               <div role="presentation" className="sj2-tabs__lot-liste">
@@ -69,8 +68,7 @@ export function Tabs({ label, items, panels, orientation = 'vertical', className
                 })}
               </div>
             </div>
-          ));
-        })()}
+        ))}
       </div>
       <div className="sj2-tabs__panels">
         {panels.map((p, k) => (
