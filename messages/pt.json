@@ -1258,12 +1258,7 @@
           "description": "Ajuste para reservas próximas ao check-in",
           "impact": "Configurável"
         }
-      ],
-      "comingSoon": {
-        "icon": "•",
-        "title": "Em breve: Oferta e Demanda automática",
-        "description": "Ajuste dinâmico baseado em análise de mercado em tempo real"
-      }
+      ]
     },
     "revenue": {
       "badge": "● Ilustração de impacto",
@@ -6031,7 +6026,7 @@
       "k035": "Custo da limpeza recorrente em relação à estadia",
       "k036": "● Conformidade",
       "k037": "Ficha de polícia: a obrigação e como a Sojori a orquestra em Agadir",
-      "k038": "Qualquer estabelecimento de alojamento turístico em Marrocos — hotel, riad, casa de hóspedes, residência — deve preencher um boletim individual para cada pessoa alojada, marroquina ou estrangeira. A obrigação remonta ao dahir de 14 de janeiro de 1953 e foi retomada pela lei 80-14 relativa aos estabelecimentos turísticos. Não admite exceções por dimensão: um riad de quatro quartos está sujeito a ela tal como um hotel de duzentos.",
+      "k038": "Qualquer estabelecimento de alojamento turístico em Marrocos — hotel, riad, casa de hóspedes, residência — deve preencher um boletim individual para cada pessoa alojada, marroquina ou estrangeira.A obrigação decorre da lei 80-14 (artigos 36.º a 38.º) e do decreto 2-15-865 de 2016, que fixa a teledeclaração. Não admite exceções por dimensão: um riad de quatro quartos está sujeito a ela tal como um hotel de duzentos.",
       "k039": "A declaração foi desmaterializada. O Ministério do Turismo, o Ministério do Interior, a DGSN e a Gendarmaria Real criaram a plataforma de telodeclaração das dormidas (STDN), que substitui a entrega de boletins em papel por uma declaração diária online. O incumprimento sujeita às sanções previstas na lei 80-14.",
       "k040": "O que a Sojori faz",
       "k041": "A Sojori orquestra a ",
@@ -6113,7 +6108,7 @@
       "k035": "Prazo de preparação do quarto entre duas estadias",
       "k036": "● Conformidade",
       "k037": "Ficha de polícia: a obrigação e como a Sojori a orquestra em Casablanca",
-      "k038": "Qualquer estabelecimento de alojamento turístico em Marrocos — hotel, riad, casa de hóspedes, residência — deve preencher um boletim individual para cada pessoa alojada, marroquina ou estrangeira. A obrigação remonta ao dahir de 14 de janeiro de 1953 e foi retomada pela lei 80-14 relativa aos estabelecimentos turísticos. Não admite exceções por dimensão: um riad de quatro quartos está sujeito a ela tal como um hotel de duzentos.",
+      "k038": "Qualquer estabelecimento de alojamento turístico em Marrocos — hotel, riad, casa de hóspedes, residência — deve preencher um boletim individual para cada pessoa alojada, marroquina ou estrangeira.A obrigação decorre da lei 80-14 (artigos 36.º a 38.º) e do decreto 2-15-865 de 2016, que fixa a teledeclaração. Não admite exceções por dimensão: um riad de quatro quartos está sujeito a ela tal como um hotel de duzentos.",
       "k039": "A declaração foi desmaterializada. O Ministério do Turismo, o Ministério do Interior, a DGSN e a Gendarmaria Real criaram a plataforma de telodeclaração das dormidas (STDN), que substitui a entrega de boletins em papel por uma declaração diária online. O incumprimento sujeita às sanções previstas na lei 80-14.",
       "k040": "O que a Sojori faz",
       "k041": "A Sojori orquestra a ",
@@ -6195,7 +6190,7 @@
       "k035": "Prazo médio de preparação dos quartos",
       "k036": "● Conformidade",
       "k037": "Ficha de polícia: a obrigação e como a Sojori a orquestra em Marraquexe",
-      "k038": "Qualquer estabelecimento de alojamento turístico em Marrocos — hotel, riad, casa de hóspedes, residência — deve preencher um boletim individual para cada pessoa alojada, marroquina ou estrangeira. A obrigação remonta ao dahir de 14 de janeiro de 1953 e foi retomada pela lei 80-14 relativa aos estabelecimentos turísticos. Não admite exceções por dimensão: um riad de quatro quartos está sujeito a ela tal como um hotel de duzentos.",
+      "k038": "Qualquer estabelecimento de alojamento turístico em Marrocos — hotel, riad, casa de hóspedes, residência — deve preencher um boletim individual para cada pessoa alojada, marroquina ou estrangeira.A obrigação decorre da lei 80-14 (artigos 36.º a 38.º) e do decreto 2-15-865 de 2016, que fixa a teledeclaração. Não admite exceções por dimensão: um riad de quatro quartos está sujeito a ela tal como um hotel de duzentos.",
       "k039": "A declaração foi desmaterializada. O Ministério do Turismo, o Ministério do Interior, a DGSN e a Gendarmaria Real criaram a plataforma de telodeclaração das dormidas (STDN), que substitui a entrega de boletins em papel por uma declaração diária online. O incumprimento sujeita às sanções previstas na lei 80-14.",
       "k040": "O que a Sojori faz",
       "k041": "A Sojori orquestra a ",
@@ -6277,7 +6272,7 @@
       "k035": "Parte das reservas diretas",
       "k036": "● Conformidade",
       "k037": "Ficha de polícia: a obrigação e como a Sojori a orquestra em Rabat",
-      "k038": "Qualquer estabelecimento de alojamento turístico em Marrocos — hotel, riad, casa de hóspedes, residência — deve preencher um boletim individual para cada pessoa alojada, marroquina ou estrangeira. A obrigação remonta ao dahir de 14 de janeiro de 1953 e foi retomada pela lei 80-14 relativa aos estabelecimentos turísticos. Não admite exceções por dimensão: um riad de quatro quartos está sujeito a ela tal como um hotel de duzentos.",
+      "k038": "Qualquer estabelecimento de alojamento turístico em Marrocos — hotel, riad, casa de hóspedes, residência — deve preencher um boletim individual para cada pessoa alojada, marroquina ou estrangeira.A obrigação decorre da lei 80-14 (artigos 36.º a 38.º) e do decreto 2-15-865 de 2016, que fixa a teledeclaração. Não admite exceções por dimensão: um riad de quatro quartos está sujeito a ela tal como um hotel de duzentos.",
       "k039": "A declaração foi desmaterializada. O Ministério do Turismo, o Ministério do Interior, a DGSN e a Gendarmaria Real criaram a plataforma de telodeclaração das dormidas (STDN), que substitui a entrega de boletins em papel por uma declaração diária online. O incumprimento sujeita às sanções previstas na lei 80-14.",
       "k040": "O que a Sojori faz",
       "k041": "A Sojori orquestra a ",
@@ -6358,7 +6353,7 @@
       "k035": "Prazo de preparação dos quartos no pico",
       "k036": "● Conformidade",
       "k037": "Ficha de polícia: a obrigação e como a Sojori a orquestra em Tânger",
-      "k038": "Qualquer estabelecimento de alojamento turístico em Marrocos — hotel, riad, casa de hóspedes, residência — deve preencher um boletim individual para cada pessoa alojada, marroquina ou estrangeira. A obrigação remonta ao dahir de 14 de janeiro de 1953 e foi retomada pela lei 80-14 relativa aos estabelecimentos turísticos. Não admite exceções por dimensão: um riad de quatro quartos está sujeito a ela tal como um hotel de duzentos.",
+      "k038": "Qualquer estabelecimento de alojamento turístico em Marrocos — hotel, riad, casa de hóspedes, residência — deve preencher um boletim individual para cada pessoa alojada, marroquina ou estrangeira.A obrigação decorre da lei 80-14 (artigos 36.º a 38.º) e do decreto 2-15-865 de 2016, que fixa a teledeclaração. Não admite exceções por dimensão: um riad de quatro quartos está sujeito a ela tal como um hotel de duzentos.",
       "k039": "A declaração foi desmaterializada. O Ministério do Turismo, o Ministério do Interior, a DGSN e a Gendarmaria Real criaram a plataforma de telodeclaração das dormidas (STDN), que substitui a entrega de boletins em papel por uma declaração diária online. O incumprimento sujeita às sanções previstas na lei 80-14.",
       "k040": "O que a Sojori faz",
       "k041": "A Sojori orquestra a ",

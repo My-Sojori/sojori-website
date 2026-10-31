@@ -1258,12 +1258,7 @@
           "description": "Adjustment for bookings close to check-in",
           "impact": "Configurable"
         }
-      ],
-      "comingSoon": {
-        "icon": "•",
-        "title": "Coming soon: Automatic Supply & Demand",
-        "description": "Dynamic adjustment based on real-time market analysis"
-      }
+      ]
     },
     "revenue": {
       "badge": "● Impact illustration",
@@ -6031,7 +6026,7 @@
       "k035": "Cost of recurring housekeeping relative to the stay",
       "k036": "● Compliance",
       "k037": "Police registration form: the obligation, and how Sojori orchestrates it in Agadir",
-      "k038": "Every tourist accommodation establishment in Morocco — hotel, riad, guesthouse, residence — must complete an individual form for each person staying, Moroccan or foreign. The obligation dates back to the dahir of 14 January 1953 and was carried over by law 80-14 on tourist establishments. There is no exemption based on size: a four-room riad is bound by it just like a two-hundred-room hotel.",
+      "k038": "Every tourist accommodation establishment in Morocco — hotel, riad, guesthouse, residence — must complete an individual form for each person staying, Moroccan or foreign.The obligation comes from law 80-14 (articles 36 to 38) and from decree 2-15-865 of 2016, which sets out online declaration. There is no exemption based on size: a four-room riad is bound by it just like a two-hundred-room hotel.",
       "k039": "Reporting has gone digital. The Ministry of Tourism, the Ministry of the Interior, the DGSN and the Royal Gendarmerie set up the online overnight-stay reporting platform (STDN), which replaces filing paper forms with a daily online declaration. Failures to comply expose establishments to the penalties provided by law 80-14.",
       "k040": "What Sojori does",
       "k041": "Sojori orchestrates the ",
@@ -6113,7 +6108,7 @@
       "k035": "Turnaround time between two stays",
       "k036": "● Compliance",
       "k037": "Police registration form: the obligation, and how Sojori orchestrates it in Casablanca",
-      "k038": "Every tourist accommodation establishment in Morocco — hotel, riad, guesthouse, residence — must complete an individual form for each person staying, Moroccan or foreign. The obligation dates back to the dahir of 14 January 1953 and was carried over by law 80-14 on tourist establishments. There is no exemption based on size: a four-room riad is bound by it just like a two-hundred-room hotel.",
+      "k038": "Every tourist accommodation establishment in Morocco — hotel, riad, guesthouse, residence — must complete an individual form for each person staying, Moroccan or foreign.The obligation comes from law 80-14 (articles 36 to 38) and from decree 2-15-865 of 2016, which sets out online declaration. There is no exemption based on size: a four-room riad is bound by it just like a two-hundred-room hotel.",
       "k039": "Reporting has gone digital. The Ministry of Tourism, the Ministry of the Interior, the DGSN and the Royal Gendarmerie set up the online overnight-stay reporting platform (STDN), which replaces filing paper forms with a daily online declaration. Failures to comply expose establishments to the penalties provided by law 80-14.",
       "k040": "What Sojori does",
       "k041": "Sojori orchestrates the ",
@@ -6195,7 +6190,7 @@
       "k035": "Average room turnaround time",
       "k036": "● Compliance",
       "k037": "Police registration form: the obligation, and how Sojori orchestrates it in Marrakech",
-      "k038": "Every tourist accommodation establishment in Morocco — hotel, riad, guesthouse, residence — must complete an individual form for each person staying, Moroccan or foreign. The obligation dates back to the dahir of 14 January 1953 and was carried over by law 80-14 on tourist establishments. There is no exemption based on size: a four-room riad is bound by it just like a two-hundred-room hotel.",
+      "k038": "Every tourist accommodation establishment in Morocco — hotel, riad, guesthouse, residence — must complete an individual form for each person staying, Moroccan or foreign.The obligation comes from law 80-14 (articles 36 to 38) and from decree 2-15-865 of 2016, which sets out online declaration. There is no exemption based on size: a four-room riad is bound by it just like a two-hundred-room hotel.",
       "k039": "Reporting has gone digital. The Ministry of Tourism, the Ministry of the Interior, the DGSN and the Royal Gendarmerie set up the online overnight-stay reporting platform (STDN), which replaces filing paper forms with a daily online declaration. Failures to comply expose establishments to the penalties provided by law 80-14.",
       "k040": "What Sojori does",
       "k041": "Sojori orchestrates the ",
@@ -6277,7 +6272,7 @@
       "k035": "Share of direct bookings",
       "k036": "● Compliance",
       "k037": "Police registration form: the obligation, and how Sojori orchestrates it in Rabat",
-      "k038": "Every tourist accommodation establishment in Morocco — hotel, riad, guesthouse, residence — must complete an individual form for each person staying, Moroccan or foreign. The obligation dates back to the dahir of 14 January 1953 and was carried over by law 80-14 on tourist establishments. There is no exemption based on size: a four-room riad is bound by it just like a two-hundred-room hotel.",
+      "k038": "Every tourist accommodation establishment in Morocco — hotel, riad, guesthouse, residence — must complete an individual form for each person staying, Moroccan or foreign.The obligation comes from law 80-14 (articles 36 to 38) and from decree 2-15-865 of 2016, which sets out online declaration. There is no exemption based on size: a four-room riad is bound by it just like a two-hundred-room hotel.",
       "k039": "Reporting has gone digital. The Ministry of Tourism, the Ministry of the Interior, the DGSN and the Royal Gendarmerie set up the online overnight-stay reporting platform (STDN), which replaces filing paper forms with a daily online declaration. Failures to comply expose establishments to the penalties provided by law 80-14.",
       "k040": "What Sojori does",
       "k041": "Sojori orchestrates the ",
@@ -6358,7 +6353,7 @@
       "k035": "Room turnaround time at peak",
       "k036": "● Compliance",
       "k037": "Police registration form: the obligation, and how Sojori orchestrates it in Tangier",
-      "k038": "Every tourist accommodation establishment in Morocco — hotel, riad, guesthouse, residence — must complete an individual form for each person staying, Moroccan or foreign. The obligation dates back to the dahir of 14 January 1953 and was carried over by law 80-14 on tourist establishments. There is no exemption based on size: a four-room riad is bound by it just like a two-hundred-room hotel.",
+      "k038": "Every tourist accommodation establishment in Morocco — hotel, riad, guesthouse, residence — must complete an individual form for each person staying, Moroccan or foreign.The obligation comes from law 80-14 (articles 36 to 38) and from decree 2-15-865 of 2016, which sets out online declaration. There is no exemption based on size: a four-room riad is bound by it just like a two-hundred-room hotel.",
       "k039": "Reporting has gone digital. The Ministry of Tourism, the Ministry of the Interior, the DGSN and the Royal Gendarmerie set up the online overnight-stay reporting platform (STDN), which replaces filing paper forms with a daily online declaration. Failures to comply expose establishments to the penalties provided by law 80-14.",
       "k040": "What Sojori does",
       "k041": "Sojori orchestrates the ",

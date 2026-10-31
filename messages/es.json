@@ -1258,12 +1258,7 @@
           "description": "Ajuste para reservas cercanas al check-in",
           "impact": "Configurable"
         }
-      ],
-      "comingSoon": {
-        "icon": "•",
-        "title": "Próximamente: Oferta y Demanda automática",
-        "description": "Ajuste dinámico basado en análisis de mercado en tiempo real"
-      }
+      ]
     },
     "revenue": {
       "badge": "● Ilustración de impacto",
@@ -6031,7 +6026,7 @@
       "k035": "Coste de la limpieza recurrente en relación con la estancia",
       "k036": "● Conformidad",
       "k037": "Ficha de policía: la obligación y cómo Sojori la orquesta en Agadir",
-      "k038": "Todo establecimiento de alojamiento turístico en Marruecos (hotel, riad, casa de huéspedes, residencia) debe cumplimentar una ficha individual por cada persona alojada, sea marroquí o extranjera. La obligación se remonta al dahir del 14 de enero de 1953 y fue recogida por la loi 80-14 sobre los establecimientos turísticos. No admite excepciones por tamaño: un riad de cuatro habitaciones está obligado igual que un hotel de doscientas.",
+      "k038": "Todo establecimiento de alojamiento turístico en Marruecos (hotel, riad, casa de huéspedes, residencia) debe cumplimentar una ficha individual por cada persona alojada, sea marroquí o extranjera.La obligación procede de la ley 80-14 (artículos 36 a 38) y del decreto 2-15-865 de 2016, que fija la teledeclaración. No admite excepciones por tamaño: un riad de cuatro habitaciones está obligado igual que un hotel de doscientas.",
       "k039": "La declaración se ha digitalizado. El Ministerio de Turismo, el Ministerio del Interior, la DGSN y la Gendarmería Real pusieron en marcha la plataforma de telodeclaración de pernoctaciones (STDN), que sustituye la entrega de fichas en papel por una declaración diaria en línea. Los incumplimientos se exponen a las sanciones previstas por la loi 80-14.",
       "k040": "Lo que hace Sojori",
       "k041": "Sojori orquesta la ",
@@ -6113,7 +6108,7 @@
       "k035": "Tiempo de reposición entre dos estancias",
       "k036": "● Conformidad",
       "k037": "Ficha de policía: la obligación y cómo Sojori la orquesta en Casablanca",
-      "k038": "Todo establecimiento de alojamiento turístico en Marruecos (hotel, riad, casa de huéspedes, residencia) debe cumplimentar una ficha individual por cada persona alojada, sea marroquí o extranjera. La obligación se remonta al dahir del 14 de enero de 1953 y fue recogida por la loi 80-14 sobre los establecimientos turísticos. No admite excepciones por tamaño: un riad de cuatro habitaciones está obligado igual que un hotel de doscientas.",
+      "k038": "Todo establecimiento de alojamiento turístico en Marruecos (hotel, riad, casa de huéspedes, residencia) debe cumplimentar una ficha individual por cada persona alojada, sea marroquí o extranjera.La obligación procede de la ley 80-14 (artículos 36 a 38) y del decreto 2-15-865 de 2016, que fija la teledeclaración. No admite excepciones por tamaño: un riad de cuatro habitaciones está obligado igual que un hotel de doscientas.",
       "k039": "La declaración se ha digitalizado. El Ministerio de Turismo, el Ministerio del Interior, la DGSN y la Gendarmería Real pusieron en marcha la plataforma de telodeclaración de pernoctaciones (STDN), que sustituye la entrega de fichas en papel por una declaración diaria en línea. Los incumplimientos se exponen a las sanciones previstas por la loi 80-14.",
       "k040": "Lo que hace Sojori",
       "k041": "Sojori orquesta la ",
@@ -6195,7 +6190,7 @@
       "k035": "Tiempo medio de reposición de las habitaciones",
       "k036": "● Conformidad",
       "k037": "Ficha de policía: la obligación y cómo Sojori la orquesta en Marrakech",
-      "k038": "Todo establecimiento de alojamiento turístico en Marruecos (hotel, riad, casa de huéspedes, residencia) debe cumplimentar una ficha individual por cada persona alojada, sea marroquí o extranjera. La obligación se remonta al dahir del 14 de enero de 1953 y fue recogida por la loi 80-14 sobre los establecimientos turísticos. No admite excepciones por tamaño: un riad de cuatro habitaciones está obligado igual que un hotel de doscientas.",
+      "k038": "Todo establecimiento de alojamiento turístico en Marruecos (hotel, riad, casa de huéspedes, residencia) debe cumplimentar una ficha individual por cada persona alojada, sea marroquí o extranjera.La obligación procede de la ley 80-14 (artículos 36 a 38) y del decreto 2-15-865 de 2016, que fija la teledeclaración. No admite excepciones por tamaño: un riad de cuatro habitaciones está obligado igual que un hotel de doscientas.",
       "k039": "La declaración se ha digitalizado. El Ministerio de Turismo, el Ministerio del Interior, la DGSN y la Gendarmería Real pusieron en marcha la plataforma de telodeclaración de pernoctaciones (STDN), que sustituye la entrega de fichas en papel por una declaración diaria en línea. Los incumplimientos se exponen a las sanciones previstas por la loi 80-14.",
       "k040": "Lo que hace Sojori",
       "k041": "Sojori orquesta la ",
@@ -6277,7 +6272,7 @@
       "k035": "Parte de las reservas directas",
       "k036": "● Conformidad",
       "k037": "Ficha de policía: la obligación y cómo Sojori la orquesta en Rabat",
-      "k038": "Todo establecimiento de alojamiento turístico en Marruecos (hotel, riad, casa de huéspedes, residencia) debe cumplimentar una ficha individual por cada persona alojada, sea marroquí o extranjera. La obligación se remonta al dahir del 14 de enero de 1953 y fue recogida por la loi 80-14 sobre los establecimientos turísticos. No admite excepciones por tamaño: un riad de cuatro habitaciones está obligado igual que un hotel de doscientas.",
+      "k038": "Todo establecimiento de alojamiento turístico en Marruecos (hotel, riad, casa de huéspedes, residencia) debe cumplimentar una ficha individual por cada persona alojada, sea marroquí o extranjera.La obligación procede de la ley 80-14 (artículos 36 a 38) y del decreto 2-15-865 de 2016, que fija la teledeclaración. No admite excepciones por tamaño: un riad de cuatro habitaciones está obligado igual que un hotel de doscientas.",
       "k039": "La declaración se ha digitalizado. El Ministerio de Turismo, el Ministerio del Interior, la DGSN y la Gendarmería Real pusieron en marcha la plataforma de telodeclaración de pernoctaciones (STDN), que sustituye la entrega de fichas en papel por una declaración diaria en línea. Los incumplimientos se exponen a las sanciones previstas por la loi 80-14.",
       "k040": "Lo que hace Sojori",
       "k041": "Sojori orquesta la ",
@@ -6358,7 +6353,7 @@
       "k035": "Tiempo de reposición de las habitaciones en el pico",
       "k036": "● Conformidad",
       "k037": "Ficha de policía: la obligación y cómo Sojori la orquesta en Tánger",
-      "k038": "Todo establecimiento de alojamiento turístico en Marruecos (hotel, riad, casa de huéspedes, residencia) debe cumplimentar una ficha individual por cada persona alojada, sea marroquí o extranjera. La obligación se remonta al dahir del 14 de enero de 1953 y fue recogida por la loi 80-14 sobre los establecimientos turísticos. No admite excepciones por tamaño: un riad de cuatro habitaciones está obligado igual que un hotel de doscientas.",
+      "k038": "Todo establecimiento de alojamiento turístico en Marruecos (hotel, riad, casa de huéspedes, residencia) debe cumplimentar una ficha individual por cada persona alojada, sea marroquí o extranjera.La obligación procede de la ley 80-14 (artículos 36 a 38) y del decreto 2-15-865 de 2016, que fija la teledeclaración. No admite excepciones por tamaño: un riad de cuatro habitaciones está obligado igual que un hotel de doscientas.",
       "k039": "La declaración se ha digitalizado. El Ministerio de Turismo, el Ministerio del Interior, la DGSN y la Gendarmería Real pusieron en marcha la plataforma de telodeclaración de pernoctaciones (STDN), que sustituye la entrega de fichas en papel por una declaración diaria en línea. Los incumplimientos se exponen a las sanciones previstas por la loi 80-14.",
       "k040": "Lo que hace Sojori",
       "k041": "Sojori orquesta la ",

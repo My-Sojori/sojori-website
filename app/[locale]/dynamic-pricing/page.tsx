@@ -60,7 +60,6 @@ function PriceCalendar() {
 function PriceFactors() {
   const t = useTranslations('dynamicPricing.factors');
   const factorsList = t.raw('list') as Array<{ icon: string; label: string; description: string; impact: string }>;
-  const comingSoon = t.raw('comingSoon') as { icon: string; title: string; description: string };
 
   return (
     <>
@@ -80,15 +79,6 @@ function PriceFactors() {
           ))}
         </div>
       </ScrollPaginationDots>
-      <div className="card" style={{ padding: 20, marginTop: 16, background: 'rgba(139,92,246,0.08)', border: '1px solid rgba(139,92,246,0.25)' }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
-          <div aria-hidden="true" style={{ width: 28, height: 3, borderRadius: 2, background: 'var(--primary)' }} />
-          <div style={{ flex: 1 }}>
-            <div style={{ fontSize: 14, fontWeight: 600, marginBottom: 2 }}>{comingSoon.title}</div>
-            <div style={{ fontSize: 12, color: 'var(--text-3)' }}>{comingSoon.description}</div>
-          </div>
-        </div>
-      </div>
     </>
   );
 }

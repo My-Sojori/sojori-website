@@ -1258,12 +1258,7 @@
           "description": "Ajustement pour réservations proches du check-in",
           "impact": "Configurable"
         }
-      ],
-      "comingSoon": {
-        "icon": "•",
-        "title": "Bientôt : Offre & Demande automatique",
-        "description": "Ajustement dynamique basé sur l'analyse du marché en temps réel"
-      }
+      ]
     },
     "revenue": {
       "badge": "● Illustration d'impact",
@@ -6031,7 +6026,7 @@
       "k035": "Coût du ménage récurrent rapporté au séjour",
       "k036": "● Conformité",
       "k037": "Fiche de police : l'obligation, et comment Sojori l'orchestre à Agadir",
-      "k038": "Tout établissement d'hébergement touristique au Maroc — hôtel, riad, maison d'hôtes, résidence — doit établir un bulletin individuel pour chaque personne hébergée, marocaine ou étrangère. L'obligation remonte au dahir du 14 janvier 1953 et a été reprise par la loi 80-14 relative aux établissements touristiques. Elle ne connaît pas d'exception de taille : un riad de quatre chambres y est tenu comme un hôtel de deux cents.",
+      "k038": "Tout établissement d'hébergement touristique au Maroc — hôtel, riad, maison d'hôtes, résidence — doit établir un bulletin individuel pour chaque personne hébergée, marocaine ou étrangère.L'obligation vient de la loi 80-14 (articles 36 à 38) et du décret 2-15-865 de 2016, qui fixe la télédéclaration. Elle ne connaît pas d'exception de taille : un riad de quatre chambres y est tenu comme un hôtel de deux cents.",
       "k039": "La déclaration s'est dématérialisée. Le ministère du Tourisme, le ministère de l'Intérieur, la DGSN et la Gendarmerie Royale ont mis en place la plateforme de télé-déclaration des nuitées (STDN), qui remplace le dépôt des bulletins papier par une déclaration quotidienne en ligne. Les manquements exposent aux sanctions prévues par la loi 80-14.",
       "k040": "Ce que Sojori fait",
       "k041": "Sojori orchestre la ",
@@ -6113,7 +6108,7 @@
       "k035": "Délai de remise en état entre deux séjours",
       "k036": "● Conformité",
       "k037": "Fiche de police : l'obligation, et comment Sojori l'orchestre à Casablanca",
-      "k038": "Tout établissement d'hébergement touristique au Maroc — hôtel, riad, maison d'hôtes, résidence — doit établir un bulletin individuel pour chaque personne hébergée, marocaine ou étrangère. L'obligation remonte au dahir du 14 janvier 1953 et a été reprise par la loi 80-14 relative aux établissements touristiques. Elle ne connaît pas d'exception de taille : un riad de quatre chambres y est tenu comme un hôtel de deux cents.",
+      "k038": "Tout établissement d'hébergement touristique au Maroc — hôtel, riad, maison d'hôtes, résidence — doit établir un bulletin individuel pour chaque personne hébergée, marocaine ou étrangère.L'obligation vient de la loi 80-14 (articles 36 à 38) et du décret 2-15-865 de 2016, qui fixe la télédéclaration. Elle ne connaît pas d'exception de taille : un riad de quatre chambres y est tenu comme un hôtel de deux cents.",
       "k039": "La déclaration s'est dématérialisée. Le ministère du Tourisme, le ministère de l'Intérieur, la DGSN et la Gendarmerie Royale ont mis en place la plateforme de télé-déclaration des nuitées (STDN), qui remplace le dépôt des bulletins papier par une déclaration quotidienne en ligne. Les manquements exposent aux sanctions prévues par la loi 80-14.",
       "k040": "Ce que Sojori fait",
       "k041": "Sojori orchestre la ",
@@ -6195,7 +6190,7 @@
       "k035": "Délai moyen de remise en état des chambres",
       "k036": "● Conformité",
       "k037": "Fiche de police : l'obligation, et comment Sojori l'orchestre à Marrakech",
-      "k038": "Tout établissement d'hébergement touristique au Maroc — hôtel, riad, maison d'hôtes, résidence — doit établir un bulletin individuel pour chaque personne hébergée, marocaine ou étrangère. L'obligation remonte au dahir du 14 janvier 1953 et a été reprise par la loi 80-14 relative aux établissements touristiques. Elle ne connaît pas d'exception de taille : un riad de quatre chambres y est tenu comme un hôtel de deux cents.",
+      "k038": "Tout établissement d'hébergement touristique au Maroc — hôtel, riad, maison d'hôtes, résidence — doit établir un bulletin individuel pour chaque personne hébergée, marocaine ou étrangère.L'obligation vient de la loi 80-14 (articles 36 à 38) et du décret 2-15-865 de 2016, qui fixe la télédéclaration. Elle ne connaît pas d'exception de taille : un riad de quatre chambres y est tenu comme un hôtel de deux cents.",
       "k039": "La déclaration s'est dématérialisée. Le ministère du Tourisme, le ministère de l'Intérieur, la DGSN et la Gendarmerie Royale ont mis en place la plateforme de télé-déclaration des nuitées (STDN), qui remplace le dépôt des bulletins papier par une déclaration quotidienne en ligne. Les manquements exposent aux sanctions prévues par la loi 80-14.",
       "k040": "Ce que Sojori fait",
       "k041": "Sojori orchestre la ",
@@ -6277,7 +6272,7 @@
       "k035": "Part des réservations directes",
       "k036": "● Conformité",
       "k037": "Fiche de police : l'obligation, et comment Sojori l'orchestre à Rabat",
-      "k038": "Tout établissement d'hébergement touristique au Maroc — hôtel, riad, maison d'hôtes, résidence — doit établir un bulletin individuel pour chaque personne hébergée, marocaine ou étrangère. L'obligation remonte au dahir du 14 janvier 1953 et a été reprise par la loi 80-14 relative aux établissements touristiques. Elle ne connaît pas d'exception de taille : un riad de quatre chambres y est tenu comme un hôtel de deux cents.",
+      "k038": "Tout établissement d'hébergement touristique au Maroc — hôtel, riad, maison d'hôtes, résidence — doit établir un bulletin individuel pour chaque personne hébergée, marocaine ou étrangère.L'obligation vient de la loi 80-14 (articles 36 à 38) et du décret 2-15-865 de 2016, qui fixe la télédéclaration. Elle ne connaît pas d'exception de taille : un riad de quatre chambres y est tenu comme un hôtel de deux cents.",
       "k039": "La déclaration s'est dématérialisée. Le ministère du Tourisme, le ministère de l'Intérieur, la DGSN et la Gendarmerie Royale ont mis en place la plateforme de télé-déclaration des nuitées (STDN), qui remplace le dépôt des bulletins papier par une déclaration quotidienne en ligne. Les manquements exposent aux sanctions prévues par la loi 80-14.",
       "k040": "Ce que Sojori fait",
       "k041": "Sojori orchestre la ",
@@ -6358,7 +6353,7 @@
       "k035": "Délai de remise en état des chambres en pic",
       "k036": "● Conformité",
       "k037": "Fiche de police : l'obligation, et comment Sojori l'orchestre à Tanger",
-      "k038": "Tout établissement d'hébergement touristique au Maroc — hôtel, riad, maison d'hôtes, résidence — doit établir un bulletin individuel pour chaque personne hébergée, marocaine ou étrangère. L'obligation remonte au dahir du 14 janvier 1953 et a été reprise par la loi 80-14 relative aux établissements touristiques. Elle ne connaît pas d'exception de taille : un riad de quatre chambres y est tenu comme un hôtel de deux cents.",
+      "k038": "Tout établissement d'hébergement touristique au Maroc — hôtel, riad, maison d'hôtes, résidence — doit établir un bulletin individuel pour chaque personne hébergée, marocaine ou étrangère.L'obligation vient de la loi 80-14 (articles 36 à 38) et du décret 2-15-865 de 2016, qui fixe la télédéclaration. Elle ne connaît pas d'exception de taille : un riad de quatre chambres y est tenu comme un hôtel de deux cents.",
       "k039": "La déclaration s'est dématérialisée. Le ministère du Tourisme, le ministère de l'Intérieur, la DGSN et la Gendarmerie Royale ont mis en place la plateforme de télé-déclaration des nuitées (STDN), qui remplace le dépôt des bulletins papier par une déclaration quotidienne en ligne. Les manquements exposent aux sanctions prévues par la loi 80-14.",
       "k040": "Ce que Sojori fait",
       "k041": "Sojori orchestre la ",
