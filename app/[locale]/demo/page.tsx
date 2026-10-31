@@ -7,8 +7,10 @@ import { BackgroundEffects } from '@/components/BackgroundEffects';
 import { PageHeader, PageFooter } from '@/components/SharedComponents';
 import { Link } from '@/i18n/routing';
 import { QualificationForm, type FollowUpQuestion, type QualificationPayload } from '@/components/demo/QualificationForm';
-import { ACTIVITIES, PAYS_DEMO, VILLES_PAR_DEFAUT, VILLES_SUGGEREES, paysDeLIso } from '@/lib/demoQualification';
-import { PhoneDialSelect } from '@/components/demo/PhoneDialSelect';
+import { ACTIVITIES } from '@/lib/demoQualification';
+import { champsIdentite, erreursIdentite, paysInitial } from '@/lib/refonte/identiteDemande';
+import { dialDeIso, formaterNumero, nomCrm } from '@/lib/refonte/pays';
+import { ChampPays } from '@/components/refonte/ChampPays';
 import { normalizeDemoBackendResponse, demoResponseErrorMessage } from '@/lib/demoApiResponse';
 import { trackDemoLead, trackDemoScheduled, trackDemoQualified } from '@/lib/analytics';
 
@@ -17,6 +19,9 @@ const DEMO_API = '/api/v1/demo';
 
 /** Le calendrier staff est coupé : le mini-formulaire enchaîne sur le questionnaire. */
 const PRISE_DE_RENDEZ_VOUS = false;
+
+/** L'écran « type d'établissement et PMS » : entre l'identité (étape 1) et le questionnaire facultatif (étape 3). */
+const STEP_TYPE = 5;
 
 /** Taille du compte, en chambres ou en biens selon le type (Tawfiq, 30/10/2026). */
 const TRANCHES = ['1-5', '6-20', '21-50', '51-100', '100-200', '200+'];
@@ -83,16 +88,19 @@ function DemoPageContent() {
       month: 'long',
     });
 
+  const textesPays = { search: t('step1.dialSearchPlaceholder'), none: t('step1.dialNoResults'), close: t('step1.countryClose') };
   const [step, setStep] = useState(1);
   const [source, setSource] = useState<string>('website'); // Default source
 
   const [formData, setFormData] = useState({
     // Step 1
-    countryCode: '+212',
-    dialCountryIso: 'MA',
-    // Pays et ville du petit formulaire : des indications que Scout recoupe avec l'indicatif.
-    pays: '',
-    paysAutre: '',
+    // Le pays proposé selon la langue de la page ; l'indicatif du téléphone le suit (et se change à part).
+    paysIso: paysInitial(locale),
+    dialIso: paysInitial(locale),
+    // Écran « type d'établissement » : le PMS (Sojori ou le sien) et, pour « Autre », la précision.
+    pmsChoix: '' as '' | 'sojori' | 'own',
+    pmsNom: '',
+    activiteAutre: '',
     ville: '',
     email: '',
     phone: '',
@@ -259,106 +267,100 @@ function DemoPageContent() {
     setFormData(prev => ({ ...prev, activity: id, taille: '' }));
   };
 
-  /** Le petit formulaire sur UN écran (Tawfiq, 28/10/2026) : coordonnées, type d'établissement, taille. */
+  /** Quatre coordonnées obligatoires (e-mail, nom, pays, téléphone) et l'accord (Tawfiq, 31/10/2026) ; le reste vient après. */
+  const identite = () => ({ email: formData.email, nom: formData.fullName, paysIso: formData.paysIso, tel: formData.phone, consent: formData.consentementMessages });
   const handleSubmitStep1 = (e: React.FormEvent) => {
     e.preventDefault();
-    if (!formData.pays || (formData.pays === 'Autre' && formData.paysAutre.trim().length < 2)) {
-      setError(t('step1.paysRequired'));
-      return;
-    }
-    if (formData.ville.trim().length < 2) {
-      setError(t('step1.villeRequired'));
-      return;
-    }
-    if (formData.phone.replace(/\D/g, '').length < 8) {
-      setError(t('step1.phoneInvalid'));
-      return;
-    }
-    if (!formData.activity) {
-      setError(t('step1.activityRequired'));
-      return;
-    }
-    if (!formData.taille) {
-      setError(t('step1.tailleRequired'));
-      return;
-    }
-    void envoyerDemande(formData.activity);
+    const err = erreursIdentite(identite());
+    if (err.email) { setError(t('step1.emailRequired')); return; }
+    if (err.nom) { setError(t('step1.nameRequired')); return; }
+    if (err.pays) { setError(t('step1.paysRequired')); return; }
+    if (err.tel) { setError(t('step1.phoneInvalid')); return; }
+    if (err.consent) { setError(t('step1.consentRequired')); return; }
+    void envoyerDemande();
   };
 
-  const envoyerDemande = async (activityId: string) => {
-    const activite = ACTIVITIES.find(item => item.id === activityId);
-    if (!activite) {
-      setError(t('step1.activityRequired'));
-      return;
-    }
+  /** Écran 1 → la demande existe dès ici (e-mail, nom, pays, téléphone) ; puis l'écran du type d'établissement. */
+  const envoyerDemande = async () => {
     setError('');
-    setStep(PRISE_DE_RENDEZ_VOUS ? 2 : 3);
-
+    setLoading(true);
     try {
-      const USE_MOCK = false;
+      const response = await fetch(`${DEMO_API}/request`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          email: formData.email.trim(),
+          ...champsIdentite(identite(), formData.dialIso),
+          consentementMessages: formData.consentementMessages,
+          source: source,
+          // La langue de la page : celle du prospect, lue par l'agent de prospection (28/10/2026).
+          langue: locale,
+        }),
+      });
 
-      if (USE_MOCK) {
-        const mockId = `demo-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`;
-        setDemoRequestId(mockId);
-        setCalendarSkippedAlreadyBooked(false);
-      } else {
-        const response = await fetch(`${DEMO_API}/request`, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            email: formData.email,
-            fullName: formData.fullName.trim(),
-            phone: formData.phone.replace(/\D/g, ''),
-            countryCode: formData.countryCode,
-            country: formData.pays === 'Autre' ? formData.paysAutre.trim().slice(0, 60) : formData.pays,
-            city: formData.ville.trim().slice(0, 60),
-            // L'activité dans les mots du CRM : l'agent de prospection s'en sert pour choisir le commercial.
-            ...(activite.crmSegment ? { segment: activite.crmSegment } : {}),
-            // Une tranche (« 6-10 ») : chambres pour un établissement, biens pour des locations.
-            numberOfProperties: formData.taille,
-            consentementMessages: formData.consentementMessages,
-            source: source,
-            // La langue de la page : celle du prospect, lue par l'agent de prospection (28/10/2026).
-            langue: locale,
-          }),
-        });
-
-        let rawBody: unknown;
-        try {
-          rawBody = await response.json();
-        } catch {
-          throw new Error(t('errors.invalidResponse'));
-        }
-        const data = normalizeDemoBackendResponse(rawBody) as {
-          success?: boolean;
-          error?: string;
-          data?: { id?: string; qualificationToken?: string };
-        };
-
-        if (data.success !== true) {
-          throw new Error(demoResponseErrorMessage(data) || t('errors.submitStep1'));
-        }
-        const newId = data.data?.id;
-        if (!newId) {
-          throw new Error(demoResponseErrorMessage(data) || t('errors.invalidResponse'));
-        }
-
-        setDemoRequestId(String(newId));
-        setQualificationToken(String(data.data?.qualificationToken ?? ''));
-        setCalendarSkippedAlreadyBooked(false);
-        trackDemoLead(source);
+      let rawBody: unknown;
+      try {
+        rawBody = await response.json();
+      } catch {
+        throw new Error(t('errors.invalidResponse'));
       }
+      const data = normalizeDemoBackendResponse(rawBody) as {
+        success?: boolean;
+        error?: string;
+        data?: { id?: string; qualificationToken?: string };
+      };
+
+      if (data.success !== true) {
+        throw new Error(demoResponseErrorMessage(data) || t('errors.submitStep1'));
+      }
+      const newId = data.data?.id;
+      if (!newId) {
+        throw new Error(demoResponseErrorMessage(data) || t('errors.invalidResponse'));
+      }
+
+      setDemoRequestId(String(newId));
+      setQualificationToken(String(data.data?.qualificationToken ?? ''));
+      setCalendarSkippedAlreadyBooked(false);
+      trackDemoLead(source);
+      setStep(STEP_TYPE);
     } catch (err: unknown) {
-      const msg =
-        err instanceof Error ? err.message : 'Une erreur est survenue. Veuillez réessayer.';
-      const hint =
-        typeof msg === 'string' &&
-        (msg.includes('connect') || msg.includes('Failed to fetch') || msg.includes('backend'))
-          ? ' Sans `SRV_CRM_URL`, `next dev` utilise https://dev.sojori.com. Si vous voyez 127.0.0.1:4013, supprimez ou corrigez `SRV_CRM_URL` dans `.env.local` et redémarrez Next. Pour srv-crm local : `SRV_CRM_URL=http://127.0.0.1:4013` + `pnpm --filter srv-crm dev`. Sur Vercel : définir `SRV_CRM_URL` en HTTPS public.'
-          : '';
-      setError(`${msg}${hint}`);
-      setStep(1);
+      const msg = err instanceof Error ? err.message : t('errors.submitStep1');
+      setError(msg);
       console.error('Error submitting step 1:', err);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  /** Écran 2 (obligatoire) : le type d'établissement et le PMS partent en `qualify` ; puis « C'est envoyé » et les questions facultatives. */
+  const envoyerType = async (e: React.FormEvent) => {
+    e.preventDefault();
+    const activite = ACTIVITIES.find(item => item.id === formData.activity);
+    if (!activite) { setError(t('step1.activityRequired')); return; }
+    if (!formData.pmsChoix) { setError(t('step1.pmsRequired')); return; }
+    if (!demoRequestId) { setError(t('errors.invalidResponse')); setStep(1); return; }
+    setError('');
+    setLoading(true);
+    try {
+      const res = await fetch(`${DEMO_API}/request/${demoRequestId}/qualify`, {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          qualificationToken,
+          ...champsIdentite(identite(), formData.dialIso),
+          // L'activité dans les mots du CRM : l'agent de prospection s'en sert pour choisir le commercial.
+          ...(activite.crmSegment ? { segment: activite.crmSegment } : {}),
+          currentPMS: formData.pmsChoix === 'sojori' ? 'Sojori' : (formData.pmsNom.trim().slice(0, 80) || 'Garde son PMS actuel'),
+          ...(activite.id === 'autre' && formData.activiteAutre.trim() ? { expectations: `Type : ${formData.activiteAutre.trim().slice(0, 120)}` } : {}),
+        }),
+      });
+      const raw = normalizeDemoBackendResponse(await res.json().catch(() => ({}))) as { success?: boolean; error?: string };
+      if (raw.success !== true) throw new Error(demoResponseErrorMessage(raw) || t('errors.qualify'));
+      setStep(PRISE_DE_RENDEZ_VOUS ? 2 : 3);
+    } catch (err: unknown) {
+      setError(err instanceof Error ? err.message : t('errors.qualify'));
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -573,84 +575,26 @@ function DemoPageContent() {
                         />
                       </div>
                       <div style={{ display: 'flex', flexWrap: 'wrap', gap: 14, marginBottom: 18, alignItems: 'flex-start' }}>
-                        <div style={{ flex: '1 1 220px', minWidth: 200 }}>
-                          <label style={labelStyle as React.CSSProperties}>{t('step1.paysLabel')}</label>
-                          <select
-                            name="pays"
-                            required
-                            value={formData.pays}
-                            onChange={e => {
-                              const choisi = PAYS_DEMO.find(item => item.id === e.target.value);
-                              // L'indicatif suit le pays choisi (modifiable ensuite) ; « Autre » ne le touche pas.
-                              setFormData(prev => ({
-                                ...prev,
-                                pays: e.target.value,
-                                ...(choisi?.indicatif ? { countryCode: choisi.indicatif, dialCountryIso: choisi.iso ?? prev.dialCountryIso } : {}),
-                              }));
-                            }}
-                            style={inputStyle}
-                          >
-                            <option value="">{t('step1.paysPlaceholder')}</option>
-                            {PAYS_DEMO.map(item => (
-                              <option key={item.id} value={item.id}>
-                                {item.id === 'Autre' ? t('step1.paysAutre') : item.label}
-                              </option>
-                            ))}
-                          </select>
-                          {formData.pays === 'Autre' && (
-                            <input
-                              type="text"
-                              name="paysAutre"
-                              value={formData.paysAutre}
-                              onChange={handleChange}
-                              placeholder={t('step1.paysAutrePlaceholder')}
-                              autoComplete="country-name"
-                              style={{ ...inputStyle, marginTop: 8 }}
-                            />
-                          )}
-                        </div>
-                        <div style={{ flex: '1 1 220px', minWidth: 200 }}>
-                          <label style={labelStyle as React.CSSProperties}>{t('step1.villeLabel')}</label>
-                          <input
-                            type="text"
-                            name="ville"
-                            required
-                            list="demo-villes"
-                            autoComplete="address-level2"
-                            value={formData.ville}
-                            onChange={handleChange}
-                            placeholder={t('step1.villePlaceholder')}
-                            style={inputStyle}
-                          />
-                          <datalist id="demo-villes">
-                            {(VILLES_SUGGEREES[formData.pays] ?? VILLES_PAR_DEFAUT).map(v => (
-                              <option key={v} value={v} />
-                            ))}
-                          </datalist>
+                        <div style={{ flex: '1 1 100%', minWidth: 200 }}>
+                          <label style={labelStyle as React.CSSProperties} htmlFor="demo-pays">{t('step1.paysLabel')}</label>
+                          <ChampPays id="demo-pays" valeur={formData.paysIso} locale={locale} affichage="pays" libelle={t('step1.paysLabel')} textes={textesPays}
+                            onChoisir={iso => setFormData(prev => ({ ...prev, paysIso: iso, dialIso: iso, phone: formaterNumero(prev.phone, iso) }))} />
                         </div>
                       </div>
-                      <div style={{ display: 'flex', flexWrap: 'wrap', gap: 14, marginBottom: 18, alignItems: 'flex-start' }}>
-                        <div style={{ flex: '1 1 220px', minWidth: 200 }}>
-                          <PhoneDialSelect
-                            dial={formData.countryCode}
-                            iso={formData.dialCountryIso}
-                            onSelect={(d, iso) => setFormData(prev => ({ ...prev, countryCode: d, dialCountryIso: iso }))}
-                            inputStyle={inputStyle}
-                            labelStyle={labelStyle as React.CSSProperties}
-                            dialLabel={t('step1.dialLabel')}
-                            dialSearchPlaceholder={t('step1.dialSearchPlaceholder')}
-                            dialNoResults={t('step1.dialNoResults')}
-                          />
-                        </div>
-                        <div style={{ flex: '2 1 220px', minWidth: 180 }}>
-                          <label style={labelStyle as React.CSSProperties}>{t('step1.phoneLabel')}</label>
+                      <div style={{ marginBottom: 18 }}>
+                        <label style={labelStyle as React.CSSProperties} htmlFor="demo-tel">{t('step1.phoneLabel')}</label>
+                        <div className="sj2-tel">
+                          <ChampPays id="demo-dial" valeur={formData.dialIso} locale={locale} affichage="indicatif" libelle={t('step1.dialLabel')} textes={textesPays}
+                            onChoisir={iso => setFormData(prev => ({ ...prev, dialIso: iso, phone: formaterNumero(prev.phone, iso) }))} />
                           <input
+                            id="demo-tel"
                             type="tel"
                             name="phone"
+                            inputMode="tel"
                             required
                             autoComplete="tel-national"
                             value={formData.phone}
-                            onChange={handleChange}
+                            onChange={e => setFormData(prev => ({ ...prev, phone: formaterNumero(e.target.value, prev.dialIso) }))}
                             placeholder={t('step1.phonePlaceholder')}
                             style={inputStyle}
                           />
@@ -659,48 +603,13 @@ function DemoPageContent() {
                       <label style={{ display: 'flex', gap: 10, alignItems: 'flex-start', fontSize: 14, color: 'var(--text-2)', marginBottom: 22, cursor: 'pointer' }}>
                         <input
                           type="checkbox"
+                          required
                           checked={formData.consentementMessages}
                           onChange={e => setFormData(prev => ({ ...prev, consentementMessages: e.target.checked }))}
                           style={{ marginTop: 3, width: 18, height: 18 }}
                         />
                         <span>{t('step1.consentLabel')}</span>
                       </label>
-                      <h3 style={{ fontSize: 20, marginBottom: 6 }}>{t('step1.typeTitle')}</h3>
-                      <p style={{ fontSize: 14, color: 'var(--text-2)', marginBottom: 18 }}>{t('step1.typeSubtitle')}</p>
-                      <div className="qf-pills" style={{ marginBottom: 22 }}>
-                        {ACTIVITIES.filter(item => TYPES_FORMULAIRE.includes(item.id)).map(item => (
-                          <button
-                            key={item.id}
-                            type="button"
-                            disabled={loading}
-                            onClick={() => choisirActivite(item.id)}
-                            className={formData.activity === item.id ? 'qf-pill qf-pill-on' : 'qf-pill'}
-                          >
-                            {t(`step1.activities.${item.id}`)}
-                          </button>
-                        ))}
-                      </div>
-                      {formData.activity && (
-                        <>
-                          <h3 style={{ fontSize: 18, marginBottom: 12 }}>
-                            {ACTIVITIES.find(item => item.id === formData.activity)?.segment === 'hotel'
-                              ? t('step1.tailleChambres')
-                              : t('step1.tailleBiens')}
-                          </h3>
-                          <div className="qf-pills" style={{ marginBottom: 22 }}>
-                            {TRANCHES.map(tranche => (
-                              <button
-                                key={tranche}
-                                type="button"
-                                onClick={() => setFormData(prev => ({ ...prev, taille: tranche }))}
-                                className={formData.taille === tranche ? 'qf-pill qf-pill-on' : 'qf-pill'}
-                              >
-                                {tranche}
-                              </button>
-                            ))}
-                          </div>
-                        </>
-                      )}
                       <button
                         type="submit"
                         className="btn btn-primary"
@@ -715,6 +624,73 @@ function DemoPageContent() {
                     </form>
                 </div>
               </>
+            )}
+
+            {/* ÉCRAN « TYPE D'ÉTABLISSEMENT ET PMS » : obligatoire, juste après l'identité */}
+            {step === STEP_TYPE && (
+              <div className="demo-step-in">
+                <div style={{ textAlign: 'center', marginBottom: 36 }}>
+                  <span className="badge" style={{ marginBottom: 20 }}>
+                    <span className="badge-dot"></span> {t('step1.badge')}
+                  </span>
+                  <h2 style={{ marginBottom: 12, fontSize: 34, textWrap: 'balance' }}>{t('step1.typeTitle')}</h2>
+                  <p style={{ fontSize: 16, color: 'var(--text-2)', maxWidth: 560, margin: '0 auto' }}>{t('step1.typeSubtitle')}</p>
+                </div>
+                <div className="glass demo-glass-panel" style={{ padding: 40, borderRadius: 16 }}>
+                  {error && (
+                    <div role="alert" style={{ padding: 16, borderRadius: 8, background: 'rgba(239,68,68,0.15)', border: '1px solid rgba(239,68,68,0.3)', marginBottom: 20, color: '#fca5a5', fontSize: 14 }}>
+                      {error}
+                    </div>
+                  )}
+                  <form onSubmit={envoyerType} className="demo-mini" noValidate>
+                    <div className="qf-pills" role="group" aria-label={t('step1.typeTitle')} style={{ marginBottom: 22 }}>
+                      {ACTIVITIES.filter(item => TYPES_FORMULAIRE.includes(item.id)).map(item => (
+                        <button
+                          key={item.id}
+                          type="button"
+                          disabled={loading}
+                          aria-pressed={formData.activity === item.id}
+                          onClick={() => choisirActivite(item.id)}
+                          className={formData.activity === item.id ? 'qf-pill qf-pill-on' : 'qf-pill'}
+                        >
+                          {t(`step1.activities.${item.id}`)}
+                        </button>
+                      ))}
+                    </div>
+                    {formData.activity === 'autre' && (
+                      <div style={{ marginBottom: 22 }}>
+                        <label style={labelStyle as React.CSSProperties} htmlFor="demo-autre">{t('step1.otherLabel')}</label>
+                        <input id="demo-autre" type="text" name="activiteAutre" value={formData.activiteAutre} onChange={handleChange} style={inputStyle} />
+                      </div>
+                    )}
+                    <h3 style={{ fontSize: 18, marginBottom: 12 }}>{t('step1.pmsTitle')}</h3>
+                    <div className="demo-pms-choix" role="group" aria-label={t('step1.pmsTitle')} style={{ marginBottom: 18 }}>
+                      {(['sojori', 'own'] as const).map(v => (
+                        <button
+                          key={v}
+                          type="button"
+                          disabled={loading}
+                          aria-pressed={formData.pmsChoix === v}
+                          onClick={() => setFormData(prev => ({ ...prev, pmsChoix: v }))}
+                          className={formData.pmsChoix === v ? 'qf-pill qf-pill-on' : 'qf-pill'}
+                          style={{ flex: '1 1 200px', minHeight: 64, fontSize: 16, fontWeight: 600 }}
+                        >
+                          {t(v === 'sojori' ? 'step1.pmsSojori' : 'step1.pmsOwn')}
+                        </button>
+                      ))}
+                    </div>
+                    {formData.pmsChoix === 'own' && (
+                      <div style={{ marginBottom: 22 }}>
+                        <label style={labelStyle as React.CSSProperties} htmlFor="demo-pms">{t('step1.pmsWhich')}</label>
+                        <input id="demo-pms" type="text" name="pmsNom" value={formData.pmsNom} onChange={handleChange} style={inputStyle} />
+                      </div>
+                    )}
+                    <button type="submit" className="btn btn-primary" disabled={loading} style={{ width: '100%', padding: '16px', fontSize: 15, fontWeight: 600 }}>
+                      {loading ? t('step1.submitButtonLoading') : t('step1.typeSubmit')}
+                    </button>
+                  </form>
+                </div>
+              </div>
             )}
 
             {/* STEP 2 : choix du créneau (semaine à partir de demain, fuseau Paris / backend) */}
@@ -1078,9 +1054,10 @@ function DemoPageContent() {
                   <QualificationForm
                     initialActivityId={formData.activity || undefined}
                     initialPhone={formData.phone.replace(/\D/g, '') || undefined}
-                    initialCountryCode={formData.countryCode}
+                    initialCountryCode={dialDeIso(formData.dialIso)}
                     initialNumberOfProperties={formData.taille || undefined}
-                    initialCountry={formData.pays || paysDeLIso(formData.dialCountryIso)}
+                    initialCountry={nomCrm(formData.paysIso)}
+                    initialCurrentPMS={formData.pmsChoix === 'sojori' ? 'Sojori' : formData.pmsChoix === 'own' ? (formData.pmsNom.trim() || 'Garde son PMS actuel') : undefined}
                     initialFullName={formData.fullName.trim() || undefined}
                     initialCity={formData.ville.trim() || undefined}
                     compact

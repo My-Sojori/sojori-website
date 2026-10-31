@@ -1217,13 +1217,13 @@
       "badge": "Demo gratuita",
       "title": "Prepara tu ",
       "titleGradient": "demo gratuita",
-      "subtitle": "Algunos datos y luego un breve cuestionario.",
+      "subtitle": "Cuatro datos y su solicitud de demo.",
       "emailLabel": "Correo electrónico *",
       "emailPlaceholder": "tu@empresa.com",
       "dialLabel": "País / prefijo *",
       "dialSearchPlaceholder": "Buscar país o +34…",
       "dialNoResults": "Sin resultados",
-      "phoneLabel": "Teléfono *",
+      "phoneLabel": "Número de WhatsApp preferente *",
       "phonePlaceholder": "6 12 34 56 78",
       "propertiesLabel": "Su actividad *",
       "activityRequired": "Elija su actividad para continuar.",
@@ -1247,7 +1247,7 @@
         "100-200": "100-200 propiedades",
         "200+": "200+ propiedades"
       },
-      "submitButton": "Continuar →",
+      "submitButton": "Solicitar mi demo",
       "submitButtonLoading": "Enviando...",
       "disclaimer": "Al proporcionar tus datos, aceptas recibir información sobre Sojori. Puedes darte de baja en cualquier momento.",
       "loadingTitle": "Abrimos el cuestionario",
@@ -1270,7 +1270,18 @@
       "paysRequired": "Elige tu país para continuar.",
       "villeRequired": "Indica tu ciudad para continuar.",
       "tailleChambres": "¿Cuántas habitaciones?",
-      "tailleBiens": "¿Cuántas propiedades?"
+      "tailleBiens": "¿Cuántas propiedades?",
+      "consentRequired": "Marque el consentimiento para enviar.",
+      "nameRequired": "Indique su nombre.",
+      "countryClose": "Cerrar",
+      "emailRequired": "Indique un correo válido.",
+      "pmsRequired": "Indique con qué PMS.",
+      "pmsTitle": "¿Con qué PMS?",
+      "pmsSojori": "Con el PMS de Sojori",
+      "pmsOwn": "Con mi propio PMS",
+      "pmsWhich": "¿Cuál? (opcional)",
+      "otherLabel": "Especifique (opcional)",
+      "typeSubmit": "Continuar →"
     },
     "step2": {
       "badge": "Paso 2/4 · Horario",
@@ -3053,27 +3064,27 @@
       "form": {
         "stepsAria": "Pasos de su solicitud",
         "step": {
-          "email": "Su correo electrónico",
-          "reach": "Para contactarle",
-          "sent": "Enviado"
+          "email": "Sus datos",
+          "reach": "Preparar la demo",
+          "sent": "Hecho"
         },
         "email": {
-          "title": "Recibir su propuesta",
-          "lead": "Basta con su correo electrónico para empezar. Su actividad, su parque y sus elecciones se envían con su solicitud.",
+          "title": "Sus datos",
+          "lead": "Cuatro datos y su solicitud sale con sus elecciones.",
           "label": "Su correo electrónico",
           "consent": "Acepto que Sojori se ponga en contacto conmigo en relación con mi solicitud.",
           "submit": "Solicitar mi demo",
-          "saved": "Su solicitud y sus elecciones quedan guardadas desde este paso.",
-          "help": "Indique un correo electrónico válido y marque la casilla de conformidad para continuar."
+          "saved": "Su solicitud y sus elecciones quedan guardadas al enviar.",
+          "help": "Rellene los cuatro campos y marque el consentimiento para enviar."
         },
         "reach": {
-          "title": "Recibido. Para contactarle",
-          "lead": "Todo es opcional. Su actividad, su parque y sus elecciones ya están en la solicitud.",
+          "title": "Enviado. Para preparar su demo",
+          "lead": "Tres preguntas, todas opcionales: su solicitud ya está guardada.",
           "name": "Nombre y apellidos",
           "country": "País",
           "countryOther": "Su país",
           "otherCountry": "Otro país",
-          "phone": "Número de WhatsApp",
+          "phone": "Número de WhatsApp preferente",
           "phoneHint": "recomendado",
           "dial": "Prefijo del país",
           "dialOption": "{dial} ({country})",
@@ -3085,7 +3096,10 @@
           "looking": "Me estoy informando",
           "send": "Enviar",
           "skip": "Omitir este paso",
-          "note": "Sin compromiso. Tomado de sus elecciones anteriores."
+          "note": "Sus elecciones de arriba ya están en la solicitud.",
+          "countrySearch": "Buscar un país o +33…",
+          "countryNone": "Sin resultados",
+          "countryClose": "Cerrar"
         },
         "sent": {
           "thanksName": "Gracias, {name}, hemos recibido su solicitud.",
@@ -3095,6 +3109,14 @@
           "s3": "Treinta minutos de demo, por videollamada, con su propuesta con precios.",
           "whatsapp": "Déjenos su WhatsApp: su asesor le responderá más rápido.",
           "addWhatsapp": "Añadir mi WhatsApp"
+        },
+        "errors": {
+          "email": "Indique un correo válido.",
+          "name": "Indique su nombre.",
+          "country": "Elija su país.",
+          "phone": "Indique un número válido.",
+          "consent": "Marque el consentimiento para enviar.",
+          "partial": "Su solicitud está guardada, pero falló el envío de sus datos completos. Inténtelo de nuevo."
         }
       }
     },

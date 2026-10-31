@@ -1217,13 +1217,13 @@
       "badge": "Démo gratuite",
       "title": "Préparez votre ",
       "titleGradient": "démo gratuite",
-      "subtitle": "Quelques informations, puis un court questionnaire.",
+      "subtitle": "Quatre informations, puis votre demande de démo.",
       "emailLabel": "Adresse e-mail *",
       "emailPlaceholder": "vous@entreprise.com",
       "dialLabel": "Pays / indicatif *",
       "dialSearchPlaceholder": "Rechercher un pays ou +33…",
       "dialNoResults": "Aucun résultat",
-      "phoneLabel": "Téléphone *",
+      "phoneLabel": "Numéro WhatsApp de préférence *",
       "phonePlaceholder": "6 12 34 56 78",
       "propertiesLabel": "Votre activité *",
       "activityRequired": "Choisissez votre activité pour continuer.",
@@ -1247,7 +1247,7 @@
         "100-200": "100-200 biens",
         "200+": "200+ biens"
       },
-      "submitButton": "Continuer →",
+      "submitButton": "Demander ma démo",
       "submitButtonLoading": "Envoi en cours...",
       "disclaimer": "En fournissant vos coordonnées, vous acceptez de recevoir des informations sur Sojori. Désinscription possible à tout moment.",
       "loadingTitle": "On ouvre le questionnaire",
@@ -1270,7 +1270,18 @@
       "paysRequired": "Choisissez votre pays pour continuer.",
       "villeRequired": "Indiquez votre ville pour continuer.",
       "tailleChambres": "Combien de chambres ?",
-      "tailleBiens": "Combien de biens ?"
+      "tailleBiens": "Combien de biens ?",
+      "consentRequired": "Cochez l’accord pour envoyer.",
+      "nameRequired": "Indiquez votre nom.",
+      "countryClose": "Fermer",
+      "emailRequired": "Indiquez un e-mail valide.",
+      "pmsRequired": "Indiquez avec quel PMS.",
+      "pmsTitle": "Avec quel PMS ?",
+      "pmsSojori": "Avec le PMS Sojori",
+      "pmsOwn": "Avec mon PMS",
+      "pmsWhich": "Lequel ? (facultatif)",
+      "otherLabel": "Précisez (facultatif)",
+      "typeSubmit": "Continuer →"
     },
     "step2": {
       "badge": "Étape 2/4 · Horaire",
@@ -3053,27 +3064,27 @@
       "form": {
         "stepsAria": "Étapes de votre demande",
         "step": {
-          "email": "Votre e-mail",
-          "reach": "Pour vous joindre",
-          "sent": "C’est envoyé"
+          "email": "Vos coordonnées",
+          "reach": "Préparer la démo",
+          "sent": "Terminé"
         },
         "email": {
-          "title": "Recevoir votre proposition",
-          "lead": "Votre e-mail suffit pour commencer. Votre activité, votre parc et vos choix partent avec votre demande.",
+          "title": "Vos coordonnées",
+          "lead": "Quatre informations, puis votre demande part avec vos choix.",
           "label": "Votre e-mail",
           "consent": "J’accepte d’être recontacté par Sojori au sujet de ma demande.",
           "submit": "Demander ma démo",
-          "saved": "Votre demande et vos choix sont enregistrés dès cette étape.",
-          "help": "Indiquez un e-mail valide et cochez l’accord pour continuer."
+          "saved": "Votre demande et vos choix sont enregistrés dès l’envoi.",
+          "help": "Renseignez les quatre champs et cochez l’accord pour envoyer."
         },
         "reach": {
-          "title": "C’est reçu. Pour vous joindre",
-          "lead": "Tout est facultatif. Votre activité, votre parc et vos choix sont déjà dans la demande.",
+          "title": "C’est envoyé. Pour préparer votre démo",
+          "lead": "Trois questions, toutes facultatives : votre demande est déjà enregistrée.",
           "name": "Nom et prénom",
           "country": "Pays",
           "countryOther": "Votre pays",
           "otherCountry": "Autre pays",
-          "phone": "Numéro WhatsApp",
+          "phone": "Numéro WhatsApp de préférence",
           "phoneHint": "recommandé",
           "dial": "Indicatif du pays",
           "dialOption": "{dial} ({country})",
@@ -3085,7 +3096,10 @@
           "looking": "Je me renseigne",
           "send": "Envoyer",
           "skip": "Passer cette étape",
-          "note": "Sans engagement. Repris de vos choix plus haut."
+          "note": "Vos choix plus haut sont déjà dans la demande.",
+          "countrySearch": "Rechercher un pays ou +33…",
+          "countryNone": "Aucun résultat",
+          "countryClose": "Fermer"
         },
         "sent": {
           "thanksName": "Merci {name}, votre demande est bien reçue.",
@@ -3095,6 +3109,14 @@
           "s3": "Trente minutes de démo, en visio, avec votre proposition chiffrée.",
           "whatsapp": "Laissez votre WhatsApp : votre conseiller vous répondra plus vite.",
           "addWhatsapp": "Ajouter mon WhatsApp"
+        },
+        "errors": {
+          "email": "Indiquez un e-mail valide.",
+          "name": "Indiquez votre nom.",
+          "country": "Choisissez votre pays.",
+          "phone": "Indiquez un numéro valide.",
+          "consent": "Cochez l’accord pour envoyer.",
+          "partial": "Votre demande est enregistrée, mais l’envoi de vos coordonnées complètes a échoué. Réessayez."
         }
       }
     },
