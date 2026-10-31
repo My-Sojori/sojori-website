@@ -2575,10 +2575,8 @@
         "kpi": {
           "guest": "ganhas por semana nas mensagens dos hóspedes",
           "field": "ganhas por semana na coordenação do terreno",
-          "fast": "para responder a um hóspede, 24 h por dia",
           "share": "dos pedidos tratados sem o senhor",
           "valueHours": "≈ {h} h",
-          "valueFast": "< 1 min",
           "valueShare": "≈ 70 %",
           "note": "Estimativa para {type} de {size}: 2 min por pedido de hóspede, 3 min por tarefa de coordenação, 70 % dos pedidos tratados pelo agente. A confirmar com as suas medições. Nenhum resultado é garantido."
         },

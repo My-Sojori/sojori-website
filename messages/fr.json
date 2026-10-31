@@ -2575,10 +2575,8 @@
         "kpi": {
           "guest": "gagnées par semaine sur les messages des voyageurs",
           "field": "gagnées par semaine sur la coordination du terrain",
-          "fast": "pour répondre à un voyageur, 24 h sur 24",
           "share": "des demandes traitées sans vous",
           "valueHours": "≈ {h} h",
-          "valueFast": "< 1 min",
           "valueShare": "≈ 70 %",
           "note": "Estimation pour {type} de {size} : 2 min par demande de voyageur, 3 min par tâche de coordination, 70 % des demandes traitées par l’agent. À confirmer sur vos mesures. Aucun résultat n’est garanti."
         },

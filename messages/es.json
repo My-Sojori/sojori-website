@@ -2575,10 +2575,8 @@
         "kpi": {
           "guest": "ganadas por semana en los mensajes de los huéspedes",
           "field": "ganadas por semana en la coordinación del equipo de campo",
-          "fast": "para responder a un huésped, las 24 horas",
           "share": "de las solicitudes resueltas sin usted",
           "valueHours": "≈ {h} h",
-          "valueFast": "< 1 min",
           "valueShare": "≈ 70 %",
           "note": "Estimación para {type} de {size}: 2 min por solicitud de huésped, 3 min por tarea de coordinación, 70 % de las solicitudes resueltas por el agente. A confirmar con sus propias mediciones. No se garantiza ningún resultado."
         },

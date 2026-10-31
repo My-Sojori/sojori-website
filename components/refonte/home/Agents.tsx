@@ -64,7 +64,6 @@ export function Agents() {
       <div className="sj2-kpis">
         <div className="sj2-kpi"><span className="sj2-kpi__v"><GainValue k="kpi.valueHours" kind="guest" /></span><span className="sj2-kpi__t">{t('kpi.guest')}</span></div>
         <div className="sj2-kpi"><span className="sj2-kpi__v"><GainValue k="kpi.valueHours" kind="field" /></span><span className="sj2-kpi__t">{t('kpi.field')}</span></div>
-        <div className="sj2-kpi"><span className="sj2-kpi__v">{t('kpi.valueFast')}</span><span className="sj2-kpi__t">{t('kpi.fast')}</span></div>
         <div className="sj2-kpi"><span className="sj2-kpi__v">{t('kpi.valueShare')}</span><span className="sj2-kpi__t">{t('kpi.share')}</span></div>
       </div>
       <p className="sj2-kpis__note"><GainNote /></p>

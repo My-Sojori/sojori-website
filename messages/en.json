@@ -2575,10 +2575,8 @@
         "kpi": {
           "guest": "saved per week on guest messages",
           "field": "saved per week on field coordination",
-          "fast": "to answer a guest, 24 hours a day",
           "share": "of requests handled without you",
           "valueHours": "≈ {h} h",
-          "valueFast": "< 1 min",
           "valueShare": "≈ 70%",
           "note": "Estimate for a {type} of {size}: 2 min per guest request, 3 min per coordination task, 70% of requests handled by the agent. To be confirmed against your own measurements. No result is guaranteed."
         },
