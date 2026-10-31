@@ -910,3 +910,12 @@ html[dir='rtl'] .sj2-cal__exemple { letter-spacing: 0; font-family: var(--sj-san
 @media (max-width: 640px) {
   .sj2-socle__pms .sj2-pms h3 { font-size: 14.5px; font-weight: 600; line-height: 1.25; letter-spacing: -0.01em; }
 }
+@media (max-width: 640px) {
+  .sj2-faq__acc { display: flex; flex-direction: column; gap: 8px; }
+  .sj2-faq__item--acc { padding: 0 16px; gap: 0; display: block; }
+  .sj2-faq__item--acc summary { display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 52px; padding-block: 8px; cursor: pointer; list-style: none; font-size: 16px; font-weight: 600; letter-spacing: -0.015em; }
+  .sj2-faq__item--acc summary::-webkit-details-marker { display: none; }
+  .sj2-faq__item--acc summary::after { content: '+'; flex: none; width: 28px; text-align: center; font-size: 22px; font-weight: 400; color: var(--sj-gold); }
+  .sj2-faq__item--acc[open] summary::after { content: '−'; }
+  .sj2-faq__item--acc p { margin: 0; padding-bottom: 16px; font-size: 14.5px; line-height: 1.5; color: var(--sj-text-2); text-wrap: pretty; }
+}
