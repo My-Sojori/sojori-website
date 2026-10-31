@@ -2313,7 +2313,7 @@
             "points": [
               "Recommande des prix selon vos règles et la demande.",
               "Applique les prix sur vos canaux, avec votre autorisation.",
-              "Réservé aux biens gérés dans le PMS Sojori."
+              "Pour les biens gérés dans le PMS Sojori."
             ],
             "talks": [
               "you"
@@ -2757,7 +2757,6 @@
         "own": [
           "Vous gardez votre PMS.",
           "Les mêmes agents, les mêmes modules WhatsApp.",
-          "Sans tarification dynamique, qui reste réservée au PMS Sojori.",
           "Le connecteur se qualifie avec vous avant de démarrer."
         ],
         "pricing": {
@@ -3038,7 +3037,7 @@
         },
         "dynamic_pricing": {
           "name": "Tarification dynamique",
-          "desc": "Recommande les prix et les applique avec votre autorisation. Biens du PMS Sojori uniquement."
+          "desc": "Recommande les prix et les applique avec votre autorisation. Pour les biens du PMS Sojori."
         },
         "agent_commercial_crm": {
           "name": "Agent Commercial avec CRM",
@@ -3056,7 +3055,7 @@
           "name": "Agent Finance",
           "desc": "Prépare vos suivis de comptes et de paiements, que vous validez."
         },
-        "blocked": "Non disponible avec votre PMS : la tarification dynamique ne s’applique qu’aux biens du PMS Sojori.",
+        "blocked": "Avec le PMS Sojori.",
         "forAccount": "pour votre compte",
         "agent_booking_call": {
           "name": "Agent Réservation Call",
@@ -3134,7 +3133,7 @@
         },
         "connection": {
           "name": "Connexion spécifique",
-          "desc": "Un outil ou un PMS à brancher qui n’est pas encore pris en charge.",
+          "desc": "Un outil ou un PMS à brancher, qualifié avec vous.",
           "detail": "à étudier avec vous"
         }
       },
@@ -3203,7 +3202,7 @@
         "conc_ext": {
           "type": "CONCIERGERIE",
           "socle": "Avec votre PMS",
-          "desc": "Vous le gardez. Mêmes agents et modules, sauf la tarification dynamique."
+          "desc": "Vous le gardez. Mêmes agents et modules WhatsApp."
         },
         "hotel_sojori": {
           "type": "HÔTEL OU RIAD",
@@ -3213,7 +3212,7 @@
         "hotel_ext": {
           "type": "HÔTEL OU RIAD",
           "socle": "Avec votre PMS",
-          "desc": "Vous le gardez. Mêmes agents et modules, sauf la tarification dynamique."
+          "desc": "Vous le gardez. Mêmes agents et modules WhatsApp."
         }
       },
       "form": {
