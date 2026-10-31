@@ -1,9 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import { useTranslations } from "next-intl";
+import { useTranslations } from 'next-intl';
 import { BackgroundEffects } from "@/components/BackgroundEffects";
-import { PageHeader, PageFooter, PageHero, StatsBar, FinalCTA } from "@/components/SharedComponents";
+import { PageHeader, PageFooter, PageHero, FinalCTA } from "@/components/SharedComponents";
 import { ScrollPaginationDots } from "@/components/shared/ScrollPaginationDots";
 import { InFlow } from '@/components/InFlow';
 import { FaqFromMessages } from '@/components/FaqFromMessages';
@@ -154,6 +154,7 @@ function WhatsAppPhone({ tab, t }: { tab: string; t: any }) {
 }
 
 export default function GuestExperiencePage() {
+  const tb = useTranslations('pageBodies.guest-experience');
   const t = useTranslations("guestExperience");
   const [tab, setTab] = useState("home");
 
@@ -266,17 +267,12 @@ export default function GuestExperiencePage() {
           </div>
         </section>
 
-        <StatsBar stats={Array.from({ length: 4 }).map((_, i) => {
-          const stat = t.raw(`stats.${i}`);
-          return { k: stat.key, l: stat.label };
-        })} />
-
         <InFlow
-          domain="Expérience client"
+          domain={tb('k001')}
           domainColor="#06b6d4"
-          self="Le parcours client se déroule tout seul, de la confirmation à la demande d'avis."
-          upstream={[{ label: 'Réservation confirmée', href: '/pms' }, { label: 'Chambre prête', href: '/teamflow' }, { label: 'Départ constaté' }]}
-          downstream={[{ label: 'Demandes en tâches', href: '/teamflow' }, { label: 'Extras sur la note', href: '/analytics' }, { label: 'Avis publié', href: '/channel-manager' }]}
+          self={tb('k002')}
+          upstream={[{ label: tb('k003'), href: '/pms' }, { label: tb('k004'), href: '/teamflow' }, { label: tb('k005') }]}
+          downstream={[{ label: tb('k006'), href: '/teamflow' }, { label: tb('k007'), href: '/analytics' }, { label: tb('k008'), href: '/channel-manager' }]}
         />
 
         <FaqFromMessages page="guest-experience" />

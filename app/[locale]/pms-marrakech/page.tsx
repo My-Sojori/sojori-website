@@ -4,7 +4,7 @@ import { Link } from '@/i18n/routing';
 import { FaqFromMessages } from '@/components/FaqFromMessages';
 import { PageSchema } from '@/components/PageSchema';
 import { BackgroundEffects } from '@/components/BackgroundEffects';
-import { PageHeader, PageFooter, PageHero, StatsBar, FinalCTA } from '@/components/SharedComponents';
+import { PageHeader, PageFooter, PageHero, FinalCTA } from '@/components/SharedComponents';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
@@ -17,85 +17,85 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 }
 
 export default async function PmsPageMarrakech({ params }: { params: Promise<{ locale: string }> }) {
+  const tb = await getTranslations('pageBodies.pms-marrakech');
   const { locale } = await params;
   return (
     <>
       <BackgroundEffects />
       <PageSchema
         crumbs={[
-          { name: 'Accueil', path: `/${locale}` },
-          { name: 'Solutions', path: `/${locale}/pms` },
-          { name: "PMS Hôtel Marrakech", path: `/${locale}/pms-marrakech` },
+          { name: tb('crumbHome'), path: `/${locale}` },
+          { name: tb('crumbSolutions'), path: `/${locale}/pms` },
+          { name: tb('k001'), path: `/${locale}/pms-marrakech` },
         ]}
-        serviceName={"PMS et orchestration hôtelière de Marrakech"}
-        serviceDescription={"PMS et moteur d'orchestration pour hôtels, riads et maisons d'hôtes à Marrakech : réservations, housekeeping, maintenance, channel manager, fiche police et taxe de séjour. Se connecte aussi à votre PMS existant."}
+        serviceName={tb('k002')}
+        serviceDescription={tb('k003')}
         areaServed={"Marrakech"}
       />
       <div style={{ position: 'relative', zIndex: 1 }}>
-        <PageHeader pageTitle="PMS Hôtel Marrakech" />
+        <PageHeader pageTitle={tb('k004')} />
 
         <PageHero
-          badge="PMS Hôtel · Marrakech"
-          title={<>PMS hôtel à Marrakech{' '}<br /><span className="gradient-text">et orchestration des opérations</span></>}
-          subtitle="Hôtels de charme, riads de la médina et maisons d&apos;hôtes : Sojori centralise le planning et les réservations, puis orchestre ce qui suit — ménage, maintenance, messages clients, tarification. Fiche police au check-in et taxe de séjour incluses."
-          cta1="Voir la démo"
-          cta2="Parler à un expert"
+          badge={tb('k005')}
+          title={<>{tb('k006')}{' '}<br /><span className="gradient-text">{tb('k007')}</span></>}
+          subtitle={tb('k008')}
+          cta1={tb('k009')}
+          cta2={tb('k010')}
         />
 
         {/* Réponse directe : bloc court et autonome, écrit pour être repris
             tel quel en featured snippet et par les moteurs de réponse. */}
         <section style={{ padding: '8px 32px 56px' }}>
           <div style={{ maxWidth: 900, margin: '0 auto' }}>
-            <div className="uppercase-sm" style={{ color: 'var(--text-3)', marginBottom: 12 }}>● Réponse directe</div>
+            <div className="uppercase-sm" style={{ color: 'var(--text-3)', marginBottom: 12 }}>{tb('k011')}</div>
             <p style={{ fontSize: 17, lineHeight: 1.7, color: 'var(--text-2)' }}>
-              Un PMS hôtel à Marrakech centralise les chambres, les réservations, la réception, les paiements et les indicateurs. Sojori va plus loin : une fois la réservation enregistrée, le moteur d&apos;orchestration déclenche les tâches de ménage au départ constaté, ouvre un ticket de maintenance sur une chambre signalée, envoie au client les messages de son séjour et adapte le prix selon la demande. La fiche police marocaine est collectée par le client lui-même avant l&apos;arrivée, et la taxe de séjour est calculée par nuit, par personne ou par séjour selon votre paramétrage. Sojori inclut son propre PMS et se connecte aux PMS déjà en place, dont Mews : vous n&apos;êtes pas obligé de remplacer l&apos;existant.
-            </p>
+              {tb('k012')}</p>
           </div>
         </section>
 
         <section style={{ padding: '40px 32px 64px', borderTop: '1px solid var(--glass-border)' }}>
           <div style={{ maxWidth: 900, margin: '0 auto' }}>
-            <h2 style={{ fontSize: 30, fontWeight: 700, letterSpacing: '-0.02em', marginBottom: 20 }}>Pourquoi Marrakech demande une orchestration, pas seulement un PMS</h2>
-            <p style={{ fontSize: 16, lineHeight: 1.75, color: 'var(--text-3)', marginBottom: 16 }}>Marrakech juxtapose des riads de médina de six chambres, des villas de la Palmeraie et des hôtels urbains. Les rythmes d&apos;arrivée, les profils clients et les conditions commerciales n&apos;ont rien de commun d&apos;un établissement à l&apos;autre.</p>
-            <p style={{ fontSize: 16, lineHeight: 1.75, color: 'var(--text-3)', marginBottom: 16 }}>Cette diversité se paie sur la coordination plus que sur la saisie. Un riad de médina n&apos;a pas de réception permanente : l&apos;arrivée du client, la disponibilité de la chambre et le passage du ménage doivent se synchroniser sans qu&apos;un responsable les rapproche à la main. C&apos;est ce travail-là que le PMS seul ne fait pas.</p>
+            <h2 style={{ fontSize: 30, fontWeight: 700, letterSpacing: '-0.02em', marginBottom: 20 }}>{tb('k013')}</h2>
+            <p style={{ fontSize: 16, lineHeight: 1.75, color: 'var(--text-3)', marginBottom: 16 }}>{tb('k014')}</p>
+            <p style={{ fontSize: 16, lineHeight: 1.75, color: 'var(--text-3)', marginBottom: 16 }}>{tb('k015')}</p>
           </div>
         </section>
 
         <section style={{ padding: '40px 32px 64px', borderTop: '1px solid var(--glass-border)' }}>
           <div style={{ maxWidth: 900, margin: '0 auto' }}>
-            <h2 style={{ fontSize: 30, fontWeight: 700, letterSpacing: '-0.02em', marginBottom: 20 }}>Quelles opérations centraliser à Marrakech ?</h2>
-            <p style={{ fontSize: 16, lineHeight: 1.75, color: 'var(--text-3)', marginBottom: 16 }}>La fiche de séjour reste le point de référence : dates, chambre, source, voyageurs, paiements, facture, demandes particulières. À Marrakech s&apos;y ajoutent presque systématiquement des services annexes — transfert aéroport, dîner au riad, excursion, hammam — qui doivent rester attachés au séjour.</p>
-            <p style={{ fontSize: 16, lineHeight: 1.75, color: 'var(--text-3)', marginBottom: 16 }}>Mais la centralisation ne suffit pas si chaque service demande ensuite une relance manuelle. Dans Sojori, la demande client arrivée par WhatsApp devient une tâche assignée, avec son responsable et son échéance, sans ressaisie.</p>
+            <h2 style={{ fontSize: 30, fontWeight: 700, letterSpacing: '-0.02em', marginBottom: 20 }}>{tb('k016')}</h2>
+            <p style={{ fontSize: 16, lineHeight: 1.75, color: 'var(--text-3)', marginBottom: 16 }}>{tb('k017')}</p>
+            <p style={{ fontSize: 16, lineHeight: 1.75, color: 'var(--text-3)', marginBottom: 16 }}>{tb('k018')}</p>
             <ul style={{ margin: '20px 0 0', paddingLeft: 20, color: 'var(--text-3)', lineHeight: 1.9, fontSize: 15 }}>
-              <li>Arrivées, départs, prolongations et changements de chambre</li>
-              <li>Réservations directes, OTA, agences, téléphone et walk-in</li>
-              <li>Paiements, soldes, factures, TVA et taxe de séjour</li>
-              <li>Fiche police marocaine collectée par le client avant l&apos;arrivée</li>
-              <li>Ménage et maintenance déclenchés sur les événements réels du séjour</li>
-              <li>Demandes clients WhatsApp transformées en tâches assignées</li>
+              <li>{tb('k019')}</li>
+              <li>{tb('k020')}</li>
+              <li>{tb('k021')}</li>
+              <li>{tb('k022')}</li>
+              <li>{tb('k023')}</li>
+              <li>{tb('k024')}</li>
             </ul>
           </div>
         </section>
 
         <section style={{ padding: '40px 32px 64px', borderTop: '1px solid var(--glass-border)' }}>
           <div style={{ maxWidth: 900, margin: '0 auto' }}>
-            <h2 style={{ fontSize: 30, fontWeight: 700, letterSpacing: '-0.02em', marginBottom: 20 }}>Booking, Airbnb et direct : le mix canaux à Marrakech</h2>
-            <p style={{ fontSize: 16, lineHeight: 1.75, color: 'var(--text-3)', marginBottom: 16 }}>À Marrakech, Booking et Airbnb pèsent différemment selon le type d&apos;établissement : un riad de médina vit souvent d&apos;Airbnb et du direct, un hôtel urbain davantage de Booking et des agences réceptives.</p>
-            <p style={{ fontSize: 16, lineHeight: 1.75, color: 'var(--text-3)', marginBottom: 16 }}>Le channel manager synchronise disponibilités et tarifs dans les deux sens. L&apos;enjeu n&apos;est pas seulement d&apos;éviter la surréservation, mais de mesurer la contribution nette de chaque canal — commission déduite — pour arbitrer où pousser le direct.</p>
+            <h2 style={{ fontSize: 30, fontWeight: 700, letterSpacing: '-0.02em', marginBottom: 20 }}>{tb('k025')}</h2>
+            <p style={{ fontSize: 16, lineHeight: 1.75, color: 'var(--text-3)', marginBottom: 16 }}>{tb('k026')}</p>
+            <p style={{ fontSize: 16, lineHeight: 1.75, color: 'var(--text-3)', marginBottom: 16 }}>{tb('k027')}</p>
           </div>
         </section>
 
         <section style={{ padding: '40px 32px 64px', borderTop: '1px solid var(--glass-border)' }}>
           <div style={{ maxWidth: 900, margin: '0 auto' }}>
-            <h2 style={{ fontSize: 30, fontWeight: 700, letterSpacing: '-0.02em', marginBottom: 20 }}>Quels indicateurs suivre pour un établissement à Marrakech ?</h2>
-            <p style={{ fontSize: 16, lineHeight: 1.75, color: 'var(--text-3)', marginBottom: 16 }}>La saisonnalité de Marrakech est brutale : festivals, marathon, vacances scolaires européennes, Ramadan. Le taux de remplissage seul ne dit rien si le prix moyen s&apos;effondre pour l&apos;atteindre.</p>
-            <p style={{ fontSize: 16, lineHeight: 1.75, color: 'var(--text-3)', marginBottom: 16 }}>La lecture utile croise l&apos;occupation à venir, le prix moyen, le revenu par chambre disponible et la part du direct — par période, par catégorie et par canal.</p>
+            <h2 style={{ fontSize: 30, fontWeight: 700, letterSpacing: '-0.02em', marginBottom: 20 }}>{tb('k028')}</h2>
+            <p style={{ fontSize: 16, lineHeight: 1.75, color: 'var(--text-3)', marginBottom: 16 }}>{tb('k029')}</p>
+            <p style={{ fontSize: 16, lineHeight: 1.75, color: 'var(--text-3)', marginBottom: 16 }}>{tb('k030')}</p>
             <ul style={{ margin: '20px 0 0', paddingLeft: 20, color: 'var(--text-3)', lineHeight: 1.9, fontSize: 15 }}>
-              <li>Occupation à 7, 30 et 60 jours</li>
-              <li>Prix moyen et revenu par chambre disponible</li>
-              <li>Revenu et annulations par canal</li>
-              <li>Part des réservations directes</li>
-              <li>Délai moyen de remise en état des chambres</li>
+              <li>{tb('k031')}</li>
+              <li>{tb('k032')}</li>
+              <li>{tb('k033')}</li>
+              <li>{tb('k034')}</li>
+              <li>{tb('k035')}</li>
             </ul>
           </div>
         </section>
@@ -108,50 +108,26 @@ export default async function PmsPageMarrakech({ params }: { params: Promise<{ l
             l'établissement. */}
         <section style={{ padding: '40px 32px 64px', borderTop: '1px solid var(--glass-border)' }}>
           <div style={{ maxWidth: 900, margin: '0 auto' }}>
-            <div className="uppercase-sm" style={{ color: 'var(--text-3)', marginBottom: 12 }}>● Conformité</div>
+            <div className="uppercase-sm" style={{ color: 'var(--text-3)', marginBottom: 12 }}>{tb('k036')}</div>
             <h2 style={{ fontSize: 30, fontWeight: 700, letterSpacing: '-0.02em', marginBottom: 20 }}>
-              Fiche de police : l&apos;obligation, et comment Sojori l&apos;orchestre à Marrakech
-            </h2>
+              {tb('k037')}</h2>
             <p style={{ fontSize: 16, lineHeight: 1.75, color: 'var(--text-3)', marginBottom: 16 }}>
-              Tout établissement d&apos;hébergement touristique au Maroc — hôtel, riad,
-              maison d&apos;hôtes, résidence — doit établir un bulletin individuel pour
-              chaque personne hébergée, marocaine ou étrangère. L&apos;obligation remonte
-              au dahir du 14 janvier 1953 et a été reprise par la loi 80-14 relative
-              aux établissements touristiques. Elle ne connaît pas d&apos;exception de
-              taille : un riad de quatre chambres y est tenu comme un hôtel de deux
-              cents.
-            </p>
+              {tb('k038')}</p>
             <p style={{ fontSize: 16, lineHeight: 1.75, color: 'var(--text-3)', marginBottom: 16 }}>
-              La déclaration s&apos;est dématérialisée. Le ministère du Tourisme, le
-              ministère de l&apos;Intérieur, la DGSN et la Gendarmerie Royale ont mis en
-              place la plateforme de télé-déclaration des nuitées (STDN), qui remplace
-              le dépôt des bulletins papier par une déclaration quotidienne en ligne.
-              Les manquements exposent, selon les sources professionnelles du secteur,
-              à des amendes de l&apos;ordre de 2 000 à 10 000 dirhams, et à une fermeture
-              administrative en cas de récidive.
-            </p>
+              {tb('k039')}</p>
             <div className="card" style={{ padding: 22, marginBottom: 16 }}>
-              <div style={{ fontSize: 16, fontWeight: 600, marginBottom: 10 }}>Ce que Sojori fait</div>
+              <div style={{ fontSize: 16, fontWeight: 600, marginBottom: 10 }}>{tb('k040')}</div>
               <p style={{ fontSize: 15, lineHeight: 1.7, color: 'var(--text-3)', marginBottom: 12 }}>
-                Sojori orchestre la <strong style={{ color: 'var(--text-2)' }}>collecte</strong> de la fiche,
-                pas la déclaration. Avant l&apos;arrivée, le client reçoit sur WhatsApp
-                son parcours de check-in : il renseigne lui-même son identité et
-                dépose sa pièce d&apos;identité. Les données arrivent complètes et
-                structurées dans le dossier du séjour, prêtes à être déclarées.
-              </p>
+                {tb('k041')}<strong style={{ color: 'var(--text-2)' }}>collecte</strong> {tb('k042')}</p>
               <ul style={{ margin: 0, paddingLeft: 20, color: 'var(--text-3)', lineHeight: 1.9, fontSize: 15 }}>
-                <li>La saisie se fait en amont, pas au comptoir à l&apos;arrivée</li>
-                <li>Le client remplit en français, en anglais ou en arabe</li>
-                <li>Les relances sont automatiques tant que la fiche est incomplète</li>
-                <li>Vous voyez d&apos;un coup d&apos;œil quels séjours sont en règle et lesquels ne le sont pas</li>
+                <li>{tb('k043')}</li>
+                <li>{tb('k044')}</li>
+                <li>{tb('k045')}</li>
+                <li>{tb('k046')}</li>
               </ul>
             </div>
             <p style={{ fontSize: 14, lineHeight: 1.7, color: 'var(--text-3)', fontStyle: 'italic' }}>
-              Sojori prépare les données ; la déclaration aux autorités reste la
-              démarche de l&apos;établissement. Les modalités exactes et les montants
-              applicables à votre catégorie sont à confirmer auprès de la DGSN et du
-              ministère du Tourisme, seuls habilités à les fixer.
-            </p>
+              {tb('k047')}</p>
           </div>
         </section>
 
@@ -160,15 +136,15 @@ export default async function PmsPageMarrakech({ params }: { params: Promise<{ l
             du site — 33 pages quasiment sans liens entre elles. */}
         <section style={{ padding: '40px 32px 64px', borderTop: '1px solid var(--glass-border)' }}>
           <div style={{ maxWidth: 1000, margin: '0 auto' }}>
-            <h2 style={{ fontSize: 30, fontWeight: 700, letterSpacing: '-0.02em', marginBottom: 20 }}>Les modules mobilisés de Marrakech</h2>
+            <h2 style={{ fontSize: 30, fontWeight: 700, letterSpacing: '-0.02em', marginBottom: 20 }}>{tb('k048')}</h2>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 16 }}>
               {[
-                { t: 'PMS', d: 'Planning, réservations, facturation, taxe de séjour.', link: '/pms' as const },
-                { t: 'Channel Manager', d: 'Booking, Expedia, Airbnb et OTA synchronisés dans les deux sens.', link: '/channel-manager' as const },
-                { t: 'TeamFlow', d: 'Ménage et maintenance déclenchés sur les événements réels.', link: '/teamflow' as const },
-                { t: 'WhatsApp', d: 'Check-in digital, fiche police, messages du séjour.', link: '/whatsapp' as const },
-                { t: 'Dynamic Pricing', d: 'Tarification ajustée sur la demande réelle.', link: '/dynamic-pricing' as const },
-                { t: 'Analytics', d: 'Occupation, prix moyen, RevPAR et mix canaux.', link: '/analytics' as const },
+                { t: 'PMS', d: tb('k049'), link: '/pms' as const },
+                { t: tb('k050'), d: tb('k051'), link: '/channel-manager' as const },
+                { t: 'TeamFlow', d: tb('k052'), link: '/teamflow' as const },
+                { t: 'WhatsApp', d: tb('k053'), link: '/whatsapp' as const },
+                { t: tb('k054'), d: tb('k055'), link: '/dynamic-pricing' as const },
+                { t: 'Analytics', d: tb('k056'), link: '/analytics' as const },
               ].map(c => (
                 <Link key={c.t} href={{ pathname: c.link, query: { source: 'seo-pms-marrakech' } }} className="card" style={{ padding: 20, textDecoration: 'none', display: 'block' }}>
                   <div style={{ fontSize: 16, fontWeight: 600, marginBottom: 6 }}>{c.t}</div>
@@ -178,39 +154,37 @@ export default async function PmsPageMarrakech({ params }: { params: Promise<{ l
             </div>
 
             <div style={{ marginTop: 28, fontSize: 14, color: 'var(--text-3)', lineHeight: 1.9 }}>
-              Sojori à Marrakech également :{' '}
-              <Link href={'/gestion-locative-marrakech' as const} style={{ color: '#f4cf5e', textDecoration: 'none' }}>gestion hôtelière de Marrakech</Link>
+              {tb('k057')}{' '}
+              <Link href={'/gestion-locative-marrakech' as const} style={{ color: '#f4cf5e', textDecoration: 'none' }}>{tb('k058')}</Link>
               {' · '}
-              <Link href={'/conciergerie-marrakech' as const} style={{ color: '#f4cf5e', textDecoration: 'none' }}>conciergerie de Marrakech</Link>
+              <Link href={'/conciergerie-marrakech' as const} style={{ color: '#f4cf5e', textDecoration: 'none' }}>{tb('k059')}</Link>
               <br />
               <br />
               <br />
-              Comparer :{' '}
-              <Link href={'/comparatif-pms-maroc' as const} style={{ color: '#f4cf5e', textDecoration: 'none' }}>Sojori face aux autres PMS du Maroc</Link>
-              Financement :{' '}
-              <Link href={'/go-siyaha' as const} style={{ color: '#f4cf5e', textDecoration: 'none' }}>Go Siyaha, la subvention digitalisation</Link>
+              {tb('k060')}{' '}
+              <Link href={'/comparatif-pms-maroc' as const} style={{ color: '#f4cf5e', textDecoration: 'none' }}>{tb('k061')}</Link>
+              {tb('k062')}{' '}
+              <Link href={'/go-siyaha' as const} style={{ color: '#f4cf5e', textDecoration: 'none' }}>{tb('k063')}</Link>
               <br />
-              Comprendre :{' '}
-              <Link href={'/orchestration' as const} style={{ color: '#f4cf5e', textDecoration: 'none', fontWeight: 600 }}>Qu&apos;est-ce que l&apos;orchestration hôtelière ?</Link>
-              Autres villes :{' '}
-              <Link href={'/pms-casablanca' as const} style={{ color: '#f4cf5e', textDecoration: 'none' }}>PMS Casablanca</Link>
+              {tb('k064')}{' '}
+              <Link href={'/orchestration' as const} style={{ color: '#f4cf5e', textDecoration: 'none', fontWeight: 600 }}>{tb('k065')}</Link>
+              {tb('k066')}{' '}
+              <Link href={'/pms-casablanca' as const} style={{ color: '#f4cf5e', textDecoration: 'none' }}>{tb('k067')}</Link>
               {' · '}
-              <Link href={'/pms-rabat' as const} style={{ color: '#f4cf5e', textDecoration: 'none' }}>PMS Rabat</Link>
+              <Link href={'/pms-rabat' as const} style={{ color: '#f4cf5e', textDecoration: 'none' }}>{tb('k068')}</Link>
               {' · '}
-              <Link href={'/pms-tanger' as const} style={{ color: '#f4cf5e', textDecoration: 'none' }}>PMS Tanger</Link>
+              <Link href={'/pms-tanger' as const} style={{ color: '#f4cf5e', textDecoration: 'none' }}>{tb('k069')}</Link>
               {' · '}
-              <Link href={'/pms-agadir' as const} style={{ color: '#f4cf5e', textDecoration: 'none' }}>PMS Agadir</Link>
+              <Link href={'/pms-agadir' as const} style={{ color: '#f4cf5e', textDecoration: 'none' }}>{tb('k070')}</Link>
             </div>
           </div>
         </section>
 
-        <StatsBar stats={[{"k": "500+", "l": "Chambres orchestrées"}, {"k": "70+", "l": "Établissements"}, {"k": "13M", "l": "Visiteurs/an à Marrakech"}, {"k": "FR/AR/EN", "l": "Langues natives"}]} />
-
         <FaqFromMessages page="pms-marrakech" />
 
         <FinalCTA
-          title={<>Orchestrez votre établissement de Marrakech.{' '}<span className="gradient-text">1 mois d&apos;essai gratuit.</span></>}
-          subtitle="Mise en route accompagnée en français. Migration depuis votre outil actuel prise en charge. Sojori se connecte aussi à votre PMS existant."
+          title={<>{tb('k076')}{' '}<span className="gradient-text">{tb('k077')}</span></>}
+          subtitle={tb('k078')}
         />
 
         <PageFooter />

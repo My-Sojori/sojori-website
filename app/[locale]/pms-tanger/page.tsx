@@ -17,85 +17,85 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 }
 
 export default async function PmsPageTanger({ params }: { params: Promise<{ locale: string }> }) {
+  const tb = await getTranslations('pageBodies.pms-tanger');
   const { locale } = await params;
   return (
     <>
       <BackgroundEffects />
       <PageSchema
         crumbs={[
-          { name: 'Accueil', path: `/${locale}` },
-          { name: 'Solutions', path: `/${locale}/pms` },
-          { name: "PMS Hôtel Tanger", path: `/${locale}/pms-tanger` },
+          { name: tb('crumbHome'), path: `/${locale}` },
+          { name: tb('crumbSolutions'), path: `/${locale}/pms` },
+          { name: tb('k001'), path: `/${locale}/pms-tanger` },
         ]}
-        serviceName={"PMS et orchestration hôtelière de Tanger"}
-        serviceDescription={"PMS et moteur d'orchestration pour hôtels, riads et résidences à Tanger : forte saisonnalité, housekeeping, maintenance, channel manager, fiche police et taxe de séjour. Se connecte aussi à votre PMS existant."}
+        serviceName={tb('k002')}
+        serviceDescription={tb('k003')}
         areaServed={"Tanger"}
       />
       <div style={{ position: 'relative', zIndex: 1 }}>
-        <PageHeader pageTitle="PMS Hôtel Tanger" />
+        <PageHeader pageTitle={tb('k004')} />
 
         <PageHero
-          badge="PMS Hôtel · Tanger"
-          title={<>PMS hôtel à Tanger{' '}<br /><span className="gradient-text">et orchestration des opérations</span></>}
-          subtitle="Hôtels, riads de la médina et résidences en bord de mer : Sojori centralise les réservations puis orchestre ménage, maintenance et relation client, y compris en plein pic estival. Fiche police au check-in et taxe de séjour incluses."
-          cta1="Voir la démo"
-          cta2="Parler à un expert"
+          badge={tb('k005')}
+          title={<>{tb('k006')}{' '}<br /><span className="gradient-text">{tb('k007')}</span></>}
+          subtitle={tb('k008')}
+          cta1={tb('k009')}
+          cta2={tb('k010')}
         />
 
         {/* Réponse directe : bloc court et autonome, écrit pour être repris
             tel quel en featured snippet et par les moteurs de réponse. */}
         <section style={{ padding: '8px 32px 56px' }}>
           <div style={{ maxWidth: 900, margin: '0 auto' }}>
-            <div className="uppercase-sm" style={{ color: 'var(--text-3)', marginBottom: 12 }}>● Réponse directe</div>
+            <div className="uppercase-sm" style={{ color: 'var(--text-3)', marginBottom: 12 }}>{tb('k011')}</div>
             <p style={{ fontSize: 17, lineHeight: 1.7, color: 'var(--text-2)' }}>
-              Un PMS hôtel à Tanger doit absorber un écart d&apos;activité considérable entre l&apos;été et le reste de l&apos;année. Sojori enregistre le séjour puis orchestre ce qui suit — ménage, maintenance, messages clients, tarification — et c&apos;est précisément en haute saison, quand l&apos;équipe est saturée, que l&apos;automatisation des tâches change le résultat. La fiche police est collectée par le client avant l&apos;arrivée et la taxe de séjour est paramétrable. Sojori inclut son propre PMS et se connecte aux PMS déjà en place, dont Mews.
-            </p>
+              {tb('k012')}</p>
           </div>
         </section>
 
         <section style={{ padding: '40px 32px 64px', borderTop: '1px solid var(--glass-border)' }}>
           <div style={{ maxWidth: 900, margin: '0 auto' }}>
-            <h2 style={{ fontSize: 30, fontWeight: 700, letterSpacing: '-0.02em', marginBottom: 20 }}>Pourquoi la saisonnalité de Tanger change tout</h2>
-            <p style={{ fontSize: 16, lineHeight: 1.75, color: 'var(--text-3)', marginBottom: 16 }}>Tanger vit un été très dense — diaspora marocaine, tourisme espagnol arrivant par le détroit, croisiéristes — puis une longue période creuse. L&apos;écart d&apos;occupation entre août et janvier dépasse ce que connaissent Casablanca ou Rabat.</p>
-            <p style={{ fontSize: 16, lineHeight: 1.75, color: 'var(--text-3)', marginBottom: 16 }}>Cette amplitude a une conséquence concrète : l&apos;équipe d&apos;été est en partie saisonnière. Un fonctionnement qui repose sur l&apos;expérience d&apos;un responsable présent toute l&apos;année s&apos;effondre en juillet, quand ce sont des renforts récents qui exécutent. Des tâches déclenchées automatiquement et envoyées sur WhatsApp ne dépendent pas de cette mémoire.</p>
+            <h2 style={{ fontSize: 30, fontWeight: 700, letterSpacing: '-0.02em', marginBottom: 20 }}>{tb('k013')}</h2>
+            <p style={{ fontSize: 16, lineHeight: 1.75, color: 'var(--text-3)', marginBottom: 16 }}>{tb('k014')}</p>
+            <p style={{ fontSize: 16, lineHeight: 1.75, color: 'var(--text-3)', marginBottom: 16 }}>{tb('k015')}</p>
           </div>
         </section>
 
         <section style={{ padding: '40px 32px 64px', borderTop: '1px solid var(--glass-border)' }}>
           <div style={{ maxWidth: 900, margin: '0 auto' }}>
-            <h2 style={{ fontSize: 30, fontWeight: 700, letterSpacing: '-0.02em', marginBottom: 20 }}>Quelles opérations centraliser à Tanger ?</h2>
-            <p style={{ fontSize: 16, lineHeight: 1.75, color: 'var(--text-3)', marginBottom: 16 }}>La fiche de séjour porte les dates, la chambre, la source, les voyageurs, les paiements et la facture. En bord de mer s&apos;y ajoutent des services saisonniers — transfert, plage, restauration — qui n&apos;existent que trois mois par an.</p>
-            <p style={{ fontSize: 16, lineHeight: 1.75, color: 'var(--text-3)', marginBottom: 16 }}>Le point critique reste la remise en état en haute saison : avec un taux d&apos;occupation proche du maximum, une chambre non prête décale une arrivée, et il n&apos;existe aucune chambre de secours pour absorber le retard.</p>
+            <h2 style={{ fontSize: 30, fontWeight: 700, letterSpacing: '-0.02em', marginBottom: 20 }}>{tb('k016')}</h2>
+            <p style={{ fontSize: 16, lineHeight: 1.75, color: 'var(--text-3)', marginBottom: 16 }}>{tb('k017')}</p>
+            <p style={{ fontSize: 16, lineHeight: 1.75, color: 'var(--text-3)', marginBottom: 16 }}>{tb('k018')}</p>
             <ul style={{ margin: '20px 0 0', paddingLeft: 20, color: 'var(--text-3)', lineHeight: 1.9, fontSize: 15 }}>
-              <li>Arrivées, départs et rotations en pic estival</li>
-              <li>Réservations directes, OTA, agences et tour-opérateurs</li>
-              <li>Paiements, soldes, factures, TVA et taxe de séjour</li>
-              <li>Fiche police marocaine collectée par le client avant l&apos;arrivée</li>
-              <li>Ménage et maintenance déclenchés sur les événements réels</li>
-              <li>Consignes transmises aux renforts saisonniers sur WhatsApp</li>
+              <li>{tb('k019')}</li>
+              <li>{tb('k020')}</li>
+              <li>{tb('k021')}</li>
+              <li>{tb('k022')}</li>
+              <li>{tb('k023')}</li>
+              <li>{tb('k024')}</li>
             </ul>
           </div>
         </section>
 
         <section style={{ padding: '40px 32px 64px', borderTop: '1px solid var(--glass-border)' }}>
           <div style={{ maxWidth: 900, margin: '0 auto' }}>
-            <h2 style={{ fontSize: 30, fontWeight: 700, letterSpacing: '-0.02em', marginBottom: 20 }}>Booking, Airbnb et tour-opérateurs à Tanger</h2>
-            <p style={{ fontSize: 16, lineHeight: 1.75, color: 'var(--text-3)', marginBottom: 16 }}>Le mix tangérois bouge avec la saison : les tour-opérateurs et Booking dominent l&apos;été, Airbnb pèse sur les résidences en bord de mer, et le direct porte la clientèle de la diaspora qui revient chaque année au même endroit.</p>
-            <p style={{ fontSize: 16, lineHeight: 1.75, color: 'var(--text-3)', marginBottom: 16 }}>Le channel manager tient les disponibilités à jour dans les deux sens — indispensable quand le remplissage frôle le maximum et qu&apos;une surréservation ne peut plus être absorbée.</p>
+            <h2 style={{ fontSize: 30, fontWeight: 700, letterSpacing: '-0.02em', marginBottom: 20 }}>{tb('k025')}</h2>
+            <p style={{ fontSize: 16, lineHeight: 1.75, color: 'var(--text-3)', marginBottom: 16 }}>{tb('k026')}</p>
+            <p style={{ fontSize: 16, lineHeight: 1.75, color: 'var(--text-3)', marginBottom: 16 }}>{tb('k027')}</p>
           </div>
         </section>
 
         <section style={{ padding: '40px 32px 64px', borderTop: '1px solid var(--glass-border)' }}>
           <div style={{ maxWidth: 900, margin: '0 auto' }}>
-            <h2 style={{ fontSize: 30, fontWeight: 700, letterSpacing: '-0.02em', marginBottom: 20 }}>Quels indicateurs suivre pour un hôtel à Tanger ?</h2>
-            <p style={{ fontSize: 16, lineHeight: 1.75, color: 'var(--text-3)', marginBottom: 16 }}>Avec une telle saisonnalité, la moyenne annuelle n&apos;a aucune valeur de pilotage. Ce qui compte est le rythme de prise de réservations comparé à la même période l&apos;an passé : c&apos;est le seul signal assez précoce pour corriger les prix d&apos;été.</p>
-            <p style={{ fontSize: 16, lineHeight: 1.75, color: 'var(--text-3)', marginBottom: 16 }}>En basse saison, la lecture bascule sur le point mort et sur la capacité à capter les séjours d&apos;affaires et de week-end.</p>
+            <h2 style={{ fontSize: 30, fontWeight: 700, letterSpacing: '-0.02em', marginBottom: 20 }}>{tb('k028')}</h2>
+            <p style={{ fontSize: 16, lineHeight: 1.75, color: 'var(--text-3)', marginBottom: 16 }}>{tb('k029')}</p>
+            <p style={{ fontSize: 16, lineHeight: 1.75, color: 'var(--text-3)', marginBottom: 16 }}>{tb('k030')}</p>
             <ul style={{ margin: '20px 0 0', paddingLeft: 20, color: 'var(--text-3)', lineHeight: 1.9, fontSize: 15 }}>
-              <li>Rythme de réservation comparé à l&apos;an passé</li>
-              <li>Occupation et prix moyen par mois, jamais en moyenne annuelle</li>
-              <li>Revenu et annulations par canal</li>
-              <li>Part des réservations directes et de la clientèle fidèle</li>
-              <li>Délai de remise en état des chambres en pic</li>
+              <li>{tb('k031')}</li>
+              <li>{tb('k032')}</li>
+              <li>{tb('k033')}</li>
+              <li>{tb('k034')}</li>
+              <li>{tb('k035')}</li>
             </ul>
           </div>
         </section>
@@ -108,50 +108,26 @@ export default async function PmsPageTanger({ params }: { params: Promise<{ loca
             l'établissement. */}
         <section style={{ padding: '40px 32px 64px', borderTop: '1px solid var(--glass-border)' }}>
           <div style={{ maxWidth: 900, margin: '0 auto' }}>
-            <div className="uppercase-sm" style={{ color: 'var(--text-3)', marginBottom: 12 }}>● Conformité</div>
+            <div className="uppercase-sm" style={{ color: 'var(--text-3)', marginBottom: 12 }}>{tb('k036')}</div>
             <h2 style={{ fontSize: 30, fontWeight: 700, letterSpacing: '-0.02em', marginBottom: 20 }}>
-              Fiche de police : l&apos;obligation, et comment Sojori l&apos;orchestre à Tanger
-            </h2>
+              {tb('k037')}</h2>
             <p style={{ fontSize: 16, lineHeight: 1.75, color: 'var(--text-3)', marginBottom: 16 }}>
-              Tout établissement d&apos;hébergement touristique au Maroc — hôtel, riad,
-              maison d&apos;hôtes, résidence — doit établir un bulletin individuel pour
-              chaque personne hébergée, marocaine ou étrangère. L&apos;obligation remonte
-              au dahir du 14 janvier 1953 et a été reprise par la loi 80-14 relative
-              aux établissements touristiques. Elle ne connaît pas d&apos;exception de
-              taille : un riad de quatre chambres y est tenu comme un hôtel de deux
-              cents.
-            </p>
+              {tb('k038')}</p>
             <p style={{ fontSize: 16, lineHeight: 1.75, color: 'var(--text-3)', marginBottom: 16 }}>
-              La déclaration s&apos;est dématérialisée. Le ministère du Tourisme, le
-              ministère de l&apos;Intérieur, la DGSN et la Gendarmerie Royale ont mis en
-              place la plateforme de télé-déclaration des nuitées (STDN), qui remplace
-              le dépôt des bulletins papier par une déclaration quotidienne en ligne.
-              Les manquements exposent, selon les sources professionnelles du secteur,
-              à des amendes de l&apos;ordre de 2 000 à 10 000 dirhams, et à une fermeture
-              administrative en cas de récidive.
-            </p>
+              {tb('k039')}</p>
             <div className="card" style={{ padding: 22, marginBottom: 16 }}>
-              <div style={{ fontSize: 16, fontWeight: 600, marginBottom: 10 }}>Ce que Sojori fait</div>
+              <div style={{ fontSize: 16, fontWeight: 600, marginBottom: 10 }}>{tb('k040')}</div>
               <p style={{ fontSize: 15, lineHeight: 1.7, color: 'var(--text-3)', marginBottom: 12 }}>
-                Sojori orchestre la <strong style={{ color: 'var(--text-2)' }}>collecte</strong> de la fiche,
-                pas la déclaration. Avant l&apos;arrivée, le client reçoit sur WhatsApp
-                son parcours de check-in : il renseigne lui-même son identité et
-                dépose sa pièce d&apos;identité. Les données arrivent complètes et
-                structurées dans le dossier du séjour, prêtes à être déclarées.
-              </p>
+                {tb('k041')}<strong style={{ color: 'var(--text-2)' }}>collecte</strong> {tb('k042')}</p>
               <ul style={{ margin: 0, paddingLeft: 20, color: 'var(--text-3)', lineHeight: 1.9, fontSize: 15 }}>
-                <li>La saisie se fait en amont, pas au comptoir à l&apos;arrivée</li>
-                <li>Le client remplit en français, en anglais ou en arabe</li>
-                <li>Les relances sont automatiques tant que la fiche est incomplète</li>
-                <li>Vous voyez d&apos;un coup d&apos;œil quels séjours sont en règle et lesquels ne le sont pas</li>
+                <li>{tb('k043')}</li>
+                <li>{tb('k044')}</li>
+                <li>{tb('k045')}</li>
+                <li>{tb('k046')}</li>
               </ul>
             </div>
             <p style={{ fontSize: 14, lineHeight: 1.7, color: 'var(--text-3)', fontStyle: 'italic' }}>
-              Sojori prépare les données ; la déclaration aux autorités reste la
-              démarche de l&apos;établissement. Les modalités exactes et les montants
-              applicables à votre catégorie sont à confirmer auprès de la DGSN et du
-              ministère du Tourisme, seuls habilités à les fixer.
-            </p>
+              {tb('k047')}</p>
           </div>
         </section>
 
@@ -160,15 +136,15 @@ export default async function PmsPageTanger({ params }: { params: Promise<{ loca
             du site — 33 pages quasiment sans liens entre elles. */}
         <section style={{ padding: '40px 32px 64px', borderTop: '1px solid var(--glass-border)' }}>
           <div style={{ maxWidth: 1000, margin: '0 auto' }}>
-            <h2 style={{ fontSize: 30, fontWeight: 700, letterSpacing: '-0.02em', marginBottom: 20 }}>Les modules mobilisés de Tanger</h2>
+            <h2 style={{ fontSize: 30, fontWeight: 700, letterSpacing: '-0.02em', marginBottom: 20 }}>{tb('k048')}</h2>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 16 }}>
               {[
-                { t: 'PMS', d: 'Planning, réservations, facturation, taxe de séjour.', link: '/pms' as const },
-                { t: 'Channel Manager', d: 'Booking, Expedia, Airbnb et OTA synchronisés dans les deux sens.', link: '/channel-manager' as const },
-                { t: 'TeamFlow', d: 'Ménage et maintenance déclenchés sur les événements réels.', link: '/teamflow' as const },
-                { t: 'WhatsApp', d: 'Check-in digital, fiche police, messages du séjour.', link: '/whatsapp' as const },
-                { t: 'Dynamic Pricing', d: 'Tarification ajustée sur la demande réelle.', link: '/dynamic-pricing' as const },
-                { t: 'Analytics', d: 'Occupation, prix moyen, RevPAR et mix canaux.', link: '/analytics' as const },
+                { t: 'PMS', d: tb('k049'), link: '/pms' as const },
+                { t: tb('k050'), d: tb('k051'), link: '/channel-manager' as const },
+                { t: 'TeamFlow', d: tb('k052'), link: '/teamflow' as const },
+                { t: 'WhatsApp', d: tb('k053'), link: '/whatsapp' as const },
+                { t: tb('k054'), d: tb('k055'), link: '/dynamic-pricing' as const },
+                { t: 'Analytics', d: tb('k056'), link: '/analytics' as const },
               ].map(c => (
                 <Link key={c.t} href={{ pathname: c.link, query: { source: 'seo-pms-tanger' } }} className="card" style={{ padding: 20, textDecoration: 'none', display: 'block' }}>
                   <div style={{ fontSize: 16, fontWeight: 600, marginBottom: 6 }}>{c.t}</div>
@@ -178,39 +154,39 @@ export default async function PmsPageTanger({ params }: { params: Promise<{ loca
             </div>
 
             <div style={{ marginTop: 28, fontSize: 14, color: 'var(--text-3)', lineHeight: 1.9 }}>
-              Sojori à Tanger également :{' '}
-              <Link href={'/gestion-locative-tanger' as const} style={{ color: '#f4cf5e', textDecoration: 'none' }}>gestion hôtelière de Tanger</Link>
+              {tb('k057')}{' '}
+              <Link href={'/gestion-locative-tanger' as const} style={{ color: '#f4cf5e', textDecoration: 'none' }}>{tb('k058')}</Link>
               {' · '}
-              <Link href={'/conciergerie-tanger' as const} style={{ color: '#f4cf5e', textDecoration: 'none' }}>conciergerie de Tanger</Link>
+              <Link href={'/conciergerie-tanger' as const} style={{ color: '#f4cf5e', textDecoration: 'none' }}>{tb('k059')}</Link>
               <br />
               <br />
               <br />
-              Comparer :{' '}
-              <Link href={'/comparatif-pms-maroc' as const} style={{ color: '#f4cf5e', textDecoration: 'none' }}>Sojori face aux autres PMS du Maroc</Link>
-              Financement :{' '}
-              <Link href={'/go-siyaha' as const} style={{ color: '#f4cf5e', textDecoration: 'none' }}>Go Siyaha, la subvention digitalisation</Link>
+              {tb('k060')}{' '}
+              <Link href={'/comparatif-pms-maroc' as const} style={{ color: '#f4cf5e', textDecoration: 'none' }}>{tb('k061')}</Link>
+              {tb('k062')}{' '}
+              <Link href={'/go-siyaha' as const} style={{ color: '#f4cf5e', textDecoration: 'none' }}>{tb('k063')}</Link>
               <br />
-              Comprendre :{' '}
-              <Link href={'/orchestration' as const} style={{ color: '#f4cf5e', textDecoration: 'none', fontWeight: 600 }}>Qu&apos;est-ce que l&apos;orchestration hôtelière ?</Link>
-              Autres villes :{' '}
-              <Link href={'/pms-marrakech' as const} style={{ color: '#f4cf5e', textDecoration: 'none' }}>PMS Marrakech</Link>
+              {tb('k064')}{' '}
+              <Link href={'/orchestration' as const} style={{ color: '#f4cf5e', textDecoration: 'none', fontWeight: 600 }}>{tb('k065')}</Link>
+              {tb('k066')}{' '}
+              <Link href={'/pms-marrakech' as const} style={{ color: '#f4cf5e', textDecoration: 'none' }}>{tb('k067')}</Link>
               {' · '}
-              <Link href={'/pms-casablanca' as const} style={{ color: '#f4cf5e', textDecoration: 'none' }}>PMS Casablanca</Link>
+              <Link href={'/pms-casablanca' as const} style={{ color: '#f4cf5e', textDecoration: 'none' }}>{tb('k068')}</Link>
               {' · '}
-              <Link href={'/pms-rabat' as const} style={{ color: '#f4cf5e', textDecoration: 'none' }}>PMS Rabat</Link>
+              <Link href={'/pms-rabat' as const} style={{ color: '#f4cf5e', textDecoration: 'none' }}>{tb('k069')}</Link>
               {' · '}
-              <Link href={'/pms-agadir' as const} style={{ color: '#f4cf5e', textDecoration: 'none' }}>PMS Agadir</Link>
+              <Link href={'/pms-agadir' as const} style={{ color: '#f4cf5e', textDecoration: 'none' }}>{tb('k070')}</Link>
             </div>
           </div>
         </section>
 
-        <StatsBar stats={[{"k": "Été", "l": "Pic d'activité"}, {"k": "24/7", "l": "Support FR/AR/ES"}, {"k": "2-way", "l": "Synchronisation canaux"}, {"k": "WhatsApp", "l": "Équipes saisonnières"}]} />
+        <StatsBar stats={[{"k": tb('k071'), "l": tb('k072')}, {"k": "WhatsApp", "l": tb('k075')}]} />
 
         <FaqFromMessages page="pms-tanger" />
 
         <FinalCTA
-          title={<>Orchestrez votre établissement de Tanger.{' '}<span className="gradient-text">1 mois d&apos;essai gratuit.</span></>}
-          subtitle="Mise en route accompagnée en français. Migration depuis votre outil actuel prise en charge. Sojori se connecte aussi à votre PMS existant."
+          title={<>{tb('k076')}{' '}<span className="gradient-text">{tb('k077')}</span></>}
+          subtitle={tb('k078')}
         />
 
         <PageFooter />

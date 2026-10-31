@@ -29,69 +29,53 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
  * attribués comme tels dans le texte.
  */
 export default async function GoSiyahaPage({ params }: { params: Promise<{ locale: string }> }) {
+  const tb = await getTranslations('pageBodies.go-siyaha');
   const { locale } = await params;
   return (
     <>
       <BackgroundEffects />
       <PageSchema
         crumbs={[
-          { name: 'Accueil', path: `/${locale}` },
-          { name: 'Solutions', path: `/${locale}/pms` },
-          { name: 'Go Siyaha', path: `/${locale}/go-siyaha` },
+          { name: tb('crumbHome'), path: `/${locale}` },
+          { name: tb('crumbSolutions'), path: `/${locale}/pms` },
+          { name: tb('k001'), path: `/${locale}/go-siyaha` },
         ]}
-        serviceName="Digitalisation hôtelière et programme Go Siyaha"
-        serviceDescription="Moteur d'orchestration de l'hospitalité pour les établissements touristiques marocains engagés dans une démarche de digitalisation."
+        serviceName={tb('k002')}
+        serviceDescription={tb('k003')}
         areaServed="Maroc"
       />
       <div style={{ position: 'relative', zIndex: 1 }}>
-        <PageHeader pageTitle="Go Siyaha" />
+        <PageHeader pageTitle={tb('k004')} />
 
         <PageHero
-          badge="🇲🇦 Digitalisation · Programme public"
-          title={<>Go Siyaha{' '}<br /><span className="gradient-text">et la digitalisation de votre établissement</span></>}
-          subtitle="Le programme public marocain soutient la transformation digitale des établissements touristiques. Voici ce qu'il couvre, qui est éligible, et où Sojori intervient — sans promesse que nous ne pourrions pas tenir."
-          cta1="Voir la démo"
-          cta2="Parler à un expert"
+          badge={tb('k005')}
+          title={<>{tb('k006')}{' '}<br /><span className="gradient-text">{tb('k007')}</span></>}
+          subtitle={tb('k008')}
+          cta1={tb('k009')}
+          cta2={tb('k010')}
         />
 
         <section style={{ padding: '8px 32px 56px' }}>
           <div style={{ maxWidth: 900, margin: '0 auto' }}>
-            <div className="uppercase-sm" style={{ color: 'var(--text-3)', marginBottom: 12 }}>● Réponse directe</div>
+            <div className="uppercase-sm" style={{ color: 'var(--text-3)', marginBottom: 12 }}>{tb('k011')}</div>
             <p style={{ fontSize: 17, lineHeight: 1.7, color: 'var(--text-2)' }}>
-              Go Siyaha est un programme du ministère du Tourisme déployé par Maroc PME
-              pour moderniser le tissu touristique marocain. Il comporte trois axes :
-              appui à l&apos;investissement, croissance verte, transformation digitale et
-              assistance technique. Sur le volet digital, les sources professionnelles
-              du secteur font état d&apos;une prise en charge pouvant atteindre 90 % des
-              dépenses d&apos;expertise, de conseil et de transformation numérique, contre
-              30 à 40 % pour les investissements physiques. Sont visées les entreprises
-              de droit privé marocain à capital 100 % privé du secteur touristique, avec
-              un chiffre d&apos;affaires moyen inférieur à 200 millions de dirhams sur trois
-              exercices ; depuis juillet 2025, TPE, maisons d&apos;hôtes et coopératives sont
-              pleinement éligibles. Les taux, plafonds et conditions exacts relèvent de
-              Maroc PME, qui instruit les dossiers.
-            </p>
+              {tb('k012')}</p>
           </div>
         </section>
 
         <section style={{ padding: '40px 32px 64px', borderTop: '1px solid var(--glass-border)' }}>
           <div style={{ maxWidth: 900, margin: '0 auto' }}>
             <h2 style={{ fontSize: 30, fontWeight: 700, letterSpacing: '-0.02em', marginBottom: 20 }}>
-              Ce que couvre le volet digital
-            </h2>
+              {tb('k013')}</h2>
             <p style={{ fontSize: 16, lineHeight: 1.75, color: 'var(--text-3)', marginBottom: 16 }}>
-              Le volet transformation digitale et assistance technique porte sur ce qui
-              relève de l&apos;immatériel : expertise, conseil, marketing, outils numériques.
-              C&apos;est la part la mieux soutenue du programme, nettement plus que les
-              travaux et les équipements.
-            </p>
+              {tb('k014')}</p>
             <ul style={{ margin: '20px 0 0', paddingLeft: 20, color: 'var(--text-3)', lineHeight: 1.9, fontSize: 15 }}>
-              <li>Site web et moteur de réservation</li>
-              <li>Référencement local et présence en ligne</li>
-              <li>Identité de marque, contenus photo et vidéo</li>
-              <li>Campagnes d&apos;acquisition</li>
-              <li>Solutions de gestion : PMS, channel manager</li>
-              <li>Accompagnement et stratégie</li>
+              <li>{tb('k015')}</li>
+              <li>{tb('k016')}</li>
+              <li>{tb('k017')}</li>
+              <li>{tb('k018')}</li>
+              <li>{tb('k019')}</li>
+              <li>{tb('k020')}</li>
             </ul>
           </div>
         </section>
@@ -99,47 +83,30 @@ export default async function GoSiyahaPage({ params }: { params: Promise<{ local
         <section style={{ padding: '40px 32px 64px', borderTop: '1px solid var(--glass-border)' }}>
           <div style={{ maxWidth: 900, margin: '0 auto' }}>
             <h2 style={{ fontSize: 30, fontWeight: 700, letterSpacing: '-0.02em', marginBottom: 20 }}>
-              Où Sojori intervient
-            </h2>
+              {tb('k021')}</h2>
             <p style={{ fontSize: 16, lineHeight: 1.75, color: 'var(--text-3)', marginBottom: 16 }}>
-              Une subvention finance un projet, pas un logiciel isolé. Si vous montez un
-              dossier, l&apos;enjeu est de décrire ce que la digitalisation change
-              concrètement dans votre exploitation — et c&apos;est exactement ce que Sojori
-              rend démontrable : des réservations centralisées, un ménage et une
-              maintenance déclenchés sur les événements réels du séjour, une
-              communication client qui ne dépend plus d&apos;un téléphone personnel, une
-              fiche de police collectée avant l&apos;arrivée, une tarification qui suit la
-              demande.
-            </p>
+              {tb('k022')}</p>
             <p style={{ fontSize: 16, lineHeight: 1.75, color: 'var(--text-3)', marginBottom: 16 }}>
-              De notre côté, nous fournissons ce dont votre dossier a besoin : un devis
-              détaillé, la description fonctionnelle du périmètre, et le calendrier de
-              déploiement. L&apos;instruction et la décision appartiennent à Maroc PME.
-            </p>
+              {tb('k023')}</p>
             <div className="card" style={{ padding: 22 }}>
-              <div style={{ fontSize: 16, fontWeight: 600, marginBottom: 10 }}>Ce que nous ne disons pas</div>
+              <div style={{ fontSize: 16, fontWeight: 600, marginBottom: 10 }}>{tb('k024')}</div>
               <p style={{ fontSize: 15, lineHeight: 1.7, color: 'var(--text-3)' }}>
-                Nous ne revendiquons aucun agrément Go Siyaha, et nous ne vous
-                garantissons pas une subvention. Un éditeur qui affirme que son logiciel
-                est « financé à 90 % » vous engage sur une décision qui ne lui appartient
-                pas. Adressez-vous à Maroc PME pour connaître votre éligibilité réelle et
-                savoir si un prestataire référencé est exigé.
-              </p>
+                {tb('k025')}</p>
             </div>
           </div>
         </section>
 
         <section style={{ padding: '32px 32px 64px', borderTop: '1px solid var(--glass-border)' }}>
           <div style={{ maxWidth: 1000, margin: '0 auto' }}>
-            <h2 style={{ fontSize: 30, fontWeight: 700, letterSpacing: '-0.02em', marginBottom: 20 }}>Le périmètre Sojori</h2>
+            <h2 style={{ fontSize: 30, fontWeight: 700, letterSpacing: '-0.02em', marginBottom: 20 }}>{tb('k026')}</h2>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 16 }}>
               {[
-                { t: 'PMS', d: 'Planning, réservations, facturation, taxe de séjour.', link: '/pms' as const },
-                { t: 'Channel Manager', d: 'Booking, Expedia, Airbnb et OTA synchronisés dans les deux sens.', link: '/channel-manager' as const },
-                { t: 'TeamFlow', d: 'Ménage et maintenance déclenchés sur les événements réels.', link: '/teamflow' as const },
-                { t: 'WhatsApp', d: 'Check-in digital, fiche de police, messages du séjour.', link: '/whatsapp' as const },
-                { t: 'Dynamic Pricing', d: 'Tarification ajustée sur la demande réelle.', link: '/dynamic-pricing' as const },
-                { t: 'Analytics', d: 'Occupation, prix moyen, RevPAR et mix canaux.', link: '/analytics' as const },
+                { t: 'PMS', d: tb('k027'), link: '/pms' as const },
+                { t: tb('k028'), d: tb('k029'), link: '/channel-manager' as const },
+                { t: 'TeamFlow', d: tb('k030'), link: '/teamflow' as const },
+                { t: 'WhatsApp', d: tb('k031'), link: '/whatsapp' as const },
+                { t: tb('k032'), d: tb('k033'), link: '/dynamic-pricing' as const },
+                { t: 'Analytics', d: tb('k034'), link: '/analytics' as const },
               ].map(c => (
                 <Link key={c.t} href={{ pathname: c.link, query: { source: 'seo-go-siyaha' } }} className="card" style={{ padding: 20, textDecoration: 'none', display: 'block' }}>
                   <div style={{ fontSize: 16, fontWeight: 600, marginBottom: 6 }}>{c.t}</div>
@@ -149,27 +116,27 @@ export default async function GoSiyahaPage({ params }: { params: Promise<{ local
             </div>
             <div style={{ marginTop: 28, fontSize: 14, color: 'var(--text-3)', lineHeight: 1.9 }}>
               <br />
-              Comprendre :{' '}
-              <Link href={'/orchestration' as const} style={{ color: '#f4cf5e', textDecoration: 'none', fontWeight: 600 }}>Qu&apos;est-ce que l&apos;orchestration hôtelière ?</Link>
-              Par ville :{' '}
-              <Link href={'/pms-marrakech' as const} style={{ color: '#f4cf5e', textDecoration: 'none' }}>PMS Marrakech</Link>
+              {tb('k035')}{' '}
+              <Link href={'/orchestration' as const} style={{ color: '#f4cf5e', textDecoration: 'none', fontWeight: 600 }}>{tb('k036')}</Link>
+              {tb('k037')}{' '}
+              <Link href={'/pms-marrakech' as const} style={{ color: '#f4cf5e', textDecoration: 'none' }}>{tb('k038')}</Link>
               {' · '}
-              <Link href={'/pms-casablanca' as const} style={{ color: '#f4cf5e', textDecoration: 'none' }}>PMS Casablanca</Link>
+              <Link href={'/pms-casablanca' as const} style={{ color: '#f4cf5e', textDecoration: 'none' }}>{tb('k039')}</Link>
               {' · '}
-              <Link href={'/pms-rabat' as const} style={{ color: '#f4cf5e', textDecoration: 'none' }}>PMS Rabat</Link>
+              <Link href={'/pms-rabat' as const} style={{ color: '#f4cf5e', textDecoration: 'none' }}>{tb('k040')}</Link>
               {' · '}
-              <Link href={'/pms-tanger' as const} style={{ color: '#f4cf5e', textDecoration: 'none' }}>PMS Tanger</Link>
+              <Link href={'/pms-tanger' as const} style={{ color: '#f4cf5e', textDecoration: 'none' }}>{tb('k041')}</Link>
               {' · '}
-              <Link href={'/pms-agadir' as const} style={{ color: '#f4cf5e', textDecoration: 'none' }}>PMS Agadir</Link>
+              <Link href={'/pms-agadir' as const} style={{ color: '#f4cf5e', textDecoration: 'none' }}>{tb('k042')}</Link>
             </div>
           </div>
         </section>
 
         <StatsBar stats={[
-          { k: '90%', l: 'Volet digital (source secteur)' },
-          { k: '200M', l: 'Plafond CA en dirhams' },
-          { k: '3', l: 'Axes du programme' },
-          { k: 'Maroc PME', l: 'Organisme instructeur' },
+          { k: '90%', l: tb('k043') },
+          { k: '200M', l: tb('k044') },
+          { k: '3', l: tb('k045') },
+          { k: tb('k046'), l: tb('k047') }
         ]} />
 
         <FaqFromMessages page="go-siyaha" />
@@ -177,18 +144,13 @@ export default async function GoSiyahaPage({ params }: { params: Promise<{ local
         <section style={{ padding: '8px 32px 40px' }}>
           <div style={{ maxWidth: 900, margin: '0 auto' }}>
             <p style={{ fontSize: 13, lineHeight: 1.7, color: 'var(--text-3)', fontStyle: 'italic' }}>
-              Page d&apos;information mise à jour le 11 septembre 2026. Les montants et
-              critères cités proviennent de sources professionnelles du secteur et sont
-              susceptibles d&apos;évoluer. Seule Maroc PME fait foi sur l&apos;éligibilité, les
-              taux et les plafonds applicables à votre dossier. Sojori n&apos;est pas
-              intermédiaire de ce programme et ne perçoit aucune commission à ce titre.
-            </p>
+              {tb('k048')}</p>
           </div>
         </section>
 
         <FinalCTA
-          title={<>Digitalisez votre exploitation.{' '}<span className="gradient-text">1 mois d&apos;essai gratuit.</span></>}
-          subtitle="Mise en route accompagnée en français. Devis détaillé fourni si vous montez un dossier. Sojori se connecte aussi à votre PMS existant."
+          title={<>{tb('k049')}{' '}<span className="gradient-text">{tb('k050')}</span></>}
+          subtitle={tb('k051')}
         />
 
         <PageFooter />

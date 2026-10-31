@@ -4,7 +4,7 @@ import { useState } from "react";
 import { Metadata } from "next";
 import { useTranslations } from 'next-intl';
 import { BackgroundEffects } from "@/components/BackgroundEffects";
-import { PageHeader, PageFooter, PageHero, StatsBar, FinalCTA } from "@/components/SharedComponents";
+import { PageHeader, PageFooter, PageHero, FinalCTA } from "@/components/SharedComponents";
 import { ScrollPaginationDots } from "@/components/shared/ScrollPaginationDots";
 import { InFlow } from '@/components/InFlow';
 import { FaqFromMessages } from '@/components/FaqFromMessages';
@@ -150,6 +150,7 @@ function Inbox() {
 }
 
 export default function InboxPage() {
+  const tb = useTranslations('pageBodies.inbox');
   const t = useTranslations('inbox');
 
   return (
@@ -246,19 +247,12 @@ export default function InboxPage() {
             </ScrollPaginationDots>
           </div>
         </section>
-        <StatsBar stats={[
-          {k: t('stats.stat1.key'), l: t('stats.stat1.label')},
-          {k: t('stats.stat2.key'), l: t('stats.stat2.label')},
-          {k: t('stats.stat3.key'), l: t('stats.stat3.label')},
-          {k: t('stats.stat4.key'), l: t('stats.stat4.label')}
-        ]} />
-
         <InFlow
-          domain="Expérience client"
+          domain={tb('k001')}
           domainColor="#06b6d4"
-          self="L'inbox rassemble les messages de tous les canaux dans un seul fil par séjour."
-          upstream={[{ label: 'Booking, Expedia, Airbnb', href: '/channel-manager' }, { label: 'WhatsApp', href: '/whatsapp' }, { label: 'E-mail direct' }]}
-          downstream={[{ label: 'Réponse envoyée', href: '/whatsapp' }, { label: 'Tâche créée', href: '/teamflow' }, { label: 'Historique du séjour', href: '/pms' }]}
+          self={tb('k002')}
+          upstream={[{ label: tb('k003'), href: '/channel-manager' }, { label: 'WhatsApp', href: '/whatsapp' }, { label: tb('k004') }]}
+          downstream={[{ label: tb('k005'), href: '/whatsapp' }, { label: tb('k006'), href: '/teamflow' }, { label: tb('k007'), href: '/pms' }]}
         />
 
         <FaqFromMessages page="inbox" />

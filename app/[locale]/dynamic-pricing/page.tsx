@@ -60,7 +60,6 @@ function PriceCalendar() {
 function PriceFactors() {
   const t = useTranslations('dynamicPricing.factors');
   const factorsList = t.raw('list') as Array<{ icon: string; label: string; description: string; impact: string }>;
-  const comingSoon = t.raw('comingSoon') as { icon: string; title: string; description: string };
 
   return (
     <>
@@ -80,15 +79,6 @@ function PriceFactors() {
           ))}
         </div>
       </ScrollPaginationDots>
-      <div className="card" style={{ padding: 20, marginTop: 16, background: 'rgba(139,92,246,0.08)', border: '1px solid rgba(139,92,246,0.25)' }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
-          <div aria-hidden="true" style={{ width: 28, height: 3, borderRadius: 2, background: 'var(--primary)' }} />
-          <div style={{ flex: 1 }}>
-            <div style={{ fontSize: 14, fontWeight: 600, marginBottom: 2 }}>{comingSoon.title}</div>
-            <div style={{ fontSize: 12, color: 'var(--text-3)' }}>{comingSoon.description}</div>
-          </div>
-        </div>
-      </div>
     </>
   );
 }
@@ -156,6 +146,7 @@ function RevenueChart() {
 }
 
 export default function DynamicPricingPage() {
+  const tb = useTranslations('pageBodies.dynamic-pricing');
   const t = useTranslations('dynamicPricing');
   const tHero = useTranslations('dynamicPricing.hero');
   const tCalSection = useTranslations('dynamicPricing.calendar.section');
@@ -304,11 +295,11 @@ export default function DynamicPricingPage() {
         <StatsBar stats={stats} />
 
         <InFlow
-          domain="Ventes & revenu"
+          domain={tb('k001')}
           domainColor="#10b981"
-          self="La tarification recalcule le prix par règles, dans les bornes que vous fixez."
-          upstream={[{ label: 'Occupation réelle', href: '/pms' }, { label: 'Rythme de réservation', href: '/analytics' }, { label: 'Événement en ville' }]}
-          downstream={[{ label: 'Poussé sur les canaux', href: '/channel-manager' }, { label: 'RevPAR mesuré', href: '/analytics' }]}
+          self={tb('k002')}
+          upstream={[{ label: tb('k003'), href: '/pms' }, { label: tb('k004'), href: '/analytics' }, { label: tb('k005') }]}
+          downstream={[{ label: tb('k006'), href: '/channel-manager' }, { label: tb('k007'), href: '/analytics' }]}
         />
 
         <FaqFromMessages page="dynamic-pricing" />

@@ -132,6 +132,7 @@ function StaffKPIs() {
 }
 
 export default function TeamflowPage() {
+  const tb = useTranslations('pageBodies.teamflow');
   const t = useTranslations('teamflow');
 
   const capabilities = t.raw('capabilities.items') as Array<{
@@ -240,11 +241,11 @@ export default function TeamflowPage() {
         <StatsBar stats={stats.map(s => ({ k: s.key, l: s.label }))} />
 
         <InFlow
-          domain="Opérations"
+          domain={tb('k001')}
           domainColor="#8b5cf6"
-          self="TeamFlow exécute : ménage, recouche, maintenance, accueil — déclenchés sur les événements réels."
-          upstream={[{ label: 'Départ constaté', href: '/pms' }, { label: 'Demande client', href: '/guest-experience' }, { label: 'Équipement signalé', href: '/whatsapp' }]}
-          downstream={[{ label: 'Chambre vendable', href: '/channel-manager' }, { label: 'Client accueilli', href: '/guest-experience' }, { label: 'Temps de remise en état', href: '/analytics' }]}
+          self={tb('k002')}
+          upstream={[{ label: tb('k003'), href: '/pms' }, { label: tb('k004'), href: '/guest-experience' }, { label: tb('k005'), href: '/whatsapp' }]}
+          downstream={[{ label: tb('k006'), href: '/channel-manager' }, { label: tb('k007'), href: '/guest-experience' }, { label: tb('k008'), href: '/analytics' }]}
         />
 
         <FaqFromMessages page="teamflow" />
