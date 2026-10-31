@@ -406,7 +406,7 @@
         },
         {
           "title": "Segurança dos dados",
-          "description": "Dados criptografados · Conformidade RGPD · Alojado em França (Paris)"
+          "description": "Dados criptografados · Alojado em França (Paris)"
         },
         {
           "title": "Acompanhamento contínuo",
@@ -2059,7 +2059,12 @@
       },
       "copyright": "© 2026 Sojori. Pagamento marroquino aceite.",
       "terms": "Aviso legal",
-      "privacy": "Privacidade"
+      "privacy": "Privacidade",
+      "follow": "Siga-nos",
+      "contact": "Contacto",
+      "emailLabel": "Escrever à equipa comercial",
+      "demo": "Pedir uma demonstração",
+      "newTab": "(abre num novo separador)"
     },
     "home": {
       "hero": {

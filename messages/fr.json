@@ -406,7 +406,7 @@
         },
         {
           "title": "Sécurité des données",
-          "description": "Données chiffrées · Conformité RGPD · Hébergé en France (Paris)"
+          "description": "Données chiffrées · Hébergé en France (Paris)"
         },
         {
           "title": "Suivi continu",
@@ -2059,7 +2059,12 @@
       },
       "copyright": "© 2026 Sojori. Paiement marocain accepté.",
       "terms": "Mentions légales",
-      "privacy": "Confidentialité"
+      "privacy": "Confidentialité",
+      "follow": "Suivez-nous",
+      "contact": "Contact",
+      "emailLabel": "Écrire à l’équipe commerciale",
+      "demo": "Demander une démo",
+      "newTab": "(s’ouvre dans un nouvel onglet)"
     },
     "home": {
       "hero": {

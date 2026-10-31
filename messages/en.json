@@ -406,7 +406,7 @@
         },
         {
           "title": "Data security",
-          "description": "Encrypted data · GDPR compliant · Hosted in France (Paris)"
+          "description": "Encrypted data · Hosted in France (Paris)"
         },
         {
           "title": "Continuous monitoring",
@@ -2059,7 +2059,12 @@
       },
       "copyright": "© 2026 Sojori. Moroccan payment accepted.",
       "terms": "Legal notice",
-      "privacy": "Privacy"
+      "privacy": "Privacy",
+      "follow": "Follow us",
+      "contact": "Contact",
+      "emailLabel": "Email the sales team",
+      "demo": "Request a demo",
+      "newTab": "(opens in a new tab)"
     },
     "home": {
       "hero": {
