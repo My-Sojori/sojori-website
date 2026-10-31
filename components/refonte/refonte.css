@@ -483,3 +483,10 @@ html[dir='rtl'] .sj2 [class*='mono'], html[dir='rtl'] .sj2-pill--mono, html[dir=
 .sj2-recap__ligne dt { color: var(--sj-text-3); }
 .sj2-recap__ligne dd { margin: 0; text-align: end; font-weight: 500; }
 .sj2-recap__ligne dd.is-vide { color: var(--sj-text-4); font-weight: 400; }
+
+/* ================= LOT 5 : pages existantes en nuit ================= */
+.sj2--chrome { min-height: 0; overflow: visible; background: transparent; }
+.sj2-band { padding-block: 72px 0; }
+.sj2-h2--band { font-size: clamp(28px, 3.4vw, 44px); line-height: 1.05; letter-spacing: -0.04em; }
+.sj2-band__actions { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+@media (max-width: 640px) { .sj2-band__actions { width: 100%; flex-direction: column; align-items: stretch; } .sj2-band__actions .sj2-btn { width: 100%; } }

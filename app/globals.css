@@ -24,27 +24,27 @@
   --warning: #f59e0b;
   --error:   #ef4444;
 
-  /* Surfaces (light) */
-  --bg-0: #fbfaf6;
-  --bg-1: #ffffff;
-  --bg-2: #f5f3ec;
-  --bg-3: #ebe7da;
-  --bg-elevated: #ffffff;
+  /* Surfaces (nuit — refonte 31/10/2026 : tout le site passe en version nuit) */
+  --bg-0: #0c0b09;
+  --bg-1: #12110d;
+  --bg-2: #14130f;
+  --bg-3: #1c1a15;
+  --bg-elevated: #14130f;
 
-  /* Text (dark on light) */
-  --text:        #1a1408;
-  --text-1:      #1a1408;
-  --text-2:      #4a4234;
-  --text-3:      #8a8170;
-  --text-muted:  #b8b09b;
-  --text-faint:  #d4d4d4;
+  /* Text (clair sur nuit) */
+  --text:        #f4f1ea;
+  --text-1:      #f4f1ea;
+  --text-2:      #d4cec1;
+  --text-3:      #a39c8e;
+  --text-muted:  #8f887a;
+  --text-faint:  #6b6455;
 
   /* Borders / Glass */
-  --border:        rgba(26,20,8,0.08);
-  --border-strong: rgba(26,20,8,0.14);
-  --glass:         rgba(255,255,255,0.72);
-  --glass-strong:  rgba(255,255,255,0.90);
-  --glass-border:  rgba(26,20,8,0.10);
+  --border:        rgba(244,241,234,0.10);
+  --border-strong: rgba(244,241,234,0.18);
+  --glass:         rgba(18,17,13,0.78);
+  --glass-strong:  rgba(18,17,13,0.92);
+  --glass-border:  rgba(244,241,234,0.10);
 
   /* Tints */
   --tint-ai:     rgba(139,92,246,0.08);
@@ -59,9 +59,9 @@
   --r-sm: 8px;  --r-md: 12px;  --r-lg: 16px;
   --r-xl: 20px; --r-2xl: 24px; --r-full: 999px;
 
-  /* Shadows (light) */
+  /* Shadows (nuit) */
   --shadow-glow:   0 4px 12px rgba(230,176,34,0.30);
-  --shadow-card:   0 1px 2px rgba(26,20,8,0.03), 0 8px 24px -12px rgba(26,20,8,0.05);
+  --shadow-card:   0 1px 2px rgba(0,0,0,0.4), 0 8px 24px -12px rgba(0,0,0,0.5);
   --shadow-deep:   0 20px 40px -16px rgba(230,176,34,0.18);
   --shadow-button: 0 1px 0 rgba(255,255,255,0.4) inset, 0 4px 12px rgba(230,176,34,0.30);
 }
@@ -106,7 +106,7 @@
     -webkit-backdrop-filter: blur(20px) saturate(150%);
     border: 1px solid var(--glass-border);
     border-radius: var(--r-xl);
-    box-shadow: 0 1px 0 rgba(255,255,255,0.9) inset, 0 4px 20px rgba(26,20,8,0.04);
+    box-shadow: 0 1px 0 rgba(255,255,255,0.04) inset, 0 4px 20px rgba(0,0,0,0.3);
     color: var(--text);
   }
 
@@ -2241,3 +2241,8 @@ html.sj-mobile-menu-scroll-lock {
     padding: 8px 0;
   }
 }
+
+
+/* La version nuit n'a pas d'aurore : les décors de l'ancien thème clair sont coupés. */
+.bg-stage, .bg-noise, .orb { display: none !important; }
+html { color-scheme: dark; }

@@ -3587,6 +3587,12 @@
           "sizeValueChambres": "{n, plural, one {# chambre} other {# chambres}}"
         }
       }
+    },
+    "band": {
+      "title": "Mettez vos agents au travail.",
+      "text": "Composez votre offre : le PMS Sojori ou le vôtre, vos agents, vos accès WhatsApp. Un conseiller vous répond avec une proposition chiffrée.",
+      "cta": "Composer mon offre",
+      "home": "Voir l’accueil Sojori"
     }
   }
 }

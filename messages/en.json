@@ -3586,6 +3586,12 @@
           "sizeValueChambres": "{n, plural, one {# room} other {# rooms}}"
         }
       }
+    },
+    "band": {
+      "title": "Put your agents to work.",
+      "text": "Build your offer: the Sojori PMS or your own, your agents, your WhatsApp access. An advisor replies with a quote.",
+      "cta": "Build my offer",
+      "home": "See the Sojori home page"
     }
   }
 }
