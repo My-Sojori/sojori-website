@@ -13,7 +13,17 @@ export const SEO_PAGES = {
 } as const;
 export type SeoPageId = keyof typeof SEO_PAGES;
 
+/**
+ * Les deux guides réglementaires restent dans le code mais ne sortent pas (ni sitemap, ni lien, ni llms) tant que
+ * leurs champs « [à confirmer] » ne sont pas remplis : aucune page publique ne sort avec un « à confirmer » visible.
+ * Pour les publier d'un seul coup : passer ces deux valeurs à true.
+ */
+export const PUBLIE: Record<SeoPageId, boolean> = {
+  pmsMaroc: true, conciergerieMaroc: true, agents: true, checkin: true, fichePolice: false, taxeSejour: false,
+};
+
 export async function seoMetadata(id: SeoPageId, locale: string): Promise<Metadata> {
   const t = await getTranslations({ locale, namespace: `refonte.pages.${id}.meta` });
-  return generateSEO({ title: t('title'), description: t('description'), path: `/${locale}${SEO_PAGES[id]}`, locale, alternatesPath: SEO_PAGES[id] });
+  const meta = generateSEO({ title: t('title'), description: t('description'), path: `/${locale}${SEO_PAGES[id]}`, locale, alternatesPath: SEO_PAGES[id] });
+  return PUBLIE[id] ? meta : { ...meta, robots: { index: false, follow: false } };
 }

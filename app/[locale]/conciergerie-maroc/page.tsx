@@ -9,5 +9,5 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 
 export default async function Page({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
-  return <SeoPage id="conciergerieMaroc" locale={locale} related={['pmsMaroc', 'agents', 'checkin', 'fichePolice', 'dynamicPricing']} />;
+  return <SeoPage id="conciergerieMaroc" locale={locale} related={['pmsMaroc', 'agents', 'checkin', 'dynamicPricing']} />;
 }

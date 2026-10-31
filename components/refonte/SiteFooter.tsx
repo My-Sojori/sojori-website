@@ -40,8 +40,6 @@ export function SiteFooter() {
           <Link href="/conciergerie-maroc" prefetch={false}>{p('conciergerieMaroc')}</Link>
           <Link href="/agents" prefetch={false}>{p('agents')}</Link>
           <Link href="/check-in-whatsapp" prefetch={false}>{p('checkin')}</Link>
-          <Link href="/fiche-de-police-maroc" prefetch={false}>{p('fichePolice')}</Link>
-          <Link href="/taxe-de-sejour-maroc" prefetch={false}>{p('taxeSejour')}</Link>
           <Link href="/orchestration" prefetch={false}>{t('orchestration')}</Link>
           <Link href="/mcp" prefetch={false}>{t('mcp')}</Link>
           <Link href="/about" prefetch={false}>{t('about')}</Link>
