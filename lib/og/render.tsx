@@ -48,9 +48,14 @@ export async function renderOg(locale: string) {
           <div style={{ fontSize: 40, fontWeight: 600, letterSpacing: -1.2 }}>sojori</div>
         </div>
         <div style={{ display: 'flex', flexDirection: 'column', gap: 28 }}>
-          <div style={arabe
-            ? { fontFamily: 'Plex Arabic', fontSize: 34, color: '#E6B022', direction: 'rtl', textAlign: 'right', width: '100%' }
-            : { fontFamily: 'Geist Mono', fontSize: 21, letterSpacing: 2.2, color: '#E6B022', display: 'flex' }}>{keywords}</div>
+          {arabe ? (
+            // Satori ne gère pas le bidi : les mots arabes sont posés un à un, en ligne inversée, avec un écart fixe.
+            <div style={{ display: 'flex', flexDirection: 'row-reverse', flexWrap: 'wrap', justifyContent: 'flex-start', columnGap: 12, rowGap: 4, fontFamily: 'Plex Arabic', fontSize: 34, color: '#E6B022' }}>
+              {keywords.split(' ').map((w, i) => <div key={i} style={{ display: 'flex' }}>{w}</div>)}
+            </div>
+          ) : (
+            <div style={{ fontFamily: 'Geist Mono', fontSize: 21, letterSpacing: 2.2, color: '#E6B022', display: 'flex' }}>{keywords}</div>
+          )}
           <div style={{ display: 'flex', flexDirection: 'column', fontSize: 104, fontWeight: 600, letterSpacing: -4.5, lineHeight: 1 }}>
             <div style={{ display: 'flex' }}>AI workforce</div>
             <div style={{ display: 'flex', color: '#E6B022' }}>for hospitality.</div>
