@@ -6,14 +6,15 @@ import { PageHeader, PageFooter, PageHero, StatsBar, FinalCTA } from '@/componen
 import { ScrollPaginationDots } from '@/components/shared/ScrollPaginationDots';
 import { InFlow } from '@/components/InFlow';
 import { FaqSection } from '@/components/FaqSection';
+import { Exemple } from '@/components/refonte/Exemple';
 
 const CHANNEL_MANAGER_BENEFITS = [
-  { i: '🚫', t: 'Zéro overbooking', d: 'Booking confirmée → 18 OTAs bloquées en 2 secondes. Garantie contractuelle.' },
-  { i: '⚡', t: '−85% temps gestion', d: 'Une seule interface. Modifs propagées partout. Plus jamais 18 logins.' },
-  { i: '📈', t: '+24% visibilité', d: 'Présence multi-canal = +47% de bookings vs Airbnb seul. Données prouvées.' },
-  { i: '💰', t: 'Pricing optimisé', d: 'Couplé au Dynamic Pricing : tarifs ajustés par OTA selon leur audience.' },
-  { i: '📊', t: 'Reporting unifié', d: 'Toutes vos données dans un seul dashboard. Comparable, exportable.' },
-  { i: '🛡️', t: 'API stable', d: '99.97% uptime. Reconnexion auto si OTA tombe. Audit trail complet.' },
+  { i: '•', t: 'Zéro overbooking', d: 'Booking confirmée → 18 OTAs bloquées en 2 secondes. Garantie contractuelle.' },
+  { i: '•', t: '−85% temps gestion', d: 'Une seule interface. Modifs propagées partout. Plus jamais 18 logins.' },
+  { i: '•', t: '+24% visibilité', d: 'Présence multi-canal = +47% de bookings vs Airbnb seul. Données prouvées.' },
+  { i: '•', t: 'Pricing optimisé', d: 'Couplé au Dynamic Pricing : tarifs ajustés par OTA selon leur audience.' },
+  { i: '•', t: 'Reporting unifié', d: 'Toutes vos données dans un seul dashboard. Comparable, exportable.' },
+  { i: '•', t: 'API stable', d: '99.97% uptime. Reconnexion auto si OTA tombe. Audit trail complet.' },
 ] as const;
 
 const OTAS = [
@@ -161,12 +162,12 @@ function HubAnimation() {
 }
 
 const SYNC_DEMO_ROWS = [
-  { ota: 'Airbnb', c: '#FF5A5F', status: 'Live', price: '€1,450', occ: '94%' },
-  { ota: 'Booking.com', c: '#003580', status: 'Live', price: '€1,495', occ: '88%' },
-  { ota: 'Vrbo', c: '#0E64A4', status: 'Live', price: '€1,470', occ: '76%' },
-  { ota: 'Expedia', c: '#FFC72C', status: 'Live', price: '€1,505', occ: '62%' },
-  { ota: 'Hotels.com', c: '#D4145A', status: 'Syncing…', price: '€1,495', occ: '54%' },
-  { ota: 'Tripadvisor', c: '#34E0A1', status: 'Live', price: '€1,480', occ: '47%' },
+  { ota: 'Airbnb', c: '#FF5A5F', status: 'Live', price: '1,450 MAD', occ: '94%' },
+  { ota: 'Booking.com', c: '#003580', status: 'Live', price: '1,495 MAD', occ: '88%' },
+  { ota: 'Vrbo', c: '#0E64A4', status: 'Live', price: '1,470 MAD', occ: '76%' },
+  { ota: 'Expedia', c: '#FFC72C', status: 'Live', price: '1,505 MAD', occ: '62%' },
+  { ota: 'Hotels.com', c: '#D4145A', status: 'Syncing…', price: '1,495 MAD', occ: '54%' },
+  { ota: 'Tripadvisor', c: '#34E0A1', status: 'Live', price: '1,480 MAD', occ: '47%' },
 ] as const;
 
 function SyncDemo() {
@@ -352,7 +353,7 @@ export default function ChannelManagerPageClient() {
       <div style={{ position: 'relative', zIndex: 1 }}>
         <PageHeader pageTitle="Channel Manager" />
         <PageHero
-          badge="📡 Channel Manager · Distribution unifiée"
+          badge="Channel Manager · Distribution unifiée"
           title={<>18 plateformes.<br /><span className="gradient-text">Une seule source de vérité.</span></>}
           subtitle="Connectez Airbnb, Booking, Vrbo, Expedia… en un clic. Calendrier, prix et disponibilités synchronisés en temps réel. Zéro overbooking. Zéro double-saisie."
           cta1="Voir la démo"
@@ -371,7 +372,7 @@ export default function ChannelManagerPageClient() {
           <div style={{ maxWidth: 1200, margin: '0 auto' }}>
             <div className="uppercase-sm" style={{ color: 'var(--text-3)', marginBottom: 12 }}>● Sync temps réel</div>
             <div style={{ fontSize: 32, fontWeight: 700, letterSpacing: '-0.02em', marginBottom: 32, maxWidth: 700 }}>Visualisez la sync. <span style={{ color: 'var(--text-3)' }}>En direct.</span></div>
-            <SyncDemo />
+            <Exemple><SyncDemo /></Exemple>
           </div>
         </section>
 
@@ -388,7 +389,7 @@ export default function ChannelManagerPageClient() {
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, minmax(0, 1fr))', gap: 16 }}>
                 {CHANNEL_MANAGER_BENEFITS.map(c => (
                   <div key={c.t} data-carousel-slide className="card channel-manager-benefit-card" style={{ padding: 22 }}>
-                    <div style={{ fontSize: 28, marginBottom: 10 }}>{c.i}</div>
+                    <div aria-hidden="true" style={{ width: 28, height: 3, borderRadius: 2, background: 'var(--primary)', marginBottom: 14 }} />
                     <div style={{ fontSize: 16, fontWeight: 600, marginBottom: 4 }}>{c.t}</div>
                     <div style={{ fontSize: 13, color: 'var(--text-3)', lineHeight: 1.55 }}>{c.d}</div>
                   </div>

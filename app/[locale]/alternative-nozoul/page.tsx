@@ -71,7 +71,7 @@ export default async function AltNozoul({ params }: { params: Promise<{ locale: 
         <PageHeader pageTitle="Sojori vs Nozoul" />
 
         <PageHero
-          badge="☁️ Comparatif · Sojori vs Nozoul"
+          badge="Comparatif · Sojori vs Nozoul"
           title={<>Alternative à Nozoul{' '}<br /><span className="gradient-text">quand le PMS ne suffit plus</span></>}
           subtitle="Nozoul et Sojori sont deux solutions cloud marocaines qui partagent beaucoup : fiche de police, taxe de séjour, interface française et arabe. La différence tient au périmètre — et elle devient décisive quand l&apos;exploitation se complique."
           cta1="Voir la démo"

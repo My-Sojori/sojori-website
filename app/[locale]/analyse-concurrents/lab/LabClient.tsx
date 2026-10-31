@@ -9,7 +9,7 @@ import {
 } from '../resultat/AnalyseResultatClient';
 
 /**
- * ⚠️ TEMPORAIRE — lab privé (coller URL → résultat sans e-mail).
+ * TEMPORAIRE — lab privé (coller URL → résultat sans e-mail).
  * À supprimer après QA / Claude Design.
  */
 export function LabClient({ previewSecret }: { previewSecret: string }) {

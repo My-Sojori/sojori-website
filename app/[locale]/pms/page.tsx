@@ -65,7 +65,7 @@ export default async function PMSPage() {
                   padding: 22,
                   flexShrink: 0
                 }}>
-                  <div style={{ fontSize: 28, marginBottom: 10 }}>{['📅', '💳', '📄', '📊', '🧾', '🔁'][idx] ?? '✓'}</div>
+                  <div style={{ fontSize: 28, marginBottom: 10 }}>{['•', '•', '•', '•', '•', '•'][idx] ?? '✓'}</div>
                   <div style={{ fontSize: 16, fontWeight: 600, marginBottom: 4 }}>{c.title}</div>
                   <div style={{ fontSize: 13, color: 'var(--text-3)', lineHeight: 1.55 }}>{c.desc}</div>
                 </div>

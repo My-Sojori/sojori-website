@@ -73,10 +73,10 @@ const DOMAINS = [
 
 /** Ce que Sojori connecte — la seconde moitié du positionnement. */
 const CONNECTS = [
-  { i: '🔌', t: 'Les systèmes', d: "Votre PMS s'il existe déjà — dont Mews —, les OTA, les moteurs de paiement, les sources de données comme le statut d'un vol." },
-  { i: '💬', t: 'Les clients', d: 'Sur WhatsApp d’abord, dans leur langue, sans application à installer ni compte à créer.' },
-  { i: '👥', t: 'Les équipes', d: 'Réception, gouvernante, femmes de chambre, maintenance — chacun reçoit ce qui le concerne, et son avancement remonte.' },
-  { i: '🤝', t: 'Les partenaires', d: 'Chauffeurs, spa, restaurants, blanchisserie, excursions : ils entrent dans le flux plutôt que d’être appelés au téléphone.' },
+  { i: '•', t: 'Les systèmes', d: "Votre PMS s'il existe déjà — dont Mews —, les OTA, les moteurs de paiement, les sources de données comme le statut d'un vol." },
+  { i: '•', t: 'Les clients', d: 'Sur WhatsApp d’abord, dans leur langue, sans application à installer ni compte à créer.' },
+  { i: '•', t: 'Les équipes', d: 'Réception, gouvernante, femmes de chambre, maintenance — chacun reçoit ce qui le concerne, et son avancement remonte.' },
+  { i: '•', t: 'Les partenaires', d: 'Chauffeurs, spa, restaurants, blanchisserie, excursions : ils entrent dans le flux plutôt que d’être appelés au téléphone.' },
 ];
 
 const FAQ = [
@@ -233,7 +233,7 @@ export default async function OrchestrationPage({ params }: { params: Promise<{ 
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 16 }}>
               {CONNECTS.map((c) => (
                 <div key={c.t} className="card" style={{ padding: 22 }}>
-                  <div style={{ fontSize: 26, marginBottom: 10 }}>{c.i}</div>
+                  <div aria-hidden="true" style={{ width: 28, height: 3, borderRadius: 2, background: 'var(--primary)', marginBottom: 14 }} />
                   <div style={{ fontSize: 16, fontWeight: 600, marginBottom: 6 }}>{c.t}</div>
                   <p style={{ fontSize: 14, lineHeight: 1.6, color: 'var(--text-3)', margin: 0 }}>{c.d}</p>
                 </div>
@@ -285,7 +285,7 @@ export default async function OrchestrationPage({ params }: { params: Promise<{ 
               {' · '}
               <Link href={'/go-siyaha' as const} style={{ color: '#f4cf5e', textDecoration: 'none' }}>Go Siyaha</Link>
               {' · '}
-              <Link href={'/offre' as const} style={{ color: '#f4cf5e', textDecoration: 'none' }}>Tarifs</Link>
+              <Link href={'/offre' as const} style={{ color: '#f4cf5e', textDecoration: 'none' }}>Votre offre</Link>
               <br />
               Par ville :{' '}
               <Link href={'/pms-marrakech' as const} style={{ color: '#f4cf5e', textDecoration: 'none' }}>Marrakech</Link>

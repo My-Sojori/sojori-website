@@ -23,7 +23,7 @@ export default function GestionLocativeRabatPage() {
         <PageHeader pageTitle="Gestion Locative Rabat" />
 
         <PageHero
-          badge="🏛️ Gestion Locative Rabat · Solution Complète"
+          badge="Gestion Locative Rabat · Solution Complète"
           title={<>Orchestrez votre établissement.<br /><span className="gradient-text">Depuis la capitale.</span></>}
           subtitle="Hôtels, riads et résidences à Rabat : PMS complet, Channel Manager multi-OTA, Conciergerie WhatsApp 24/7, Dynamic Pricing adapté à une clientèle institutionnelle et diplomatique. La solution pensée pour la capitale administrative du Maroc, classée patrimoine mondial UNESCO."
           cta1="Voir la démo"
@@ -38,12 +38,12 @@ export default function GestionLocativeRabatPage() {
             </div>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 16 }}>
               {[
-                { i: '🏛️', t: 'Clientèle Institutionnelle', d: 'Parlement, ministères, ambassades, organisations internationales : Rabat concentre une demande de séjours professionnels, diplomatiques et administratifs très différente du tourisme loisirs classique.' },
-                { i: '🏆', t: 'Patrimoine Mondial UNESCO', d: 'Inscrite depuis 2012 sous le nom "Rabat, capitale moderne et ville historique" — Tour Hassan, Kasbah des Oudayas, Chellah, médina historique. Un tourisme culturel qualitatif, complémentaire du séjour affaires.' },
-                { i: '🚄', t: 'Bien Connectée par TGV', d: 'Sur la ligne à grande vitesse Al Boraq entre Tanger et Casablanca. Rabat est facilement accessible pour des missions multi-villes, un atout pour les voyageurs professionnels enchaînant plusieurs rendez-vous au Maroc.' },
+                { i: '•', t: 'Clientèle Institutionnelle', d: 'Parlement, ministères, ambassades, organisations internationales : Rabat concentre une demande de séjours professionnels, diplomatiques et administratifs très différente du tourisme loisirs classique.' },
+                { i: '•', t: 'Patrimoine Mondial UNESCO', d: 'Inscrite depuis 2012 sous le nom "Rabat, capitale moderne et ville historique" — Tour Hassan, Kasbah des Oudayas, Chellah, médina historique. Un tourisme culturel qualitatif, complémentaire du séjour affaires.' },
+                { i: '•', t: 'Bien Connectée par TGV', d: 'Sur la ligne à grande vitesse Al Boraq entre Tanger et Casablanca. Rabat est facilement accessible pour des missions multi-villes, un atout pour les voyageurs professionnels enchaînant plusieurs rendez-vous au Maroc.' },
               ].map(c => (
                 <div key={c.t} className="card" style={{ padding: 22 }}>
-                  <div style={{ fontSize: 28, marginBottom: 10 }}>{c.i}</div>
+                  <div aria-hidden="true" style={{ width: 28, height: 3, borderRadius: 2, background: 'var(--primary)', marginBottom: 14 }} />
                   <div style={{ fontSize: 16, fontWeight: 600, marginBottom: 4 }}>{c.t}</div>
                   <div style={{ fontSize: 13, color: 'var(--text-3)', lineHeight: 1.55 }}>{c.d}</div>
                 </div>
@@ -60,15 +60,15 @@ export default function GestionLocativeRabatPage() {
             </div>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 16 }}>
               {[
-                { i: '📋', t: 'PMS Multi-Propriétés', d: 'Calendrier unifié pour appartements de standing (Agdal, Hay Riad, Hassan). Réservations, paiements MAD/EUR, facturation automatique, contrats digitaux — adapté aux séjours professionnels et diplomatiques.', link: '/pms' as const },
-                { i: '🔄', t: 'Channel Manager Temps Réel', d: 'Synchronisation Booking.com, Expedia, Airbnb. Évitez surréservations sur des portefeuilles à demande régulière toute l\'année, gérez calendrier depuis un dashboard unique.', link: '/channel-manager' as const },
-                { i: '💬', t: 'WhatsApp Conciergerie 24/7', d: 'Conciergerie automatique FR/AR/EN adaptée aux séjours courts et missions professionnelles. Check-in digital, instructions d\'accès, support réactif.', link: '/whatsapp' as const },
-                { i: '💰', t: 'Dynamic Pricing Adapté', d: 'Yield management pensé pour une demande plus lissée qu\'une destination balnéaire : missions professionnelles en semaine, tourisme culturel le weekend. Optimisez RevPAR automatiquement.', link: '/dynamic-pricing' as const },
-                { i: '👥', t: 'Gestion Équipe Locale', d: 'Planification ménage sur des portefeuilles d\'appartements de standing, attribution tâches, suivi performances. Coordonnez vos équipes sans chaos WhatsApp.', link: '/teamflow' as const },
-                { i: '📊', t: 'Analytics & Reporting', d: 'Revenue par propriété, occupation, ADR, RevPAR. Export comptable mensuel. Dashboards temps réel pour piloter un portefeuille à demande stable.', link: '/analytics' as const },
+                { i: '•', t: 'PMS Multi-Propriétés', d: 'Calendrier unifié pour appartements de standing (Agdal, Hay Riad, Hassan). Réservations, paiements MAD/EUR, facturation automatique, contrats digitaux — adapté aux séjours professionnels et diplomatiques.', link: '/pms' as const },
+                { i: '•', t: 'Channel Manager Temps Réel', d: 'Synchronisation Booking.com, Expedia, Airbnb. Évitez surréservations sur des portefeuilles à demande régulière toute l\'année, gérez calendrier depuis un dashboard unique.', link: '/channel-manager' as const },
+                { i: '•', t: 'WhatsApp Conciergerie 24/7', d: 'Conciergerie automatique FR/AR/EN adaptée aux séjours courts et missions professionnelles. Check-in digital, instructions d\'accès, support réactif.', link: '/whatsapp' as const },
+                { i: '•', t: 'Dynamic Pricing Adapté', d: 'Yield management pensé pour une demande plus lissée qu\'une destination balnéaire : missions professionnelles en semaine, tourisme culturel le weekend. Optimisez RevPAR automatiquement.', link: '/dynamic-pricing' as const },
+                { i: '•', t: 'Gestion Équipe Locale', d: 'Planification ménage sur des portefeuilles d\'appartements de standing, attribution tâches, suivi performances. Coordonnez vos équipes sans chaos WhatsApp.', link: '/teamflow' as const },
+                { i: '•', t: 'Analytics & Reporting', d: 'Revenue par propriété, occupation, ADR, RevPAR. Export comptable mensuel. Dashboards temps réel pour piloter un portefeuille à demande stable.', link: '/analytics' as const },
               ].map(c => (
                 <div key={c.t} className="card" style={{ padding: 22 }}>
-                  <div style={{ fontSize: 28, marginBottom: 10 }}>{c.i}</div>
+                  <div aria-hidden="true" style={{ width: 28, height: 3, borderRadius: 2, background: 'var(--primary)', marginBottom: 14 }} />
                   <div style={{ fontSize: 16, fontWeight: 600, marginBottom: 4 }}>{c.t}</div>
                   <div style={{ fontSize: 13, color: 'var(--text-3)', lineHeight: 1.55, marginBottom: 12 }}>{c.d}</div>
                   <Link href={{ pathname: c.link, query: { source: 'seo-gestion-locative-rabat' } }} style={{ fontSize: 12, color: '#f4cf5e', textDecoration: 'none', fontWeight: 600 }}>En savoir plus →</Link>

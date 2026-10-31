@@ -213,7 +213,7 @@ function DemoRdvContent() {
               {/* Header avec icone */}
               <div style={{ textAlign: 'center', marginBottom: 28 }}>
                 <div style={{ fontSize: 44, marginBottom: 12, lineHeight: 1 }}>
-                  {isAlreadyClosed ? (data.status === 'rescheduled' ? '🔄' : '📋') : '🎉'}
+                  {isAlreadyClosed ? (data.status === 'rescheduled' ? '•' : '•') : '•'}
                 </div>
                 <h1 style={{ fontSize: 24, margin: '0 0 6px', color: 'var(--text-1)', fontWeight: 800, letterSpacing: '-0.02em' }}>
                   {isAlreadyClosed ? 'Rendez-vous clos' : 'Votre rendez-vous est confirmé !'}
@@ -239,7 +239,7 @@ function DemoRdvContent() {
                     gap: 14,
                   }}
                 >
-                  <div style={{ fontSize: 28, lineHeight: 1 }}>{'📅'}</div>
+                  <div style={{ fontSize: 28, lineHeight: 1 }}>{'•'}</div>
                   <div>
                     <div style={{ fontSize: 16, fontWeight: 700, color: 'var(--text-1)', lineHeight: 1.3, textTransform: 'capitalize' }}>
                       {formatDate(data.date)}
@@ -294,7 +294,7 @@ function DemoRdvContent() {
               {isAlreadyClosed ? (
                 <div style={{ textAlign: 'center', padding: '8px 0' }}>
                   <div style={{ fontSize: 36, marginBottom: 12 }}>
-                    {data.status === 'rescheduled' ? '🔄' : data.status === 'cancelled' ? '❌' : '✅'}
+                    {data.status === 'rescheduled' ? '•' : data.status === 'cancelled' ? '•' : '•'}
                   </div>
                   <p style={{ margin: '0 0 24px', fontSize: 15, color: 'var(--text-2)', lineHeight: 1.5 }}>
                     {data.status === 'rescheduled'
@@ -320,7 +320,7 @@ function DemoRdvContent() {
                       transition: 'transform 0.15s ease, box-shadow 0.15s ease',
                     }}
                   >
-                    {'📅'} Prendre un nouveau rendez-vous
+                    {'•'} Prendre un nouveau rendez-vous
                   </Link>
                 </div>
               ) : (
@@ -391,7 +391,7 @@ function DemoRdvContent() {
                             transition: 'background 0.15s ease',
                           }}
                         >
-                          {cancelling ? '⏳ Annulation...' : 'Confirmer l\'annulation'}
+                          {cancelling ? 'Annulation...' : 'Confirmer l\'annulation'}
                         </button>
                         <button
                           type="button"
@@ -436,7 +436,7 @@ function DemoRdvContent() {
                             gap: 8,
                           }}
                         >
-                          {cancelling ? '⏳ Chargement...' : '📅 Choisir un autre créneau'}
+                          {cancelling ? 'Chargement...' : 'Choisir un autre créneau'}
                         </button>
                         <button
                           type="button"
@@ -473,7 +473,7 @@ function DemoRdvContent() {
                           gap: 10,
                         }}
                       >
-                        <span style={{ fontSize: 16, lineHeight: 1.4, flexShrink: 0 }}>{'💡'}</span>
+                        <span style={{ fontSize: 16, lineHeight: 1.4, flexShrink: 0 }}>{'•'}</span>
                         <p style={{ margin: 0, fontSize: 13, color: 'var(--text-2)', lineHeight: 1.55 }}>
                           En cliquant <strong>Choisir un autre créneau</strong>, votre rendez-vous actuel est libéré et vous êtes redirigé vers le calendrier pour choisir une nouvelle date.
                         </p>
@@ -496,7 +496,7 @@ function DemoRdvContent() {
                 border: '1px solid rgba(239,68,68,0.12)',
               }}
             >
-              <div style={{ fontSize: 52, marginBottom: 16, lineHeight: 1 }}>{'👋'}</div>
+              <div style={{ fontSize: 52, marginBottom: 16, lineHeight: 1 }}>{'•'}</div>
               <p style={{ fontSize: 22, color: 'var(--text-1)', fontWeight: 800, marginBottom: 8 }}>Rendez-vous annulé</p>
               <p style={{ fontSize: 14, color: 'var(--text-3)', marginBottom: 32, lineHeight: 1.5 }}>
                 Votre créneau a été libéré. Vous pouvez reprendre rendez-vous à tout moment.
@@ -517,7 +517,7 @@ function DemoRdvContent() {
                   boxShadow: '0 4px 16px rgba(230,176,34,0.3)',
                 }}
               >
-                {'📅'} Reprendre un rendez-vous
+                {'•'} Reprendre un rendez-vous
               </Link>
             </div>
           )}

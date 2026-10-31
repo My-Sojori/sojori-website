@@ -23,7 +23,7 @@ export default function GestionLocativeMarrakechPage() {
         <PageHeader pageTitle="Gestion Locative Marrakech" />
 
         <PageHero
-          badge="🏛️ Gestion Locative Marrakech · Solution Complète"
+          badge="Gestion Locative Marrakech · Solution Complète"
           title={<>Orchestrez votre établissement.<br /><span className="gradient-text">Depuis Marrakech.</span></>}
           subtitle="Hôtels de charme, riads et maisons d'hôtes à Marrakech : PMS complet, Channel Manager multi-OTA, Conciergerie WhatsApp 24/7, Dynamic Pricing local. La solution pensée pour le marché marocain — Airbnb, Booking, gestion équipe, tout synchronisé."
           cta1="Voir la démo"
@@ -38,12 +38,12 @@ export default function GestionLocativeMarrakechPage() {
             </div>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 16 }}>
               {[
-                { i: '🏛️', t: 'Riads & Villas Premium', d: 'Marrakech concentre 70% des locations de luxe au Maroc. Médina historique, Palmeraie, Agdal — nos établissements partenaires exploitent 500+ chambres et suites haut de gamme.' },
-                { i: '🌍', t: 'Hub Tourisme International', d: 'Aéroport international, 13M visiteurs/an. Clients FR/EN/AR. Sojori gère les 3 langues nativement — WhatsApp AI, inbox unifié, traduction automatique.' },
-                { i: '📈', t: 'Exploitation professionnelle', d: 'Les établissements à Marrakech exploitent en moyenne 12 unités. Besoin d\'outils pro : multi-propriétés, yield management, gestion staff locale.' },
+                { i: '•', t: 'Riads & Villas Premium', d: 'Marrakech concentre 70% des locations de luxe au Maroc. Médina historique, Palmeraie, Agdal — nos établissements partenaires exploitent 500+ chambres et suites haut de gamme.' },
+                { i: '•', t: 'Hub Tourisme International', d: 'Aéroport international, 13M visiteurs/an. Clients FR/EN/AR. Sojori gère les 3 langues nativement — WhatsApp AI, inbox unifié, traduction automatique.' },
+                { i: '•', t: 'Exploitation professionnelle', d: 'Les établissements à Marrakech exploitent en moyenne 12 unités. Besoin d\'outils pro : multi-propriétés, yield management, gestion staff locale.' },
               ].map(c => (
                 <div key={c.t} className="card" style={{ padding: 22 }}>
-                  <div style={{ fontSize: 28, marginBottom: 10 }}>{c.i}</div>
+                  <div aria-hidden="true" style={{ width: 28, height: 3, borderRadius: 2, background: 'var(--primary)', marginBottom: 14 }} />
                   <div style={{ fontSize: 16, fontWeight: 600, marginBottom: 4 }}>{c.t}</div>
                   <div style={{ fontSize: 13, color: 'var(--text-3)', lineHeight: 1.55 }}>{c.d}</div>
                 </div>
@@ -60,15 +60,15 @@ export default function GestionLocativeMarrakechPage() {
             </div>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 16 }}>
               {[
-                { i: '📋', t: 'PMS Multi-Propriétés', d: 'Calendrier unifié riads/villas. Réservations, paiements MAD/EUR, facturation automatique, contrats digitaux. Taxe de séjour Marrakech intégrée.', link: '/pms' as const },
-                { i: '🔄', t: 'Channel Manager Temps Réel', d: 'Synchronisation Booking.com, Expedia, Airbnb. Évitez surréservations, gérez calendrier depuis un dashboard. API 2-way temps réel.', link: '/channel-manager' as const },
-                { i: '💬', t: 'WhatsApp Conciergerie 24/7', d: 'WhatsApp Business API. Conciergerie automatique FR/AR/EN. Check-in digital, réservation transport, épicerie, expériences. Guests satisfaits = reviews 5★.', link: '/whatsapp' as const },
-                { i: '💰', t: 'Dynamic Pricing Local', d: 'Yield management adapté Marrakech : événements (Marathon, festivals), saisons touristiques, jours fériés marocains. Optimisez RevPAR automatiquement.', link: '/dynamic-pricing' as const },
-                { i: '👥', t: 'Gestion Équipe Locale', d: 'Planification ménage, attribution tâches conciergerie, suivi performances. Coordonnez femmes de ménage, gardiens, maintenance — zéro WhatsApp perso.', link: '/teamflow' as const },
-                { i: '📊', t: 'Analytics & Reporting', d: 'Revenue par propriété, occupation, ADR, RevPAR. Export comptable mensuel. Dashboards temps réel pour pilotage data-driven.', link: '/analytics' as const },
+                { i: '•', t: 'PMS Multi-Propriétés', d: 'Calendrier unifié riads/villas. Réservations, paiements MAD/EUR, facturation automatique, contrats digitaux. Taxe de séjour Marrakech intégrée.', link: '/pms' as const },
+                { i: '•', t: 'Channel Manager Temps Réel', d: 'Synchronisation Booking.com, Expedia, Airbnb. Évitez surréservations, gérez calendrier depuis un dashboard. API 2-way temps réel.', link: '/channel-manager' as const },
+                { i: '•', t: 'WhatsApp Conciergerie 24/7', d: 'WhatsApp Business API. Conciergerie automatique FR/AR/EN. Check-in digital, réservation transport, épicerie, expériences. Guests satisfaits = reviews 5★.', link: '/whatsapp' as const },
+                { i: '•', t: 'Dynamic Pricing Local', d: 'Yield management adapté Marrakech : événements (Marathon, festivals), saisons touristiques, jours fériés marocains. Optimisez RevPAR automatiquement.', link: '/dynamic-pricing' as const },
+                { i: '•', t: 'Gestion Équipe Locale', d: 'Planification ménage, attribution tâches conciergerie, suivi performances. Coordonnez femmes de ménage, gardiens, maintenance — zéro WhatsApp perso.', link: '/teamflow' as const },
+                { i: '•', t: 'Analytics & Reporting', d: 'Revenue par propriété, occupation, ADR, RevPAR. Export comptable mensuel. Dashboards temps réel pour pilotage data-driven.', link: '/analytics' as const },
               ].map(c => (
                 <div key={c.t} className="card" style={{ padding: 22 }}>
-                  <div style={{ fontSize: 28, marginBottom: 10 }}>{c.i}</div>
+                  <div aria-hidden="true" style={{ width: 28, height: 3, borderRadius: 2, background: 'var(--primary)', marginBottom: 14 }} />
                   <div style={{ fontSize: 16, fontWeight: 600, marginBottom: 4 }}>{c.t}</div>
                   <div style={{ fontSize: 13, color: 'var(--text-3)', lineHeight: 1.55, marginBottom: 12 }}>{c.d}</div>
                   <Link href={{ pathname: c.link, query: { source: 'seo-gestion-locative-marrakech' } }} style={{ fontSize: 12, color: '#f4cf5e', textDecoration: 'none', fontWeight: 600 }}>En savoir plus →</Link>

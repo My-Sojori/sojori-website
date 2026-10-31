@@ -8,9 +8,9 @@ import { trackDemoLead } from '@/lib/analytics';
 const API = '/api/v1/competitor-analysis';
 
 const POINTS = [
-  { icon: '💰', text: 'Combien votre bien devrait gagner (estimation sur 12 mois)' },
-  { icon: '🏘️', text: 'Vos 20 concurrents Airbnb directs, autour de votre bien' },
-  { icon: '📊', text: 'Où vous vous situez : prix, occupation, revenu' },
+  { icon: '•', text: 'Combien votre bien devrait gagner (estimation sur 12 mois)' },
+  { icon: '•', text: 'Vos 20 concurrents Airbnb directs, autour de votre bien' },
+  { icon: '•', text: 'Où vous vous situez : prix, occupation, revenu' },
 ];
 
 // A/B test sur le libellé du bouton : "Estimer" vs "Simuler".
@@ -97,7 +97,7 @@ export function AnalyseConcurrentsClient() {
           >
             {submitted ? (
               <div style={{ textAlign: 'center', padding: '20px 8px' }}>
-                <div style={{ fontSize: 32, marginBottom: 12 }}>📬</div>
+                <div style={{ fontSize: 32, marginBottom: 12 }}></div>
                 <div style={{ fontWeight: 700, fontSize: 17, marginBottom: 8 }}>Vérifiez votre boîte mail</div>
                 <p style={{ fontSize: 14, color: 'var(--text-2)', lineHeight: 1.5 }}>
                   On vous a envoyé un lien pour consulter votre analyse (valable 24h).

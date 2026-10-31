@@ -23,7 +23,7 @@ export default function GestionLocativeTangerPage() {
         <PageHeader pageTitle="Gestion Locative Tanger" />
 
         <PageHero
-          badge="⚓ Gestion Locative Tanger · Solution Complète"
+          badge="Gestion Locative Tanger · Solution Complète"
           title={<>Orchestrez votre établissement.<br /><span className="gradient-text">Depuis le détroit de Gibraltar.</span></>}
           subtitle="Hôtels, résidences et maisons d'hôtes à Tanger : PMS complet, Channel Manager multi-OTA, Conciergerie WhatsApp 24/7, Dynamic Pricing adapté à un marché unique en Europe/Maroc. La porte d'entrée du Maroc, à 14 km de l'Espagne."
           cta1="Voir la démo"
@@ -38,12 +38,12 @@ export default function GestionLocativeTangerPage() {
             </div>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 16 }}>
               {[
-                { i: '🌊', t: 'À 14 km de l\'Europe', d: 'Ferry Tarifa-Tanger en environ 1h, plusieurs départs par jour. Une clientèle unique au Maroc : excursionnistes espagnols à la journée, MRE en transit vers/depuis l\'Europe, et touristes classiques.' },
-                { i: '🚄', t: 'Hub Ferroviaire TGV', d: 'Gare de départ de la LGV Al Boraq vers Casablanca et Rabat. Tanger connecte le Nord du Maroc au reste du pays en quelques heures, un atout logistique pour les voyageurs professionnels comme loisirs.' },
-                { i: '🏛️', t: 'Médina Historique Authentique', d: 'Une médina et une Kasbah avec un patrimoine multiculturel unique (portugais, anglais, espagnol, international), plus préservée du tourisme de masse que Marrakech ou Fès — un marché de charme encore émergent.' },
+                { i: '•', t: 'À 14 km de l\'Europe', d: 'Ferry Tarifa-Tanger en environ 1h, plusieurs départs par jour. Une clientèle unique au Maroc : excursionnistes espagnols à la journée, MRE en transit vers/depuis l\'Europe, et touristes classiques.' },
+                { i: '•', t: 'Hub Ferroviaire TGV', d: 'Gare de départ de la LGV Al Boraq vers Casablanca et Rabat. Tanger connecte le Nord du Maroc au reste du pays en quelques heures, un atout logistique pour les voyageurs professionnels comme loisirs.' },
+                { i: '•', t: 'Médina Historique Authentique', d: 'Une médina et une Kasbah avec un patrimoine multiculturel unique (portugais, anglais, espagnol, international), plus préservée du tourisme de masse que Marrakech ou Fès — un marché de charme encore émergent.' },
               ].map(c => (
                 <div key={c.t} className="card" style={{ padding: 22 }}>
-                  <div style={{ fontSize: 28, marginBottom: 10 }}>{c.i}</div>
+                  <div aria-hidden="true" style={{ width: 28, height: 3, borderRadius: 2, background: 'var(--primary)', marginBottom: 14 }} />
                   <div style={{ fontSize: 16, fontWeight: 600, marginBottom: 4 }}>{c.t}</div>
                   <div style={{ fontSize: 13, color: 'var(--text-3)', lineHeight: 1.55 }}>{c.d}</div>
                 </div>
@@ -60,15 +60,15 @@ export default function GestionLocativeTangerPage() {
             </div>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 16 }}>
               {[
-                { i: '📋', t: 'PMS Multi-Propriétés', d: 'Calendrier unifié médina, Malabata, centre-ville. Réservations, paiements MAD/EUR, facturation automatique, contrats digitaux — adapté à une clientèle mixte marocaine, espagnole et internationale.', link: '/pms' as const },
-                { i: '🔄', t: 'Channel Manager Temps Réel', d: 'Synchronisation Booking.com, Expedia, Airbnb. Évitez surréservations pendant les pics d\'été et l\'opération Marhaba, gérez calendrier depuis un dashboard unique.', link: '/channel-manager' as const },
-                { i: '💬', t: 'WhatsApp Conciergerie 24/7', d: 'Conciergerie automatique FR/AR/ES/EN adaptée à une clientèle multilingue frontalière. Check-in digital, instructions d\'accès pour la médina, support réactif.', link: '/whatsapp' as const },
-                { i: '💰', t: 'Dynamic Pricing Adapté', d: 'Yield management pensé pour la saisonnalité spécifique de Tanger : été, opération Marhaba (retour massif des MRE), excursions à la journée. Optimisez RevPAR automatiquement.', link: '/dynamic-pricing' as const },
-                { i: '👥', t: 'Gestion Équipe Locale', d: 'Planification ménage sur des biens de médina comme de résidences modernes, attribution tâches, suivi performances. Coordonnez vos équipes sans chaos WhatsApp.', link: '/teamflow' as const },
-                { i: '📊', t: 'Analytics & Reporting', d: 'Revenue par propriété, occupation, ADR, RevPAR. Export comptable mensuel. Dashboards temps réel pour piloter un marché en forte croissance.', link: '/analytics' as const },
+                { i: '•', t: 'PMS Multi-Propriétés', d: 'Calendrier unifié médina, Malabata, centre-ville. Réservations, paiements MAD/EUR, facturation automatique, contrats digitaux — adapté à une clientèle mixte marocaine, espagnole et internationale.', link: '/pms' as const },
+                { i: '•', t: 'Channel Manager Temps Réel', d: 'Synchronisation Booking.com, Expedia, Airbnb. Évitez surréservations pendant les pics d\'été et l\'opération Marhaba, gérez calendrier depuis un dashboard unique.', link: '/channel-manager' as const },
+                { i: '•', t: 'WhatsApp Conciergerie 24/7', d: 'Conciergerie automatique FR/AR/ES/EN adaptée à une clientèle multilingue frontalière. Check-in digital, instructions d\'accès pour la médina, support réactif.', link: '/whatsapp' as const },
+                { i: '•', t: 'Dynamic Pricing Adapté', d: 'Yield management pensé pour la saisonnalité spécifique de Tanger : été, opération Marhaba (retour massif des MRE), excursions à la journée. Optimisez RevPAR automatiquement.', link: '/dynamic-pricing' as const },
+                { i: '•', t: 'Gestion Équipe Locale', d: 'Planification ménage sur des biens de médina comme de résidences modernes, attribution tâches, suivi performances. Coordonnez vos équipes sans chaos WhatsApp.', link: '/teamflow' as const },
+                { i: '•', t: 'Analytics & Reporting', d: 'Revenue par propriété, occupation, ADR, RevPAR. Export comptable mensuel. Dashboards temps réel pour piloter un marché en forte croissance.', link: '/analytics' as const },
               ].map(c => (
                 <div key={c.t} className="card" style={{ padding: 22 }}>
-                  <div style={{ fontSize: 28, marginBottom: 10 }}>{c.i}</div>
+                  <div aria-hidden="true" style={{ width: 28, height: 3, borderRadius: 2, background: 'var(--primary)', marginBottom: 14 }} />
                   <div style={{ fontSize: 16, fontWeight: 600, marginBottom: 4 }}>{c.t}</div>
                   <div style={{ fontSize: 13, color: 'var(--text-3)', lineHeight: 1.55, marginBottom: 12 }}>{c.d}</div>
                   <Link href={{ pathname: c.link, query: { source: 'seo-gestion-locative-tanger' } }} style={{ fontSize: 12, color: '#f4cf5e', textDecoration: 'none', fontWeight: 600 }}>En savoir plus →</Link>

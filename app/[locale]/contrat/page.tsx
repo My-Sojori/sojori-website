@@ -503,7 +503,7 @@ function ContratContent() {
         )}
       </main>
 
-      <PageFooter />
+      <PageFooter bande={false} />
     </div>
   );
 }

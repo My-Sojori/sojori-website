@@ -23,7 +23,7 @@ export default function GestionLocativeAgadirPage() {
         <PageHeader pageTitle="Gestion Locative Agadir" />
 
         <PageHero
-          badge="🏖️ Gestion Locative Agadir · Solution Complète"
+          badge="Gestion Locative Agadir · Solution Complète"
           title={<>Orchestrez votre établissement.<br /><span className="gradient-text">Depuis Agadir.</span></>}
           subtitle="Hôtels, clubs et résidences de tourisme à Agadir : PMS complet, Channel Manager multi-OTA, Conciergerie WhatsApp 24/7, Dynamic Pricing saisonnier. La solution pensée pour la station balnéaire la plus fréquentée du Maroc."
           cta1="Voir la démo"
@@ -38,12 +38,12 @@ export default function GestionLocativeAgadirPage() {
             </div>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 16 }}>
               {[
-                { i: '☀️', t: 'Climat Toute l\'Année', d: 'Climat tempéré atlantique, rarement extrême même en plein été. Agadir combine haute saison estivale classique et un flux hivernal de séjours longs (retraités et résidents saisonniers européens) — une double saisonnalité rare au Maroc.' },
-                { i: '🏝️', t: 'Ville Balnéaire Moderne', d: 'Reconstruite après le séisme de 1960 avec des normes antisismiques strictes, Agadir a un parc immobilier récent : résidences balnéaires sécurisées avec piscines, plutôt que médinas historiques — un marché structurellement différent de Marrakech ou Fès.' },
-                { i: '✈️', t: 'Aéroport en Forte Croissance', d: 'L\'aéroport Agadir Al Massira, 3ème du pays par trafic, connaît une croissance soutenue portée par les compagnies low-cost européennes — un flux touristique en expansion continue à capter.' },
+                { i: '•', t: 'Climat Toute l\'Année', d: 'Climat tempéré atlantique, rarement extrême même en plein été. Agadir combine haute saison estivale classique et un flux hivernal de séjours longs (retraités et résidents saisonniers européens) — une double saisonnalité rare au Maroc.' },
+                { i: '•', t: 'Ville Balnéaire Moderne', d: 'Reconstruite après le séisme de 1960 avec des normes antisismiques strictes, Agadir a un parc immobilier récent : résidences balnéaires sécurisées avec piscines, plutôt que médinas historiques — un marché structurellement différent de Marrakech ou Fès.' },
+                { i: '•', t: 'Aéroport en Forte Croissance', d: 'L\'aéroport Agadir Al Massira, 3ème du pays par trafic, connaît une croissance soutenue portée par les compagnies low-cost européennes — un flux touristique en expansion continue à capter.' },
               ].map(c => (
                 <div key={c.t} className="card" style={{ padding: 22 }}>
-                  <div style={{ fontSize: 28, marginBottom: 10 }}>{c.i}</div>
+                  <div aria-hidden="true" style={{ width: 28, height: 3, borderRadius: 2, background: 'var(--primary)', marginBottom: 14 }} />
                   <div style={{ fontSize: 16, fontWeight: 600, marginBottom: 4 }}>{c.t}</div>
                   <div style={{ fontSize: 13, color: 'var(--text-3)', lineHeight: 1.55 }}>{c.d}</div>
                 </div>
@@ -60,15 +60,15 @@ export default function GestionLocativeAgadirPage() {
             </div>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 16 }}>
               {[
-                { i: '📋', t: 'PMS Multi-Propriétés', d: 'Calendrier unifié pour résidences balnéaires. Réservations, paiements MAD/EUR, facturation automatique, contrats digitaux — pensé pour les séjours longs comme pour les courts city-breaks.', link: '/pms' as const },
-                { i: '🔄', t: 'Channel Manager Temps Réel', d: 'Synchronisation Booking.com, Expedia, Airbnb. Évitez surréservations sur des portefeuilles saisonniers à forte occupation, gérez calendrier depuis un dashboard unique.', link: '/channel-manager' as const },
-                { i: '💬', t: 'WhatsApp Conciergerie 24/7', d: 'Conciergerie automatique FR/AR/EN adaptée aux arrivées charter groupées et aux séjours longs des résidents hivernaux. Check-in digital, support réactif toute l\'année.', link: '/whatsapp' as const },
-                { i: '💰', t: 'Dynamic Pricing Saisonnier', d: 'Yield management pensé pour la double saison d\'Agadir : pic estival familles, saison hivernale longue durée. Optimisez RevPAR automatiquement selon la demande.', link: '/dynamic-pricing' as const },
-                { i: '👥', t: 'Gestion Équipe Locale', d: 'Planification ménage adaptée aux rotations rapides de la haute saison, attribution tâches, suivi performances. Coordonnez vos équipes sans chaos WhatsApp.', link: '/teamflow' as const },
-                { i: '📊', t: 'Analytics & Reporting', d: 'Revenue par propriété, occupation, ADR, RevPAR. Export comptable mensuel. Dashboards temps réel pour piloter un portefeuille à forte saisonnalité.', link: '/analytics' as const },
+                { i: '•', t: 'PMS Multi-Propriétés', d: 'Calendrier unifié pour résidences balnéaires. Réservations, paiements MAD/EUR, facturation automatique, contrats digitaux — pensé pour les séjours longs comme pour les courts city-breaks.', link: '/pms' as const },
+                { i: '•', t: 'Channel Manager Temps Réel', d: 'Synchronisation Booking.com, Expedia, Airbnb. Évitez surréservations sur des portefeuilles saisonniers à forte occupation, gérez calendrier depuis un dashboard unique.', link: '/channel-manager' as const },
+                { i: '•', t: 'WhatsApp Conciergerie 24/7', d: 'Conciergerie automatique FR/AR/EN adaptée aux arrivées charter groupées et aux séjours longs des résidents hivernaux. Check-in digital, support réactif toute l\'année.', link: '/whatsapp' as const },
+                { i: '•', t: 'Dynamic Pricing Saisonnier', d: 'Yield management pensé pour la double saison d\'Agadir : pic estival familles, saison hivernale longue durée. Optimisez RevPAR automatiquement selon la demande.', link: '/dynamic-pricing' as const },
+                { i: '•', t: 'Gestion Équipe Locale', d: 'Planification ménage adaptée aux rotations rapides de la haute saison, attribution tâches, suivi performances. Coordonnez vos équipes sans chaos WhatsApp.', link: '/teamflow' as const },
+                { i: '•', t: 'Analytics & Reporting', d: 'Revenue par propriété, occupation, ADR, RevPAR. Export comptable mensuel. Dashboards temps réel pour piloter un portefeuille à forte saisonnalité.', link: '/analytics' as const },
               ].map(c => (
                 <div key={c.t} className="card" style={{ padding: 22 }}>
-                  <div style={{ fontSize: 28, marginBottom: 10 }}>{c.i}</div>
+                  <div aria-hidden="true" style={{ width: 28, height: 3, borderRadius: 2, background: 'var(--primary)', marginBottom: 14 }} />
                   <div style={{ fontSize: 16, fontWeight: 600, marginBottom: 4 }}>{c.t}</div>
                   <div style={{ fontSize: 13, color: 'var(--text-3)', lineHeight: 1.55, marginBottom: 12 }}>{c.d}</div>
                   <Link href={{ pathname: c.link, query: { source: 'seo-gestion-locative-agadir' } }} style={{ fontSize: 12, color: '#f4cf5e', textDecoration: 'none', fontWeight: 600 }}>En savoir plus →</Link>

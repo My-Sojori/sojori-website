@@ -8,6 +8,7 @@ import { PnlAnimation } from "@/components/analytics/PnlAnimation";
 import { CapabilitiesScroll } from "@/components/analytics/CapabilitiesScroll";
 import { InFlow } from '@/components/InFlow';
 import { FaqSection } from '@/components/FaqSection';
+import { Exemple } from '@/components/refonte/Exemple';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
@@ -26,7 +27,7 @@ export default function AnalyticsPage() {
       <div style={{position: "relative", zIndex: 1}}>
         <PageHeader pageTitle="Smart Analytics" />
         <PageHero
-          badge="📊 Smart Analytics · Decision intelligence"
+          badge="Smart Analytics · Decision intelligence"
           title={<>Vos données.<br /><span className="gradient-text">Transformées en décisions.</span></>}
           subtitle="Revenue, Occupation, ADR, RevPAR par propriété. Performance staff. Alertes intelligentes. Export comptable. Le pilotage de votre activité — sans tableur Excel."
           cta1="Voir la démo" cta2="Audit gratuit"
@@ -55,9 +56,9 @@ export default function AnalyticsPage() {
                 </div>
               ))}
             </div>
-            <MainChart />
-            <PnlAnimation />
-            <PropertyTable />
+            <Exemple><MainChart /></Exemple>
+            <Exemple><PnlAnimation /></Exemple>
+            <Exemple><PropertyTable /></Exemple>
           </div>
         </section>
         <section style={{padding: "24px 32px 44px", borderTop: "1px solid var(--glass-border)"}}>
@@ -65,12 +66,12 @@ export default function AnalyticsPage() {
             <div className="uppercase-sm" style={{color: "var(--text-3)", marginBottom: 12}}>● Capacités</div>
             <div style={{fontSize: 32, fontWeight: 700, letterSpacing: "-0.02em", marginBottom: 32, maxWidth: 700}}>Pilotez. <span className="gradient-text">Ne devinez plus.</span></div>
             <CapabilitiesScroll capabilities={[
-              { i: "📊", t: "Dashboards live", d: "Mis à jour à la minute. Filtres par propriété, période, OTA, source." },
-              { i: "🚨", t: "Alertes intelligentes", d: "Baisse anormale, surcharge staff, opportunité pricing — détection auto." },
-              { i: "📈", t: "Benchmarks marché", d: "Comparaison avec votre quartier, votre type de bien, votre saison." },
-              { i: "📥", t: "Exports comptable", d: "CSV, PDF, format compta (FEC, Sage). Auto le 1er du mois." },
-              { i: "🔮", t: "Forecasts prédictifs", d: "Revenue prévisionnel à 90 jours. Scénarios what-if intégrés." },
-              { i: "🎯", t: "Cohort analysis", d: "Clients récurrents, sources qui convertissent, LTV par canal." },
+              { i: "•", t: "Dashboards live", d: "Mis à jour à la minute. Filtres par propriété, période, OTA, source." },
+              { i: "•", t: "Alertes intelligentes", d: "Baisse anormale, surcharge staff, opportunité pricing — détection auto." },
+              { i: "•", t: "Benchmarks marché", d: "Comparaison avec votre quartier, votre type de bien, votre saison." },
+              { i: "•", t: "Exports comptable", d: "CSV, PDF, format compta (FEC, Sage). Auto le 1er du mois." },
+              { i: "•", t: "Forecasts prédictifs", d: "Revenue prévisionnel à 90 jours. Scénarios what-if intégrés." },
+              { i: "•", t: "Cohort analysis", d: "Clients récurrents, sources qui convertissent, LTV par canal." },
             ]} />
           </div>
         </section>

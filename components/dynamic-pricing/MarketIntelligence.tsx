@@ -24,7 +24,7 @@ export function MarketIntelligence() {
       currency: 'EUR',
       listings: 9234,
       growth: 8,
-      color: '#8b5cf6'
+      color: '#a78bfa'
     }
   ];
 
@@ -32,12 +32,12 @@ export function MarketIntelligence() {
     marrakech: [
       { name: 'Hivernage', adr: 1450, occ: 52, color: '#ef4444' },
       { name: 'Gueliz', adr: 980, occ: 41, color: '#3b82f6' },
-      { name: 'Medina', adr: 1120, occ: 48, color: '#8b5cf6' }
+      { name: 'Medina', adr: 1120, occ: 48, color: '#a78bfa' }
     ],
     paris: [
       { name: 'Hivernage', adr: 1450, occ: 68, color: '#ef4444' },
       { name: 'Latin Quarter', adr: 195, occ: 64, color: '#3b82f6' },
-      { name: 'Gueliz', adr: 980, occ: 59, color: '#8b5cf6' }
+      { name: 'Gueliz', adr: 980, occ: 59, color: '#a78bfa' }
     ]
   };
 

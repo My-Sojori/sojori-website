@@ -8,6 +8,10 @@ import { useTranslations } from 'next-intl';
 type AppPathname = keyof typeof routing.pathnames;
 import { SojoriLogo } from './Logo';
 import { LanguageSwitcher } from './LanguageSwitcher';
+import { SiteHeader } from './refonte/SiteHeader';
+import { SiteFooter } from './refonte/SiteFooter';
+import { OfferBand } from './refonte/OfferBand';
+import './refonte/refonte.css';
 
 export function Check() {
   return (
@@ -68,7 +72,7 @@ function useProductMenu(): MenuGroup[] {
   ];
 }
 
-export function PageHeader({ pageTitle }: { pageTitle?: string }) {
+function LegacyPageHeader({ pageTitle }: { pageTitle?: string }) {
   const [open, setOpen] = React.useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = React.useState(false);
   const [mobileProductOpen, setMobileProductOpen] = React.useState(false);
@@ -504,7 +508,7 @@ function useCityMenu(): { l: string; h: AppPathname }[] {
   ];
 }
 
-export function PageFooter() {
+function LegacyPageFooter() {
   const tLegal = useTranslations('legal');
   const tFooter = useTranslations('common.footer');
   const tCityMenu = useTranslations('common.cityMenu');
@@ -535,7 +539,7 @@ export function PageFooter() {
               {tFooter('tagline')}
             </p>
             <div className="sj-page-footer-locations" style={{ marginTop: 16, fontSize: 11, color: 'var(--text-3)', fontFamily: 'var(--font-mono)' }}>
-              📍 Paris · Casablanca
+              Paris · Casablanca
             </div>
           </div>
           <div
@@ -701,5 +705,28 @@ export function FinalCTA({ title, subtitle }: { title: ReactNode; subtitle: stri
         </div>
       </div>
     </section>
+  );
+}
+
+
+/**
+ * En-tête et pied de page de TOUTES les pages (31/10/2026) : la version nuit de la refonte.
+ * Les anciens (thème clair) restent dans ce fichier le temps de la PR et ne sont plus rendus.
+ */
+export function PageHeader(_props: { pageTitle?: string }) {
+  return (
+    <div className="sj2 sj2--chrome">
+      <SiteHeader />
+    </div>
+  );
+}
+
+/** `bande={false}` : pages à lien signé (devis, contrat, commande, rdv), où rien ne doit se glisser sous le document. */
+export function PageFooter({ bande = true }: { bande?: boolean } = {}) {
+  return (
+    <div className="sj2 sj2--chrome">
+      {bande && <OfferBand />}
+      <SiteFooter />
+    </div>
   );
 }

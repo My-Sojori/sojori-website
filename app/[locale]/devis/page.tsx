@@ -322,7 +322,7 @@ function DevisContent() {
       </main>
 
       <div className="devis-hors-impression">
-        <PageFooter />
+        <PageFooter bande={false} />
       </div>
     </div>
   );

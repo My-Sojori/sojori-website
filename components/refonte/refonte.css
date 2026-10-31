@@ -447,7 +447,7 @@ html[dir='rtl'] .sj2 [class*='mono'], html[dir='rtl'] .sj2-pill--mono, html[dir=
 .sj2-consent input { flex: none; width: 22px; height: 22px; margin: 1px 0 0; accent-color: var(--sj-gold); }
 .sj2-erreur { font-size: 14.5px; color: var(--sj-terra-text); }
 .sj2-form .sj2-btn { margin-top: 6px; width: 100%; }
-.sj2-form .sj2-btn[disabled] { opacity: 0.7; cursor: progress; }
+.sj2-form .sj2-btn[disabled] { cursor: progress; }
 .sj2-form__note { font-size: 13px; line-height: 1.5; color: var(--sj-text-4); text-wrap: pretty; }
 .sj2-merci { border: 1px solid var(--sj-line-gold-2); border-radius: 18px; background: #1b170b; padding: 22px; display: flex; flex-direction: column; gap: 12px; align-items: flex-start; }
 .sj2-merci strong { font-size: 19px; letter-spacing: -0.02em; }
@@ -470,7 +470,7 @@ html[dir='rtl'] .sj2 [class*='mono'], html[dir='rtl'] .sj2-pill--mono, html[dir=
 .sj2-form__actions { display: flex; gap: 10px; }
 .sj2-form__actions .sj2-btn--ghost { flex: 0 0 auto; width: auto; }
 .sj2-form__actions .sj2-btn:not(.sj2-btn--ghost) { flex: 1; margin-top: 0; }
-.sj2-btn[disabled] { background: #2a271f; color: #8f887a !important; cursor: not-allowed; filter: none; }
+.sj2-btn[disabled] { background: #2a271f; color: #bdb6a8 !important; cursor: not-allowed; filter: none; }
 .sj2-q { border: 0; padding: 0; margin: 0; min-width: 0; display: flex; flex-direction: column; gap: 10px; }
 .sj2-q legend { padding: 0; margin-bottom: 10px; font-size: 14px; font-weight: 600; color: var(--sj-text); }
 .sj2-chips2 { display: flex; flex-wrap: wrap; gap: 8px; }
@@ -484,6 +484,12 @@ html[dir='rtl'] .sj2 [class*='mono'], html[dir='rtl'] .sj2-pill--mono, html[dir=
 .sj2-recap__ligne dd { margin: 0; text-align: end; font-weight: 500; }
 .sj2-recap__ligne dd.is-vide { color: var(--sj-text-4); font-weight: 400; }
 
+/* ================= LOT 5 : pages existantes en nuit ================= */
+.sj2--chrome { min-height: 0; overflow: visible; background: transparent; }
+.sj2-band { padding-block: 72px 0; }
+.sj2-h2--band { font-size: clamp(28px, 3.4vw, 44px); line-height: 1.05; letter-spacing: -0.04em; }
+.sj2-band__actions { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+@media (max-width: 640px) { .sj2-band__actions { width: 100%; flex-direction: column; align-items: stretch; } .sj2-band__actions .sj2-btn { width: 100%; } }
 /* formulaire en trois étapes */
 .sj2-pas--3 { grid-template-columns: repeat(3, 1fr); }
 .sj2-pas--3 li { font-size: 12.5px; }
@@ -496,3 +502,7 @@ html[dir='rtl'] .sj2 [class*='mono'], html[dir='rtl'] .sj2-pill--mono, html[dir=
 .sj2-merci__etapes li { display: flex; gap: 12px; align-items: flex-start; font-size: 15.5px; color: var(--sj-text-2); }
 .sj2-merci__n { flex: none; width: 28px; height: 28px; border-radius: 50%; border: 1.5px solid var(--sj-gold); color: var(--sj-gold); font-weight: 700; font-size: 14px; display: inline-flex; align-items: center; justify-content: center; }
 .sj2-merci__plus { border-top: 1px solid var(--sj-line-gold); padding-top: 14px; width: 100%; display: flex; flex-direction: column; gap: 10px; align-items: flex-start; }
+
+/* étiquette « Exemple » sur les maquettes chiffrées */
+.sj2-exemple-wrap { position: relative; }
+.sj2-exemple { position: absolute; top: -13px; inset-inline-end: 16px; z-index: 5; padding: 4px 12px; border-radius: 999px; border: 1px solid var(--sj-line-gold-2); background: #14120d; color: var(--sj-gold-soft); font-size: 12px; font-weight: 600; letter-spacing: 0.04em; pointer-events: none; }

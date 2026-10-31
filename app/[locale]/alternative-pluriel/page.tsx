@@ -71,7 +71,7 @@ export default async function AltPluriel({ params }: { params: Promise<{ locale:
         <PageHeader pageTitle="Sojori vs Pluriel" />
 
         <PageHero
-          badge="🏛️ Comparatif · Sojori vs Pluriel"
+          badge="Comparatif · Sojori vs Pluriel"
           title={<>Alternative à Pluriel{' '}<br /><span className="gradient-text">quand l&apos;installé montre ses limites</span></>}
           subtitle="Pluriel est l&apos;acteur historique du logiciel hôtelier marocain : 30 ans, 200 références, une hotline locale. La question n&apos;est pas sa légitimité, mais si une architecture installée sur site correspond encore à la façon dont vos équipes travaillent."
           cta1="Voir la démo"
