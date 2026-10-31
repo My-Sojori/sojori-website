@@ -28,7 +28,7 @@ export function generateSEO({
   description,
   keywords = [],
   path = '',
-  image = '/og-image.jpg',
+  image,
   locale = 'fr',
   alternatesPath,
 }: SEOProps): Metadata {
@@ -55,14 +55,8 @@ export function generateSEO({
       description,
       url,
       siteName: 'Sojori',
-      images: [
-        {
-          url: image,
-          width: 1200,
-          height: 630,
-          alt: title,
-        },
-      ],
+      // Par défaut : l'image de partage de la langue (app/[locale]/opengraph-image.tsx).
+      images: [{ url: image ?? `/${locale}/opengraph-image`, width: 1200, height: 630, alt: title }],
       locale: ogLocale,
       type: 'website',
     },
@@ -70,7 +64,7 @@ export function generateSEO({
       card: 'summary_large_image',
       title,
       description,
-      images: [image],
+      images: [image ?? `/${locale}/twitter-image`],
     },
   };
 }
