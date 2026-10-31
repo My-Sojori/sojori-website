@@ -2064,7 +2064,11 @@
       "contact": "Contact",
       "emailLabel": "Email the sales team",
       "demo": "Request a demo",
-      "newTab": "(opens in a new tab)"
+      "newTab": "(opens in a new tab)",
+      "guides": "Guides",
+      "company": "Sojori",
+      "modules": "The WhatsApp modules",
+      "mcpDev": "MCP (for developers)"
     },
     "home": {
       "hero": {
