@@ -78,6 +78,15 @@ export function OffreComposer() {
     return () => o.disconnect();
   }, []);
   const [statut, setStatut] = useState<'libre' | 'envoi'>('libre');
+  // envoi lancé depuis la barre (panneau hors écran) : le « Merci » ou l'erreur sont dans le panneau, on y amène le visiteur
+  useEffect(() => {
+    const el = panneau.current;
+    if (!el || (etape !== 3 && !erreur)) return;
+    const r = el.getBoundingClientRect();
+    if (r.top >= 0 && r.top < window.innerHeight * 0.6) return;
+    const calme = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
+    el.scrollIntoView({ behavior: calme ? 'auto' : 'smooth', block: 'start' });
+  }, [etape, erreur]);
 
   // la demande créée sur /demo (lue après l'hydratation) ; l'ancienne adresse /offre#contact mène à /demo
   useEffect(() => {
@@ -398,7 +407,7 @@ export function OffreComposer() {
         </div>
       </aside>
       {etape === 1 && !panneauVu && (
-        <div className="sj2-barre-selection" role="region" aria-label={t('selection.aria')}>
+        <div className="sj2-barre-selection" role="region" aria-label={t('selection.barAria')}>
           <span className="sj2-barre-selection__texte">
             <strong>{t('selection.aria')}</strong>
             <span>{t('selection.barCount', { n: lignes.length })}</span>

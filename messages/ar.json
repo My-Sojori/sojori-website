@@ -3021,7 +3021,8 @@
         "titleChambres": "{n, plural, zero {# غرفة} one {غرفة واحدة} two {غرفتان} few {# غرف} many {# غرفة} other {# غرفة}}",
         "detailBiens": "{n, plural, zero {# وحدة} one {وحدة واحدة} two {وحدتان} few {# وحدات} many {# وحدة} other {# وحدة}}",
         "detailChambres": "{n, plural, zero {# غرفة} one {غرفة واحدة} two {غرفتان} few {# غرف} many {# غرفة} other {# غرفة}}",
-        "barCount": "{n, plural, zero {# عنصر} one {عنصر واحد} two {عنصران} few {# عناصر} many {# عنصرًا} other {# عنصر}}"
+        "barCount": "{n, plural, zero {# عنصر} one {عنصر واحد} two {عنصران} few {# عناصر} many {# عنصرًا} other {# عنصر}}",
+        "barAria": "ملخص اختياراتك"
       },
       "faq": {
         "title": "أسئلة حول عرضكم",
