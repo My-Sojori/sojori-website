@@ -1440,7 +1440,7 @@
     },
     "analytics": {
       "title": "Analytics | BI hôtelière",
-      "description": "Analytics hôtelier : occupation, prix moyen, RevPAR et mix canaux par période et par établissement. Revenu hors hébergement suivi séparément. Exports comptables."
+      "description": "Analytics hôtelier : occupation, prix moyen, RevPAR et mix des canaux par période et par établissement, revenus annexes suivis à part, exports comptables."
     },
     "dashboardApp": {
       "title": "Dashboard Sojori | Interface gestionnaire",
@@ -1448,11 +1448,11 @@
     },
     "ownerPortal": {
       "title": "Portail propriétaire | Transparence revenus",
-      "description": "Portail propriétaire Sojori : revenus, occupation, charges et documents en libre accès. Relevés automatiques construits sur les données d'exploitation."
+      "description": "Portail propriétaire Sojori : revenus, occupation, charges et documents consultables par chaque propriétaire, avec des relevés issus des données d'exploitation."
     },
     "brand": {
       "title": "Sojori — Brand system",
-      "description": "Identité visuelle : logo, couleurs, typographie pour partenaires."
+      "description": "Identité visuelle de Sojori : logo, couleurs et typographie à l'usage des partenaires, pour présenter la marque de façon cohérente sur tous vos supports."
     },
     "gestionLocativeMarrakech": {
       "title": "Gestion locative Marrakech | PMS riads & villas",
@@ -1500,7 +1500,7 @@
     },
     "guestExperience": {
       "title": "Guest experience Marrakech | Parcours invité",
-      "description": "Parcours client sur WhatsApp : check-in digital, fiche de police, demandes pendant le séjour, instructions de départ, avis. Sans application à installer."
+      "description": "Parcours voyageur sur WhatsApp : check-in digital, fiche de police, demandes pendant le séjour, instructions de départ et avis, dans l'application du voyageur."
     },
     "whatsapp": {
       "title": "WhatsApp IA Marrakech | Conciergerie automatisée à toute heure Maroc",
@@ -1508,11 +1508,11 @@
     },
     "inbox": {
       "title": "Inbox unifié Marrakech | Messagerie centralisée multi-OTA Maroc",
-      "description": "Inbox unifiée : WhatsApp, Booking, Expedia, Airbnb et e-mail dans un seul fil par séjour. Réponses suggérées par IA, traduction, et messages transformés en tâches."
+      "description": "Inbox unifiée : WhatsApp, Booking, Expedia, Airbnb et e-mail dans un seul fil par séjour, avec réponses suggérées par IA, traduction et messages en tâches."
     },
     "teamflow": {
       "title": "Gestion staff Marrakech | Équipes riads & villas Maroc",
-      "description": "Ménage, recouche et maintenance déclenchés sur les événements réels du séjour. Missions envoyées sur WhatsApp en français ou en arabe, sans application à installer."
+      "description": "Ménage, recouche et maintenance déclenchés par les événements du séjour. Les missions arrivent sur WhatsApp, en français ou en arabe, chez votre équipe."
     },
     "demo": {
       "title": "Demander une démo Sojori · PMS et agents WhatsApp",
@@ -1520,11 +1520,11 @@
     },
     "demoRdv": {
       "title": "Confirmer votre rendez-vous démo | Sojori",
-      "description": "Choisissez votre créneau pour une démo personnalisée de Sojori avec un expert produit."
+      "description": "Choisissez votre créneau pour une démo personnalisée de Sojori avec un expert produit : le PMS Sojori ou le vôtre, vos agents et vos modules WhatsApp."
     },
     "integrations": {
       "title": "Intégrations Sojori | Booking, Expedia, Airbnb, WhatsApp & API",
-      "description": "Sojori se connecte à votre PMS existant, dont Mews, aux OTA par connecteur et à vos outils. API disponible. Orchestrez sans remplacer votre système de réservation."
+      "description": "Sojori se connecte à votre PMS existant, dont Mews, aux OTA par connecteur et à vos outils, avec une API. Vous gardez votre système de réservation."
     },
     "pricing": {
       "title": "Offres Sojori | Devis sur mesure",
@@ -1572,7 +1572,7 @@
     },
     "comparatifPmsMaroc": {
       "title": "Comparatif PMS hôtel Maroc 2026 — Quel logiciel choisir ? | Sojori",
-      "description": "Comparatif des logiciels de gestion hôtelière au Maroc : Cloudbeds, Pluriel, Nozoul, Welcomax et Sojori. Profils, architectures et le cas où chacun est le bon choix."
+      "description": "Comparatif des logiciels de gestion hôtelière au Maroc : Cloudbeds, Pluriel, Nozoul, Welcomax et Sojori. Profils, architectures et cas d'usage de chacun."
     },
     "orchestration": {
       "title": "Orchestration hôtelière — Qu'est-ce qu'un moteur d'orchestration ? | Sojori",
@@ -1580,7 +1580,22 @@
     },
     "mcp": {
       "title": "PMS connecté à l'IA — MCP | Interrogez Sojori depuis ChatGPT ou Claude",
-      "description": "Le premier PMS hôtelier avec serveur MCP. Interrogez vos chiffres depuis ChatGPT ou Claude. Lecture seule, sans donnée identifiant un voyageur."
+      "description": "Un PMS hôtelier avec serveur MCP : interrogez vos chiffres depuis ChatGPT ou Claude, en lecture seule, pour piloter votre établissement par la conversation."
+    },
+    "analyseConcurrents": {
+      "description": "Collez le lien de votre annonce Airbnb : découvrez jusqu'à 20 annonces comparables autour de vous et une estimation du prix du marché, reçues par e-mail."
+    },
+    "offreConciergeries": {
+      "description": "Le logiciel des conciergeries et gestionnaires Airbnb au Maroc : PMS, channel manager, modules WhatsApp, réservation directe, upsell, ménage. Demandez une démo."
+    },
+    "terms": {
+      "description": "Conditions Générales d'Utilisation de la plateforme Sojori : le service, l'abonnement, la protection des données et la propriété intellectuelle, en détail."
+    },
+    "privacy": {
+      "description": "Politique de confidentialité de Sojori : comment vos données personnelles sont collectées, utilisées, partagées et protégées, et les droits dont vous disposez."
+    },
+    "globalLaunch": {
+      "description": "Le logiciel tout-en-un des co-hôtes et gestionnaires de locations courte durée : PMS, channel manager, agents et modules WhatsApp. Demandez une démo."
     }
   },
   "pmsPage": {
@@ -2762,7 +2777,7 @@
       },
       "meta": {
         "title": "Sojori · PMS et agents WhatsApp pour location courte durée",
-        "description": "Le PMS Sojori, ou le vôtre. Onze agents et des modules WhatsApp : check-in, fiche de police, contrat, ménage, tarification. Vous décidez."
+        "description": "Le PMS Sojori, ou le vôtre : des agents et des modules WhatsApp pour répondre aux voyageurs, coordonner l'équipe et préparer vos décisions. Vous décidez."
       },
       "faq": {
         "eyebrow": "FAQ",
