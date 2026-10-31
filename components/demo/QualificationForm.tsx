@@ -311,7 +311,7 @@ export function QualificationForm({
         // Questionnaire court : la ville n'est plus demandée au départ ; elle l'est ici, avec « Passer » (31/10/2026).
         skip: Boolean(compact && initialCity),
         render: () => (
-          <Question title="Dans quelle ville\u00a0?" hint="Marrakech, Casablanca, Paris… Vous pouvez passer.">
+          <Question title={'Dans quelle ville\u00a0?'} hint="Marrakech, Casablanca, Paris… Vous pouvez passer.">
             <input
               type="text"
               value={ville}
