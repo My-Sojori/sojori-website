@@ -43,7 +43,7 @@
       "dynamicPricing": "Tarification dynamique",
       "dynamicPricingDesc": "Règles & calendrier",
       "analytics": "Smart Analytics",
-      "analyticsDesc": "Indicateurs temps réel",
+      "analyticsDesc": "Indicateurs à jour",
       "whatsappBot": "WhatsApp Bot",
       "whatsappBotDesc": "IA & parcours invité",
       "inbox": "Inbox unifiée",
@@ -384,7 +384,7 @@
       },
       "staff": {
         "title": "Sojori Staff",
-        "subtitle": "Planning & tâches temps réel"
+        "subtitle": "Planning & tâches au fil de la journée"
       },
       "admin": {
         "title": "Sojori Admin",
@@ -500,11 +500,11 @@
       "staff": {
         "title": "WhatsApp Staff",
         "titleGradient": "Coordination",
-        "description": "Votre équipe (ménage, maintenance, conciergerie) reçoit ses tâches, planning et notifications en temps réel sur WhatsApp. Plus besoin d'app ou de formation.",
+        "description": "Votre équipe (ménage, maintenance, conciergerie) reçoit ses tâches, son planning et ses notifications sur WhatsApp, à jour au fil de la journée. Plus besoin d'app ou de formation.",
         "featuresTitle": "Fonctionnalités",
         "features": [
           {
-            "label": "Tâches assignées en temps réel",
+            "label": "Tâches assignées au fil de la journée",
             "detail": "Check-in, ménage, maintenance"
           },
           {
@@ -886,12 +886,12 @@
       "badge": "TeamFlow · Staff Management",
       "title": "Votre équipe terrain.",
       "titleGradient": "Orchestrée. Pas dirigée.",
-      "subtitle": "Assignation auto selon disponibilité et géolocalisation. Notifications WhatsApp + in-app. Photos check pré/post intervention. Tracking temps réel et KPIs par membre.",
+      "subtitle": "Assignation auto selon disponibilité et géolocalisation. Notifications WhatsApp + in-app. Photos check pré/post intervention. Suivi au fil de la journée et KPIs par membre.",
       "cta1": "Voir la démo",
       "cta2": "Inviter mon équipe"
     },
     "board": {
-      "sectionBadge": "● Board Kanban temps réel",
+      "sectionBadge": "● Board Kanban à jour",
       "sectionTitle": "Qui fait quoi.",
       "sectionTitleGradient": "Maintenant.",
       "columns": {
@@ -964,7 +964,7 @@
         },
         {
           "icon": "",
-          "title": "Tracking temps réel",
+          "title": "Suivi au fil de la journée",
           "description": "Durée de chaque tâche. Comparable. Optimisable. Sans micro-management."
         },
         {
@@ -1954,7 +1954,7 @@
     },
     "dashboardApp": {
       "title": "Dashboard Sojori | Interface gestionnaire",
-      "description": "Tableau de bord Sojori : arrivées et départs du jour, état des chambres en temps réel, messages en attente, incidents ouverts. Accessible depuis un navigateur."
+      "description": "Tableau de bord Sojori : arrivées et départs du jour, état des chambres à jour, messages en attente, incidents ouverts. Accessible depuis un navigateur."
     },
     "ownerPortal": {
       "title": "Portail propriétaire | Transparence revenus",
@@ -2118,7 +2118,7 @@
       "Duplex Lyon"
     ],
     "sectionCalendar": {
-      "eyebrow": "● Calendrier multi-propriétés temps réel",
+      "eyebrow": "● Calendrier multi-propriétés, à jour",
       "title": "Vue d'ensemble.",
       "titleGradient": "D'un seul coup d'œil."
     },
@@ -2145,12 +2145,12 @@
         "desc": "Revenus, dépenses, marge par propriété. Export comptable mensuel."
       },
       {
-        "title": "Taxe de séjour auto",
-        "desc": "Calculée, collectée, déclarée. Multi-villes, multi-pays."
+        "title": "Taxe de séjour calculée",
+        "desc": "Calculée par voyageur et par nuit, selon le réglage de chaque logement."
       },
       {
-        "title": "Sync 2-way iCal",
-        "desc": "Avec votre channel manager + Booking, Expedia et Airbnb en direct. Zéro double-saisie."
+        "title": "Synchronisation par connecteur",
+        "desc": "Disponibilités, prix et réservations de vos canaux au même endroit, par connecteur."
       }
     ],
     "stats": [

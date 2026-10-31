@@ -43,7 +43,7 @@
       "dynamicPricing": "Preços dinâmicos",
       "dynamicPricingDesc": "Regras e calendário",
       "analytics": "Smart Analytics",
-      "analyticsDesc": "Métricas em tempo real",
+      "analyticsDesc": "Indicadores atualizados",
       "whatsappBot": "WhatsApp Bot",
       "whatsappBotDesc": "IA e jornada do hóspede",
       "inbox": "Inbox unificada",
@@ -384,7 +384,7 @@
       },
       "staff": {
         "title": "Sojori Equipe",
-        "subtitle": "Planejamento e tarefas em tempo real"
+        "subtitle": "Planeamento e tarefas ao longo do dia"
       },
       "admin": {
         "title": "Sojori Admin",
@@ -500,11 +500,11 @@
       "staff": {
         "title": "WhatsApp Equipe",
         "titleGradient": "Coordenação",
-        "description": "Sua equipe (limpeza, manutenção, concierge) recebe suas tarefas, cronograma e notificações em tempo real no WhatsApp. Sem app ou treinamento necessário.",
+        "description": "A sua equipa (limpeza, manutenção, concierge) recebe as suas tarefas, o planeamento e as notificações no WhatsApp, atualizados ao longo do dia. Sem app nem formação necessária.",
         "featuresTitle": "Funcionalidades",
         "features": [
           {
-            "label": "Tarefas atribuídas em tempo real",
+            "label": "Tarefas atribuídas ao longo do dia",
             "detail": "Check-in, limpeza, manutenção"
           },
           {
@@ -886,12 +886,12 @@
       "badge": "TeamFlow · Gestão Equipe",
       "title": "Sua equipe de campo.",
       "titleGradient": "Orquestrada. Não gerenciada.",
-      "subtitle": "Atribuição automática conforme disponibilidade e geolocalização. Notificações WhatsApp + in-app. Fotos check pré/pós intervenção. Rastreamento em tempo real e KPIs por membro.",
+      "subtitle": "Atribuição automática conforme disponibilidade e geolocalização. Notificações WhatsApp + in-app. Fotos check pré/pós intervenção. Acompanhamento ao longo do dia e KPIs por membro.",
       "cta1": "Ver a demo",
       "cta2": "Convidar minha equipe"
     },
     "board": {
-      "sectionBadge": "● Board Kanban tempo real",
+      "sectionBadge": "● Quadro Kanban atualizado",
       "sectionTitle": "Quem faz o quê.",
       "sectionTitleGradient": "Agora.",
       "columns": {
@@ -964,7 +964,7 @@
         },
         {
           "icon": "",
-          "title": "Rastreamento em tempo real",
+          "title": "Acompanhamento ao longo do dia",
           "description": "Duração de cada tarefa. Comparável. Otimizável. Sem microgerenciamento."
         },
         {
@@ -2118,7 +2118,7 @@
       "Duplex Lyon"
     ],
     "sectionCalendar": {
-      "eyebrow": "● Calendário multi-propriedade em tempo real",
+      "eyebrow": "● Calendário multipropriedade, atualizado",
       "title": "Visão geral.",
       "titleGradient": "De relance."
     },
@@ -2145,12 +2145,12 @@
         "desc": "Receitas, custos, margem por propriedade. Exportação contábil mensal."
       },
       {
-        "title": "Taxa turística automática",
-        "desc": "Calculada, cobrada, declarada. Multi-cidade, multi-país."
+        "title": "Taxa turística calculada",
+        "desc": "Calculada por viajante e por noite, conforme a definição de cada alojamento."
       },
       {
-        "title": "Sincronização iCal bidirecional",
-        "desc": "Com seu channel manager + Airbnb/Booking direto. Sem dupla entrada."
+        "title": "Sincronização por conectores",
+        "desc": "Disponibilidade, preços e reservas dos seus canais no mesmo sítio, por conectores."
       }
     ],
     "stats": [

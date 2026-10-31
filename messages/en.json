@@ -43,7 +43,7 @@
       "dynamicPricing": "Dynamic Pricing",
       "dynamicPricingDesc": "Rules & calendar",
       "analytics": "Smart Analytics",
-      "analyticsDesc": "Real-time metrics",
+      "analyticsDesc": "Up-to-date metrics",
       "whatsappBot": "WhatsApp Bot",
       "whatsappBotDesc": "AI & guest journey",
       "inbox": "Unified Inbox",
@@ -384,7 +384,7 @@
       },
       "staff": {
         "title": "Sojori Staff",
-        "subtitle": "Real-time planning & tasks"
+        "subtitle": "Schedule & tasks through the day"
       },
       "admin": {
         "title": "Sojori Admin",
@@ -500,11 +500,11 @@
       "staff": {
         "title": "WhatsApp Staff",
         "titleGradient": "Coordination",
-        "description": "Your team (cleaning, maintenance, concierge) receives their tasks, schedule and notifications in real-time on WhatsApp. No app or training needed.",
+        "description": "Your team (cleaning, maintenance, concierge) receives their tasks, schedule and notifications on WhatsApp, kept up to date through the day. No app or training needed.",
         "featuresTitle": "Features",
         "features": [
           {
-            "label": "Real-time assigned tasks",
+            "label": "Tasks assigned through the day",
             "detail": "Check-in, cleaning, maintenance"
           },
           {
@@ -886,12 +886,12 @@
       "badge": "TeamFlow · Staff Management",
       "title": "Your field team.",
       "titleGradient": "Orchestrated. Not managed.",
-      "subtitle": "Auto-assignment based on availability and geolocation. WhatsApp + in-app notifications. Pre/post check photos. Real-time tracking and KPIs per member.",
+      "subtitle": "Auto-assignment based on availability and geolocation. WhatsApp + in-app notifications. Pre/post check photos. Tracking through the day and KPIs per member.",
       "cta1": "Watch demo",
       "cta2": "Invite my team"
     },
     "board": {
-      "sectionBadge": "● Real-time Kanban board",
+      "sectionBadge": "● Up-to-date Kanban board",
       "sectionTitle": "Who does what.",
       "sectionTitleGradient": "Now.",
       "columns": {
@@ -964,7 +964,7 @@
         },
         {
           "icon": "",
-          "title": "Real-time tracking",
+          "title": "Tracking through the day",
           "description": "Duration of each task. Comparable. Optimizable. Without micromanagement."
         },
         {
@@ -2118,7 +2118,7 @@
       "Lyon duplex"
     ],
     "sectionCalendar": {
-      "eyebrow": "● Multi-property calendar in real time",
+      "eyebrow": "● Multi-property calendar, kept up to date",
       "title": "Overview.",
       "titleGradient": "At a glance."
     },
@@ -2145,12 +2145,12 @@
         "desc": "Revenue, costs, margin per property. Monthly accounting export."
       },
       {
-        "title": "Tourist tax automation",
-        "desc": "Calculated, collected, filed. Multi-city, multi-country."
+        "title": "Tourist tax calculation",
+        "desc": "Calculated per guest and per night, based on each property’s setting."
       },
       {
-        "title": "2-way iCal sync",
-        "desc": "With your channel manager + direct Airbnb/Booking. No double entry."
+        "title": "Sync through connectors",
+        "desc": "Availability, rates and bookings from your channels in one place, through connectors."
       }
     ],
     "stats": [
