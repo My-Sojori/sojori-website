@@ -2345,9 +2345,9 @@
         "resume": "Retomar",
         "pauseAria": "Pausar a animação",
         "resumeAria": "Retomar a animação",
-        "chooseLabel": "ESCOLHA O SEU ESTABELECIMENTO",
+        "chooseLabel": "EXEMPLOS DE DIA TIPO · ESCOLHA UM",
         "chooseAria": "Escolher um estabelecimento",
-        "regionAria": "A sala dos agentes: quem fala com quem, em direto",
+        "regionAria": "A sala dos agentes: quem fala com quem, nesta simulação",
         "cas": {
           "conc": {
             "type": "Empresa de concierge",
@@ -2420,7 +2420,7 @@
           "arrivals": "chegadas",
           "departures": "partidas",
           "guestRequests": "pedidos de hóspedes",
-          "exchanges": "trocas entre agentes, em direto",
+          "exchanges": "trocas entre agentes nesta simulação",
           "cards": "cartões que aprovou"
         },
         "numbersNote": "Dia tipo: 75 % de ocupação, estadia média de 2,5 noites. Alojamentos, quartos e nomes fictícios. Os dois últimos números contam o que acabou de ver.",
@@ -2482,7 +2482,8 @@
           "hotProsp2": "Sim, para 20 pessoas em março.",
           "hotProsp3": "Empresa qualificada: seminário de 20 pessoas em março.",
           "hotQuote": "Orçamento pronto para o seminário de março. Aprova?"
-        }
+        },
+        "simulation": "Simulação · dados fictícios"
       },
       "agents": {
         "eyebrow": "02 · OS AGENTES",
@@ -2533,7 +2534,7 @@
             ],
             "q": "Há disponibilidade de 12 a 16, para duas pessoas?",
             "r": "Sim. Eis o preço para 4 noites e a ligação para confirmar.",
-            "promise": "Nenhum pedido fica por responder: cada mensagem torna-se um orçamento, de dia como de noite.",
+            "promise": "Nenhum pedido fica sem resposta, de dia ou de noite: o agente responde, prepara o orçamento ou passa-lhe a mão.",
             "kpiValue": "≈ 70 %",
             "kpiText": "dos pedidos de reserva tratados sem o senhor"
           },
@@ -2689,8 +2690,8 @@
             "name": "Agente de Marketing · Agente de Finanças",
             "resume": "Dois agentes especializados, definidos consigo conforme a necessidade: as campanhas de um lado, as contas do outro.",
             "points": [
-              "Agente de Marketing: prepara as suas campanhas, o senhor aprova.",
-              "Agente de Finanças: prepara o acompanhamento das suas contas, o senhor aprova.",
+              "Agente de Marketing: prepara as suas campanhas e os seus conteúdos; o senhor valida antes de qualquer divulgação.",
+              "Agente de Finanças: prepara o acompanhamento das suas contas; o senhor valida.",
               "Cada missão é definida consigo, sem dupla faturação."
             ],
             "talks": [
@@ -2855,7 +2856,7 @@
             "status": "Agente de Operações · online",
             "resume": "A sua equipa recebe as tarefas e responde no WhatsApp, por escrito ou por mensagem de voz. Sem aplicação, sem formação.",
             "points": [
-              "Tarefas do dia e planeamento, em tempo real.",
+              "Tarefas do dia e planeamento, atualizados ao longo do dia.",
               "Iniciar ou terminar uma tarefa com uma mensagem ou uma mensagem de voz.",
               "Fotografias antes e depois da limpeza.",
               "Partilha de localização à chegada ao local.",
@@ -2984,7 +2985,7 @@
           },
           {
             "name": "Channel manager",
-            "desc": "Sincronização dos canais em tempo real, iCal nos dois sentidos, anti-overbooking."
+            "desc": "Sincronização com os seus canais por conectores: disponibilidade, preços e reservas no mesmo sítio."
           },
           {
             "name": "Inbox",
@@ -2992,7 +2993,7 @@
           },
           {
             "name": "Pagamentos automatizados",
-            "desc": "Cobrança na reserva, reembolso com um clique."
+            "desc": "Cobrança online, reembolso a partir da reserva."
           },
           {
             "name": "Faturas e contratos",
@@ -3004,7 +3005,7 @@
           },
           {
             "name": "Taxa turística",
-            "desc": "Calculada e cobrada automaticamente."
+            "desc": "Calculada por viajante e por noite, conforme a definição de cada alojamento."
           },
           {
             "name": "Owner Portal",
@@ -3012,11 +3013,11 @@
           },
           {
             "name": "Equipas no terreno",
-            "desc": "Atribuição conforme a disponibilidade, notificações, fotografias antes e depois da limpeza, acompanhamento em tempo real."
+            "desc": "Atribuição conforme a disponibilidade, notificações, fotos antes e depois da limpeza, acompanhamento ao longo do dia."
           },
           {
             "name": "Painel de controlo",
-            "desc": "Chegadas do dia, indicadores em tempo real, fio de atividade."
+            "desc": "Chegadas do dia, indicadores atualizados, registo de atividade."
           }
         ],
         "ownTitle": "OU COM O SEU PMS",
@@ -3167,21 +3168,22 @@
       },
       "control": {
         "eyebrow": "05 · O CONTROLO É SEU",
-        "title": "O agente propõe. O senhor aprova.",
+        "title": "O senhor define as regras. Os seus agentes agem dentro desse quadro.",
         "cards": [
           {
-            "title": "O senhor define a autonomia",
-            "text": "Para cada agente, escolhe: age sozinho, ou prepara um cartão e aguarda o seu clique."
+            "title": "Age sozinho, dentro dos seus limites",
+            "text": "O que o senhor autorizou sai sem esperar: uma resposta a um viajante, uma tarefa atribuída à equipa de limpeza."
           },
           {
-            "title": "Cada gesto fica registado",
-            "text": "Direitos verificados, duplicados evitados, registo completo. «A sala» mostra quem fez o quê, quando e para que pedido."
+            "title": "Prepara um cartão, o senhor clica",
+            "text": "Um bloqueio, um preço, um orçamento: o agente prepara um cartão de validação e espera o seu clique antes de agir."
           },
           {
-            "title": "Uma pessoa continua no circuito",
-            "text": "Quando o agente hesita, passa o assunto ao senhor ou à sua equipa, com o contexto já reunido."
+            "title": "Leva-lhe a exceção",
+            "text": "Quando o agente hesita ou um problema ultrapassa a sua missão, passa a mão ao senhor ou à sua equipa, com o contexto já reunido."
           }
-        ]
+        ],
+        "lead": "Cada gesto fica registado: permissões verificadas, duplicados evitados, registo completo. «A sala» mostra quem fez o quê, quando e para que pedido."
       },
       "offer": {
         "eyebrow": "06 · A SUA OFERTA",
@@ -3641,11 +3643,11 @@
             "text": "O PMS Sojori reúne numa só ferramenta tudo o que uma empresa de concierge, um riad ou um hotel precisa no dia a dia.",
             "points": [
               "Um calendário unificado para todas as propriedades, em vista de mês, semana e dia.",
-              "Um channel manager: sincronização dos canais em tempo real, iCal nos dois sentidos, anti-overbooking.",
+              "Um channel manager: sincronização com os seus canais por conectores, disponibilidade, preços e reservas no mesmo sítio.",
               "Uma inbox que reúne as mensagens das OTA compatíveis.",
               "Pagamentos automatizados, faturas e contratos gerados e assinados online.",
               "Um painel financeiro: receitas, despesas, margem por propriedade, exportação contabilística mensal.",
-              "A taxa turística, calculada e cobrada automaticamente.",
+              "A taxa turística, calculada por viajante e por noite, conforme a definição de cada alojamento.",
               "Um Owner Portal para que os proprietários acompanhem receitas e ocupação.",
               "As equipas no terreno: atribuição conforme a disponibilidade, notificações, fotografias antes e depois da limpeza."
             ]
@@ -3686,7 +3688,7 @@
           },
           {
             "q": "O PMS Sojori inclui um channel manager?",
-            "a": "Sim. O channel manager da Sojori sincroniza os canais em tempo real, troca calendários iCal nos dois sentidos e evita as reservas duplicadas."
+            "a": "Sim. O channel manager da Sojori sincroniza os seus canais por conectores: disponibilidade, preços e reservas ficam no mesmo sítio."
           },
           {
             "q": "Quanto custa o PMS Sojori?",
@@ -3920,7 +3922,7 @@
             "points": [
               "Configurável por estabelecimento: por estadia, por noite, ou por pessoa e por noite.",
               "Modo de cobrança escolhido pelo estabelecimento.",
-              "Calculada e cobrada automaticamente no PMS Sojori.",
+              "Calculada por viajante e por noite, conforme a definição de cada alojamento, no PMS da Sojori.",
               "Para uma reserva recebida de um canal em que a taxa não está incluída no total, a Sojori identifica o montante a cobrar no local."
             ]
           },

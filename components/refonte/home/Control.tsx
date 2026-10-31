@@ -8,6 +8,7 @@ export function Control() {
       <div className="sj2-head">
         <span className="sj2-eyebrow">{t('eyebrow')}</span>
         <h2 id="sj2-control-h" className="sj2-h2">{t('title')}</h2>
+        <p className="sj2-lead sj2-control-lead">{t('lead')}</p>
       </div>
       <div className="sj2-trois">
         {cartes.map((c) => (

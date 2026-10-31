@@ -2345,9 +2345,9 @@
         "resume": "Resume",
         "pauseAria": "Pause the animation",
         "resumeAria": "Resume the animation",
-        "chooseLabel": "CHOOSE YOUR PROPERTY TYPE",
+        "chooseLabel": "EXAMPLE DAYS · PICK ONE",
         "chooseAria": "Choose a property type",
-        "regionAria": "The agents’ room: who talks to whom, live",
+        "regionAria": "The agents’ room: who talks to whom, in this simulation",
         "cas": {
           "conc": {
             "type": "Concierge company",
@@ -2420,7 +2420,7 @@
           "arrivals": "arrivals",
           "departures": "departures",
           "guestRequests": "guest requests",
-          "exchanges": "exchanges between agents, live",
+          "exchanges": "exchanges between agents in this simulation",
           "cards": "cards you have approved"
         },
         "numbersNote": "Typical day: 75% occupancy, average stay of 2.5 nights. Properties, rooms and first names are fictional. The last two figures count what you have just seen.",
@@ -2482,7 +2482,8 @@
           "hotProsp2": "Yes, for 20 people in March.",
           "hotProsp3": "Company qualified: seminar for 20 people in March.",
           "hotQuote": "Quote ready for the March seminar. Do you approve?"
-        }
+        },
+        "simulation": "Simulation · fictional data"
       },
       "agents": {
         "eyebrow": "02 · THE AGENTS",
@@ -2533,7 +2534,7 @@
             ],
             "q": "Available from the 12th to the 16th, for two?",
             "r": "Yes. Here is the price for 4 nights and the link to confirm.",
-            "promise": "No request goes unanswered: every message becomes a quote, day or night.",
+            "promise": "No request goes unanswered, day or night: the agent replies, prepares the quote or hands over to you.",
             "kpiValue": "≈ 70%",
             "kpiText": "of booking requests handled without you"
           },
@@ -2689,8 +2690,8 @@
             "name": "Marketing Agent · Finance Agent",
             "resume": "Two specialized agents, scoped with you according to your needs: campaigns on one side, accounts on the other.",
             "points": [
-              "Marketing Agent: prepares your campaigns, you approve.",
-              "Finance Agent: prepares your account follow-ups, you approve.",
+              "Marketing Agent: prepares your campaigns and content; you approve before anything goes out.",
+              "Finance Agent: prepares the follow-up of your accounts; you approve.",
               "Each assignment is scoped with you, with no double billing."
             ],
             "talks": [
@@ -2855,7 +2856,7 @@
             "status": "Operations Agent · online",
             "resume": "Your team receives its tasks and replies on WhatsApp, in writing or by voice message. No app, no training.",
             "points": [
-              "Today’s tasks and schedule, in real time.",
+              "Today’s tasks and schedule, kept up to date through the day.",
               "Start or finish a task with one message or voice message.",
               "Before and after photos of the cleaning.",
               "Location sharing on arrival on site.",
@@ -2984,7 +2985,7 @@
           },
           {
             "name": "Channel manager",
-            "desc": "Real-time channel sync, two-way iCal, overbooking protection."
+            "desc": "Sync with your channels through connectors: availability, rates and bookings in one place."
           },
           {
             "name": "Inbox",
@@ -2992,7 +2993,7 @@
           },
           {
             "name": "Automated payments",
-            "desc": "Payment collected at booking, refund in one click."
+            "desc": "Online payment, refunds from the booking."
           },
           {
             "name": "Invoices and contracts",
@@ -3004,7 +3005,7 @@
           },
           {
             "name": "Tourist tax",
-            "desc": "Calculated and collected automatically."
+            "desc": "Calculated per guest and per night, based on each property’s setting."
           },
           {
             "name": "Owner Portal",
@@ -3012,11 +3013,11 @@
           },
           {
             "name": "Field teams",
-            "desc": "Assignment based on availability, notifications, before and after cleaning photos, real-time tracking."
+            "desc": "Assignment based on availability, notifications, photos before and after cleaning, tracking through the day."
           },
           {
             "name": "Dashboard",
-            "desc": "Today’s arrivals, real-time indicators, activity feed."
+            "desc": "Today’s arrivals, up-to-date indicators, activity feed."
           }
         ],
         "ownTitle": "OR WITH YOUR PMS",
@@ -3167,21 +3168,22 @@
       },
       "control": {
         "eyebrow": "05 · YOU STAY IN CONTROL",
-        "title": "The agent suggests. You approve.",
+        "title": "You set the rules. Your agents act within them.",
         "cards": [
           {
-            "title": "You set the autonomy",
-            "text": "For each agent, you choose: it acts on its own, or it prepares a card and waits for your click."
+            "title": "It acts alone, within your limits",
+            "text": "What you have authorized goes out without waiting: a reply to a guest, a task assigned to the cleaning team."
           },
           {
-            "title": "Every action is logged",
-            "text": "Permissions checked, duplicates avoided, full log. “The Room” shows who did what, when, and for which request."
+            "title": "It prepares a card, you click",
+            "text": "A block, a price, a quote: the agent prepares a validation card and waits for your click before acting."
           },
           {
-            "title": "A human stays in the loop",
-            "text": "When the agent is unsure, it hands over to you or your team, with the context already gathered."
+            "title": "It escalates the exception",
+            "text": "When the agent is unsure or a problem goes beyond its job, it hands over to you or your team, with the context already gathered."
           }
-        ]
+        ],
+        "lead": "Every action is logged: permissions checked, duplicates avoided, full log. “The Room” shows who did what, when, and for which request."
       },
       "offer": {
         "eyebrow": "06 · YOUR OFFER",
@@ -3641,11 +3643,11 @@
             "text": "The Sojori PMS brings together in one tool what a concierge company, a riad or a hotel needs every day.",
             "points": [
               "A unified calendar for all properties, in month, week and day views.",
-              "A channel manager: real-time channel sync, two-way iCal, anti-overbooking.",
+              "A channel manager: sync with your channels through connectors, availability, rates and bookings in one place.",
               "An inbox that gathers messages from compatible OTAs.",
               "Automated payments, invoices and contracts generated and signed online.",
               "A financial dashboard: revenue, expenses, margin per property, monthly accounting export.",
-              "Tourist tax, calculated and collected automatically.",
+              "Tourist tax, calculated per guest and per night, based on each property’s setting.",
               "An Owner Portal so owners can follow revenue and occupancy.",
               "Field teams: assignment based on availability, notifications, photos before and after cleaning."
             ]
@@ -3686,7 +3688,7 @@
           },
           {
             "q": "Does the Sojori PMS include a channel manager?",
-            "a": "Yes. The Sojori channel manager syncs channels in real time, exchanges iCal calendars in both directions and prevents double bookings."
+            "a": "Yes. The Sojori channel manager syncs your channels through connectors: availability, rates and bookings are in one place."
           },
           {
             "q": "How much does the Sojori PMS cost?",
@@ -3920,7 +3922,7 @@
             "points": [
               "Configurable for each property: per stay, per night, or per person per night.",
               "Collection mode chosen by the property.",
-              "Calculated and collected automatically in the Sojori PMS.",
+              "Calculated per guest and per night, based on each property’s setting, in the Sojori PMS.",
               "For a booking received from a channel where the tax is not included in the total, Sojori flags the amount to collect on site."
             ]
           },
