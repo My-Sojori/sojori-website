@@ -2405,10 +2405,20 @@
         "resume": "Reanudar",
         "pauseAria": "Poner la animación en pausa",
         "resumeAria": "Reanudar la animación",
-        "chooseLabel": "EJEMPLOS DE JORNADA TIPO · ELIJA UNO",
+        "chooseLabel": "EJEMPLOS DE JORNADA TIPO · A SU ELECCIÓN",
         "chooseAria": "Elegir un establecimiento",
         "regionAria": "La sala de los agentes: quién habla con quién, en esta simulación",
         "cas": {
+          "riad": {
+            "type": "Riad",
+            "size": "8 habitaciones",
+            "desc": "Un equipo pequeño, viajeros de todo el mundo.",
+            "titre": "RIAD · 8 HABITACIONES",
+            "unites": "habitaciones ocupadas",
+            "staff": "Recepción · limpieza",
+            "tiers": "Traslados · proveedores",
+            "prospects": "Agencias de viajes"
+          },
           "conc": {
             "type": "Empresa de conserjería",
             "size": "50 propiedades",
@@ -2522,19 +2532,19 @@
           "tarifDoneNon": "No se ha aplicado nada.",
           "quoteDoneOk": "Presupuesto enviado.",
           "quoteDoneNon": "Presupuesto no enviado.",
-          "hotPlan": "Plan del día: {departs} salidas, {recouches} limpiezas de estancia, {femmes} camareras de piso.",
-          "hotStaff": "Plan de limpieza enviado a {femmes} camareras de piso. Habitación {r1} primero.",
+          "hotPlan": "Plan del día: {departs, plural, one {# salida} other {# salidas}}, {recouches, plural, one {# limpieza de estancia} other {# limpiezas de estancia}}, {femmes, plural, one {# camarera de piso} other {# camareras de piso}}.",
+          "hotStaff": "Plan de limpieza enviado a {femmes, plural, one {# camarera de piso} other {# camareras de piso}}. Habitación {r1} primero.",
           "hotAsk": "Habitación {r1}: ¿llegada posible antes de las 12:00?",
           "hotOpen": "¿Habitación {r1} lista antes de las 12:00?",
           "hotStaffReply": "Habitación {r1} hecha. (mensaje de voz)",
           "hotClose": "Habitación {r1} lista a las 11:40.",
           "hotGuest": "Su habitación está lista desde las 11:40.",
-          "hotWelcome": "{arrivees} mensajes de bienvenida salen de una vez, uno por llegada.",
+          "hotWelcome": "{arrivees, plural, one {# mensaje de bienvenida sale al llegar.} other {# mensajes de bienvenida salen de una vez, uno por llegada.}}",
           "hotBookAsk": "Quisiera reservar 3 noches, en directo.",
           "hotBookCard": "Reserva directa lista: habitación {r2}, 3 noches. ¿La aprueba?",
           "hotBookReplyOk": "Su reserva está confirmada.",
           "hotBookReplyNon": "Lo sentimos, esta habitación ya no está disponible.",
-          "hotShuttle": "Traslado al aeropuerto a las 14:20: ¿confirmado? ({navettes} traslados hoy)",
+          "hotShuttle": "Traslado al aeropuerto a las 14:20: ¿confirmado? ({navettes, plural, one {# traslado hoy} other {# traslados hoy}})",
           "hotShuttleOk": "Confirmado.",
           "hotShuttleClose": "Traslado confirmado para las 14:20.",
           "hotSiteCard": "La página «Seminarios» está lista. Aquí tiene la vista previa. ¿La aprueba?",
@@ -2543,7 +2553,19 @@
           "hotProsp3": "Empresa calificada: seminario de 20 personas en marzo.",
           "hotQuote": "Presupuesto listo para el seminario de marzo. ¿Lo aprueba?"
         },
-        "simulation": "Simulación · datos ficticios"
+        "simulation": "Simulación · datos ficticios",
+        "histoires": {
+          "aria": "Las historias de la jornada",
+          "arrivee": "Una llegada",
+          "proprio": "Un propietario",
+          "resa": "Una reserva",
+          "equipe": "Su equipo",
+          "site": "Su sitio, sus precios",
+          "client": "Un nuevo cliente",
+          "menage": "La limpieza de la mañana",
+          "arriveeAvance": "Una llegada anticipada",
+          "navette": "Un traslado"
+        }
       },
       "agents": {
         "eyebrow": "02 · LOS AGENTES",

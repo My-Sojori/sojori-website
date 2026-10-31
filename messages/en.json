@@ -2405,10 +2405,20 @@
         "resume": "Resume",
         "pauseAria": "Pause the animation",
         "resumeAria": "Resume the animation",
-        "chooseLabel": "EXAMPLE DAYS · PICK ONE",
+        "chooseLabel": "EXAMPLE DAYS · YOUR CHOICE",
         "chooseAria": "Choose a property type",
         "regionAria": "The agents’ room: who talks to whom, in this simulation",
         "cas": {
+          "riad": {
+            "type": "Riad",
+            "size": "8 rooms",
+            "desc": "A small team, guests from around the world.",
+            "titre": "RIAD · 8 ROOMS",
+            "unites": "rooms occupied",
+            "staff": "Welcome · housekeeping",
+            "tiers": "Shuttles · providers",
+            "prospects": "Travel agencies"
+          },
           "conc": {
             "type": "Concierge company",
             "size": "50 properties",
@@ -2522,19 +2532,19 @@
           "tarifDoneNon": "Nothing applied.",
           "quoteDoneOk": "Quote sent.",
           "quoteDoneNon": "Quote not sent.",
-          "hotPlan": "Plan for the day: {departs} departures, {recouches} stayovers, {femmes} housekeepers.",
-          "hotStaff": "Cleaning plan sent to {femmes} housekeepers. Room {r1} first.",
+          "hotPlan": "Plan for the day: {departs, plural, one {# departure} other {# departures}}, {recouches, plural, one {# stayover} other {# stayovers}}, {femmes, plural, one {# housekeeper} other {# housekeepers}}.",
+          "hotStaff": "Cleaning plan sent to {femmes, plural, one {# housekeeper} other {# housekeepers}}. Room {r1} first.",
           "hotAsk": "Room {r1}: can I arrive before 12:00?",
           "hotOpen": "Room {r1} ready before 12:00?",
           "hotStaffReply": "Room {r1} done. (voice message)",
           "hotClose": "Room {r1} ready at 11:40.",
           "hotGuest": "Your room is ready from 11:40.",
-          "hotWelcome": "{arrivees} welcome messages go out at once, one per arrival.",
+          "hotWelcome": "{arrivees, plural, one {# welcome message goes out on arrival.} other {# welcome messages go out at once, one per arrival.}}",
           "hotBookAsk": "I would like to book 3 nights, direct.",
           "hotBookCard": "Direct booking ready: room {r2}, 3 nights. Do you approve?",
           "hotBookReplyOk": "Your booking is confirmed.",
           "hotBookReplyNon": "Sorry, this room is no longer available.",
-          "hotShuttle": "Airport shuttle at 14:20: confirmed? ({navettes} shuttles today)",
+          "hotShuttle": "Airport shuttle at 14:20: confirmed? ({navettes, plural, one {# shuttle today} other {# shuttles today}})",
           "hotShuttleOk": "Confirmed.",
           "hotShuttleClose": "Shuttle confirmed for 14:20.",
           "hotSiteCard": "The “Seminars” page is ready. Here is the preview. Do you approve?",
@@ -2543,7 +2553,19 @@
           "hotProsp3": "Company qualified: seminar for 20 people in March.",
           "hotQuote": "Quote ready for the March seminar. Do you approve?"
         },
-        "simulation": "Simulation · fictional data"
+        "simulation": "Simulation · fictional data",
+        "histoires": {
+          "aria": "The stories of the day",
+          "arrivee": "An arrival",
+          "proprio": "An owner",
+          "resa": "A booking",
+          "equipe": "Your team",
+          "site": "Your site, your prices",
+          "client": "A new client",
+          "menage": "The morning cleaning",
+          "arriveeAvance": "An early arrival",
+          "navette": "A shuttle"
+        }
       },
       "agents": {
         "eyebrow": "02 · THE AGENTS",
