@@ -2029,8 +2029,8 @@
       "description": "Sojori builds hospitality orchestration engine: PMS, channel manager, WhatsApp AI, dynamic pricing. Based in Marrakech, Casablanca and Paris."
     },
     "demo": {
-      "title": "Request a Sojori demo | PMS & hospitality orchestrator",
-      "description": "Book a personalized Sojori demo: PMS, Channel Manager, WhatsApp AI. Setup in under 7 days, 1 month free trial."
+      "title": "Request a Sojori demo · PMS and WhatsApp agents",
+      "description": "Request a Sojori demo: the Sojori PMS or your own, agents and WhatsApp modules. An advisor prepares the demo for your case."
     },
     "demoRdv": {
       "title": "Confirm your demo appointment | Sojori",
@@ -2413,7 +2413,7 @@
           "agents": "Between agents",
           "card": "Card to approve"
         },
-        "soon": "Coming soon, under construction: Booking Agent Call · Guest Service Agent Call · calls to staff",
+        "soon": "Available as an option: Booking Agent Call · Guest Service Agent Call · calls to staff",
         "journalTitle": "THE EXCHANGES, NEWEST FIRST",
         "numbersTitle": "TODAY · {type} OF {size}",
         "numbers": {
@@ -2704,7 +2704,7 @@
           },
           "calls": {
             "name": "Calling Agents",
-            "resume": "The same agent, but by voice, live on WhatsApp. Not yet available to buy, no date promised.",
+            "resume": "The same agent, but by voice, live on WhatsApp. Offered as an option on your plan.",
             "points": [
               "Booking Agent Call: takes a booking by voice.",
               "Guest Service Agent Call: answers a guest who calls.",
@@ -2717,8 +2717,8 @@
             "q": "(incoming call) Hello, I would like to book.",
             "r": "Hello, with pleasure. For which dates?",
             "promise": "The phone no longer rings into the void.",
-            "kpiValue": "Coming soon",
-            "kpiText": "under construction, no date promised",
+            "kpiValue": "Optional",
+            "kpiText": "add it to your plan",
             "note": "A call is a live voice in real time, not to be confused with a voice message, which is already supported."
           }
         }
@@ -3227,7 +3227,7 @@
           },
           {
             "q": "What do the Sojori agents do?",
-            "a": "Sojori offers one agent per role: Booking, Guest Service, Operations, Dynamic pricing, Assistant, Studio, Website, Sales, Prospecting, Marketing and Finance, plus calling agents under construction. For each one, you set whether it acts alone or waits for your approval."
+            "a": "Sojori offers one agent per role: Booking, Guest Service, Operations, Dynamic pricing, Assistant, Studio, Website, Sales, Prospecting, Marketing and Finance, plus calling agents offered as an option. For each one, you set whether it acts alone or waits for your approval."
           },
           {
             "q": "How does WhatsApp check-in work, with the police registration form and the contract?",
@@ -3255,30 +3255,22 @@
         "lead": "Tell us the size of your portfolio and the agents you need. You receive a quote tailored to your case."
       },
       "steps": {
-        "socle": "1 · YOUR FOUNDATION",
+        "socle": "1 · YOU ARE",
         "parc": "2 · YOUR PORTFOLIO",
         "agents": "3 · YOUR AGENTS AND OPTIONS",
         "users": "4 · YOUR USERS",
         "site": "5 · YOUR WEBSITE",
-        "service": "6 · SETUP",
-        "soon": "7 · COMING SOON"
-      },
-      "mode": {
-        "aria": "Your management system",
-        "sojori": {
-          "title": "With the Sojori PMS",
-          "desc": "Properties, bookings, channel manager, calendars, inbox, reports."
-        },
-        "own": {
-          "title": "With your PMS",
-          "desc": "You keep it. Same options, except dynamic pricing."
-        }
+        "service": "6 · SETUP"
       },
       "parc": {
         "unitOne": "property or room",
         "unitMany": "properties or rooms",
         "sliderAria": "Number of properties or rooms",
-        "quickAria": "Quick values"
+        "quickAria": "Quick values",
+        "unitBiens": "{n, plural, one {property} other {properties}}",
+        "unitChambres": "{n, plural, one {room} other {rooms}}",
+        "sliderAriaBiens": "Number of properties",
+        "sliderAriaChambres": "Number of rooms"
       },
       "products": {
         "pms": {
@@ -3330,7 +3322,19 @@
           "desc": "Prepares your account and payment follow-ups, which you approve."
         },
         "blocked": "Not available with your PMS: dynamic pricing only applies to Sojori PMS properties.",
-        "forAccount": "per account"
+        "forAccount": "per account",
+        "agent_booking_call": {
+          "name": "Booking Agent Call",
+          "desc": "Takes a booking by voice, in a live call on WhatsApp."
+        },
+        "agent_guest_service_call": {
+          "name": "Guest Service Agent Call",
+          "desc": "Answers a guest who calls, live on WhatsApp."
+        },
+        "agent_staff_call": {
+          "name": "Staff calls",
+          "desc": "The Operations Agent calls your team to confirm an urgent task."
+        }
       },
       "users": {
         "intro": "One Studio Agent user is included in every account. WhatsApp access for staff, admin and owners is counted per person and per role.",
@@ -3399,24 +3403,6 @@
           "detail": "to be reviewed with you"
         }
       },
-      "soon": {
-        "intro": "Live calls on WhatsApp are under construction, with no promised date. Tell us which ones interest you: you will be the first to know.",
-        "agent_booking_call": {
-          "name": "Booking Agent Call",
-          "desc": "Takes a booking by voice, live on WhatsApp."
-        },
-        "agent_guest_service_call": {
-          "name": "Guest Service Agent Call",
-          "desc": "Answers a guest who calls."
-        },
-        "agent_staff_call": {
-          "name": "Staff calls",
-          "desc": "The Operations Agent calls your team."
-        },
-        "interested": "I'm interested",
-        "interestedOn": "✓ I'm interested",
-        "detail": "coming soon · you are interested"
-      },
       "selection": {
         "aria": "Your selection",
         "eyebrow": "YOUR SELECTION",
@@ -3441,7 +3427,11 @@
         "errorGeneric": "Your request could not be sent. Check your connection and try again.",
         "successTitle": "Thank you, your request has been sent.",
         "successText": "An advisor will reply with a quote and offer you a demo slot.",
-        "again": "Edit my selection"
+        "again": "Edit my selection",
+        "titleBiens": "{n, plural, one {# property} other {# properties}}",
+        "titleChambres": "{n, plural, one {# room} other {# rooms}}",
+        "detailBiens": "{n, plural, one {# property} other {# properties}}",
+        "detailChambres": "{n, plural, one {# room} other {# rooms}}"
       },
       "faq": {
         "title": "Questions about your offer",
@@ -3464,78 +3454,78 @@
           }
         ]
       },
+      "profile": {
+        "aria": "You are",
+        "label": {
+          "conc": "concierge company",
+          "hotel": "hotel or riad"
+        },
+        "conc_sojori": {
+          "type": "CONCIERGE COMPANY",
+          "socle": "With the Sojori PMS",
+          "desc": "Properties, bookings, channel manager, calendars, inbox, reports."
+        },
+        "conc_ext": {
+          "type": "CONCIERGE COMPANY",
+          "socle": "With your PMS",
+          "desc": "You keep it. Same agents and modules, except dynamic pricing."
+        },
+        "hotel_sojori": {
+          "type": "HOTEL OR RIAD",
+          "socle": "With the Sojori PMS",
+          "desc": "Rooms, bookings, channel manager, front desk, reports."
+        },
+        "hotel_ext": {
+          "type": "HOTEL OR RIAD",
+          "socle": "With your PMS",
+          "desc": "You keep it. Same agents and modules, except dynamic pricing."
+        }
+      },
       "form": {
         "stepsAria": "Steps of your request",
         "step": {
           "email": "Your email",
-          "prepare": "Prepare your demo",
-          "sent": "Sent"
+          "reach": "How to reach you",
+          "sent": "It's sent"
         },
         "email": {
-          "title": "Request your demo",
-          "lead": "Your email is all we need to start. Then a few optional questions to prepare the demo.",
+          "title": "Receive your quote",
+          "lead": "Your email is all you need to start. Your business, your portfolio and your choices go with your request.",
           "label": "Your email",
-          "consent": "I agree to be contacted by Sojori about my demo.",
+          "consent": "I agree to be contacted by Sojori about my request.",
           "submit": "Request my demo",
-          "saved": "Your request is saved from this step.",
-          "help": "Enter a valid email and tick the box to continue."
+          "saved": "Your request and your choices are saved from this step.",
+          "help": "Enter a valid email and tick the consent box to continue."
         },
-        "prepare": {
-          "title": "To prepare your demo",
-          "lead": "Received. The more you tell us, the closer the demo will be to your daily work. Everything is optional.",
+        "reach": {
+          "title": "Received. How to reach you",
+          "lead": "Everything is optional. Your business, your portfolio and your choices are already in the request.",
           "name": "Full name",
           "country": "Country",
           "countryOther": "Your country",
+          "otherCountry": "Other country",
           "phone": "WhatsApp number",
           "phoneHint": "recommended",
           "dial": "Country dialing code",
           "dialOption": "{dial} ({country})",
-          "otherCountry": "Other country",
+          "pms": "The PMS you are keeping",
           "city": "Your city",
-          "send": "Send",
-          "skip": "Skip this step",
-          "noCommitment": "No commitment. Your answers are only used to prepare the demo."
-        },
-        "segment": {
-          "title": "You are a",
-          "conciergerie": "Concierge company",
-          "proprietaire": "Owner",
-          "hotel": "Hotel",
-          "riad_maison_hotes": "Riad / guesthouse",
-          "residence_aparthotel": "Residence / aparthotel",
-          "agence_immobiliere": "Real estate agency"
-        },
-        "tool": {
-          "title": "Your tool today",
-          "none": "None",
-          "excel": "Excel or paper",
-          "pms": "A PMS",
-          "channel": "A channel manager",
-          "pmsName": "Name of your PMS (optional)"
-        },
-        "priorities": {
-          "title": "What you want to fix first",
-          "hint": "two at most",
-          "answer": "Reply to guests",
-          "staff": "Coordinate staff",
-          "checkin": "Check-in and police registration form",
-          "pricing": "Set the right prices",
-          "direct": "Sell direct",
-          "owners": "Keep up with owners"
-        },
-        "when": {
-          "title": "When do you want to start?",
+          "whenTitle": "When do you want to start?",
           "month": "This month",
           "quarter": "Within 3 months",
-          "looking": "Just looking"
+          "looking": "I'm just exploring",
+          "send": "Send",
+          "skip": "Skip this step",
+          "note": "No commitment. Pre-filled from your choices above."
         },
         "sent": {
-          "title": "Sent.",
-          "s1": "A Sojori advisor takes your request and prepares the demo around your case.",
-          "s2": "You will receive an email at {email} with a link to pick a slot in their calendar.",
-          "s3": "A thirty-minute video demo, on your property.",
-          "more": "Two more answers, and the demo will be built for you.",
-          "complete": "Complete"
+          "thanksName": "Thank you {name}, your request has been received.",
+          "thanks": "Thank you, your request has been received.",
+          "s1": "A Sojori advisor takes your request and prepares the demo for your case: {cas}.",
+          "s2": "You receive an email at {email} with a link to pick a time slot in their calendar.",
+          "s3": "Thirty minutes of demo, by video call, with your quote.",
+          "whatsapp": "Leave your WhatsApp: your advisor will reply faster.",
+          "addWhatsapp": "Add my WhatsApp"
         }
       }
     },
@@ -3545,65 +3535,6 @@
       "cta": "Build my offer",
       "home": "See the Sojori home page",
       "example": "Example"
-    },
-    "report": {
-      "aria": "Example of a morning report received on WhatsApp: 30 fictional properties, 12 arrivals, 9 departures, 14 stayovers, 7-day occupancy 82%, ADR 950 MAD, RevPAR 780 MAD, month revenue 412,000 MAD.",
-      "eyebrow": "YOUR MORNING REPORT",
-      "title": "{n} properties",
-      "date": "Fri 30 Oct",
-      "caption": "Good morning Karim, here is your morning report.",
-      "pct": "{n}%",
-      "moves": {
-        "arrivals": "arrivals",
-        "departures": "departures",
-        "stayovers": "stayovers"
-      },
-      "kpi": {
-        "occ": {
-          "title": "7-DAY OCCUPANCY",
-          "value": "82%",
-          "unit": "actual sellable capacity"
-        },
-        "adr": {
-          "title": "ADR TODAY",
-          "value": "950",
-          "unit": "MAD / night sold"
-        },
-        "revpar": {
-          "title": "7-DAY REVPAR",
-          "value": "780",
-          "unit": "MAD / available unit"
-        },
-        "revenue": {
-          "title": "OCTOBER REVENUE",
-          "value": "412,000",
-          "unit": "MAD accommodation, month to date"
-        }
-      },
-      "types": {
-        "title": "BY TYPE",
-        "riads": "Riads",
-        "villas": "Villas",
-        "apartments": "Apartments",
-        "studios": "Studios",
-        "adr": "ADR {adr}"
-      },
-      "days": {
-        "title": "OCCUPANCY · NEXT 7 DAYS",
-        "list": [
-          "Fri 30",
-          "Sat 31",
-          "Sun 01",
-          "Mon 02",
-          "Tue 03",
-          "Wed 04",
-          "Thu 05"
-        ]
-      },
-      "footer": {
-        "brand": "SOJORI",
-        "text": "PMS data · generated automatically"
-      }
     },
     "pages": {
       "common": {
@@ -3774,7 +3705,7 @@
               "Studio Agent: you set up Sojori through conversation, each change arrives as a card.",
               "Website Agent: a website for your properties, created and maintained from your catalog.",
               "Sales Agent with CRM, Prospecting Agent, Marketing Agent and Finance Agent: the specialized agents.",
-              "Calling Agents: by voice, under construction, no date promised."
+              "Calling Agents: by voice, offered as an option."
             ]
           },
           {
@@ -3797,7 +3728,7 @@
           },
           {
             "q": "What do Sojori agents do?",
-            "a": "Sojori offers one agent per job: Booking, Guest Service, Operations, Dynamic pricing, Assistant, Studio, Website, Sales, Prospecting, Marketing and Finance. The Calling Agents are under construction, no date promised."
+            "a": "Sojori offers one agent per job: Booking, Guest Service, Operations, Dynamic pricing, Assistant, Studio, Website, Sales, Prospecting, Marketing and Finance. The Calling Agents, which work by voice, are offered as an option."
           },
           {
             "q": "Can an agent act without my approval?",
@@ -3949,6 +3880,65 @@
             "a": "[to be confirmed]: Sojori calculates and tracks the tax; the declaration and remittance procedures are to be confirmed."
           }
         ]
+      }
+    },
+    "report": {
+      "aria": "Example of a morning report received on WhatsApp: 30 fictional properties, 12 arrivals, 9 departures, 14 stayovers, 7-day occupancy 82%, ADR 950 MAD, RevPAR 780 MAD, month revenue 412,000 MAD.",
+      "eyebrow": "YOUR MORNING REPORT",
+      "title": "{n} properties",
+      "date": "Fri 30 Oct",
+      "caption": "Good morning Karim, here is your morning report.",
+      "pct": "{n}%",
+      "moves": {
+        "arrivals": "arrivals",
+        "departures": "departures",
+        "stayovers": "stayovers"
+      },
+      "kpi": {
+        "occ": {
+          "title": "7-DAY OCCUPANCY",
+          "value": "82%",
+          "unit": "actual sellable capacity"
+        },
+        "adr": {
+          "title": "ADR TODAY",
+          "value": "950",
+          "unit": "MAD / night sold"
+        },
+        "revpar": {
+          "title": "7-DAY REVPAR",
+          "value": "780",
+          "unit": "MAD / available unit"
+        },
+        "revenue": {
+          "title": "OCTOBER REVENUE",
+          "value": "412,000",
+          "unit": "MAD accommodation, month to date"
+        }
+      },
+      "types": {
+        "title": "BY TYPE",
+        "riads": "Riads",
+        "villas": "Villas",
+        "apartments": "Apartments",
+        "studios": "Studios",
+        "adr": "ADR {adr}"
+      },
+      "days": {
+        "title": "OCCUPANCY · NEXT 7 DAYS",
+        "list": [
+          "Fri 30",
+          "Sat 31",
+          "Sun 01",
+          "Mon 02",
+          "Tue 03",
+          "Wed 04",
+          "Thu 05"
+        ]
+      },
+      "footer": {
+        "brand": "SOJORI",
+        "text": "PMS data · generated automatically"
       }
     }
   }

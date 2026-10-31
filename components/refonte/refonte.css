@@ -507,6 +507,11 @@ html[dir='rtl'] .sj2 [class*='mono'], html[dir='rtl'] .sj2-pill--mono, html[dir=
 .sj2-exemple-wrap { position: relative; }
 .sj2-exemple { position: absolute; top: -13px; inset-inline-end: 16px; z-index: 5; padding: 4px 12px; border-radius: 999px; border: 1px solid var(--sj-line-gold-2); background: #14120d; color: var(--sj-gold-soft); font-size: 12px; font-weight: 600; letter-spacing: 0.04em; pointer-events: none; }
 
+/* profil du visiteur : type d'établissement + socle */
+.sj2-choix--profil { min-height: 112px; }
+.sj2-choix__type { font-family: var(--sj-mono); font-size: 12px; letter-spacing: 0.1em; color: var(--sj-text-4); }
+.sj2-choix--profil[aria-pressed='true'] .sj2-choix__type { color: var(--sj-gold); }
+html[dir='rtl'] .sj2-choix__type { letter-spacing: 0; font-family: var(--sj-sans); }
 /* ================= « Point du matin » : rapport admin reçu sur WhatsApp (exemple) ================= */
 .sj2-rapport { position: relative; margin: 0; container-type: inline-size;
   background-color: #0c0b09; color: var(--sj-text); border-radius: 12px; overflow: hidden; width: 100%;

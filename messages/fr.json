@@ -2029,8 +2029,8 @@
       "description": "Sojori développe le moteur d'orchestration de l'hospitalité : expérience client, opérations et revenu, pour hôtels et riads au Maroc et en France."
     },
     "demo": {
-      "title": "Demander une démo Sojori | PMS & orchestrateur hospitalité",
-      "description": "Réservez une démo personnalisée de Sojori : PMS, Channel Manager, WhatsApp IA. Setup en moins de 7 jours, 1 mois d'essai gratuit."
+      "title": "Demander une démo Sojori · PMS et agents WhatsApp",
+      "description": "Demandez une démo de Sojori : le PMS Sojori ou le vôtre, des agents et des modules WhatsApp. Un conseiller prépare la démo sur votre cas."
     },
     "demoRdv": {
       "title": "Confirmer votre rendez-vous démo | Sojori",
@@ -2413,7 +2413,7 @@
           "agents": "Entre agents",
           "card": "Carte à valider"
         },
-        "soon": "Bientôt, en construction : Agent Réservation Call · Agent Service client Call · appels au staff",
+        "soon": "En option : Agent Réservation Call · Agent Service client Call · appels au staff",
         "journalTitle": "LES ÉCHANGES, DU PLUS RÉCENT AU PLUS ANCIEN",
         "numbersTitle": "AUJOURD’HUI · {type} DE {size}",
         "numbers": {
@@ -2704,7 +2704,7 @@
           },
           "calls": {
             "name": "Agents Appels",
-            "resume": "Le même agent, mais à la voix, en direct sur WhatsApp. Pas encore achetable, sans date promise.",
+            "resume": "Le même agent, mais à la voix, en direct sur WhatsApp. Proposé en option sur votre offre.",
             "points": [
               "Agent Réservation Call : prend une réservation à la voix.",
               "Agent Service client Call : répond à un voyageur qui appelle.",
@@ -2717,8 +2717,8 @@
             "q": "(appel entrant) Bonjour, je voudrais réserver.",
             "r": "Bonjour, avec plaisir. Pour quelles dates ?",
             "promise": "Le téléphone ne sonne plus dans le vide.",
-            "kpiValue": "Bientôt",
-            "kpiText": "en construction, sans date promise",
+            "kpiValue": "En option",
+            "kpiText": "à ajouter à votre offre",
             "note": "Un appel est une voix en temps réel, à ne pas confondre avec un message vocal, déjà pris en charge."
           }
         }
@@ -3227,7 +3227,7 @@
           },
           {
             "q": "Que font les agents Sojori ?",
-            "a": "Sojori propose un agent par métier : Réservation, Service client, Opérations, Tarification dynamique, Assistant, Studio, Site web, Commercial, Prospection, Marketing et Finance, ainsi que des agents d’appels en construction. Pour chacun, vous réglez s’il agit seul ou s’il attend votre accord."
+            "a": "Sojori propose un agent par métier : Réservation, Service client, Opérations, Tarification dynamique, Assistant, Studio, Site web, Commercial, Prospection, Marketing et Finance, ainsi que des agents d’appels proposés en option. Pour chacun, vous réglez s’il agit seul ou s’il attend votre accord."
           },
           {
             "q": "Comment fonctionne le check-in WhatsApp, avec la fiche de police et le contrat ?",
@@ -3255,30 +3255,22 @@
         "lead": "Dites-nous la taille de votre parc et les agents dont vous avez besoin. Vous recevez une proposition chiffrée, adaptée à votre cas."
       },
       "steps": {
-        "socle": "1 · VOTRE SOCLE",
+        "socle": "1 · VOUS ÊTES",
         "parc": "2 · VOTRE PARC",
         "agents": "3 · VOS AGENTS ET VOS OPTIONS",
         "users": "4 · VOS UTILISATEURS",
         "site": "5 · VOTRE SITE",
-        "service": "6 · LA MISE EN SERVICE",
-        "soon": "7 · BIENTÔT"
-      },
-      "mode": {
-        "aria": "Votre système de gestion",
-        "sojori": {
-          "title": "Avec le PMS Sojori",
-          "desc": "Logements, réservations, channel manager, calendriers, inbox, rapports."
-        },
-        "own": {
-          "title": "Avec votre PMS",
-          "desc": "Vous le gardez. Mêmes options, sauf la tarification dynamique."
-        }
+        "service": "6 · LA MISE EN SERVICE"
       },
       "parc": {
         "unitOne": "bien ou chambre",
         "unitMany": "biens ou chambres",
         "sliderAria": "Nombre de biens ou de chambres",
-        "quickAria": "Valeurs rapides"
+        "quickAria": "Valeurs rapides",
+        "unitBiens": "{n, plural, one {bien} other {biens}}",
+        "unitChambres": "{n, plural, one {chambre} other {chambres}}",
+        "sliderAriaBiens": "Nombre de biens",
+        "sliderAriaChambres": "Nombre de chambres"
       },
       "products": {
         "pms": {
@@ -3330,7 +3322,19 @@
           "desc": "Prépare vos suivis de comptes et de paiements, que vous validez."
         },
         "blocked": "Non disponible avec votre PMS : la tarification dynamique ne s’applique qu’aux biens du PMS Sojori.",
-        "forAccount": "pour votre compte"
+        "forAccount": "pour votre compte",
+        "agent_booking_call": {
+          "name": "Agent Réservation Call",
+          "desc": "Prend une réservation à la voix, en appel direct sur WhatsApp."
+        },
+        "agent_guest_service_call": {
+          "name": "Agent Service client Call",
+          "desc": "Répond à un voyageur qui appelle, en direct sur WhatsApp."
+        },
+        "agent_staff_call": {
+          "name": "Appels au staff",
+          "desc": "L’Agent Opérations appelle votre équipe pour confirmer une tâche urgente."
+        }
       },
       "users": {
         "intro": "Un utilisateur Agent Studio est inclus dans chaque compte. Les accès WhatsApp du staff, de l’admin et des propriétaires se comptent par personne et par rôle.",
@@ -3399,24 +3403,6 @@
           "detail": "à étudier avec vous"
         }
       },
-      "soon": {
-        "intro": "Les appels en direct sur WhatsApp sont en construction, sans date promise. Dites-nous lesquels vous intéressent : vous serez prévenu en premier.",
-        "agent_booking_call": {
-          "name": "Agent Réservation Call",
-          "desc": "Prend une réservation à la voix, en direct sur WhatsApp."
-        },
-        "agent_guest_service_call": {
-          "name": "Agent Service client Call",
-          "desc": "Répond à un voyageur qui appelle."
-        },
-        "agent_staff_call": {
-          "name": "Appels au staff",
-          "desc": "L’Agent Opérations appelle votre équipe."
-        },
-        "interested": "Ça m’intéresse",
-        "interestedOn": "✓ Ça m’intéresse",
-        "detail": "bientôt · vous êtes intéressé"
-      },
       "selection": {
         "aria": "Votre sélection",
         "eyebrow": "VOTRE SÉLECTION",
@@ -3441,7 +3427,11 @@
         "errorGeneric": "L’envoi n’a pas abouti. Vérifiez votre connexion et réessayez.",
         "successTitle": "Merci, votre demande est envoyée.",
         "successText": "Un conseiller vous répond avec une proposition chiffrée et vous propose un créneau de démonstration.",
-        "again": "Modifier ma sélection"
+        "again": "Modifier ma sélection",
+        "titleBiens": "{n, plural, one {# bien} other {# biens}}",
+        "titleChambres": "{n, plural, one {# chambre} other {# chambres}}",
+        "detailBiens": "{n, plural, one {# bien} other {# biens}}",
+        "detailChambres": "{n, plural, one {# chambre} other {# chambres}}"
       },
       "faq": {
         "title": "Questions sur votre offre",
@@ -3464,78 +3454,78 @@
           }
         ]
       },
+      "profile": {
+        "aria": "Vous êtes",
+        "label": {
+          "conc": "conciergerie",
+          "hotel": "hôtel ou riad"
+        },
+        "conc_sojori": {
+          "type": "CONCIERGERIE",
+          "socle": "Avec le PMS Sojori",
+          "desc": "Logements, réservations, channel manager, calendriers, inbox, rapports."
+        },
+        "conc_ext": {
+          "type": "CONCIERGERIE",
+          "socle": "Avec votre PMS",
+          "desc": "Vous le gardez. Mêmes agents et modules, sauf la tarification dynamique."
+        },
+        "hotel_sojori": {
+          "type": "HÔTEL OU RIAD",
+          "socle": "Avec le PMS Sojori",
+          "desc": "Chambres, réservations, channel manager, réception, rapports."
+        },
+        "hotel_ext": {
+          "type": "HÔTEL OU RIAD",
+          "socle": "Avec votre PMS",
+          "desc": "Vous le gardez. Mêmes agents et modules, sauf la tarification dynamique."
+        }
+      },
       "form": {
         "stepsAria": "Étapes de votre demande",
         "step": {
           "email": "Votre e-mail",
-          "prepare": "Préparez votre démo",
+          "reach": "Pour vous joindre",
           "sent": "C’est envoyé"
         },
         "email": {
-          "title": "Demandez votre démo",
-          "lead": "Votre e-mail suffit pour commencer. Ensuite, quelques questions facultatives pour préparer la démo.",
+          "title": "Recevoir votre proposition",
+          "lead": "Votre e-mail suffit pour commencer. Votre activité, votre parc et vos choix partent avec votre demande.",
           "label": "Votre e-mail",
-          "consent": "J’accepte d’être recontacté par Sojori au sujet de ma démo.",
+          "consent": "J’accepte d’être recontacté par Sojori au sujet de ma demande.",
           "submit": "Demander ma démo",
-          "saved": "Votre demande est enregistrée dès cette étape.",
+          "saved": "Votre demande et vos choix sont enregistrés dès cette étape.",
           "help": "Indiquez un e-mail valide et cochez l’accord pour continuer."
         },
-        "prepare": {
-          "title": "Pour préparer votre démo",
-          "lead": "C’est bien reçu. Plus vous en dites, plus la démo ressemblera à votre quotidien. Tout est facultatif.",
+        "reach": {
+          "title": "C’est reçu. Pour vous joindre",
+          "lead": "Tout est facultatif. Votre activité, votre parc et vos choix sont déjà dans la demande.",
           "name": "Nom et prénom",
           "country": "Pays",
           "countryOther": "Votre pays",
+          "otherCountry": "Autre pays",
           "phone": "Numéro WhatsApp",
           "phoneHint": "recommandé",
           "dial": "Indicatif du pays",
           "dialOption": "{dial} ({country})",
-          "otherCountry": "Autre pays",
+          "pms": "Le PMS que vous gardez",
           "city": "Votre ville",
-          "send": "Envoyer",
-          "skip": "Passer cette étape",
-          "noCommitment": "Sans engagement. Vos réponses servent seulement à préparer la démo."
-        },
-        "segment": {
-          "title": "Vous êtes",
-          "conciergerie": "Conciergerie",
-          "proprietaire": "Propriétaire",
-          "hotel": "Hôtel",
-          "riad_maison_hotes": "Riad / maison d’hôtes",
-          "residence_aparthotel": "Résidence / apart-hôtel",
-          "agence_immobiliere": "Agence immobilière"
-        },
-        "tool": {
-          "title": "Votre outil aujourd’hui",
-          "none": "Aucun",
-          "excel": "Excel ou papier",
-          "pms": "Un PMS",
-          "channel": "Un channel manager",
-          "pmsName": "Nom de votre PMS (facultatif)"
-        },
-        "priorities": {
-          "title": "Ce que vous voulez régler en premier",
-          "hint": "deux au plus",
-          "answer": "Répondre aux voyageurs",
-          "staff": "Coordonner le staff",
-          "checkin": "Check-in et fiche de police",
-          "pricing": "Fixer les bons prix",
-          "direct": "Vendre en direct",
-          "owners": "Suivre les propriétaires"
-        },
-        "when": {
-          "title": "Quand voulez-vous démarrer ?",
+          "whenTitle": "Quand voulez-vous démarrer ?",
           "month": "Ce mois-ci",
           "quarter": "Dans les 3 mois",
-          "looking": "Je me renseigne"
+          "looking": "Je me renseigne",
+          "send": "Envoyer",
+          "skip": "Passer cette étape",
+          "note": "Sans engagement. Repris de vos choix plus haut."
         },
         "sent": {
-          "title": "C’est envoyé.",
-          "s1": "Un conseiller Sojori prend votre demande et prépare la démo sur votre cas.",
+          "thanksName": "Merci {name}, votre demande est bien reçue.",
+          "thanks": "Merci, votre demande est bien reçue.",
+          "s1": "Un conseiller Sojori prend votre demande et prépare la démo sur votre cas : {cas}.",
           "s2": "Vous recevez par e-mail, à {email}, un lien pour choisir votre créneau dans son planning.",
-          "s3": "Trente minutes de démo, en visio, sur votre établissement.",
-          "more": "Deux réponses de plus, et la démo sera faite pour vous.",
-          "complete": "Compléter"
+          "s3": "Trente minutes de démo, en visio, avec votre proposition chiffrée.",
+          "whatsapp": "Laissez votre WhatsApp : votre conseiller vous répondra plus vite.",
+          "addWhatsapp": "Ajouter mon WhatsApp"
         }
       }
     },
@@ -3545,65 +3535,6 @@
       "cta": "Composer mon offre",
       "home": "Voir l’accueil Sojori",
       "example": "Exemple"
-    },
-    "report": {
-      "aria": "Exemple de point du matin reçu sur WhatsApp : 30 établissements fictifs, 12 arrivées, 9 départs, 14 recouches, occupation à 7 jours 82 %, ADR 950 MAD, RevPAR 780 MAD, revenus du mois 412 000 MAD.",
-      "eyebrow": "VOTRE POINT DU MATIN",
-      "title": "{n} établissements",
-      "date": "ven. 30 oct.",
-      "caption": "Bonjour Karim, voici votre point du matin.",
-      "pct": "{n} %",
-      "moves": {
-        "arrivals": "arrivées",
-        "departures": "départs",
-        "stayovers": "recouches"
-      },
-      "kpi": {
-        "occ": {
-          "title": "OCCUPATION 7 JOURS",
-          "value": "82 %",
-          "unit": "capacité vendable réelle"
-        },
-        "adr": {
-          "title": "ADR AUJOURD’HUI",
-          "value": "950",
-          "unit": "MAD / nuit vendue"
-        },
-        "revpar": {
-          "title": "REVPAR 7 JOURS",
-          "value": "780",
-          "unit": "MAD / unité disponible"
-        },
-        "revenue": {
-          "title": "REVENUS OCTOBRE",
-          "value": "412 000",
-          "unit": "MAD hébergement, en cours"
-        }
-      },
-      "types": {
-        "title": "PAR TYPE",
-        "riads": "Riads",
-        "villas": "Villas",
-        "apartments": "Appartements",
-        "studios": "Studios",
-        "adr": "ADR {adr}"
-      },
-      "days": {
-        "title": "OCCUPATION · 7 PROCHAINS JOURS",
-        "list": [
-          "ven. 30",
-          "sam. 31",
-          "dim. 01",
-          "lun. 02",
-          "mar. 03",
-          "mer. 04",
-          "jeu. 05"
-        ]
-      },
-      "footer": {
-        "brand": "SOJORI",
-        "text": "Données du PMS · généré automatiquement"
-      }
     },
     "pages": {
       "common": {
@@ -3774,7 +3705,7 @@
               "Agent Studio : vous réglez Sojori en discutant, chaque changement arrive sous forme de carte.",
               "Agent Site web : un site pour vos biens, créé et maintenu à partir de votre catalogue.",
               "Agent Commercial avec CRM, Agent Prospection, Agent Marketing et Agent Finance : les agents spécialisés.",
-              "Agents d'appels : à la voix, en construction, sans date promise."
+              "Agents d'appels : à la voix, proposés en option."
             ]
           },
           {
@@ -3797,7 +3728,7 @@
           },
           {
             "q": "Que font les agents Sojori ?",
-            "a": "Sojori propose un agent par métier : Réservation, Service client, Opérations, Tarification dynamique, Assistant, Studio, Site web, Commercial, Prospection, Marketing et Finance. Les agents d'appels sont en construction, sans date promise."
+            "a": "Sojori propose un agent par métier : Réservation, Service client, Opérations, Tarification dynamique, Assistant, Studio, Site web, Commercial, Prospection, Marketing et Finance. Les agents d'appels, à la voix, sont proposés en option."
           },
           {
             "q": "Un agent peut-il agir sans mon accord ?",
@@ -3949,6 +3880,65 @@
             "a": "[à confirmer] : Sojori calcule et suit la taxe ; les modalités de déclaration et de reversement sont à confirmer."
           }
         ]
+      }
+    },
+    "report": {
+      "aria": "Exemple de point du matin reçu sur WhatsApp : 30 établissements fictifs, 12 arrivées, 9 départs, 14 recouches, occupation à 7 jours 82 %, ADR 950 MAD, RevPAR 780 MAD, revenus du mois 412 000 MAD.",
+      "eyebrow": "VOTRE POINT DU MATIN",
+      "title": "{n} établissements",
+      "date": "ven. 30 oct.",
+      "caption": "Bonjour Karim, voici votre point du matin.",
+      "pct": "{n} %",
+      "moves": {
+        "arrivals": "arrivées",
+        "departures": "départs",
+        "stayovers": "recouches"
+      },
+      "kpi": {
+        "occ": {
+          "title": "OCCUPATION 7 JOURS",
+          "value": "82 %",
+          "unit": "capacité vendable réelle"
+        },
+        "adr": {
+          "title": "ADR AUJOURD’HUI",
+          "value": "950",
+          "unit": "MAD / nuit vendue"
+        },
+        "revpar": {
+          "title": "REVPAR 7 JOURS",
+          "value": "780",
+          "unit": "MAD / unité disponible"
+        },
+        "revenue": {
+          "title": "REVENUS OCTOBRE",
+          "value": "412 000",
+          "unit": "MAD hébergement, en cours"
+        }
+      },
+      "types": {
+        "title": "PAR TYPE",
+        "riads": "Riads",
+        "villas": "Villas",
+        "apartments": "Appartements",
+        "studios": "Studios",
+        "adr": "ADR {adr}"
+      },
+      "days": {
+        "title": "OCCUPATION · 7 PROCHAINS JOURS",
+        "list": [
+          "ven. 30",
+          "sam. 31",
+          "dim. 01",
+          "lun. 02",
+          "mar. 03",
+          "mer. 04",
+          "jeu. 05"
+        ]
+      },
+      "footer": {
+        "brand": "SOJORI",
+        "text": "Données du PMS · généré automatiquement"
       }
     }
   }
