@@ -3545,6 +3545,65 @@
       "cta": "Build my offer",
       "home": "See the Sojori home page",
       "example": "Example"
+    },
+    "report": {
+      "aria": "Example of a morning report received on WhatsApp: 30 fictional properties, 12 arrivals, 9 departures, 14 stayovers, 7-day occupancy 82%, ADR 950 MAD, RevPAR 780 MAD, month revenue 412,000 MAD.",
+      "eyebrow": "YOUR MORNING REPORT",
+      "title": "{n} properties",
+      "date": "Fri 30 Oct",
+      "caption": "Good morning Karim, here is your morning report.",
+      "pct": "{n}%",
+      "moves": {
+        "arrivals": "arrivals",
+        "departures": "departures",
+        "stayovers": "stayovers"
+      },
+      "kpi": {
+        "occ": {
+          "title": "7-DAY OCCUPANCY",
+          "value": "82%",
+          "unit": "actual sellable capacity"
+        },
+        "adr": {
+          "title": "ADR TODAY",
+          "value": "950",
+          "unit": "MAD / night sold"
+        },
+        "revpar": {
+          "title": "7-DAY REVPAR",
+          "value": "780",
+          "unit": "MAD / available unit"
+        },
+        "revenue": {
+          "title": "OCTOBER REVENUE",
+          "value": "412,000",
+          "unit": "MAD accommodation, month to date"
+        }
+      },
+      "types": {
+        "title": "BY TYPE",
+        "riads": "Riads",
+        "villas": "Villas",
+        "apartments": "Apartments",
+        "studios": "Studios",
+        "adr": "ADR {adr}"
+      },
+      "days": {
+        "title": "OCCUPANCY · NEXT 7 DAYS",
+        "list": [
+          "Fri 30",
+          "Sat 31",
+          "Sun 01",
+          "Mon 02",
+          "Tue 03",
+          "Wed 04",
+          "Thu 05"
+        ]
+      },
+      "footer": {
+        "brand": "SOJORI",
+        "text": "PMS data · generated automatically"
+      }
     }
   }
 }

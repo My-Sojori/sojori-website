@@ -3545,6 +3545,65 @@
       "cta": "Compor a minha oferta",
       "home": "Ver a página inicial da Sojori",
       "example": "Exemplo"
+    },
+    "report": {
+      "aria": "Exemplo de ponto da manhã recebido no WhatsApp: 30 estabelecimentos fictícios, 12 chegadas, 9 partidas, 14 permanências, ocupação a 7 dias 82 %, ADR 950 MAD, RevPAR 780 MAD, receitas do mês 412 000 MAD.",
+      "eyebrow": "O SEU PONTO DA MANHÃ",
+      "title": "{n} estabelecimentos",
+      "date": "sex. 30 out.",
+      "caption": "Bom dia Karim, aqui está o seu ponto da manhã.",
+      "pct": "{n} %",
+      "moves": {
+        "arrivals": "chegadas",
+        "departures": "partidas",
+        "stayovers": "permanências"
+      },
+      "kpi": {
+        "occ": {
+          "title": "OCUPAÇÃO 7 DIAS",
+          "value": "82 %",
+          "unit": "capacidade vendável real"
+        },
+        "adr": {
+          "title": "ADR HOJE",
+          "value": "950",
+          "unit": "MAD / noite vendida"
+        },
+        "revpar": {
+          "title": "REVPAR 7 DIAS",
+          "value": "780",
+          "unit": "MAD / unidade disponível"
+        },
+        "revenue": {
+          "title": "RECEITAS OUTUBRO",
+          "value": "412 000",
+          "unit": "MAD alojamento, em curso"
+        }
+      },
+      "types": {
+        "title": "POR TIPO",
+        "riads": "Riads",
+        "villas": "Moradias",
+        "apartments": "Apartamentos",
+        "studios": "Estúdios",
+        "adr": "ADR {adr}"
+      },
+      "days": {
+        "title": "OCUPAÇÃO · PRÓXIMOS 7 DIAS",
+        "list": [
+          "sex. 30",
+          "sáb. 31",
+          "dom. 01",
+          "seg. 02",
+          "ter. 03",
+          "qua. 04",
+          "qui. 05"
+        ]
+      },
+      "footer": {
+        "brand": "SOJORI",
+        "text": "Dados do PMS · gerado automaticamente"
+      }
     }
   }
 }

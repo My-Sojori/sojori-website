@@ -8,6 +8,7 @@ import { ScrollPaginationDots } from "@/components/shared/ScrollPaginationDots";
 import { InFlow } from '@/components/InFlow';
 import { FaqSection } from '@/components/FaqSection';
 import { Exemple } from '@/components/refonte/Exemple';
+import { RapportBulle } from '@/components/refonte/RapportAdmin';
 import { Trait } from '@/components/refonte/Trait';
 
 // ========================================
@@ -28,9 +29,11 @@ interface WhatsAppPhoneProps {
   subtitle: string;
   messages: Message[];
   time?: string;
+  /** Un élément placé avant les messages (le point du matin de l'admin). */
+  extra?: React.ReactNode;
 }
 
-function WhatsAppPhone({ title, subtitle, messages, time = "14:32" }: WhatsAppPhoneProps) {
+function WhatsAppPhone({ title, subtitle, messages, time = "14:32", extra }: WhatsAppPhoneProps) {
   return (
     <div style={{
       width: 340, height: 680, borderRadius: 38, padding: 10,
@@ -73,6 +76,7 @@ function WhatsAppPhone({ title, subtitle, messages, time = "14:32" }: WhatsAppPh
           overflowY: "auto",
           display: "flex", flexDirection: "column", gap: 6,
         }}>
+          {extra}
           {messages.map((m, i) => <Bubble key={i} {...m} />)}
         </div>
 
@@ -741,7 +745,7 @@ export default function WhatsAppPage() {
                         filter: "blur(40px)",
                       }}
                     />
-                    <Exemple><WhatsAppPhone title={title} subtitle={subtitle} messages={msgs} /></Exemple>
+                    <Exemple><WhatsAppPhone title={title} subtitle={subtitle} messages={msgs} extra={sid === "admin" ? <RapportBulle theme="wa" /> : undefined} /></Exemple>
                   </div>
 
                   <div className="wa-split-copy">

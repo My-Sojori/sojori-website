@@ -3545,6 +3545,65 @@
       "cta": "Composer mon offre",
       "home": "Voir l’accueil Sojori",
       "example": "Exemple"
+    },
+    "report": {
+      "aria": "Exemple de point du matin reçu sur WhatsApp : 30 établissements fictifs, 12 arrivées, 9 départs, 14 recouches, occupation à 7 jours 82 %, ADR 950 MAD, RevPAR 780 MAD, revenus du mois 412 000 MAD.",
+      "eyebrow": "VOTRE POINT DU MATIN",
+      "title": "{n} établissements",
+      "date": "ven. 30 oct.",
+      "caption": "Bonjour Karim, voici votre point du matin.",
+      "pct": "{n} %",
+      "moves": {
+        "arrivals": "arrivées",
+        "departures": "départs",
+        "stayovers": "recouches"
+      },
+      "kpi": {
+        "occ": {
+          "title": "OCCUPATION 7 JOURS",
+          "value": "82 %",
+          "unit": "capacité vendable réelle"
+        },
+        "adr": {
+          "title": "ADR AUJOURD’HUI",
+          "value": "950",
+          "unit": "MAD / nuit vendue"
+        },
+        "revpar": {
+          "title": "REVPAR 7 JOURS",
+          "value": "780",
+          "unit": "MAD / unité disponible"
+        },
+        "revenue": {
+          "title": "REVENUS OCTOBRE",
+          "value": "412 000",
+          "unit": "MAD hébergement, en cours"
+        }
+      },
+      "types": {
+        "title": "PAR TYPE",
+        "riads": "Riads",
+        "villas": "Villas",
+        "apartments": "Appartements",
+        "studios": "Studios",
+        "adr": "ADR {adr}"
+      },
+      "days": {
+        "title": "OCCUPATION · 7 PROCHAINS JOURS",
+        "list": [
+          "ven. 30",
+          "sam. 31",
+          "dim. 01",
+          "lun. 02",
+          "mar. 03",
+          "mer. 04",
+          "jeu. 05"
+        ]
+      },
+      "footer": {
+        "brand": "SOJORI",
+        "text": "Données du PMS · généré automatiquement"
+      }
     }
   }
 }
