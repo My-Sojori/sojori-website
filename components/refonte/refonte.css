@@ -669,7 +669,7 @@ html[dir='rtl'] .sj2-tabs__groupe { letter-spacing: 0; font-family: var(--sj-san
 
 /* ================= Calendrier unifié (exemple) ================= */
 .sj2-cal { position: relative; margin: 0 0 28px; border: 1px solid var(--sj-line); border-radius: 22px; background: #0f0e0b; padding: 18px 18px 14px; color: var(--sj-text); }
-.sj2-cal__exemple { position: absolute; top: 14px; inset-inline-end: 16px; z-index: 2; font-family: var(--sj-mono); font-size: 11px; letter-spacing: 0.1em; color: #e6b022; border: 1px solid #4e3d1e; background: #14120d; border-radius: 999px; padding: 3px 10px; text-transform: uppercase; }
+.sj2-cal__exemple { position: absolute; top: 14px; right: 16px; z-index: 2; font-family: var(--sj-mono); font-size: 11px; letter-spacing: 0.1em; color: #e6b022; border: 1px solid #4e3d1e; background: #14120d; border-radius: 999px; padding: 3px 10px; text-transform: uppercase; }
 html[dir='rtl'] .sj2-cal__exemple { letter-spacing: 0; font-family: var(--sj-sans); text-transform: none; }
 .sj2-cal__scroll { overflow-x: auto; padding-top: 2px; }
 .sj2-cal__scroll:focus-visible { outline: 2px solid var(--sj-gold); outline-offset: 2px; border-radius: 12px; }

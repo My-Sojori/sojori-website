@@ -3709,11 +3709,11 @@
       "aria": "Example of the unified Sojori calendar: eight properties over two weeks, with the bookings from each source.",
       "viewMulti": "Multi view",
       "viewSingle": "Single view",
-      "range": "{month} {start} – {end}",
+      "range": "{month} <days>{start} – {end}</days>",
       "property": "PROPERTY",
       "owner": "Owner",
       "cleaning": "Cleaning",
-      "nights": "{n} n",
+      "nights": "<num>{n}</num> n",
       "note": "Fictional data, to illustrate the unified calendar. All your properties, all your sources, one calendar.",
       "source": {
         "airbnb": "Airbnb",

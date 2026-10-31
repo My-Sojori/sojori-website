@@ -3709,11 +3709,11 @@
       "aria": "مثال على تقويم Sojori الموحّد: ثمانية عقارات على مدى أسبوعين، مع حجوزات كل مصدر.",
       "viewMulti": "عرض متعدد",
       "viewSingle": "عرض مفرد",
-      "range": "{start} – {end} {month}",
+      "range": "<days>{start} – {end}</days> {month}",
       "property": "العقار",
       "owner": "المالك",
       "cleaning": "التنظيف",
-      "nights": "{n} ل",
+      "nights": "<num>{n}</num> ل",
       "note": "بيانات وهمية لتوضيح التقويم الموحّد. كل عقاراتكم وكل مصادركم في تقويم واحد.",
       "source": {
         "airbnb": "Airbnb",

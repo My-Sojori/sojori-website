@@ -3709,11 +3709,11 @@
       "aria": "Ejemplo del calendario unificado de Sojori: ocho alojamientos durante dos semanas, con las reservas de cada fuente.",
       "viewMulti": "Vista múltiple",
       "viewSingle": "Vista simple",
-      "range": "{start} – {end} de {month}",
+      "range": "<days>{start} – {end}</days> de {month}",
       "property": "ALOJAMIENTO",
       "owner": "Propietario",
       "cleaning": "Limpieza",
-      "nights": "{n} n",
+      "nights": "<num>{n}</num> n",
       "note": "Datos ficticios, para ilustrar el calendario unificado. Todos sus alojamientos, todas sus fuentes, un solo calendario.",
       "source": {
         "airbnb": "Airbnb",

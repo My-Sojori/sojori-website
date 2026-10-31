@@ -58,7 +58,7 @@ export function CalendrierExemple() {
           <div className="sj2-cal__haut">
             <span className="sj2-cal__vue is-actif">{t('viewMulti')}</span>
             <span className="sj2-cal__vue">{t('viewSingle')}</span>
-            <span className="sj2-cal__plage">{t('range', { start: 1, end: NB_JOURS, month: mois })}</span>
+            <span className="sj2-cal__plage">{t.rich('range', { start: 1, end: NB_JOURS, month: mois, days: (c) => <bdi dir="ltr">{c}</bdi> })}</span>
           </div>
           <div className="sj2-cal__legende">
             {SOURCES_ORDRE.map((s) => (
@@ -75,14 +75,14 @@ export function CalendrierExemple() {
           </div>
           {LOGEMENTS.map(([nomLogement, type, prix, resas]) => (
             <div key={nomLogement} className="sj2-cal__ligne">
-              <div className="sj2-cal__logement"><strong>{nomLogement}</strong><span>{t(`type.${type}`)} · {prix} MAD</span></div>
+              <div className="sj2-cal__logement"><strong>{nomLogement}</strong><span><bdi>{t(`type.${type}`)}</bdi> · <bdi dir="ltr">{prix} MAD</bdi></span></div>
               <div className="sj2-cal__piste">
                 {resas.map((b) => {
                   const s = SOURCES[b[2]];
                   const fin = Math.min(NB_JOURS + 1, b[0] + b[1]);
                   return (
                     <div key={b[0]} className="sj2-cal__barre" style={{ gridColumn: `${b[0]} / ${fin}`, borderColor: s.bord, background: s.fond, color: s.texte }}>
-                      <strong>{nom(b)}</strong><span>{t('nights', { n: b[1] })}</span>
+                      <strong>{nom(b)}</strong><span>{t.rich('nights', { n: b[1], num: (c) => <bdi dir="ltr">{c}</bdi> })}</span>
                     </div>
                   );
                 })}
