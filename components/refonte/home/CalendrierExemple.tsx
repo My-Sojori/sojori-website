@@ -91,6 +91,7 @@ export function CalendrierExemple() {
           ))}
         </div>
       </div>
+      <span className="sj2-cal__indice" aria-hidden="true">{t('scrollHint')}</span>
       <figcaption>{t('note')}</figcaption>
     </figure>
   );
