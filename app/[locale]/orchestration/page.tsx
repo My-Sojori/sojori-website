@@ -16,111 +16,83 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   };
 }
 
-/**
- * Page pilier de l'orchestration.
- *
- * 2026-09-12 — Constat qui a motivé cette page : le mot « orchestration »
- * n'apparaissait sur AUCUNE des 11 pages produit, et aucune page
- * n'expliquait ce qu'est l'orchestration. Le positionnement ne vivait que
- * sur la page d'accueil ; dès le premier clic, le visiteur retombait sur un
- * catalogue de modules juxtaposés — précisément ce dont Sojori dit se
- * distinguer. La chose que Sojori vend n'avait pas de page.
- *
- * Elle sert aussi de cible SEO sur « orchestration hôtelière », requête
- * qu'aucun concurrent n'occupe — contrairement à « PMS », disputée entre
- * Cloudbeds, Pluriel, Nozoul et Welcomax.
- */
-
-/** Les trois domaines orchestrés, dans l'ordre où le positionnement les énonce. */
-const DOMAINS = [
-  {
-    key: 'guest',
-    label: 'Expérience client',
-    color: '#06b6d4',
-    lead: "Ce que le client vit, de la réservation à l'avis.",
-    body: "Messages avant l'arrivée, check-in digital, fiche de police remplie à distance, demandes pendant le séjour, instructions de départ, demande d'avis. Le client écrit sur WhatsApp, dans sa langue, et n'installe rien.",
-    links: [
-      { t: 'Guest Experience', href: '/guest-experience' as const },
-      { t: 'WhatsApp', href: '/whatsapp' as const },
-      { t: 'Inbox unifiée', href: '/inbox' as const },
-    ],
-  },
-  {
-    key: 'ops',
-    label: 'Opérations',
-    color: '#8b5cf6',
-    lead: 'Ce que vos équipes et vos partenaires exécutent.',
-    body: "Ménage déclenché au départ constaté, recouche quotidienne, maintenance rattachée à l'équipement, accueil, navette, blanchisserie. Chaque intervenant reçoit sa mission sur WhatsApp, en français ou en arabe.",
-    links: [
-      { t: 'TeamFlow', href: '/teamflow' as const },
-      { t: 'PMS', href: '/pms' as const },
-      { t: 'Dashboard App', href: '/dashboard-app' as const },
-    ],
-  },
-  {
-    key: 'revenue',
-    label: 'Ventes & revenu',
-    color: '#10b981',
-    lead: 'Ce que le séjour rapporte réellement.',
-    body: "Tarification par règles avec vos bornes, distribution sur les canaux, mix canaux et commission nette, surclassements et extras vendus, note du séjour, revenu par chambre disponible.",
-    links: [
-      { t: 'Tarification dynamique', href: '/dynamic-pricing' as const },
-      { t: 'Channel Manager', href: '/channel-manager' as const },
-      { t: 'Smart Analytics', href: '/analytics' as const },
-    ],
-  },
-];
-
-/** Ce que Sojori connecte — la seconde moitié du positionnement. */
-const CONNECTS = [
-  { i: '•', t: 'Les systèmes', d: "Votre PMS s'il existe déjà — dont Mews —, les OTA, les moteurs de paiement, les sources de données comme le statut d'un vol." },
-  { i: '•', t: 'Les clients', d: 'Sur WhatsApp d’abord, dans leur langue, sans application à installer ni compte à créer.' },
-  { i: '•', t: 'Les équipes', d: 'Réception, gouvernante, femmes de chambre, maintenance — chacun reçoit ce qui le concerne, et son avancement remonte.' },
-  { i: '•', t: 'Les partenaires', d: 'Chauffeurs, spa, restaurants, blanchisserie, excursions : ils entrent dans le flux plutôt que d’être appelés au téléphone.' },
-];
-
 export default async function OrchestrationPage({ params }: { params: Promise<{ locale: string }> }) {
+  const tb = await getTranslations('pageBodies.orchestration');
+  const DOMAINS = [
+    {
+      key: 'guest',
+      label: tb('k052'),
+      color: '#06b6d4',
+      lead: tb('k053'),
+      body: tb('k054'),
+      links: [
+        { t: tb('k055'), href: '/guest-experience' as const },
+        { t: 'WhatsApp', href: '/whatsapp' as const },
+        { t: tb('k056'), href: '/inbox' as const },
+      ],
+    },
+    {
+      key: 'ops',
+      label: tb('k057'),
+      color: '#8b5cf6',
+      lead: tb('k058'),
+      body: tb('k059'),
+      links: [
+        { t: 'TeamFlow', href: '/teamflow' as const },
+        { t: 'PMS', href: '/pms' as const },
+        { t: tb('k060'), href: '/dashboard-app' as const },
+      ],
+    },
+    {
+      key: 'revenue',
+      label: tb('k061'),
+      color: '#10b981',
+      lead: tb('k062'),
+      body: tb('k063'),
+      links: [
+        { t: tb('k064'), href: '/dynamic-pricing' as const },
+        { t: tb('k065'), href: '/channel-manager' as const },
+        { t: tb('k066'), href: '/analytics' as const },
+      ],
+    },
+  ];
+  
+  const CONNECTS = [
+    { i: '•', t: tb('k067'), d: tb('k068') },
+    { i: '•', t: tb('k069'), d: tb('k070') },
+    { i: '•', t: tb('k071'), d: tb('k072') },
+    { i: '•', t: tb('k073'), d: tb('k074') },
+  ];
+
   const { locale } = await params;
   return (
     <>
       <BackgroundEffects />
       <PageSchema
         crumbs={[
-          { name: 'Accueil', path: `/${locale}` },
+          { name: tb('crumbHome'), path: `/${locale}` },
           { name: 'Orchestration', path: `/${locale}/orchestration` },
         ]}
-        serviceName="Moteur d'orchestration de l'hospitalité"
-        serviceDescription="Moteur qui orchestre l'expérience client, les opérations et le revenu d'un établissement hôtelier, en connectant les systèmes, les clients, les équipes et les partenaires."
+        serviceName={tb('k001')}
+        serviceDescription={tb('k002')}
         areaServed="Maroc"
       />
       <div style={{ position: 'relative', zIndex: 1 }}>
         <PageHeader pageTitle="Orchestration" />
 
         <PageHero
-          badge="● Le moteur · Hospitalité"
-          title={<>Un PMS enregistre.{' '}<br /><span className="gradient-text">Un orchestrateur fait arriver les choses.</span></>}
-          subtitle="Sojori orchestre l'expérience client, les opérations et le revenu de votre établissement — en connectant vos systèmes, vos clients, vos équipes et vos partenaires. Il inclut un PMS, et se connecte aussi au vôtre."
-          cta1="Voir la démo"
-          cta2="Parler à un expert"
+          badge={tb('k003')}
+          title={<>{tb('k004')}{' '}<br /><span className="gradient-text">{tb('k005')}</span></>}
+          subtitle={tb('k006')}
+          cta1={tb('k007')}
+          cta2={tb('k008')}
         />
 
         <section style={{ padding: '8px 32px 56px' }}>
           <div style={{ maxWidth: 900, margin: '0 auto' }}>
-            <div className="uppercase-sm" style={{ color: 'var(--text-3)', marginBottom: 12 }}>● Réponse directe</div>
+            <div className="uppercase-sm" style={{ color: 'var(--text-3)', marginBottom: 12 }}>{tb('k009')}</div>
             <p style={{ fontSize: 17, lineHeight: 1.7, color: 'var(--text-2)' }}>
-              Un moteur d&apos;orchestration hôtelière déclenche et coordonne ce qui doit
-              arriver pendant un séjour, au lieu d&apos;attendre qu&apos;un responsable le
-              saisisse ou le rappelle à chacun. Là où un PMS tient l&apos;état des
-              réservations et des chambres, l&apos;orchestration agit sur les événements
-              réels : un départ constaté déclenche le ménage, une chambre signalée ouvre
-              un ticket, un message client devient une tâche assignée, un seuil
-              d&apos;occupation franchi ajuste le prix des nuits restantes. Sojori orchestre
-              trois domaines — l&apos;expérience client, les opérations, les ventes et le
-              revenu — en connectant quatre mondes qui ne se parlaient pas : vos systèmes,
-              vos clients, vos équipes et vos partenaires. Il inclut son propre PMS, et se
-              connecte aux PMS déjà en place, dont Mews : vous n&apos;êtes pas obligé de
-              remplacer l&apos;existant pour orchestrer.
-            </p>
+              {tb('k010')}</p>
           </div>
         </section>
 
@@ -128,34 +100,31 @@ export default async function OrchestrationPage({ params }: { params: Promise<{ 
         <section style={{ padding: '40px 32px 64px', borderTop: '1px solid var(--glass-border)' }}>
           <div style={{ maxWidth: 1000, margin: '0 auto' }}>
             <h2 style={{ fontSize: 30, fontWeight: 700, letterSpacing: '-0.02em', marginBottom: 24 }}>
-              Enregistrer n&apos;est pas conduire
-            </h2>
+              {tb('k011')}</h2>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 16 }}>
               <div className="card" style={{ padding: 24 }}>
-                <div style={{ fontSize: 13, fontWeight: 700, color: 'var(--text-3)', marginBottom: 12, textTransform: 'uppercase', letterSpacing: 1 }}>Ce que fait un PMS</div>
+                <div style={{ fontSize: 13, fontWeight: 700, color: 'var(--text-3)', marginBottom: 12, textTransform: 'uppercase', letterSpacing: 1 }}>{tb('k012')}</div>
                 <ul style={{ margin: 0, paddingLeft: 18, color: 'var(--text-3)', lineHeight: 1.9, fontSize: 15 }}>
-                  <li>Enregistre la réservation et le séjour</li>
-                  <li>Tient l&apos;état des chambres</li>
-                  <li>Édite la facture</li>
-                  <li>Synchronise les canaux</li>
-                  <li>Affiche des indicateurs</li>
+                  <li>{tb('k013')}</li>
+                  <li>{tb('k014')}</li>
+                  <li>{tb('k015')}</li>
+                  <li>{tb('k016')}</li>
+                  <li>{tb('k017')}</li>
                 </ul>
                 <p style={{ fontSize: 14, lineHeight: 1.7, color: 'var(--text-3)', marginTop: 16, fontStyle: 'italic' }}>
-                  Vous savez ce qui se passe. La coordination reste à faire.
-                </p>
+                  {tb('k018')}</p>
               </div>
               <div className="card" style={{ padding: 24, borderColor: 'rgba(230,176,34,0.4)' }}>
-                <div style={{ fontSize: 13, fontWeight: 700, color: '#f4cf5e', marginBottom: 12, textTransform: 'uppercase', letterSpacing: 1 }}>Ce qu&apos;ajoute l&apos;orchestration</div>
+                <div style={{ fontSize: 13, fontWeight: 700, color: '#f4cf5e', marginBottom: 12, textTransform: 'uppercase', letterSpacing: 1 }}>{tb('k019')}</div>
                 <ul style={{ margin: 0, paddingLeft: 18, color: 'var(--text-3)', lineHeight: 1.9, fontSize: 15 }}>
-                  <li>Déclenche la mission de ménage au départ constaté</li>
-                  <li>Réassigne ce qui n&apos;est pas pris</li>
-                  <li>Ouvre un ticket sur un équipement signalé</li>
-                  <li>Transforme un message client en tâche</li>
-                  <li>Ajuste le prix dans vos bornes</li>
+                  <li>{tb('k020')}</li>
+                  <li>{tb('k021')}</li>
+                  <li>{tb('k022')}</li>
+                  <li>{tb('k023')}</li>
+                  <li>{tb('k024')}</li>
                 </ul>
                 <p style={{ fontSize: 14, lineHeight: 1.7, color: 'var(--text-3)', marginTop: 16, fontStyle: 'italic' }}>
-                  Ce qui doit arriver arrive, sans que personne le rappelle.
-                </p>
+                  {tb('k025')}</p>
               </div>
             </div>
           </div>
@@ -165,13 +134,9 @@ export default async function OrchestrationPage({ params }: { params: Promise<{ 
         <section style={{ padding: '40px 32px 64px', borderTop: '1px solid var(--glass-border)' }}>
           <div style={{ maxWidth: 1000, margin: '0 auto' }}>
             <h2 style={{ fontSize: 30, fontWeight: 700, letterSpacing: '-0.02em', marginBottom: 12 }}>
-              Trois domaines, un seul moteur
-            </h2>
+              {tb('k026')}</h2>
             <p style={{ fontSize: 16, lineHeight: 1.75, color: 'var(--text-3)', marginBottom: 28, maxWidth: 780 }}>
-              Ce ne sont pas trois produits à assembler. C&apos;est le même moteur qui lit
-              un événement et agit sur les trois fronts à la fois : un vol retardé décale
-              le chauffeur, replanifie le ménage et laisse la nuit en vente plus longtemps.
-            </p>
+              {tb('k027')}</p>
             <div style={{ display: 'grid', gap: 16 }}>
               {DOMAINS.map((d) => (
                 <div key={d.key} className="card" style={{ padding: 24, borderLeft: `3px solid ${d.color}` }}>
@@ -196,13 +161,9 @@ export default async function OrchestrationPage({ params }: { params: Promise<{ 
         <section style={{ padding: '40px 32px 64px', borderTop: '1px solid var(--glass-border)' }}>
           <div style={{ maxWidth: 1000, margin: '0 auto' }}>
             <h2 style={{ fontSize: 30, fontWeight: 700, letterSpacing: '-0.02em', marginBottom: 12 }}>
-              Ce que Sojori connecte
-            </h2>
+              {tb('k028')}</h2>
             <p style={{ fontSize: 16, lineHeight: 1.75, color: 'var(--text-3)', marginBottom: 28, maxWidth: 780 }}>
-              Un établissement fonctionne déjà avec des outils, des habitudes et des
-              prestataires. Orchestrer ne veut pas dire tout remplacer : cela veut dire
-              faire circuler l&apos;information entre des mondes qui ne se parlaient pas.
-            </p>
+              {tb('k029')}</p>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 16 }}>
               {CONNECTS.map((c) => (
                 <div key={c.t} className="card" style={{ padding: 22 }}>
@@ -219,30 +180,24 @@ export default async function OrchestrationPage({ params }: { params: Promise<{ 
         <section style={{ padding: '40px 32px 64px', borderTop: '1px solid var(--glass-border)' }}>
           <div style={{ maxWidth: 900, margin: '0 auto' }}>
             <h2 style={{ fontSize: 30, fontWeight: 700, letterSpacing: '-0.02em', marginBottom: 20 }}>
-              Un exemple : un vol a 40 minutes de retard
-            </h2>
+              {tb('k030')}</h2>
             <p style={{ fontSize: 16, lineHeight: 1.75, color: 'var(--text-3)', marginBottom: 16 }}>
-              Le client a réservé une navette à son arrivée, et son numéro de vol a été
-              collecté au moment du check-in digital. Le vol part en retard. Personne au
-              sein de l&apos;établissement n&apos;a consulté quoi que ce soit.
-            </p>
+              {tb('k031')}</p>
             <ul style={{ margin: '0 0 16px', paddingLeft: 20, color: 'var(--text-3)', lineHeight: 1.95, fontSize: 15 }}>
-              <li><strong style={{ color: 'var(--text-2)' }}>Opérations</strong> — le chauffeur partenaire reçoit sa nouvelle heure de prise en charge sur WhatsApp ; le ménage de la chambre passe après celle d&apos;une arrivée à l&apos;heure.</li>
-              <li><strong style={{ color: 'var(--text-2)' }}>Expérience client</strong> — la réception voit la nouvelle heure d&apos;arrivée, et l&apos;accueil est préparé pour ce moment-là plutôt que servi trop tôt.</li>
-              <li><strong style={{ color: 'var(--text-2)' }}>Revenu</strong> — la chambre reste vendable plus longtemps, et un départ tardif peut être proposé au client précédent.</li>
+              <li><strong style={{ color: 'var(--text-2)' }}>{tb('k032')}</strong> {tb('k033')}</li>
+              <li><strong style={{ color: 'var(--text-2)' }}>{tb('k034')}</strong> {tb('k035')}</li>
+              <li><strong style={{ color: 'var(--text-2)' }}>Revenu</strong> {tb('k036')}</li>
             </ul>
             <p style={{ fontSize: 16, lineHeight: 1.75, color: 'var(--text-3)' }}>
-              Un PMS aurait affiché le séjour sans rien déplacer. C&apos;est cet écart —
-              entre savoir et faire — que l&apos;orchestration comble.
-            </p>
+              {tb('k037')}</p>
           </div>
         </section>
 
         <StatsBar stats={[
-          { k: '3', l: 'Domaines orchestrés' },
-          { k: '4', l: 'Mondes connectés' },
-          { k: 'PMS', l: 'Inclus ou connecté' },
-          { k: 'FR/AR/EN', l: 'Langues des équipes' },
+          { k: '3', l: tb('k038') },
+          { k: '4', l: tb('k039') },
+          { k: 'PMS', l: tb('k040') },
+          { k: tb('k041'), l: tb('k042') }
         ]} />
 
         <FaqFromMessages page="orchestration" />
@@ -250,17 +205,17 @@ export default async function OrchestrationPage({ params }: { params: Promise<{ 
         {/* Maillage : cette page est le pilier, elle doit redistribuer. */}
         <section style={{ padding: '8px 32px 56px' }}>
           <div style={{ maxWidth: 1000, margin: '0 auto' }}>
-            <div className="uppercase-sm" style={{ color: 'var(--text-3)', marginBottom: 14 }}>● Poursuivre</div>
+            <div className="uppercase-sm" style={{ color: 'var(--text-3)', marginBottom: 14 }}>{tb('k043')}</div>
             <div style={{ fontSize: 14, color: 'var(--text-3)', lineHeight: 2 }}>
-              <Link href={'/comparatif-pms-maroc' as const} style={{ color: '#f4cf5e', textDecoration: 'none', fontWeight: 600 }}>Comparatif des PMS au Maroc</Link>
+              <Link href={'/comparatif-pms-maroc' as const} style={{ color: '#f4cf5e', textDecoration: 'none', fontWeight: 600 }}>{tb('k044')}</Link>
               {' · '}
-              <Link href={'/integrations' as const} style={{ color: '#f4cf5e', textDecoration: 'none' }}>Intégrations & API</Link>
+              <Link href={'/integrations' as const} style={{ color: '#f4cf5e', textDecoration: 'none' }}>{tb('k045')}</Link>
               {' · '}
-              <Link href={'/go-siyaha' as const} style={{ color: '#f4cf5e', textDecoration: 'none' }}>Go Siyaha</Link>
+              <Link href={'/go-siyaha' as const} style={{ color: '#f4cf5e', textDecoration: 'none' }}>{tb('k046')}</Link>
               {' · '}
-              <Link href={'/offre' as const} style={{ color: '#f4cf5e', textDecoration: 'none' }}>Votre offre</Link>
+              <Link href={'/offre' as const} style={{ color: '#f4cf5e', textDecoration: 'none' }}>{tb('k047')}</Link>
               <br />
-              Par ville :{' '}
+              {tb('k048')}{' '}
               <Link href={'/pms-marrakech' as const} style={{ color: '#f4cf5e', textDecoration: 'none' }}>Marrakech</Link>
               {' · '}
               <Link href={'/pms-casablanca' as const} style={{ color: '#f4cf5e', textDecoration: 'none' }}>Casablanca</Link>
@@ -275,8 +230,8 @@ export default async function OrchestrationPage({ params }: { params: Promise<{ 
         </section>
 
         <FinalCTA
-          title={<>Voyez-le sur votre propre exploitation.{' '}<span className="gradient-text">1 mois d&apos;essai gratuit.</span></>}
-          subtitle="Mise en route accompagnée en français. Sojori se connecte aussi à votre PMS existant — vous pouvez tester l'orchestration sans rien migrer."
+          title={<>{tb('k049')}{' '}<span className="gradient-text">{tb('k050')}</span></>}
+          subtitle={tb('k051')}
         />
 
         <PageFooter />
