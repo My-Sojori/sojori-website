@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { getTranslations } from 'next-intl/server';
 import { Link } from '@/i18n/routing';
-import { FaqSection } from '@/components/FaqSection';
+import { FaqFromMessages } from '@/components/FaqFromMessages';
 import { PageSchema } from '@/components/PageSchema';
 import { BackgroundEffects } from '@/components/BackgroundEffects';
 import { PageHeader, PageFooter, PageHero, FinalCTA } from '@/components/SharedComponents';
@@ -29,29 +29,6 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
  * Chaque page dit explicitement dans quel cas le concurrent est le bon choix.
  * Relevé effectué le 2026-09-11 sur le site de l'éditeur.
  */
-const FAQ = [
-  {
-    "q": "Faut-il remplacer Pluriel pour utiliser Sojori ?",
-    "a": "Pas forcément. Sojori se connecte aux PMS existants ; selon les possibilités d'interfaçage de votre installation, l'orchestration peut s'ajouter sans toucher à votre système de réservation. C'est à examiner au cas par cas — parlons-en avant d'envisager une migration."
-  },
-  {
-    "q": "Qu'advient-il de l'historique de réservations ?",
-    "a": "La reprise des données est prise en charge lors de la mise en route. C'est généralement l'étape la plus longue du déploiement, et celle qu'il faut cadrer en premier."
-  },
-  {
-    "q": "Le cloud est-il fiable quand la connexion est instable ?",
-    "a": "C'est la bonne question à poser, et elle mérite une réponse honnête : une coupure prolongée affecte l'accès. C'est l'argument historique du logiciel installé. En pratique, l'orchestration passe largement par WhatsApp sur les téléphones des équipes, qui fonctionnent en données mobiles indépendamment du wifi de l'établissement."
-  },
-  {
-    "q": "Pluriel fait de la comptabilité et de la paie. Sojori aussi ?",
-    "a": "Non. Sojori orchestre l'exploitation : réservations, ménage, maintenance, relation client, revenu. La comptabilité et la paie ne sont pas dans son périmètre, et les exports alimentent votre outil comptable. Si vous cherchez une suite administrative complète chez un seul éditeur, la suite Pluriel couvre un terrain que nous ne couvrons pas."
-  },
-  {
-    "q": "Sojori parle-t-il arabe ?",
-    "a": "Oui, et c'est central. Les missions envoyées aux équipes de terrain le sont en français ou en arabe, sur WhatsApp, sans application à installer ni compte à créer."
-  }
-];
-
 export default async function AltPluriel({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   return (
@@ -172,7 +149,7 @@ export default async function AltPluriel({ params }: { params: Promise<{ locale:
           </div>
         </section>
 
-        <FaqSection badge="Sojori vs Pluriel" title="Questions fréquentes" items={FAQ} />
+        <FaqFromMessages page="alternative-pluriel" />
 
         <section style={{ padding: '8px 32px 40px' }}>
           <div style={{ maxWidth: 900, margin: '0 auto' }}>

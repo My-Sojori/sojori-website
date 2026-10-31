@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { getTranslations } from 'next-intl/server';
 import { Link } from '@/i18n/routing';
-import { FaqSection } from '@/components/FaqSection';
+import { FaqFromMessages } from '@/components/FaqFromMessages';
 import { PageSchema } from '@/components/PageSchema';
 import { BackgroundEffects } from '@/components/BackgroundEffects';
 import { PageHeader, PageFooter, PageHero, FinalCTA } from '@/components/SharedComponents';
@@ -29,29 +29,6 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
  * Chaque page dit explicitement dans quel cas le concurrent est le bon choix.
  * Relevé effectué le 2026-09-11 sur le site de l'éditeur.
  */
-const FAQ = [
-  {
-    "q": "Sojori remplace-t-il Cloudbeds ?",
-    "a": "Pas nécessairement. Sojori inclut son propre PMS, mais il se connecte aussi aux PMS existants : vous pouvez garder Cloudbeds pour la réservation et ajouter la couche d'orchestration par-dessus. C'est une différence de fond avec les autres alternatives, qui exigent toutes un remplacement complet."
-  },
-  {
-    "q": "Quelle est la vraie différence entre les deux ?",
-    "a": "Le périmètre. Cloudbeds centralise l'information du séjour ; Sojori déclenche ce qui en découle. Dit autrement : Cloudbeds vous dit que la chambre 12 est libérée, Sojori envoie la mission de ménage à la bonne personne, la relance si elle n'est pas prise, et vous prévient si l'arrivée suivante risque d'attendre."
-  },
-  {
-    "q": "Cloudbeds gère-t-il la fiche de police marocaine ?",
-    "a": "Nous ne nous prononçons pas sur le périmètre exact d'un produit concurrent, qui évolue. Posez-leur directement la question, et demandez une démonstration sur votre propre cas : une fiche collectée avant l'arrivée, en arabe, avec la pièce d'identité. Vous verrez immédiatement ce que chaque outil sait faire."
-  },
-  {
-    "q": "La migration est-elle compliquée ?",
-    "a": "Elle est prise en charge. Et si vous préférez ne pas migrer, la connexion à votre PMS actuel reste possible — c'est souvent le chemin le plus court pour mesurer l'apport de l'orchestration avant de décider quoi que ce soit sur votre système de réservation."
-  },
-  {
-    "q": "Combien de temps pour être opérationnel ?",
-    "a": "Quelques jours pour un établissement seul. Ce qui prend du temps n'est jamais l'installation mais la reprise des historiques et le paramétrage des règles propres à votre exploitation — cadences de ménage, règles de tarification, circuits de validation."
-  }
-];
-
 export default async function AltCloudbeds({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   return (
@@ -172,7 +149,7 @@ export default async function AltCloudbeds({ params }: { params: Promise<{ local
           </div>
         </section>
 
-        <FaqSection badge="Sojori vs Cloudbeds" title="Questions fréquentes" items={FAQ} />
+        <FaqFromMessages page="alternative-cloudbeds" />
 
         <section style={{ padding: '8px 32px 40px' }}>
           <div style={{ maxWidth: 900, margin: '0 auto' }}>

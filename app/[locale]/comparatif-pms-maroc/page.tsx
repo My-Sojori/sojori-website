@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { getTranslations } from 'next-intl/server';
 import { Link } from '@/i18n/routing';
-import { FaqSection } from '@/components/FaqSection';
+import { FaqFromMessages } from '@/components/FaqFromMessages';
 import { PageSchema } from '@/components/PageSchema';
 import { BackgroundEffects } from '@/components/BackgroundEffects';
 import { PageHeader, PageFooter, PageHero, FinalCTA } from '@/components/SharedComponents';
@@ -70,33 +70,6 @@ const PLAYERS = [
     pour: "Établissements cherchant une suite PMS classique bien adaptée au marché marocain.",
     slug: '/alternative-welcomax' as const,
     highlight: false,
-  },
-];
-
-const FAQ = [
-  {
-    q: "Quel est le meilleur PMS pour un hôtel au Maroc ?",
-    a: "La question est mal posée, et c'est ce qui fait perdre du temps. Il n'existe pas de meilleur PMS dans l'absolu : il existe un produit adapté à votre taille, à votre organisation et à votre problème réel. Un riad de six chambres tenu par deux personnes et un groupe de quatre établissements avec trente employés n'ont pas le même besoin. Commencez par identifier ce qui vous coûte le plus cher aujourd'hui — la saisie des réservations, la coordination des équipes, ou la distribution sur les OTA — puis comparez sur ce point.",
-  },
-  {
-    q: "Quelle différence entre un PMS et un moteur d'orchestration ?",
-    a: "Un PMS enregistre et centralise : réservations, chambres, factures, canaux. Un moteur d'orchestration déclenche ce qui en découle : le départ constaté génère la mission de ménage, la chambre signalée ouvre un ticket de maintenance, le séjour qui approche envoie ses messages au client. Sur un établissement calme, la différence se voit peu. Sur une journée à vingt départs, elle décide si les chambres sont prêtes à temps.",
-  },
-  {
-    q: "Faut-il un logiciel marocain ou international ?",
-    a: "Un éditeur local traite nativement la fiche de police, la taxe de séjour, le dirham et l'arabe, là où une plateforme internationale les gère comme des variantes locales. En contrepartie, les plateformes internationales offrent souvent des écosystèmes d'intégrations plus larges. Si votre exploitation est entièrement marocaine, l'ancrage local pèse lourd. Si vous opérez dans plusieurs pays, l'arbitrage s'inverse.",
-  },
-  {
-    q: "Cloud ou installé sur site ?",
-    a: "Le cloud s'ouvre depuis un navigateur, se met à jour pour tous et ne demande ni serveur ni sauvegardes à surveiller. L'installé sur site reste accessible en cas de coupure internet et permet une intégration matérielle profonde — serrures, centraux téléphoniques, pointeuses. Aujourd'hui la majorité des nouveaux déploiements se font en cloud, mais un projet comportant une part d'infrastructure lourde peut justifier l'autre choix.",
-  },
-  {
-    q: "Le programme Go Siyaha finance-t-il ces logiciels ?",
-    a: "Le volet transformation digitale du programme couvre les outils numériques, et certains éditeurs affichent un référencement au titre du programme. Les taux, plafonds et conditions relèvent de Maroc PME, seule habilitée à instruire les dossiers. Vérifiez auprès d'eux, et méfiez-vous d'un éditeur qui vous garantit une subvention : cette décision ne lui appartient pas.",
-  },
-  {
-    q: "Comment comparer sérieusement deux solutions ?",
-    a: "Demandez la même démonstration à chaque éditeur, sur un scénario réel de votre établissement : un départ à 11 h, une arrivée anticipée à 13 h, une chambre signalée en panne, un client qui écrit en arabe, un paiement partiel puis une facture. En quinze minutes vous verrez ce que chaque outil fait réellement, plutôt que ce que la plaquette annonce.",
   },
 ];
 
@@ -258,7 +231,7 @@ export default async function ComparatifPmsMarocPage({ params }: { params: Promi
           </div>
         </section>
 
-        <FaqSection badge="Comparatif PMS Maroc" title="Questions fréquentes" items={FAQ} />
+        <FaqFromMessages page="comparatif-pms-maroc" />
 
         <section style={{ padding: '8px 32px 40px' }}>
           <div style={{ maxWidth: 900, margin: '0 auto' }}>

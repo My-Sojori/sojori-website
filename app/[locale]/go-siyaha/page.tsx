@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { getTranslations } from 'next-intl/server';
 import { Link } from '@/i18n/routing';
-import { FaqSection } from '@/components/FaqSection';
+import { FaqFromMessages } from '@/components/FaqFromMessages';
 import { PageSchema } from '@/components/PageSchema';
 import { BackgroundEffects } from '@/components/BackgroundEffects';
 import { PageHeader, PageFooter, PageHero, StatsBar, FinalCTA } from '@/components/SharedComponents';
@@ -28,33 +28,6 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
  * trompeur. Les chiffres viennent de sources secondaires concordantes et sont
  * attribués comme tels dans le texte.
  */
-const FAQ = [
-  {
-    q: "Qu'est-ce que le programme Go Siyaha ?",
-    a: "Go Siyaha est un programme public marocain porté par le ministère du Tourisme et déployé par l'agence Maroc PME. Il vise à moderniser et digitaliser le tissu touristique — hébergement, restauration, agences de voyage et de transport touristique. Il s'articule autour de trois axes : l'appui à l'investissement, la croissance verte, et la transformation digitale avec assistance technique.",
-  },
-  {
-    q: "Quel est le taux de subvention pour la digitalisation ?",
-    a: "Les sources professionnelles du secteur rapportent une prise en charge pouvant atteindre 90 % des dépenses d'expertise, de conseil, de marketing et de transformation digitale, contre 30 à 40 % pour les investissements physiques comme les travaux et les équipements. Les taux, plafonds et conditions exacts applicables à votre dossier sont à confirmer auprès de Maroc PME, seule habilitée à les fixer.",
-  },
-  {
-    q: "Mon établissement est-il éligible ?",
-    a: "Le programme vise les entreprises de droit privé marocain à capital 100 % privé opérant dans le tourisme, avec un chiffre d'affaires hors taxes inférieur à 200 millions de dirhams en moyenne sur les trois derniers exercices. Depuis juillet 2025, les barrières de taille ont été levées : les TPE, maisons d'hôtes, coopératives et jeunes porteurs de projet sont éligibles, et le seuil minimum d'investissement a été supprimé. Vérifiez votre situation auprès de Maroc PME.",
-  },
-  {
-    q: "Un logiciel de gestion hôtelière entre-t-il dans les dépenses éligibles ?",
-    a: "Le volet transformation digitale couvre l'expertise, le conseil, le marketing et les outils numériques — site web, moteur de réservation, référencement, identité de marque. Des acteurs du secteur indiquent que les solutions PMS et channel manager entrent dans ce périmètre. Sojori ne se prononce pas sur l'éligibilité de votre dossier : c'est Maroc PME qui instruit et décide.",
-  },
-  {
-    q: "Sojori est-il agréé ou référencé au titre de Go Siyaha ?",
-    a: "Nous ne revendiquons aucun agrément que nous ne pouvons documenter. Si vous montez un dossier Go Siyaha, nous fournissons ce dont votre dossier a besoin de notre côté — devis détaillé, description fonctionnelle, périmètre de déploiement — et vous restez maître de la démarche auprès de Maroc PME. Adressez-vous à eux pour savoir si un prestataire doit être référencé.",
-  },
-  {
-    q: "Comment monter un dossier ?",
-    a: "La démarche passe par Maroc PME. Les pièces habituellement demandées sont le registre du commerce, l'ICE, les statuts, les bilans des trois derniers exercices, un business plan et les devis fournisseurs. Nous pouvons vous transmettre un devis détaillé correspondant au périmètre que vous envisagez ; le reste du dossier relève de vous et de votre conseil.",
-  },
-];
-
 export default async function GoSiyahaPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   return (
@@ -199,7 +172,7 @@ export default async function GoSiyahaPage({ params }: { params: Promise<{ local
           { k: 'Maroc PME', l: 'Organisme instructeur' },
         ]} />
 
-        <FaqSection badge="Go Siyaha" title="Questions fréquentes" items={FAQ} />
+        <FaqFromMessages page="go-siyaha" />
 
         <section style={{ padding: '8px 32px 40px' }}>
           <div style={{ maxWidth: 900, margin: '0 auto' }}>
