@@ -775,6 +775,8 @@ html[dir='rtl'] .sj2-cal__exemple { letter-spacing: 0; font-family: var(--sj-san
   .sj2-combo__fermer { display: inline-flex; align-items: center; justify-content: center; }
   .sj2-combo__liste { flex: 1; max-height: none; padding: 4px 8px 24px; }
 
+}
+
 /* ================= La salle sur téléphone : une vraie scène portrait ================= */
 .sj2-mobile { display: none; }
 @media (max-width: 979px) {
