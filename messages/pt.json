@@ -3565,7 +3565,14 @@
           "taxeSejour": "Taxa turística em Marrocos",
           "channelManager": "Channel manager",
           "dynamicPricing": "Preços dinâmicos",
-          "comparatif": "Comparação de PMS em Marrocos"
+          "comparatif": "Comparação de PMS em Marrocos",
+          "factureElectronique": "Fatura eletrónica em Marrocos"
+        },
+        "article": {
+          "notice": "Artigo informativo. As regras podem evoluir: verifique junto da administração competente antes de qualquer decisão.",
+          "updatedLabel": "Atualizado em",
+          "sources": "Fontes",
+          "tableCaption": "Tabela"
         }
       },
       "pmsMaroc": {
@@ -3798,51 +3805,89 @@
       },
       "fichePolice": {
         "meta": {
-          "title": "Ficha de polícia em Marrocos: o que a Sojori prepara",
-          "description": "Guia: a ficha de polícia em Marrocos e o que a Sojori prepara no WhatsApp para cada hóspede. Os pontos regulamentares estão a confirmar."
+          "title": "Ficha de polícia em Marrocos: declaração STDN · Sojori",
+          "description": "Ficha de polícia e declaração STDN em Marrocos: prazo antes das 8h, inscrição, importação Excel, arquivo de um ano e o que a Sojori faz no check-in."
         },
         "kicker": "GUIA · FICHA DE POLÍCIA",
-        "title": "Ficha de polícia em Marrocos: o que a Sojori prepara.",
-        "answer": "A Sojori prepara a ficha de polícia de cada hóspede a partir das informações que este envia no WhatsApp, com o documento de identificação. A declaração às autoridades continua a ser da responsabilidade do estabelecimento.",
+        "title": "Ficha de polícia em Marrocos: o que é preciso saber.",
+        "answer": "Em Marrocos, os estabelecimentos de alojamento declaram todos os dias, antes das 8h, as chegadas, as dormidas e as partidas dos seus clientes no portal stdn.ma, e arquivam os boletins individuais durante um ano. A Sojori faz assinar a ficha de polícia online durante o check-in WhatsApp e guarda as fichas em PDF; a declaração continua a ser uma diligência do estabelecimento.",
+        "updated": "31 de outubro de 2026",
         "sections": [
           {
-            "title": "O que faz a Sojori",
-            "text": "O hóspede preenche a ficha antes de chegar, a partir do WhatsApp. A Sojori prepara os dados e guarda-os na estadia.",
+            "title": "Os textos",
+            "text": "A declaração dos clientes assenta em três textos.",
             "points": [
-              "Cada hóspede da estadia regista-se, um a um.",
-              "A fotografia do documento de identificação é lida automaticamente.",
-              "A ficha é preparada para cada hóspede e assinada online.",
-              "Um lembrete automático é enviado se a ficha não estiver feita.",
-              "Num hotel, a receção pode controlar a identidade no local; o envio dos códigos de acesso pode ficar ligado ao registo."
+              "A lei 80-14 sobre os estabelecimentos de alojamento turístico e as outras formas de alojamento turístico, artigos 36.º a 38.º: o explorador declara as chegadas e as dormidas dos seus clientes (Boletim Oficial n.º 6404 de 15 de outubro de 2015).",
+              "O decreto 2-15-865 de 9 de junho de 2016 fixa a teledeclaração e o modelo do boletim individual (Boletim Oficial n.º 6485).",
+              "O despacho conjunto 3171-16 de 10 de fevereiro de 2017 fixa a inscrição e o certificado.",
+              "Uma circular conjunta dos ministérios do Interior e do Turismo, de fevereiro de 2024, relançou a generalização da teledeclaração; 3 414 estabelecimentos estavam inscritos no final de maio de 2024 (Le Matin, 13 de junho de 2024)."
             ]
           },
           {
-            "title": "O que a Sojori não faz",
-            "text": "A Sojori prepara os dados, mas não faz a declaração em seu lugar: a comunicação às autoridades continua a ser da responsabilidade do estabelecimento."
+            "title": "Inscrever-se no STDN",
+            "text": "A inscrição faz-se online em www.stdn.ma e depois através de um processo físico entregue à DGSN (polícia nacional) ou à GR (gendarmaria real) no prazo de 30 dias. É em seguida entregue um certificado de autenticação.",
+            "points": [
+              "A autorização de exploração.",
+              "O registo comercial.",
+              "O CNIE ou o título de residência.",
+              "A decisão de classificação.",
+              "A ficha de pré-inscrição."
+            ]
           },
           {
-            "title": "O quadro regulamentar",
-            "text": "Os pontos seguintes dependem da regulamentação marroquina e ainda não foram verificados pela Sojori. Serão publicados após verificação junto de uma fonte oficial.",
+            "title": "Declarar todos os dias",
+            "text": "A teledeclaração substitui a entrega dos boletins individuais à DGSN ou à GR, o registo da clientela e a declaração manual das dormidas.",
             "points": [
-              "Texto de referência e obrigações do estabelecimento: [a confirmar].",
-              "Quem deve preencher uma ficha (cada adulto, menores acompanhados): [a confirmar].",
-              "Informações obrigatórias na ficha: [a confirmar].",
-              "Prazo de conservação e modalidades de transmissão: [a confirmar]."
+              "O prazo: todos os dias, antes das 8h, declarar as chegadas, as dormidas e as partidas em www.stdn.ma.",
+              "Duas formas de declarar: introduzir os boletins um a um, ou importar um ficheiro Excel (o modelo oficial descarrega-se no «Espaço prático»).",
+              "Um dia sem clientes: declarar «zero dormidas».",
+              "Plataforma indisponível: entregar os boletins à DGSN ou à GR antes das 8h e introduzi-los nas 72 h seguintes ao restabelecimento do serviço.",
+              "A declaração online tem o mesmo valor jurídico que o papel. Um atraso ou a ausência de declaração sujeita às sanções previstas no artigo 48.º da lei 80-14.",
+              "Transição: enquanto a DGSN ou a GR não o dispensarem, continue a entregar os boletins; o registo é visado no dia 1 de cada mês."
+            ]
+          },
+          {
+            "title": "Guardar os boletins um ano",
+            "text": "Os boletins individuais são arquivados durante um ano e apresentados à DGSN ou à GR mediante pedido."
+          },
+          {
+            "title": "E para um apartamento alugado à noite?",
+            "text": "O guia oficial destina-se aos estabelecimentos classificados. Para um apartamento alugado à noite, a obrigação exata depende do estatuto do imóvel. Informe-se junto da prefeitura ou da esquadra de polícia da sua cidade."
+          },
+          {
+            "title": "O que a Sojori faz",
+            "text": "A Sojori trata da ficha de cada hóspede no momento do check-in. A declaração ao STDN continua a ser uma diligência do estabelecimento.",
+            "points": [
+              "O hóspede preenche e assina a sua ficha de polícia online durante o check-in WhatsApp, com os seus documentos de identidade.",
+              "Pode bloquear o envio dos códigos de acesso enquanto a ficha não estiver completa.",
+              "As fichas assinadas são guardadas em PDF com a reserva: útil para o arquivo de um ano."
             ]
           }
         ],
+        "sources": [
+          "Guia oficial STDN, ministério do Turismo e ministério do Interior (portal www.stdn.ma)",
+          "Lei 80-14, Boletim Oficial n.º 6404 de 15 de outubro de 2015",
+          "Decreto 2-15-865 de 9 de junho de 2016, Boletim Oficial n.º 6485",
+          "Despacho conjunto 3171-16 de 10 de fevereiro de 2017",
+          "Le Matin, 13 de junho de 2024",
+          "Página de alojamento do ministério do Turismo (mtaess.gov.ma)"
+        ],
         "faq": [
           {
-            "q": "Como fazer a ficha de polícia de um hóspede em Marrocos?",
-            "a": "Com a Sojori, o hóspede envia o documento de identificação no WhatsApp antes de chegar e assina a ficha online; a Sojori prepara a ficha de cada hóspede. As obrigações regulamentares exatas estão a confirmar junto de uma fonte oficial."
+            "q": "A que horas é preciso declarar os clientes no STDN?",
+            "a": "De acordo com o guia oficial STDN, a declaração das chegadas, das dormidas e das partidas faz-se todos os dias antes das 8h em www.stdn.ma."
           },
           {
-            "q": "A Sojori faz a declaração às autoridades?",
-            "a": "Não. A Sojori prepara os dados da ficha de polícia; a declaração às autoridades continua a ser da responsabilidade do estabelecimento."
+            "q": "Durante quanto tempo guardar os boletins individuais?",
+            "a": "Os boletins individuais são arquivados durante um ano e apresentados à DGSN ou à GR mediante pedido."
           },
           {
-            "q": "É possível fazer a ficha de polícia no WhatsApp?",
-            "a": "Sim: com o módulo WhatsApp Check-in da Sojori, a recolha faz-se na conversa WhatsApp do hóspede, sem aplicação nem papel."
+            "q": "A Sojori faz a declaração ao STDN?",
+            "a": "Não: a declaração continua a ser uma diligência do estabelecimento. A Sojori faz assinar a ficha de polícia online durante o check-in WhatsApp e guarda as fichas em PDF com a reserva."
+          },
+          {
+            "q": "O que fazer se a plataforma STDN estiver indisponível?",
+            "a": "De acordo com o guia oficial, entregam-se os boletins à DGSN ou à GR antes das 8h e introduzem-se nas 72 h seguintes ao restabelecimento do serviço."
           }
         ]
       },
@@ -3888,6 +3933,93 @@
           {
             "q": "A Sojori entrega a taxa às autoridades?",
             "a": "[a confirmar]: a Sojori calcula e acompanha a taxa; as modalidades de declaração e de entrega estão a confirmar."
+          }
+        ]
+      },
+      "factureElectronique": {
+        "meta": {
+          "title": "Fatura eletrónica em Marrocos: o que é preciso saber",
+          "description": "A fatura eletrónica em Marrocos: base legal, princípio da clearance, calendário divulgado pela imprensa e o que a Sojori faz atualmente."
+        },
+        "kicker": "GUIA · FATURA ELETRÓNICA",
+        "title": "A fatura eletrónica em Marrocos: o que é preciso saber.",
+        "answer": "Em Marrocos, a fatura eletrónica assenta no artigo 145-IX do Código Geral dos Impostos e num modelo de «clearance»: a fatura é validada pela Direção-Geral dos Impostos antes de ser transmitida ao cliente. Segundo a imprensa, o decreto de aplicação não estava publicado no Boletim Oficial em abril de 2026; verifique a situação junto da administração.",
+        "updated": "31 de outubro de 2026",
+        "sections": [
+          {
+            "title": "O que é",
+            "text": "A fatura eletrónica é uma fatura emitida por via eletrónica, segundo modalidades que a regulamentação deve fixar. O modelo adotado em Marrocos é a «clearance»: a Direção-Geral dos Impostos (DGI) valida a fatura antes de esta ser transmitida ao cliente."
+          },
+          {
+            "title": "A base legal",
+            "points": [
+              "O artigo 145-IX do Código Geral dos Impostos, introduzido pela lei de finanças de 2018, prevê a faturação eletrónica, com modalidades fixadas por via regulamentar.",
+              "Segundo o Médias24 (18 de abril de 2026), o decreto de aplicação não estava publicado no Boletim Oficial."
+            ]
+          },
+          {
+            "title": "Quem é abrangido, e quando (segundo a imprensa)",
+            "text": "O calendário abaixo é divulgado pela imprensa (Le360 / Challenge, 3 de junho de 2026). A data real de entrada em vigor não está confirmada, e o limiar aplicável a uma empresa de concierge ou a um hotel não está estabelecido até ao momento.",
+            "table": {
+              "head": [
+                "Fase",
+                "Empresas abrangidas, segundo a imprensa"
+              ],
+              "rows": [
+                [
+                  "2026",
+                  "Grandes empresas (volume de negócios superior a 200 milhões de dirhams, cerca de 1 655 empresas), primeiro para os contratos públicos (B2G) e depois entre empresas (B2B)"
+                ],
+                [
+                  "2027-2028",
+                  "PME e empresas de média dimensão"
+                ],
+                [
+                  "Depois de 2028",
+                  "Microempresas"
+                ]
+              ]
+            },
+            "points": [
+              "Está anunciada uma ferramenta pública gratuita para as pequenas estruturas; as restantes passariam por prestadores certificados (Le360 / Challenge, 3 de junho de 2026)."
+            ]
+          },
+          {
+            "title": "O que pode preparar desde já",
+            "text": "Uma fatura validada antes do envio pressupõe dados corretos no momento da emissão.",
+            "points": [
+              "Dados de reserva limpos: cliente, datas da estadia, montantes, IVA.",
+              "Uma numeração contínua das faturas.",
+              "Uma única ferramenta que faz fé para as reservas e as faturas."
+            ]
+          },
+          {
+            "title": "O que a Sojori faz atualmente",
+            "text": "A Sojori mantém dados de estadia limpos e gera as suas faturas em PDF. A ligação à plataforma da DGI far-se-á quando o decreto for publicado.",
+            "points": [
+              "A Sojori gera uma fatura em PDF por reserva, a partir dos dados do PMS.",
+              "A Sojori não é um prestador certificado de faturação eletrónica."
+            ]
+          }
+        ],
+        "sources": [
+          "Código Geral dos Impostos, artigo 145-IX (Direção-Geral dos Impostos, edição de 2021)",
+          "Le Matin, 20 de novembro de 2024",
+          "Médias24, 18 de abril de 2026, entrevista com Younès Idrissi Kaitouni, diretor-geral dos impostos",
+          "Le360 / Challenge, 3 de junho de 2026"
+        ],
+        "faq": [
+          {
+            "q": "O que é a clearance na fatura eletrónica?",
+            "a": "A clearance é o modelo adotado em Marrocos: a Direção-Geral dos Impostos valida a fatura antes de esta ser transmitida ao cliente."
+          },
+          {
+            "q": "A fatura eletrónica já é obrigatória em Marrocos?",
+            "a": "Está prevista no artigo 145-IX do Código Geral dos Impostos, mas, segundo a imprensa, o decreto de aplicação não estava publicado em abril de 2026. O calendário divulgado pela imprensa começa pelas grandes empresas; verifique junto da administração."
+          },
+          {
+            "q": "A Sojori faz a fatura eletrónica?",
+            "a": "A Sojori gera uma fatura em PDF por reserva a partir dos dados do PMS. A Sojori não é um prestador certificado de faturação eletrónica; a ligação à plataforma da DGI far-se-á quando o decreto for publicado."
           }
         ]
       }

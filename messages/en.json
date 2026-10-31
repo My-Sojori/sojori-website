@@ -3565,7 +3565,14 @@
           "taxeSejour": "Tourist tax in Morocco",
           "channelManager": "Channel manager",
           "dynamicPricing": "Dynamic pricing",
-          "comparatif": "PMS comparison in Morocco"
+          "comparatif": "PMS comparison in Morocco",
+          "factureElectronique": "E-invoicing in Morocco"
+        },
+        "article": {
+          "notice": "Information article. The rules may change: check with the competent authority before making any decision.",
+          "updatedLabel": "Updated on",
+          "sources": "Sources",
+          "tableCaption": "Table"
         }
       },
       "pmsMaroc": {
@@ -3798,51 +3805,89 @@
       },
       "fichePolice": {
         "meta": {
-          "title": "Police registration form in Morocco: what Sojori prepares",
-          "description": "Guide: the police registration form in Morocco and what Sojori prepares on WhatsApp for each guest. Regulatory points are to be confirmed."
+          "title": "Police registration form in Morocco: STDN filing · Sojori",
+          "description": "Police registration form and STDN filing in Morocco: 8 a.m. deadline, sign-up, Excel import, one-year archiving, and what Sojori does at check-in."
         },
         "kicker": "GUIDE · POLICE REGISTRATION FORM",
-        "title": "Police registration form in Morocco: what Sojori prepares.",
-        "answer": "Sojori prepares the police registration form for each guest from the information they send on WhatsApp, along with their ID. Declaring to the authorities remains the responsibility of the property.",
+        "title": "Police registration form in Morocco: what you need to know.",
+        "answer": "In Morocco, accommodation establishments report their guests' arrivals, nights and departures every day, before 8 a.m., on the stdn.ma portal, and keep the individual forms for one year. Sojori has the police registration form signed online during the WhatsApp check-in and keeps the forms as PDFs; the filing remains the establishment's responsibility.",
+        "updated": "31 October 2026",
         "sections": [
           {
-            "title": "What Sojori does",
-            "text": "The guest fills in their form before arriving, from WhatsApp. Sojori prepares the data and keeps it with the stay.",
+            "title": "The legal texts",
+            "text": "Guest reporting rests on three texts.",
             "points": [
-              "Each guest on the stay checks in, one by one.",
-              "The photo of the ID is read automatically.",
-              "The form is prepared for each guest and signed online.",
-              "An automatic reminder is sent if the form is not done.",
-              "In a hotel, the front desk can check identity on site; sending access codes can be tied to check-in."
+              "Law 80-14 on tourist accommodation establishments and other forms of tourist accommodation, articles 36 to 38: the operator reports the arrivals and nights of its guests (Official Gazette no. 6404 of 15 October 2015).",
+              "Decree 2-15-865 of 9 June 2016 sets the online reporting and the model of the individual form (Official Gazette no. 6485).",
+              "Joint order 3171-16 of 10 February 2017 sets the registration and the certificate.",
+              "A joint circular from the Ministries of the Interior and of Tourism, dated February 2024, relaunched the rollout of online reporting; 3,414 establishments were registered at the end of May 2024 (Le Matin, 13 June 2024)."
             ]
           },
           {
-            "title": "What Sojori does not do",
-            "text": "Sojori prepares the data, it does not make the declaration for you: the filing with the authorities remains the responsibility of the property."
+            "title": "Signing up on STDN",
+            "text": "Registration is done online at www.stdn.ma, then by a paper file submitted to the DGSN (national police) or the GR (Royal Gendarmerie) within 30 days. An authentication certificate is then issued.",
+            "points": [
+              "The operating authorization.",
+              "The commercial register extract.",
+              "The CNIE or the residence permit.",
+              "The classification decision.",
+              "The pre-registration form."
+            ]
           },
           {
-            "title": "The regulatory framework",
-            "text": "The following points fall under Moroccan regulation and have not yet been verified by Sojori. They will be published after verification with an official source.",
+            "title": "Reporting every day",
+            "text": "Online reporting replaces the filing of individual forms with the DGSN or the GR, the guest register and the manual reporting of nights.",
             "points": [
-              "Reference text and the property's obligations: [to be confirmed].",
-              "Who must fill in a form (every adult, accompanied minors): [to be confirmed].",
-              "Mandatory information on the form: [to be confirmed].",
-              "Retention period and transmission procedures: [to be confirmed]."
+              "The deadline: every day before 8 a.m., report arrivals, nights and departures on www.stdn.ma.",
+              "Two ways to report: enter the forms one by one, or import an Excel file (the official template can be downloaded from the \"Espace pratique\").",
+              "A day without guests: report \"zero nights\".",
+              "Platform down: submit the forms to the DGSN or the GR before 8 a.m., then enter them within 72 hours after the service is back.",
+              "Online reporting has the same legal value as paper. A delay or a failure to report exposes you to the penalties provided for in article 48 of law 80-14.",
+              "Transition: until the DGSN or the GR has exempted you, keep submitting the forms; the register is stamped on the 1st of each month."
+            ]
+          },
+          {
+            "title": "Keeping the forms for one year",
+            "text": "The individual forms are archived for one year and presented to the DGSN or the GR on request."
+          },
+          {
+            "title": "What about an apartment rented by the night?",
+            "text": "The official guide covers classified establishments. For an apartment rented by the night, the exact obligation depends on the status of the property. Ask the prefecture or the police station in your city."
+          },
+          {
+            "title": "What Sojori does",
+            "text": "Sojori handles each guest's form at check-in. The filing with STDN remains the establishment's responsibility.",
+            "points": [
+              "The guest fills in and signs the police registration form online during the WhatsApp check-in, along with their identity documents.",
+              "You can block the sending of access codes until the form is complete.",
+              "Signed forms are kept as PDFs with the booking: useful for the one-year archiving."
             ]
           }
         ],
+        "sources": [
+          "Official STDN guide, Ministry of Tourism and Ministry of the Interior (portal www.stdn.ma)",
+          "Law 80-14, Official Gazette no. 6404 of 15 October 2015",
+          "Decree 2-15-865 of 9 June 2016, Official Gazette no. 6485",
+          "Joint order 3171-16 of 10 February 2017",
+          "Le Matin, 13 June 2024",
+          "Accommodation page of the Ministry of Tourism (mtaess.gov.ma)"
+        ],
         "faq": [
           {
-            "q": "How do I complete a guest's police registration form in Morocco?",
-            "a": "With Sojori, the guest sends their ID on WhatsApp before arriving and signs their form online; Sojori prepares the form for each guest. The exact regulatory obligations are to be confirmed with an official source."
+            "q": "What time must guests be reported on STDN?",
+            "a": "According to the official STDN guide, arrivals, nights and departures are reported every day before 8 a.m. on www.stdn.ma."
           },
           {
-            "q": "Does Sojori make the declaration to the authorities?",
-            "a": "No. Sojori prepares the police registration form data; the declaration to the authorities remains the responsibility of the property."
+            "q": "How long should individual forms be kept?",
+            "a": "The individual forms are archived for one year and presented to the DGSN or the GR on request."
           },
           {
-            "q": "Can the police registration form be completed on WhatsApp?",
-            "a": "Yes: with the Sojori WhatsApp Check-in module, the information is collected in the guest's WhatsApp conversation, with no app and no paper."
+            "q": "Does Sojori file the report with STDN?",
+            "a": "No: the filing remains the establishment's responsibility. Sojori has the police registration form signed online during the WhatsApp check-in and keeps the forms as PDFs with the booking."
+          },
+          {
+            "q": "What should I do if the STDN platform is down?",
+            "a": "According to the official guide, you submit the forms to the DGSN or the GR before 8 a.m., then enter them within 72 hours after the service is back."
           }
         ]
       },
@@ -3888,6 +3933,93 @@
           {
             "q": "Does Sojori remit the tax to the authorities?",
             "a": "[to be confirmed]: Sojori calculates and tracks the tax; the declaration and remittance procedures are to be confirmed."
+          }
+        ]
+      },
+      "factureElectronique": {
+        "meta": {
+          "title": "E-invoicing in Morocco: what you need to know",
+          "description": "E-invoicing in Morocco: legal basis, the clearance principle, the timeline reported by the press, and what Sojori does today."
+        },
+        "kicker": "GUIDE · E-INVOICING",
+        "title": "E-invoicing in Morocco: what you need to know.",
+        "answer": "In Morocco, e-invoicing rests on article 145-IX of the General Tax Code and on a \"clearance\" model: the invoice is validated by the Directorate General of Taxes before it is sent to the customer. According to the press, the implementing decree had not been published in the Official Gazette as of April 2026; check the situation with the authorities.",
+        "updated": "31 October 2026",
+        "sections": [
+          {
+            "title": "What it is",
+            "text": "An e-invoice is an invoice issued electronically, under terms that the regulations are to set. The model chosen in Morocco is \"clearance\": the Directorate General of Taxes (DGI) validates the invoice before it is sent to the customer."
+          },
+          {
+            "title": "The legal basis",
+            "points": [
+              "Article 145-IX of the General Tax Code, introduced by the 2018 Finance Act, provides for e-invoicing, with terms to be set by regulation.",
+              "According to Médias24 (18 April 2026), the implementing decree had not been published in the Official Gazette."
+            ]
+          },
+          {
+            "title": "Who is concerned, and when (according to the press)",
+            "text": "The timeline below is reported by the press (Le360 / Challenge, 3 June 2026). The actual date of entry into force is not confirmed, and the threshold that would apply to a concierge company or a hotel has not been established to date.",
+            "table": {
+              "head": [
+                "Phase",
+                "Companies concerned, according to the press"
+              ],
+              "rows": [
+                [
+                  "2026",
+                  "Large companies (turnover above 200 million dirhams, about 1,655 companies), first for public procurement (B2G) and then between businesses (B2B)"
+                ],
+                [
+                  "2027-2028",
+                  "Small and medium-sized enterprises and mid-sized companies"
+                ],
+                [
+                  "After 2028",
+                  "Very small businesses"
+                ]
+              ]
+            },
+            "points": [
+              "A free public tool is announced for small businesses; the others would go through approved providers (Le360 / Challenge, 3 June 2026)."
+            ]
+          },
+          {
+            "title": "What you can prepare right now",
+            "text": "An invoice validated before it is sent requires accurate data at the time of issue.",
+            "points": [
+              "Clean booking data: guest, stay dates, amounts, VAT.",
+              "Continuous invoice numbering.",
+              "A single tool that is the reference for bookings and invoices."
+            ]
+          },
+          {
+            "title": "What Sojori does today",
+            "text": "Sojori keeps clean stay data and generates your PDF invoices. The connection to the DGI platform will be made once the decree is published.",
+            "points": [
+              "Sojori generates one PDF invoice per booking, from the PMS data.",
+              "Sojori is not an approved e-invoicing provider."
+            ]
+          }
+        ],
+        "sources": [
+          "General Tax Code, article 145-IX (Directorate General of Taxes, 2021 edition)",
+          "Le Matin, 20 November 2024",
+          "Médias24, 18 April 2026, interview with Younès Idrissi Kaitouni, Director General of Taxes",
+          "Le360 / Challenge, 3 June 2026"
+        ],
+        "faq": [
+          {
+            "q": "What is clearance for e-invoicing?",
+            "a": "Clearance is the model chosen in Morocco: the Directorate General of Taxes validates the invoice before it is sent to the customer."
+          },
+          {
+            "q": "Is e-invoicing already mandatory in Morocco?",
+            "a": "It is provided for by article 145-IX of the General Tax Code, but according to the press the implementing decree had not been published in April 2026. The timeline reported by the press starts with large companies; check with the authorities."
+          },
+          {
+            "q": "Does Sojori do e-invoicing?",
+            "a": "Sojori generates one PDF invoice per booking from the PMS data. Sojori is not an approved e-invoicing provider; the connection to the DGI platform will be made once the decree is published."
           }
         ]
       }

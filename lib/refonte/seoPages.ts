@@ -10,6 +10,7 @@ export const SEO_PAGES = {
   checkin: '/check-in-whatsapp',
   fichePolice: '/fiche-de-police-maroc',
   taxeSejour: '/taxe-de-sejour-maroc',
+  factureElectronique: '/facture-electronique-maroc',
 } as const;
 export type SeoPageId = keyof typeof SEO_PAGES;
 
@@ -19,7 +20,16 @@ export type SeoPageId = keyof typeof SEO_PAGES;
  * Pour les publier d'un seul coup : passer ces deux valeurs à true.
  */
 export const PUBLIE: Record<SeoPageId, boolean> = {
-  pmsMaroc: true, conciergerieMaroc: true, agents: true, checkin: true, fichePolice: false, taxeSejour: false,
+  pmsMaroc: true, conciergerieMaroc: true, agents: true, checkin: true, fichePolice: false, taxeSejour: false, factureElectronique: false,
+};
+
+/**
+ * Les articles d'information sourcés : un lien par source quand une adresse officielle est connue, `null` sinon
+ * (on cite alors le titre et la date, sans inventer d'adresse). Même ordre que `sources` dans les messages.
+ */
+export const ARTICLES: Partial<Record<SeoPageId, (string | null)[]>> = {
+  fichePolice: ['https://www.stdn.ma', null, null, null, null, null],
+  factureElectronique: ['https://www.finances.gov.ma/Publication/dgi/2021/cgi2021-fr.pdf', null, null, null],
 };
 
 export async function seoMetadata(id: SeoPageId, locale: string): Promise<Metadata> {

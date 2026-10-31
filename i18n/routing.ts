@@ -22,6 +22,7 @@ export const routing = defineRouting({
     '/check-in-whatsapp': '/check-in-whatsapp',
     '/fiche-de-police-maroc': '/fiche-de-police-maroc',
     '/taxe-de-sejour-maroc': '/taxe-de-sejour-maroc',
+    '/facture-electronique-maroc': '/facture-electronique-maroc',
     '/analyse-concurrents': '/analyse-concurrents',
     '/demo': '/demo',
     '/whatsapp': '/whatsapp',
