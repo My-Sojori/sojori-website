@@ -3206,8 +3206,8 @@
     },
     "offre": {
       "meta": {
-        "title": "عرضك · Sojori",
-        "description": "ركّبوا عرض Sojori: PMS الخاص بـSojori أو PMS الخاص بكم، ووكلاءكم، وحسابات WhatsApp، وموقعكم. يرد عليكم مستشار بعرض سعر مفصّل."
+        "title": "عرضك من Sojori · PMS ووكلاء WhatsApp على المقاس",
+        "description": "ركّب عرضك من Sojori: PMS الخاص بنا أو نظامك، الوكلاء، الوصول عبر WhatsApp، الموقع. يرد عليك مستشار بعرض سعر مفصّل."
       },
       "hero": {
         "eyebrow": "عرضك",
@@ -3423,6 +3423,70 @@
             "a": "نعم. تختارون الوكلاء والوحدات التي تحتاجون إليها، وحدةً وحدة، وتضيفون غيرها لاحقًا دون إعادة التشغيل."
           }
         ]
+      },
+      "form": {
+        "stepsAria": "خطوات طلبك",
+        "step": {
+          "you": "أنت",
+          "activity": "نشاطك"
+        },
+        "next": "متابعة",
+        "back": "رجوع",
+        "send": "إرسال طلبي",
+        "phone": "رقم WhatsApp الخاص بك",
+        "dial": "رمز الدولة",
+        "dialOption": "{dial} ({country})",
+        "help": {
+          "name": "اسمك مفقود.",
+          "email": "تحقق من بريدك الإلكتروني.",
+          "phone": "رقم WhatsApp الخاص بك، بدون الصفر في البداية.",
+          "consent": "ضع علامة على الموافقة ليتم التواصل معك.",
+          "activity": "ثلاث إجابات تكفي: من أنت، ومتى تبدأ، والمدينة إن رغبت."
+        },
+        "segment": {
+          "title": "أنت",
+          "conciergerie": "شركة كونسييرج",
+          "proprietaire": "مالك",
+          "hotel": "فندق",
+          "riad_maison_hotes": "رياض / دار ضيافة",
+          "residence_aparthotel": "إقامة / شقق فندقية",
+          "agence_immobiliere": "وكالة عقارية"
+        },
+        "tool": {
+          "title": "أداتك الحالية",
+          "none": "لا شيء",
+          "excel": "Excel أو الورق",
+          "pms": "نظام PMS",
+          "channel": "Channel manager",
+          "pmsName": "اسم نظام PMS الخاص بك (اختياري)"
+        },
+        "priorities": {
+          "title": "أولوياتك (اثنتان على الأكثر)",
+          "answer": "الرد على النزلاء",
+          "staff": "تنسيق عمل الفريق",
+          "checkin": "Check-in واستمارة الشرطة",
+          "pricing": "تحديد الأسعار المناسبة",
+          "direct": "البيع المباشر",
+          "owners": "متابعة المالكين"
+        },
+        "when": {
+          "title": "متى تريد البدء؟",
+          "month": "هذا الشهر",
+          "quarter": "خلال 3 أشهر",
+          "looking": "أستكشف فقط"
+        },
+        "city": "مدينتك (اختياري)",
+        "recap": {
+          "title": "طلبك",
+          "segment": "أنت",
+          "size": "الحجم",
+          "tool": "الأداة الحالية",
+          "priorities": "الأولويات",
+          "when": "البدء",
+          "toSpecify": "يُحدَّد لاحقًا",
+          "sizeValueBiens": "{n, plural, zero {# وحدة} one {# وحدة} two {# وحدتان} few {# وحدات} many {# وحدة} other {# وحدة}}",
+          "sizeValueChambres": "{n, plural, zero {# غرفة} one {# غرفة} two {# غرفتان} few {# غرف} many {# غرفة} other {# غرفة}}"
+        }
       }
     }
   }

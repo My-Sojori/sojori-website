@@ -79,3 +79,26 @@ export function resume(s: Selection): string {
   if (bientot.length) l.push(`Intéressé par (bientôt) : ${bientot.map((b) => BIENTOT_FR[b]).join(', ')}.`);
   return l.join('\n');
 }
+
+
+/* ---------- le formulaire qualifié (31/10/2026) : valeurs du CRM, textes dans messages ---------- */
+/** Les segments du CRM (LEAD_SEGMENTS de srv-crm). */
+export const SEGMENTS = ['conciergerie', 'proprietaire', 'hotel', 'riad_maison_hotes', 'residence_aparthotel', 'agence_immobiliere'] as const;
+export type SegmentId = (typeof SEGMENTS)[number];
+/** La taille se compte en chambres pour ces segments, en biens pour les autres. */
+export const EN_CHAMBRES: SegmentId[] = ['hotel', 'riad_maison_hotes', 'residence_aparthotel'];
+
+export const OUTILS = ['none', 'excel', 'pms', 'channel'] as const;
+export type OutilId = (typeof OUTILS)[number];
+export const OUTILS_FR: Record<OutilId, string> = { none: 'Aucun', excel: 'Excel ou papier', pms: 'Un PMS', channel: 'Un channel manager' };
+
+export const PRIORITES = ['answer', 'staff', 'checkin', 'pricing', 'direct', 'owners'] as const;
+export type PrioriteId = (typeof PRIORITES)[number];
+export const PRIORITES_FR: Record<PrioriteId, string> = {
+  answer: 'Répondre aux voyageurs', staff: 'Coordonner le staff', checkin: 'Check-in et fiche de police',
+  pricing: 'Fixer les bons prix', direct: 'Vendre en direct', owners: 'Suivre les propriétaires',
+};
+
+export const QUANDS = ['month', 'quarter', 'looking'] as const;
+export type QuandId = (typeof QUANDS)[number];
+export const QUANDS_FR: Record<QuandId, string> = { month: 'Ce mois-ci', quarter: 'Dans les 3 mois', looking: 'Je me renseigne' };

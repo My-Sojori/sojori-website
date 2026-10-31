@@ -3206,8 +3206,8 @@
     },
     "offre": {
       "meta": {
-        "title": "Su oferta · Sojori",
-        "description": "Componga su oferta Sojori: el PMS Sojori o el suyo, sus agentes, sus accesos WhatsApp, su sitio web. Un asesor le responde con una propuesta con precios."
+        "title": "Su oferta Sojori · PMS y agentes WhatsApp a medida",
+        "description": "Componga su oferta Sojori: el PMS Sojori o el suyo, agentes, acceso WhatsApp, sitio web. Un asesor le responde con una propuesta con precios."
       },
       "hero": {
         "eyebrow": "SU OFERTA",
@@ -3423,6 +3423,70 @@
             "a": "Sí. Usted elige los agentes y los módulos que necesita, propiedad por propiedad, y añade otros más tarde sin repetir la puesta en marcha."
           }
         ]
+      },
+      "form": {
+        "stepsAria": "Etapas de su solicitud",
+        "step": {
+          "you": "Usted",
+          "activity": "Su actividad"
+        },
+        "next": "Continuar",
+        "back": "Volver",
+        "send": "Enviar mi solicitud",
+        "phone": "Su número de WhatsApp",
+        "dial": "Prefijo del país",
+        "dialOption": "{dial} ({country})",
+        "help": {
+          "name": "Falta su nombre.",
+          "email": "Revise su correo electrónico.",
+          "phone": "Su número de WhatsApp, sin el 0 inicial.",
+          "consent": "Marque la casilla para que podamos volver a contactarle.",
+          "activity": "Bastan tres respuestas: qué es usted, cuándo empezar y la ciudad, si lo desea."
+        },
+        "segment": {
+          "title": "Usted es",
+          "conciergerie": "Empresa de conserjería",
+          "proprietaire": "Propietario",
+          "hotel": "Hotel",
+          "riad_maison_hotes": "Riad / casa de huéspedes",
+          "residence_aparthotel": "Residencia / apartahotel",
+          "agence_immobiliere": "Agencia inmobiliaria"
+        },
+        "tool": {
+          "title": "Su herramienta actual",
+          "none": "Ninguna",
+          "excel": "Excel o papel",
+          "pms": "Un PMS",
+          "channel": "Un channel manager",
+          "pmsName": "Nombre de su PMS (opcional)"
+        },
+        "priorities": {
+          "title": "Sus prioridades (dos como máximo)",
+          "answer": "Responder a los huéspedes",
+          "staff": "Coordinar al equipo",
+          "checkin": "Check-in y formulario de policía",
+          "pricing": "Fijar los precios adecuados",
+          "direct": "Vender en directo",
+          "owners": "Dar seguimiento a los propietarios"
+        },
+        "when": {
+          "title": "¿Cuándo desea empezar?",
+          "month": "Este mes",
+          "quarter": "En los próximos 3 meses",
+          "looking": "Me estoy informando"
+        },
+        "city": "Su ciudad (opcional)",
+        "recap": {
+          "title": "SU SOLICITUD",
+          "segment": "Usted es",
+          "size": "Tamaño",
+          "tool": "Herramienta actual",
+          "priorities": "Prioridades",
+          "when": "Inicio",
+          "toSpecify": "por precisar",
+          "sizeValueBiens": "{n, plural, one {# propiedad} other {# propiedades}}",
+          "sizeValueChambres": "{n, plural, one {# habitación} other {# habitaciones}}"
+        }
       }
     }
   }

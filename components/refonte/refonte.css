@@ -458,3 +458,28 @@ html[dir='rtl'] .sj2 [class*='mono'], html[dir='rtl'] .sj2-pill--mono, html[dir=
 .sj2-faq__item { border: 1px solid var(--sj-line); border-radius: 18px; background: var(--sj-surface); padding: 22px 24px; display: flex; flex-direction: column; gap: 8px; }
 .sj2-faq__item dt { font-size: 18px; font-weight: 600; letter-spacing: -0.015em; }
 .sj2-faq__item dd { margin: 0; font-size: 15.5px; line-height: 1.55; color: var(--sj-text-2); text-wrap: pretty; }
+
+/* formulaire qualifié */
+.sj2-pas { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 4px; }
+.sj2-pas li { display: flex; flex-direction: column; gap: 8px; font-size: 13.5px; color: var(--sj-text-4); }
+.sj2-pas li.is-on { color: var(--sj-text); font-weight: 600; }
+.sj2-pas__barre { height: 4px; border-radius: 4px; background: #2a271f; }
+.sj2-pas li.is-on .sj2-pas__barre { background: var(--sj-gold); }
+.sj2-form__champs { display: flex; flex-direction: column; gap: 10px; }
+.sj2-form__aide { font-size: 13.5px; color: var(--sj-text-3); }
+.sj2-form__actions { display: flex; gap: 10px; }
+.sj2-form__actions .sj2-btn--ghost { flex: 0 0 auto; width: auto; }
+.sj2-form__actions .sj2-btn:not(.sj2-btn--ghost) { flex: 1; margin-top: 0; }
+.sj2-btn[disabled] { background: #2a271f; color: #8f887a !important; cursor: not-allowed; filter: none; }
+.sj2-q { border: 0; padding: 0; margin: 0; min-width: 0; display: flex; flex-direction: column; gap: 10px; }
+.sj2-q legend { padding: 0; margin-bottom: 10px; font-size: 14px; font-weight: 600; color: var(--sj-text); }
+.sj2-chips2 { display: flex; flex-wrap: wrap; gap: 8px; }
+.sj2-chips2 button { min-height: 44px; padding: 0 16px; border-radius: 999px; font-size: 15px; font-weight: 500; border: 1px solid var(--sj-line-2); background: transparent; color: #e6e1d6; }
+.sj2-chips2 button[aria-pressed='true'] { border-color: var(--sj-gold); background: #1b170b; color: var(--sj-gold); }
+.sj2-chips2 button[aria-disabled='true'] { opacity: 0.5; }
+.sj2-sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.sj2-recap { display: flex; flex-direction: column; gap: 6px; border-top: 1px solid #2a271f; padding-top: 14px; margin: 4px 0 0; }
+.sj2-recap__ligne { display: flex; justify-content: space-between; gap: 16px; font-size: 14px; }
+.sj2-recap__ligne dt { color: var(--sj-text-3); }
+.sj2-recap__ligne dd { margin: 0; text-align: end; font-weight: 500; }
+.sj2-recap__ligne dd.is-vide { color: var(--sj-text-4); font-weight: 400; }

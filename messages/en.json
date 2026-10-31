@@ -3304,8 +3304,8 @@
     },
     "offre": {
       "meta": {
-        "title": "Your offer · Sojori",
-        "description": "Build your Sojori offer: the Sojori PMS or your own, your agents, your WhatsApp access, your website. An advisor replies with a quote."
+        "title": "Your Sojori offer · Tailored PMS and WhatsApp agents",
+        "description": "Build your Sojori offer: the Sojori PMS or your own, agents, WhatsApp access, website. An advisor replies with a quote."
       },
       "hero": {
         "eyebrow": "YOUR OFFER",
@@ -3521,6 +3521,70 @@
             "a": "Yes. You choose the agents and modules you need, property by property, and add others later without redoing the setup."
           }
         ]
+      },
+      "form": {
+        "stepsAria": "Steps of your request",
+        "step": {
+          "you": "You",
+          "activity": "Your business"
+        },
+        "next": "Continue",
+        "back": "Back",
+        "send": "Send my request",
+        "phone": "Your WhatsApp number",
+        "dial": "Country dial code",
+        "dialOption": "{dial} ({country})",
+        "help": {
+          "name": "Your name is missing.",
+          "email": "Please check your email.",
+          "phone": "Your WhatsApp number, without the leading 0.",
+          "consent": "Tick the box to agree to be contacted.",
+          "activity": "Three answers are enough: who you are, when to start, and your city if you wish."
+        },
+        "segment": {
+          "title": "You are",
+          "conciergerie": "Concierge company",
+          "proprietaire": "Owner",
+          "hotel": "Hotel",
+          "riad_maison_hotes": "Riad / guesthouse",
+          "residence_aparthotel": "Residence / aparthotel",
+          "agence_immobiliere": "Real estate agency"
+        },
+        "tool": {
+          "title": "Your current tool",
+          "none": "None",
+          "excel": "Excel or paper",
+          "pms": "A PMS",
+          "channel": "A channel manager",
+          "pmsName": "Name of your PMS (optional)"
+        },
+        "priorities": {
+          "title": "Your priorities (two at most)",
+          "answer": "Answer guests",
+          "staff": "Coordinate the staff",
+          "checkin": "Check-in and police registration form",
+          "pricing": "Set the right prices",
+          "direct": "Sell direct",
+          "owners": "Keep up with owners"
+        },
+        "when": {
+          "title": "When to start?",
+          "month": "This month",
+          "quarter": "Within 3 months",
+          "looking": "I'm just looking"
+        },
+        "city": "Your city (optional)",
+        "recap": {
+          "title": "YOUR REQUEST",
+          "segment": "You are",
+          "size": "Size",
+          "tool": "Current tool",
+          "priorities": "Priorities",
+          "when": "Start",
+          "toSpecify": "to be specified",
+          "sizeValueBiens": "{n, plural, one {# property} other {# properties}}",
+          "sizeValueChambres": "{n, plural, one {# room} other {# rooms}}"
+        }
       }
     }
   }
