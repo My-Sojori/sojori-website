@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { withShare } from '@/lib/seo';
 import { getTranslations } from 'next-intl/server';
 
 const metaByLocale: Record<string, { title: string }> = {
@@ -13,11 +14,11 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const { locale } = await params;
   const meta = metaByLocale[locale] || metaByLocale.en;
   const t = await getTranslations({ locale, namespace: 'seoPages' });
-  return {
+  return withShare({
     title: meta.title,
     description: t('privacy.description'),
     alternates: { canonical: `/${locale}/privacy` },
-  };
+  }, locale);
 }
 
 export default function PrivacyLayout({ children }: { children: React.ReactNode }) {

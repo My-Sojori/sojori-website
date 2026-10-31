@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { withShare } from '@/lib/seo';
 import { getTranslations } from 'next-intl/server';
 import { Link } from '@/i18n/routing';
 import { FaqFromMessages } from '@/components/FaqFromMessages';
@@ -9,11 +10,11 @@ import { PageHeader, PageFooter, PageHero, FinalCTA } from '@/components/SharedC
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'seoPages' });
-  return {
+  return withShare({
     title: t('pmsMarrakech.title'),
     description: t('pmsMarrakech.description'),
     alternates: { canonical: `/${locale}/pms-marrakech` },
-  };
+  }, locale);
 }
 
 export default async function PmsPageMarrakech({ params }: { params: Promise<{ locale: string }> }) {

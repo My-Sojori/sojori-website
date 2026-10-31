@@ -69,6 +69,21 @@ export function generateSEO({
   };
 }
 
+/**
+ * Complète un `metadata` de page (title, description, canonical) avec ses balises de partage : og:title,
+ * og:description, og:url, twitter:*, sans quoi la page hérite de celles de l'accueil.
+ */
+export function withShare(meta: Metadata, locale: string): Metadata {
+  const canonical = typeof meta.alternates?.canonical === 'string' ? meta.alternates.canonical : '';
+  const { openGraph, twitter } = generateSEO({
+    title: typeof meta.title === 'string' ? meta.title : '',
+    description: meta.description ?? '',
+    path: canonical,
+    locale,
+  });
+  return { ...meta, openGraph, twitter };
+}
+
 // Mots-clés locaux pour le Maroc (Marrakech focus)
 export const moroccanKeywords = [
   'PMS Marrakech',
