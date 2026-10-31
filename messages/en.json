@@ -1431,7 +1431,7 @@
   },
   "seoPages": {
     "pms": {
-      "title": "PMS Marrakech & Casablanca | Property management software Morocco",
+      "title": "PMS Marrakech & Casablanca | Property management Morocco",
       "description": "Hotel PMS covering reservations, rooms, invoicing, police form and city tax. Included in Sojori, or connected to your existing PMS, including Mews."
     },
     "channelManager": {
@@ -1503,15 +1503,15 @@
       "description": "Guest journey on WhatsApp: digital check-in, police form, requests during the stay, departure instructions and reviews, all in the guest's own messaging app."
     },
     "whatsapp": {
-      "title": "WhatsApp AI Marrakech | Automated concierge at any hour, Morocco",
+      "title": "WhatsApp AI Marrakech | Automated concierge, Morocco",
       "description": "WhatsApp at the heart of operations: AI concierge for guests, missions sent to teams in Arabic, digital check-in and police form before arrival."
     },
     "inbox": {
-      "title": "Unified inbox Marrakech | Centralised multi-OTA messaging Morocco",
+      "title": "Unified inbox Marrakech | Multi-OTA messaging Morocco",
       "description": "Unified inbox: WhatsApp, Booking, Expedia, Airbnb and email in a single thread per stay, with AI-suggested replies, translation and messages turned into tasks."
     },
     "teamflow": {
-      "title": "Staff management Marrakech | Teams for riads & villas Morocco",
+      "title": "Staff management Marrakech | Riad & villa teams Morocco",
       "description": "Housekeeping, turnover cleaning and maintenance triggered by stay events. Missions reach your team on WhatsApp, in French or in Arabic."
     },
     "demo": {
@@ -1523,7 +1523,7 @@
       "description": "Choose your time slot for a personalized Sojori demo with a product expert: the Sojori PMS or your own, your agents and your WhatsApp modules."
     },
     "integrations": {
-      "title": "Sojori integrations | Booking, Expedia, Airbnb, WhatsApp & API",
+      "title": "Sojori integrations | Booking, Expedia, Airbnb & API",
       "description": "Sojori connects to your existing PMS, including Mews, to the OTAs through connectors and to your tools, with an API. You keep your booking system."
     },
     "pricing": {
@@ -1551,11 +1551,11 @@
       "description": "PMS and orchestration for hotels and residences in Agadir: long stays, tour operator allotments, recurring cleaning and channel manager."
     },
     "goSiyaha": {
-      "title": "Go Siyaha 2026 — Morocco tourism digitalisation grant | Sojori",
+      "title": "Go Siyaha 2026 — Tourism digitalisation grant | Sojori",
       "description": "The Go Siyaha programme supports the digitalisation of Moroccan tourism businesses: components, rates and eligibility. Where Sojori fits in."
     },
     "altCloudbeds": {
-      "title": "Cloudbeds alternative in Morocco — Sojori vs Cloudbeds | Sojori",
+      "title": "Cloudbeds alternative in Morocco — Sojori vs Cloudbeds",
       "description": "Cloudbeds vs Sojori in Morocco: an international platform compared with an orchestration engine rooted in the Moroccan field. A fair comparison."
     },
     "altPluriel": {
@@ -1567,7 +1567,7 @@
       "description": "Nozoul vs Sojori for hotels and riads in Morocco: PMS versus hospitality orchestration engine. Honest comparison, including when Nozoul is the better choice."
     },
     "altWelcomax": {
-      "title": "Welcomax alternative in Morocco — Sojori vs Welcomax | Sojori",
+      "title": "Welcomax alternative in Morocco — Sojori vs Welcomax",
       "description": "Welcomax vs Sojori: a PMS and channel manager suite compared with a hospitality orchestration engine. A side-by-side look at the scope of each."
     },
     "comparatifPmsMaroc": {
@@ -1575,7 +1575,7 @@
       "description": "Comparison of hotel management software in Morocco: Cloudbeds, Pluriel, Nozoul, Welcomax and Sojori. Profiles, architectures and use cases of each."
     },
     "orchestration": {
-      "title": "Hospitality orchestration — What is an orchestration engine? | Sojori",
+      "title": "Hospitality orchestration: the engine explained | Sojori",
       "description": "A PMS records, an orchestrator makes things happen. How Sojori orchestrates the guest experience, operations and revenue across your whole property."
     },
     "mcp": {
@@ -1583,10 +1583,12 @@
       "description": "A hotel PMS with an MCP server: query your figures from ChatGPT or Claude, in read-only mode, to run your property through conversation."
     },
     "analyseConcurrents": {
-      "description": "Paste your Airbnb listing link: discover up to 20 comparable listings around you and an estimate of the market price, delivered to you by email."
+      "description": "Paste your Airbnb listing link: discover up to 20 comparable listings around you and an estimate of the market price, delivered to you by email.",
+      "title": "Free analysis of your Airbnb competitors | Sojori"
     },
     "offreConciergeries": {
-      "description": "The software for concierge services and Airbnb managers in Morocco: PMS, channel manager, WhatsApp modules, direct booking, upsell, cleaning. Request a demo."
+      "description": "The software for concierge services and Airbnb managers in Morocco: PMS, channel manager, WhatsApp modules, direct booking, upsell, cleaning. Request a demo.",
+      "title": "Airbnb management software for concierge services | Sojori"
     },
     "terms": {
       "description": "Terms of Use for the Sojori platform: the service, the subscription, data protection and intellectual property, presented in detail."
@@ -1595,7 +1597,8 @@
       "description": "Sojori privacy policy: how your personal data is collected, used, shared and protected, and the rights you can exercise over it."
     },
     "globalLaunch": {
-      "description": "The all-in-one software for co-hosts and short-term rental managers: PMS, channel manager, agents and WhatsApp modules. Request a demo."
+      "description": "The all-in-one software for co-hosts and short-term rental managers: PMS, channel manager, agents and WhatsApp modules. Request a demo.",
+      "title": "Sojori — Software for short-term rental hosts"
     }
   },
   "pmsPage": {

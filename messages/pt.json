@@ -1503,7 +1503,7 @@
       "description": "Percurso do viajante no WhatsApp: check-in digital, ficha de polícia, pedidos durante a estadia, instruções de partida e avaliação, na app do hóspede."
     },
     "whatsapp": {
-      "title": "WhatsApp IA Marraquexe | Conciergerie automática a qualquer hora",
+      "title": "WhatsApp IA Marraquexe | Concierge automático, Marrocos",
       "description": "O WhatsApp no centro da operação: concierge com IA para os clientes, missões às equipas em árabe, check-in digital e ficha de polícia antes da chegada."
     },
     "inbox": {
@@ -1523,7 +1523,7 @@
       "description": "Escolha o seu horário para uma demonstração personalizada da Sojori com um especialista de produto: o PMS Sojori ou o seu, os agentes e os módulos WhatsApp."
     },
     "integrations": {
-      "title": "Integrações Sojori | Airbnb, Booking, Expedia, WhatsApp e API",
+      "title": "Integrações Sojori | Airbnb, Booking, Expedia e API",
       "description": "A Sojori liga-se ao seu PMS atual, como o Mews, às OTA por conector e às suas ferramentas, através de uma API. Mantém o seu sistema de reservas."
     },
     "pricing": {
@@ -1551,15 +1551,15 @@
       "description": "PMS e orquestração para hotéis e residências em Agadir: estadias longas, alotamentos de operadores turísticos, limpeza recorrente e channel manager."
     },
     "goSiyaha": {
-      "title": "Go Siyaha 2026 — Subvenção digitalização turismo Marrocos | Sojori",
+      "title": "Go Siyaha 2026 — Subvenção digitalização turismo | Sojori",
       "description": "O programa Go Siyaha apoia a digitalização dos estabelecimentos turísticos marroquinos: vertentes, taxas e elegibilidade. Veja onde a Sojori intervém."
     },
     "altCloudbeds": {
-      "title": "Alternativa a Cloudbeds em Marrocos — Sojori vs Cloudbeds | Sojori",
+      "title": "Alternativa ao Cloudbeds em Marrocos — Sojori vs Cloudbeds",
       "description": "Cloudbeds vs Sojori para hotéis e riads em Marrocos: PMS versus motor de orquestração. Comparação honesta, incluindo quando Cloudbeds é a melhor escolha."
     },
     "altPluriel": {
-      "title": "Alternativa a Pluriel em Marrocos — Sojori vs Pluriel | Sojori",
+      "title": "Alternativa ao Pluriel — Sojori vs Pluriel (Marrocos)",
       "description": "Pluriel vs Sojori para hotéis e riads em Marrocos: PMS versus motor de orquestração. Comparação honesta, incluindo quando Pluriel é a melhor escolha."
     },
     "altNozoul": {
@@ -1567,7 +1567,7 @@
       "description": "Nozoul vs Sojori para hotéis e riads em Marrocos: PMS versus motor de orquestração. Comparação honesta, incluindo quando Nozoul é a melhor escolha."
     },
     "altWelcomax": {
-      "title": "Alternativa a Welcomax em Marrocos — Sojori vs Welcomax | Sojori",
+      "title": "Alternativa ao Welcomax — Sojori vs Welcomax (Marrocos)",
       "description": "Welcomax vs Sojori para hotéis e riads em Marrocos: PMS versus motor de orquestração. Comparação honesta, incluindo quando Welcomax é a melhor escolha."
     },
     "comparatifPmsMaroc": {
@@ -1575,18 +1575,20 @@
       "description": "Comparativo de software de gestão hoteleira em Marrocos: Cloudbeds, Pluriel, Nozoul, Welcomax e Sojori. Perfis, arquiteturas e casos de utilização de cada um."
     },
     "orchestration": {
-      "title": "Orquestração hoteleira — O que é um motor de orquestração? | Sojori",
+      "title": "Orquestração hoteleira: o motor explicado | Sojori",
       "description": "Um PMS registra; um orquestrador faz as coisas acontecerem. Como a Sojori orquestra a experiência do cliente, as operações e a receita."
     },
     "mcp": {
-      "title": "PMS ligado à IA — MCP | Consulte a Sojori a partir do ChatGPT ou Claude",
+      "title": "PMS ligado à IA — MCP | ChatGPT ou Claude | Sojori",
       "description": "Um PMS hoteleiro com servidor MCP: consulte os seus números a partir do ChatGPT ou do Claude, em modo de leitura, e gira o estabelecimento por conversa."
     },
     "analyseConcurrents": {
-      "description": "Cole a ligação do seu anúncio Airbnb: descubra até 20 anúncios comparáveis à sua volta e uma estimativa do preço de mercado, recebidos por e-mail."
+      "description": "Cole a ligação do seu anúncio Airbnb: descubra até 20 anúncios comparáveis à sua volta e uma estimativa do preço de mercado, recebidos por e-mail.",
+      "title": "Análise gratuita dos seus concorrentes no Airbnb | Sojori"
     },
     "offreConciergeries": {
-      "description": "O software das concierges e gestores Airbnb em Marrocos: PMS, channel manager, módulos WhatsApp, reserva direta, upsell e limpeza. Peça uma demonstração."
+      "description": "O software das concierges e gestores Airbnb em Marrocos: PMS, channel manager, módulos WhatsApp, reserva direta, upsell e limpeza. Peça uma demonstração.",
+      "title": "Software de gestão Airbnb para concierges | Sojori"
     },
     "terms": {
       "description": "Condições Gerais de Utilização da plataforma Sojori: o serviço, a subscrição, a proteção de dados e a propriedade intelectual, explicados em detalhe."
@@ -1595,7 +1597,8 @@
       "description": "Política de privacidade da Sojori: como os seus dados pessoais são recolhidos, utilizados, partilhados e protegidos, e os direitos de que dispõe."
     },
     "globalLaunch": {
-      "description": "O software tudo-em-um dos co-anfitriões e gestores de alojamento de curta duração: PMS, channel manager, agentes e módulos WhatsApp. Peça uma demonstração."
+      "description": "O software tudo-em-um dos co-anfitriões e gestores de alojamento de curta duração: PMS, channel manager, agentes e módulos WhatsApp. Peça uma demonstração.",
+      "title": "Sojori — Software para anfitriões de alojamento local"
     }
   },
   "pmsPage": {
