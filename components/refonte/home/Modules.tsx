@@ -1,6 +1,7 @@
 import { useTranslations } from 'next-intl';
 import { SojoriMark } from '@/components/Logo';
 import { Tabs } from '../Tabs';
+import { RapportBulle } from '../RapportAdmin';
 
 const IDS = ['checkin', 'stay', 'concierge', 'staff', 'admin', 'owner'] as const;
 const POUR: Record<string, 'traveler' | 'staff' | 'admin' | 'owner'> = { checkin: 'traveler', stay: 'traveler', concierge: 'traveler', staff: 'staff', admin: 'admin', owner: 'owner' };
@@ -26,12 +27,13 @@ export function Modules() {
             {agents.map((a) => <span key={a} className="sj2-pill">{a}</span>)}
           </div>
         </div>
-        <figure className="sj2-phone" aria-label={t('chatAria')}>
+        <figure className={`sj2-phone${id === 'admin' ? ' sj2-phone--court' : ''}`} aria-label={t('chatAria')}>
           <div className="sj2-phone__tete">
             <span className="sj2-phone__avatar"><SojoriMark size={20} /></span>
             <span className="sj2-phone__nom"><strong>{t('brand')}</strong><span>{t(`${p}.status`)}</span></span>
           </div>
           <div className="sj2-phone__fil">
+            {id === 'admin' && <RapportBulle theme="night" variant="court" />}
             {chat.map((b, k) => <span key={k} className={`sj2-bubble sj2-bubble--${b.from === 'sojori' ? 'q' : 'r'}`}>{b.text}</span>)}
           </div>
         </figure>

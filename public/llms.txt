@@ -40,11 +40,11 @@ l'établissement.
 
 ## Spécificités du marché marocain
 
-- Fiche de police : Sojori orchestre la collecte. Le client remplit sa fiche avant
-  l'arrivée depuis WhatsApp, avec sa pièce d'identité. Sojori prépare les données ;
-  la déclaration aux autorités reste la démarche de l'établissement.
-- Taxe de séjour : paramétrable par établissement — au séjour, à la nuit, ou par
-  personne et par nuit — avec le mode de collecte.
+- Fiche de police : Sojori prend en charge la fiche. Le client la remplit et la signe
+  avant l'arrivée depuis WhatsApp, avec sa pièce d'identité. La déclaration aux
+  autorités reste la démarche de l'établissement.
+- Taxe de séjour : calculée par voyageur et par nuit, selon le réglage de chaque
+  logement ; l'encaissement suit le mode réglé.
 - Langues de travail : le français pour la réception, l'arabe pour les équipes de
   terrain, l'anglais et d'autres langues pour les clients.
 
@@ -71,7 +71,7 @@ l'établissement.
 - [Owner Portal](https://sojori.com/fr/owner-portal) : reporting pour les propriétaires
 - [Dashboard App](https://sojori.com/fr/dashboard-app) : pilotage de l'exploitation
 - [Intégrations](https://sojori.com/fr/integrations) : connecteurs et API
-- [À propos](https://sojori.com/fr/about) : l'entreprise et l'équipe
+- [À propos](https://sojori.com/fr/about) : le positionnement « AI workforce for hospitality », les principes et l'équipe ; création en 2025, équipe à Marrakech, Casablanca et Paris, clients au Maroc, en France, en Espagne et au Portugal
 
 ## Par ville
 

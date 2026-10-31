@@ -1,12 +1,12 @@
 "use client";
 
 import { useState } from "react";
-import { useTranslations } from "next-intl";
+import { useTranslations } from 'next-intl';
 import { BackgroundEffects } from "@/components/BackgroundEffects";
-import { PageHeader, PageFooter, PageHero, StatsBar, FinalCTA } from "@/components/SharedComponents";
+import { PageHeader, PageFooter, PageHero, FinalCTA } from "@/components/SharedComponents";
 import { ScrollPaginationDots } from "@/components/shared/ScrollPaginationDots";
 import { InFlow } from '@/components/InFlow';
-import { FaqSection } from '@/components/FaqSection';
+import { FaqFromMessages } from '@/components/FaqFromMessages';
 import { Trait } from '@/components/refonte/Trait';
 
 interface Tab {
@@ -154,6 +154,7 @@ function WhatsAppPhone({ tab, t }: { tab: string; t: any }) {
 }
 
 export default function GuestExperiencePage() {
+  const tb = useTranslations('pageBodies.guest-experience');
   const t = useTranslations("guestExperience");
   const [tab, setTab] = useState("home");
 
@@ -266,45 +267,15 @@ export default function GuestExperiencePage() {
           </div>
         </section>
 
-        <StatsBar stats={Array.from({ length: 4 }).map((_, i) => {
-          const stat = t.raw(`stats.${i}`);
-          return { k: stat.key, l: stat.label };
-        })} />
-
         <InFlow
-          domain="Expérience client"
+          domain={tb('k001')}
           domainColor="#06b6d4"
-          self="Le parcours client se déroule tout seul, de la confirmation à la demande d'avis."
-          upstream={[{ label: 'Réservation confirmée', href: '/pms' }, { label: 'Chambre prête', href: '/teamflow' }, { label: 'Départ constaté' }]}
-          downstream={[{ label: 'Demandes en tâches', href: '/teamflow' }, { label: 'Extras sur la note', href: '/analytics' }, { label: 'Avis publié', href: '/channel-manager' }]}
+          self={tb('k002')}
+          upstream={[{ label: tb('k003'), href: '/pms' }, { label: tb('k004'), href: '/teamflow' }, { label: tb('k005') }]}
+          downstream={[{ label: tb('k006'), href: '/teamflow' }, { label: tb('k007'), href: '/analytics' }, { label: tb('k008'), href: '/channel-manager' }]}
         />
 
-        <FaqSection
-          badge="Expérience client"
-          title="Questions fréquentes"
-          items={[
-  {
-    "q": "Le client doit-il installer quelque chose ?",
-    "a": "Non. Tout passe par WhatsApp, qu'il utilise déjà : confirmation, check-in digital, fiche de police, informations d'accès, demandes pendant le séjour, instructions de départ, demande d'avis. Aucune application, aucun compte."
-  },
-  {
-    "q": "Qu'est-ce qui est envoyé automatiquement ?",
-    "a": "Les messages sont déclenchés par les événements du séjour — la confirmation, l'approche de l'arrivée, la remise des accès, le départ, l'avis. Vous définissez le contenu et le moment ; ils partent sans qu'on y pense."
-  },
-  {
-    "q": "Le check-in digital remplace-t-il la réception ?",
-    "a": "Il la décharge de la saisie, pas de l'accueil. Le client renseigne son identité et sa fiche de police avant d'arriver ; la réception le reçoit au lieu de lui faire remplir des formulaires. Dans un riad sans réception permanente, cela change davantage."
-  },
-  {
-    "q": "Peut-on vendre des services pendant le séjour ?",
-    "a": "Oui — surclassement, petit-déjeuner, spa, transfert, départ tardif. La demande devient une tâche assignée et une ligne sur la note, sans ressaisie. C'est là que se joue le revenu hors hébergement."
-  },
-  {
-    "q": "Et les clients qui ne parlent ni français ni arabe ?",
-    "a": "L'assistant prend en charge une douzaine de langues avec traduction. Votre équipe lit et répond dans la sienne."
-  }
-]}
-        />
+        <FaqFromMessages page="guest-experience" />
 
 
 

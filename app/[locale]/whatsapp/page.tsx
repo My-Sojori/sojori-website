@@ -3,11 +3,12 @@
 import { useState } from "react";
 import { useTranslations } from "next-intl";
 import { BackgroundEffects } from "@/components/BackgroundEffects";
-import { PageHeader, PageFooter, PageHero, StatsBar, FinalCTA, SectionHead } from "@/components/SharedComponents";
+import { PageHeader, PageFooter, PageHero, FinalCTA, SectionHead } from "@/components/SharedComponents";
 import { ScrollPaginationDots } from "@/components/shared/ScrollPaginationDots";
 import { InFlow } from '@/components/InFlow';
 import { FaqSection } from '@/components/FaqSection';
 import { Exemple } from '@/components/refonte/Exemple';
+import { RapportBulle } from '@/components/refonte/RapportAdmin';
 import { Trait } from '@/components/refonte/Trait';
 
 // ========================================
@@ -28,9 +29,11 @@ interface WhatsAppPhoneProps {
   subtitle: string;
   messages: Message[];
   time?: string;
+  /** Un élément placé avant les messages (le point du matin de l'admin). */
+  extra?: React.ReactNode;
 }
 
-function WhatsAppPhone({ title, subtitle, messages, time = "14:32" }: WhatsAppPhoneProps) {
+function WhatsAppPhone({ title, subtitle, messages, time = "14:32", extra }: WhatsAppPhoneProps) {
   return (
     <div style={{
       width: 340, height: 680, borderRadius: 38, padding: 10,
@@ -73,6 +76,7 @@ function WhatsAppPhone({ title, subtitle, messages, time = "14:32" }: WhatsAppPh
           overflowY: "auto",
           display: "flex", flexDirection: "column", gap: 6,
         }}>
+          {extra}
           {messages.map((m, i) => <Bubble key={i} {...m} />)}
         </div>
 
@@ -569,6 +573,9 @@ export default function WhatsAppPage() {
            */
           .whatsapp-page .wa-split-flow {
             gap: 22px !important;
+            /* une seule colonne : sinon le téléphone passe en seconde colonne, hors écran (défilement latéral) */
+            grid-template-columns: minmax(0, 1fr) !important;
+            overflow-x: visible !important;
           }
 
           .whatsapp-page .wa-split-copy {
@@ -741,7 +748,7 @@ export default function WhatsAppPage() {
                         filter: "blur(40px)",
                       }}
                     />
-                    <Exemple><WhatsAppPhone title={title} subtitle={subtitle} messages={msgs} /></Exemple>
+                    <Exemple><WhatsAppPhone title={title} subtitle={subtitle} messages={msgs} extra={sid === "admin" ? <RapportBulle theme="wa" /> : undefined} /></Exemple>
                   </div>
 
                   <div className="wa-split-copy">
@@ -762,8 +769,8 @@ export default function WhatsAppPage() {
               subtitle={t("benefits.subtitle")}
             />
 
-            <ScrollPaginationDots itemCount={6} gap={16} peekCarousel>
-              {[0, 1, 2, 3, 4, 5].map(idx => {
+            <ScrollPaginationDots itemCount={5} gap={16} peekCarousel>
+              {[0, 1, 2, 3, 4].map(idx => {
                 const benefit = t.raw(`benefits.items.${idx}`);
                 const icons = ["", "", "", "", "", ""];
                 return (
@@ -962,11 +969,6 @@ export default function WhatsAppPage() {
         </section>
 
         {/* Stats */}
-        <StatsBar stats={[0, 1, 2, 3].map(idx => {
-          const stat = t.raw(`stats.${idx}`);
-          return { k: stat.key, l: stat.label };
-        })} />
-
         {/* Final CTA */}
 
         <InFlow
@@ -977,36 +979,7 @@ export default function WhatsAppPage() {
           downstream={[{ label: 'Fiche de police complétée', href: '/pms' }, { label: 'Demande devenue tâche', href: '/teamflow' }, { label: 'Extra facturé', href: '/analytics' }]}
         />
 
-        <FaqSection
-          badge="WhatsApp"
-          title="Questions fréquentes"
-          items={[
-  {
-    "q": "Pourquoi WhatsApp plutôt qu'une application ?",
-    "a": "Parce que vos clients et vos équipes l'utilisent déjà. Une femme de chambre n'installera pas une application métier ; un client en voyage non plus. WhatsApp supprime la marche à franchir : pas de compte à créer, pas de téléchargement, pas de mot de passe oublié."
-  },
-  {
-    "q": "L'assistant répond-il tout seul aux clients ?",
-    "a": "Il traite les demandes courantes et propose des réponses pour le reste. Vous réglez ce qui part automatiquement et ce qui passe par une validation. Le niveau d'autonomie vous appartient — nous ne partons pas du principe qu'une IA doit tout gérer sans regard humain."
-  },
-  {
-    "q": "Faut-il un numéro WhatsApp Business ?",
-    "a": "Oui, l'établissement utilise son propre numéro professionnel via l'API WhatsApp Business. La mise en place fait partie du déploiement."
-  },
-  {
-    "q": "Dans quelles langues les équipes reçoivent-elles leurs missions ?",
-    "a": "En français ou en arabe, selon ce que chacun utilise réellement. C'est un point souvent négligé : un outil que seule la réception comprend laisse le terrain hors du système, alors que c'est le terrain qui exécute."
-  },
-  {
-    "q": "Peut-on collecter la fiche de police par WhatsApp ?",
-    "a": "Oui. Le client la remplit avant son arrivée et joint sa pièce d'identité, dans le cadre du check-in digital. Vous récupérez des données complètes sans saisie au comptoir. Sojori prépare les données ; la déclaration aux autorités reste votre démarche."
-  },
-  {
-    "q": "Que se passe-t-il si un client écrit la nuit ?",
-    "a": "L'assistant répond aux demandes courantes à toute heure et escalade le reste selon vos règles. L'intérêt n'est pas de répondre vite pour répondre vite, mais qu'aucune demande ne reste sans suite jusqu'au matin."
-  }
-]}
-        />
+        <FaqSection badge={t('faq.badge')} title={t('faq.title')} items={t.raw('faq.items') as { q: string; a: string }[]} />
 
 
         <FinalCTA

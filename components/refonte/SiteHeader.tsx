@@ -9,10 +9,10 @@ import { LangSwitch } from './LangSwitch';
 type Entree = { href: React.ComponentProps<typeof Link>['href']; cle: string; page?: string };
 
 const ENTREES: Entree[] = [
+  { href: { pathname: '/', hash: 'sejour' }, cle: 'stay' },
   { href: { pathname: '/', hash: 'socle' }, cle: 'pms' },
   { href: { pathname: '/', hash: 'agents' }, cle: 'agents' },
   { href: { pathname: '/', hash: 'whatsapp' }, cle: 'modules' },
-  { href: { pathname: '/', hash: 'sejour' }, cle: 'stay' },
   { href: '/offre', cle: 'offer', page: '/offre' },
 ];
 

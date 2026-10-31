@@ -7,7 +7,7 @@ import { BackgroundEffects } from '@/components/BackgroundEffects';
 import { InFlow } from '@/components/InFlow';
 import { PageHeader, PageFooter, PageHero, StatsBar, FinalCTA } from '@/components/SharedComponents';
 import { ScrollPaginationDots } from '@/components/shared/ScrollPaginationDots';
-import { FaqSection } from '@/components/FaqSection';
+import { FaqFromMessages } from '@/components/FaqFromMessages';
 
 interface Category {
   id: string;
@@ -30,6 +30,7 @@ interface Integration {
 }
 
 export default function IntegrationsPage() {
+  const tb = useTranslations('pageBodies.integrations');
   const t = useTranslations('integrations');
   const [cat, setCat] = useState('all');
 
@@ -276,7 +277,7 @@ export default function IntegrationsPage() {
                 <span style={{ width: 9, height: 9, borderRadius: '50%', background: '#dc2626' }}></span>
                 <span style={{ width: 9, height: 9, borderRadius: '50%', background: '#b45309' }}></span>
                 <span style={{ width: 9, height: 9, borderRadius: '50%', background: '#047857' }}></span>
-                <span style={{ marginLeft: 10, color: 'var(--text-3)', fontSize: 11 }}>Exemple illustratif</span>
+                <span style={{ marginLeft: 10, color: 'var(--text-3)', fontSize: 11 }}>{tb('k001')}</span>
               </div>
               <pre style={{ padding: 18, margin: 0, color: 'var(--text-2)', lineHeight: 1.6 }}>
 {`${t('apiSection.codeComment1')}
@@ -300,35 +301,14 @@ curl -X POST \\
         ]} />
 
         <InFlow
-          domain="Le moteur"
+          domain={tb('k002')}
           domainColor="#e6b022"
-          self="Les intégrations branchent Sojori sur ce que vous utilisez déjà — dont votre PMS."
-          upstream={[{ label: 'Mews et autres PMS' }, { label: 'OTA et channel managers', href: '/channel-manager' }, { label: 'Paiement et sources de données' }]}
-          downstream={[{ label: 'Réservations récupérées', href: '/pms' }, { label: 'Orchestration active', href: '/orchestration' }]}
+          self={tb('k003')}
+          upstream={[{ label: tb('k004') }, { label: tb('k005'), href: '/channel-manager' }, { label: tb('k006') }]}
+          downstream={[{ label: tb('k007'), href: '/pms' }, { label: tb('k008'), href: '/orchestration' }]}
         />
 
-        <FaqSection
-          badge="Intégrations"
-          title="Questions fréquentes"
-          items={[
-  {
-    "q": "Sojori se connecte-t-il à Mews ?",
-    "a": "Oui. Sojori récupère les réservations et les états de chambre depuis Mews, puis orchestre autour — accueil, ménage, maintenance, messages clients, tarification. Vous n'avez pas à remplacer votre PMS pour orchestrer."
-  },
-  {
-    "q": "Et les autres PMS ?",
-    "a": "L'interfaçage dépend de ce que le système expose. Dites-nous lequel vous utilisez : c'est la première question à trancher, avant toute discussion de périmètre."
-  },
-  {
-    "q": "Y a-t-il une API ?",
-    "a": "Oui, pour les échanges avec vos propres outils. Les intégrations courantes — OTA, channel managers, paiement — sont déjà en place et ne demandent pas de développement."
-  },
-  {
-    "q": "Que se passe-t-il si un système tombe ?",
-    "a": "Les échanges sont conçus pour reprendre sans perte ni doublon lorsque le système revient. C'est un point à vérifier chez tout éditeur : une synchronisation qui rejoue mal crée des surréservations."
-  }
-]}
-        />
+        <FaqFromMessages page="integrations" />
 
 
 

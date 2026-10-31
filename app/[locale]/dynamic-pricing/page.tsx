@@ -8,7 +8,7 @@ import { ScrollPaginationDots } from '@/components/shared/ScrollPaginationDots';
 import { MarketIntelligence } from '@/components/dynamic-pricing/MarketIntelligence';
 import { PortfolioOverview } from '@/components/dynamic-pricing/PortfolioOverview';
 import { CompetitiveIntel } from '@/components/dynamic-pricing/CompetitiveIntel';
-import { FaqSection } from '@/components/FaqSection';
+import { FaqFromMessages } from '@/components/FaqFromMessages';
 import { Exemple } from '@/components/refonte/Exemple';
 
 function PriceCalendar() {
@@ -60,7 +60,6 @@ function PriceCalendar() {
 function PriceFactors() {
   const t = useTranslations('dynamicPricing.factors');
   const factorsList = t.raw('list') as Array<{ icon: string; label: string; description: string; impact: string }>;
-  const comingSoon = t.raw('comingSoon') as { icon: string; title: string; description: string };
 
   return (
     <>
@@ -80,15 +79,6 @@ function PriceFactors() {
           ))}
         </div>
       </ScrollPaginationDots>
-      <div className="card" style={{ padding: 20, marginTop: 16, background: 'rgba(139,92,246,0.08)', border: '1px solid rgba(139,92,246,0.25)' }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
-          <div aria-hidden="true" style={{ width: 28, height: 3, borderRadius: 2, background: 'var(--primary)' }} />
-          <div style={{ flex: 1 }}>
-            <div style={{ fontSize: 14, fontWeight: 600, marginBottom: 2 }}>{comingSoon.title}</div>
-            <div style={{ fontSize: 12, color: 'var(--text-3)' }}>{comingSoon.description}</div>
-          </div>
-        </div>
-      </div>
     </>
   );
 }
@@ -156,6 +146,7 @@ function RevenueChart() {
 }
 
 export default function DynamicPricingPage() {
+  const tb = useTranslations('pageBodies.dynamic-pricing');
   const t = useTranslations('dynamicPricing');
   const tHero = useTranslations('dynamicPricing.hero');
   const tCalSection = useTranslations('dynamicPricing.calendar.section');
@@ -304,43 +295,14 @@ export default function DynamicPricingPage() {
         <StatsBar stats={stats} />
 
         <InFlow
-          domain="Ventes & revenu"
+          domain={tb('k001')}
           domainColor="#10b981"
-          self="La tarification recalcule le prix par règles, dans les bornes que vous fixez."
-          upstream={[{ label: 'Occupation réelle', href: '/pms' }, { label: 'Rythme de réservation', href: '/analytics' }, { label: 'Événement en ville' }]}
-          downstream={[{ label: 'Poussé sur les canaux', href: '/channel-manager' }, { label: 'RevPAR mesuré', href: '/analytics' }]}
+          self={tb('k002')}
+          upstream={[{ label: tb('k003'), href: '/pms' }, { label: tb('k004'), href: '/analytics' }, { label: tb('k005') }]}
+          downstream={[{ label: tb('k006'), href: '/channel-manager' }, { label: tb('k007'), href: '/analytics' }]}
         />
 
-        <FaqSection
-          badge="Tarification"
-          title="Questions fréquentes"
-          items={[
-  {
-    "q": "L'IA fixe-t-elle mes prix toute seule ?",
-    "a": "Non, et c'est un choix assumé. Le calcul reste algorithmique, à partir de règles et de signaux mesurables — occupation, saisonnalité, événements, rythme de réservation. Un modèle de langage peut interpréter et recommander, jamais décider seul du prix."
-  },
-  {
-    "q": "Comment garder la main ?",
-    "a": "Par des bornes minimum et maximum que vous fixez, et un niveau d'autonomie paramétrable : application automatique en dessous d'un certain écart, validation requise au-delà. Vous pouvez aussi rester en recommandation pure, sans application automatique."
-  },
-  {
-    "q": "Sur quoi le prix est-il recalculé ?",
-    "a": "L'occupation réelle et à venir, le rythme de réservation comparé à la même période l'an passé, la saisonnalité de votre ville, les événements locaux. À Marrakech un festival, à Tanger le pic estival, à Casablanca l'effet semaine."
-  },
-  {
-    "q": "Le nouveau prix part-il sur les canaux ?",
-    "a": "Oui, vers Booking, Expedia, Airbnb et les autres canaux ouverts, ainsi que sur votre direct. Un prix recalculé qui resterait dans le logiciel ne servirait à rien."
-  },
-  {
-    "q": "Est-ce adapté à un petit établissement ?",
-    "a": "La tarification par règles a d'autant plus de valeur que vous n'avez pas le temps de surveiller vos prix chaque jour. Mais sur un riad à tarif unique toute l'année, l'apport est faible — nous préférons vous le dire."
-  },
-  {
-    "q": "Peut-on mesurer ce que ça rapporte ?",
-    "a": "Oui, par le revenu par chambre disponible comparé à la période précédente, et par la part du direct dans le mix. C'est la mesure qui compte : une hausse d'occupation obtenue en cassant les prix n'est pas un gain."
-  }
-]}
-        />
+        <FaqFromMessages page="dynamic-pricing" />
 
 
         <FinalCTA

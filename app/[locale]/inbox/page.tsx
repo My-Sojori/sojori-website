@@ -4,10 +4,10 @@ import { useState } from "react";
 import { Metadata } from "next";
 import { useTranslations } from 'next-intl';
 import { BackgroundEffects } from "@/components/BackgroundEffects";
-import { PageHeader, PageFooter, PageHero, StatsBar, FinalCTA } from "@/components/SharedComponents";
+import { PageHeader, PageFooter, PageHero, FinalCTA } from "@/components/SharedComponents";
 import { ScrollPaginationDots } from "@/components/shared/ScrollPaginationDots";
 import { InFlow } from '@/components/InFlow';
-import { FaqSection } from '@/components/FaqSection';
+import { FaqFromMessages } from '@/components/FaqFromMessages';
 import { Trait } from '@/components/refonte/Trait';
 
 interface Channel {
@@ -150,6 +150,7 @@ function Inbox() {
 }
 
 export default function InboxPage() {
+  const tb = useTranslations('pageBodies.inbox');
   const t = useTranslations('inbox');
 
   return (
@@ -246,47 +247,15 @@ export default function InboxPage() {
             </ScrollPaginationDots>
           </div>
         </section>
-        <StatsBar stats={[
-          {k: t('stats.stat1.key'), l: t('stats.stat1.label')},
-          {k: t('stats.stat2.key'), l: t('stats.stat2.label')},
-          {k: t('stats.stat3.key'), l: t('stats.stat3.label')},
-          {k: t('stats.stat4.key'), l: t('stats.stat4.label')}
-        ]} />
-
         <InFlow
-          domain="Expérience client"
+          domain={tb('k001')}
           domainColor="#06b6d4"
-          self="L'inbox rassemble les messages de tous les canaux dans un seul fil par séjour."
-          upstream={[{ label: 'Booking, Expedia, Airbnb', href: '/channel-manager' }, { label: 'WhatsApp', href: '/whatsapp' }, { label: 'E-mail direct' }]}
-          downstream={[{ label: 'Réponse envoyée', href: '/whatsapp' }, { label: 'Tâche créée', href: '/teamflow' }, { label: 'Historique du séjour', href: '/pms' }]}
+          self={tb('k002')}
+          upstream={[{ label: tb('k003'), href: '/channel-manager' }, { label: 'WhatsApp', href: '/whatsapp' }, { label: tb('k004') }]}
+          downstream={[{ label: tb('k005'), href: '/whatsapp' }, { label: tb('k006'), href: '/teamflow' }, { label: tb('k007'), href: '/pms' }]}
         />
 
-        <FaqSection
-          badge="Inbox unifiée"
-          title="Questions fréquentes"
-          items={[
-  {
-    "q": "Quels canaux arrivent dans l'inbox ?",
-    "a": "WhatsApp, Booking, Expedia, Airbnb et l'e-mail direct. Chaque message rejoint le fil du séjour concerné, ce qui évite de reconstituer une conversation éclatée entre quatre extranets."
-  },
-  {
-    "q": "L'IA répond-elle à la place de mon équipe ?",
-    "a": "Elle propose des réponses et traite les demandes courantes ; vous gardez la main sur ce qui compte. Le paramétrage définit ce qui part automatiquement et ce qui passe par une validation — le niveau d'autonomie est le vôtre."
-  },
-  {
-    "q": "Dans quelles langues ?",
-    "a": "Les clients sont pris en charge dans une douzaine de langues, avec traduction. Les équipes de terrain reçoivent leurs missions en français ou en arabe, selon ce qu'elles utilisent réellement."
-  },
-  {
-    "q": "Un message peut-il devenir une tâche ?",
-    "a": "Oui, et c'est la différence avec une simple boîte de réception unifiée. Une demande de serviettes ou un signalement de panne devient une tâche assignée avec son responsable et son échéance, au lieu de rester un message qu'il faut penser à traiter."
-  },
-  {
-    "q": "Que se passe-t-il quand personne ne répond ?",
-    "a": "Les relances et les escalades suivent les règles que vous avez définies. L'enjeu n'est pas la rapidité de réponse en soi, mais le fait qu'aucune demande ne se perde dans un fil."
-  }
-]}
-        />
+        <FaqFromMessages page="inbox" />
 
 
         <FinalCTA title={<>{t('finalCTA.title')} <span className="gradient-text">{t('finalCTA.titleGradient')}</span></>} subtitle={t('finalCTA.subtitle')} />

@@ -3,10 +3,11 @@
 import { useCallback, useEffect, useRef, useState, useSyncExternalStore } from 'react';
 import { useTranslations } from 'next-intl';
 import { chiffresDe, TAILLES, type CasId } from '@/lib/refonte/journee';
-import { scenario, cleTexte, type Acteur, type Canal } from '@/lib/refonte/scenario';
+import { scenario, cleTexte, histoires, type Acteur, type Canal } from '@/lib/refonte/scenario';
 import { useCas } from '../CasProvider';
 
-const VITESSES: Record<CasId, number> = { conc: 2000, h30: 2000, h100: 1300 };
+/** Un rythme unique, assez lent pour lire chaque sous-titre. */
+const VITESSE = 2600;
 
 /** Postes de la scène (repère 1176 × 640) : x et y sont les centres. */
 const NOEUDS: Record<Acteur, { x: number; y: number; w: number; h: number; kind: 'ext' | 'agent' | 'hub' | 'vous' }> = {
@@ -82,7 +83,7 @@ export function SalleScene() {
 
   useEffect(() => {
     if (pause) return;
-    const h = setInterval(avancer, VITESSES[cas]);
+    const h = setInterval(avancer, VITESSE);
     return () => clearInterval(h);
   }, [pause, cas, avancer]);
 
@@ -104,12 +105,28 @@ export function SalleScene() {
   const vives = new Set(segs.map(([a, b]) => cle(a, b)));
   const liens = [...TOPO];
   segs.forEach(([a, b]) => { if (!TOPO.some(([x, y]) => cle(x, y) === cle(a, b))) liens.push([a, b]); });
+  // un lien est une courbe douce : le point de contrôle est décalé de 12 % de la longueur, sur le côté
+  const r1 = (x: number) => Math.round(x * 10) / 10; // arrondi : un décimal long diffère entre le HTML serveur et le navigateur
   const geo = (a: Acteur, b: Acteur) => {
     const A = NOEUDS[a]; const B = NOEUDS[b];
-    const dx = B.x - A.x; const dy = B.y - A.y;
-    // arrondi : un décimal long diffère entre le HTML serveur et le navigateur (erreur d'hydratation)
-    const r = (x: number) => Math.round(x * 100) / 100;
-    return { A, dx, dy, len: r(Math.hypot(dx, dy)), ang: r((Math.atan2(dy, dx) * 180) / Math.PI) };
+    const sens = a < b ? 1 : -1;
+    const cx = (A.x + B.x) / 2 - (B.y - A.y) * 0.12 * sens;
+    const cy = (A.y + B.y) / 2 + (B.x - A.x) * 0.12 * sens;
+    return `M ${A.x} ${A.y} Q ${r1(cx)} ${r1(cy)} ${B.x} ${B.y}`;
+  };
+
+  // l'histoire en cours : ses postes restent allumés, les autres s'estompent sans disparaître
+  const hist = histoires(script);
+  const hCour = Math.max(0, hist.findIndex((x) => x.pas.includes(i)));
+  const pasH = hist[hCour].pas;
+  const rang = pasH.indexOf(i);
+  const dansHistoire = new Set<Acteur>();
+  pasH.forEach((k) => { dansHistoire.add(script[k].de); dansHistoire.add(script[k].vers); });
+  if (pasH.some((k) => script[k].type === 'ticket')) dansHistoire.add('hub');
+  const sauter = (premier: number) => () => {
+    attentes.current = 0;
+    setSt((prec) => ({ cas, i: premier, dec: {}, cycles: prec.cas === cas ? prec.cycles : 0 }));
+    setPauseChoisie(false);
   };
 
   const attend = cur.type === 'carte' && st.dec[i] === undefined;
@@ -140,6 +157,7 @@ export function SalleScene() {
 
   return (
     <div className="sj2-scene-block">
+      <span className="sj2-pill sj2-pill--mono sj2-simulation">{t('simulation')}</span>
       <div className="sj2-scene-head">
         <span className="sj2-eyebrow sj2-eyebrow--sm sj2-live"><span className="sj2-dot" />{t('label', { titre: t(`cas.${cas}.titre`) })}</span>
         <span style={{ flexGrow: 1 }} />
@@ -148,34 +166,55 @@ export function SalleScene() {
         </button>
       </div>
 
+      <div className="sj2-histoires" role="group" aria-label={t('histoires.aria')}>
+        {hist.map((x, k) => {
+          const on = k === hCour;
+          const avance = on ? Math.round(((rang + 1) / pasH.length) * 100) : k < hCour ? 100 : 0;
+          return (
+            <button key={x.h} type="button" className="sj2-histoire" aria-pressed={on} onClick={sauter(x.premier)}>
+              <span className="sj2-histoire__num">{String(k + 1).padStart(2, '0')}</span>
+              <span>{t(`histoires.${x.h}`)}</span>
+              <span className="sj2-histoire__barre" aria-hidden="true" style={{ width: `${avance}%` }} />
+            </button>
+          );
+        })}
+      </div>
+
       <div className="sj2-graphe" role="group" aria-label={t('regionAria')}>
         <div className="sj2-scene" dir="ltr">
-          {liens.map(([a, b], k) => {
-            const g = geo(a, b); const vif = vives.has(cle(a, b));
-            return <div key={k} style={{ position: 'absolute', left: g.A.x, top: g.A.y, width: g.len, height: vif ? 3 : 1, marginTop: vif ? -1 : 0, transformOrigin: '0 50%', transform: `rotate(${g.ang}deg)`, borderRadius: 2, background: vif ? col : '#2a271f', zIndex: 1 }} />;
-          })}
-          {segs.map(([a, b], k) => {
-            const g = geo(a, b);
-            return <div key={`${i}-${st.cycles}-${k}`} className="sj2-paquet" style={{ left: g.A.x - 6, top: g.A.y - 6, background: col, boxShadow: `0 0 16px ${col}`, ['--dx' as string]: `${g.dx}px`, ['--dy' as string]: `${g.dy}px`, animation: `sj2-vole${i % 2} 1.1s ease-in-out ${k * 0.85}s both` }} />;
-          })}
+          <svg className="sj2-liens" viewBox="0 0 1176 640" width="1176" height="640" aria-hidden="true">
+            {[...liens].sort(([a, b], [c2, d2]) => Number(vives.has(cle(a, b))) - Number(vives.has(cle(c2, d2)))).map(([a, b]) => {
+              const vif = vives.has(cle(a, b));
+              const deLHistoire = dansHistoire.has(a) && dansHistoire.has(b);
+              return (
+                <path key={cle(a, b)} d={geo(a, b)} fill="none" className={vif ? 'sj2-lien sj2-lien--flux' : 'sj2-lien sj2-lien--veille'}
+                  stroke={vif ? col : deLHistoire ? '#5a5344' : '#38342a'} strokeWidth={vif ? 2.5 : 1.4} strokeDasharray={vif ? '10 4' : '3 9'} strokeLinecap="round"
+                  opacity={vif || deLHistoire ? 1 : 0.85} />
+              );
+            })}
+          </svg>
+          {segs.map(([a, b], k) => (
+            <div key={`${i}-${st.cycles}-${k}`} className="sj2-paquet"
+              style={{ background: col, boxShadow: `0 0 16px ${col}`, offsetPath: `path('${geo(a, b)}')`, offsetRotate: '0deg', animation: `sj2-glisse${i % 2} 1.2s cubic-bezier(.45,.05,.35,1) ${k}s both` }} />
+          ))}
           {IDS.map((id) => {
-            const nd = NOEUDS[id]; const actif = cur.de === id || cur.vers === id;
+            const nd = NOEUDS[id]; const actif = cur.de === id || cur.vers === id; const allume = actif || dansHistoire.has(id);
             return (
-              <div key={id} className={`sj2-noeud sj2-noeud--${nd.kind}${actif ? ' is-actif' : ''}`} dir={undefined}
-                style={{ left: nd.x - nd.w / 2, top: nd.y - nd.h / 2, width: nd.w, height: nd.h, ...(actif ? { borderColor: col, boxShadow: `0 0 0 4px rgba(230,176,34,0.08), 0 0 28px ${col}33` } : {}) }}>
+              <div key={id} className={`sj2-noeud sj2-noeud--${nd.kind}${actif ? ' is-actif' : ''}${allume ? '' : ' is-dim'}`} dir={undefined}
+                style={{ left: nd.x - nd.w / 2, top: nd.y - nd.h / 2, width: nd.w, height: nd.h, ...(actif ? { borderColor: col, boxShadow: `0 0 0 4px rgba(230,176,34,0.08), 0 0 28px ${col}33` } : allume ? { borderColor: '#4a4538' } : {}) }}>
                 {nd.kind === 'ext' && <span className="sj2-noeud__msg" />}
                 <span>{nom(id)}</span>
               </div>
             );
           })}
 
-          <div className="sj2-courant">
-            <span className="sj2-courant__tete"><Badge label={badgeDe(i)} couleur={COULEUR[script[i].type]} /><span className="sj2-courant__qui">{nom(cur.de)} <span className="sj2-arrow" aria-hidden="true">→</span> {nom(cur.vers)}</span></span>
+          <div key={`c${i}-${st.cycles}`} className={`sj2-courant sj2-fondu${i % 2}`}>
+            <span className="sj2-courant__tete"><Badge label={badgeDe(i)} couleur={COULEUR[script[i].type]} /><span className="sj2-courant__rang" aria-label={`${rang + 1} / ${pasH.length}`}>{rang + 1} / {pasH.length}</span><span className="sj2-courant__qui">{nom(cur.de)} <span className="sj2-arrow" aria-hidden="true">→</span> {nom(cur.vers)}</span></span>
             <span className="sj2-courant__texte">{texteDe(i)}</span>
           </div>
 
           {attend && (
-            <div className="sj2-attend">
+            <div className="sj2-attend sj2-carte-vous">
               <span className="sj2-attend__titre">{t('waiting')}</span>
               <span style={{ display: 'flex', gap: 8 }}>
                 <button type="button" className="sj2-attend__ok" onClick={decider('ok')}>{t('validate')}</button>

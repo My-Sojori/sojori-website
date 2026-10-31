@@ -34,11 +34,11 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
       <CasProvider>
         <Hero />
         <Three />
+        <Stay />
         <Socle />
         <Agents />
-        <Modules />
-        <Stay />
         <Control />
+        <Modules />
         <OfferTeaser />
         <Faq id="sj2-faq-home" eyebrow={t('faq.eyebrow')} title={t('faq.title')} items={faq} />
         <DemoCta />

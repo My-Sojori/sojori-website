@@ -507,6 +507,76 @@ html[dir='rtl'] .sj2 [class*='mono'], html[dir='rtl'] .sj2-pill--mono, html[dir=
 .sj2-exemple-wrap { position: relative; }
 .sj2-exemple { position: absolute; top: -13px; inset-inline-end: 16px; z-index: 5; padding: 4px 12px; border-radius: 999px; border: 1px solid var(--sj-line-gold-2); background: #14120d; color: var(--sj-gold-soft); font-size: 12px; font-weight: 600; letter-spacing: 0.04em; pointer-events: none; }
 
+/* profil du visiteur : type d'établissement + socle */
+.sj2-choix--profil { min-height: 112px; }
+.sj2-choix__type { font-family: var(--sj-mono); font-size: 12px; letter-spacing: 0.1em; color: var(--sj-text-4); }
+.sj2-choix--profil[aria-pressed='true'] .sj2-choix__type { color: var(--sj-gold); }
+html[dir='rtl'] .sj2-choix__type { letter-spacing: 0; font-family: var(--sj-sans); }
+/* ================= « Point du matin » : rapport admin reçu sur WhatsApp (exemple) ================= */
+.sj2-rapport { position: relative; margin: 0; container-type: inline-size;
+  background-color: #0c0b09; color: var(--sj-text); border-radius: 12px; overflow: hidden; width: 100%;
+  background-image: radial-gradient(60% 40% at 90% 0%, rgba(230,176,34,0.14), rgba(12,11,9,0) 70%), linear-gradient(rgba(244,241,234,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(244,241,234,0.03) 1px, transparent 1px);
+  background-size: auto, 24px 24px, 24px 24px; }
+/* le contenu est dans un enfant : les unités cqw se calculent sur le conteneur parent, pas sur lui-même */
+.sj2-rapport__in { --u: calc(100cqw / 800); display: flex; flex-direction: column; gap: max(10px, calc(var(--u) * 22)); padding: max(12px, calc(var(--u) * 44)) max(12px, calc(var(--u) * 44)) max(10px, calc(var(--u) * 32)); }
+.sj2-rapport__exemple { position: absolute; top: 8px; inset-inline-end: 8px; z-index: 2; padding: 2px 9px; border-radius: 999px; border: 1px solid #4e3d1e; background: #14120d; color: #e6b022; font-family: var(--sj-mono); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; }
+html[dir='rtl'] .sj2-rapport__exemple { letter-spacing: 0; font-family: var(--sj-sans); text-transform: none; }
+.sj2-rapport__tete { display: flex; flex-direction: column; gap: 3px; }
+.sj2-rapport__eyebrow { font-family: var(--sj-mono); font-size: max(11px, calc(var(--u) * 14)); letter-spacing: 0.2em; color: #e6b022; text-transform: uppercase; }
+html[dir='rtl'] .sj2-rapport__eyebrow { letter-spacing: 0; font-family: var(--sj-sans); text-transform: none; }
+.sj2-rapport__titre { font-size: max(20px, calc(var(--u) * 52)); font-weight: 600; letter-spacing: -0.04em; line-height: 1.05; }
+html[dir='rtl'] .sj2-rapport__titre { letter-spacing: 0; }
+.sj2-rapport__date { font-size: max(12px, calc(var(--u) * 20)); color: #bdb6a8; }
+.sj2-rapport__filet { display: block; height: 2px; border-radius: 2px; background: linear-gradient(90deg, #e6b022, rgba(230,176,34,0)); }
+html[dir='rtl'] .sj2-rapport__filet { background: linear-gradient(270deg, #e6b022, rgba(230,176,34,0)); }
+.sj2-rapport__mouvements { display: flex; flex-wrap: wrap; gap: max(5px, calc(var(--u) * 10)); }
+.sj2-rapport__mouvements li { display: inline-flex; align-items: center; gap: max(5px, calc(var(--u) * 10)); min-height: max(26px, calc(var(--u) * 48)); padding-inline: max(9px, calc(var(--u) * 18)); border-radius: 999px; border: 1px solid #38342a; background: #12110d; font-size: max(12px, calc(var(--u) * 19)); color: #d4cec1; white-space: nowrap; }
+.sj2-rapport__mouvements svg { width: max(12px, calc(var(--u) * 20)); height: max(12px, calc(var(--u) * 20)); flex: none; }
+.sj2-rapport__mouvements strong { color: var(--sj-text); font-weight: 600; }
+.sj2-rapport__kpis { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: max(6px, calc(var(--u) * 12)); }
+.sj2-rapport__kpi { border: 1px solid #26231c; border-radius: max(10px, calc(var(--u) * 18)); background: #12110d; padding: max(8px, calc(var(--u) * 18)) max(10px, calc(var(--u) * 20)); display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.sj2-rapport__kpi-titre { font-family: var(--sj-mono); font-size: max(11px, calc(var(--u) * 12.5)); letter-spacing: 0.1em; color: #a39c8e; text-transform: uppercase; }
+html[dir='rtl'] .sj2-rapport__kpi-titre { letter-spacing: 0; font-family: var(--sj-sans); text-transform: none; }
+.sj2-rapport__kpi-valeur { white-space: nowrap; font-size: max(18px, calc(var(--u) * 44)); font-weight: 600; letter-spacing: -0.04em; line-height: 1.05; color: var(--sj-text); font-variant-numeric: tabular-nums; }
+.sj2-rapport__kpi-valeur.is-or { color: #e6b022; }
+.sj2-rapport__kpi-unite { font-size: max(11px, calc(var(--u) * 15)); color: #bdb6a8; }
+.sj2-rapport__bloc { display: flex; flex-direction: column; gap: max(6px, calc(var(--u) * 10)); }
+.sj2-rapport__label { font-family: var(--sj-mono); font-size: max(11px, calc(var(--u) * 12.5)); letter-spacing: 0.14em; color: #a39c8e; text-transform: uppercase; }
+html[dir='rtl'] .sj2-rapport__label { letter-spacing: 0; font-family: var(--sj-sans); text-transform: none; }
+.sj2-rapport__type { display: grid; grid-template-columns: minmax(0, max(70px, calc(var(--u) * 170))) minmax(0, 1fr) auto; align-items: center; gap: max(6px, calc(var(--u) * 16)); }
+.sj2-rapport__type-nom { font-size: max(12px, calc(var(--u) * 18)); font-weight: 600; }
+.sj2-rapport__piste { display: block; height: max(6px, calc(var(--u) * 10)); border-radius: 6px; background: #221f19; overflow: hidden; }
+.sj2-rapport__piste span { display: block; height: 100%; border-radius: 6px; background: linear-gradient(90deg, #b8881a, #e6b022); }
+html[dir='rtl'] .sj2-rapport__piste span { background: linear-gradient(270deg, #b8881a, #e6b022); }
+.sj2-rapport__type-val { font-size: max(11px, calc(var(--u) * 16)); color: #d4cec1; text-align: end; white-space: nowrap; }
+.sj2-rapport__type-val strong { color: var(--sj-text); }
+.sj2-rapport__jours { --zh: max(120px, calc(var(--u) * 170)); display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: max(4px, calc(var(--u) * 10)); align-items: start; }
+/* Zone de barres à hauteur fixe : chaque barre vaut son pourcentage de cette zone, alignée en bas ; le libellé a une hauteur fixe sous la zone. */
+.sj2-rapport__jour { display: flex; flex-direction: column; gap: 6px; }
+.sj2-rapport__zone { height: var(--zh); display: flex; flex-direction: column; justify-content: flex-end; gap: 4px; }
+.sj2-rapport__jour-pct { font-size: max(11px, calc(var(--u) * 14)); font-weight: 600; color: #e6b022; text-align: center; white-space: nowrap; }
+.sj2-rapport__barre { display: block; width: 100%; flex: none; height: calc(var(--p) / 100 * (var(--zh) - 22px)); border-radius: 6px 6px 2px 2px; background: linear-gradient(180deg, #f4cf5e, #b8881a); }
+.sj2-rapport__jour-nom { font-size: max(11px, calc(var(--u) * 14)); color: #a39c8e; text-align: center; line-height: 1.15; min-height: 2.3em; }
+.sj2-rapport__pied { margin-top: auto; display: flex; justify-content: space-between; align-items: center; gap: 8px; border-top: 1px solid #26231c; padding-top: max(8px, calc(var(--u) * 14)); font-size: max(11px, calc(var(--u) * 14)); color: #a39c8e; }
+.sj2-rapport__marque { font-family: var(--sj-mono); letter-spacing: 0.2em; color: #e6b022; }
+html[dir='rtl'] .sj2-rapport__marque { letter-spacing: 0; }
+.sj2-rapport-bulle { display: flex; flex-direction: column; gap: 6px; align-self: flex-start; width: 94%; border-radius: 14px 14px 14px 4px; padding: 4px 4px 8px; }
+.sj2-rapport-bulle--night { background: #1c1a15; }
+.sj2-rapport-bulle--wa { background: #fff; box-shadow: 0 1px 1px rgba(0,0,0,0.13); border-radius: 8px 8px 8px 0; }
+.sj2-rapport-bulle__legende { padding-inline: 8px; font-size: 14px; line-height: 1.4; }
+.sj2-rapport-bulle--night .sj2-rapport-bulle__legende { color: var(--sj-text); }
+.sj2-rapport-bulle--wa .sj2-rapport-bulle__legende { color: #111b21; font-size: 12px; }
+
+/* dans une bulle de téléphone : les types passent sur deux lignes, les barres des 7 jours restent sous les KPI */
+@container (max-width: 440px) {
+  .sj2-rapport__jours { --zh: 120px; }
+  .sj2-rapport__type { grid-template-columns: minmax(0, 1fr) auto; grid-template-areas: 'nom val' 'piste piste'; row-gap: 4px; }
+  .sj2-rapport__type-nom { grid-area: nom; }
+  .sj2-rapport__type-val { grid-area: val; }
+  .sj2-rapport__piste { grid-area: piste; }
+  .sj2-rapport__kpi-titre { letter-spacing: 0.04em; }
+  .sj2-rapport__pied { flex-wrap: wrap; }
+}
 /* ================= LOT 6 : pages de recherche ================= */
 .sj2-hero--seo { padding-block: 24px; }
 .sj2-seo__tete { display: flex; flex-direction: column; gap: 22px; padding-block: 40px 48px; }
@@ -538,3 +608,133 @@ html[dir='rtl'] .sj2-table thead th { letter-spacing: 0; font-family: var(--sj-s
 .sj2-table tr:last-child th, .sj2-table tr:last-child td { border-bottom: 0; }
 .sj2-sources ol { list-style: decimal; padding-inline-start: 22px; display: flex; flex-direction: column; gap: 8px; font-size: 15.5px; color: var(--sj-text-2); }
 .sj2-sources a { color: var(--sj-gold-soft); text-decoration: underline; text-underline-offset: 3px; overflow-wrap: anywhere; }
+/* ================= Lot « Vérité » : la scène est une simulation ================= */
+.sj2-simulation { margin-bottom: 12px; border-color: var(--sj-line-gold-2); min-height: 28px; }
+.sj2-control-lead { margin-top: 12px; }
+
+/* « Point du matin » en version courte : un fondu de 40 px vers le fond de la bulle suggère la suite */
+.sj2-rapport-bulle--night { --bulle-fond: #1c1a15; }
+.sj2-rapport-bulle--wa { --bulle-fond: #fff; }
+.sj2-rapport--court { border-radius: 12px 12px 0 0; }
+.sj2-rapport--court::after { content: ''; position: absolute; inset-inline: 0; bottom: 0; height: 40px; background: linear-gradient(to bottom, rgba(12, 11, 9, 0), var(--bulle-fond, #1c1a15)); pointer-events: none; }
+/* téléphone Admin : même verticalité que les autres (400 à 430 px) ; les échanges de la conversation restent lisibles pour les lecteurs d'écran */
+.sj2-phone--court { min-height: 410px; max-height: 430px; overflow: hidden; }
+.sj2-phone--court .sj2-bubble { position: absolute; width: 1px; height: 1px; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; }
+/* ================= La salle v2 : des histoires, des liens courbes qui vivent ================= */
+.sj2-histoires { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+.sj2-histoire { position: relative; overflow: hidden; min-height: 44px; display: inline-flex; align-items: center; gap: 8px; padding: 0 16px; border-radius: 12px; border: 1px solid var(--sj-line); background: #12110d; color: var(--sj-text); font-size: 14px; font-weight: 500; }
+.sj2-histoire:hover { border-color: #4e3d1e; }
+.sj2-histoire[aria-pressed='true'] { border-color: var(--sj-line-gold-2); background: #1b170b; }
+.sj2-histoire__num { font-family: var(--sj-mono); font-size: 12px; color: var(--sj-text-3); }
+.sj2-histoire[aria-pressed='true'] .sj2-histoire__num { color: var(--sj-gold); }
+.sj2-histoire__barre { position: absolute; inset-block-end: 0; inset-inline-start: 0; height: 3px; background: var(--sj-gold); transition: width 0.6s ease; }
+html[dir='rtl'] .sj2-histoire__num { letter-spacing: 0; font-family: var(--sj-sans); }
+
+.sj2-liens { position: absolute; inset: 0; z-index: 1; pointer-events: none; }
+@keyframes sj2-coule { to { stroke-dashoffset: -28; } }
+.sj2-lien--flux { animation: sj2-coule 0.9s linear infinite; }
+.sj2-lien--veille { animation: sj2-coule 6s linear infinite; }
+.sj2-paquet { left: 0; top: 0; margin: -6px 0 0 -6px; }
+@keyframes sj2-glisse0 { 0% { offset-distance: 0%; opacity: 0; } 10% { opacity: 1; } 90% { opacity: 1; } 100% { offset-distance: 100%; opacity: 0; } }
+@keyframes sj2-glisse1 { 0% { offset-distance: 0%; opacity: 0; } 10% { opacity: 1; } 90% { opacity: 1; } 100% { offset-distance: 100%; opacity: 0; } }
+.sj2-noeud { transition: opacity 0.6s ease, border-color 0.4s ease, background-color 0.4s ease, box-shadow 0.4s ease; }
+.sj2-noeud.is-dim { border-color: #2e2b22; background: rgba(18, 17, 13, 0.5); color: #a39c8e; }
+
+/* le sous-titre change en fondu (le cadre garde sa place), la carte à valider glisse */
+@keyframes sj2-fondu0 { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+@keyframes sj2-fondu1 { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+.sj2-fondu0 > * { animation: sj2-fondu0 0.45s ease both; }
+.sj2-fondu1 > * { animation: sj2-fondu1 0.45s ease both; }
+@keyframes sj2-entre-carte { from { opacity: 0; transform: translateX(16px); } to { opacity: 1; transform: none; } }
+.sj2-carte-vous { animation: sj2-entre-carte 0.4s ease both; }
+.sj2-courant__rang { margin-inline-start: auto; font-family: var(--sj-mono); font-size: 12px; color: var(--sj-text-3); }
+html[dir='rtl'] .sj2-courant__rang { letter-spacing: 0; font-family: var(--sj-sans); }
+@media (prefers-reduced-motion: reduce) { .sj2-paquet { display: none; } .sj2-histoire__barre { transition: none; } }
+
+/* ================= Accueil v2 : trois agents en avant, le reste « pour aller plus loin » ================= */
+.sj2-tabs__lot { display: flex; flex-direction: column; gap: 10px; }
+.sj2-tabs__lot + .sj2-tabs__lot { margin-top: 18px; }
+.sj2-tabs__lot-liste { display: flex; flex-direction: column; gap: 8px; }
+.sj2-tabs__groupe { font-family: var(--sj-mono); font-size: 12px; letter-spacing: 0.08em; color: var(--sj-text-3); }
+html[dir='rtl'] .sj2-tabs__groupe { letter-spacing: 0; font-family: var(--sj-sans); }
+.sj2-tab--grand { min-height: 72px; flex-direction: column; align-items: flex-start; gap: 2px; padding: 12px 18px; border-radius: 16px; text-align: start; }
+.sj2-tab__question { font-size: 13.5px; color: var(--sj-text-3); line-height: 1.35; font-weight: 400; }
+.sj2-tab[aria-selected='true'] .sj2-tab__question { color: var(--sj-text-2); }
+@media (min-width: 760px) { .sj2-tabs--vertical .sj2-tabs__lot--plus .sj2-tabs__lot-liste { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+/* sur petit écran, les onglets restent une rangée qui défile : les lots disparaissent visuellement */
+@media (max-width: 900px) {
+  .sj2-tabs__lot, .sj2-tabs__lot-liste { display: contents; }
+  .sj2-tabs__lot + .sj2-tabs__lot { margin-top: 0; }
+  .sj2-tabs__groupe { display: none; }
+  .sj2-tab--grand { min-height: 0; }
+}
+/* pied de page : réseaux et contact (cibles ≥ 44 px, icônes SVG en ligne) */
+.sj2-footer__contact { flex: 0 1 240px; }
+.sj2-footer__social { gap: 10px; }
+.sj2-footer__social svg { flex: none; }
+.sj2-footer__note { font-size: 13.5px; color: var(--sj-text-3); }
+
+/* ================= À propos ================= */
+.sj2-about__chapeau { max-width: 760px; }
+.sj2-about__carte-titre { margin: 10px 0 8px; }
+.sj2-principes { margin-top: 36px; display: grid; gap: 0; }
+.sj2-principes li { display: grid; grid-template-columns: 56px minmax(0, 260px) minmax(0, 1fr); gap: 6px 24px; align-items: baseline; padding: 24px 0; border-top: 1px solid var(--sj-line); }
+.sj2-principes li:last-child { border-bottom: 1px solid var(--sj-line); }
+.sj2-principes__num { font-family: var(--sj-mono); font-size: 14px; color: var(--sj-gold); }
+.sj2-principes li p { color: var(--sj-text-2); font-size: 16.5px; line-height: 1.55; text-wrap: pretty; }
+html[dir='rtl'] .sj2-principes__num { font-family: var(--sj-sans); }
+@media (max-width: 760px) { .sj2-principes li { grid-template-columns: 40px minmax(0, 1fr); } .sj2-principes li p { grid-column: 2; } }
+.sj2-reperes { margin-top: 36px; display: grid; grid-template-columns: 1fr; gap: 14px; }
+@media (min-width: 640px) { .sj2-reperes { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (min-width: 1200px) { .sj2-reperes { grid-template-columns: repeat(5, minmax(0, 1fr)); } }
+.sj2-repere { display: flex; flex-direction: column; gap: 8px; padding: 22px 24px; }
+.sj2-repere dd { margin: 0; font-size: 20px; font-weight: 600; letter-spacing: -0.02em; line-height: 1.25; color: var(--sj-text); text-wrap: balance; }
+.sj2-equipe { margin-top: 36px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(340px, 100%), 1fr)); gap: 16px; }
+.sj2-equipe__carte { display: flex; gap: 22px; align-items: flex-start; }
+.sj2-equipe__avatar { flex: none; width: 76px; height: 76px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; border: 1px solid var(--sj-line-gold-2); background: #1b170b; color: var(--sj-gold); font-weight: 600; font-size: 24px; letter-spacing: 0.02em; }
+.sj2-equipe__texte { display: flex; flex-direction: column; gap: 6px; align-items: flex-start; min-width: 0; }
+.sj2-equipe__texte p, .sj2-equipe__agents p { color: var(--sj-text-2); font-size: 16px; line-height: 1.5; }
+.sj2-equipe__lien { display: inline-flex; align-items: center; min-height: 44px; color: var(--sj-gold); text-decoration: underline; text-underline-offset: 3px; }
+.sj2-equipe__agents { display: flex; flex-direction: column; gap: 10px; justify-content: center; }
+.sj2-about__contact { margin-top: 28px; display: flex; flex-wrap: wrap; gap: 24px 64px; }
+.sj2-about__contact h3 { margin: 0 0 6px; color: var(--sj-text-3); }
+.sj2-about__contact ul { display: flex; flex-direction: column; list-style: none; margin: 0; padding: 0; }
+.sj2-about__contact a { display: inline-flex; align-items: center; min-height: 44px; color: var(--sj-text-2); }
+.sj2-about__contact a:hover { color: var(--sj-text); }
+/* pied de page : une liste par colonne, sous un titre de niveau 2 */
+.sj2-footer__col ul { display: flex; flex-direction: column; gap: 2px; margin: 0; padding: 0; list-style: none; }
+.sj2-footer .sj2-footer__titre { margin: 0 0 8px; font-weight: inherit; color: var(--sj-text-3); }
+/* liens légaux : zone cliquable de 44 px sans changer la taille du texte */
+.sj2-footer__legal a { display: inline-flex; align-items: center; min-height: 44px; }
+
+/* ================= Calendrier unifié (exemple) ================= */
+.sj2-cal { position: relative; margin: 0 0 28px; border: 1px solid var(--sj-line); border-radius: 22px; background: #0f0e0b; padding: 18px 18px 14px; color: var(--sj-text); }
+.sj2-cal__exemple { position: absolute; top: 14px; right: 16px; z-index: 2; font-family: var(--sj-mono); font-size: 11px; letter-spacing: 0.1em; color: #e6b022; border: 1px solid #4e3d1e; background: #14120d; border-radius: 999px; padding: 3px 10px; text-transform: uppercase; }
+html[dir='rtl'] .sj2-cal__exemple { letter-spacing: 0; font-family: var(--sj-sans); text-transform: none; }
+.sj2-cal__scroll { overflow-x: auto; padding-top: 2px; }
+.sj2-cal__scroll:focus-visible { outline: 2px solid var(--sj-gold); outline-offset: 2px; border-radius: 12px; }
+.sj2-cal__board { min-width: 860px; display: flex; flex-direction: column; gap: 12px; }
+.sj2-cal__haut { display: flex; align-items: center; gap: 10px; padding-inline-end: 96px; }
+.sj2-cal__vue { font-size: 14px; color: #a39c8e; padding: 6px 12px; border-radius: 999px; }
+.sj2-cal__vue.is-actif { font-weight: 600; background: #1b170b; border: 1px solid #6a5420; color: var(--sj-text); padding: 6px 14px; }
+.sj2-cal__plage { margin-inline-start: auto; font-family: var(--sj-mono); font-size: 12px; color: #bdb6a8; }
+.sj2-cal__legende { display: flex; flex-wrap: wrap; gap: 6px 16px; font-size: 12px; color: #bdb6a8; }
+.sj2-cal__legende span { display: inline-flex; align-items: center; gap: 6px; }
+.sj2-cal__legende i { width: 10px; height: 10px; border-radius: 3px; display: inline-block; }
+.sj2-cal__ligne { display: grid; grid-template-columns: 170px minmax(0, 1fr); border-top: 1px solid #1e1b15; align-items: stretch; }
+.sj2-cal__ligne--tete { border-top-color: #26231c; }
+.sj2-cal__etiquette { font-family: var(--sj-mono); font-size: 11px; letter-spacing: 0.1em; color: #a39c8e; padding: 10px 4px; }
+.sj2-cal__jours { display: grid; grid-template-columns: repeat(14, minmax(0, 1fr)); }
+.sj2-cal__jours div { display: flex; flex-direction: column; align-items: center; gap: 1px; padding: 8px 0 6px; }
+.sj2-cal__jours div.is-weekend { background: rgba(230, 176, 34, 0.05); }
+.sj2-cal__jours span { font-family: var(--sj-mono); font-size: 10.5px; color: #a39c8e; }
+.sj2-cal__jours strong { font-size: 14px; font-weight: 600; }
+.sj2-cal__logement { display: flex; flex-direction: column; justify-content: center; gap: 1px; padding: 6px 4px; }
+.sj2-cal__logement strong { font-size: 14px; font-weight: 600; }
+.sj2-cal__logement span { font-family: var(--sj-mono); font-size: 11px; color: #a39c8e; }
+.sj2-cal__piste { position: relative; display: grid; grid-template-columns: repeat(14, minmax(0, 1fr)); min-height: 50px; background-image: linear-gradient(90deg, #1e1b15 1px, transparent 1px); background-size: calc(100% / 14) 100%; }
+.sj2-cal__barre { align-self: center; margin: 0 2px; padding: 5px 9px; border: 1px solid; border-left-width: 3px; border-radius: 10px; display: flex; flex-direction: column; min-width: 0; box-sizing: border-box; }
+.sj2-cal__barre strong { font-size: 12.5px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.sj2-cal__barre span { font-family: var(--sj-mono); font-size: 10.5px; opacity: 0.9; }
+.sj2-cal figcaption { font-size: 12px; color: #a39c8e; padding: 12px 4px 0; }
+

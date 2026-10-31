@@ -8,10 +8,10 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
-  const t = await getTranslations({ locale, namespace: 'seoPages' });
+  const t = await getTranslations({ locale, namespace: 'refonte.about.meta' });
   return generateSEO({
-    title: t('about.title'),
-    description: t('about.description'),
+    title: t('title'),
+    description: t('description'),
     path: `/${locale}/about`,
     locale,
   });

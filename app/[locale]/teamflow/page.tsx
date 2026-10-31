@@ -3,9 +3,10 @@
 import { useTranslations } from 'next-intl';
 import { BackgroundEffects } from '@/components/BackgroundEffects';
 import { InFlow } from '@/components/InFlow';
-import { PageHeader, PageFooter, PageHero, StatsBar, FinalCTA } from '@/components/SharedComponents';
+import { PageHeader, PageFooter, PageHero, FinalCTA } from '@/components/SharedComponents';
 import { ScrollPaginationDots } from '@/components/shared/ScrollPaginationDots';
-import { FaqSection } from '@/components/FaqSection';
+import { FaqFromMessages } from '@/components/FaqFromMessages';
+import { Exemple } from '@/components/refonte/Exemple';
 
 interface Card {
   who: string;
@@ -132,17 +133,13 @@ function StaffKPIs() {
 }
 
 export default function TeamflowPage() {
+  const tb = useTranslations('pageBodies.teamflow');
   const t = useTranslations('teamflow');
 
   const capabilities = t.raw('capabilities.items') as Array<{
     icon: string;
     title: string;
     description: string;
-  }>;
-
-  const stats = t.raw('stats') as Array<{
-    key: string;
-    label: string;
   }>;
 
   const heroTitle = t('hero.title');
@@ -208,7 +205,7 @@ export default function TeamflowPage() {
             <div style={{ fontSize: 32, fontWeight: 700, letterSpacing: '-0.02em', textAlign: 'center', maxWidth: 720, margin: '0 auto 32px' }}>
               {boardSectionTitle} <span className="gradient-text">{boardSectionTitleGradient}</span>
             </div>
-            <StaffBoard />
+            <Exemple><StaffBoard /></Exemple>
           </div>
         </section>
         <section style={{ padding: '24px 32px 44px', borderTop: '1px solid var(--glass-border)' }}>
@@ -217,7 +214,7 @@ export default function TeamflowPage() {
             <div style={{ fontSize: 32, fontWeight: 700, letterSpacing: '-0.02em', marginBottom: 32, maxWidth: 700 }}>
               {t('kpis.sectionTitle')} <span style={{ color: 'var(--text-3)' }}>{t('kpis.sectionSubtitle')}</span>
             </div>
-            <StaffKPIs />
+            <Exemple><StaffKPIs /></Exemple>
           </div>
         </section>
         <section style={{ padding: '24px 32px 44px', borderTop: '1px solid var(--glass-border)' }}>
@@ -237,46 +234,16 @@ export default function TeamflowPage() {
             </ScrollPaginationDots>
           </div>
         </section>
-        <StatsBar stats={stats.map(s => ({ k: s.key, l: s.label }))} />
 
         <InFlow
-          domain="Opérations"
+          domain={tb('k001')}
           domainColor="#8b5cf6"
-          self="TeamFlow exécute : ménage, recouche, maintenance, accueil — déclenchés sur les événements réels."
-          upstream={[{ label: 'Départ constaté', href: '/pms' }, { label: 'Demande client', href: '/guest-experience' }, { label: 'Équipement signalé', href: '/whatsapp' }]}
-          downstream={[{ label: 'Chambre vendable', href: '/channel-manager' }, { label: 'Client accueilli', href: '/guest-experience' }, { label: 'Temps de remise en état', href: '/analytics' }]}
+          self={tb('k002')}
+          upstream={[{ label: tb('k003'), href: '/pms' }, { label: tb('k004'), href: '/guest-experience' }, { label: tb('k005'), href: '/whatsapp' }]}
+          downstream={[{ label: tb('k006'), href: '/channel-manager' }, { label: tb('k007'), href: '/guest-experience' }, { label: tb('k008'), href: '/analytics' }]}
         />
 
-        <FaqSection
-          badge="Ménage & maintenance"
-          title="Questions fréquentes"
-          items={[
-  {
-    "q": "Comment les tâches de ménage sont-elles créées ?",
-    "a": "Sur les événements réels du séjour, pas sur un planning théorique. Un départ constaté déclenche la remise à blanc, une arrivée anticipée fait remonter la chambre en priorité, un équipement signalé ouvre un ticket de maintenance. Vous définissez les règles ; le moteur les applique sans qu'un responsable ait à répartir le travail chaque matin."
-  },
-  {
-    "q": "Mes femmes de chambre doivent-elles installer une application ?",
-    "a": "Non. Chaque intervenant reçoit sa mission sur WhatsApp, en français ou en arabe, sans compte à créer ni application à télécharger. C'est ce qui permet aux équipes de terrain d'entrer réellement dans le système : un outil que seule la réception utilise laisse dehors ceux qui exécutent."
-  },
-  {
-    "q": "Que se passe-t-il si une mission n'est pas prise ?",
-    "a": "Elle est relancée puis réassignée selon les règles que vous avez fixées. L'intérêt n'est pas la notification en elle-même, mais le fait que personne n'ait à vérifier si le travail a été pris en charge."
-  },
-  {
-    "q": "Peut-on gérer la recouche et la remise à blanc différemment ?",
-    "a": "Oui, ce sont deux métiers distincts. La recouche intervient pendant l'occupation, à une cadence paramétrable, avec le change du linge. La remise à blanc se déclenche au départ et comporte son propre contrôle. Un séjour long à Agadir et une rotation quotidienne à Casablanca n'ont pas les mêmes besoins."
-  },
-  {
-    "q": "Comment suit-on la maintenance ?",
-    "a": "Un signalement — par le client sur WhatsApp ou par un intervenant — ouvre un ticket rattaché au logement et à l'équipement, avec son responsable et son échéance. L'historique par équipement rend visible ce qui revient sans cesse : c'est le point de départ pour arbitrer entre réparer et remplacer."
-  },
-  {
-    "q": "Et si quelqu'un est absent ?",
-    "a": "Les chambres non couvertes sont réparties sur le reste de l'équipe selon les règles définies. C'est le cas où l'orchestration se voit le plus : l'absence est absorbée sans que personne ait à téléphoner."
-  }
-]}
-        />
+        <FaqFromMessages page="teamflow" />
 
 
         <FinalCTA
