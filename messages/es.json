@@ -3121,7 +3121,8 @@
           "alsoMeeting": "Solicitar también una reunión",
           "meetingAsked": "Reunión solicitada: un asesor le responde.",
           "s2Offer": "Recibe su propuesta por correo, en {email}.",
-          "s3Offer": "Para hablarlo con un asesor, solicite también una reunión más abajo."
+          "s3Offer": "Para hablarlo con un asesor, solicite también una reunión más abajo.",
+          "s2Generic": "Recibe por correo un enlace para elegir su franja en su agenda."
         },
         "errors": {
           "email": "Indique un correo válido.",
@@ -3136,7 +3137,9 @@
         "known": {
           "title": "Su solicitud ya está guardada",
           "lead": "A nombre de {name}. Su oferta se añade a esta misma solicitud.",
-          "send": "Enviar mi oferta"
+          "send": "Enviar mi oferta",
+          "expired": "No se encuentra su solicitud anterior: indique de nuevo sus datos para enviar su oferta.",
+          "leadNoName": "Su oferta se añade a esta misma solicitud."
         }
       }
     },

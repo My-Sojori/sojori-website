@@ -3121,7 +3121,8 @@
           "alsoMeeting": "Demander aussi un rendez-vous",
           "meetingAsked": "Rendez-vous demandé : un conseiller vous répond.",
           "s2Offer": "Vous recevez votre proposition par e-mail, à {email}.",
-          "s3Offer": "Pour en parler avec un conseiller, demandez aussi un rendez-vous ci-dessous."
+          "s3Offer": "Pour en parler avec un conseiller, demandez aussi un rendez-vous ci-dessous.",
+          "s2Generic": "Vous recevez par e-mail un lien pour choisir votre créneau dans son planning."
         },
         "errors": {
           "email": "Indiquez un e-mail valide.",
@@ -3136,7 +3137,9 @@
         "known": {
           "title": "Votre demande est déjà enregistrée",
           "lead": "Au nom de {name}. Votre offre s'ajoute à cette même demande.",
-          "send": "Envoyer mon offre"
+          "send": "Envoyer mon offre",
+          "expired": "Votre demande précédente est introuvable : indiquez à nouveau vos coordonnées pour envoyer votre offre.",
+          "leadNoName": "Votre offre s'ajoute à cette même demande."
         }
       }
     },

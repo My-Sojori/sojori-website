@@ -334,7 +334,7 @@ function DemoPageContent() {
       setDemoRequestId(String(newId));
       setQualificationToken(String(data.data?.qualificationToken ?? ''));
       setCalendarSkippedAlreadyBooked(false);
-      garderDemande({ id: String(newId), jeton: String(data.data?.qualificationToken ?? ''), email: formData.email.trim(), nom: formData.fullName.trim(), paysIso: formData.paysIso, dialIso: formData.dialIso, tel: formData.phone, dejaDemo: true });
+      garderDemande({ id: String(newId), jeton: String(data.data?.qualificationToken ?? ''), prenom: formData.fullName.trim().split(/\s+/)[0] ?? '', activiteId: '', typeLibelle: '', segment: '', currentPMS: '', typeAutre: '', dejaDemo: true });
       // Mode test (aperçus) : aucune conversion publicitaire.
       if (!(data.data as { test?: boolean } | undefined)?.test) trackDemoLead(source);
       setStep(STEP_TYPE);
@@ -373,6 +373,8 @@ function DemoPageContent() {
       });
       const raw = normalizeDemoBackendResponse(await res.json().catch(() => ({}))) as { success?: boolean; error?: string };
       if (raw.success !== true) throw new Error(demoResponseErrorMessage(raw) || t('errors.qualify'));
+      const pmsEnvoye = formData.pmsChoix === 'sojori' ? 'Sojori' : (formData.pmsNom.trim().slice(0, 80) || 'Garde son PMS actuel');
+      garderDemande({ id: demoRequestId, jeton: qualificationToken, prenom: formData.fullName.trim().split(/\s+/)[0] ?? '', activiteId: activite.id, typeLibelle: activite.label, segment: activite.crmSegment, currentPMS: pmsEnvoye, typeAutre: activite.id === 'autre' ? formData.activiteAutre.trim().slice(0, 120) : '', dejaDemo: true });
       setStep(STEP_ENVOYE);
     } catch (err: unknown) {
       setError(err instanceof Error ? err.message : t('errors.qualify'));
@@ -1300,7 +1302,7 @@ function DemoPageContent() {
           </div>
         </section>
 
-        <PageFooter />
+        <PageFooter bande={step !== STEP_ENVOYE} />
       </div>
 
     </>

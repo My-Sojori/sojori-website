@@ -3121,7 +3121,8 @@
           "alsoMeeting": "Also request a meeting",
           "meetingAsked": "Meeting requested: an advisor will get back to you.",
           "s2Offer": "You receive your proposal by email, at {email}.",
-          "s3Offer": "To talk it over with an advisor, also request a meeting below."
+          "s3Offer": "To talk it over with an advisor, also request a meeting below.",
+          "s2Generic": "You receive an email with a link to choose your slot in their calendar."
         },
         "errors": {
           "email": "Enter a valid email.",
@@ -3136,7 +3137,9 @@
         "known": {
           "title": "Your request is already saved",
           "lead": "In the name of {name}. Your offer is added to this same request.",
-          "send": "Send my offer"
+          "send": "Send my offer",
+          "expired": "Your earlier request could not be found: enter your details again to send your offer.",
+          "leadNoName": "Your offer is added to this same request."
         }
       }
     },
