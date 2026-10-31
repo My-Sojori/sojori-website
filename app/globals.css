@@ -2246,3 +2246,6 @@ html.sj-mobile-menu-scroll-lock {
 /* La version nuit n'a pas d'aurore : les décors de l'ancien thème clair sont coupés. */
 .bg-stage, .bg-noise, .orb { display: none !important; }
 html { color-scheme: dark; }
+
+/* Bouton d'envoi désactivé (page pas encore active, envoi en cours) : lisible, jamais « fantôme » */
+.demo-mini .btn:disabled { opacity: 1; background: #2a271f; border-color: #4a4538; color: #e4ddd0; box-shadow: none; cursor: progress; }

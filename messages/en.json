@@ -1281,7 +1281,9 @@
       "pmsOwn": "With my own PMS",
       "pmsWhich": "Which one? (optional)",
       "otherLabel": "Please specify (optional)",
-      "typeSubmit": "Continue →"
+      "typeSubmit": "Continue →",
+      "pageLoading": "Loading…",
+      "noscript": "JavaScript is needed to send your request. Write to us at commercial@sojori.com."
     },
     "step2": {
       "badge": "Step 2/4 · Schedule",
@@ -3117,7 +3119,9 @@
           "phone": "Enter a valid number.",
           "consent": "Tick the consent box to send.",
           "partial": "Your request is saved, but sending your full details failed. Please try again."
-        }
+        },
+        "pageLoading": "Loading…",
+        "noscript": "JavaScript is needed to send your request. Write to us at commercial@sojori.com."
       }
     },
     "band": {
