@@ -17,7 +17,11 @@ interface SEOProps {
   image?: string;
   /** Langue pour Open Graph (défaut : français) */
   locale?: string;
+  /** Chemin SANS langue (« » pour l'accueil, « /offre ») : ajoute hreflang des 5 langues + x-default → fr. */
+  alternatesPath?: string;
 }
+
+const LANGUES = ['fr', 'en', 'es', 'pt', 'ar'];
 
 export function generateSEO({
   title,
@@ -26,6 +30,7 @@ export function generateSEO({
   path = '',
   image = '/og-image.jpg',
   locale = 'fr',
+  alternatesPath,
 }: SEOProps): Metadata {
   const url = `${SITE_URL}${path}`;
   const ogLocale = OG_LOCALE[locale] || OG_LOCALE.fr;
@@ -36,6 +41,14 @@ export function generateSEO({
     keywords,
     alternates: {
       canonical: url,
+      ...(alternatesPath !== undefined
+        ? {
+            languages: {
+              ...Object.fromEntries(LANGUES.map((l) => [l, `${SITE_URL}/${l}${alternatesPath}`])),
+              'x-default': `${SITE_URL}/fr${alternatesPath}`,
+            },
+          }
+        : {}),
     },
     openGraph: {
       title,

@@ -1,7 +1,10 @@
 # Sojori
 
-> Le moteur d'orchestration de l'hospitalité. Sojori orchestre l'expérience client, les opérations et le revenu d'un établissement hôtelier, en connectant les systèmes, les clients, les équipes et les partenaires. Il inclut son propre PMS et se connecte aussi aux PMS existants, dont Mews.
-> The hospitality orchestration engine. Sojori orchestrates guest experience, operations and revenue, connecting systems, guests, teams and partners. It includes its own PMS and also connects to existing ones, including Mews.
+> AI workforce for hospitality. Sojori est un PMS et un ensemble d'agents qui travaillent sur WhatsApp pour les locations courte durée, les conciergeries, les riads et les hôtels, au Maroc d'abord. Le PMS Sojori, ou le vôtre : les agents (Réservation, Service client, Opérations, Tarification dynamique, Assistant, Studio, Site web, Commercial, Prospection, Marketing, Finance) et les modules WhatsApp (Check-in, Séjour, Conciergerie, Staff, Admin, Propriétaire) s'y branchent. Vous décidez : chaque agent agit seul ou prépare une carte que vous validez.
+> AI workforce for hospitality. Sojori is a PMS and a set of agents that work on WhatsApp for short-term rentals, concierge companies, riads and hotels, Morocco first. The Sojori PMS, or your own: the agents (Booking, Guest Service, Operations, Dynamic pricing, Assistant, Studio, Website, Sales, Prospecting, Marketing, Finance) and the WhatsApp modules (Check-in, Stay, Concierge, Staff, Admin, Owner) plug into it. You decide: each agent acts alone or prepares a card you approve.
+
+Sojori ne publie aucun prix : un conseiller envoie une proposition chiffrée, adaptée au parc et aux agents choisis.
+Sojori publishes no prices: an advisor sends a quote tailored to the portfolio and the agents chosen.
 
 Sojori s'adresse aux hôtels, riads, maisons d'hôtes et résidences — au Maroc d'abord
 (Marrakech, Casablanca, Rabat, Tanger, Agadir) et en France.
@@ -47,12 +50,15 @@ l'établissement.
 
 ## Pages principales
 
-- [Accueil](https://sojori.com/fr) : le moteur d'orchestration de l'hospitalité
+- [Accueil](https://sojori.com/fr) : le PMS Sojori ou le vôtre, onze agents, six modules WhatsApp, un séjour en sept étapes, la FAQ
+- [Votre offre](https://sojori.com/fr/offre) : composer son offre (socle, parc, agents, WhatsApp, site, mise en service) et recevoir une proposition chiffrée
+- [Home (English)](https://sojori.com/en) : the same, in English
+- [Texte complet / full text](https://sojori.com/llms-full.txt) : tout l'accueil en Markdown, en français et en anglais
 - [Orchestration](https://sojori.com/fr/orchestration) : ce qu'est un moteur d'orchestration face à un PMS
 - [PMS](https://sojori.com/fr/pms) : réservations, chambres, facturation, taxe de séjour
 - [MCP](https://sojori.com/fr/mcp) : interroger son activité depuis ChatGPT ou Claude, en lecture seule
 - [Channel Manager](https://sojori.com/fr/channel-manager) : Booking, Expedia, Airbnb et autres OTA
-- [WhatsApp](https://sojori.com/fr/whatsapp) : conciergerie IA, check-in digital, missions aux équipes
+- [WhatsApp](https://sojori.com/fr/whatsapp) : conciergerie, check-in digital, tâches des équipes
 - [Inbox unifiée](https://sojori.com/fr/inbox) : tous les canaux dans un seul fil par séjour
 - [Guest Experience](https://sojori.com/fr/guest-experience) : le parcours client de bout en bout
 - [TeamFlow](https://sojori.com/fr/teamflow) : ménage, recouche, maintenance, accueil
@@ -61,7 +67,6 @@ l'établissement.
 - [Owner Portal](https://sojori.com/fr/owner-portal) : reporting pour les propriétaires
 - [Dashboard App](https://sojori.com/fr/dashboard-app) : pilotage de l'exploitation
 - [Intégrations](https://sojori.com/fr/integrations) : connecteurs et API
-- [Tarifs](https://sojori.com/fr/pricing) : offres et prix
 - [À propos](https://sojori.com/fr/about) : l'entreprise et l'équipe
 
 ## Par ville
