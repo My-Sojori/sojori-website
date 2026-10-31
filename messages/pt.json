@@ -405,8 +405,8 @@
           "description": "Histórico completo · Rastreamento desempenho · Insights clientes"
         },
         {
-          "title": "Segurança dos dados",
-          "description": "Dados criptografados · Alojado em França (Paris)"
+          "title": "Alojamento",
+          "description": "Alojado no Google Cloud, região de Paris"
         },
         {
           "title": "Acompanhamento contínuo",
@@ -1432,8 +1432,8 @@
         "description": "Implantado em menos de 7 dias"
       },
       "secure": {
-        "title": "100% seguro",
-        "description": "Conforme LGPD · Alojado na França"
+        "title": "Alojamento",
+        "description": "Alojado no Google Cloud, região de Paris"
       },
       "trial": {
         "title": "Sem compromisso",
@@ -3556,7 +3556,7 @@
           },
           {
             "title": "Os seus dados continuam seus.",
-            "text": "Dados cifrados, alojados em França (Paris). O senhor pode manter o seu PMS: a Sojori liga-se a ele através de um conector."
+            "text": "Alojado no Google Cloud, região de Paris. O senhor pode manter o seu PMS: a Sojori liga-se a ele através de um conector."
           }
         ]
       },
@@ -3578,7 +3578,7 @@
           },
           {
             "label": "ALOJAMENTO",
-            "value": "Em França (Paris)"
+            "value": "No Google Cloud, região de Paris"
           },
           {
             "label": "IDIOMAS",
@@ -3596,8 +3596,7 @@
         "role": "FUNDADOR",
         "bio": "Dirige a conceção da Sojori, do PMS aos agentes.",
         "linkedin": "O seu perfil de LinkedIn",
-        "agentsTitle": "E uma equipa de agentes que trabalha connosco.",
-        "agentsText": "Usamos os nossos próprios agentes todos os dias: é a primeira forma de os melhorar."
+        "agentsTitle": "E uma equipa de agentes que trabalha connosco."
       },
       "faq": {
         "eyebrow": "FAQ",

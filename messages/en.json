@@ -405,8 +405,8 @@
           "description": "Complete history · Performance tracking · Customer insights"
         },
         {
-          "title": "Data security",
-          "description": "Encrypted data · Hosted in France (Paris)"
+          "title": "Hosting",
+          "description": "Hosted on Google Cloud, Paris region"
         },
         {
           "title": "Continuous monitoring",
@@ -1432,8 +1432,8 @@
         "description": "Deployed in less than 7 days"
       },
       "secure": {
-        "title": "100% secure",
-        "description": "GDPR compliant · Hosted in France"
+        "title": "Hosting",
+        "description": "Hosted on Google Cloud, Paris region"
       },
       "trial": {
         "title": "No commitment",
@@ -3556,7 +3556,7 @@
           },
           {
             "title": "Your data stays yours.",
-            "text": "Encrypted data, hosted in France (Paris). You can keep your PMS: Sojori connects to it through a connector."
+            "text": "Hosted on Google Cloud, Paris region. You can keep your PMS: Sojori connects to it through a connector."
           }
         ]
       },
@@ -3578,7 +3578,7 @@
           },
           {
             "label": "HOSTING",
-            "value": "In France (Paris)"
+            "value": "On Google Cloud, Paris region"
           },
           {
             "label": "LANGUAGES",
@@ -3596,8 +3596,7 @@
         "role": "FOUNDER",
         "bio": "He leads the design of Sojori, from the PMS to the agents.",
         "linkedin": "His LinkedIn profile",
-        "agentsTitle": "And a team of agents that works with us.",
-        "agentsText": "We use our own agents every day: it is the first way to make them better."
+        "agentsTitle": "And a team of agents that works with us."
       },
       "faq": {
         "eyebrow": "FAQ",

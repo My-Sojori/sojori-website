@@ -405,8 +405,8 @@
           "description": "Historique complet · Performance tracking · Insights clients"
         },
         {
-          "title": "Sécurité des données",
-          "description": "Données chiffrées · Hébergé en France (Paris)"
+          "title": "Hébergement",
+          "description": "Hébergé sur Google Cloud, région de Paris"
         },
         {
           "title": "Suivi continu",
@@ -1432,8 +1432,8 @@
         "description": "Déployé en moins de 7 jours"
       },
       "secure": {
-        "title": "100% sécurisé",
-        "description": "Conforme RGPD · Hébergé en France"
+        "title": "Hébergement",
+        "description": "Hébergé sur Google Cloud, région de Paris"
       },
       "trial": {
         "title": "Sans engagement",
@@ -3556,7 +3556,7 @@
           },
           {
             "title": "Vos données restent les vôtres.",
-            "text": "Données chiffrées, hébergées en France (Paris). Vous pouvez garder votre PMS : Sojori s’y branche par connecteur."
+            "text": "Hébergé sur Google Cloud, région de Paris. Vous pouvez garder votre PMS : Sojori s’y branche par connecteur."
           }
         ]
       },
@@ -3578,7 +3578,7 @@
           },
           {
             "label": "HÉBERGEMENT",
-            "value": "En France (Paris)"
+            "value": "Sur Google Cloud, région de Paris"
           },
           {
             "label": "LANGUES",
@@ -3596,8 +3596,7 @@
         "role": "FONDATEUR",
         "bio": "Il dirige la conception de Sojori, du PMS aux agents.",
         "linkedin": "Son profil LinkedIn",
-        "agentsTitle": "Et une équipe d’agents qui travaille avec nous.",
-        "agentsText": "Nous utilisons nos propres agents chaque jour : c’est la première façon de les améliorer."
+        "agentsTitle": "Et une équipe d’agents qui travaille avec nous."
       },
       "faq": {
         "eyebrow": "FAQ",

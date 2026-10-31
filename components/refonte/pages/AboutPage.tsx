@@ -110,7 +110,6 @@ export async function AboutPage({ locale }: { locale: string }) {
             </div>
             <div className="sj2-card sj2-equipe__agents">
               <h3 className="sj2-h3">{t('team.agentsTitle')}</h3>
-              <p>{t('team.agentsText')}</p>
             </div>
           </div>
           <div className="sj2-about__contact">
