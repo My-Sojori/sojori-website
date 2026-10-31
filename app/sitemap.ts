@@ -22,6 +22,11 @@ const PATHS = [
   '/dashboard-app',
   '/guest-experience',
   '/offre',
+  '/pms-maroc',
+  '/conciergerie-maroc',
+  '/agents',
+  '/check-in-whatsapp',
+  // '/fiche-de-police-maroc' et '/taxe-de-sejour-maroc' : hors sitemap tant que leurs champs « à confirmer » sont ouverts.
   '/integrations',
   '/about',
   '/demo',
