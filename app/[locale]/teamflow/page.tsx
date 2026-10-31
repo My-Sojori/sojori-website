@@ -3,7 +3,7 @@
 import { useTranslations } from 'next-intl';
 import { BackgroundEffects } from '@/components/BackgroundEffects';
 import { InFlow } from '@/components/InFlow';
-import { PageHeader, PageFooter, PageHero, StatsBar, FinalCTA } from '@/components/SharedComponents';
+import { PageHeader, PageFooter, PageHero, FinalCTA } from '@/components/SharedComponents';
 import { ScrollPaginationDots } from '@/components/shared/ScrollPaginationDots';
 import { FaqFromMessages } from '@/components/FaqFromMessages';
 
@@ -141,11 +141,6 @@ export default function TeamflowPage() {
     description: string;
   }>;
 
-  const stats = t.raw('stats') as Array<{
-    key: string;
-    label: string;
-  }>;
-
   const heroTitle = t('hero.title');
   const heroTitleGradient = t('hero.titleGradient');
   const finalCTATitle = t('finalCTA.title');
@@ -238,7 +233,6 @@ export default function TeamflowPage() {
             </ScrollPaginationDots>
           </div>
         </section>
-        <StatsBar stats={stats.map(s => ({ k: s.key, l: s.label }))} />
 
         <InFlow
           domain={tb('k001')}

@@ -86,260 +86,6 @@
       "homeButton": "← Back to homepage"
     }
   },
-  "home": {
-    "hero": {
-      "badge": "● Orchestrator · Hospitality",
-      "title": "The orchestration engine",
-      "titleGradient": "for hospitality",
-      "subtitle": "Sojori coordinates your property like a human would — reservation, guest, staff, owner. Except it never sleeps.",
-      "subtitleStrong": "And it doesn't ask you to drive.",
-      "ctaPrimary": "See the orchestration →",
-      "ctaSecondary": "Request a demo",
-      "flow": "RESERVATION → GUEST → STAFF → OWNER · ONE SINGLE THREAD"
-    },
-    "trustBar": {
-      "title": "Integrated with the best platforms",
-      "moreChannels": "+ more channels",
-      "features": "Real-time sync · Prevents overbooking · 2 to 2,000+ properties"
-    },
-    "valueProp": {
-      "badge": "Architecture",
-      "title": "Three layers of architecture.",
-      "titleSub": "Zero layers of complexity.",
-      "subtitle": "The modules work. The AI decides. WhatsApp simplifies.",
-      "closing": "You pilot.",
-      "modules": {
-        "icon": "•",
-        "title": "The modules work",
-        "sub": "The foundation.",
-        "items": [
-          "PMS · multi-property calendar",
-          "Channel Manager · 20+ OTAs",
-          "Dynamic pricing",
-          "Owner Portal",
-          "Real-time analytics"
-        ],
-        "cta": "See modules"
-      },
-      "orchestration": {
-        "icon": "•",
-        "title": "The AI decides",
-        "sub": "The engine.",
-        "badge": "SIGNATURE",
-        "items": [
-          "Understands every reservation",
-          "Decides who does what, when, why",
-          "Coordinates guest, staff, owner",
-          "Learns from every stay",
-          "+20 decisions per stay, no intervention"
-        ],
-        "cta": "See the engine in action"
-      },
-      "whatsapp": {
-        "icon": "•",
-        "title": "WhatsApp simplifies",
-        "sub": "The surface.",
-        "items": [
-          "Guest — the traveler, in 12 languages",
-          "Staff — the field team",
-          "Admin — your PMS in your pocket",
-          "Booking Direct — booking without intermediaries"
-        ],
-        "cta": "See the 4 surfaces"
-      }
-    },
-    "whatsappCase": {
-      "badge": "Real use case",
-      "title": "Your guests speak.",
-      "titleGradient": "Sojori responds.",
-      "subtitle": "Sarah (USA) books via Airbnb for an apartment in Paris. Sojori AI handles everything, 24/7, in English.",
-      "header": {
-        "name": "Sojori AI",
-        "status": "Online · responds in seconds"
-      },
-      "timeline": {
-        "title": "Actions orchestrated in parallel",
-        "actions": [
-          {
-            "t": "D-7",
-            "icon": "•",
-            "text": "Welcome message sent"
-          },
-          {
-            "t": "D-3",
-            "icon": "•",
-            "text": "Passport scan via AI · KYC validated"
-          },
-          {
-            "t": "D+2",
-            "icon": "•",
-            "text": "AC maintenance · staff auto-notified"
-          },
-          {
-            "t": "D+4",
-            "icon": "•",
-            "text": "Airport transport organized"
-          },
-          {
-            "t": "D+1",
-            "icon": "•",
-            "text": "Review request · 5★ obtained"
-          }
-        ]
-      },
-      "metrics": {
-        "response": {
-          "k": "<15s",
-          "l": "AI Response"
-        },
-        "rating": {
-          "k": "5/5",
-          "l": "Guest Rating"
-        },
-        "intervention": {
-          "k": "0",
-          "l": "Human Intervention"
-        }
-      },
-      "cta": "Test the live chatbot →"
-    },
-    "featuresAccordion": {
-      "badge": "Features",
-      "title": "Everything you expect. And everything others don't have.",
-      "subtitle": "Six native modules. Designed to work together, never one without the other.",
-      "features": [
-        {
-          "icon": "•",
-          "title": "Dashboard App",
-          "items": [
-            "Unified sidebar navigation",
-            "Real-time KPI cards",
-            "Live activity feed",
-            "Today's arrivals",
-            "Dark + light mode"
-          ],
-          "cta": "Discover this page →",
-          "comingSoon": "Dedicated page coming soon"
-        },
-        {
-          "icon": "•",
-          "title": "Channel Manager",
-          "items": [
-            "OTAs via channel manager (real-time sync)",
-            "Bidirectional iCal",
-            "Anti-overbooking",
-            "Unified reporting",
-            "Availability-oriented architecture"
-          ],
-          "cta": "Discover this page →",
-          "comingSoon": "Dedicated page coming soon"
-        },
-        {
-          "icon": "•",
-          "title": "WhatsApp AI Bot",
-          "items": [
-            "AI available on WhatsApp (configurable)",
-            "Multilingual",
-            "Check-in flow (QR, instructions)",
-            "Contextual responses",
-            "Escalation to your team"
-          ],
-          "cta": "Discover this page →",
-          "comingSoon": "Dedicated page coming soon"
-        },
-        {
-          "icon": "•",
-          "title": "Dynamic Pricing",
-          "items": [
-            "Rules by month, day, events, occupancy",
-            "Price push to your channels",
-            "Long-stay & last-minute discounts (configurable)",
-            "Visible calendar and coefficients",
-            "Implementation support"
-          ],
-          "cta": "Discover this page →",
-          "comingSoon": "Dedicated page coming soon"
-        },
-        {
-          "icon": "•",
-          "title": "Owner Portal",
-          "items": [
-            "Owner portal (web)",
-            "Revenue & occupancy view",
-            "Documents and exports (per plan)",
-            "Commission transparency",
-            "Secure delegated access"
-          ],
-          "cta": "Discover this page →",
-          "comingSoon": "Dedicated page coming soon"
-        },
-        {
-          "icon": "•",
-          "title": "TeamFlow (Staff Management)",
-          "items": [
-            "Auto-assignment based on availability",
-            "In-app + WhatsApp notifications",
-            "Pre/post cleaning check photos",
-            "Real-time tracking",
-            "KPIs per team member"
-          ],
-          "cta": "Discover this page →",
-          "comingSoon": "Dedicated page coming soon"
-        }
-      ]
-    },
-    "socialProof": {
-      "badge": "They trust us",
-      "title": "Properties already orchestrating.",
-      "testimonials": [
-        {
-          "quote": "Before Sojori: 4h/day on WhatsApp messages. After Sojori: 20 min/day. The rest is automatic.",
-          "name": "Marie L.",
-          "role": "Property Manager · 12 properties",
-          "loc": "Paris"
-        },
-        {
-          "quote": "The only PMS that truly talks to guests. My 5★ went from 78% to 94% in 3 months.",
-          "name": "Thomas D.",
-          "role": "Property owner · 7 properties",
-          "loc": "Paris"
-        },
-        {
-          "quote": "Channel Manager, AI, staff coordination… we replaced 4 tools with Sojori. And it works better.",
-          "name": "Thomas R.",
-          "role": "CEO · 84 properties",
-          "loc": "Lisbon"
-        }
-      ],
-      "metrics": [
-        {
-          "k": "STR",
-          "l": "France & Morocco"
-        },
-        {
-          "k": "Real-time",
-          "l": "Sync & teams"
-        },
-        {
-          "k": "WhatsApp",
-          "l": "Guest channel"
-        },
-        {
-          "k": "Orchestration",
-          "l": "Single thread"
-        }
-      ]
-    },
-    "finalCTA": {
-      "title": "Ready to",
-      "titleGradient": "orchestrate",
-      "titleEnd": "your rentals?",
-      "subtitle": "Join hundreds of properties orchestrating their operations with Sojori.",
-      "ctaPrimary": "Request a free demo →",
-      "ctaSecondary": "See the plans",
-      "footer": "✓ Personalized demo · ✓ No commitment · ✓ Setup in <7 days"
-    }
-  },
   "whatsapp": {
     "pageTitle": "WhatsApp Systems",
     "hero": {
@@ -359,7 +105,7 @@
       "guest": {
         "label": "WhatsApp Guest",
         "badge": "Travelers",
-        "stat": "87% autonomous"
+        "stat": "At any hour"
       },
       "staff": {
         "label": "WhatsApp Staff",
@@ -438,7 +184,7 @@
       "guest": {
         "title": "WhatsApp Guest",
         "titleGradient": "Intelligence",
-        "description": "Sojori AI responds to your travelers 24/7 on WhatsApp. Autonomous check-in, instant support, smart upsell, review requests. All in 12 languages.",
+        "description": "Sojori answers your guests at any hour on WhatsApp. Autonomous check-in, fast support, upsell, review requests, in the guest's language.",
         "menuTitle": "Main menu",
         "menu": [
           {
@@ -484,16 +230,16 @@
         ],
         "stats": [
           {
-            "key": "<2 sec",
-            "label": "Response time"
+            "key": "WhatsApp",
+            "label": "Guest channel"
           },
           {
-            "key": "12",
-            "label": "Languages"
+            "key": "Their language",
+            "label": "Matched reply"
           },
           {
-            "key": "87%",
-            "label": "Autonomous"
+            "key": "Human",
+            "label": "Takes over"
           }
         ]
       },
@@ -530,8 +276,8 @@
         ],
         "stats": [
           {
-            "key": "0 MAD",
-            "label": "Per staff"
+            "key": "WhatsApp",
+            "label": "For staff"
           },
           {
             "key": "Up to date",
@@ -584,7 +330,7 @@
             "label": "PMS"
           },
           {
-            "key": "Instant",
+            "key": "Up to date",
             "label": "Notifications"
           }
         ]
@@ -592,7 +338,7 @@
       "booking": {
         "title": "WhatsApp Direct",
         "titleGradient": "Booking",
-        "description": "Your returning guests can book directly via WhatsApp. No OTA commission. Secure payment. Instant confirmation.",
+        "description": "Your returning guests can book directly via WhatsApp. No OTA commission. Secure payment. Fast confirmation.",
         "advantagesTitle": "Advantages",
         "advantages": [
           {
@@ -608,7 +354,7 @@
             "detail": "Stripe integrated · PCI compliant"
           },
           {
-            "label": "Instant confirmation",
+            "label": "Fast confirmation",
             "detail": "Up-to-date availability"
           },
           {
@@ -626,12 +372,12 @@
             "label": "Commission"
           },
           {
-            "key": "0 MAD",
-            "label": "Setup"
+            "key": "Online",
+            "label": "Payment"
           },
           {
-            "key": "24/7",
-            "label": "Available"
+            "key": "Up to date",
+            "label": "Availability"
           }
         ]
       }
@@ -644,11 +390,11 @@
       "items": [
         {
           "title": "Artificial Intelligence",
-          "description": "Natural conversation · 12 languages · Available 24/7"
+          "description": "Natural conversation · In the guest's language · At any hour"
         },
         {
-          "title": "Instant Response",
-          "description": "Less than 2 seconds · No waiting"
+          "title": "Fast response",
+          "description": "No waiting · Replies without tying up a person"
         },
         {
           "title": "Auto Sync",
@@ -659,12 +405,12 @@
           "description": "Complete history · Performance tracking · Customer insights"
         },
         {
-          "title": "Maximum Security",
-          "description": "Encrypted data · GDPR compliant · France hosting"
+          "title": "Data security",
+          "description": "Encrypted data · GDPR compliant · Hosted in France (Paris)"
         },
         {
-          "title": "24/7 Monitoring",
-          "description": "Continuous supervision · Automatic alerts · 99.9% uptime"
+          "title": "Continuous monitoring",
+          "description": "Continuous supervision · Automatic alerts"
         }
       ]
     },
@@ -685,11 +431,11 @@
           ]
         },
         {
-          "title": "24/7 multilingual support",
+          "title": "Multilingual support",
           "steps": [
             "Guest sends message (any language)",
             "AI detects language + category (WiFi, AC, code...)",
-            "Responds in <2 sec with solution",
+            "Replies with the solution",
             "If urgent → escalate to human staff",
             "Ticket created + tracking until resolution"
           ]
@@ -764,10 +510,10 @@
         "description": "For simple questions (WiFi, codes, schedules...), activate autopilot mode. AI responds directly without validation. You supervise in the background and intervene if necessary.",
         "features": [
           {
-            "label": "Instant response"
+            "label": "Fast response"
           },
           {
-            "label": "Works 24/7"
+            "label": "Works at any hour"
           },
           {
             "label": "Active supervision"
@@ -778,24 +524,6 @@
         ]
       }
     },
-    "stats": [
-      {
-        "key": "4 systems",
-        "label": "WhatsApp"
-      },
-      {
-        "key": "87%",
-        "label": "AI Autonomous"
-      },
-      {
-        "key": "<2 sec",
-        "label": "Response time"
-      },
-      {
-        "key": "12 languages",
-        "label": "Native support"
-      }
-    ],
     "finalCTA": {
       "title": "Activate WhatsApp.",
       "titleGradient": "Today.",
@@ -975,7 +703,7 @@
         {
           "icon": "•",
           "title": "Auto-assignment",
-          "description": "Algorithm matching availability + geolocation + skills. Task assigned in <2 sec."
+          "description": "Algorithm matching availability + geolocation + skills."
         },
         {
           "icon": "•",
@@ -1004,24 +732,6 @@
         }
       ]
     },
-    "stats": [
-      {
-        "key": "<2 sec",
-        "label": "Auto-assignment"
-      },
-      {
-        "key": "WhatsApp",
-        "label": "No app to install"
-      },
-      {
-        "key": "100%",
-        "label": "Photos archived"
-      },
-      {
-        "key": "4.87★",
-        "label": "Average staff rating"
-      }
-    ],
     "finalCTA": {
       "title": "Invite your team.",
       "titleGradient": "In 60 seconds.",
@@ -1161,24 +871,6 @@
         }
       ]
     },
-    "stats": [
-      {
-        "key": "98%",
-        "label": "WhatsApp open rate"
-      },
-      {
-        "key": "2.4×",
-        "label": "upsell vs email"
-      },
-      {
-        "key": "<2min",
-        "label": "average response time"
-      },
-      {
-        "key": "4.9★",
-        "label": "guest satisfaction"
-      }
-    ],
     "finalCTA": {
       "title": "Launch WhatsApp for your guests. In 5 minutes.",
       "subtitle": "No development required. Your guests already have WhatsApp."
@@ -1509,24 +1201,6 @@
           "description": "Average response time, resolution rate. By channel, by member."
         }
       ]
-    },
-    "stats": {
-      "stat1": {
-        "key": "4 channels",
-        "label": "WA, Airbnb, Booking, Email"
-      },
-      "stat2": {
-        "key": "<2 min",
-        "label": "Average response time"
-      },
-      "stat3": {
-        "key": "12 languages",
-        "label": "Auto translation"
-      },
-      "stat4": {
-        "key": "0",
-        "label": "Forgotten message"
-      }
     },
     "finalCTA": {
       "title": "Connect your channels.",
@@ -2038,8 +1712,8 @@
       "description": "Premium guest journey: guidebook, services, smooth check-in."
     },
     "whatsapp": {
-      "title": "WhatsApp AI Marrakech | 24/7 automated concierge Morocco",
-      "description": "24/7 WhatsApp AI for hospitality in Marrakech: automated concierge, instant guest replies, FR/AR/EN, digital check-in."
+      "title": "WhatsApp AI Marrakech | Automated concierge at any hour, Morocco",
+      "description": "WhatsApp AI for hospitality in Marrakech: automated concierge, instant guest replies, FR/AR/EN, digital check-in."
     },
     "inbox": {
       "title": "Unified inbox Marrakech | Centralised multi-OTA messaging Morocco",
@@ -2571,8 +2245,7 @@
         },
         "status": {
           "available": "Available",
-          "included": "Included",
-          "soon": "Coming soon"
+          "included": "Included"
         },
         "defaultNote": "You decide what goes out on its own and what waits for your approval.",
         "list": {
