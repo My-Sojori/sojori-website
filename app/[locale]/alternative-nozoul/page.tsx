@@ -30,37 +30,37 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
  * Relevé effectué le 2026-09-11 sur le site de l'éditeur.
  */
 export default async function AltNozoul({ params }: { params: Promise<{ locale: string }> }) {
+  const tb = await getTranslations('pageBodies.alternative-nozoul');
   const { locale } = await params;
   return (
     <>
       <BackgroundEffects />
       <PageSchema
         crumbs={[
-          { name: 'Accueil', path: `/${locale}` },
+          { name: tb('crumbHome'), path: `/${locale}` },
           { name: 'Comparatifs', path: `/${locale}/comparatif-pms-maroc` },
-          { name: "Sojori vs Nozoul", path: `/${locale}/alternative-nozoul` },
+          { name: tb('k001'), path: `/${locale}/alternative-nozoul` },
         ]}
-        serviceName={"Alternative à Nozoul — orchestration hôtelière"}
-        serviceDescription={"Nozoul vs Sojori : deux PMS cloud marocains, deux périmètres différents. PMS et channel manager d'un côté, moteur d'orchestration connectable aux PMS existants de l'autre. Comparatif factuel."}
+        serviceName={tb('k002')}
+        serviceDescription={tb('k003')}
         areaServed="Maroc"
       />
       <div style={{ position: 'relative', zIndex: 1 }}>
-        <PageHeader pageTitle="Sojori vs Nozoul" />
+        <PageHeader pageTitle={tb('k004')} />
 
         <PageHero
-          badge="Comparatif · Sojori vs Nozoul"
-          title={<>Alternative à Nozoul{' '}<br /><span className="gradient-text">quand le PMS ne suffit plus</span></>}
-          subtitle="Nozoul et Sojori sont deux solutions cloud marocaines qui partagent beaucoup : fiche de police, taxe de séjour, interface française et arabe. La différence tient au périmètre — et elle devient décisive quand l&apos;exploitation se complique."
-          cta1="Voir la démo"
-          cta2="Parler à un expert"
+          badge={tb('k005')}
+          title={<>{tb('k006')}{' '}<br /><span className="gradient-text">{tb('k007')}</span></>}
+          subtitle={tb('k008')}
+          cta1={tb('k009')}
+          cta2={tb('k010')}
         />
 
         <section style={{ padding: '8px 32px 56px' }}>
           <div style={{ maxWidth: 900, margin: '0 auto' }}>
-            <div className="uppercase-sm" style={{ color: 'var(--text-3)', marginBottom: 12 }}>● Réponse directe</div>
+            <div className="uppercase-sm" style={{ color: 'var(--text-3)', marginBottom: 12 }}>{tb('k011')}</div>
             <p style={{ fontSize: 17, lineHeight: 1.7, color: 'var(--text-2)' }}>
-              Nozoul est un PMS cloud et channel manager marocain, revendiquant plus de 50 établissements, une connexion à plus de 200 OTA, une interface française et arabe, un export DGSN, la taxe de séjour et un suivi du ménage depuis le téléphone, avec un référencement Go Siyaha affiché. Sojori partage cet ancrage marocain mais répond à une question différente : Nozoul est un PMS, Sojori est un moteur d&apos;orchestration qui inclut un PMS. La conséquence pratique tient en deux points. D&apos;abord, Sojori se connecte aux PMS existants, dont Mews : vous pouvez orchestrer sans remplacer votre système de réservation, ce qu&apos;un PMS ne permet pas par construction. Ensuite, le périmètre orchestré va au-delà du statut des chambres : maintenance suivie par équipement, demandes clients transformées en tâches assignées, tarification pilotée par règles, coordination multi-établissements. Pour un riad de huit chambres qui veut sortir d&apos;Excel, Nozoul est une réponse pertinente. Pour une exploitation qui gère plusieurs sites, des équipes nombreuses ou un PMS déjà en place, le raisonnement change.
-            </p>
+              {tb('k012')}</p>
           </div>
         </section>
 
@@ -69,31 +69,31 @@ export default async function AltNozoul({ params }: { params: Promise<{ locale: 
             déclasse les comparatifs déséquilibrés. */}
         <section style={{ padding: '40px 32px 64px', borderTop: '1px solid var(--glass-border)' }}>
           <div style={{ maxWidth: 900, margin: '0 auto' }}>
-            <h2 style={{ fontSize: 30, fontWeight: 700, letterSpacing: '-0.02em', marginBottom: 20 }}>Ce que Nozoul fait bien</h2>
-            <p style={{ fontSize: 16, lineHeight: 1.75, color: 'var(--text-3)', marginBottom: 16 }}>Nozoul a bien lu son marché : un riad de huit chambres n&apos;a pas besoin d&apos;un logiciel d&apos;hôtel de chaîne, il a besoin de sortir d&apos;Excel sans y passer trois semaines. La promesse d&apos;une prise en main en deux heures et l&apos;interface bilingue répondent à un vrai besoin, et la conformité marocaine est traitée nativement.</p>
-            <p style={{ fontSize: 16, lineHeight: 1.75, color: 'var(--text-3)', marginBottom: 16 }}>Le positionnement Go Siyaha est également bien joué : l&apos;éditeur affiche un référencement au programme, ce qui simplifie la démarche pour un hôtelier qui monte un dossier. C&apos;est un avantage commercial concret, et nous préférons le dire que le taire.</p>
+            <h2 style={{ fontSize: 30, fontWeight: 700, letterSpacing: '-0.02em', marginBottom: 20 }}>{tb('k013')}</h2>
+            <p style={{ fontSize: 16, lineHeight: 1.75, color: 'var(--text-3)', marginBottom: 16 }}>{tb('k014')}</p>
+            <p style={{ fontSize: 16, lineHeight: 1.75, color: 'var(--text-3)', marginBottom: 16 }}>{tb('k015')}</p>
           </div>
         </section>
 
         <section style={{ padding: '40px 32px 64px', borderTop: '1px solid var(--glass-border)' }}>
           <div style={{ maxWidth: 900, margin: '0 auto' }}>
-            <h2 style={{ fontSize: 30, fontWeight: 700, letterSpacing: '-0.02em', marginBottom: 24 }}>Où un PMS atteint sa limite</h2>
+            <h2 style={{ fontSize: 30, fontWeight: 700, letterSpacing: '-0.02em', marginBottom: 24 }}>{tb('k016')}</h2>
             <div style={{ display: 'grid', gap: 16 }}>
               <div className="card" style={{ padding: 24 }}>
-                <div style={{ fontSize: 17, fontWeight: 600, marginBottom: 8 }}>Un PMS exige un remplacement, un orchestrateur non</div>
-                <p style={{ fontSize: 15, lineHeight: 1.7, color: 'var(--text-3)' }}>C&apos;est la différence structurelle. Si vous avez déjà un PMS qui vous convient, adopter un autre PMS signifie tout migrer. Sojori se connecte à l&apos;existant : vous ajoutez l&apos;orchestration et vous gardez votre système de réservation. Le choix n&apos;est plus binaire.</p>
+                <div style={{ fontSize: 17, fontWeight: 600, marginBottom: 8 }}>{tb('k017')}</div>
+                <p style={{ fontSize: 15, lineHeight: 1.7, color: 'var(--text-3)' }}>{tb('k018')}</p>
               </div>
               <div className="card" style={{ padding: 24 }}>
-                <div style={{ fontSize: 17, fontWeight: 600, marginBottom: 8 }}>Le statut des chambres n&apos;est pas l&apos;orchestration</div>
-                <p style={{ fontSize: 15, lineHeight: 1.7, color: 'var(--text-3)' }}>Marquer une chambre « prête » depuis un téléphone est utile. Déclencher automatiquement la mission au départ constaté, la réassigner si elle n&apos;est pas prise, ouvrir un ticket de maintenance rattaché à l&apos;équipement et prévenir la réception que l&apos;arrivée de 15 h risque d&apos;attendre : c&apos;est un autre métier. L&apos;un affiche un état, l&apos;autre conduit une opération.</p>
+                <div style={{ fontSize: 17, fontWeight: 600, marginBottom: 8 }}>{tb('k019')}</div>
+                <p style={{ fontSize: 15, lineHeight: 1.7, color: 'var(--text-3)' }}>{tb('k020')}</p>
               </div>
               <div className="card" style={{ padding: 24 }}>
-                <div style={{ fontSize: 17, fontWeight: 600, marginBottom: 8 }}>Le multi-établissement change les règles</div>
-                <p style={{ fontSize: 15, lineHeight: 1.7, color: 'var(--text-3)' }}>Un PMS conçu pour un établissement gère mal plusieurs sites avec des équipes partagées, des règles différentes et une vue consolidée. C&apos;est le moment où la coordination redevient manuelle, malgré le logiciel.</p>
+                <div style={{ fontSize: 17, fontWeight: 600, marginBottom: 8 }}>{tb('k021')}</div>
+                <p style={{ fontSize: 15, lineHeight: 1.7, color: 'var(--text-3)' }}>{tb('k022')}</p>
               </div>
               <div className="card" style={{ padding: 24 }}>
-                <div style={{ fontSize: 17, fontWeight: 600, marginBottom: 8 }}>La relation client reste à part</div>
-                <p style={{ fontSize: 15, lineHeight: 1.7, color: 'var(--text-3)' }}>Un channel manager distribue, un PMS enregistre. La conversation avec le client — avant, pendant et après le séjour, sur WhatsApp, dans sa langue — est un flux à part entière, qui alimente les tâches et la satisfaction. Chez Sojori elle est au centre, pas à côté.</p>
+                <div style={{ fontSize: 17, fontWeight: 600, marginBottom: 8 }}>{tb('k023')}</div>
+                <p style={{ fontSize: 15, lineHeight: 1.7, color: 'var(--text-3)' }}>{tb('k024')}</p>
               </div>
             </div>
           </div>
@@ -101,15 +101,15 @@ export default async function AltNozoul({ params }: { params: Promise<{ locale: 
 
         <section style={{ padding: '40px 32px 64px', borderTop: '1px solid var(--glass-border)' }}>
           <div style={{ maxWidth: 900, margin: '0 auto' }}>
-            <h2 style={{ fontSize: 30, fontWeight: 700, letterSpacing: '-0.02em', marginBottom: 24 }}>Lequel choisir ?</h2>
+            <h2 style={{ fontSize: 30, fontWeight: 700, letterSpacing: '-0.02em', marginBottom: 24 }}>{tb('k025')}</h2>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 16 }}>
               <div className="card" style={{ padding: 24 }}>
-                <div style={{ fontSize: 13, fontWeight: 700, color: 'var(--text-3)', marginBottom: 10, textTransform: 'uppercase', letterSpacing: 1 }}>Choisissez Nozoul</div>
-                <p style={{ fontSize: 15, lineHeight: 1.7, color: 'var(--text-3)' }}>Vous avez un établissement, entre cinq et vingt chambres, vous partez d&apos;Excel ou du papier, et votre besoin immédiat est de centraliser les réservations et d&apos;être visible sur les OTA. C&apos;est exactement le terrain de Nozoul.</p>
+                <div style={{ fontSize: 13, fontWeight: 700, color: 'var(--text-3)', marginBottom: 10, textTransform: 'uppercase', letterSpacing: 1 }}>{tb('k026')}</div>
+                <p style={{ fontSize: 15, lineHeight: 1.7, color: 'var(--text-3)' }}>{tb('k027')}</p>
               </div>
               <div className="card" style={{ padding: 24 }}>
-                <div style={{ fontSize: 13, fontWeight: 700, color: '#f4cf5e', marginBottom: 10, textTransform: 'uppercase', letterSpacing: 1 }}>Choisissez Sojori</div>
-                <p style={{ fontSize: 15, lineHeight: 1.7, color: 'var(--text-3)' }}>Vous gérez plusieurs établissements, des équipes nombreuses, ou vous avez déjà un PMS que vous ne voulez pas remplacer. Votre problème n&apos;est plus de saisir les réservations mais de coordonner ce qui en découle.</p>
+                <div style={{ fontSize: 13, fontWeight: 700, color: '#f4cf5e', marginBottom: 10, textTransform: 'uppercase', letterSpacing: 1 }}>{tb('k028')}</div>
+                <p style={{ fontSize: 15, lineHeight: 1.7, color: 'var(--text-3)' }}>{tb('k029')}</p>
               </div>
             </div>
           </div>
@@ -117,25 +117,25 @@ export default async function AltNozoul({ params }: { params: Promise<{ locale: 
 
         <section style={{ padding: '32px 32px 64px', borderTop: '1px solid var(--glass-border)' }}>
           <div style={{ maxWidth: 1000, margin: '0 auto' }}>
-            <div className="uppercase-sm" style={{ color: 'var(--text-3)', marginBottom: 14 }}>● Poursuivre</div>
+            <div className="uppercase-sm" style={{ color: 'var(--text-3)', marginBottom: 14 }}>{tb('k030')}</div>
             <div style={{ fontSize: 14, color: 'var(--text-3)', lineHeight: 2 }}>
-              <Link href={'/comparatif-pms-maroc' as const} style={{ color: '#f4cf5e', textDecoration: 'none', fontWeight: 600 }}>Comparatif des PMS au Maroc</Link>
+              <Link href={'/comparatif-pms-maroc' as const} style={{ color: '#f4cf5e', textDecoration: 'none', fontWeight: 600 }}>{tb('k031')}</Link>
               {' · '}
-              <Link href={'/go-siyaha' as const} style={{ color: '#f4cf5e', textDecoration: 'none' }}>Go Siyaha</Link>
+              <Link href={'/go-siyaha' as const} style={{ color: '#f4cf5e', textDecoration: 'none' }}>{tb('k032')}</Link>
               {' · '}
-              <Link href={'/pms' as const} style={{ color: '#f4cf5e', textDecoration: 'none' }}>Le PMS Sojori</Link>
+              <Link href={'/pms' as const} style={{ color: '#f4cf5e', textDecoration: 'none' }}>{tb('k033')}</Link>
               <br />
-              Autres comparatifs :{' '}
-              <Link href={'/alternative-cloudbeds' as const} style={{ color: '#f4cf5e', textDecoration: 'none' }}>vs Cloudbeds</Link>
+              {tb('k034')}{' '}
+              <Link href={'/alternative-cloudbeds' as const} style={{ color: '#f4cf5e', textDecoration: 'none' }}>{tb('k035')}</Link>
               {' · '}
-              <Link href={'/alternative-pluriel' as const} style={{ color: '#f4cf5e', textDecoration: 'none' }}>vs Pluriel</Link>
+              <Link href={'/alternative-pluriel' as const} style={{ color: '#f4cf5e', textDecoration: 'none' }}>{tb('k036')}</Link>
               {' · '}
-              <Link href={'/alternative-welcomax' as const} style={{ color: '#f4cf5e', textDecoration: 'none' }}>vs Welcomax</Link>
+              <Link href={'/alternative-welcomax' as const} style={{ color: '#f4cf5e', textDecoration: 'none' }}>{tb('k037')}</Link>
               <br />
               <br />
-              Comprendre :{' '}
-              <Link href={'/orchestration' as const} style={{ color: '#f4cf5e', textDecoration: 'none', fontWeight: 600 }}>Qu&apos;est-ce que l&apos;orchestration hôtelière ?</Link>
-              Par ville :{' '}
+              {tb('k038')}{' '}
+              <Link href={'/orchestration' as const} style={{ color: '#f4cf5e', textDecoration: 'none', fontWeight: 600 }}>{tb('k039')}</Link>
+              {tb('k040')}{' '}
               <Link href={'/pms-marrakech' as const} style={{ color: '#f4cf5e', textDecoration: 'none' }}>Marrakech</Link>
               {' · '}
               <Link href={'/pms-casablanca' as const} style={{ color: '#f4cf5e', textDecoration: 'none' }}>Casablanca</Link>
@@ -154,19 +154,13 @@ export default async function AltNozoul({ params }: { params: Promise<{ locale: 
         <section style={{ padding: '8px 32px 40px' }}>
           <div style={{ maxWidth: 900, margin: '0 auto' }}>
             <p style={{ fontSize: 13, lineHeight: 1.7, color: 'var(--text-3)', fontStyle: 'italic' }}>
-              Comparatif établi le 11 septembre 2026 à partir des informations publiques
-              publiées par l&apos;éditeur et d&apos;avis d&apos;utilisateurs accessibles en ligne.
-              Les produits évoluent : vérifiez les périmètres auprès de chaque éditeur avant
-              de décider, et demandez la même démonstration aux deux sur un scénario réel de
-              votre établissement. Nozoul est une marque de son propriétaire respectif, citée
-              à des fins de comparaison.
-            </p>
+              {tb('k041')}</p>
           </div>
         </section>
 
         <FinalCTA
-          title={<>Comparez sur votre propre exploitation.{' '}<span className="gradient-text">1 mois d&apos;essai gratuit.</span></>}
-          subtitle="Mise en route accompagnée en français. Sojori se connecte aussi à votre PMS existant — vous pouvez tester l'orchestration sans rien migrer."
+          title={<>{tb('k042')}{' '}<span className="gradient-text">{tb('k043')}</span></>}
+          subtitle={tb('k044')}
         />
 
         <PageFooter />

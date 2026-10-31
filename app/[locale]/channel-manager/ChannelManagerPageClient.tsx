@@ -6,24 +6,19 @@ import { PageHeader, PageFooter, PageHero, StatsBar, FinalCTA } from '@/componen
 import { ScrollPaginationDots } from '@/components/shared/ScrollPaginationDots';
 import { InFlow } from '@/components/InFlow';
 import { FaqSection } from '@/components/FaqSection';
-import { Exemple } from '@/components/refonte/Exemple';
 
 const CHANNEL_MANAGER_BENEFITS = [
-  { i: '•', t: 'Zéro overbooking', d: 'Booking confirmée → 18 OTAs bloquées en 2 secondes. Garantie contractuelle.' },
-  { i: '•', t: '−85% temps gestion', d: 'Une seule interface. Modifs propagées partout. Plus jamais 18 logins.' },
-  { i: '•', t: '+24% visibilité', d: 'Présence multi-canal = +47% de bookings vs Airbnb seul. Données prouvées.' },
-  { i: '•', t: 'Pricing optimisé', d: 'Couplé au Dynamic Pricing : tarifs ajustés par OTA selon leur audience.' },
-  { i: '•', t: 'Reporting unifié', d: 'Toutes vos données dans un seul dashboard. Comparable, exportable.' },
-  { i: '•', t: 'API stable', d: '99.97% uptime. Reconnexion auto si OTA tombe. Audit trail complet.' },
+  { i: '•', t: 'Une seule source de vérité', d: 'Disponibilités, prix et réservations de vos canaux au même endroit, par connecteur.' },
+  { i: '•', t: 'Une seule interface', d: 'Vous modifiez à un endroit ; les changements partent vers vos canaux par le connecteur.' },
+  { i: '•', t: 'Un seul flux de réservations', d: 'Les réservations des canaux arrivent avec vos réservations directes.' },
+  { i: '•', t: 'Prix couplés à la tarification', d: 'Couplé à la tarification dynamique : les prix que vous validez partent vers vos canaux.' },
+  { i: '•', t: 'Reporting unifié', d: 'Vos données dans un seul tableau de bord, comparables par canal.' },
+  { i: '•', t: 'Hôtels : Mews', d: 'Pour un hôtel, Sojori se connecte aussi à Mews.' },
 ] as const;
 
 const OTAS = [
   { n: 'Airbnb', c: '#FF5A5F' }, { n: 'Booking.com', c: '#003580' }, { n: 'Vrbo', c: '#0E64A4' },
-  { n: 'Expedia', c: '#FFC72C' }, { n: 'Hotels.com', c: '#D4145A' }, { n: 'Tripadvisor', c: '#34E0A1' },
-  { n: 'Agoda', c: '#FF5C00' }, { n: 'Hostelworld', c: '#FFC900' }, { n: 'Trip.com', c: '#287DFA' },
-  { n: 'HomeAway', c: '#0066B5' }, { n: 'Plum Guide', c: '#1A1A1A' }, { n: 'Marriott Homes', c: '#A21D2C' },
-  { n: 'Edreams', c: '#0AB1F0' }, { n: 'Hopper', c: '#492AE1' }, { n: 'Despegar', c: '#FFD400' },
-  { n: 'MisterB&B', c: '#5A4FCF' }, { n: 'Stayz', c: '#0096D6' }, { n: 'Wimdu', c: '#37AAEC' },
+  { n: 'Expedia', c: '#FFC72C' }, { n: 'Mews', c: '#7b6cf6' }, { n: 'Sojori Direct', c: '#f4cf5e' },
 ];
 
 /** Largeur de référence plus petite que 700 → scale plus grand sur mobile (cercle + badges plus lisibles) */
@@ -161,147 +156,6 @@ function HubAnimation() {
   );
 }
 
-const SYNC_DEMO_ROWS = [
-  { ota: 'Airbnb', c: '#FF5A5F', status: 'Live', price: '1,450 MAD', occ: '94%' },
-  { ota: 'Booking.com', c: '#003580', status: 'Live', price: '1,495 MAD', occ: '88%' },
-  { ota: 'Vrbo', c: '#0E64A4', status: 'Live', price: '1,470 MAD', occ: '76%' },
-  { ota: 'Expedia', c: '#FFC72C', status: 'Live', price: '1,505 MAD', occ: '62%' },
-  { ota: 'Hotels.com', c: '#D4145A', status: 'Syncing…', price: '1,495 MAD', occ: '54%' },
-  { ota: 'Tripadvisor', c: '#34E0A1', status: 'Live', price: '1,480 MAD', occ: '47%' },
-] as const;
-
-function SyncDemo() {
-  return (
-    <div className="card channel-manager-sync-card" style={{ padding: 0, overflow: 'hidden' }}>
-      <div
-        className="channel-manager-sync-header"
-        style={{
-          padding: '14px 18px',
-          borderBottom: '1px solid var(--glass-border)',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'space-between',
-          gap: 12,
-        }}
-      >
-        <div className="channel-manager-sync-header-title" style={{ fontSize: 14, fontWeight: 600, minWidth: 0, lineHeight: 1.35 }}>
-          Sync status — Riad Dar Zellige · Derb Jdid, Médina
-        </div>
-        <div
-          className="channel-manager-sync-live"
-          style={{
-            fontSize: 11,
-            color: '#10b981',
-            display: 'flex',
-            alignItems: 'center',
-            gap: 8,
-            flexShrink: 0,
-            fontWeight: 600,
-          }}
-        >
-          <span
-            className="channel-manager-sync-live-dot"
-            style={{
-              width: 8,
-              height: 8,
-              borderRadius: '50%',
-              background: '#10b981',
-              boxShadow: '0 0 10px #10b981',
-              flexShrink: 0,
-            }}
-          />
-          All synced · last sync 2 sec ago
-        </div>
-      </div>
-
-      {/* Desktop : tableau dense */}
-      <div className="channel-manager-sync-desktop" style={{ padding: '8px 0' }}>
-        {SYNC_DEMO_ROWS.map((r, i) => (
-          <div
-            key={r.ota}
-            style={{
-              display: 'grid',
-              gridTemplateColumns: '32px 1fr 100px 100px 100px 80px',
-              gap: 14,
-              alignItems: 'center',
-              padding: '11px 18px',
-              borderTop: i ? '1px solid rgba(255,255,255,0.04)' : 'none',
-            }}
-          >
-            <div style={{ width: 24, height: 24, borderRadius: 5, background: r.c, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 10, fontWeight: 700, color: '#fff' }}>{r.ota[0]}</div>
-            <div style={{ fontSize: 13, fontWeight: 500 }}>{r.ota}</div>
-            <div style={{ fontSize: 12, color: r.status === 'Live' ? '#10b981' : '#f4cf5e', display: 'flex', alignItems: 'center', gap: 6 }}>
-              <span style={{ width: 6, height: 6, borderRadius: '50%', background: r.status === 'Live' ? '#10b981' : '#f4cf5e', boxShadow: r.status === 'Live' ? '0 0 6px #10b981' : 'none', animation: r.status === 'Syncing…' ? 'pulse 1.4s infinite' : 'none' }} />
-              {r.status}
-            </div>
-            <div style={{ fontSize: 13, fontFamily: 'Geist Mono', fontWeight: 600 }}>{r.price}</div>
-            <div style={{ fontSize: 12, color: 'var(--text-3)', fontFamily: 'Geist Mono' }}>{r.occ}</div>
-            <div style={{ fontSize: 11, color: 'var(--text-3)', fontFamily: 'Geist Mono' }}>2 sec</div>
-          </div>
-        ))}
-      </div>
-
-      {/* Mobile : cartes OTA en scroll horizontal (snap + peek) */}
-      <div className="channel-manager-sync-mobile sj-mobile-hscroll">
-        {SYNC_DEMO_ROWS.map((r) => (
-          <div
-            key={r.ota}
-            className="channel-manager-sync-ota-card"
-            style={{
-              padding: 16,
-              borderRadius: 14,
-              background: 'linear-gradient(165deg, rgba(255,255,255,0.09) 0%, rgba(255,255,255,0.03) 100%)',
-              backdropFilter: 'blur(12px)',
-              border: '1px solid var(--glass-border)',
-              boxShadow: '0 10px 28px rgba(0,0,0,0.18)',
-            }}
-          >
-            <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 14 }}>
-              <div
-                style={{
-                  width: 44,
-                  height: 44,
-                  borderRadius: 10,
-                  background: r.c,
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  fontSize: 16,
-                  fontWeight: 800,
-                  color: '#fff',
-                  flexShrink: 0,
-                }}
-              >
-                {r.ota[0]}
-              </div>
-              <div style={{ fontSize: 16, fontWeight: 700, color: 'var(--text-1)', lineHeight: 1.2 }}>{r.ota}</div>
-            </div>
-            <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 12 }}>
-              <span
-                style={{
-                  width: 10,
-                  height: 10,
-                  borderRadius: '50%',
-                  background: r.status === 'Live' ? '#10b981' : '#f4cf5e',
-                  boxShadow: r.status === 'Live' ? '0 0 12px rgba(16,185,129,0.65)' : '0 0 10px rgba(244,207,94,0.45)',
-                  flexShrink: 0,
-                  animation: r.status === 'Syncing…' ? 'pulse 1.4s infinite' : 'none',
-                }}
-              />
-              <span style={{ fontSize: 14, fontWeight: 600, color: r.status === 'Live' ? '#10b981' : '#b45309' }}>{r.status}</span>
-            </div>
-            <div style={{ fontSize: 22, fontFamily: 'var(--font-mono), Geist Mono, monospace', fontWeight: 700, letterSpacing: '-0.02em', marginBottom: 10 }}>{r.price}</div>
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontSize: 13, color: 'var(--text-3)' }}>
-              <span>Occupation <span style={{ fontFamily: 'var(--font-mono), Geist Mono, monospace', fontWeight: 600, color: 'var(--text-2)' }}>{r.occ}</span></span>
-              <span style={{ fontFamily: 'var(--font-mono), Geist Mono, monospace', fontSize: 12 }}>2 sec</span>
-            </div>
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-}
-
 export default function ChannelManagerPageClient() {
   return (
     <>
@@ -354,32 +208,24 @@ export default function ChannelManagerPageClient() {
         <PageHeader pageTitle="Channel Manager" />
         <PageHero
           badge="Channel Manager · Distribution unifiée"
-          title={<>18 plateformes.<br /><span className="gradient-text">Une seule source de vérité.</span></>}
-          subtitle="Connectez Airbnb, Booking, Vrbo, Expedia… en un clic. Calendrier, prix et disponibilités synchronisés en temps réel. Zéro overbooking. Zéro double-saisie."
+          title={<>Vos canaux.<br /><span className="gradient-text">Une seule source de vérité.</span></>}
+          subtitle="Reliez vos canaux par connecteur : Airbnb, Booking.com, Vrbo et Expedia. Disponibilités, prix et réservations au même endroit."
           cta1="Voir la démo"
-          cta2="Connecter mes OTAs"
+          cta2="Parler à un expert"
         />
 
         <section style={{ padding: '20px 32px 100px' }}>
           <div style={{ maxWidth: 1200, margin: '0 auto' }}>
-            <div className="uppercase-sm" style={{ color: 'var(--text-3)', textAlign: 'center', marginBottom: 12 }}>● Sojori au centre · Tous les canaux connectés</div>
-            <div style={{ fontSize: 32, fontWeight: 700, letterSpacing: '-0.02em', textAlign: 'center', maxWidth: 700, margin: '0 auto 40px' }}>Une seule mise à jour. <span style={{ color: '#f4cf5e' }}>Synchronisée partout.</span></div>
+            <div className="uppercase-sm" style={{ color: 'var(--text-3)', textAlign: 'center', marginBottom: 12 }}>● Sojori au centre · Vos canaux</div>
+            <div style={{ fontSize: 32, fontWeight: 700, letterSpacing: '-0.02em', textAlign: 'center', maxWidth: 700, margin: '0 auto 40px' }}>Une seule mise à jour. <span style={{ color: '#f4cf5e' }}>Envoyée à vos canaux.</span></div>
             <HubAnimation />
           </div>
         </section>
 
         <section style={{ padding: '40px 32px 80px', borderTop: '1px solid var(--glass-border)' }}>
           <div style={{ maxWidth: 1200, margin: '0 auto' }}>
-            <div className="uppercase-sm" style={{ color: 'var(--text-3)', marginBottom: 12 }}>● Sync temps réel</div>
-            <div style={{ fontSize: 32, fontWeight: 700, letterSpacing: '-0.02em', marginBottom: 32, maxWidth: 700 }}>Visualisez la sync. <span style={{ color: 'var(--text-3)' }}>En direct.</span></div>
-            <Exemple><SyncDemo /></Exemple>
-          </div>
-        </section>
-
-        <section style={{ padding: '40px 32px 80px', borderTop: '1px solid var(--glass-border)' }}>
-          <div style={{ maxWidth: 1200, margin: '0 auto' }}>
             <div className="uppercase-sm" style={{ color: 'var(--text-3)', marginBottom: 12 }}>● Bénéfices</div>
-            <div style={{ fontSize: 32, fontWeight: 700, letterSpacing: '-0.02em', marginBottom: 32, maxWidth: 700 }}>Pourquoi un Channel Manager <span className="gradient-text">change tout</span>.</div>
+            <div style={{ fontSize: 32, fontWeight: 700, letterSpacing: '-0.02em', marginBottom: 32, maxWidth: 700 }}>Pourquoi un channel manager <span className="gradient-text">relié au PMS</span>.</div>
             <ScrollPaginationDots
               itemCount={CHANNEL_MANAGER_BENEFITS.length}
               gap={14}
@@ -399,12 +245,10 @@ export default function ChannelManagerPageClient() {
           </div>
         </section>
 
-        <StatsBar stats={[{k:'18 OTAs',l:'Connectées en 1 clic'},{k:'<2 sec',l:'Sync temps réel'},{k:'0',l:'Overbooking · garanti'},{k:'99.97%',l:'API uptime'}]} />
-
         <InFlow
           domain="Ventes & revenu"
           domainColor="#10b981"
-          self="Le channel manager distribue vos disponibilités et vos tarifs, dans les deux sens."
+          self="Le channel manager distribue vos disponibilités et vos tarifs vers vos canaux, par connecteur."
           upstream={[{ label: 'Inventaire du PMS', href: '/pms' }, { label: 'Prix recalculé', href: '/dynamic-pricing' }, { label: 'Chambre remise à blanc', href: '/teamflow' }]}
           downstream={[{ label: 'Réservation enregistrée', href: '/pms' }, { label: 'Mix canaux', href: '/analytics' }, { label: 'Séquence client', href: '/guest-experience' }]}
         />
@@ -414,20 +258,16 @@ export default function ChannelManagerPageClient() {
           title="Questions fréquentes"
           items={[
   {
-    "q": "Quels canaux sont synchronisés ?",
-    "a": "Booking, Expedia, Airbnb et les autres OTA, dans les deux sens : les disponibilités et les tarifs partent vers les canaux, les réservations reviennent dans le même flux que les réservations directes."
+    "q": "Quels canaux sont reliés ?",
+    "a": "Airbnb, Booking.com, Vrbo et Expedia, par connecteur, et Mews pour les hôtels. Les disponibilités et les tarifs partent vers les canaux ; les réservations reviennent dans le même flux que vos réservations directes."
   },
   {
-    "q": "Comment éviter la surréservation ?",
-    "a": "L'inventaire reste tenu par le PMS, qui fait autorité, et le channel manager distribue depuis cette source unique. C'est en haute saison que cela compte le plus : à taux d'occupation élevé, aucune chambre de secours ne permet de rattraper une double réservation."
+    "q": "Comment limiter les doubles réservations ?",
+    "a": "L'inventaire reste tenu par le PMS, qui fait autorité, et le channel manager distribue depuis cette source unique. C'est en haute saison que cela compte le plus : à taux d'occupation élevé, aucune chambre de secours ne permet de rattraper une erreur."
   },
   {
-    "q": "Peut-on mesurer ce que rapporte réellement chaque canal ?",
-    "a": "Oui, et c'est la question qui compte davantage que le volume brut. Le reporting sépare le revenu par canal une fois la commission déduite, ce qui permet d'arbitrer où pousser le direct plutôt que de subir le mix existant."
-  },
-  {
-    "q": "Une chambre remise à blanc redevient-elle vendable automatiquement ?",
-    "a": "Oui. C'est un exemple de ce que l'orchestration ajoute à un channel manager classique : la fin du ménage remet la chambre en vente sans intervention, au lieu d'attendre qu'une personne pense à rouvrir la disponibilité."
+    "q": "Peut-on mesurer ce que rapporte chaque canal ?",
+    "a": "Oui, c'est la question qui compte davantage que le volume brut. Le reporting sépare le revenu par canal, ce qui permet d'arbitrer où pousser le direct plutôt que de subir le mix existant."
   },
   {
     "q": "Faut-il abandonner notre channel manager actuel ?",
@@ -437,7 +277,7 @@ export default function ChannelManagerPageClient() {
         />
 
 
-        <FinalCTA title={<>Connectez vos OTAs. <span className="gradient-text">En 5 min.</span></>} subtitle="Setup guidé. Migration depuis votre channel manager actuel offerte. 1 mois d'essai gratuit." />
+        <FinalCTA title={<>Connectez vos canaux. <span className="gradient-text">Sans changer vos habitudes.</span></>} subtitle="Mise en route guidée. Reprise depuis votre channel manager actuel accompagnée. 1 mois d'essai gratuit." />
         <PageFooter />
       </div>
     </>

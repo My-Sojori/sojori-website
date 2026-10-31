@@ -30,37 +30,37 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
  * Relevé effectué le 2026-09-11 sur le site de l'éditeur.
  */
 export default async function AltWelcomax({ params }: { params: Promise<{ locale: string }> }) {
+  const tb = await getTranslations('pageBodies.alternative-welcomax');
   const { locale } = await params;
   return (
     <>
       <BackgroundEffects />
       <PageSchema
         crumbs={[
-          { name: 'Accueil', path: `/${locale}` },
+          { name: tb('crumbHome'), path: `/${locale}` },
           { name: 'Comparatifs', path: `/${locale}/comparatif-pms-maroc` },
-          { name: "Sojori vs Welcomax", path: `/${locale}/alternative-welcomax` },
+          { name: tb('k001'), path: `/${locale}/alternative-welcomax` },
         ]}
-        serviceName={"Alternative à Welcomax — orchestration hôtelière"}
-        serviceDescription={"Welcomax vs Sojori : suite PMS et channel manager pour le Maroc contre moteur d'orchestration de l'hospitalité. Comparatif des périmètres, pour hôtels, riads et résidences."}
+        serviceName={tb('k002')}
+        serviceDescription={tb('k003')}
         areaServed="Maroc"
       />
       <div style={{ position: 'relative', zIndex: 1 }}>
-        <PageHeader pageTitle="Sojori vs Welcomax" />
+        <PageHeader pageTitle={tb('k004')} />
 
         <PageHero
-          badge="Comparatif · Sojori vs Welcomax"
-          title={<>Alternative à Welcomax{' '}<br /><span className="gradient-text">de la centralisation à l&apos;orchestration</span></>}
-          subtitle="Welcomax propose une suite Hotel PMS, Rental PMS et Channel Manager pensée pour le marché marocain. Sojori répond à la question d&apos;après : une fois les réservations centralisées, qui coordonne ce qui suit ?"
-          cta1="Voir la démo"
-          cta2="Parler à un expert"
+          badge={tb('k005')}
+          title={<>{tb('k006')}{' '}<br /><span className="gradient-text">{tb('k007')}</span></>}
+          subtitle={tb('k008')}
+          cta1={tb('k009')}
+          cta2={tb('k010')}
         />
 
         <section style={{ padding: '8px 32px 56px' }}>
           <div style={{ maxWidth: 900, margin: '0 auto' }}>
-            <div className="uppercase-sm" style={{ color: 'var(--text-3)', marginBottom: 12 }}>● Réponse directe</div>
+            <div className="uppercase-sm" style={{ color: 'var(--text-3)', marginBottom: 12 }}>{tb('k011')}</div>
             <p style={{ fontSize: 17, lineHeight: 1.7, color: 'var(--text-2)' }}>
-              Welcomax est une suite marocaine articulée autour de trois produits — Hotel PMS, Rental PMS et Channel Manager — destinée aux hôtels, riads, maisons d&apos;hôtes, villas et appartements, avec une interface multilingue et multidevise, la fiscalité DGI et le rapport de police mis en avant, et un support local. Sojori partage ce terrain mais se place à un autre niveau : il inclut un PMS et se connecte aux PMS existants, et son objet est l&apos;orchestration — ménage et maintenance déclenchés sur les événements réels du séjour, communication client sur WhatsApp, tarification, coordination des équipes de terrain. La distinction se résume ainsi : centraliser l&apos;information et conduire l&apos;opération sont deux métiers. Une suite PMS vous donne une vue juste de ce qui se passe ; un orchestrateur fait en sorte que ce qui doit arriver arrive, sans qu&apos;un responsable le rappelle à chacun.
-            </p>
+              {tb('k012')}</p>
           </div>
         </section>
 
@@ -69,31 +69,31 @@ export default async function AltWelcomax({ params }: { params: Promise<{ locale
             déclasse les comparatifs déséquilibrés. */}
         <section style={{ padding: '40px 32px 64px', borderTop: '1px solid var(--glass-border)' }}>
           <div style={{ maxWidth: 900, margin: '0 auto' }}>
-            <h2 style={{ fontSize: 30, fontWeight: 700, letterSpacing: '-0.02em', marginBottom: 20 }}>Ce que Welcomax fait bien</h2>
-            <p style={{ fontSize: 16, lineHeight: 1.75, color: 'var(--text-3)', marginBottom: 16 }}>Welcomax couvre un spectre large avec un produit distinct pour l&apos;hôtel et un pour la location, ce qui est cohérent : les deux métiers n&apos;ont ni le même cycle ni la même facturation. Le marché marocain est traité sérieusement — fiscalité DGI, rapport de police, multidevise — et la documentation produit est de bonne qualité.</p>
-            <p style={{ fontSize: 16, lineHeight: 1.75, color: 'var(--text-3)', marginBottom: 16 }}>Sur le référencement, c&apos;est aujourd&apos;hui l&apos;acteur le mieux positionné sur les requêtes « PMS + ville » au Maroc, avec des pages structurées et des données enrichies. C&apos;est un concurrent sérieux, et le dire n&apos;enlève rien à notre proposition.</p>
+            <h2 style={{ fontSize: 30, fontWeight: 700, letterSpacing: '-0.02em', marginBottom: 20 }}>{tb('k013')}</h2>
+            <p style={{ fontSize: 16, lineHeight: 1.75, color: 'var(--text-3)', marginBottom: 16 }}>{tb('k014')}</p>
+            <p style={{ fontSize: 16, lineHeight: 1.75, color: 'var(--text-3)', marginBottom: 16 }}>{tb('k015')}</p>
           </div>
         </section>
 
         <section style={{ padding: '40px 32px 64px', borderTop: '1px solid var(--glass-border)' }}>
           <div style={{ maxWidth: 900, margin: '0 auto' }}>
-            <h2 style={{ fontSize: 30, fontWeight: 700, letterSpacing: '-0.02em', marginBottom: 24 }}>Où s&apos;arrête une suite PMS</h2>
+            <h2 style={{ fontSize: 30, fontWeight: 700, letterSpacing: '-0.02em', marginBottom: 24 }}>{tb('k016')}</h2>
             <div style={{ display: 'grid', gap: 16 }}>
               <div className="card" style={{ padding: 24 }}>
-                <div style={{ fontSize: 17, fontWeight: 600, marginBottom: 8 }}>La vue juste ne fait pas l&apos;opération</div>
-                <p style={{ fontSize: 15, lineHeight: 1.7, color: 'var(--text-3)' }}>Un tableau de bord qui affiche 85 % d&apos;occupation, le RevPAR et huit impayés est utile pour décider. Il ne dit pas qui nettoie la chambre 12, si la mission a été prise, ni que l&apos;arrivée de 15 h va attendre. L&apos;orchestration comble cet écart entre savoir et faire.</p>
+                <div style={{ fontSize: 17, fontWeight: 600, marginBottom: 8 }}>{tb('k017')}</div>
+                <p style={{ fontSize: 15, lineHeight: 1.7, color: 'var(--text-3)' }}>{tb('k018')}</p>
               </div>
               <div className="card" style={{ padding: 24 }}>
-                <div style={{ fontSize: 17, fontWeight: 600, marginBottom: 8 }}>Les équipes de terrain restent en dehors</div>
-                <p style={{ fontSize: 15, lineHeight: 1.7, color: 'var(--text-3)' }}>Réception et direction utilisent le logiciel. Le ménage, la maintenance et le gardiennage sont coordonnés ailleurs — téléphone, groupe WhatsApp personnel, cahier. Sojori les fait entrer dans le système par WhatsApp, en français ou en arabe, sans application à installer.</p>
+                <div style={{ fontSize: 17, fontWeight: 600, marginBottom: 8 }}>{tb('k019')}</div>
+                <p style={{ fontSize: 15, lineHeight: 1.7, color: 'var(--text-3)' }}>{tb('k020')}</p>
               </div>
               <div className="card" style={{ padding: 24 }}>
-                <div style={{ fontSize: 17, fontWeight: 600, marginBottom: 8 }}>Adopter une suite implique de tout reprendre</div>
-                <p style={{ fontSize: 15, lineHeight: 1.7, color: 'var(--text-3)' }}>Une suite PMS s&apos;adopte en bloc : c&apos;est sa logique. Sojori se connecte aux PMS existants, ce qui autorise une autre trajectoire — ajouter l&apos;orchestration d&apos;abord, décider ensuite du système de réservation.</p>
+                <div style={{ fontSize: 17, fontWeight: 600, marginBottom: 8 }}>{tb('k021')}</div>
+                <p style={{ fontSize: 15, lineHeight: 1.7, color: 'var(--text-3)' }}>{tb('k022')}</p>
               </div>
               <div className="card" style={{ padding: 24 }}>
-                <div style={{ fontSize: 17, fontWeight: 600, marginBottom: 8 }}>La conversation client n&apos;est pas un module</div>
-                <p style={{ fontSize: 15, lineHeight: 1.7, color: 'var(--text-3)' }}>Avant, pendant et après le séjour, le client écrit. Ces messages déclenchent des tâches, révèlent des incidents et déterminent les avis. Traiter ce flux comme un canal parmi d&apos;autres, ou comme le cœur du système, ne produit pas le même résultat.</p>
+                <div style={{ fontSize: 17, fontWeight: 600, marginBottom: 8 }}>{tb('k023')}</div>
+                <p style={{ fontSize: 15, lineHeight: 1.7, color: 'var(--text-3)' }}>{tb('k024')}</p>
               </div>
             </div>
           </div>
@@ -101,15 +101,15 @@ export default async function AltWelcomax({ params }: { params: Promise<{ locale
 
         <section style={{ padding: '40px 32px 64px', borderTop: '1px solid var(--glass-border)' }}>
           <div style={{ maxWidth: 900, margin: '0 auto' }}>
-            <h2 style={{ fontSize: 30, fontWeight: 700, letterSpacing: '-0.02em', marginBottom: 24 }}>Lequel choisir ?</h2>
+            <h2 style={{ fontSize: 30, fontWeight: 700, letterSpacing: '-0.02em', marginBottom: 24 }}>{tb('k025')}</h2>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 16 }}>
               <div className="card" style={{ padding: 24 }}>
-                <div style={{ fontSize: 13, fontWeight: 700, color: 'var(--text-3)', marginBottom: 10, textTransform: 'uppercase', letterSpacing: 1 }}>Choisissez Welcomax</div>
-                <p style={{ fontSize: 15, lineHeight: 1.7, color: 'var(--text-3)' }}>Vous cherchez une suite PMS classique bien adaptée au Maroc, avec des produits distincts pour l&apos;hôtel et la location, et votre besoin s&apos;arrête à la centralisation des réservations, à la distribution et à la facturation.</p>
+                <div style={{ fontSize: 13, fontWeight: 700, color: 'var(--text-3)', marginBottom: 10, textTransform: 'uppercase', letterSpacing: 1 }}>{tb('k026')}</div>
+                <p style={{ fontSize: 15, lineHeight: 1.7, color: 'var(--text-3)' }}>{tb('k027')}</p>
               </div>
               <div className="card" style={{ padding: 24 }}>
-                <div style={{ fontSize: 13, fontWeight: 700, color: '#f4cf5e', marginBottom: 10, textTransform: 'uppercase', letterSpacing: 1 }}>Choisissez Sojori</div>
-                <p style={{ fontSize: 15, lineHeight: 1.7, color: 'var(--text-3)' }}>Votre difficulté est la coordination : chambres pas prêtes, ménage géré au téléphone, maintenance qui traîne, messages clients perdus. Ou vous avez déjà un PMS et vous ne voulez pas en changer.</p>
+                <div style={{ fontSize: 13, fontWeight: 700, color: '#f4cf5e', marginBottom: 10, textTransform: 'uppercase', letterSpacing: 1 }}>{tb('k028')}</div>
+                <p style={{ fontSize: 15, lineHeight: 1.7, color: 'var(--text-3)' }}>{tb('k029')}</p>
               </div>
             </div>
           </div>
@@ -117,25 +117,25 @@ export default async function AltWelcomax({ params }: { params: Promise<{ locale
 
         <section style={{ padding: '32px 32px 64px', borderTop: '1px solid var(--glass-border)' }}>
           <div style={{ maxWidth: 1000, margin: '0 auto' }}>
-            <div className="uppercase-sm" style={{ color: 'var(--text-3)', marginBottom: 14 }}>● Poursuivre</div>
+            <div className="uppercase-sm" style={{ color: 'var(--text-3)', marginBottom: 14 }}>{tb('k030')}</div>
             <div style={{ fontSize: 14, color: 'var(--text-3)', lineHeight: 2 }}>
-              <Link href={'/comparatif-pms-maroc' as const} style={{ color: '#f4cf5e', textDecoration: 'none', fontWeight: 600 }}>Comparatif des PMS au Maroc</Link>
+              <Link href={'/comparatif-pms-maroc' as const} style={{ color: '#f4cf5e', textDecoration: 'none', fontWeight: 600 }}>{tb('k031')}</Link>
               {' · '}
-              <Link href={'/go-siyaha' as const} style={{ color: '#f4cf5e', textDecoration: 'none' }}>Go Siyaha</Link>
+              <Link href={'/go-siyaha' as const} style={{ color: '#f4cf5e', textDecoration: 'none' }}>{tb('k032')}</Link>
               {' · '}
-              <Link href={'/pms' as const} style={{ color: '#f4cf5e', textDecoration: 'none' }}>Le PMS Sojori</Link>
+              <Link href={'/pms' as const} style={{ color: '#f4cf5e', textDecoration: 'none' }}>{tb('k033')}</Link>
               <br />
-              Autres comparatifs :{' '}
-              <Link href={'/alternative-cloudbeds' as const} style={{ color: '#f4cf5e', textDecoration: 'none' }}>vs Cloudbeds</Link>
+              {tb('k034')}{' '}
+              <Link href={'/alternative-cloudbeds' as const} style={{ color: '#f4cf5e', textDecoration: 'none' }}>{tb('k035')}</Link>
               {' · '}
-              <Link href={'/alternative-pluriel' as const} style={{ color: '#f4cf5e', textDecoration: 'none' }}>vs Pluriel</Link>
+              <Link href={'/alternative-pluriel' as const} style={{ color: '#f4cf5e', textDecoration: 'none' }}>{tb('k036')}</Link>
               {' · '}
-              <Link href={'/alternative-nozoul' as const} style={{ color: '#f4cf5e', textDecoration: 'none' }}>vs Nozoul</Link>
+              <Link href={'/alternative-nozoul' as const} style={{ color: '#f4cf5e', textDecoration: 'none' }}>{tb('k037')}</Link>
               <br />
               <br />
-              Comprendre :{' '}
-              <Link href={'/orchestration' as const} style={{ color: '#f4cf5e', textDecoration: 'none', fontWeight: 600 }}>Qu&apos;est-ce que l&apos;orchestration hôtelière ?</Link>
-              Par ville :{' '}
+              {tb('k038')}{' '}
+              <Link href={'/orchestration' as const} style={{ color: '#f4cf5e', textDecoration: 'none', fontWeight: 600 }}>{tb('k039')}</Link>
+              {tb('k040')}{' '}
               <Link href={'/pms-marrakech' as const} style={{ color: '#f4cf5e', textDecoration: 'none' }}>Marrakech</Link>
               {' · '}
               <Link href={'/pms-casablanca' as const} style={{ color: '#f4cf5e', textDecoration: 'none' }}>Casablanca</Link>
@@ -154,19 +154,13 @@ export default async function AltWelcomax({ params }: { params: Promise<{ locale
         <section style={{ padding: '8px 32px 40px' }}>
           <div style={{ maxWidth: 900, margin: '0 auto' }}>
             <p style={{ fontSize: 13, lineHeight: 1.7, color: 'var(--text-3)', fontStyle: 'italic' }}>
-              Comparatif établi le 11 septembre 2026 à partir des informations publiques
-              publiées par l&apos;éditeur et d&apos;avis d&apos;utilisateurs accessibles en ligne.
-              Les produits évoluent : vérifiez les périmètres auprès de chaque éditeur avant
-              de décider, et demandez la même démonstration aux deux sur un scénario réel de
-              votre établissement. Welcomax est une marque de son propriétaire respectif, citée
-              à des fins de comparaison.
-            </p>
+              {tb('k041')}</p>
           </div>
         </section>
 
         <FinalCTA
-          title={<>Comparez sur votre propre exploitation.{' '}<span className="gradient-text">1 mois d&apos;essai gratuit.</span></>}
-          subtitle="Mise en route accompagnée en français. Sojori se connecte aussi à votre PMS existant — vous pouvez tester l'orchestration sans rien migrer."
+          title={<>{tb('k042')}{' '}<span className="gradient-text">{tb('k043')}</span></>}
+          subtitle={tb('k044')}
         />
 
         <PageFooter />
