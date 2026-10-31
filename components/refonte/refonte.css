@@ -598,3 +598,10 @@ html[dir='rtl'] .sj2-rapport__marque { letter-spacing: 0; }
 /* ================= Lot « Vérité » : la scène est une simulation ================= */
 .sj2-simulation { margin-bottom: 12px; border-color: var(--sj-line-gold-2); min-height: 28px; }
 .sj2-control-lead { margin-top: 12px; }
+
+/* pied de page : réseaux et contact (cibles ≥ 44 px, icônes SVG en ligne) */
+.sj2-footer__contact { flex: 0 1 240px; }
+.sj2-footer__social { gap: 10px; }
+.sj2-footer__social svg { flex: none; }
+.sj2-footer__note { font-size: 13.5px; color: var(--sj-text-3); }
+

@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { useTranslations } from "next-intl";
 import { BackgroundEffects } from "@/components/BackgroundEffects";
-import { PageHeader, PageFooter, PageHero, StatsBar, FinalCTA, SectionHead } from "@/components/SharedComponents";
+import { PageHeader, PageFooter, PageHero, FinalCTA, SectionHead } from "@/components/SharedComponents";
 import { ScrollPaginationDots } from "@/components/shared/ScrollPaginationDots";
 import { InFlow } from '@/components/InFlow';
 import { FaqSection } from '@/components/FaqSection';
@@ -969,11 +969,6 @@ export default function WhatsAppPage() {
         </section>
 
         {/* Stats */}
-        <StatsBar stats={[0, 1, 2, 3].map(idx => {
-          const stat = t.raw(`stats.${idx}`);
-          return { k: stat.key, l: stat.label };
-        })} />
-
         {/* Final CTA */}
 
         <InFlow
