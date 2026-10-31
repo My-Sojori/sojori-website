@@ -1,5 +1,6 @@
 import { useTranslations } from 'next-intl';
 import { CalendrierExemple } from './CalendrierExemple';
+import { PmsListe } from './PmsListe';
 
 const SENS: ('same' | 'up' | 'down')[] = ['down', 'same', 'same', 'down', 'up', 'up', 'same'];
 const FLECHE = { up: '↑', down: '↓', same: '→' };
@@ -21,11 +22,7 @@ export function Socle() {
       <div className="sj2-socle__grille">
         <div className="sj2-card sj2-card--gold sj2-socle__pms">
           <span className="sj2-eyebrow sj2-eyebrow--sm">{t('pmsTitle')}</span>
-          <ul className="sj2-pms">
-            {pms.map((m) => (
-              <li key={m.name}><h3>{m.name}</h3><p>{m.desc}</p></li>
-            ))}
-          </ul>
+          <PmsListe items={pms} />
         </div>
         <div className="sj2-card sj2-socle__own">
           <span className="sj2-eyebrow sj2-eyebrow--sm sj2-eyebrow--dim">{t('ownTitle')}</span>

@@ -1,6 +1,7 @@
 import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/routing';
 import { SojoriMark } from '@/components/Logo';
+import { FooterCol } from './FooterCol';
 
 const LINKEDIN = 'https://www.linkedin.com/company/108488739';
 const INSTAGRAM = 'https://instagram.com/sojoriapp';
@@ -58,8 +59,7 @@ export function SiteFooter() {
             <li><Link href="/offre" prefetch={false}>{t('offer')}</Link></li>
           </ul>
         </nav>
-        <nav className="sj2-footer__col" aria-labelledby="sj2-foot-guides">
-          <h2 id="sj2-foot-guides" className="sj2-eyebrow sj2-eyebrow--sm sj2-eyebrow--dim sj2-footer__titre">{t('guides')}</h2>
+        <FooterCol id="sj2-foot-guides" titre={t('guides')}>
           <ul>
             <li><Link href="/pms-maroc" prefetch={false}>{p('pmsMaroc')}</Link></li>
             <li><Link href="/conciergerie-maroc" prefetch={false}>{p('conciergerieMaroc')}</Link></li>
@@ -68,7 +68,7 @@ export function SiteFooter() {
             <li><Link href="/fiche-de-police-maroc" prefetch={false}>{p('fichePolice')}</Link></li>
             <li><Link href="/facture-electronique-maroc" prefetch={false}>{p('factureElectronique')}</Link></li>
           </ul>
-        </nav>
+        </FooterCol>
         <nav className="sj2-footer__col" aria-labelledby="sj2-foot-sojori">
           <h2 id="sj2-foot-sojori" className="sj2-eyebrow sj2-eyebrow--sm sj2-eyebrow--dim sj2-footer__titre">{t('company')}</h2>
           <ul>
@@ -77,14 +77,13 @@ export function SiteFooter() {
             <li><Link href="/mcp" prefetch={false}>{t('mcpDev')}</Link></li>
           </ul>
         </nav>
-        <nav className="sj2-footer__col" aria-labelledby="sj2-foot-villes">
-          <h2 id="sj2-foot-villes" className="sj2-eyebrow sj2-eyebrow--sm sj2-eyebrow--dim sj2-footer__titre">{t('cities')}</h2>
+        <FooterCol id="sj2-foot-villes" titre={t('cities')}>
           <ul>
             {VILLES.map(([id, href]) => (
               <li key={id}><Link href={href} prefetch={false}>{t(`city.${id}`)}</Link></li>
             ))}
           </ul>
-        </nav>
+        </FooterCol>
         <div className="sj2-footer__col sj2-footer__contact">
           <h2 className="sj2-eyebrow sj2-eyebrow--sm sj2-eyebrow--dim sj2-footer__titre">{t('follow')}</h2>
           <ul>
