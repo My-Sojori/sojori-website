@@ -2069,8 +2069,8 @@
     "home": {
       "hero": {
         "keywords": "PMS y agentes de WhatsApp para alquiler de corta estancia y hoteles",
-        "sub": "Usted decide, sus agentes hacen el resto. El PMS de Sojori, o el suyo: once agentes y módulos de WhatsApp se conectan a él. Vea una jornada tipo en una conserjería o en un hotel.",
-        "seeAgents": "Ver a los agentes trabajando",
+        "sub": "Usted decide, sus agentes hacen el resto: responden a los viajeros, coordinan a su equipo y preparan sus decisiones en WhatsApp. Con el PMS de Sojori, o con el suyo.",
+        "seeAgents": "Ver una jornada con Sojori",
         "demo": "Solicitar una demo"
       },
       "scene": {
@@ -2079,10 +2079,20 @@
         "resume": "Reanudar",
         "pauseAria": "Poner la animación en pausa",
         "resumeAria": "Reanudar la animación",
-        "chooseLabel": "EJEMPLOS DE JORNADA TIPO · ELIJA UNO",
+        "chooseLabel": "EJEMPLOS DE JORNADA TIPO · A SU ELECCIÓN",
         "chooseAria": "Elegir un establecimiento",
         "regionAria": "La sala de los agentes: quién habla con quién, en esta simulación",
         "cas": {
+          "riad": {
+            "type": "Riad",
+            "size": "8 habitaciones",
+            "desc": "Un equipo pequeño, viajeros de todo el mundo.",
+            "titre": "RIAD · 8 HABITACIONES",
+            "unites": "habitaciones ocupadas",
+            "staff": "Recepción · limpieza",
+            "tiers": "Traslados · proveedores",
+            "prospects": "Agencias de viajes"
+          },
           "conc": {
             "type": "Empresa de conserjería",
             "size": "50 propiedades",
@@ -2196,19 +2206,19 @@
           "tarifDoneNon": "No se ha aplicado nada.",
           "quoteDoneOk": "Presupuesto enviado.",
           "quoteDoneNon": "Presupuesto no enviado.",
-          "hotPlan": "Plan del día: {departs} salidas, {recouches} limpiezas de estancia, {femmes} camareras de piso.",
-          "hotStaff": "Plan de limpieza enviado a {femmes} camareras de piso. Habitación {r1} primero.",
+          "hotPlan": "Plan del día: {departs, plural, one {# salida} other {# salidas}}, {recouches, plural, one {# limpieza de estancia} other {# limpiezas de estancia}}, {femmes, plural, one {# camarera de piso} other {# camareras de piso}}.",
+          "hotStaff": "Plan de limpieza enviado a {femmes, plural, one {# camarera de piso} other {# camareras de piso}}. Habitación {r1} primero.",
           "hotAsk": "Habitación {r1}: ¿llegada posible antes de las 12:00?",
           "hotOpen": "¿Habitación {r1} lista antes de las 12:00?",
           "hotStaffReply": "Habitación {r1} hecha. (mensaje de voz)",
           "hotClose": "Habitación {r1} lista a las 11:40.",
           "hotGuest": "Su habitación está lista desde las 11:40.",
-          "hotWelcome": "{arrivees} mensajes de bienvenida salen de una vez, uno por llegada.",
+          "hotWelcome": "{arrivees, plural, one {# mensaje de bienvenida sale al llegar.} other {# mensajes de bienvenida salen de una vez, uno por llegada.}}",
           "hotBookAsk": "Quisiera reservar 3 noches, en directo.",
           "hotBookCard": "Reserva directa lista: habitación {r2}, 3 noches. ¿La aprueba?",
           "hotBookReplyOk": "Su reserva está confirmada.",
           "hotBookReplyNon": "Lo sentimos, esta habitación ya no está disponible.",
-          "hotShuttle": "Traslado al aeropuerto a las 14:20: ¿confirmado? ({navettes} traslados hoy)",
+          "hotShuttle": "Traslado al aeropuerto a las 14:20: ¿confirmado? ({navettes, plural, one {# traslado hoy} other {# traslados hoy}})",
           "hotShuttleOk": "Confirmado.",
           "hotShuttleClose": "Traslado confirmado para las 14:20.",
           "hotSiteCard": "La página «Seminarios» está lista. Aquí tiene la vista previa. ¿La aprueba?",
@@ -2217,20 +2227,30 @@
           "hotProsp3": "Empresa calificada: seminario de 20 personas en marzo.",
           "hotQuote": "Presupuesto listo para el seminario de marzo. ¿Lo aprueba?"
         },
-        "simulation": "Simulación · datos ficticios"
+        "simulation": "Simulación · datos ficticios",
+        "histoires": {
+          "aria": "Las historias de la jornada",
+          "arrivee": "Una llegada",
+          "proprio": "Un propietario",
+          "resa": "Una reserva",
+          "equipe": "Su equipo",
+          "site": "Su sitio, sus precios",
+          "client": "Un nuevo cliente",
+          "menage": "La limpieza de la mañana",
+          "arriveeAvance": "Una llegada anticipada",
+          "navette": "Un traslado"
+        }
       },
       "agents": {
-        "eyebrow": "02 · LOS AGENTES",
+        "eyebrow": "03 · LOS AGENTES",
         "title": "Cada oficio del alquiler tiene su agente. Y cada uno le devuelve tiempo.",
-        "lead": "Trabajan sobre la misma estancia, el mismo alojamiento, el mismo equipo. Usted elige los que necesita, propiedad por propiedad.",
+        "lead": "Tres agentes hacen funcionar la estancia. Los demás se añaden cuando los necesita.",
         "chooseAria": "Elegir un agente",
         "kpi": {
           "guest": "ganadas por semana en los mensajes de los huéspedes",
           "field": "ganadas por semana en la coordinación del equipo de campo",
-          "fast": "para responder a un huésped, las 24 horas",
           "share": "de las solicitudes resueltas sin usted",
           "valueHours": "≈ {h} h",
-          "valueFast": "< 1 min",
           "valueShare": "≈ 70 %",
           "note": "Estimación para {type} de {size}: 2 min por solicitud de huésped, 3 min por tarea de coordinación, 70 % de las solicitudes resueltas por el agente. A confirmar con sus propias mediciones. No se garantiza ningún resultado."
         },
@@ -2246,7 +2266,8 @@
             "you": "Usted",
             "prospects": "Prospectos",
             "clients": "Clientes"
-          }
+          },
+          "promiseOption": "LA PROMESA"
         },
         "status": {
           "available": "Disponible",
@@ -2269,7 +2290,8 @@
             "r": "Sí. Aquí tiene el precio para 4 noches y el enlace para confirmar.",
             "promise": "Cada solicitud recibe una respuesta, un presupuesto o una tarjeta que validar, de día y de noche.",
             "kpiValue": "≈ 70 %",
-            "kpiText": "de las solicitudes de reserva resueltas sin usted"
+            "kpiText": "de las solicitudes de reserva resueltas sin usted",
+            "question": "¿Quién atiende mis solicitudes de reserva?"
           },
           "service": {
             "name": "Agente de Atención al Cliente",
@@ -2287,7 +2309,8 @@
             "r": "Está en su guía de llegada. Se la envío aquí.",
             "promise": "Usted solo responde a las preguntas que requieren su criterio.",
             "kpiValue": "≈ {h} h",
-            "kpiText": "ganadas por semana en los mensajes de los huéspedes"
+            "kpiText": "ganadas por semana en los mensajes de los huéspedes",
+            "question": "¿Quién responde al viajero y cuándo intervengo yo?"
           },
           "operations": {
             "name": "Agente de Operaciones",
@@ -2305,7 +2328,8 @@
             "r": "Cerrada. Próxima tarea: recepción a las 15:00.",
             "promise": "Un mensaje de voz basta: la tarea se crea, se asigna y se sigue hasta el final.",
             "kpiValue": "≈ {h} h",
-            "kpiText": "ganadas por semana en la coordinación del equipo de campo"
+            "kpiText": "ganadas por semana en la coordinación del equipo de campo",
+            "question": "¿Cómo recibe y sigue el trabajo mi equipo?"
           },
           "pricing": {
             "name": "Precios dinámicos",
@@ -2455,10 +2479,12 @@
             "kpiText": "para añadir a su oferta",
             "note": "Una llamada es una voz en tiempo real, que no debe confundirse con un mensaje de voz, ya compatible."
           }
-        }
+        },
+        "groupMain": "LA ESTANCIA, DÍA A DÍA",
+        "groupMore": "PARA IR MÁS LEJOS"
       },
       "modules": {
-        "eyebrow": "03 · LOS MÓDULOS",
+        "eyebrow": "05 · LOS MÓDULOS",
         "title": "Los módulos de WhatsApp: una puerta de entrada para cada persona.",
         "lead": "Nadie instala una aplicación. El huésped, el equipo, el admin y el propietario escriben o envían un mensaje de voz, como ya lo hacen. Detrás, los agentes se pasan la solicitud.",
         "chooseAria": "Elegir un módulo",
@@ -2697,7 +2723,7 @@
         },
         "agents": {
           "eyebrow": "2 · LOS AGENTES",
-          "title": "Once agentes, uno por oficio.",
+          "title": "Un agente por función.",
           "sub": "Ver los agentes →"
         },
         "modules": {
@@ -2707,7 +2733,7 @@
         }
       },
       "socle": {
-        "eyebrow": "01 · LA BASE",
+        "eyebrow": "02 · LA BASE",
         "title": "El PMS Sojori, o el suyo.",
         "lead": "Los agentes y los módulos trabajan sobre ambos. No tiene que cambiarlo todo para empezar.",
         "pmsTitle": "EL PMS SOJORI INCLUYE",
@@ -2810,10 +2836,14 @@
           },
           "cardTitle": "Tarjeta por aprobar · Precios dinámicos",
           "cardText": "El fin de semana del 14 tiene más demanda de lo habitual. Propongo un precio más alto para el viernes y el sábado."
+        },
+        "capture": {
+          "alt": "Calendario de Sojori: reservas de varios alojamientos durante un mes (cuenta de prueba).",
+          "caption": "El calendario del PMS de Sojori, en una cuenta de prueba."
         }
       },
       "stay": {
-        "eyebrow": "04 · UNA ESTANCIA",
+        "eyebrow": "01 · UNA ESTANCIA",
         "title": "De la reserva a la salida, siete etapas. Usted solo ve la que se bloquea.",
         "lead": "Cada etapa tiene su agente y su plazo. Mientras todo avanza, no se le pide nada. Cuando una etapa se retrasa, aparece una línea en su panel, con su causa.",
         "pick": "ELIJA UNA ETAPA",
@@ -2899,7 +2929,7 @@
         ]
       },
       "control": {
-        "eyebrow": "05 · USTED CONSERVA EL CONTROL",
+        "eyebrow": "04 · USTED CONSERVA EL CONTROL",
         "title": "Usted fija las reglas. Sus agentes actúan dentro de ese marco.",
         "cards": [
           {

@@ -3,10 +3,10 @@
  * (journeeHotel.ts, dépôt Sojori-orchestrator) — 75 % d'occupation, séjour moyen de 2,5 nuits.
  * Copiées ici parce que les deux dépôts ne partagent pas de paquet ; à garder identiques.
  */
-export type CasId = 'conc' | 'h30' | 'h100';
+export type CasId = 'riad' | 'conc' | 'h30' | 'h100';
 
-export const CAS_IDS: CasId[] = ['conc', 'h30', 'h100'];
-export const TAILLES: Record<CasId, number> = { conc: 50, h30: 30, h100: 100 };
+export const CAS_IDS: CasId[] = ['riad', 'conc', 'h30', 'h100'];
+export const TAILLES: Record<CasId, number> = { riad: 8, conc: 50, h30: 30, h100: 100 };
 
 export type Journee = {
   n: number;
