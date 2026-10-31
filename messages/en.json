@@ -364,7 +364,7 @@
       "staff": {
         "label": "WhatsApp Staff",
         "badge": "Team",
-        "stat": "Real-time"
+        "stat": "Up to date"
       },
       "admin": {
         "label": "WhatsApp Admin",
@@ -534,7 +534,7 @@
             "label": "Per staff"
           },
           {
-            "key": "Real-time",
+            "key": "Up to date",
             "label": "Notifications"
           },
           {
@@ -609,7 +609,7 @@
           },
           {
             "label": "Instant confirmation",
-            "detail": "Real-time availability"
+            "detail": "Up-to-date availability"
           },
           {
             "label": "Dynamic pricing",
@@ -648,11 +648,11 @@
         },
         {
           "title": "Instant Response",
-          "description": "Less than 2 seconds · No waiting · Guaranteed satisfaction"
+          "description": "Less than 2 seconds · No waiting"
         },
         {
           "title": "Auto Sync",
-          "description": "Real-time updates · Instant notifications"
+          "description": "Up-to-date information · WhatsApp notifications"
         },
         {
           "title": "Integrated Analytics",
@@ -800,6 +800,36 @@
       "title": "Activate WhatsApp.",
       "titleGradient": "Today.",
       "subtitle": "WhatsApp modules for the guest, the staff, the admin and the owner. No development required."
+    },
+    "faq": {
+      "badge": "WhatsApp",
+      "title": "Frequently asked questions",
+      "items": [
+        {
+          "q": "Why WhatsApp rather than an app?",
+          "a": "Because your guests and your teams already use it. A housekeeper will not install a business app, and neither will a traveling guest. WhatsApp removes the hurdle: no account to create, nothing to download, no forgotten password."
+        },
+        {
+          "q": "Does the assistant answer guests on its own?",
+          "a": "It handles routine requests and suggests replies for the rest. You set what goes out automatically and what goes through approval. The level of autonomy is yours: we do not assume an AI should handle everything without human oversight."
+        },
+        {
+          "q": "Do I need a WhatsApp Business number?",
+          "a": "Yes, the property uses its own business number through the WhatsApp Business API. Setting it up is part of the rollout."
+        },
+        {
+          "q": "In which languages do teams receive their tasks?",
+          "a": "In French or Arabic, depending on what each person actually uses. It is a point often overlooked: a tool that only the front desk understands leaves the field outside the system, when the field is what executes."
+        },
+        {
+          "q": "Can the police form be collected through WhatsApp?",
+          "a": "Yes. The guest fills it in before arrival and attaches their ID document, as part of the digital check-in. You get complete data without typing at the desk. Declaring to the authorities remains your own procedure."
+        },
+        {
+          "q": "What happens if a guest writes at night?",
+          "a": "The assistant answers routine requests at any hour and escalates the rest according to your rules. The point is not to reply fast for the sake of it, but for every request to be handled or escalated, without waiting for the morning."
+        }
+      ]
     }
   },
   "integrations": {
@@ -2134,7 +2164,7 @@
       },
       {
         "title": "Automated payments",
-        "desc": "Stripe + bank transfers. Charge on booking, one-click refunds."
+        "desc": "Stripe + bank transfers. Online payment, refunds from the booking."
       },
       {
         "title": "Invoices & contracts",
@@ -2175,6 +2205,36 @@
       "titleBefore": "Migrate your PMS.",
       "titleGradient": "In 7 days.",
       "subtitle": "Guided onboarding. A demo on your own listings."
+    },
+    "faq": {
+      "badge": "Hotel PMS",
+      "title": "Frequently asked questions",
+      "items": [
+        {
+          "q": "Is the Sojori PMS mandatory?",
+          "a": "No. Sojori includes its own PMS for a property that does not have one, but it also connects to existing PMSs, including Mews. You can therefore add the orchestration layer without touching your booking system: it is often the shortest way to measure what it brings."
+        },
+        {
+          "q": "Does it handle the Moroccan police form?",
+          "a": "Sojori takes care of the form: the guest fills it in and signs it before arrival from WhatsApp, with their ID document, as part of the digital check-in. You get complete data without typing at the desk. Declaring to the authorities remains the property’s own procedure."
+        },
+        {
+          "q": "How is the tourist tax calculated?",
+          "a": "It is set per property: an amount per guest and per night. Sojori calculates the amount; collection follows the mode you set."
+        },
+        {
+          "q": "Can I manage several properties?",
+          "a": "Yes, with a consolidated view and rules specific to each site. This is usually where a PMS designed for a single property reaches its limit: shared teams, priority trade-offs between sites, overall reporting."
+        },
+        {
+          "q": "What happens to our booking history?",
+          "a": "Data migration is handled during onboarding. It is the longest step of the rollout, and the one to scope first, more than the installation itself."
+        },
+        {
+          "q": "How long until we are operational?",
+          "a": "A few days for a single property. What takes time is not going live but migrating the history and setting up your rules: cleaning cadences, pricing, approval paths."
+        }
+      ]
     }
   },
   "legal": {
@@ -3841,18 +3901,18 @@
       "taxeSejour": {
         "meta": {
           "title": "Tourist tax in Morocco: what Sojori calculates",
-          "description": "Guide: the tourist tax in Morocco and how Sojori configures, calculates and collects it. Rates and rules are to be confirmed."
+          "description": "Guide: the tourist tax in Morocco and how Sojori configures and calculates it. Rates and rules are to be confirmed."
         },
         "kicker": "GUIDE · TOURIST TAX",
         "title": "Tourist tax in Morocco: what Sojori calculates.",
-        "answer": "Sojori calculates and collects the tourist tax for each property according to the mode you configure. The rates and rules of the tourist tax in Morocco are to be confirmed with an official source.",
+        "answer": "Sojori calculates the tourist tax for each property, per guest and per night, based on the setting you choose; collection follows the mode you set. The rates and rules of the tourist tax in Morocco are to be confirmed with an official source.",
         "sections": [
           {
             "title": "What Sojori does",
             "text": "The tourist tax is set for each property, then calculated on each booking.",
             "points": [
               "Configurable for each property: per stay, per night, or per person per night.",
-              "Collection mode chosen by the property.",
+              "Collection mode set by the property.",
               "Calculated per guest and per night, based on each property’s setting, in the Sojori PMS.",
               "For a booking received from a channel where the tax is not included in the total, Sojori flags the amount to collect on site."
             ]
@@ -3874,8 +3934,8 @@
             "a": "Sojori calculates the tourist tax according to the mode you configure: per stay, per night, or per person per night. The official amounts and rules are to be confirmed with an official source."
           },
           {
-            "q": "Does Sojori collect the tourist tax?",
-            "a": "Yes, the Sojori PMS calculates and collects the tourist tax automatically. For a channel that does not include it in the total, Sojori shows the amount to collect on site."
+            "q": "Does Sojori calculate the tourist tax?",
+            "a": "Sojori calculates the amount, per guest and per night, based on each property’s setting; collection follows the mode you set."
           },
           {
             "q": "Does Sojori remit the tax to the authorities?",

@@ -364,7 +364,7 @@
       "staff": {
         "label": "WhatsApp Personal",
         "badge": "Equipo",
-        "stat": "Tiempo real"
+        "stat": "Al día"
       },
       "admin": {
         "label": "WhatsApp Admin",
@@ -534,7 +534,7 @@
             "label": "Por personal"
           },
           {
-            "key": "Tiempo real",
+            "key": "Al día",
             "label": "Notificaciones"
           },
           {
@@ -609,7 +609,7 @@
           },
           {
             "label": "Confirmación instantánea",
-            "detail": "Disponibilidad en tiempo real"
+            "detail": "Disponibilidad al día"
           },
           {
             "label": "Precios dinámicos",
@@ -648,11 +648,11 @@
         },
         {
           "title": "Respuesta Instantánea",
-          "description": "Menos de 2 segundos · Sin espera · Satisfacción garantizada"
+          "description": "Menos de 2 segundos · Sin espera"
         },
         {
           "title": "Sincronización Auto",
-          "description": "Actualizaciones en tiempo real · Notificaciones instantáneas"
+          "description": "Información al día · Notificaciones por WhatsApp"
         },
         {
           "title": "Analytics Integrados",
@@ -800,6 +800,36 @@
       "title": "Activa WhatsApp.",
       "titleGradient": "Hoy mismo.",
       "subtitle": "Módulos de WhatsApp para el huésped, el equipo, el administrador y el propietario. Sin desarrollos."
+    },
+    "faq": {
+      "badge": "WhatsApp",
+      "title": "Preguntas frecuentes",
+      "items": [
+        {
+          "q": "¿Por qué WhatsApp en lugar de una aplicación?",
+          "a": "Porque sus clientes y sus equipos ya lo usan. Una camarera de pisos no instalará una aplicación profesional; un cliente de viaje tampoco. WhatsApp elimina el obstáculo: sin cuenta que crear, sin descarga, sin contraseña olvidada."
+        },
+        {
+          "q": "¿El asistente responde solo a los clientes?",
+          "a": "Atiende las solicitudes habituales y propone respuestas para el resto. Usted decide qué sale automáticamente y qué pasa por validación. El nivel de autonomía es suyo: no partimos de la idea de que una IA deba gestionarlo todo sin supervisión humana."
+        },
+        {
+          "q": "¿Hace falta un número de WhatsApp Business?",
+          "a": "Sí, el establecimiento utiliza su propio número profesional a través de la API de WhatsApp Business. La puesta en marcha forma parte del despliegue."
+        },
+        {
+          "q": "¿En qué idiomas reciben sus tareas los equipos?",
+          "a": "En francés o en árabe, según lo que cada persona utilice realmente. Es un punto que suele descuidarse: una herramienta que solo entiende la recepción deja al personal de campo fuera del sistema, cuando es el personal de campo quien ejecuta."
+        },
+        {
+          "q": "¿Se puede recoger la ficha de policía por WhatsApp?",
+          "a": "Sí. El cliente la rellena antes de su llegada y adjunta su documento de identidad, dentro del check-in digital. Usted recibe datos completos sin teclear en el mostrador. La declaración a las autoridades sigue siendo trámite suyo."
+        },
+        {
+          "q": "¿Qué pasa si un cliente escribe de noche?",
+          "a": "El asistente responde a las solicitudes habituales a cualquier hora y traslada el resto según sus reglas. El objetivo no es responder rápido por responder, sino que cada solicitud sea atendida o trasladada, sin esperar a la mañana."
+        }
+      ]
     }
   },
   "integrations": {
@@ -2134,7 +2164,7 @@
       },
       {
         "title": "Pagos automatizados",
-        "desc": "Stripe + transferencias bancarias. Cobro al reservar, reembolsos en un clic."
+        "desc": "Stripe + transferencias bancarias. Cobro en línea, reembolso desde la reserva."
       },
       {
         "title": "Facturas y contratos",
@@ -2175,6 +2205,36 @@
       "titleBefore": "Migra tu PMS.",
       "titleGradient": "En 7 días.",
       "subtitle": "Incorporación guiada. Una demostración con sus propios alojamientos."
+    },
+    "faq": {
+      "badge": "PMS hotelero",
+      "title": "Preguntas frecuentes",
+      "items": [
+        {
+          "q": "¿Es obligatorio el PMS de Sojori?",
+          "a": "No. Sojori incluye su propio PMS para un establecimiento que no tiene uno, pero también se conecta a los PMS existentes, entre ellos Mews. Puede añadir la capa de orquestación sin tocar su sistema de reservas: suele ser el camino más corto para medir lo que aporta."
+        },
+        {
+          "q": "¿Gestiona la ficha de policía marroquí?",
+          "a": "Sojori se encarga de la ficha: el cliente la rellena y la firma antes de la llegada desde WhatsApp, con su documento de identidad, dentro del check-in digital. Usted recibe datos completos sin teclear en el mostrador. La declaración a las autoridades sigue siendo trámite del establecimiento."
+        },
+        {
+          "q": "¿Cómo se calcula la tasa turística?",
+          "a": "Se ajusta por establecimiento: un importe por viajero y por noche. Sojori calcula el importe; el cobro sigue el modo que usted configure."
+        },
+        {
+          "q": "¿Se pueden gestionar varios establecimientos?",
+          "a": "Sí, con una vista consolidada y reglas propias de cada sitio. Suele ser el momento en que un PMS pensado para un único establecimiento llega a su límite: equipos compartidos, prioridades entre sitios, informes de conjunto."
+        },
+        {
+          "q": "¿Qué pasa con el historial de nuestras reservas?",
+          "a": "La recuperación de datos se realiza durante la puesta en marcha. Es la etapa más larga del despliegue y la que hay que acotar primero, más que la instalación en sí."
+        },
+        {
+          "q": "¿Cuánto se tarda en estar operativo?",
+          "a": "Unos días para un establecimiento único. Lo que lleva tiempo no es la puesta en marcha, sino la recuperación de los historiales y la configuración de sus reglas: ritmos de limpieza, tarifas, circuitos de validación."
+        }
+      ]
     }
   },
   "legal": {
@@ -3841,18 +3901,18 @@
       "taxeSejour": {
         "meta": {
           "title": "Tasa turística en Marruecos: lo que calcula Sojori",
-          "description": "Guía: la tasa turística en Marruecos y cómo Sojori la configura, la calcula y la cobra. Las tarifas y las normas están por confirmar."
+          "description": "Guía: la tasa turística en Marruecos y cómo Sojori la configura y la calcula. Las tarifas y las normas están por confirmar."
         },
         "kicker": "GUÍA · TASA TURÍSTICA",
         "title": "Tasa turística en Marruecos: lo que calcula Sojori.",
-        "answer": "Sojori calcula y cobra la tasa turística de cada establecimiento según el modo que usted configure. Las tarifas y las normas de la tasa turística en Marruecos están por confirmar con una fuente oficial.",
+        "answer": "Sojori calcula la tasa turística de cada establecimiento, por viajero y por noche, según el ajuste que usted elija; el cobro sigue el modo que usted configure. Las tarifas y las normas de la tasa turística en Marruecos están por confirmar con una fuente oficial.",
         "sections": [
           {
             "title": "Lo que hace Sojori",
             "text": "La tasa turística se configura por establecimiento y después se calcula en cada reserva.",
             "points": [
               "Configurable por establecimiento: por estancia, por noche, o por persona y por noche.",
-              "Modo de cobro elegido por el establecimiento.",
+              "Modo de cobro ajustado por el establecimiento.",
               "Calculada por viajero y por noche, según el ajuste de cada alojamiento, en el PMS de Sojori.",
               "Para una reserva recibida de un canal donde la tasa no está incluida en el total, Sojori detecta el importe que debe cobrarse in situ."
             ]
@@ -3874,8 +3934,8 @@
             "a": "Sojori calcula la tasa turística según el modo que usted configure: por estancia, por noche, o por persona y por noche. Los importes y las normas oficiales están por confirmar con una fuente oficial."
           },
           {
-            "q": "¿Sojori cobra la tasa turística?",
-            "a": "Sí, el PMS de Sojori calcula y cobra la tasa turística automáticamente. Para un canal que no la incluye en el total, Sojori indica el importe que debe cobrarse in situ."
+            "q": "¿Sojori calcula la tasa turística?",
+            "a": "Sojori calcula el importe, por viajero y por noche, según el ajuste de cada alojamiento; el cobro sigue el modo que usted configure."
           },
           {
             "q": "¿Sojori entrega la tasa a las autoridades?",

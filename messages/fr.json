@@ -364,7 +364,7 @@
       "staff": {
         "label": "WhatsApp Staff",
         "badge": "Équipe",
-        "stat": "Real-time"
+        "stat": "À jour"
       },
       "admin": {
         "label": "WhatsApp Admin",
@@ -534,7 +534,7 @@
             "label": "Par staff"
           },
           {
-            "key": "Real-time",
+            "key": "À jour",
             "label": "Notifications"
           },
           {
@@ -609,7 +609,7 @@
           },
           {
             "label": "Confirmation instant",
-            "detail": "Disponibilités en temps réel"
+            "detail": "Disponibilités à jour"
           },
           {
             "label": "Tarifs dynamiques",
@@ -648,11 +648,11 @@
         },
         {
           "title": "Réponse Instantanée",
-          "description": "Moins de 2 secondes · Pas d'attente · Satisfaction garantie"
+          "description": "Moins de 2 secondes · Pas d'attente"
         },
         {
           "title": "Synchronisation Auto",
-          "description": "Mises à jour en temps réel · Notifications instantanées"
+          "description": "Informations à jour · Notifications sur WhatsApp"
         },
         {
           "title": "Analytics Intégrés",
@@ -800,6 +800,36 @@
       "title": "Activez WhatsApp.",
       "titleGradient": "Dès aujourd'hui.",
       "subtitle": "4 modules WhatsApp, du voyageur au propriétaire. Aucun développement requis."
+    },
+    "faq": {
+      "badge": "WhatsApp",
+      "title": "Questions fréquentes",
+      "items": [
+        {
+          "q": "Pourquoi WhatsApp plutôt qu'une application ?",
+          "a": "Parce que vos clients et vos équipes l'utilisent déjà. Une femme de chambre n'installera pas une application métier ; un client en voyage non plus. WhatsApp supprime la marche à franchir : pas de compte à créer, pas de téléchargement, pas de mot de passe oublié."
+        },
+        {
+          "q": "L'assistant répond-il tout seul aux clients ?",
+          "a": "Il traite les demandes courantes et propose des réponses pour le reste. Vous réglez ce qui part automatiquement et ce qui passe par une validation. Le niveau d'autonomie vous appartient : nous ne partons pas du principe qu'une IA doit tout gérer sans regard humain."
+        },
+        {
+          "q": "Faut-il un numéro WhatsApp Business ?",
+          "a": "Oui, l'établissement utilise son propre numéro professionnel via l'API WhatsApp Business. La mise en place fait partie du déploiement."
+        },
+        {
+          "q": "Dans quelles langues les équipes reçoivent-elles leurs missions ?",
+          "a": "En français ou en arabe, selon ce que chacun utilise réellement. C'est un point souvent négligé : un outil que seule la réception comprend laisse le terrain hors du système, alors que c'est le terrain qui exécute."
+        },
+        {
+          "q": "Peut-on collecter la fiche de police par WhatsApp ?",
+          "a": "Oui. Le client la remplit avant son arrivée et joint sa pièce d'identité, dans le cadre du check-in digital. Vous récupérez des données complètes sans saisie au comptoir. La déclaration aux autorités reste votre démarche."
+        },
+        {
+          "q": "Que se passe-t-il si un client écrit la nuit ?",
+          "a": "L'assistant répond aux demandes courantes à toute heure et remonte le reste selon vos règles. L'intérêt n'est pas de répondre vite pour répondre vite, mais que chaque demande soit prise en charge ou remontée, sans attendre le matin."
+        }
+      ]
     }
   },
   "integrations": {
@@ -2134,7 +2164,7 @@
       },
       {
         "title": "Paiements automatisés",
-        "desc": "Stripe + virements bancaires. Encaissement à la résa, remboursement en 1 clic."
+        "desc": "Stripe + virements bancaires. Encaissement en ligne, remboursement depuis la réservation."
       },
       {
         "title": "Factures & contrats",
@@ -2175,6 +2205,36 @@
       "titleBefore": "Migrez votre PMS.",
       "titleGradient": "En 7 jours.",
       "subtitle": "Onboarding guidé. Une démonstration sur vos propres logements."
+    },
+    "faq": {
+      "badge": "PMS hôtelier",
+      "title": "Questions fréquentes",
+      "items": [
+        {
+          "q": "Le PMS Sojori est-il obligatoire ?",
+          "a": "Non. Sojori inclut son propre PMS pour un établissement qui n'en a pas, mais se connecte aussi aux PMS existants, dont Mews. Vous pouvez donc ajouter la couche d'orchestration sans toucher à votre système de réservation : c'est souvent le chemin le plus court pour en mesurer l'apport."
+        },
+        {
+          "q": "Gère-t-il la fiche de police marocaine ?",
+          "a": "Sojori prend en charge la fiche : le client la remplit et la signe avant l'arrivée depuis WhatsApp, avec sa pièce d'identité, dans le cadre du check-in digital. Vous récupérez des données complètes sans saisie au comptoir. La déclaration aux autorités reste la démarche de l'établissement."
+        },
+        {
+          "q": "Comment la taxe de séjour est-elle calculée ?",
+          "a": "Elle se règle par établissement : un montant par voyageur et par nuit. Sojori calcule le montant ; l'encaissement suit le mode que vous réglez."
+        },
+        {
+          "q": "Peut-on gérer plusieurs établissements ?",
+          "a": "Oui, avec une vue consolidée et des règles propres à chaque site. C'est généralement le moment où un PMS conçu pour un établissement unique atteint sa limite : équipes partagées, arbitrages de priorité entre sites, reporting d'ensemble."
+        },
+        {
+          "q": "Que devient l'historique de nos réservations ?",
+          "a": "La reprise des données est prise en charge lors de la mise en route. C'est l'étape la plus longue du déploiement, et celle qu'il faut cadrer en premier, davantage que l'installation elle-même."
+        },
+        {
+          "q": "Combien de temps pour être opérationnel ?",
+          "a": "Quelques jours pour un établissement seul. Ce qui prend du temps n'est pas la mise en service mais la reprise des historiques et le paramétrage de vos règles : cadences de ménage, tarification, circuits de validation."
+        }
+      ]
     }
   },
   "legal": {
@@ -3841,18 +3901,18 @@
       "taxeSejour": {
         "meta": {
           "title": "Taxe de séjour au Maroc : ce que calcule Sojori",
-          "description": "Guide : la taxe de séjour au Maroc et la façon dont Sojori la paramètre, la calcule et la collecte. Les taux et règles sont à confirmer."
+          "description": "Guide : la taxe de séjour au Maroc et la façon dont Sojori la paramètre et la calcule. Les taux et règles sont à confirmer."
         },
         "kicker": "GUIDE · TAXE DE SÉJOUR",
         "title": "Taxe de séjour au Maroc : ce que Sojori calcule.",
-        "answer": "Sojori calcule et collecte la taxe de séjour de chaque établissement selon le mode que vous paramétrez. Les taux et les règles de la taxe de séjour au Maroc sont à confirmer auprès d'une source officielle.",
+        "answer": "Sojori calcule la taxe de séjour de chaque établissement, par voyageur et par nuit, selon le réglage que vous choisissez ; l'encaissement suit le mode que vous réglez. Les taux et les règles de la taxe de séjour au Maroc sont à confirmer auprès d'une source officielle.",
         "sections": [
           {
             "title": "Ce que fait Sojori",
             "text": "La taxe de séjour se règle par établissement, puis elle se calcule sur chaque réservation.",
             "points": [
               "Paramétrable par établissement : au séjour, à la nuit, ou par personne et par nuit.",
-              "Mode de collecte choisi par l'établissement.",
+              "Mode d'encaissement réglé par l'établissement.",
               "Calculée par voyageur et par nuit, selon le réglage de chaque logement, dans le PMS Sojori.",
               "Pour une réservation reçue d'un canal où la taxe n'est pas incluse dans le total, Sojori repère le montant à collecter sur place."
             ]
@@ -3874,8 +3934,8 @@
             "a": "Sojori calcule la taxe de séjour selon le mode que vous paramétrez : au séjour, à la nuit, ou par personne et par nuit. Les montants et les règles officiels sont à confirmer auprès d'une source officielle."
           },
           {
-            "q": "Sojori collecte-t-il la taxe de séjour ?",
-            "a": "Oui, le PMS Sojori calcule et collecte la taxe de séjour automatiquement. Pour un canal qui ne l'inclut pas dans le total, Sojori indique le montant à collecter sur place."
+            "q": "Sojori calcule-t-il la taxe de séjour ?",
+            "a": "Sojori calcule le montant, par voyageur et par nuit, selon le réglage de chaque logement ; l'encaissement suit le mode que vous réglez."
           },
           {
             "q": "Sojori reverse-t-il la taxe aux autorités ?",
