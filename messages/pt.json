@@ -1976,7 +1976,7 @@
     },
     "channelManager": {
       "title": "Channel Manager | Sincronização multi-OTA",
-      "description": "Distribuição unificada: Airbnb, Booking, Vrbo e mais. Calendário e preços em tempo real."
+      "description": "Channel manager: os seus canais (Airbnb, Booking, Vrbo e mais) ligados por conectores; disponibilidade, preços e reservas no mesmo sítio."
     },
     "analytics": {
       "title": "Analytics | BI aluguel temporada",
@@ -2068,7 +2068,7 @@
     },
     "integrations": {
       "title": "Integrações Sojori | Airbnb, Booking, Expedia, WhatsApp e API",
-      "description": "Conectores e API da Sojori: Airbnb, Booking.com, Expedia, Vrbo, WhatsApp Business, contabilidade. Sincronização em tempo real."
+      "description": "Conectores e API da Sojori: Airbnb, Booking.com, Expedia, Vrbo, WhatsApp Business, contabilidade. Sincronização por conectores."
     },
     "pricing": {
       "title": "Ofertas Sojori | Orçamento à medida",

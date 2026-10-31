@@ -1976,7 +1976,7 @@
     },
     "channelManager": {
       "title": "Channel Manager | Multi-OTA sync",
-      "description": "Unified distribution: Airbnb, Booking, Vrbo and more. Real-time calendar and rates, anti-overbooking."
+      "description": "Channel manager: your channels (Airbnb, Booking, Vrbo and more) linked through connectors; availability, rates and bookings in one place."
     },
     "analytics": {
       "title": "Analytics | Hospitality BI",
@@ -2068,7 +2068,7 @@
     },
     "integrations": {
       "title": "Sojori integrations | Booking, Expedia, Airbnb, WhatsApp & API",
-      "description": "Sojori connectors and API: Airbnb, Booking.com, Expedia, Vrbo, WhatsApp Business, accounting. Real-time sync."
+      "description": "Sojori connectors and API: Airbnb, Booking.com, Expedia, Vrbo, WhatsApp Business, accounting. Sync through connectors."
     },
     "pricing": {
       "title": "Sojori plans | Quote on request",

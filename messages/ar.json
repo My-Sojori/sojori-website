@@ -1976,7 +1976,7 @@
     },
     "channelManager": {
       "title": "مدير القنوات | مزامنة متعددة OTA",
-      "description": "توزيع موحّد: Airbnb وBooking وVrbo وغيرها. تقويم وأسعار في الوقت الفعلي."
+      "description": "مدير قنوات: قنواتكم (Airbnb وBooking وVrbo وغيرها) مرتبطة عبر موصّلات؛ التوفر والأسعار والحجوزات في مكان واحد."
     },
     "analytics": {
       "title": "التحليلات | ذكاء أعمال الإيجار قصير الأجل",
@@ -2068,7 +2068,7 @@
     },
     "integrations": {
       "title": "تكاملات Sojori | Airbnb وBooking وExpedia وواتساب وواجهة برمجية",
-      "description": "موصلات وواجهة برمجية Sojori: Airbnb، Booking.com، Expedia، Vrbo، واتساب بيزنس، المحاسبة. مزامنة فورية."
+      "description": "موصلات وواجهة برمجية Sojori: Airbnb، Booking.com، Expedia، Vrbo، واتساب بيزنس، المحاسبة. مزامنة عبر موصّلات."
     },
     "pricing": {
       "title": "عروض Sojori | عرض سعر",

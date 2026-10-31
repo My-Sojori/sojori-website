@@ -1976,7 +1976,7 @@
     },
     "channelManager": {
       "title": "Channel Manager | Sync multi-OTA Sojori",
-      "description": "Channel manager hôtelier : Booking, Expedia, Airbnb et autres OTA synchronisés dans les deux sens. Anti-surréservation, mix canaux et commission nette mesurés."
+      "description": "Channel manager hôtelier : vos canaux (Booking, Expedia, Airbnb et autres) reliés par connecteur ; disponibilités, prix et réservations au même endroit."
     },
     "analytics": {
       "title": "Analytics | BI hôtelière",
@@ -2068,7 +2068,7 @@
     },
     "integrations": {
       "title": "Intégrations Sojori | Booking, Expedia, Airbnb, WhatsApp & API",
-      "description": "Sojori se connecte à votre PMS existant, dont Mews, aux OTA et à vos outils. API disponible. Orchestrez sans remplacer votre système de réservation."
+      "description": "Sojori se connecte à votre PMS existant, dont Mews, aux OTA par connecteur et à vos outils. API disponible. Orchestrez sans remplacer votre système de réservation."
     },
     "pricing": {
       "title": "Offres Sojori | Devis sur mesure",
