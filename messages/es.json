@@ -1432,7 +1432,7 @@
   "seoPages": {
     "pms": {
       "title": "PMS Marrakech y Casablanca | Software de gestión Marruecos",
-      "description": "PMS para gestores en Marrakech, Casablanca y París. Reservas, calendario unificado, multi-propiedad."
+      "description": "PMS hotelero con reservas, habitaciones, facturación, ficha de policía y tasa turística. Incluido en Sojori o conectado a tu PMS actual, como Mews."
     },
     "channelManager": {
       "title": "Channel Manager | Sincronización multi-OTA",
@@ -1440,79 +1440,79 @@
     },
     "analytics": {
       "title": "Analytics | BI hostelería",
-      "description": "Ingresos, ocupación, ADR, RevPAR. Cuadros de mando y exportaciones."
+      "description": "Analytics hotelero: ocupación, precio medio, RevPAR y mix de canales por periodo y por establecimiento, ingresos extra por separado y exportaciones contables."
     },
     "dashboardApp": {
       "title": "Dashboard Sojori | Interfaz del gestor",
-      "description": "Espacio tras el login: navegación, KPI, actividad, llegadas del día."
+      "description": "Panel de control de Sojori: llegadas y salidas del día, estado de las habitaciones a la última, mensajes pendientes e incidencias abiertas, desde el navegador."
     },
     "ownerPortal": {
       "title": "Portal del propietario | Transparencia de ingresos",
-      "description": "Vistas de ingresos y documentos para propietarios y co-anfitriones."
+      "description": "Portal de propietarios de Sojori: ingresos, ocupación, gastos y documentos que cada propietario puede consultar, con extractos de los datos de explotación."
     },
     "brand": {
       "title": "Sojori — Sistema de marca",
-      "description": "Identidad visual: logo, colores, tipografía para partners."
+      "description": "Identidad visual de Sojori: logo, colores y tipografía para uso de los partners, con el fin de presentar la marca de forma coherente en todos tus soportes."
     },
     "gestionLocativeMarrakech": {
       "title": "Gestión locativa Marrakech | PMS riads y villas",
-      "description": "PMS y orquestación para hostelería en Marrakech: channel manager, WhatsApp, equipos."
+      "description": "Gestión hotelera en Marrakech: PMS, channel manager, housekeeping y conserjería por WhatsApp para riads, hoteles con encanto y casas de huéspedes de la medina."
     },
     "conciergerieMarrakech": {
       "title": "Conserjería Marrakech | WhatsApp y servicios",
-      "description": "Conserjería digital para riads y villas: WhatsApp, check-in, servicios locales."
+      "description": "Conserjería digital en Marrakech: recepción, check-in por WhatsApp, peticiones de clientes y servicios de partners coordinados para riads y hoteles con encanto."
     },
     "gestionLocativeCasablanca": {
       "title": "Gestión de alquileres Casablanca | PMS apartamentos",
-      "description": "PMS y orquestación para el alquiler de corta duración en Casablanca: channel manager, WhatsApp, equipos."
+      "description": "Gestión hotelera en Casablanca: PMS, facturación a empresas y housekeeping ajustado a las salidas, pensado para hoteles de negocios y residencias."
     },
     "conciergerieCasablanca": {
       "title": "Conserjería Casablanca | WhatsApp y servicios",
-      "description": "Conserjería digital para apartamentos: WhatsApp, check-in, servicios locales."
+      "description": "Conserjería digital en Casablanca: check-in por WhatsApp, peticiones de clientes y servicios para viajeros de negocios, para hoteles y residencias."
     },
     "gestionLocativeAgadir": {
       "title": "Gestión de alquileres Agadir | PMS residencias de playa",
-      "description": "PMS y orquestación para el alquiler estacional en Agadir: channel manager, WhatsApp, equipos."
+      "description": "Gestión hotelera en Agadir: PMS, limpieza recurrente en estancias largas y cupos de tour operadores, para hoteles de playa y residencias."
     },
     "conciergerieAgadir": {
       "title": "Conserjería Agadir | WhatsApp y servicios",
-      "description": "Conserjería digital para residencias de playa: WhatsApp, check-in, servicios locales."
+      "description": "Conserjería digital en Agadir: recepción, check-in por WhatsApp y servicios para clientes en estancia larga, para hoteles de playa y residencias."
     },
     "gestionLocativeTanger": {
       "title": "Gestión de alquileres Tánger | PMS medina y Tánger moderno",
-      "description": "PMS y orquestación para el alquiler de corta duración en Tánger: channel manager, WhatsApp, equipos."
+      "description": "Gestión hotelera en Tánger: PMS, channel manager y housekeeping que absorbe el pico del verano, para hoteles, riads y residencias frente al mar."
     },
     "conciergerieTanger": {
       "title": "Conserjería Tánger | WhatsApp y servicios",
-      "description": "Conserjería digital para propiedades en Tánger: WhatsApp, check-in, servicios locales."
+      "description": "Conserjería digital en Tánger: check-in por WhatsApp, peticiones de clientes y coordinación de los equipos de temporada, para hoteles y riads."
     },
     "gestionLocativeRabat": {
       "title": "Gestión de alquileres Rabat | PMS apartamentos capital",
-      "description": "PMS y orquestación para el alquiler de corta duración en Rabat: channel manager, WhatsApp, equipos."
+      "description": "Gestión hotelera en Rabat: PMS, facturación institucional y llegadas de grupo coordinadas, para hoteles, riads y residencias de la capital."
     },
     "conciergerieRabat": {
       "title": "Conserjería Rabat | WhatsApp y servicios",
-      "description": "Conserjería digital para apartamentos en Rabat: WhatsApp, check-in, servicios locales."
+      "description": "Conserjería digital en Rabat: recepción, check-in por WhatsApp y servicios al cliente, para hoteles, riads de la medina y residencias."
     },
     "dynamicPricing": {
       "title": "Precios dinámicos | Reglas y calendario",
-      "description": "Tarifas según estacionalidad, ocupación y canales — envío a OTAs."
+      "description": "Tarifas hoteleras por reglas según ocupación, temporada y eventos, dentro de tus límites. Se envían a Booking, Expedia y Airbnb y tú conservas el control."
     },
     "guestExperience": {
       "title": "Experiencia del huésped Marrakech",
-      "description": "Recorrido premium: guía digital, servicios, check-in fluido."
+      "description": "Recorrido del viajero en WhatsApp: check-in digital, ficha de policía, peticiones durante la estancia, instrucciones de salida y opiniones, en su app."
     },
     "whatsapp": {
       "title": "WhatsApp IA Marrakech | Conserjería automática a cualquier hora",
-      "description": "IA en WhatsApp para gestores: conserjería automática, respuestas instantáneas, check-in digital."
+      "description": "WhatsApp en el centro de la operación: conserjería con IA para clientes, misiones al equipo en árabe, check-in digital y ficha de policía antes de llegar."
     },
     "inbox": {
       "title": "Bandeja unificada Marrakech | Mensajería multi-OTA",
-      "description": "Airbnb, Booking, WhatsApp y email en un solo lugar. Respuestas IA y traducción."
+      "description": "Inbox unificada: WhatsApp, Booking, Expedia, Airbnb y e-mail en un hilo por estancia, con respuestas sugeridas por IA, traducción y mensajes en tareas."
     },
     "teamflow": {
       "title": "Gestión de staff Marrakech | Equipos riads y villas",
-      "description": "Planificación de limpieza, tareas y rendimiento. Coordina housekeeping y mantenimiento."
+      "description": "Limpieza, cambio de ropa y mantenimiento activados por los eventos de la estancia. Las misiones llegan por WhatsApp a tu equipo, en francés o en árabe."
     },
     "demo": {
       "title": "Solicitar una demo de Sojori · PMS y agentes de WhatsApp",
@@ -1520,11 +1520,11 @@
     },
     "demoRdv": {
       "title": "Confirma tu cita de demo | Sojori",
-      "description": "Elige tu horario para una demo personalizada de Sojori con un experto de producto."
+      "description": "Elige tu horario para una demo personalizada de Sojori con un experto de producto: el PMS de Sojori o el tuyo, tus agentes y tus módulos de WhatsApp."
     },
     "integrations": {
       "title": "Integraciones Sojori | Airbnb, Booking, Expedia, WhatsApp y API",
-      "description": "Conectores y API de Sojori: Airbnb, Booking.com, Expedia, Vrbo, WhatsApp Business, contabilidad. Sincronización mediante conectores."
+      "description": "Sojori se conecta a tu PMS actual, como Mews, a las OTA mediante conectores y a tus herramientas con una API. Conservas tu sistema de reservas."
     },
     "pricing": {
       "title": "Ofertas Sojori | Presupuesto a medida",
@@ -1532,27 +1532,27 @@
     },
     "pmsMarrakech": {
       "title": "PMS Hotel Marrakech — Software de gestión hotelera | Sojori",
-      "description": "PMS y motor de orquestación para hoteles, riads y residencias en Marrakech: reservas, limpieza, mantenimiento, channel manager, ficha policial y tasa turística. También se conecta a tu PMS actual."
+      "description": "PMS y orquestación para hoteles, riads y casas de huéspedes en Marrakech: reservas, housekeeping, mantenimiento, ficha de policía y tasa turística."
     },
     "pmsCasablanca": {
       "title": "PMS Hotel Casablanca — Software de gestión hotelera | Sojori",
-      "description": "PMS y motor de orquestación para hoteles, riads y residencias en Casablanca: reservas, limpieza, mantenimiento, channel manager, ficha policial y tasa turística. También se conecta a tu PMS actual."
+      "description": "PMS y orquestación para hoteles y residencias en Casablanca: clientela de negocios, facturación a empresas, rotación diaria y channel manager."
     },
     "pmsRabat": {
       "title": "PMS Hotel Rabat — Software de gestión hotelera | Sojori",
-      "description": "PMS y motor de orquestación para hoteles, riads y residencias en Rabat: reservas, limpieza, mantenimiento, channel manager, ficha policial y tasa turística. También se conecta a tu PMS actual."
+      "description": "PMS y orquestación para hoteles y riads en Rabat: clientela institucional y de ocio, llegadas de grupo, ficha de policía y tasa turística."
     },
     "pmsTanger": {
       "title": "PMS Hotel Tanger — Software de gestión hotelera | Sojori",
-      "description": "PMS y motor de orquestación para hoteles, riads y residencias en Tanger: reservas, limpieza, mantenimiento, channel manager, ficha policial y tasa turística. También se conecta a tu PMS actual."
+      "description": "PMS y orquestación para hoteles y residencias en Tánger: fuerte estacionalidad, equipos de temporada, housekeeping y channel manager."
     },
     "pmsAgadir": {
       "title": "PMS Hotel Agadir — Software de gestión hotelera | Sojori",
-      "description": "PMS y motor de orquestación para hoteles, riads y residencias en Agadir: reservas, limpieza, mantenimiento, channel manager, ficha policial y tasa turística. También se conecta a tu PMS actual."
+      "description": "PMS y orquestación para hoteles y residencias en Agadir: estancias largas, cupos de tour operadores, limpieza recurrente y channel manager."
     },
     "goSiyaha": {
       "title": "Go Siyaha 2026 — Subvención digitalización turismo Marruecos | Sojori",
-      "description": "El programa Go Siyaha apoya la digitalización de los establecimientos turísticos marroquíes: ejes, tasas, elegibilidad y gastos cubiertos. Dónde interviene Sojori, sin prometer subvenciones."
+      "description": "El programa Go Siyaha apoya la digitalización de los establecimientos turísticos marroquíes: ejes, tasas y elegibilidad. Dónde interviene Sojori."
     },
     "altCloudbeds": {
       "title": "Alternativa a Cloudbeds en Marruecos — Sojori vs Cloudbeds | Sojori",
@@ -1572,7 +1572,7 @@
     },
     "comparatifPmsMaroc": {
       "title": "Comparativa PMS hotel Marruecos 2026 — ¿Qué software? | Sojori",
-      "description": "Comparativa de software de gestión hotelera en Marruecos: Cloudbeds, Pluriel, Nozoul, Welcomax y Sojori. Perfiles, arquitecturas y cuándo elegir cada uno."
+      "description": "Comparativa de software de gestión hotelera en Marruecos: Cloudbeds, Pluriel, Nozoul, Welcomax y Sojori. Perfiles, arquitecturas y casos de uso de cada uno."
     },
     "orchestration": {
       "title": "Orquestación hotelera — ¿Qué es un motor de orquestación? | Sojori",
@@ -1580,7 +1580,22 @@
     },
     "mcp": {
       "title": "PMS conectado a la IA — MCP | Consulta Sojori desde ChatGPT o Claude",
-      "description": "El primer PMS hotelero con servidor MCP. Pregunta a ChatGPT o Claude y obtén tus cifras reales. Solo lectura, sin datos que identifiquen al huésped."
+      "description": "Un PMS hotelero con servidor MCP: consulta tus cifras desde ChatGPT o Claude, en modo lectura, para dirigir tu establecimiento mediante la conversación."
+    },
+    "analyseConcurrents": {
+      "description": "Pega el enlace de tu anuncio de Airbnb: descubre hasta 20 anuncios comparables a tu alrededor y una estimación del precio de mercado, recibidos por e-mail."
+    },
+    "offreConciergeries": {
+      "description": "El software de las conserjerías y gestores de Airbnb en Marruecos: PMS, channel manager, módulos de WhatsApp, reserva directa, upsell y limpieza. Pide una demo."
+    },
+    "terms": {
+      "description": "Condiciones Generales de Uso de la plataforma Sojori: el servicio, la suscripción, la protección de datos y la propiedad intelectual, explicados al detalle."
+    },
+    "privacy": {
+      "description": "Política de privacidad de Sojori: cómo se recopilan, utilizan, comparten y protegen tus datos personales, y los derechos de los que dispones."
+    },
+    "globalLaunch": {
+      "description": "El software todo en uno de los co-anfitriones y gestores de alquileres de corta duración: PMS, channel manager, agentes y módulos de WhatsApp. Pide una demo."
     }
   },
   "pmsPage": {
@@ -2762,7 +2777,7 @@
       },
       "meta": {
         "title": "Sojori · PMS y agentes WhatsApp para alquiler vacacional",
-        "description": "El PMS Sojori, o el suyo. Once agentes y módulos de WhatsApp: check-in, formulario de policía, contrato, limpieza, precios. Usted decide."
+        "description": "El PMS de Sojori, o el suyo: agentes y módulos de WhatsApp para responder a los viajeros, coordinar al equipo y preparar sus decisiones. Usted decide."
       },
       "faq": {
         "eyebrow": "FAQ",

@@ -1,11 +1,15 @@
 import type { Metadata } from 'next';
+import { getTranslations } from 'next-intl/server';
 import { GlobalLaunchClient } from './GlobalLaunchClient';
 
-export const metadata: Metadata = {
-  title: 'Sojori — Launch offer for short-term rental hosts',
-  description:
-    'The all-in-one software for short-term rental co-hosts and property managers. Launch offer: migration included, no setup fee.',
-};
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: 'seoPages' });
+  return {
+    title: 'Sojori — Launch offer for short-term rental hosts',
+    description: t('globalLaunch.description'),
+  };
+}
 
 export default function GlobalLaunchPage() {
   return <GlobalLaunchClient />;
