@@ -27,12 +27,15 @@ export function SiteHeader() {
     if (!ouvert) return;
     const surEchap = (e: KeyboardEvent) => { if (e.key === 'Escape') setOuvert(false); };
     window.addEventListener('keydown', surEchap);
-    const avant = document.body.style.overflow;
-    document.body.style.overflow = 'hidden';
-    return () => { window.removeEventListener('keydown', surEchap); document.body.style.overflow = avant; };
+    // Le verrouillage se pose sur <html> : le viewport reste le conteneur de défilement et l'en-tête reste collé en haut.
+    // Sur <body>, `overflow: hidden` en ferait un conteneur de défilement et annulerait `position: sticky`.
+    const html = document.documentElement;
+    const avant = html.style.overflow;
+    html.style.overflow = 'hidden';
+    return () => { window.removeEventListener('keydown', surEchap); html.style.overflow = avant; };
   }, [ouvert]);
 
-  // la rubrique de la section affichée (accueil) est soulignée : la section qui croise le haut de l'écran
+  // la rubrique de la section affichée (accueil) est soulignée : la section qui croise le haut de l'écran (4 px sous la barre de 72 px : une frontière exacte ne compte pas pour les deux)
   useEffect(() => {
     if (pathname !== '/' || typeof IntersectionObserver === 'undefined') { setActif(null); return; }
     const sections = ENTREES.flatMap((e) => { const el = e.section ? document.getElementById(e.section) : null; return el && e.section ? [{ id: e.section, el }] : []; });
@@ -41,7 +44,7 @@ export function SiteHeader() {
     const o = new IntersectionObserver((entries) => {
       entries.forEach((en) => { const id = sections.find((x) => x.el === en.target)?.id; if (!id) return; if (en.isIntersecting) visibles.add(id); else visibles.delete(id); });
       setActif(sections.find((x) => visibles.has(x.id))?.id ?? null);
-    }, { rootMargin: '-72px 0px -60% 0px' });
+    }, { rootMargin: '-76px 0px -60% 0px' });
     sections.forEach((x) => o.observe(x.el));
     return () => o.disconnect();
   }, [pathname]);
