@@ -16,6 +16,7 @@ import { normalizeDemoBackendResponse, demoResponseErrorMessage } from '@/lib/de
 import { trackDemoLead, trackDemoScheduled, trackDemoQualified } from '@/lib/analytics';
 import { enTetesDemande } from '@/lib/demoTest';
 import { useHydrate } from '@/lib/useHydrate';
+import { garderDemande, LIBELLE_INTENTION, oublierDemande } from '@/lib/refonte/demandeEnCours';
 import { BandeauTest } from '@/components/refonte/BandeauTest';
 
 /** Le questionnaire n'est utile qu'à l'étape 3 : chargé à la demande, hors du JavaScript de la première étape (hydratation plus rapide sur téléphone). */
@@ -29,6 +30,9 @@ const PRISE_DE_RENDEZ_VOUS = false;
 
 /** L'écran « type d'établissement et PMS » : entre l'identité (étape 1) et le questionnaire facultatif (étape 3). */
 const STEP_TYPE = 5;
+
+/** L'écran « C'est envoyé » : deux suites (composer l'offre, ou fin). Plus de questions après l'envoi (Tawfiq, 31/10/2026). */
+const STEP_ENVOYE = 6;
 
 /** Taille du compte, en chambres ou en biens selon le type (Tawfiq, 30/10/2026). */
 const TRANCHES = ['1-5', '6-20', '21-50', '51-100', '100-200', '200+'];
@@ -96,6 +100,7 @@ function DemoPageContent() {
     });
 
   const hydrate = useHydrate();
+  const [termine, setTermine] = useState(false);
   const textesPays = { search: t('step1.dialSearchPlaceholder'), none: t('step1.dialNoResults'), close: t('step1.countryClose') };
   const [step, setStep] = useState(1);
   const [source, setSource] = useState<string>('website'); // Default source
@@ -300,6 +305,7 @@ function DemoPageContent() {
           ...champsIdentite(identite(), formData.dialIso),
           consentementMessages: formData.consentementMessages,
           source: source,
+          intent: 'demo',
           // La langue de la page : celle du prospect, lue par l'agent de prospection (28/10/2026).
           langue: locale,
         }),
@@ -328,6 +334,7 @@ function DemoPageContent() {
       setDemoRequestId(String(newId));
       setQualificationToken(String(data.data?.qualificationToken ?? ''));
       setCalendarSkippedAlreadyBooked(false);
+      garderDemande({ id: String(newId), jeton: String(data.data?.qualificationToken ?? ''), prenom: formData.fullName.trim().split(/\s+/)[0] ?? '', activiteId: '', typeLibelle: '', segment: '', currentPMS: '', typeAutre: '', dejaDemo: true });
       // Mode test (aperçus) : aucune conversion publicitaire.
       if (!(data.data as { test?: boolean } | undefined)?.test) trackDemoLead(source);
       setStep(STEP_TYPE);
@@ -359,12 +366,16 @@ function DemoPageContent() {
           // L'activité dans les mots du CRM : l'agent de prospection s'en sert pour choisir le commercial.
           ...(activite.crmSegment ? { segment: activite.crmSegment } : {}),
           currentPMS: formData.pmsChoix === 'sojori' ? 'Sojori' : (formData.pmsNom.trim().slice(0, 80) || 'Garde son PMS actuel'),
-          ...(activite.id === 'autre' && formData.activiteAutre.trim() ? { expectations: `Type : ${formData.activiteAutre.trim().slice(0, 120)}` } : {}),
+          intent: 'demo',
+          // L'intention en tête (le CRM ne lit pas encore `intent`) puis, pour « Autre », la précision du visiteur.
+          expectations: [LIBELLE_INTENTION.demo, ...(activite.id === 'autre' && formData.activiteAutre.trim() ? [`Type : ${formData.activiteAutre.trim().slice(0, 120)}`] : [])].join('\n'),
         }),
       });
       const raw = normalizeDemoBackendResponse(await res.json().catch(() => ({}))) as { success?: boolean; error?: string };
       if (raw.success !== true) throw new Error(demoResponseErrorMessage(raw) || t('errors.qualify'));
-      setStep(PRISE_DE_RENDEZ_VOUS ? 2 : 3);
+      const pmsEnvoye = formData.pmsChoix === 'sojori' ? 'Sojori' : (formData.pmsNom.trim().slice(0, 80) || 'Garde son PMS actuel');
+      garderDemande({ id: demoRequestId, jeton: qualificationToken, prenom: formData.fullName.trim().split(/\s+/)[0] ?? '', activiteId: activite.id, typeLibelle: activite.label, segment: activite.crmSegment, currentPMS: pmsEnvoye, typeAutre: activite.id === 'autre' ? formData.activiteAutre.trim().slice(0, 120) : '', dejaDemo: true });
+      setStep(STEP_ENVOYE);
     } catch (err: unknown) {
       setError(err instanceof Error ? err.message : t('errors.qualify'));
     } finally {
@@ -711,6 +722,25 @@ function DemoPageContent() {
                     </button>
                   </form>
                 </div>
+              </div>
+            )}
+
+            {/* « C'EST ENVOYÉ » : deux suites, sans question */}
+            {step === STEP_ENVOYE && (
+              <div className="demo-step-in" style={{ textAlign: 'center' }}>
+                <span className="badge" style={{ marginBottom: 20 }}>
+                  <span className="badge-dot"></span> {t('step1.badge')}
+                </span>
+                <h1 style={{ marginBottom: 14, textWrap: 'balance' }}>{t('sent.title')}</h1>
+                <p style={{ fontSize: 18, lineHeight: 1.6, color: 'var(--text-2)', maxWidth: 560, margin: '0 auto 32px' }}>
+                  {termine ? t('sent.thanks') : t('sent.lead')}
+                </p>
+                {!termine && (
+                  <div className="glass demo-glass-panel demo-sent-actions" style={{ padding: 28, borderRadius: 16, maxWidth: 520, margin: '0 auto', display: 'flex', flexDirection: 'column', gap: 12 }}>
+                    <Link href="/offre" className="btn btn-primary" style={{ minHeight: 52, display: 'flex', alignItems: 'center', justifyContent: 'center', textAlign: 'center', padding: '12px 18px', lineHeight: 1.3, whiteSpace: 'normal', fontSize: 16, fontWeight: 600 }}>{t('sent.compose')}</Link>
+                    <button type="button" className="btn" style={{ minHeight: 52, fontSize: 15, fontWeight: 600, background: 'transparent', color: 'var(--text-1)', border: '1px solid var(--glass-border)', borderRadius: 10, padding: '12px 18px' }} onClick={() => { oublierDemande(); setTermine(true); }}>{t('sent.done')}</button>
+                  </div>
+                )}
               </div>
             )}
 
@@ -1272,7 +1302,7 @@ function DemoPageContent() {
           </div>
         </section>
 
-        <PageFooter />
+        <PageFooter bande={step !== STEP_ENVOYE} />
       </div>
 
     </>
