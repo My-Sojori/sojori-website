@@ -4,6 +4,8 @@ import { GainNote, GainValue } from './Gains';
 
 const IDS = ['booking', 'service', 'operations', 'pricing', 'assistant', 'studio', 'site', 'commercial', 'prospecting', 'marketingFinance', 'calls'] as const;
 const STATUT: Record<string, 'available' | 'included'> = { studio: 'included' };
+/** Les trois agents du séjour passent en avant ; les autres viennent « pour aller plus loin ». */
+const PRINCIPAUX: readonly string[] = ['booking', 'service', 'operations'];
 const HEURES: Record<string, 'guest' | 'field'> = { service: 'guest', operations: 'field' };
 
 export function Agents() {
@@ -30,7 +32,7 @@ export function Agents() {
         </ul>
         <div className="sj2-promesse">
           <div className="sj2-promesse__kpi">
-            <span className="sj2-eyebrow sj2-eyebrow--sm sj2-eyebrow--dim">{t('labels.promise')}</span>
+            <span className="sj2-eyebrow sj2-eyebrow--sm sj2-eyebrow--dim">{id === 'calls' ? t('labels.promiseOption') : t('labels.promise')}</span>
             <span className="sj2-promesse__v">{valeur}</span>
             <span className="sj2-promesse__t">{t(`${p}.kpiText`)}</span>
           </div>
@@ -68,7 +70,13 @@ export function Agents() {
       <p className="sj2-kpis__note"><GainNote /></p>
       <Tabs
         label={t('chooseAria')}
-        items={IDS.map((id) => ({ id, title: t(`list.${id}.name`), sub: t(`status.${STATUT[id] ?? 'available'}`) }))}
+        items={IDS.map((id) => ({
+          id,
+          title: t(`list.${id}.name`),
+          sub: t(`status.${STATUT[id] ?? 'available'}`),
+          groupe: PRINCIPAUX.includes(id) ? t('groupMain') : t('groupMore'),
+          question: PRINCIPAUX.includes(id) ? t(`list.${id}.question`) : undefined,
+        }))}
         panels={panels}
       />
     </section>

@@ -630,3 +630,24 @@ html[dir='rtl'] .sj2-histoire__num { letter-spacing: 0; font-family: var(--sj-sa
 html[dir='rtl'] .sj2-courant__rang { letter-spacing: 0; font-family: var(--sj-sans); }
 @media (prefers-reduced-motion: reduce) { .sj2-paquet { display: none; } .sj2-histoire__barre { transition: none; } }
 
+/* ================= Accueil v2 : trois agents en avant, le reste « pour aller plus loin » ================= */
+.sj2-tabs__lot { display: flex; flex-direction: column; gap: 10px; }
+.sj2-tabs__lot + .sj2-tabs__lot { margin-top: 18px; }
+.sj2-tabs__lot-liste { display: flex; flex-direction: column; gap: 8px; }
+.sj2-tabs__groupe { font-family: var(--sj-mono); font-size: 12px; letter-spacing: 0.08em; color: var(--sj-text-3); }
+html[dir='rtl'] .sj2-tabs__groupe { letter-spacing: 0; font-family: var(--sj-sans); }
+.sj2-tab--grand { min-height: 72px; flex-direction: column; align-items: flex-start; gap: 2px; padding: 12px 18px; border-radius: 16px; text-align: start; }
+.sj2-tab__question { font-size: 13.5px; color: var(--sj-text-3); line-height: 1.35; font-weight: 400; }
+.sj2-tab[aria-selected='true'] .sj2-tab__question { color: var(--sj-text-2); }
+@media (min-width: 760px) { .sj2-tabs--vertical .sj2-tabs__lot--plus .sj2-tabs__lot-liste { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.sj2-capture { margin: 0 0 28px; border: 1px solid var(--sj-line); border-radius: 22px; overflow: hidden; background: #0f0e0b; }
+.sj2-capture img { display: block; width: 100%; height: auto; }
+.sj2-capture figcaption { padding: 10px 16px; font-size: 13.5px; color: var(--sj-text-3); border-top: 1px solid var(--sj-line); }
+/* sur petit écran, les onglets restent une rangée qui défile : les lots disparaissent visuellement */
+@media (max-width: 900px) {
+  .sj2-tabs__lot, .sj2-tabs__lot-liste { display: contents; }
+  .sj2-tabs__lot + .sj2-tabs__lot { margin-top: 0; }
+  .sj2-tabs__groupe { display: none; }
+  .sj2-tab--grand { min-height: 0; }
+}
+

@@ -2396,7 +2396,7 @@
       "hero": {
         "keywords": "PMS and WhatsApp agents for short-term rentals and hotels",
         "sub": "You decide, your agents do the rest. The Sojori PMS, or your own: eleven agents and WhatsApp modules plug into it. Watch a typical day in a concierge company or a hotel.",
-        "seeAgents": "See the agents at work",
+        "seeAgents": "See a day with Sojori",
         "demo": "Request a demo"
       },
       "scene": {
@@ -2568,9 +2568,9 @@
         }
       },
       "agents": {
-        "eyebrow": "02 · THE AGENTS",
+        "eyebrow": "03 · THE AGENTS",
         "title": "Every rental job has its own agent. And each one gives you time back.",
-        "lead": "They work on the same stay, the same property, the same team. You choose the ones you need, property by property.",
+        "lead": "Three agents run the stay. The others are added when you need them.",
         "chooseAria": "Choose an agent",
         "kpi": {
           "guest": "saved per week on guest messages",
@@ -2594,7 +2594,8 @@
             "you": "You",
             "prospects": "Prospects",
             "clients": "Clients"
-          }
+          },
+          "promiseOption": "THE PROMISE"
         },
         "status": {
           "available": "Available",
@@ -2618,7 +2619,8 @@
             "r": "Yes. Here is the price for 4 nights and the link to confirm.",
             "promise": "Every request gets a reply, a quote or a card to approve, day or night.",
             "kpiValue": "≈ 70%",
-            "kpiText": "of booking requests handled without you"
+            "kpiText": "of booking requests handled without you",
+            "question": "Who handles my booking requests?"
           },
           "service": {
             "name": "Guest Service Agent",
@@ -2636,7 +2638,8 @@
             "r": "It is in your arrival guide. I am sending it to you here.",
             "promise": "You only answer the questions that call for your judgment.",
             "kpiValue": "≈ {h} h",
-            "kpiText": "saved per week on guest messages"
+            "kpiText": "saved per week on guest messages",
+            "question": "Who answers the guest, and when do I step in?"
           },
           "operations": {
             "name": "Operations Agent",
@@ -2654,7 +2657,8 @@
             "r": "Closed. Next task: welcome at 15:00.",
             "promise": "A voice message is enough: the task is created, assigned and followed through to the end.",
             "kpiValue": "≈ {h} h",
-            "kpiText": "saved per week on field coordination"
+            "kpiText": "saved per week on field coordination",
+            "question": "How does my team receive and follow the work?"
           },
           "pricing": {
             "name": "Dynamic pricing",
@@ -2804,10 +2808,12 @@
             "kpiText": "add it to your plan",
             "note": "A call is a live voice in real time, not to be confused with a voice message, which is already supported."
           }
-        }
+        },
+        "groupMain": "THE STAY, DAY TO DAY",
+        "groupMore": "GO FURTHER"
       },
       "modules": {
-        "eyebrow": "03 · THE MODULES",
+        "eyebrow": "05 · THE MODULES",
         "title": "The WhatsApp modules: a way in for every person.",
         "lead": "Nobody installs an app. The guest, the staff, the admin and the owner write or send a voice message, just as they already do. Behind the scenes, the agents pass the request along.",
         "chooseAria": "Choose a module",
@@ -3046,7 +3052,7 @@
         },
         "agents": {
           "eyebrow": "2 · THE AGENTS",
-          "title": "Eleven agents, one per job.",
+          "title": "One agent per job.",
           "sub": "See the agents →"
         },
         "modules": {
@@ -3056,7 +3062,7 @@
         }
       },
       "socle": {
-        "eyebrow": "01 · THE FOUNDATION",
+        "eyebrow": "02 · THE FOUNDATION",
         "title": "The Sojori PMS, or yours.",
         "lead": "The agents and the modules work on both. You do not have to change everything to get started.",
         "pmsTitle": "THE SOJORI PMS INCLUDES",
@@ -3160,10 +3166,14 @@
           },
           "cardTitle": "Card to approve · Dynamic pricing",
           "cardText": "The weekend of the 14th is in higher demand than usual. I suggest a higher price for Friday and Saturday."
+        },
+        "capture": {
+          "alt": "Sojori calendar: bookings for several properties over a month (test account).",
+          "caption": "The Sojori PMS calendar, on a test account."
         }
       },
       "stay": {
-        "eyebrow": "04 · A STAY",
+        "eyebrow": "01 · A STAY",
         "title": "From booking to departure, seven steps. You only see the one that is stuck.",
         "lead": "Each step has its agent and its deadline. As long as everything moves forward, nothing is asked of you. When a step runs late, a line appears in your dashboard, with its cause.",
         "pick": "CHOOSE A STEP",
@@ -3249,7 +3259,7 @@
         ]
       },
       "control": {
-        "eyebrow": "05 · YOU STAY IN CONTROL",
+        "eyebrow": "04 · YOU STAY IN CONTROL",
         "title": "You set the rules. Your agents act within them.",
         "cards": [
           {
