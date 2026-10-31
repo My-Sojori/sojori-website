@@ -3806,7 +3806,7 @@
       }
     },
     "testMode": {
-      "text": "Mode test : les envois restent dans cet écran, rien n'arrive au CRM."
+      "text": "Mode test : la demande et sa qualification restent dans cet écran ; les autres appels (créneaux, annulations) sont désactivés. Rien n'arrive au CRM."
     }
   },
   "faqPages": {

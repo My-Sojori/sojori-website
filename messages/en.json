@@ -3806,7 +3806,7 @@
       }
     },
     "testMode": {
-      "text": "Test mode: submissions stay on this screen and nothing reaches the CRM."
+      "text": "Test mode: the request and its qualification stay on this screen; other calls (slots, cancellations) are disabled. Nothing reaches the CRM."
     }
   },
   "faqPages": {

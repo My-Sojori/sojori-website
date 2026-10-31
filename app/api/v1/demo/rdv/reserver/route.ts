@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { refuserEnTest } from '@/lib/demoTestServeur';
 import { normalizeDemoBackendResponse } from '@/lib/demoApiResponse';
 import {
   getDemoServiceBaseUrl,
@@ -10,6 +11,8 @@ import { demoProxyFetch, devFetchDetailForDemo } from '@/lib/demoProxyFetch';
  * POST /api/v1/demo/rdv/reserver — proxy → srv-crm : réserve le créneau choisi ({ t, debut, fuseau }).
  */
 export async function POST(request: NextRequest) {
+  const enTest = refuserEnTest(request);
+  if (enTest) return enTest;
   let body: { t?: unknown; debut?: unknown; fuseau?: unknown };
   try {
     body = await request.json();

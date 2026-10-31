@@ -1,3 +1,5 @@
+import { NextResponse } from 'next/server';
+
 /**
  * Mode test des aperçus : avec l'en-tête `x-sojori-test: 1` (posé par le formulaire quand l'adresse porte `?test=1`), les
  * routes de demande répondent sans appeler le CRM. FERMÉ PAR DÉFAUT : disponible seulement sur un aperçu Vercel
@@ -11,3 +13,7 @@ export const testDisponible = () => {
   return process.env.NODE_ENV !== 'production';
 };
 export const modeTest = (req: Request) => req.headers.get('x-sojori-test') === '1' && testDisponible();
+
+/** Mode test : les autres routes de demande (créneaux, annulations, jeton) ne partent pas vers le CRM ; elles répondent « désactivé ». */
+export const refuserEnTest = (req: Request): NextResponse | null =>
+  modeTest(req) ? NextResponse.json({ success: false, error: 'Mode test : cet appel est désactivé.' }, { status: 409 }) : null;

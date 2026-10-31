@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { refuserEnTest } from '@/lib/demoTestServeur';
 import { normalizeDemoBackendResponse } from '@/lib/demoApiResponse';
 import { getDemoServiceBaseUrl, getDemoProxyFailureMessage } from '@/lib/getDemoServiceBaseUrl';
 import { demoProxyFetch, devFetchDetailForDemo } from '@/lib/demoProxyFetch';
@@ -7,6 +8,8 @@ import { demoProxyFetch, devFetchDetailForDemo } from '@/lib/demoProxyFetch';
  * POST /api/v1/demo/appointment/cancel-by-token — proxy public → srv-crm.
  */
 export async function POST(request: NextRequest) {
+  const enTest = refuserEnTest(request);
+  if (enTest) return enTest;
   let body: unknown;
   try {
     body = await request.json();

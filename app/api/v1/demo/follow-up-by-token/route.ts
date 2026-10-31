@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { refuserEnTest } from '@/lib/demoTestServeur';
 import { normalizeDemoBackendResponse } from '@/lib/demoApiResponse';
 import { getDemoServiceBaseUrl } from '@/lib/getDemoServiceBaseUrl';
 import { demoProxyFetch } from '@/lib/demoProxyFetch';
@@ -12,6 +13,8 @@ import { demoProxyFetch } from '@/lib/demoProxyFetch';
  * questions enrichissent le questionnaire, elles ne doivent jamais le bloquer.
  */
 export async function POST(request: NextRequest) {
+  const enTest = refuserEnTest(request);
+  if (enTest) return enTest;
   const token = request.nextUrl.searchParams.get('t')?.trim() || '';
   if (!token) {
     return NextResponse.json({ success: true, data: { questions: [] } }, { status: 200 });
