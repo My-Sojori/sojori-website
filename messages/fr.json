@@ -2413,7 +2413,7 @@
           "agents": "Entre agents",
           "card": "Carte à valider"
         },
-        "soon": "Bientôt, en construction : Agent Réservation Call · Agent Service client Call · appels au staff",
+        "soon": "En option : Agent Réservation Call · Agent Service client Call · appels au staff",
         "journalTitle": "LES ÉCHANGES, DU PLUS RÉCENT AU PLUS ANCIEN",
         "numbersTitle": "AUJOURD’HUI · {type} DE {size}",
         "numbers": {
@@ -2704,7 +2704,7 @@
           },
           "calls": {
             "name": "Agents Appels",
-            "resume": "Le même agent, mais à la voix, en direct sur WhatsApp. Pas encore achetable, sans date promise.",
+            "resume": "Le même agent, mais à la voix, en direct sur WhatsApp. Proposé en option sur votre offre.",
             "points": [
               "Agent Réservation Call : prend une réservation à la voix.",
               "Agent Service client Call : répond à un voyageur qui appelle.",
@@ -2717,8 +2717,8 @@
             "q": "(appel entrant) Bonjour, je voudrais réserver.",
             "r": "Bonjour, avec plaisir. Pour quelles dates ?",
             "promise": "Le téléphone ne sonne plus dans le vide.",
-            "kpiValue": "Bientôt",
-            "kpiText": "en construction, sans date promise",
+            "kpiValue": "En option",
+            "kpiText": "à ajouter à votre offre",
             "note": "Un appel est une voix en temps réel, à ne pas confondre avec un message vocal, déjà pris en charge."
           }
         }
@@ -3227,7 +3227,7 @@
           },
           {
             "q": "Que font les agents Sojori ?",
-            "a": "Sojori propose un agent par métier : Réservation, Service client, Opérations, Tarification dynamique, Assistant, Studio, Site web, Commercial, Prospection, Marketing et Finance, ainsi que des agents d’appels en construction. Pour chacun, vous réglez s’il agit seul ou s’il attend votre accord."
+            "a": "Sojori propose un agent par métier : Réservation, Service client, Opérations, Tarification dynamique, Assistant, Studio, Site web, Commercial, Prospection, Marketing et Finance, ainsi que des agents d’appels proposés en option. Pour chacun, vous réglez s’il agit seul ou s’il attend votre accord."
           },
           {
             "q": "Comment fonctionne le check-in WhatsApp, avec la fiche de police et le contrat ?",
@@ -3705,7 +3705,7 @@
               "Agent Studio : vous réglez Sojori en discutant, chaque changement arrive sous forme de carte.",
               "Agent Site web : un site pour vos biens, créé et maintenu à partir de votre catalogue.",
               "Agent Commercial avec CRM, Agent Prospection, Agent Marketing et Agent Finance : les agents spécialisés.",
-              "Agents d'appels : à la voix, en construction, sans date promise."
+              "Agents d'appels : à la voix, proposés en option."
             ]
           },
           {
@@ -3728,7 +3728,7 @@
           },
           {
             "q": "Que font les agents Sojori ?",
-            "a": "Sojori propose un agent par métier : Réservation, Service client, Opérations, Tarification dynamique, Assistant, Studio, Site web, Commercial, Prospection, Marketing et Finance. Les agents d'appels sont en construction, sans date promise."
+            "a": "Sojori propose un agent par métier : Réservation, Service client, Opérations, Tarification dynamique, Assistant, Studio, Site web, Commercial, Prospection, Marketing et Finance. Les agents d'appels, à la voix, sont proposés en option."
           },
           {
             "q": "Un agent peut-il agir sans mon accord ?",

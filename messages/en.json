@@ -2413,7 +2413,7 @@
           "agents": "Between agents",
           "card": "Card to approve"
         },
-        "soon": "Coming soon, under construction: Booking Agent Call · Guest Service Agent Call · calls to staff",
+        "soon": "Available as an option: Booking Agent Call · Guest Service Agent Call · calls to staff",
         "journalTitle": "THE EXCHANGES, NEWEST FIRST",
         "numbersTitle": "TODAY · {type} OF {size}",
         "numbers": {
@@ -2704,7 +2704,7 @@
           },
           "calls": {
             "name": "Calling Agents",
-            "resume": "The same agent, but by voice, live on WhatsApp. Not yet available to buy, no date promised.",
+            "resume": "The same agent, but by voice, live on WhatsApp. Offered as an option on your plan.",
             "points": [
               "Booking Agent Call: takes a booking by voice.",
               "Guest Service Agent Call: answers a guest who calls.",
@@ -2717,8 +2717,8 @@
             "q": "(incoming call) Hello, I would like to book.",
             "r": "Hello, with pleasure. For which dates?",
             "promise": "The phone no longer rings into the void.",
-            "kpiValue": "Coming soon",
-            "kpiText": "under construction, no date promised",
+            "kpiValue": "Optional",
+            "kpiText": "add it to your plan",
             "note": "A call is a live voice in real time, not to be confused with a voice message, which is already supported."
           }
         }
@@ -3227,7 +3227,7 @@
           },
           {
             "q": "What do the Sojori agents do?",
-            "a": "Sojori offers one agent per role: Booking, Guest Service, Operations, Dynamic pricing, Assistant, Studio, Website, Sales, Prospecting, Marketing and Finance, plus calling agents under construction. For each one, you set whether it acts alone or waits for your approval."
+            "a": "Sojori offers one agent per role: Booking, Guest Service, Operations, Dynamic pricing, Assistant, Studio, Website, Sales, Prospecting, Marketing and Finance, plus calling agents offered as an option. For each one, you set whether it acts alone or waits for your approval."
           },
           {
             "q": "How does WhatsApp check-in work, with the police registration form and the contract?",
@@ -3705,7 +3705,7 @@
               "Studio Agent: you set up Sojori through conversation, each change arrives as a card.",
               "Website Agent: a website for your properties, created and maintained from your catalog.",
               "Sales Agent with CRM, Prospecting Agent, Marketing Agent and Finance Agent: the specialized agents.",
-              "Calling Agents: by voice, under construction, no date promised."
+              "Calling Agents: by voice, offered as an option."
             ]
           },
           {
@@ -3728,7 +3728,7 @@
           },
           {
             "q": "What do Sojori agents do?",
-            "a": "Sojori offers one agent per job: Booking, Guest Service, Operations, Dynamic pricing, Assistant, Studio, Website, Sales, Prospecting, Marketing and Finance. The Calling Agents are under construction, no date promised."
+            "a": "Sojori offers one agent per job: Booking, Guest Service, Operations, Dynamic pricing, Assistant, Studio, Website, Sales, Prospecting, Marketing and Finance. The Calling Agents, which work by voice, are offered as an option."
           },
           {
             "q": "Can an agent act without my approval?",

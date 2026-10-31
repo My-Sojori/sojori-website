@@ -2413,7 +2413,7 @@
           "agents": "Entre agentes",
           "card": "Tarjeta por aprobar"
         },
-        "soon": "Próximamente, en construcción: Agente de Reservas Call · Agente de Atención al Cliente Call · llamadas al equipo",
+        "soon": "Disponible como opción: Agente de Reservas Call · Agente de Atención al Cliente Call · llamadas al equipo",
         "journalTitle": "LOS INTERCAMBIOS, DEL MÁS RECIENTE AL MÁS ANTIGUO",
         "numbersTitle": "HOY · {type} DE {size}",
         "numbers": {
@@ -2704,7 +2704,7 @@
           },
           "calls": {
             "name": "Agentes de Llamadas",
-            "resume": "El mismo agente, pero con voz, en directo en WhatsApp. Aún no se puede contratar, sin fecha prometida.",
+            "resume": "El mismo agente, pero con voz, en directo en WhatsApp. Se ofrece como opción en su oferta.",
             "points": [
               "Agente de Reservas Call: toma una reserva por voz.",
               "Agente de Atención al Cliente Call: responde a un huésped que llama.",
@@ -2717,8 +2717,8 @@
             "q": "(llamada entrante) Buenos días, quisiera hacer una reserva.",
             "r": "Buenos días, con mucho gusto. ¿Para qué fechas?",
             "promise": "El teléfono ya no suena en el vacío.",
-            "kpiValue": "Próximamente",
-            "kpiText": "en construcción, sin fecha prometida",
+            "kpiValue": "Opcional",
+            "kpiText": "para añadir a su oferta",
             "note": "Una llamada es una voz en tiempo real, que no debe confundirse con un mensaje de voz, ya compatible."
           }
         }
@@ -3227,7 +3227,7 @@
           },
           {
             "q": "¿Qué hacen los agentes de Sojori?",
-            "a": "Sojori ofrece un agente por función: Reservas, Atención al Cliente, Operaciones, Precios dinámicos, Asistente, Studio, Sitio web, Comercial, Prospección, Marketing y Finanzas, además de agentes de llamadas en construcción. Para cada uno, usted decide si actúa solo o si espera su aprobación."
+            "a": "Sojori ofrece un agente por función: Reservas, Atención al Cliente, Operaciones, Precios dinámicos, Asistente, Studio, Sitio web, Comercial, Prospección, Marketing y Finanzas, además de agentes de llamadas que se ofrecen como opción. Para cada uno, usted decide si actúa solo o si espera su aprobación."
           },
           {
             "q": "¿Cómo funciona el check-in por WhatsApp, con el formulario de policía y el contrato?",
@@ -3705,7 +3705,7 @@
               "Agente Studio: usted configura Sojori conversando, cada cambio llega en forma de tarjeta.",
               "Agente de Sitio web: un sitio para sus propiedades, creado y mantenido a partir de su catálogo.",
               "Agente Comercial con CRM, Agente de Prospección, Agente de Marketing y Agente de Finanzas: los agentes especializados.",
-              "Agentes de Llamadas: por voz, en construcción, sin fecha prometida."
+              "Agentes de Llamadas: por voz, se ofrecen como opción."
             ]
           },
           {
@@ -3728,7 +3728,7 @@
           },
           {
             "q": "¿Qué hacen los agentes de Sojori?",
-            "a": "Sojori ofrece un agente por oficio: Reservas, Atención al Cliente, Operaciones, Precios dinámicos, Asistente, Studio, Sitio web, Comercial, Prospección, Marketing y Finanzas. Los agentes de llamadas están en construcción, sin fecha prometida."
+            "a": "Sojori ofrece un agente por oficio: Reservas, Atención al Cliente, Operaciones, Precios dinámicos, Asistente, Studio, Sitio web, Comercial, Prospección, Marketing y Finanzas. Los agentes de llamadas, que funcionan por voz, se ofrecen como opción."
           },
           {
             "q": "¿Puede un agente actuar sin mi aprobación?",

@@ -3,7 +3,7 @@ import { Tabs } from '../Tabs';
 import { GainNote, GainValue } from './Gains';
 
 const IDS = ['booking', 'service', 'operations', 'pricing', 'assistant', 'studio', 'site', 'commercial', 'prospecting', 'marketingFinance', 'calls'] as const;
-const STATUT: Record<string, 'available' | 'included' | 'soon'> = { studio: 'included', calls: 'soon' };
+const STATUT: Record<string, 'available' | 'included'> = { studio: 'included' };
 const HEURES: Record<string, 'guest' | 'field'> = { service: 'guest', operations: 'field' };
 
 export function Agents() {
