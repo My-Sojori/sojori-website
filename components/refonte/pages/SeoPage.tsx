@@ -9,14 +9,24 @@ import { SITE_URL } from '@/lib/siteUrl';
 
 type Section = { title: string; text?: string; points?: string[]; table?: { head: string[]; rows: string[][] } };
 
+/** Les noms de journaux latins : isolés (<bdi>) pour que l'arabe ne mélange pas leurs parenthèses et leurs dates. */
+const NOMS_LATINS = /(Le360 \/ Challenge|Le Matin|Médias24)/;
+function Latins({ texte }: { texte: string }) {
+  return (
+    <>
+      {texte.split(NOMS_LATINS).map((p, i) => (i % 2 === 1 ? <bdi key={i} lang="fr">{p}</bdi> : <span key={i}>{p}</span>))}
+    </>
+  );
+}
+
 /** Met en évidence les points réglementaires encore « à confirmer » : ils ne doivent pas passer pour des faits. */
 function Texte({ texte, jeton }: { texte: string; jeton: string }) {
-  if (!texte.includes(jeton)) return <>{texte}</>;
+  if (!texte.includes(jeton)) return <Latins texte={texte} />;
   const parts = texte.split(jeton);
   return (
     <>
       {parts.map((p, i) => (
-        <span key={i}>{p}{i < parts.length - 1 && <mark className="sj2-aconfirmer">{jeton}</mark>}</span>
+        <span key={i}><Latins texte={p} />{i < parts.length - 1 && <mark className="sj2-aconfirmer">{jeton}</mark>}</span>
       ))}
     </>
   );
@@ -96,7 +106,7 @@ export async function SeoPage({ id, locale, related }: { id: SeoPageId; locale: 
               <ol>
                 {sources.map((label, i) => (
                   <li key={label}>
-                    {sourcesUrl[i] ? <a href={sourcesUrl[i] as string} target="_blank" rel="noopener noreferrer">{label}</a> : label}
+                    {sourcesUrl[i] ? <a href={sourcesUrl[i] as string} target="_blank" rel="noopener noreferrer"><Latins texte={label} /></a> : <Latins texte={label} />}
                   </li>
                 ))}
               </ol>
