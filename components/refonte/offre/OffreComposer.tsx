@@ -1,11 +1,14 @@
 'use client';
 
-import { useMemo, useState, useSyncExternalStore } from 'react';
+import { useState } from 'react';
 import { useLocale, useTranslations } from 'next-intl';
-import { PHONE_DIAL_ROWS } from '@/lib/phoneDialCodesData';
-import { PAYS_DEMO } from '@/lib/demoQualification';
+import { champsIdentite, erreursIdentite, paysInitial } from '@/lib/refonte/identiteDemande';
+import { formaterNumero } from '@/lib/refonte/pays';
+import { ChampPays } from '../ChampPays';
+import { BandeauTest } from '../BandeauTest';
 import { demoResponseErrorMessage, normalizeDemoBackendResponse } from '@/lib/demoApiResponse';
 import { trackDemoLead } from '@/lib/analytics';
+import { enTetesDemande } from '@/lib/demoTest';
 import {
   estChoisi, estExterne, estHotel, PAR_COMPTE, PRODUITS, PROFILS, QUANDS, QUANDS_FR, resume, segmentCrm,
   SELECTION_PAR_DEFAUT, SITES, UTILISATEURS, VALEURS_RAPIDES,
@@ -13,7 +16,6 @@ import {
 } from '@/lib/refonte/offre';
 
 const DEMO_API = '/api/v1/demo';
-const EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 
 /** Un petit compteur − n + : 44 px de haut, annoncé par un nom. */
 function Compteur({ n, onMoins, onPlus, moinsAria, plusAria }: { n: number; onMoins: () => void; onPlus: () => void; moinsAria: string; plusAria: string }) {
@@ -35,15 +37,17 @@ export function OffreComposer() {
   const hotel = estHotel(s.profil);
   const unite = hotel ? 'Chambres' : 'Biens';
 
-  // le formulaire en trois étapes (Tawfiq, 31/10/2026) : l'e-mail d'abord, puis la préparation de la démo (facultative), puis « envoyé »
+  // le formulaire en trois étapes (Tawfiq, 31/10/2026) : les quatre coordonnées d'abord (e-mail, nom, pays, téléphone, tous
+  // obligatoires) ; puis « c'est envoyé » et trois questions facultatives ; puis le récapitulatif
   const [etape, setEtape] = useState<1 | 2 | 3>(1);
   const [email, setEmail] = useState('');
   const [consent, setConsent] = useState(false);
   const [nom, setNom] = useState('');
-  const [pays, setPays] = useState('');
-  const [paysAutre, setPaysAutre] = useState('');
-  const [isoChoisi, setIso] = useState<string | null>(null);
+  // le pays proposé suit la langue de la page ; l'indicatif du téléphone suit le pays (et se change à part)
+  const [paysIso, setPaysIso] = useState(paysInitial(locale));
+  const [dialIso, setDialIso] = useState(paysInitial(locale));
   const [tel, setTel] = useState('');
+  const [tente, setTente] = useState(false);
   const [pmsNom, setPmsNom] = useState('');
   const [quand, setQuand] = useState<QuandId | null>(null);
   const [ville, setVille] = useState('');
@@ -51,23 +55,10 @@ export function OffreComposer() {
   const [erreur, setErreur] = useState('');
   const [statut, setStatut] = useState<'libre' | 'envoi'>('libre');
 
-  // +212 par défaut ; +33 pour un navigateur en fr-FR sur la page française (lu sans effet : faux côté serveur).
-  const isoDefaut = useSyncExternalStore(
-    () => () => {},
-    () => { try { return locale === 'fr' && /^fr-FR/i.test(navigator.language) ? 'FR' : 'MA'; } catch { return 'MA'; } },
-    () => 'MA',
-  );
-  const iso = isoChoisi ?? isoDefaut;
-  const dial = PHONE_DIAL_ROWS.find((r) => r.iso === iso)?.dial ?? '+212';
-  const nomPays = useMemo(() => {
-    let noms: Intl.DisplayNames | null = null;
-    try { noms = new Intl.DisplayNames([locale], { type: 'region' }); } catch { /* repli : le nom français */ }
-    return (code: string, repli: string) => { try { return noms?.of(code) ?? repli; } catch { return repli; } };
-  }, [locale]);
-
-  const emailOk = EMAIL.test(email.trim());
-  const ok1 = emailOk && consent;
-  const sansWhatsapp = tel.replace(/\D/g, '').length < 8;
+  const ident = { email, nom, paysIso, tel, consent };
+  const textesPays = { search: t('form.reach.countrySearch'), none: t('form.reach.countryNone'), close: t('form.reach.countryClose') };
+  const err = erreursIdentite(ident);
+  const ok1 = Object.keys(err).length === 0;
 
   // les lignes de la sélection
   const lignes: { nom: string; detail: string }[] = [];
@@ -87,23 +78,54 @@ export function OffreComposer() {
   const choisis = PRODUITS.filter((id) => estChoisi(s, id) && id !== 'pms').slice(0, 3).map((id) => t(`products.${id}.name`));
   const cas = [t(`profile.label.${hotel ? 'hotel' : 'conc'}`), t(`selection.detail${unite}`, { n: s.n }), ...choisis].join(', ');
 
-  /** Étape 1 : l'e-mail et l'accord seuls. La demande existe dès ici. */
+  /** Le résumé de la sélection de la page : il part avec la demande, même si le visiteur passe l'étape 2. */
+  const corpsSelection = () => ({
+    numberOfProperties: String(s.n),
+    expectations: resume(s),
+    hearAboutUs: 'sojori.com · Votre offre',
+    segment: segmentCrm(s.profil),
+    currentPMS: externe ? (pmsNom.trim() ? pmsNom.trim().slice(0, 80) : 'Garde son PMS actuel') : 'Sojori',
+  });
+
+  /**
+   * Étape 1 : les quatre coordonnées et l'accord, un seul clic. Deux appels : la demande (POST, avec les coordonnées),
+   * puis la qualification (PATCH, avec la sélection de la page). Si le second échoue, la demande existe déjà : on le dit
+   * et un nouveau clic ne refait que le PATCH.
+   */
   const continuer = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!ok1 || statut === 'envoi') return;
+    if (statut === 'envoi') return;
+    setTente(true);
+    if (!ok1) return;
     setErreur('');
-    if (demande) { setEtape(2); return; }
     setStatut('envoi');
     try {
-      const r = await fetch(`${DEMO_API}/request`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email: email.trim(), consentementMessages: true, source: 'website-offre', langue: locale }),
-      });
-      const data = normalizeDemoBackendResponse(await r.json().catch(() => ({}))) as { success?: boolean; data?: { id?: string; qualificationToken?: string } };
-      if (data.success !== true || !data.data?.id) throw new Error(demoResponseErrorMessage(data) || 'request');
-      setDemande({ id: String(data.data.id), jeton: data.data.qualificationToken ?? '' });
-      trackDemoLead('website-offre');
+      let courante = demande;
+      if (!courante) {
+        const r = await fetch(`${DEMO_API}/request`, {
+          method: 'POST',
+          headers: enTetesDemande({ 'Content-Type': 'application/json' }),
+          body: JSON.stringify({ email: email.trim(), ...champsIdentite(ident, dialIso), consentementMessages: true, source: 'website-offre', langue: locale }),
+        });
+        const data = normalizeDemoBackendResponse(await r.json().catch(() => ({}))) as { success?: boolean; data?: { id?: string; qualificationToken?: string } };
+        if (data.success !== true || !data.data?.id) throw new Error(demoResponseErrorMessage(data) || 'request');
+        courante = { id: String(data.data.id), jeton: data.data.qualificationToken ?? '' };
+        setDemande(courante);
+        // Mode test (aperçus) : aucune conversion publicitaire.
+        if (!(data.data as { test?: boolean } | undefined)?.test) trackDemoLead('website-offre');
+      }
+      try {
+        const r2 = await fetch(`${DEMO_API}/request/${courante.id}/qualify`, {
+          method: 'PATCH',
+          headers: enTetesDemande({ 'Content-Type': 'application/json' }),
+          body: JSON.stringify({ qualificationToken: courante.jeton, ...champsIdentite(ident, dialIso), ...corpsSelection() }),
+        });
+        const d2 = normalizeDemoBackendResponse(await r2.json().catch(() => ({}))) as { success?: boolean };
+        if (d2.success !== true) throw new Error('qualify');
+      } catch {
+        setErreur(t('form.errors.partial'));
+        return;
+      }
       setEtape(2);
     } catch {
       setErreur(t('selection.errorGeneric'));
@@ -112,34 +134,21 @@ export function OffreComposer() {
     }
   };
 
-  /**
-   * Étape 2 : tout est facultatif. Le résumé des choix de la page part toujours (expectations), même si le visiteur
-   * passe l'étape ; le reste n'est envoyé que s'il est renseigné.
-   */
+  /** Étape 2 : trois questions facultatives, envoyées en complément (ville, PMS gardé, démarrage). */
   const envoyer = async (passer: boolean) => {
     if (!demande || statut === 'envoi') return;
     setErreur('');
+    if (passer || (!ville.trim() && !quand && !(externe && pmsNom.trim()))) { setEtape(3); return; }
     setStatut('envoi');
-    const paysFinal = pays === 'Autre' ? paysAutre.trim().slice(0, 60) : pays;
-    const chiffres = tel.replace(/\D/g, '').replace(/^0+/, '');
     try {
       const r = await fetch(`${DEMO_API}/request/${demande.id}/qualify`, {
         method: 'PATCH',
-        headers: { 'Content-Type': 'application/json' },
+        headers: enTetesDemande({ 'Content-Type': 'application/json' }),
         body: JSON.stringify({
           qualificationToken: demande.jeton,
-          numberOfProperties: String(s.n),
-          expectations: resume(s),
-          hearAboutUs: 'sojori.com · Votre offre',
-          segment: segmentCrm(s.profil),
-          currentPMS: externe ? (pmsNom.trim() ? pmsNom.trim().slice(0, 80) : 'Garde son PMS actuel') : 'Sojori',
-          ...(passer ? {} : {
-            ...(nom.trim() ? { fullName: nom.trim() } : {}),
-            ...(paysFinal ? { country: paysFinal } : {}),
-            ...(chiffres.length >= 8 ? { phone: chiffres, countryCode: dial } : {}),
-            ...(quand ? { timeline: QUANDS_FR[quand] } : {}),
-            ...(ville.trim() ? { cities: [ville.trim().slice(0, 60)] } : {}),
-          }),
+          ...corpsSelection(),
+          ...(quand ? { timeline: QUANDS_FR[quand] } : {}),
+          ...(ville.trim() ? { cities: [ville.trim().slice(0, 60)] } : {}),
         }),
       });
       const data = normalizeDemoBackendResponse(await r.json().catch(() => ({}))) as { success?: boolean };
@@ -270,6 +279,7 @@ export function OffreComposer() {
         ) : <p className="sj2-selection__vide">{t('selection.empty')}</p>}
 
         <div className="sj2-form">
+          <BandeauTest />
           <ol className="sj2-pas sj2-pas--3" aria-label={t('form.stepsAria')}>
             {(['email', 'reach', 'sent'] as const).map((k, i) => (
               <li key={k} aria-current={etape === i + 1 ? 'step' : undefined} className={etape >= i + 1 ? 'is-on' : ''}>
@@ -284,14 +294,29 @@ export function OffreComposer() {
               <strong className="sj2-form__titre">{t('form.email.title')}</strong>
               <p className="sj2-form__aide">{t('form.email.lead')}</p>
               <label htmlFor="sj2-email">{t('form.email.label')}</label>
-              <input id="sj2-email" type="email" inputMode="email" autoComplete="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
+              <input id="sj2-email" type="email" inputMode="email" autoComplete="email" value={email} onChange={(e) => setEmail(e.target.value)} required aria-invalid={tente && err.email ? true : undefined} aria-describedby={tente && err.email ? 'sj2-err-email' : undefined} />
+              {tente && err.email && <p className="sj2-erreur sj2-erreur--champ" id="sj2-err-email">{t('form.errors.email')}</p>}
+              <label htmlFor="sj2-nom">{t('form.reach.name')}</label>
+              <input id="sj2-nom" type="text" autoComplete="name" value={nom} onChange={(e) => setNom(e.target.value)} required aria-invalid={tente && err.nom ? true : undefined} aria-describedby={tente && err.nom ? 'sj2-err-nom' : undefined} />
+              {tente && err.nom && <p className="sj2-erreur sj2-erreur--champ" id="sj2-err-nom">{t('form.errors.name')}</p>}
+              <label htmlFor="sj2-pays">{t('form.reach.country')}</label>
+              <ChampPays id="sj2-pays" valeur={paysIso} locale={locale} affichage="pays" libelle={t('form.reach.country')} textes={textesPays}
+                invalide={tente && err.pays} onChoisir={(iso) => { setPaysIso(iso); setDialIso(iso); setTel((v) => formaterNumero(v, iso)); }} />
+              {tente && err.pays && <p className="sj2-erreur sj2-erreur--champ">{t('form.errors.country')}</p>}
+              <label htmlFor="sj2-tel">{t('form.reach.phone')}</label>
+              <div className="sj2-tel">
+                <ChampPays id="sj2-dial" valeur={dialIso} locale={locale} affichage="indicatif" libelle={t('form.reach.dial')} textes={textesPays}
+                  onChoisir={(iso) => { setDialIso(iso); setTel((v) => formaterNumero(v, iso)); }} />
+                <input id="sj2-tel" type="tel" inputMode="tel" autoComplete="tel-national" value={tel} onChange={(e) => setTel(formaterNumero(e.target.value, dialIso))} required aria-invalid={tente && err.tel ? true : undefined} aria-describedby={tente && err.tel ? 'sj2-err-tel' : undefined} />
+              </div>
+              {tente && err.tel && <p className="sj2-erreur sj2-erreur--champ" id="sj2-err-tel">{t('form.errors.phone')}</p>}
               <label className="sj2-consent">
-                <input type="checkbox" checked={consent} onChange={(e) => setConsent(e.target.checked)} />
+                <input type="checkbox" checked={consent} onChange={(e) => setConsent(e.target.checked)} required />
                 <span>{t('form.email.consent')}</span>
               </label>
-              {!ok1 && <p className="sj2-form__aide" id="sj2-aide1">{t('form.email.help')}</p>}
+              {tente && err.consent && <p className="sj2-erreur sj2-erreur--champ">{t('form.errors.consent')}</p>}
               {erreur && <p className="sj2-erreur" role="alert">{erreur}</p>}
-              <button type="submit" className="sj2-btn sj2-btn--lg" disabled={!ok1 || statut === 'envoi'} aria-describedby={!ok1 ? 'sj2-aide1' : undefined}>
+              <button type="submit" className="sj2-btn sj2-btn--lg sj2-form__envoi" disabled={statut === 'envoi'}>
                 {statut === 'envoi' ? t('selection.sending') : t('form.email.submit')}
               </button>
               <p className="sj2-form__note">{t('form.email.saved')}</p>
@@ -302,35 +327,14 @@ export function OffreComposer() {
             <form onSubmit={(e) => { e.preventDefault(); void envoyer(false); }} noValidate className="sj2-form__champs">
               <strong className="sj2-form__titre">{t('form.reach.title')}</strong>
               <p className="sj2-form__aide">{t('form.reach.lead')}</p>
-              <label htmlFor="sj2-nom">{t('form.reach.name')}</label>
-              <input id="sj2-nom" type="text" autoComplete="name" value={nom} onChange={(e) => setNom(e.target.value)} />
-              <label htmlFor="sj2-pays">{t('form.reach.country')}</label>
-              <select id="sj2-pays" value={pays} onChange={(e) => {
-                const v = e.target.value; setPays(v);
-                const p = PAYS_DEMO.find((x) => x.id === v);
-                if (p?.iso) setIso(p.iso);
-              }}>
-                <option value="" />
-                {PAYS_DEMO.map((p) => <option key={p.id} value={p.id}>{p.iso ? nomPays(p.iso, p.label) : t('form.reach.otherCountry')}</option>)}
-              </select>
-              {pays === 'Autre' && (
-                <input type="text" aria-label={t('form.reach.countryOther')} placeholder={t('form.reach.countryOther')} value={paysAutre} onChange={(e) => setPaysAutre(e.target.value)} />
-              )}
-              <label htmlFor="sj2-tel">{t('form.reach.phone')} <em className="sj2-hint">· {t('form.reach.phoneHint')}</em></label>
-              <div className="sj2-tel">
-                <select aria-label={t('form.reach.dial')} value={iso} onChange={(e) => setIso(e.target.value)}>
-                  {PHONE_DIAL_ROWS.map((r) => <option key={r.iso} value={r.iso}>{t('form.reach.dialOption', { dial: r.dial, country: nomPays(r.iso, r.nameFr) })}</option>)}
-                </select>
-                <input id="sj2-tel" type="tel" inputMode="tel" autoComplete="tel-national" value={tel} onChange={(e) => setTel(e.target.value)} />
-              </div>
+              <label htmlFor="sj2-ville">{t('form.reach.city')}</label>
+              <input id="sj2-ville" type="text" autoComplete="address-level2" value={ville} onChange={(e) => setVille(e.target.value)} />
               {externe && (
                 <>
                   <label htmlFor="sj2-pms">{t('form.reach.pms')}</label>
                   <input id="sj2-pms" type="text" value={pmsNom} onChange={(e) => setPmsNom(e.target.value)} />
                 </>
               )}
-              <label htmlFor="sj2-ville">{t('form.reach.city')}</label>
-              <input id="sj2-ville" type="text" autoComplete="address-level2" value={ville} onChange={(e) => setVille(e.target.value)} />
               <fieldset className="sj2-q">
                 <legend>{t('form.reach.whenTitle')}</legend>
                 <div className="sj2-chips2">
@@ -353,12 +357,6 @@ export function OffreComposer() {
                 <li><span className="sj2-merci__n" aria-hidden="true">2</span><span>{t('form.sent.s2', { email: email.trim() })}</span></li>
                 <li><span className="sj2-merci__n" aria-hidden="true">3</span><span>{t('form.sent.s3')}</span></li>
               </ol>
-              {sansWhatsapp && (
-                <div className="sj2-merci__plus">
-                  <p>{t('form.sent.whatsapp')}</p>
-                  <button type="button" className="sj2-btn sj2-btn--ghost sj2-btn--sm" onClick={() => setEtape(2)}>{t('form.sent.addWhatsapp')}</button>
-                </div>
-              )}
             </div>
           )}
         </div>

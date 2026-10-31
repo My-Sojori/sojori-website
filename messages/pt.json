@@ -1217,13 +1217,13 @@
       "badge": "Demo gratuita",
       "title": "Prepare a sua ",
       "titleGradient": "demo gratuita",
-      "subtitle": "Alguns dados e depois um breve questionário.",
+      "subtitle": "Quatro dados e o seu pedido de demonstração.",
       "emailLabel": "E-mail *",
-      "emailPlaceholder": "voce@empresa.com",
+      "emailPlaceholder": "you@company.com",
       "dialLabel": "País / indicativo *",
       "dialSearchPlaceholder": "Pesquisar país ou +351…",
       "dialNoResults": "Sem resultados",
-      "phoneLabel": "Telefone *",
+      "phoneLabel": "Número de WhatsApp de preferência *",
       "phonePlaceholder": "6 12 34 56 78",
       "propertiesLabel": "A sua atividade *",
       "activityRequired": "Escolha a sua atividade para continuar.",
@@ -1247,7 +1247,7 @@
         "100-200": "100-200 propriedades",
         "200+": "200+ propriedades"
       },
-      "submitButton": "Continuar →",
+      "submitButton": "Pedir a minha demonstração",
       "submitButtonLoading": "Enviando...",
       "disclaimer": "Ao fornecer seus dados, você concorda em receber informações sobre Sojori. Você pode cancelar a inscrição a qualquer momento.",
       "loadingTitle": "A abrir o questionário",
@@ -1270,7 +1270,18 @@
       "paysRequired": "Escolha o seu país para continuar.",
       "villeRequired": "Indique a sua cidade para continuar.",
       "tailleChambres": "Quantos quartos?",
-      "tailleBiens": "Quantas propriedades?"
+      "tailleBiens": "Quantas propriedades?",
+      "consentRequired": "Marque o consentimento para enviar.",
+      "nameRequired": "Indique o seu nome.",
+      "countryClose": "Fechar",
+      "emailRequired": "Indique um e-mail válido.",
+      "pmsRequired": "Indique com que PMS.",
+      "pmsTitle": "Com que PMS?",
+      "pmsSojori": "Com o PMS da Sojori",
+      "pmsOwn": "Com o meu PMS",
+      "pmsWhich": "Qual? (facultativo)",
+      "otherLabel": "Especifique (facultativo)",
+      "typeSubmit": "Continuar →"
     },
     "step2": {
       "badge": "Passo 2/4 · Horário",
@@ -3053,27 +3064,27 @@
       "form": {
         "stepsAria": "Etapas do seu pedido",
         "step": {
-          "email": "O seu e-mail",
-          "reach": "Para o contactar",
-          "sent": "Enviado"
+          "email": "Os seus dados",
+          "reach": "Preparar a demonstração",
+          "sent": "Concluído"
         },
         "email": {
-          "title": "Receber a sua proposta",
-          "lead": "O seu e-mail basta para começar. A sua atividade, a sua carteira e as suas escolhas seguem com o seu pedido.",
+          "title": "Os seus dados",
+          "lead": "Quatro dados e o seu pedido segue com as suas escolhas.",
           "label": "O seu e-mail",
           "consent": "Aceito ser contactado pela Sojori sobre o meu pedido.",
           "submit": "Pedir a minha demonstração",
-          "saved": "O seu pedido e as suas escolhas ficam guardados desde esta etapa.",
-          "help": "Indique um e-mail válido e assinale a autorização para continuar."
+          "saved": "O seu pedido e as suas escolhas ficam guardados ao enviar.",
+          "help": "Preencha os quatro campos e marque o consentimento para enviar."
         },
         "reach": {
-          "title": "Recebido. Para o contactar",
-          "lead": "Tudo é facultativo. A sua atividade, a sua carteira e as suas escolhas já constam do pedido.",
+          "title": "Enviado. Para preparar a sua demonstração",
+          "lead": "Três perguntas, todas facultativas: o seu pedido já está guardado.",
           "name": "Nome e apelido",
           "country": "País",
           "countryOther": "O seu país",
           "otherCountry": "Outro país",
-          "phone": "Número de WhatsApp",
+          "phone": "Número de WhatsApp de preferência",
           "phoneHint": "recomendado",
           "dial": "Indicativo do país",
           "dialOption": "{dial} ({country})",
@@ -3085,7 +3096,10 @@
           "looking": "Estou a informar-me",
           "send": "Enviar",
           "skip": "Saltar esta etapa",
-          "note": "Sem compromisso. Retomado das suas escolhas acima."
+          "note": "As suas escolhas acima já estão no pedido.",
+          "countrySearch": "Pesquisar um país ou +33…",
+          "countryNone": "Sem resultados",
+          "countryClose": "Fechar"
         },
         "sent": {
           "thanksName": "Obrigado, {name}, o seu pedido foi recebido.",
@@ -3095,6 +3109,14 @@
           "s3": "Trinta minutos de demonstração, por videochamada, com a sua proposta com valores.",
           "whatsapp": "Deixe o seu WhatsApp: o seu consultor responder-lhe-á mais depressa.",
           "addWhatsapp": "Adicionar o meu WhatsApp"
+        },
+        "errors": {
+          "email": "Indique um e-mail válido.",
+          "name": "Indique o seu nome.",
+          "country": "Escolha o seu país.",
+          "phone": "Indique um número válido.",
+          "consent": "Marque o consentimento para enviar.",
+          "partial": "O seu pedido está guardado, mas o envio dos seus dados completos falhou. Tente novamente."
         }
       }
     },
@@ -3782,6 +3804,9 @@
         "title": "Ponha os seus agentes a trabalhar.",
         "cta": "Compor a minha oferta"
       }
+    },
+    "testMode": {
+      "text": "Modo de teste: os envios ficam neste ecrã e nada chega ao CRM."
     }
   },
   "faqPages": {

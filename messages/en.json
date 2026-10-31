@@ -1217,13 +1217,13 @@
       "badge": "Free demo",
       "title": "Prepare your ",
       "titleGradient": "free demo",
-      "subtitle": "A few details, then a short questionnaire.",
+      "subtitle": "Four details, then your demo request.",
       "emailLabel": "Email *",
       "emailPlaceholder": "you@company.com",
       "dialLabel": "Country / dial code *",
       "dialSearchPlaceholder": "Search country or +33…",
       "dialNoResults": "No matches",
-      "phoneLabel": "Phone *",
+      "phoneLabel": "Preferably your WhatsApp number *",
       "phonePlaceholder": "6 12 34 56 78",
       "propertiesLabel": "Your activity *",
       "activityRequired": "Choose your activity to continue.",
@@ -1247,7 +1247,7 @@
         "100-200": "100-200 properties",
         "200+": "200+ properties"
       },
-      "submitButton": "Continue →",
+      "submitButton": "Request my demo",
       "submitButtonLoading": "Sending...",
       "disclaimer": "By providing your details, you agree to receive information about Sojori. Unsubscribe anytime.",
       "loadingTitle": "Opening the questionnaire",
@@ -1270,7 +1270,18 @@
       "paysRequired": "Please choose your country.",
       "villeRequired": "Please enter your city.",
       "tailleChambres": "How many rooms?",
-      "tailleBiens": "How many properties?"
+      "tailleBiens": "How many properties?",
+      "consentRequired": "Tick the consent box to send.",
+      "nameRequired": "Enter your name.",
+      "countryClose": "Close",
+      "emailRequired": "Enter a valid email.",
+      "pmsRequired": "Say which PMS you use.",
+      "pmsTitle": "Which PMS?",
+      "pmsSojori": "With the Sojori PMS",
+      "pmsOwn": "With my own PMS",
+      "pmsWhich": "Which one? (optional)",
+      "otherLabel": "Please specify (optional)",
+      "typeSubmit": "Continue →"
     },
     "step2": {
       "badge": "Step 2/4 · Schedule",
@@ -3053,27 +3064,27 @@
       "form": {
         "stepsAria": "Steps of your request",
         "step": {
-          "email": "Your email",
-          "reach": "How to reach you",
-          "sent": "It's sent"
+          "email": "Your details",
+          "reach": "Prepare the demo",
+          "sent": "Done"
         },
         "email": {
-          "title": "Receive your quote",
-          "lead": "Your email is all you need to start. Your business, your portfolio and your choices go with your request.",
+          "title": "Your details",
+          "lead": "Four details, then your request goes out with your choices.",
           "label": "Your email",
           "consent": "I agree to be contacted by Sojori about my request.",
           "submit": "Request my demo",
-          "saved": "Your request and your choices are saved from this step.",
-          "help": "Enter a valid email and tick the consent box to continue."
+          "saved": "Your request and your choices are saved as soon as you send.",
+          "help": "Fill in the four fields and tick the consent box to send."
         },
         "reach": {
-          "title": "Received. How to reach you",
-          "lead": "Everything is optional. Your business, your portfolio and your choices are already in the request.",
+          "title": "Sent. To prepare your demo",
+          "lead": "Three questions, all optional: your request is already saved.",
           "name": "Full name",
           "country": "Country",
           "countryOther": "Your country",
           "otherCountry": "Other country",
-          "phone": "WhatsApp number",
+          "phone": "Preferably your WhatsApp number",
           "phoneHint": "recommended",
           "dial": "Country dialing code",
           "dialOption": "{dial} ({country})",
@@ -3085,7 +3096,10 @@
           "looking": "I'm just exploring",
           "send": "Send",
           "skip": "Skip this step",
-          "note": "No commitment. Pre-filled from your choices above."
+          "note": "Your choices above are already in the request.",
+          "countrySearch": "Search a country or +33…",
+          "countryNone": "No result",
+          "countryClose": "Close"
         },
         "sent": {
           "thanksName": "Thank you {name}, your request has been received.",
@@ -3095,6 +3109,14 @@
           "s3": "Thirty minutes of demo, by video call, with your quote.",
           "whatsapp": "Leave your WhatsApp: your advisor will reply faster.",
           "addWhatsapp": "Add my WhatsApp"
+        },
+        "errors": {
+          "email": "Enter a valid email.",
+          "name": "Enter your name.",
+          "country": "Choose your country.",
+          "phone": "Enter a valid number.",
+          "consent": "Tick the consent box to send.",
+          "partial": "Your request is saved, but sending your full details failed. Please try again."
         }
       }
     },
@@ -3782,6 +3804,9 @@
         "title": "Put your agents to work.",
         "cta": "Build my offer"
       }
+    },
+    "testMode": {
+      "text": "Test mode: submissions stay on this screen and nothing reaches the CRM."
     }
   },
   "faqPages": {

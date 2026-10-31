@@ -1785,7 +1785,8 @@ html.sj-mobile-menu-scroll-lock {
   border-radius: 999px;
   border: 1px solid var(--glass-border);
   background: rgba(255, 255, 255, 0.03);
-  color: #1a1408;
+  color: #f4f1ea;
+  min-height: 44px;
   font-size: 15px;
   font-weight: 700;
   font-family: inherit;
@@ -2060,10 +2061,10 @@ html.sj-mobile-menu-scroll-lock {
   }
 }
 
-/* Petit formulaire de démo (28/10/2026) : le choix retenu reste lisible sur le fond clair. */
+/* Petit formulaire de démo : sur le fond nuit, le choix retenu est en or clair (contraste ≥ 4,5:1), les autres en texte clair. */
 .demo-mini .qf-pill-on,
 .demo-mini .qf-pill-on:hover {
-  color: #6b4e08;
+  color: #f4cf5e;
 }
 
 /* ── Page /rdv : 15 jours (2 lignes) puis créneaux compacts côte à côte ─ */

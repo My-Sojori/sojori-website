@@ -133,6 +133,7 @@ export function QualificationForm({
   initialCountry,
   initialFullName,
   initialCity,
+  initialCurrentPMS,
   compact,
 }: {
   onSubmit: (payload: QualificationPayload) => void;
@@ -159,6 +160,8 @@ export function QualificationForm({
   initialFullName?: string;
   /** Ville déjà saisie au mini-formulaire — renvoyée au qualify pour la fiche CRM. */
   initialCity?: string;
+  /** Le PMS déjà donné à l'écran d'avant : repris dans l'envoi, jamais effacé. */
+  initialCurrentPMS?: string;
   /**
    * « Aller plus loin » : pays, ville, type, taille, nom et téléphone déjà saisis ;
    * on demande d’abord les besoins, puis l’outil actuel (optionnel) et un message.
@@ -232,7 +235,7 @@ export function QualificationForm({
           ? resolve(cfg.pms, pms, pmsOther)
           : hasPms
             ? labelOf(HAS_PMS, hasPms)
-            : '',
+            : (initialCurrentPMS ?? ''),
       currentChannelManager: cfg ? resolve(cfg.channelManager, cm, cmOther) : '',
       currentDynamicPricing: cfg ? resolve(cfg.pricing, pricing, pricingOther) : '',
       currentWhatsApp: '',
@@ -305,9 +308,10 @@ export function QualificationForm({
       },
       {
         id: 'ville',
-        skip: Boolean(compact),
+        // Questionnaire court : la ville n'est plus demandée au départ ; elle l'est ici, avec « Passer » (31/10/2026).
+        skip: Boolean(compact && initialCity),
         render: () => (
-          <Question title="Dans quelle ville\u00a0?" hint="Marrakech, Casablanca, Paris… Vous pouvez passer.">
+          <Question title={'Dans quelle ville\u00a0?'} hint="Marrakech, Casablanca, Paris… Vous pouvez passer.">
             <input
               type="text"
               value={ville}

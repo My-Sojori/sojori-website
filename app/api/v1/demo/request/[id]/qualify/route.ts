@@ -5,6 +5,7 @@ import {
   getDemoProxyFailureMessage,
 } from '@/lib/getDemoServiceBaseUrl';
 import { demoProxyFetch, devFetchDetailForDemo } from '@/lib/demoProxyFetch';
+import { modeTest } from '@/lib/demoTestServeur';
 
 /**
  * PATCH /api/v1/demo/request/:id/qualify — proxy → srv-crm.
@@ -19,6 +20,11 @@ export async function PATCH(
     body = await request.json();
   } catch {
     return NextResponse.json({ success: false, error: 'Corps JSON invalide' }, { status: 400 });
+  }
+
+  // Mode test (aperçus et local, jamais en production) : on répond sans appeler le CRM.
+  if (modeTest(request)) {
+    return NextResponse.json({ success: true, message: 'test', data: { test: true } });
   }
 
   try {
