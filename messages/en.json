@@ -2957,7 +2957,7 @@
           },
           {
             "q": "Does Sojori replace my PMS?",
-            "a": "Not necessarily. Sojori offers its own PMS, or works with yours: the agents and WhatsApp modules run on both. Dynamic pricing remains reserved for properties managed in the Sojori PMS."
+            "a": "Not necessarily. Sojori offers its own PMS, or works with yours: the agents and WhatsApp modules run on both."
           },
           {
             "q": "What do the Sojori agents do?",
@@ -3180,7 +3180,7 @@
           },
           {
             "q": "Can I keep my current PMS?",
-            "a": "Yes. Sojori works with the Sojori PMS or with your own. With your PMS, the agents and WhatsApp modules remain available; dynamic pricing remains reserved for Sojori PMS properties."
+            "a": "Yes. Sojori works with the Sojori PMS or with your own. With your PMS, the agents and WhatsApp modules remain available."
           },
           {
             "q": "Can I activate only some of the agents?",
@@ -3333,7 +3333,7 @@
           },
           {
             "title": "The Sojori PMS, or your own",
-            "text": "You do not have to change everything to get started. Sojori agents and WhatsApp modules plug into the Sojori PMS just as they do into your current PMS. Dynamic pricing, however, remains reserved for properties managed in the Sojori PMS."
+            "text": "You do not have to change everything to get started. Sojori agents and WhatsApp modules plug into the Sojori PMS just as they do into your current PMS."
           }
         ],
         "faq": [
@@ -3347,7 +3347,7 @@
           },
           {
             "q": "Does Sojori replace my PMS?",
-            "a": "Not necessarily. Sojori offers its own PMS, or works with yours. The agents and the WhatsApp modules work with both; dynamic pricing is reserved for properties in the Sojori PMS."
+            "a": "Not necessarily. Sojori offers its own PMS, or works with yours. The agents and the WhatsApp modules work with both."
           },
           {
             "q": "Does the Sojori PMS include a channel manager?",

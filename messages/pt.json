@@ -2957,7 +2957,7 @@
           },
           {
             "q": "A Sojori substitui o meu PMS?",
-            "a": "Não obrigatoriamente. A Sojori tem o seu próprio PMS, ou trabalha com o seu: os agentes e os módulos WhatsApp funcionam nos dois. Os preços dinâmicos continuam reservados às propriedades geridas no PMS Sojori."
+            "a": "Não obrigatoriamente. A Sojori tem o seu próprio PMS, ou trabalha com o seu: os agentes e os módulos WhatsApp funcionam nos dois."
           },
           {
             "q": "O que fazem os agentes da Sojori?",
@@ -3180,7 +3180,7 @@
           },
           {
             "q": "Posso manter o meu PMS atual?",
-            "a": "Sim. A Sojori trabalha com o PMS Sojori ou com o seu. Com o seu PMS, os agentes e os módulos WhatsApp continuam disponíveis; os preços dinâmicos continuam reservados às propriedades do PMS Sojori."
+            "a": "Sim. A Sojori trabalha com o PMS Sojori ou com o seu. Com o seu PMS, os agentes e os módulos WhatsApp continuam disponíveis."
           },
           {
             "q": "Posso ativar apenas parte dos agentes?",
@@ -3333,7 +3333,7 @@
           },
           {
             "title": "O PMS Sojori, ou o seu",
-            "text": "Não precisa de mudar tudo para começar. Os agentes Sojori e os módulos WhatsApp ligam-se ao PMS Sojori tal como ao seu PMS atual. Já os preços dinâmicos ficam reservados às propriedades geridas no PMS Sojori."
+            "text": "Não precisa de mudar tudo para começar. Os agentes Sojori e os módulos WhatsApp ligam-se ao PMS Sojori tal como ao seu PMS atual."
           }
         ],
         "faq": [
@@ -3347,7 +3347,7 @@
           },
           {
             "q": "A Sojori substitui o meu PMS?",
-            "a": "Não necessariamente. A Sojori oferece o seu próprio PMS, ou trabalha com o seu. Os agentes e os módulos WhatsApp funcionam com ambos; os preços dinâmicos ficam reservados às propriedades do PMS Sojori."
+            "a": "Não necessariamente. A Sojori oferece o seu próprio PMS, ou trabalha com o seu. Os agentes e os módulos WhatsApp funcionam com ambos."
           },
           {
             "q": "O PMS Sojori inclui um channel manager?",
