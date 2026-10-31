@@ -1,4 +1,5 @@
 import type { ReactNode } from 'react';
+import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/routing';
 
 /**
@@ -33,6 +34,7 @@ export function InFlow({
   /** Ce que la brique déclenche à son tour. */
   downstream: FlowStep[];
 }): ReactNode {
+  const tf = useTranslations('inFlow');
   const chip = (s: FlowStep, key: string) => {
     const inner = (
       <span
@@ -88,23 +90,22 @@ export function InFlow({
         <div style={{ display: 'grid', gap: 14 }}>
           <div style={{ display: 'flex', gap: 8, alignItems: 'center', flexWrap: 'wrap' }}>
             <span style={{ fontSize: 12, color: 'var(--text-3)', minWidth: 118, textTransform: 'uppercase', letterSpacing: 0.6 }}>
-              Déclenché par
+              {tf('triggeredBy')}
             </span>
             {upstream.map((s, i) => chip(s, `u${i}`))}
           </div>
           <div style={{ display: 'flex', gap: 8, alignItems: 'center', flexWrap: 'wrap' }}>
             <span style={{ fontSize: 12, color: 'var(--text-3)', minWidth: 118, textTransform: 'uppercase', letterSpacing: 0.6 }}>
-              Déclenche
+              {tf('triggers')}
             </span>
             {downstream.map((s, i) => chip(s, `d${i}`))}
           </div>
         </div>
 
         <p style={{ fontSize: 13.5, color: 'var(--text-3)', marginTop: 18, lineHeight: 1.65 }}>
-          Cette brique n&apos;est pas un outil à piloter séparément : elle réagit aux
-          événements réels du séjour.{' '}
+          {tf('note')}{' '}
           <Link href={'/orchestration' as const} style={{ color: '#f4cf5e', textDecoration: 'none', fontWeight: 600 }}>
-            Comprendre l&apos;orchestration →
+            {tf('learn')}
           </Link>
         </p>
       </div>

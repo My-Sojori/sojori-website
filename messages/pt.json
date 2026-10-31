@@ -6387,6 +6387,60 @@
       "k044": "Ligue os seus canais. ",
       "k045": "Sem mudar os seus hábitos.",
       "k046": "Arranque acompanhado. Migração acompanhada a partir do seu channel manager atual. 1 mês de teste gratuito."
+    },
+    "dynamic-pricing": {
+      "k001": "Vendas e receita",
+      "k002": "A tarificação recalcula o preço com base em regras, dentro dos limites que o senhor define.",
+      "k003": "Ocupação real",
+      "k004": "Ritmo de reservas",
+      "k005": "Evento na cidade",
+      "k006": "Enviado para os canais",
+      "k007": "RevPAR medido"
+    },
+    "guest-experience": {
+      "k001": "Experiência do cliente",
+      "k002": "O percurso do cliente decorre sozinho, da confirmação ao pedido de avaliação.",
+      "k003": "Reserva confirmada",
+      "k004": "Quarto pronto",
+      "k005": "Partida confirmada",
+      "k006": "Pedidos em tarefas",
+      "k007": "Extras na conta",
+      "k008": "Avaliação publicada"
+    },
+    "inbox": {
+      "k001": "Experiência do cliente",
+      "k002": "A inbox reúne as mensagens de todos os canais num único fio por estadia.",
+      "k003": "Booking, Expedia, Airbnb",
+      "k004": "E-mail direto",
+      "k005": "Resposta enviada",
+      "k006": "Tarefa criada",
+      "k007": "Histórico da estadia"
+    },
+    "integrations": {
+      "k001": "Exemplo ilustrativo",
+      "k002": "O motor",
+      "k003": "As integrações ligam o Sojori ao que o senhor já utiliza — incluindo o seu PMS.",
+      "k004": "Mews e outros PMS",
+      "k005": "OTA e channel managers",
+      "k006": "Pagamento e fontes de dados",
+      "k007": "Reservas recuperadas",
+      "k008": "Orquestração ativa"
+    },
+    "teamflow": {
+      "k001": "Operações",
+      "k002": "O TeamFlow executa: limpeza, mudança de roupa, manutenção, receção — acionados por eventos reais.",
+      "k003": "Partida confirmada",
+      "k004": "Pedido do cliente",
+      "k005": "Equipamento assinalado",
+      "k006": "Quarto vendável",
+      "k007": "Cliente recebido",
+      "k008": "Tempo de recuperação do quarto"
     }
+  },
+  "inFlow": {
+    "triggeredBy": "Acionado por",
+    "triggers": "Aciona",
+    "note": "Este módulo não é uma ferramenta para gerir em separado: reage aos eventos reais da estadia.",
+    "learn": "Perceber a orquestração →"
   }
 }

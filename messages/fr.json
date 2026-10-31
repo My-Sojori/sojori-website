@@ -6387,6 +6387,60 @@
       "k044": "Connectez vos canaux. ",
       "k045": "Sans changer vos habitudes.",
       "k046": "Mise en route guidée. Reprise depuis votre channel manager actuel accompagnée. 1 mois d'essai gratuit."
+    },
+    "dynamic-pricing": {
+      "k001": "Ventes & revenu",
+      "k002": "La tarification recalcule le prix par règles, dans les bornes que vous fixez.",
+      "k003": "Occupation réelle",
+      "k004": "Rythme de réservation",
+      "k005": "Événement en ville",
+      "k006": "Poussé sur les canaux",
+      "k007": "RevPAR mesuré"
+    },
+    "guest-experience": {
+      "k001": "Expérience client",
+      "k002": "Le parcours client se déroule tout seul, de la confirmation à la demande d'avis.",
+      "k003": "Réservation confirmée",
+      "k004": "Chambre prête",
+      "k005": "Départ constaté",
+      "k006": "Demandes en tâches",
+      "k007": "Extras sur la note",
+      "k008": "Avis publié"
+    },
+    "inbox": {
+      "k001": "Expérience client",
+      "k002": "L'inbox rassemble les messages de tous les canaux dans un seul fil par séjour.",
+      "k003": "Booking, Expedia, Airbnb",
+      "k004": "E-mail direct",
+      "k005": "Réponse envoyée",
+      "k006": "Tâche créée",
+      "k007": "Historique du séjour"
+    },
+    "integrations": {
+      "k001": "Exemple illustratif",
+      "k002": "Le moteur",
+      "k003": "Les intégrations branchent Sojori sur ce que vous utilisez déjà — dont votre PMS.",
+      "k004": "Mews et autres PMS",
+      "k005": "OTA et channel managers",
+      "k006": "Paiement et sources de données",
+      "k007": "Réservations récupérées",
+      "k008": "Orchestration active"
+    },
+    "teamflow": {
+      "k001": "Opérations",
+      "k002": "TeamFlow exécute : ménage, recouche, maintenance, accueil — déclenchés sur les événements réels.",
+      "k003": "Départ constaté",
+      "k004": "Demande client",
+      "k005": "Équipement signalé",
+      "k006": "Chambre vendable",
+      "k007": "Client accueilli",
+      "k008": "Temps de remise en état"
     }
+  },
+  "inFlow": {
+    "triggeredBy": "Déclenché par",
+    "triggers": "Déclenche",
+    "note": "Cette brique n'est pas un outil à piloter séparément : elle réagit aux événements réels du séjour.",
+    "learn": "Comprendre l'orchestration →"
   }
 }

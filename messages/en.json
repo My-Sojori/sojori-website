@@ -6387,6 +6387,60 @@
       "k044": "Connect your channels. ",
       "k045": "Without changing your habits.",
       "k046": "Guided onboarding. Support when moving over from your current channel manager. 1 month free trial."
+    },
+    "dynamic-pricing": {
+      "k001": "Sales & revenue",
+      "k002": "Pricing recalculates the rate by rules, within the limits you set.",
+      "k003": "Actual occupancy",
+      "k004": "Booking pace",
+      "k005": "City event",
+      "k006": "Pushed to channels",
+      "k007": "Measured RevPAR"
+    },
+    "guest-experience": {
+      "k001": "Guest experience",
+      "k002": "The guest journey runs on its own, from confirmation to the review request.",
+      "k003": "Booking confirmed",
+      "k004": "Room ready",
+      "k005": "Departure confirmed",
+      "k006": "Requests turned into tasks",
+      "k007": "Extras on the bill",
+      "k008": "Review published"
+    },
+    "inbox": {
+      "k001": "Guest experience",
+      "k002": "The inbox gathers messages from all channels into a single thread per stay.",
+      "k003": "Booking, Expedia, Airbnb",
+      "k004": "Direct email",
+      "k005": "Reply sent",
+      "k006": "Task created",
+      "k007": "Stay history"
+    },
+    "integrations": {
+      "k001": "Illustrative example",
+      "k002": "The engine",
+      "k003": "Integrations connect Sojori to what you already use, including your PMS.",
+      "k004": "Mews and other PMS",
+      "k005": "OTAs and channel managers",
+      "k006": "Payment and data sources",
+      "k007": "Bookings retrieved",
+      "k008": "Orchestration active"
+    },
+    "teamflow": {
+      "k001": "Operations",
+      "k002": "TeamFlow carries out the work: housekeeping, stayover cleaning, maintenance, welcome, triggered by actual events.",
+      "k003": "Departure confirmed",
+      "k004": "Guest request",
+      "k005": "Equipment reported",
+      "k006": "Room sellable",
+      "k007": "Guest welcomed",
+      "k008": "Turnaround time"
     }
+  },
+  "inFlow": {
+    "triggeredBy": "Triggered by",
+    "triggers": "Triggers",
+    "note": "This module is not a tool to run on its own: it reacts to real events during the stay.",
+    "learn": "Understand orchestration →"
   }
 }

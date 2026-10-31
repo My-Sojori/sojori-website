@@ -6387,6 +6387,60 @@
       "k044": "Conecte sus canales. ",
       "k045": "Sin cambiar sus costumbres.",
       "k046": "Puesta en marcha guiada. Transición acompañada desde su channel manager actual. 1 mes de prueba gratuita."
+    },
+    "dynamic-pricing": {
+      "k001": "Ventas e ingresos",
+      "k002": "La tarificación recalcula el precio según reglas, dentro de los límites que usted fija.",
+      "k003": "Ocupación real",
+      "k004": "Ritmo de reservas",
+      "k005": "Evento en la ciudad",
+      "k006": "Enviado a los canales",
+      "k007": "RevPAR medido"
+    },
+    "guest-experience": {
+      "k001": "Experiencia del cliente",
+      "k002": "El recorrido del cliente se desarrolla solo, desde la confirmación hasta la solicitud de opinión.",
+      "k003": "Reserva confirmada",
+      "k004": "Habitación lista",
+      "k005": "Salida confirmada",
+      "k006": "Solicitudes convertidas en tareas",
+      "k007": "Extras en la cuenta",
+      "k008": "Opinión publicada"
+    },
+    "inbox": {
+      "k001": "Experiencia del cliente",
+      "k002": "La bandeja unifica los mensajes de todos los canales en un solo hilo por estancia.",
+      "k003": "Booking, Expedia, Airbnb",
+      "k004": "E-mail directo",
+      "k005": "Respuesta enviada",
+      "k006": "Tarea creada",
+      "k007": "Historial de la estancia"
+    },
+    "integrations": {
+      "k001": "Ejemplo ilustrativo",
+      "k002": "El motor",
+      "k003": "Las integraciones conectan Sojori con lo que ya utiliza, incluido su PMS.",
+      "k004": "Mews y otros PMS",
+      "k005": "OTA y channel managers",
+      "k006": "Pago y fuentes de datos",
+      "k007": "Reservas recuperadas",
+      "k008": "Orquestación activa"
+    },
+    "teamflow": {
+      "k001": "Operaciones",
+      "k002": "TeamFlow ejecuta: limpieza, cambio de huésped, mantenimiento, recepción, activados por eventos reales.",
+      "k003": "Salida confirmada",
+      "k004": "Solicitud del cliente",
+      "k005": "Equipamiento notificado",
+      "k006": "Habitación vendible",
+      "k007": "Cliente recibido",
+      "k008": "Tiempo de reacondicionamiento"
     }
+  },
+  "inFlow": {
+    "triggeredBy": "Lo activa",
+    "triggers": "Activa",
+    "note": "Este módulo no es una herramienta que se maneje por separado: reacciona a los eventos reales de la estancia.",
+    "learn": "Entender la orquestación →"
   }
 }
