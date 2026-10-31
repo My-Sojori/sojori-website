@@ -51,7 +51,7 @@ export function SiteHeader() {
           <nav className="sj2-nav" aria-label={t('main')}>{liens}</nav>
           <div className="sj2-header__spacer" />
           <LangSwitch />
-          <Link href={{ pathname: '/offre', hash: 'contact' }} className="sj2-btn sj2-btn--sm" prefetch={false}>
+          <Link href="/demo" className="sj2-btn sj2-btn--sm" prefetch={false}>
             <span className="sj2-demo-long">{t('demo')}</span>
             <span className="sj2-demo-short" aria-hidden="true">{t('demoShort')}</span>
           </Link>
