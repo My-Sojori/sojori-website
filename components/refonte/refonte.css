@@ -965,3 +965,13 @@ html[dir='rtl'] .sj2-cal__exemple { letter-spacing: 0; font-family: var(--sj-san
   .sj2-faq__item--acc[open] summary::after { content: '−'; }
   .sj2-faq__item--acc p { margin: 0; padding-bottom: 16px; font-size: 14.5px; line-height: 1.5; color: var(--sj-text-2); text-wrap: pretty; }
 }
+
+/* Téléphone : la barre « Votre sélection » reste en bas de l'écran pendant la composition, avec le bouton d'envoi */
+.sj2-barre-selection { display: none; }
+@media (max-width: 979px) {
+  .sj2-barre-selection { position: fixed; inset-inline: 0; bottom: 0; z-index: 90; display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 10px 16px calc(10px + env(safe-area-inset-bottom, 0px)); background: rgba(12, 11, 9, 0.96); border-top: 1px solid var(--sj-line-gold); }
+  .sj2-barre-selection__texte { display: flex; flex-direction: column; min-width: 0; font-size: 13px; color: var(--sj-text-3); }
+  .sj2-barre-selection__texte strong { color: var(--sj-text); font-size: 15px; font-weight: 600; }
+  .sj2-barre-selection .sj2-btn { min-height: 52px; width: auto; flex: none; padding-inline: 18px; text-align: center; }
+  .sj2-offre { padding-bottom: 84px; }
+}
