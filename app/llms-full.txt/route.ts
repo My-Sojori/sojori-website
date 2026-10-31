@@ -7,6 +7,11 @@ import enMessages from '@/messages/en.json';
  */
 export const dynamic = 'force-static';
 
+type PageSeo = { title: string; answer: string; sections: { title: string; text?: string; points?: string[] }[]; faq: { q: string; a: string }[] };
+type Pages = Record<string, PageSeo | unknown>;
+const PAGES = ['pmsMaroc', 'conciergerieMaroc', 'agents', 'checkin']; // les deux guides (fichePolice, taxeSejour) restent hors llms tant qu'ils ont des « à confirmer »
+const URLS: Record<string, string> = { pmsMaroc: 'pms-maroc', conciergerieMaroc: 'conciergerie-maroc', agents: 'agents', checkin: 'check-in-whatsapp', fichePolice: 'fiche-de-police-maroc', taxeSejour: 'taxe-de-sejour-maroc' };
+
 type Home = {
   hero: { keywords: string; sub: string };
   socle: { title: string; lead: string; pmsTitle: string; pms: { name: string; desc: string }[]; ownTitle: string; own: string[]; pricing: { eyebrow: string; title: string; lead: string; points: string[] } };
@@ -20,6 +25,22 @@ type Home = {
 
 const AGENTS = ['booking', 'service', 'operations', 'pricing', 'assistant', 'studio', 'site', 'commercial', 'prospecting', 'marketingFinance', 'calls'];
 const MODULES = ['checkin', 'stay', 'concierge', 'staff', 'admin', 'owner'];
+
+function pagesDeRecherche(lang: 'fr' | 'en', pages: Pages): string {
+  const L: string[] = [];
+  PAGES.forEach((id) => {
+    const p = pages[id] as PageSeo;
+    L.push(`## ${p.title}`, '', `Source : https://sojori.com/${lang}/${URLS[id]}`, '', p.answer, '');
+    p.sections.forEach((s) => {
+      L.push(`### ${s.title}`, '');
+      if (s.text) L.push(s.text, '');
+      (s.points ?? []).forEach((x) => L.push(`- ${x}`));
+      if (s.points) L.push('');
+    });
+    p.faq.forEach((x) => L.push(`### ${x.q}`, '', x.a, ''));
+  });
+  return L.join('\n');
+}
 
 function page(lang: 'fr' | 'en', h: Home): string {
   const L: string[] = [];
@@ -58,6 +79,8 @@ function page(lang: 'fr' | 'en', h: Home): string {
 export function GET() {
   const fr = (frMessages as unknown as { refonte: { home: Home } }).refonte.home;
   const en = (enMessages as unknown as { refonte: { home: Home } }).refonte.home;
-  const body = `${page('fr', fr)}\n\n---\n\n${page('en', en)}\n`;
+  const pf = (frMessages as unknown as { refonte: { pages: Pages } }).refonte.pages;
+  const pe = (enMessages as unknown as { refonte: { pages: Pages } }).refonte.pages;
+  const body = `${page('fr', fr)}\n${pagesDeRecherche('fr', pf)}\n\n---\n\n${page('en', en)}\n${pagesDeRecherche('en', pe)}\n`;
   return new Response(body, { headers: { 'content-type': 'text/plain; charset=utf-8', 'cache-control': 'public, max-age=3600' } });
 }
