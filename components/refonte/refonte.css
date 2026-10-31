@@ -607,4 +607,9 @@ html[dir='rtl'] .sj2-rapport__marque { letter-spacing: 0; }
 /* téléphone Admin : même verticalité que les autres (400 à 430 px) ; les échanges de la conversation restent lisibles pour les lecteurs d'écran */
 .sj2-phone--court { min-height: 410px; max-height: 430px; overflow: hidden; }
 .sj2-phone--court .sj2-bubble { position: absolute; width: 1px; height: 1px; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; }
+/* pied de page : réseaux et contact (cibles ≥ 44 px, icônes SVG en ligne) */
+.sj2-footer__contact { flex: 0 1 240px; }
+.sj2-footer__social { gap: 10px; }
+.sj2-footer__social svg { flex: none; }
+.sj2-footer__note { font-size: 13.5px; color: var(--sj-text-3); }
 

@@ -86,260 +86,6 @@
       "homeButton": "← Volver al inicio"
     }
   },
-  "home": {
-    "hero": {
-      "badge": "● Orquestador · Hostelería",
-      "title": "El motor de orquestación",
-      "titleGradient": "de la hostelería",
-      "subtitle": "Sojori coordina tu actividad de hostelería como lo haría un humano — reserva, huésped, personal, propietario. Excepto que nunca duerme.",
-      "subtitleStrong": "Y no te pide que lo dirijas.",
-      "ctaPrimary": "Ver la orquestación →",
-      "ctaSecondary": "Solicitar una demo",
-      "flow": "RESERVA → HUÉSPED → PERSONAL → PROPIETARIO · UN SOLO HILO CONDUCTOR"
-    },
-    "trustBar": {
-      "title": "Integrado con las mejores plataformas",
-      "moreChannels": "+ más canales",
-      "features": "Sincronización en tiempo real · Evita overbooking · De 2 a 2,000+ propiedades"
-    },
-    "valueProp": {
-      "badge": "Arquitectura",
-      "title": "Tres capas.",
-      "titleSub": "Una sola conversación.",
-      "subtitle": "El motor de orquestación en el centro. Las superficies WhatsApp al frente. Los módulos de operación en la base.",
-      "modules": {
-        "icon": "•",
-        "title": "Módulos de Operación",
-        "sub": "La base.",
-        "items": [
-          "PMS · calendario multi-propiedad",
-          "Channel Manager · 20+ OTAs",
-          "Precios dinámicos",
-          "Portal Propietario",
-          "Analytics en tiempo real"
-        ],
-        "cta": "Ver los módulos"
-      },
-      "orchestration": {
-        "icon": "•",
-        "title": "Orquestación IA",
-        "sub": "El motor.",
-        "badge": "SIGNATURE",
-        "items": [
-          "Entiende cada reserva",
-          "Decide quién hace qué, cuándo, por qué",
-          "Coordina huésped, personal, propietario",
-          "Aprende de cada estancia",
-          "+20 decisiones por estancia, sin intervención"
-        ],
-        "cta": "Ver el motor en acción"
-      },
-      "whatsapp": {
-        "icon": "•",
-        "title": "WhatsApp · 4 apps",
-        "sub": "Las superficies.",
-        "items": [
-          "Guest — el viajero, en 12 idiomas",
-          "Staff — el equipo de campo",
-          "Admin — tu PMS en el bolsillo",
-          "Booking Direct — reserva sin intermediarios"
-        ],
-        "cta": "Ver las 4 superficies"
-      },
-      "closing": "Usted pilota."
-    },
-    "whatsappCase": {
-      "badge": "Caso de uso real",
-      "title": "Tus huéspedes hablan.",
-      "titleGradient": "Sojori responde.",
-      "subtitle": "Sarah (USA) reserva vía Airbnb un apartamento en París. Sojori AI gestiona todo, 24/7, en inglés.",
-      "header": {
-        "name": "Sojori AI",
-        "status": "En línea · responde en segundos"
-      },
-      "timeline": {
-        "title": "Acciones orquestadas en paralelo",
-        "actions": [
-          {
-            "t": "D-7",
-            "icon": "•",
-            "text": "Mensaje de bienvenida enviado"
-          },
-          {
-            "t": "D-3",
-            "icon": "•",
-            "text": "Escaneo pasaporte vía AI · KYC validado"
-          },
-          {
-            "t": "D+2",
-            "icon": "•",
-            "text": "Mantenimiento AC · personal auto-notificado"
-          },
-          {
-            "t": "D+4",
-            "icon": "•",
-            "text": "Transporte aeropuerto organizado"
-          },
-          {
-            "t": "D+1",
-            "icon": "•",
-            "text": "Solicitud de reseña · 5★ obtenido"
-          }
-        ]
-      },
-      "metrics": {
-        "response": {
-          "k": "<15s",
-          "l": "Respuesta IA"
-        },
-        "rating": {
-          "k": "5/5",
-          "l": "Rating huésped"
-        },
-        "intervention": {
-          "k": "0",
-          "l": "Intervención humana"
-        }
-      },
-      "cta": "Probar el chatbot en vivo →"
-    },
-    "featuresAccordion": {
-      "badge": "Funcionalidades",
-      "title": "Todo lo que esperas. Y todo lo que los demás no tienen.",
-      "subtitle": "Seis módulos nativos. Diseñados para funcionar juntos, nunca uno sin el otro.",
-      "features": [
-        {
-          "icon": "•",
-          "title": "Dashboard App",
-          "items": [
-            "Navegación sidebar unificada",
-            "Tarjetas KPI en tiempo real",
-            "Feed de actividad en vivo",
-            "Llegadas del día",
-            "Modo oscuro + claro"
-          ],
-          "cta": "Descubrir esta página →",
-          "comingSoon": "Página dedicada próximamente"
-        },
-        {
-          "icon": "•",
-          "title": "Channel Manager",
-          "items": [
-            "OTAs vía channel manager (sincronización en tiempo real)",
-            "iCal bidireccional",
-            "Anti-overbooking",
-            "Reportes unificados",
-            "Arquitectura orientada a disponibilidad"
-          ],
-          "cta": "Descubrir esta página →",
-          "comingSoon": "Página dedicada próximamente"
-        },
-        {
-          "icon": "•",
-          "title": "WhatsApp Bot IA",
-          "items": [
-            "IA disponible en WhatsApp (según configuración)",
-            "Multilingüe",
-            "Flujo check-in (QR, instrucciones)",
-            "Respuestas contextuales",
-            "Escalada a tu equipo"
-          ],
-          "cta": "Descubrir esta página →",
-          "comingSoon": "Página dedicada próximamente"
-        },
-        {
-          "icon": "•",
-          "title": "Dynamic Pricing",
-          "items": [
-            "Reglas por mes, día, eventos, ocupación",
-            "Envío de precios a tus canales",
-            "Descuentos larga estancia y última hora (configurables)",
-            "Calendario y coeficientes visibles",
-            "Acompañamiento en la implementación"
-          ],
-          "cta": "Descubrir esta página →",
-          "comingSoon": "Página dedicada próximamente"
-        },
-        {
-          "icon": "•",
-          "title": "Owner Portal",
-          "items": [
-            "Portal propietario (web)",
-            "Vista ingresos y ocupación",
-            "Documentos y exportaciones (según plan)",
-            "Transparencia en comisiones",
-            "Acceso delegado seguro"
-          ],
-          "cta": "Descubrir esta página →",
-          "comingSoon": "Página dedicada próximamente"
-        },
-        {
-          "icon": "•",
-          "title": "TeamFlow (Gestión Personal)",
-          "items": [
-            "Asignación automática según disponibilidad",
-            "Notificaciones in-app + WhatsApp",
-            "Fotos check pre/post limpieza",
-            "Seguimiento en tiempo real",
-            "KPIs por miembro del equipo"
-          ],
-          "cta": "Descubrir esta página →",
-          "comingSoon": "Página dedicada próximamente"
-        }
-      ]
-    },
-    "socialProof": {
-      "badge": "Confían en nosotros",
-      "title": "Establecimientos que ya orquestan.",
-      "testimonials": [
-        {
-          "quote": "Antes de Sojori: 4h/día en mensajes WhatsApp. Después de Sojori: 20 min/día. El resto es automático.",
-          "name": "Marie L.",
-          "role": "Property Manager · 12 propiedades",
-          "loc": "París"
-        },
-        {
-          "quote": "El único PMS que realmente habla con los huéspedes. Mis 5★ pasaron del 78% al 94% en 3 meses.",
-          "name": "Thomas D.",
-          "role": "Propietario · 7 propiedades",
-          "loc": "París"
-        },
-        {
-          "quote": "Channel Manager, IA, coordinación de personal… reemplazamos 4 herramientas con Sojori. Y funciona mejor.",
-          "name": "Thomas R.",
-          "role": "CEO · 84 propiedades",
-          "loc": "Lisboa"
-        }
-      ],
-      "metrics": [
-        {
-          "k": "AV",
-          "l": "Francia y Marruecos"
-        },
-        {
-          "k": "Tiempo real",
-          "l": "Sincronización y equipos"
-        },
-        {
-          "k": "WhatsApp",
-          "l": "Canal huésped"
-        },
-        {
-          "k": "Orquestación",
-          "l": "Un solo hilo"
-        }
-      ]
-    },
-    "finalCTA": {
-      "title": "¿Listo para",
-      "titleGradient": "orquestar",
-      "titleEnd": "tus alquileres?",
-      "subtitle": "Únete a cientos de establecimientos que automatizan sus operaciones con Sojori.",
-      "ctaPrimary": "Solicitar una demo gratuita →",
-      "ctaSecondary": "Ver las ofertas",
-      "footer": "✓ Demo personalizada · ✓ Sin compromiso · ✓ Configuración en <7 días"
-    }
-  },
   "whatsapp": {
     "pageTitle": "Sistemas WhatsApp",
     "hero": {
@@ -359,7 +105,7 @@
       "guest": {
         "label": "WhatsApp Huésped",
         "badge": "Viajeros",
-        "stat": "87% autónomo"
+        "stat": "A cualquier hora"
       },
       "staff": {
         "label": "WhatsApp Personal",
@@ -438,7 +184,7 @@
       "guest": {
         "title": "WhatsApp Huésped",
         "titleGradient": "Inteligencia",
-        "description": "La IA de Sojori responde a tus viajeros 24/7 en WhatsApp. Check-in autónomo, soporte instantáneo, upsell inteligente, solicitud de reseñas. Todo en 12 idiomas.",
+        "description": "Sojori responde a tus viajeros a cualquier hora en WhatsApp. Check-in autónomo, soporte rápido, upsell, solicitud de reseñas, en el idioma del viajero.",
         "menuTitle": "Menú principal",
         "menu": [
           {
@@ -484,16 +230,16 @@
         ],
         "stats": [
           {
-            "key": "<2 seg",
-            "label": "Tiempo respuesta"
+            "key": "WhatsApp",
+            "label": "Canal del viajero"
           },
           {
-            "key": "12",
-            "label": "Idiomas"
+            "key": "Su idioma",
+            "label": "Respuesta adaptada"
           },
           {
-            "key": "87%",
-            "label": "Autónomo"
+            "key": "Humano",
+            "label": "Toma el relevo"
           }
         ]
       },
@@ -530,8 +276,8 @@
         ],
         "stats": [
           {
-            "key": "0 MAD",
-            "label": "Por personal"
+            "key": "WhatsApp",
+            "label": "Para el equipo"
           },
           {
             "key": "Al día",
@@ -584,7 +330,7 @@
             "label": "PMS"
           },
           {
-            "key": "Instante",
+            "key": "Al día",
             "label": "Notificaciones"
           }
         ]
@@ -592,7 +338,7 @@
       "booking": {
         "title": "WhatsApp Reserva",
         "titleGradient": "Directa",
-        "description": "Tus huéspedes recurrentes pueden reservar directamente vía WhatsApp. Sin comisión OTA. Pago seguro. Confirmación instantánea.",
+        "description": "Tus huéspedes recurrentes pueden reservar directamente vía WhatsApp. Sin comisión OTA. Pago seguro. Confirmación rápida.",
         "advantagesTitle": "Ventajas",
         "advantages": [
           {
@@ -608,7 +354,7 @@
             "detail": "Stripe integrado · PCI compliant"
           },
           {
-            "label": "Confirmación instantánea",
+            "label": "Confirmación rápida",
             "detail": "Disponibilidad al día"
           },
           {
@@ -626,12 +372,12 @@
             "label": "Comisión"
           },
           {
-            "key": "0 MAD",
-            "label": "Configuración"
+            "key": "En línea",
+            "label": "Pago"
           },
           {
-            "key": "24/7",
-            "label": "Disponible"
+            "key": "Al día",
+            "label": "Disponibilidad"
           }
         ]
       }
@@ -644,11 +390,11 @@
       "items": [
         {
           "title": "Inteligencia Artificial",
-          "description": "Conversación natural · 12 idiomas · Disponible 24/7"
+          "description": "Conversación natural · En el idioma del viajero · A cualquier hora"
         },
         {
-          "title": "Respuesta Instantánea",
-          "description": "Menos de 2 segundos · Sin espera"
+          "title": "Respuesta rápida",
+          "description": "Sin espera · Respuesta sin movilizar a una persona"
         },
         {
           "title": "Sincronización Auto",
@@ -659,12 +405,12 @@
           "description": "Historial completo · Seguimiento rendimiento · Insights clientes"
         },
         {
-          "title": "Seguridad Máxima",
-          "description": "Datos cifrados · Conformidad RGPD · Hosting Francia"
+          "title": "Seguridad de los datos",
+          "description": "Datos cifrados · Alojado en Francia (París)"
         },
         {
-          "title": "Monitoreo 24/7",
-          "description": "Supervisión continua · Alertas automáticas · Uptime 99.9%"
+          "title": "Seguimiento continuo",
+          "description": "Supervisión continua · Alertas automáticas"
         }
       ]
     },
@@ -685,11 +431,11 @@
           ]
         },
         {
-          "title": "Soporte 24/7 multilingüe",
+          "title": "Soporte multilingüe",
           "steps": [
             "Huésped envía mensaje (cualquier idioma)",
             "IA detecta idioma + categoría (WiFi, AC, código...)",
-            "Responde en <2 seg con solución",
+            "Responde con la solución",
             "Si urgente → escala a personal humano",
             "Ticket creado + seguimiento hasta resolución"
           ]
@@ -764,10 +510,10 @@
         "description": "Para preguntas simples (WiFi, códigos, horarios...), activa el modo automático. La IA responde directamente sin validación. Supervisas en segundo plano e intervienes si es necesario.",
         "features": [
           {
-            "label": "Respuesta instantánea"
+            "label": "Respuesta rápida"
           },
           {
-            "label": "Funciona 24/7"
+            "label": "Funciona a cualquier hora"
           },
           {
             "label": "Supervisión activa"
@@ -778,24 +524,6 @@
         ]
       }
     },
-    "stats": [
-      {
-        "key": "4 sistemas",
-        "label": "WhatsApp"
-      },
-      {
-        "key": "87%",
-        "label": "IA Autónoma"
-      },
-      {
-        "key": "<2 seg",
-        "label": "Tiempo respuesta"
-      },
-      {
-        "key": "12 idiomas",
-        "label": "Soporte nativo"
-      }
-    ],
     "finalCTA": {
       "title": "Activa WhatsApp.",
       "titleGradient": "Hoy mismo.",
@@ -975,7 +703,7 @@
         {
           "icon": "•",
           "title": "Asignación automática",
-          "description": "Algoritmo que cruza disponibilidad + geolocalización + habilidades. Tarea asignada en <2 seg."
+          "description": "Algoritmo que cruza disponibilidad + geolocalización + habilidades."
         },
         {
           "icon": "•",
@@ -1004,24 +732,6 @@
         }
       ]
     },
-    "stats": [
-      {
-        "key": "<2 seg",
-        "label": "Asignación automática"
-      },
-      {
-        "key": "WhatsApp",
-        "label": "Sin app que instalar"
-      },
-      {
-        "key": "100%",
-        "label": "Fotos archivadas"
-      },
-      {
-        "key": "4.87★",
-        "label": "Calificación promedio personal"
-      }
-    ],
     "finalCTA": {
       "title": "Invita a tu equipo.",
       "titleGradient": "En 60 segundos.",
@@ -1161,24 +871,6 @@
         }
       ]
     },
-    "stats": [
-      {
-        "key": "98%",
-        "label": "tasa apertura WhatsApp"
-      },
-      {
-        "key": "2.4×",
-        "label": "upsell vs email"
-      },
-      {
-        "key": "<2min",
-        "label": "tiempo respuesta promedio"
-      },
-      {
-        "key": "4.9★",
-        "label": "satisfacción huésped"
-      }
-    ],
     "finalCTA": {
       "title": "Lanza WhatsApp para tus huéspedes. En 5 minutos.",
       "subtitle": "Sin desarrollos. Sus huéspedes ya tienen WhatsApp."
@@ -1509,24 +1201,6 @@
           "description": "Tiempo de respuesta promedio, tasa de resolución. Por canal, por miembro."
         }
       ]
-    },
-    "stats": {
-      "stat1": {
-        "key": "4 canales",
-        "label": "WA, Airbnb, Booking, Email"
-      },
-      "stat2": {
-        "key": "<2 min",
-        "label": "Tiempo de respuesta promedio"
-      },
-      "stat3": {
-        "key": "12 idiomas",
-        "label": "Traducción auto"
-      },
-      "stat4": {
-        "key": "0",
-        "label": "Mensaje olvidado"
-      }
     },
     "finalCTA": {
       "title": "Conecta tus canales.",
@@ -2038,8 +1712,8 @@
       "description": "Recorrido premium: guía digital, servicios, check-in fluido."
     },
     "whatsapp": {
-      "title": "WhatsApp IA Marrakech | Conserjería automática 24/7",
-      "description": "IA en WhatsApp 24/7 para gestores: conserjería automática, respuestas instantáneas, check-in digital."
+      "title": "WhatsApp IA Marrakech | Conserjería automática a cualquier hora",
+      "description": "IA en WhatsApp para gestores: conserjería automática, respuestas instantáneas, check-in digital."
     },
     "inbox": {
       "title": "Bandeja unificada Marrakech | Mensajería multi-OTA",
@@ -2385,7 +2059,12 @@
       },
       "copyright": "© 2026 Sojori. Pago marroquí aceptado.",
       "terms": "Aviso legal",
-      "privacy": "Privacidad"
+      "privacy": "Privacidad",
+      "follow": "Síganos",
+      "contact": "Contacto",
+      "emailLabel": "Escribir al equipo comercial",
+      "demo": "Solicitar una demo",
+      "newTab": "(se abre en una pestaña nueva)"
     },
     "home": {
       "hero": {
@@ -2571,8 +2250,7 @@
         },
         "status": {
           "available": "Disponible",
-          "included": "Incluido",
-          "soon": "Próximamente"
+          "included": "Incluido"
         },
         "defaultNote": "Usted decide qué sale por sí solo y qué espera su aprobación.",
         "list": {
@@ -2635,7 +2313,7 @@
             "points": [
               "Recomienda precios según sus reglas y la demanda.",
               "Aplica los precios en sus canales, con su autorización.",
-              "Reservado a las propiedades gestionadas en el PMS Sojori."
+              "Para las propiedades gestionadas en el PMS Sojori."
             ],
             "talks": [
               "you"
@@ -3079,7 +2757,6 @@
         "own": [
           "Usted conserva su PMS.",
           "Los mismos agentes, los mismos módulos de WhatsApp.",
-          "Sin precios dinámicos, que siguen reservados al PMS Sojori.",
           "El conector se califica con usted antes de empezar."
         ],
         "pricing": {
@@ -3280,7 +2957,7 @@
           },
           {
             "q": "¿Sojori sustituye a mi PMS?",
-            "a": "No necesariamente. Sojori ofrece su propio PMS, o trabaja con el suyo: los agentes y los módulos de WhatsApp funcionan con ambos. Los precios dinámicos siguen reservados a las propiedades gestionadas en el PMS Sojori."
+            "a": "No necesariamente. Sojori ofrece su propio PMS, o trabaja con el suyo: los agentes y los módulos de WhatsApp funcionan con ambos."
           },
           {
             "q": "¿Qué hacen los agentes de Sojori?",
@@ -3360,7 +3037,7 @@
         },
         "dynamic_pricing": {
           "name": "Precios dinámicos",
-          "desc": "Recomienda los precios y los aplica con su autorización. Solo para propiedades del PMS Sojori."
+          "desc": "Recomienda los precios y los aplica con su autorización. Para propiedades del PMS Sojori."
         },
         "agent_commercial_crm": {
           "name": "Agente Comercial con CRM",
@@ -3378,7 +3055,7 @@
           "name": "Agente de Finanzas",
           "desc": "Prepara el seguimiento de sus cuentas y de sus pagos, que usted valida."
         },
-        "blocked": "No disponible con su PMS: los precios dinámicos solo se aplican a las propiedades del PMS Sojori.",
+        "blocked": "Con el PMS Sojori.",
         "forAccount": "para su cuenta",
         "agent_booking_call": {
           "name": "Agente de Reservas Call",
@@ -3456,7 +3133,7 @@
         },
         "connection": {
           "name": "Conexión específica",
-          "desc": "Una herramienta o un PMS por conectar que aún no es compatible.",
+          "desc": "Una herramienta o un PMS por conectar, calificado con usted.",
           "detail": "a estudiar con usted"
         }
       },
@@ -3503,7 +3180,7 @@
           },
           {
             "q": "¿Puedo conservar mi PMS actual?",
-            "a": "Sí. Sojori trabaja con el PMS Sojori o con el suyo. Con su PMS, los agentes y los módulos de WhatsApp siguen disponibles; los precios dinámicos siguen reservados a las propiedades del PMS Sojori."
+            "a": "Sí. Sojori trabaja con el PMS Sojori o con el suyo. Con su PMS, los agentes y los módulos de WhatsApp siguen disponibles."
           },
           {
             "q": "¿Puedo activar solo una parte de los agentes?",
@@ -3525,7 +3202,7 @@
         "conc_ext": {
           "type": "EMPRESA DE CONSERJERÍA",
           "socle": "Con su PMS",
-          "desc": "Usted lo conserva. Mismos agentes y módulos, salvo los precios dinámicos."
+          "desc": "Usted lo conserva. Mismos agentes y módulos de WhatsApp."
         },
         "hotel_sojori": {
           "type": "HOTEL O RIAD",
@@ -3535,7 +3212,7 @@
         "hotel_ext": {
           "type": "HOTEL O RIAD",
           "socle": "Con su PMS",
-          "desc": "Usted lo conserva. Mismos agentes y módulos, salvo los precios dinámicos."
+          "desc": "Usted lo conserva. Mismos agentes y módulos de WhatsApp."
         }
       },
       "form": {
@@ -3656,7 +3333,7 @@
           },
           {
             "title": "El PMS de Sojori, o el suyo",
-            "text": "No necesita cambiarlo todo para empezar. Los agentes de Sojori y los módulos de WhatsApp se conectan al PMS de Sojori igual que a su PMS actual. Los precios dinámicos, en cambio, siguen reservados a las propiedades gestionadas en el PMS de Sojori."
+            "text": "No necesita cambiarlo todo para empezar. Los agentes de Sojori y los módulos de WhatsApp se conectan al PMS de Sojori igual que a su PMS actual."
           }
         ],
         "faq": [
@@ -3670,7 +3347,7 @@
           },
           {
             "q": "¿Sojori sustituye a mi PMS?",
-            "a": "No necesariamente. Sojori ofrece su propio PMS, o trabaja con el suyo. Los agentes y los módulos de WhatsApp funcionan con ambos; los precios dinámicos están reservados a las propiedades del PMS de Sojori."
+            "a": "No necesariamente. Sojori ofrece su propio PMS, o trabaja con el suyo. Los agentes y los módulos de WhatsApp funcionan con ambos."
           },
           {
             "q": "¿El PMS de Sojori incluye un channel manager?",

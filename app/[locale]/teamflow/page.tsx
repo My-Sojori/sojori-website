@@ -3,9 +3,10 @@
 import { useTranslations } from 'next-intl';
 import { BackgroundEffects } from '@/components/BackgroundEffects';
 import { InFlow } from '@/components/InFlow';
-import { PageHeader, PageFooter, PageHero, StatsBar, FinalCTA } from '@/components/SharedComponents';
+import { PageHeader, PageFooter, PageHero, FinalCTA } from '@/components/SharedComponents';
 import { ScrollPaginationDots } from '@/components/shared/ScrollPaginationDots';
 import { FaqFromMessages } from '@/components/FaqFromMessages';
+import { Exemple } from '@/components/refonte/Exemple';
 
 interface Card {
   who: string;
@@ -141,11 +142,6 @@ export default function TeamflowPage() {
     description: string;
   }>;
 
-  const stats = t.raw('stats') as Array<{
-    key: string;
-    label: string;
-  }>;
-
   const heroTitle = t('hero.title');
   const heroTitleGradient = t('hero.titleGradient');
   const finalCTATitle = t('finalCTA.title');
@@ -209,7 +205,7 @@ export default function TeamflowPage() {
             <div style={{ fontSize: 32, fontWeight: 700, letterSpacing: '-0.02em', textAlign: 'center', maxWidth: 720, margin: '0 auto 32px' }}>
               {boardSectionTitle} <span className="gradient-text">{boardSectionTitleGradient}</span>
             </div>
-            <StaffBoard />
+            <Exemple><StaffBoard /></Exemple>
           </div>
         </section>
         <section style={{ padding: '24px 32px 44px', borderTop: '1px solid var(--glass-border)' }}>
@@ -218,7 +214,7 @@ export default function TeamflowPage() {
             <div style={{ fontSize: 32, fontWeight: 700, letterSpacing: '-0.02em', marginBottom: 32, maxWidth: 700 }}>
               {t('kpis.sectionTitle')} <span style={{ color: 'var(--text-3)' }}>{t('kpis.sectionSubtitle')}</span>
             </div>
-            <StaffKPIs />
+            <Exemple><StaffKPIs /></Exemple>
           </div>
         </section>
         <section style={{ padding: '24px 32px 44px', borderTop: '1px solid var(--glass-border)' }}>
@@ -238,7 +234,6 @@ export default function TeamflowPage() {
             </ScrollPaginationDots>
           </div>
         </section>
-        <StatsBar stats={stats.map(s => ({ k: s.key, l: s.label }))} />
 
         <InFlow
           domain={tb('k001')}

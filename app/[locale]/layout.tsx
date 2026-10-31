@@ -262,6 +262,7 @@ export default async function LocaleLayout({
     contactPoint: {
       '@type': 'ContactPoint',
       contactType: 'Sales',
+      email: 'commercial@sojori.com',
       areaServed: ['MA', 'FR', 'ES', 'PT'],
       availableLanguage: ['French', 'Arabic', 'English', 'Spanish', 'Portuguese'],
     },
