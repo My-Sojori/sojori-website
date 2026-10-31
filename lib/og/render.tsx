@@ -20,8 +20,12 @@ const police = (nom: string) => readFile(join(process.cwd(), 'lib', 'og', nom));
  * mots-clés reste en anglais (celle de l'accueil en anglais).
  */
 export async function renderOg(locale: string) {
-  const keywords = (locale === 'ar' ? MESSAGES.en : MESSAGES[locale] ?? MESSAGES.fr).refonte.home.hero.keywords.toUpperCase();
-  const [fontSemi, fontMono] = await Promise.all([police('Geist-SemiBold.ttf'), police('GeistMono-Medium.ttf')]);
+  const arabe = locale === 'ar';
+  const brut = (MESSAGES[locale] ?? MESSAGES.fr).refonte.home.hero.keywords;
+  const keywords = arabe ? brut : brut.toUpperCase();
+  const [fontSemi, fontMono, fontArabe] = await Promise.all([
+    police('Geist-SemiBold.ttf'), police('GeistMono-Medium.ttf'), arabe ? police('IBMPlexSansArabic-SemiBold.woff') : Promise.resolve(null),
+  ]);
   return new ImageResponse(
     (
       <div
@@ -44,7 +48,9 @@ export async function renderOg(locale: string) {
           <div style={{ fontSize: 40, fontWeight: 600, letterSpacing: -1.2 }}>sojori</div>
         </div>
         <div style={{ display: 'flex', flexDirection: 'column', gap: 28 }}>
-          <div style={{ fontFamily: 'Geist Mono', fontSize: 21, letterSpacing: 2.2, color: '#E6B022', display: 'flex' }}>{keywords}</div>
+          <div style={arabe
+            ? { fontFamily: 'Plex Arabic', fontSize: 34, color: '#E6B022', direction: 'rtl', textAlign: 'right', width: '100%' }
+            : { fontFamily: 'Geist Mono', fontSize: 21, letterSpacing: 2.2, color: '#E6B022', display: 'flex' }}>{keywords}</div>
           <div style={{ display: 'flex', flexDirection: 'column', fontSize: 104, fontWeight: 600, letterSpacing: -4.5, lineHeight: 1 }}>
             <div style={{ display: 'flex' }}>AI workforce</div>
             <div style={{ display: 'flex', color: '#E6B022' }}>for hospitality.</div>
@@ -58,6 +64,7 @@ export async function renderOg(locale: string) {
       fonts: [
         { name: 'Geist', data: fontSemi, weight: 600, style: 'normal' },
         { name: 'Geist Mono', data: fontMono, weight: 500, style: 'normal' },
+        ...(fontArabe ? [{ name: 'Plex Arabic', data: fontArabe, weight: 600 as const, style: 'normal' as const }] : []),
       ],
     },
   );

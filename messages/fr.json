@@ -3526,21 +3526,34 @@
       "form": {
         "stepsAria": "Étapes de votre demande",
         "step": {
-          "you": "Vous",
-          "activity": "Votre activité"
+          "email": "Votre e-mail",
+          "prepare": "Préparez votre démo",
+          "sent": "C’est envoyé"
         },
-        "next": "Continuer",
-        "back": "Retour",
-        "send": "Envoyer ma demande",
-        "phone": "Votre numéro WhatsApp",
-        "dial": "Indicatif du pays",
-        "dialOption": "{dial} ({country})",
-        "help": {
-          "name": "Il manque votre nom.",
-          "email": "Vérifiez votre e-mail.",
-          "phone": "Votre numéro WhatsApp, sans le 0 du début.",
-          "consent": "Cochez l’accord pour être recontacté.",
-          "activity": "Trois réponses suffisent : vous êtes, quand démarrer, et la ville si vous le souhaitez."
+        "email": {
+          "title": "Demandez votre démo",
+          "lead": "Votre e-mail suffit pour commencer. Ensuite, quelques questions facultatives pour préparer la démo.",
+          "label": "E-mail professionnel",
+          "consent": "J’accepte d’être recontacté par Sojori au sujet de ma démo.",
+          "submit": "Demander ma démo",
+          "saved": "Votre demande est enregistrée dès cette étape.",
+          "help": "Indiquez un e-mail valide et cochez l’accord pour continuer."
+        },
+        "prepare": {
+          "title": "Pour préparer votre démo",
+          "lead": "C’est bien reçu. Plus vous en dites, plus la démo ressemblera à votre quotidien. Tout est facultatif.",
+          "name": "Nom et prénom",
+          "country": "Pays",
+          "countryOther": "Votre pays",
+          "phone": "Numéro WhatsApp",
+          "phoneHint": "recommandé",
+          "dial": "Indicatif du pays",
+          "dialOption": "{dial} ({country})",
+          "otherCountry": "Autre pays",
+          "city": "Votre ville",
+          "send": "Envoyer",
+          "skip": "Passer cette étape",
+          "noCommitment": "Sans engagement. Vos réponses servent seulement à préparer la démo."
         },
         "segment": {
           "title": "Vous êtes",
@@ -3552,7 +3565,7 @@
           "agence_immobiliere": "Agence immobilière"
         },
         "tool": {
-          "title": "Votre outil actuel",
+          "title": "Votre outil aujourd’hui",
           "none": "Aucun",
           "excel": "Excel ou papier",
           "pms": "Un PMS",
@@ -3560,7 +3573,8 @@
           "pmsName": "Nom de votre PMS (facultatif)"
         },
         "priorities": {
-          "title": "Vos priorités (deux au plus)",
+          "title": "Ce que vous voulez régler en premier",
+          "hint": "deux au plus",
           "answer": "Répondre aux voyageurs",
           "staff": "Coordonner le staff",
           "checkin": "Check-in et fiche de police",
@@ -3569,22 +3583,18 @@
           "owners": "Suivre les propriétaires"
         },
         "when": {
-          "title": "Quand démarrer ?",
+          "title": "Quand voulez-vous démarrer ?",
           "month": "Ce mois-ci",
           "quarter": "Dans les 3 mois",
           "looking": "Je me renseigne"
         },
-        "city": "Votre ville (facultatif)",
-        "recap": {
-          "title": "VOTRE DEMANDE",
-          "segment": "Vous êtes",
-          "size": "Taille",
-          "tool": "Outil actuel",
-          "priorities": "Priorités",
-          "when": "Démarrage",
-          "toSpecify": "à préciser",
-          "sizeValueBiens": "{n, plural, one {# bien} other {# biens}}",
-          "sizeValueChambres": "{n, plural, one {# chambre} other {# chambres}}"
+        "sent": {
+          "title": "C’est envoyé.",
+          "s1": "Un conseiller Sojori prend votre demande et prépare la démo sur votre cas.",
+          "s2": "Vous recevez par e-mail, à {email}, un lien pour choisir votre créneau dans son planning.",
+          "s3": "Trente minutes de démo, en visio, sur votre établissement.",
+          "more": "Deux réponses de plus, et la démo sera faite pour vous.",
+          "complete": "Compléter"
         }
       }
     }

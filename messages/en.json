@@ -3525,24 +3525,37 @@
       "form": {
         "stepsAria": "Steps of your request",
         "step": {
-          "you": "You",
-          "activity": "Your business"
+          "email": "Your email",
+          "prepare": "Prepare your demo",
+          "sent": "Sent"
         },
-        "next": "Continue",
-        "back": "Back",
-        "send": "Send my request",
-        "phone": "Your WhatsApp number",
-        "dial": "Country dial code",
-        "dialOption": "{dial} ({country})",
-        "help": {
-          "name": "Your name is missing.",
-          "email": "Please check your email.",
-          "phone": "Your WhatsApp number, without the leading 0.",
-          "consent": "Tick the box to agree to be contacted.",
-          "activity": "Three answers are enough: who you are, when to start, and your city if you wish."
+        "email": {
+          "title": "Request your demo",
+          "lead": "Your email is all we need to start. Then a few optional questions to prepare the demo.",
+          "label": "Work email",
+          "consent": "I agree to be contacted by Sojori about my demo.",
+          "submit": "Request my demo",
+          "saved": "Your request is saved from this step.",
+          "help": "Enter a valid email and tick the box to continue."
+        },
+        "prepare": {
+          "title": "To prepare your demo",
+          "lead": "Received. The more you tell us, the closer the demo will be to your daily work. Everything is optional.",
+          "name": "Full name",
+          "country": "Country",
+          "countryOther": "Your country",
+          "phone": "WhatsApp number",
+          "phoneHint": "recommended",
+          "dial": "Country dialing code",
+          "dialOption": "{dial} ({country})",
+          "otherCountry": "Other country",
+          "city": "Your city",
+          "send": "Send",
+          "skip": "Skip this step",
+          "noCommitment": "No commitment. Your answers are only used to prepare the demo."
         },
         "segment": {
-          "title": "You are",
+          "title": "You are a",
           "conciergerie": "Concierge company",
           "proprietaire": "Owner",
           "hotel": "Hotel",
@@ -3551,7 +3564,7 @@
           "agence_immobiliere": "Real estate agency"
         },
         "tool": {
-          "title": "Your current tool",
+          "title": "Your tool today",
           "none": "None",
           "excel": "Excel or paper",
           "pms": "A PMS",
@@ -3559,31 +3572,28 @@
           "pmsName": "Name of your PMS (optional)"
         },
         "priorities": {
-          "title": "Your priorities (two at most)",
-          "answer": "Answer guests",
-          "staff": "Coordinate the staff",
+          "title": "What you want to fix first",
+          "hint": "two at most",
+          "answer": "Reply to guests",
+          "staff": "Coordinate staff",
           "checkin": "Check-in and police registration form",
           "pricing": "Set the right prices",
           "direct": "Sell direct",
           "owners": "Keep up with owners"
         },
         "when": {
-          "title": "When to start?",
+          "title": "When do you want to start?",
           "month": "This month",
           "quarter": "Within 3 months",
-          "looking": "I'm just looking"
+          "looking": "Just looking"
         },
-        "city": "Your city (optional)",
-        "recap": {
-          "title": "YOUR REQUEST",
-          "segment": "You are",
-          "size": "Size",
-          "tool": "Current tool",
-          "priorities": "Priorities",
-          "when": "Start",
-          "toSpecify": "to be specified",
-          "sizeValueBiens": "{n, plural, one {# property} other {# properties}}",
-          "sizeValueChambres": "{n, plural, one {# room} other {# rooms}}"
+        "sent": {
+          "title": "Sent.",
+          "s1": "A Sojori advisor takes your request and prepares the demo around your case.",
+          "s2": "You will receive an email at {email} with a link to pick a slot in their calendar.",
+          "s3": "A thirty-minute video demo, on your property.",
+          "more": "Two more answers, and the demo will be built for you.",
+          "complete": "Complete"
         }
       }
     }
