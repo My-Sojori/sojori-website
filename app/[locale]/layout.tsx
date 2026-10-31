@@ -235,7 +235,7 @@ export default async function LocaleLayout({
     logo: `${SITE_URL}/apple-icon.png`,
     slogan: 'AI workforce for hospitality',
     areaServed: { '@type': 'Country', name: 'Morocco' },
-    // address et foundingDate : à ajouter quand Sojori aura fourni l'adresse au Maroc et la date de création.
+    foundingDate: '2025',
     description: organizationDescriptionByLocale[locale] ?? organizationDescriptionByLocale.fr,
     sameAs: [
       'https://sojori.com',
