@@ -1427,17 +1427,13 @@
       }
     },
     "trustCards": {
-      "setup": {
-        "title": "إعداد سريع",
-        "description": "منشور في أقل من 7 أيام"
-      },
       "secure": {
         "title": "الاستضافة",
         "description": "مستضاف على Google Cloud، منطقة باريس"
       },
       "trial": {
-        "title": "بدون التزام",
-        "description": "تجربة مجانية لمدة شهر"
+        "title": "تجربة مجانية لمدة شهر",
+        "description": "يردّ عليكم مستشار بعرض."
       }
     }
   },

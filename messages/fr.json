@@ -1427,17 +1427,13 @@
       }
     },
     "trustCards": {
-      "setup": {
-        "title": "Setup rapide",
-        "description": "Déployé en moins de 7 jours"
-      },
       "secure": {
         "title": "Hébergement",
         "description": "Hébergé sur Google Cloud, région de Paris"
       },
       "trial": {
-        "title": "Sans engagement",
-        "description": "1 mois d'essai gratuit"
+        "title": "1 mois d'essai gratuit",
+        "description": "Un conseiller vous répond avec une proposition."
       }
     }
   },

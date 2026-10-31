@@ -1427,17 +1427,13 @@
       }
     },
     "trustCards": {
-      "setup": {
-        "title": "Quick setup",
-        "description": "Deployed in less than 7 days"
-      },
       "secure": {
         "title": "Hosting",
         "description": "Hosted on Google Cloud, Paris region"
       },
       "trial": {
-        "title": "No commitment",
-        "description": "1-month free trial"
+        "title": "1-month free trial",
+        "description": "An advisor replies with a proposal."
       }
     }
   },

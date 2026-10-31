@@ -1427,17 +1427,13 @@
       }
     },
     "trustCards": {
-      "setup": {
-        "title": "Configuración rápida",
-        "description": "Desplegado en menos de 7 días"
-      },
       "secure": {
         "title": "Alojamiento",
         "description": "Alojado en Google Cloud, región de París"
       },
       "trial": {
-        "title": "Sin compromiso",
-        "description": "Prueba gratuita de 1 mes"
+        "title": "Prueba gratuita de 1 mes",
+        "description": "Un asesor le responde con una propuesta."
       }
     }
   },
