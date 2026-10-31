@@ -405,10 +405,6 @@
           "description": "Histórico completo · Rastreamento desempenho · Insights clientes"
         },
         {
-          "title": "Alojamento",
-          "description": "Alojado no Google Cloud, região de Paris"
-        },
-        {
           "title": "Acompanhamento contínuo",
           "description": "Supervisão contínua · Alertas automáticos"
         }
@@ -1427,10 +1423,6 @@
       }
     },
     "trustCards": {
-      "secure": {
-        "title": "Alojamento",
-        "description": "Alojado no Google Cloud, região de Paris"
-      },
       "trial": {
         "title": "Teste gratuito de 1 mês",
         "description": "Um conselheiro responde-lhe com uma proposta."
@@ -3576,7 +3568,7 @@
           },
           {
             "title": "Os seus dados continuam seus.",
-            "text": "Alojado no Google Cloud, região de Paris. O senhor pode manter o seu PMS: a Sojori liga-se a ele através de um conector."
+            "text": "O senhor pode manter o seu PMS: a Sojori liga-se a ele através de um conector."
           }
         ]
       },
@@ -3595,10 +3587,6 @@
           {
             "label": "OS NOSSOS CLIENTES",
             "value": "Marrocos, França, Espanha, Portugal"
-          },
-          {
-            "label": "ALOJAMENTO",
-            "value": "No Google Cloud, região de Paris"
           },
           {
             "label": "IDIOMAS",

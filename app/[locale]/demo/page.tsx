@@ -1262,12 +1262,7 @@ function DemoPageContent() {
 
             {/* Trust indicators */}
             {(step === 1 || step === 2 || step === 3 || (step === 4 && calendarSkippedAlreadyBooked)) && (
-              <div className="demo-trust-grid-3" style={{ marginTop: 50, display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 24, maxWidth: 640, marginInline: 'auto' }}>
-                <div style={{ textAlign: 'center' }}>
-                  <div style={{ fontSize: 28, marginBottom: 8 }}></div>
-                  <div style={{ fontSize: 14, fontWeight: 600, marginBottom: 4 }}>{t('trustCards.secure.title')}</div>
-                  <div style={{ fontSize: 12, color: 'var(--text-3)' }}>{t('trustCards.secure.description')}</div>
-                </div>
+              <div className="demo-trust-grid-3" style={{ marginTop: 50, display: 'grid', gridTemplateColumns: '1fr', gap: 24, maxWidth: 360, marginInline: 'auto' }}>
                 <div style={{ textAlign: 'center' }}>
                   <div style={{ fontSize: 28, marginBottom: 8 }}></div>
                   <div style={{ fontSize: 14, fontWeight: 600, marginBottom: 4 }}>{t('trustCards.trial.title')}</div>

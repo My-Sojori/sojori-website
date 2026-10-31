@@ -405,10 +405,6 @@
           "description": "Complete history · Performance tracking · Customer insights"
         },
         {
-          "title": "Hosting",
-          "description": "Hosted on Google Cloud, Paris region"
-        },
-        {
           "title": "Continuous monitoring",
           "description": "Continuous supervision · Automatic alerts"
         }
@@ -1427,10 +1423,6 @@
       }
     },
     "trustCards": {
-      "secure": {
-        "title": "Hosting",
-        "description": "Hosted on Google Cloud, Paris region"
-      },
       "trial": {
         "title": "1-month free trial",
         "description": "An advisor replies with a proposal."
@@ -3576,7 +3568,7 @@
           },
           {
             "title": "Your data stays yours.",
-            "text": "Hosted on Google Cloud, Paris region. You can keep your PMS: Sojori connects to it through a connector."
+            "text": "You can keep your PMS: Sojori connects to it through a connector."
           }
         ]
       },
@@ -3595,10 +3587,6 @@
           {
             "label": "OUR CLIENTS",
             "value": "Morocco, France, Spain, Portugal"
-          },
-          {
-            "label": "HOSTING",
-            "value": "On Google Cloud, Paris region"
           },
           {
             "label": "LANGUAGES",

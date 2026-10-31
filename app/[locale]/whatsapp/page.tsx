@@ -769,8 +769,8 @@ export default function WhatsAppPage() {
               subtitle={t("benefits.subtitle")}
             />
 
-            <ScrollPaginationDots itemCount={6} gap={16} peekCarousel>
-              {[0, 1, 2, 3, 4, 5].map(idx => {
+            <ScrollPaginationDots itemCount={5} gap={16} peekCarousel>
+              {[0, 1, 2, 3, 4].map(idx => {
                 const benefit = t.raw(`benefits.items.${idx}`);
                 const icons = ["", "", "", "", "", ""];
                 return (

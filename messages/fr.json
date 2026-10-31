@@ -405,10 +405,6 @@
           "description": "Historique complet · Performance tracking · Insights clients"
         },
         {
-          "title": "Hébergement",
-          "description": "Hébergé sur Google Cloud, région de Paris"
-        },
-        {
           "title": "Suivi continu",
           "description": "Supervision continue · Alertes automatiques"
         }
@@ -1427,10 +1423,6 @@
       }
     },
     "trustCards": {
-      "secure": {
-        "title": "Hébergement",
-        "description": "Hébergé sur Google Cloud, région de Paris"
-      },
       "trial": {
         "title": "1 mois d'essai gratuit",
         "description": "Un conseiller vous répond avec une proposition."
@@ -3576,7 +3568,7 @@
           },
           {
             "title": "Vos données restent les vôtres.",
-            "text": "Hébergé sur Google Cloud, région de Paris. Vous pouvez garder votre PMS : Sojori s’y branche par connecteur."
+            "text": "Vous pouvez garder votre PMS : Sojori s’y branche par connecteur."
           }
         ]
       },
@@ -3595,10 +3587,6 @@
           {
             "label": "NOS CLIENTS",
             "value": "Maroc, France, Espagne, Portugal"
-          },
-          {
-            "label": "HÉBERGEMENT",
-            "value": "Sur Google Cloud, région de Paris"
           },
           {
             "label": "LANGUES",
