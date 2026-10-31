@@ -963,7 +963,7 @@
           "description": "Le staff valide sa présence sur place. Anti-fraude, anti-no-show."
         },
         {
-          "icon": "⏱️",
+          "icon": "",
           "title": "Tracking temps réel",
           "description": "Durée de chaque tâche. Comparable. Optimisable. Sans micro-management."
         },
@@ -1223,7 +1223,7 @@
           "impact": "Configurable"
         },
         {
-          "icon": "⏱️",
+          "icon": "",
           "label": "Dernière minute",
           "description": "Ajustement pour réservations proches du check-in",
           "impact": "Configurable"
@@ -1266,7 +1266,7 @@
           "description": "pilotage des durées min. / fenêtres"
         },
         {
-          "icon": "⏱",
+          "icon": "",
           "label": "Temps équipe",
           "description": "moins de saisie manuelle"
         }
@@ -1396,7 +1396,7 @@
   "inbox": {
     "pageTitle": "Inbox unifiée",
     "hero": {
-      "badge": "💬 Unified Inbox · Tous les canaux. Une boîte.",
+      "badge": "Unified Inbox · Tous les canaux. Une boîte.",
       "title": "WhatsApp, Booking, Expedia, Airbnb.",
       "titleGradient": "Au même endroit.",
       "subtitle": "Chaque message client, peu importe le canal, dans une seule boîte. Réponses suggérées par IA. Historique complet. Templates personnalisés.",
@@ -1415,9 +1415,9 @@
       "searchPlaceholder": "Rechercher…"
     },
     "threads": {
-      "thread1": "Merci ! Je suis dans le taxi 🚕",
+      "thread1": "Merci ! Je suis dans le taxi ",
       "thread2": "Question about the AC unit, it stopped...",
-      "thread3": "On prend pour 6 ! 🙌",
+      "thread3": "On prend pour 6 ! ",
       "thread4": "Thanks again, amazing stay!",
       "thread5": "Need to extend my stay by 2 nights",
       "thread6": "Could you arrange airport pickup?",
@@ -1440,9 +1440,9 @@
         "aiLabel": "SOJORI AI · auto-réponse"
       },
       "quickActions": {
-        "confirmArrival": "👍 Confirmer arrivée",
-        "resendGPS": "🗺️ Renvoyer GPS",
-        "suggestDinner": "✨ Suggérer dîner"
+        "confirmArrival": "Confirmer arrivée",
+        "resendGPS": "Renvoyer GPS",
+        "suggestDinner": "Suggérer dîner"
       },
       "input": {
         "placeholder": "Tapez votre message…"
@@ -1454,32 +1454,32 @@
       "titleGradient": "Toute la communication.",
       "items": [
         {
-          "icon": "✨",
+          "icon": "",
           "title": "Réponses IA suggérées",
           "description": "L'IA propose 3 réponses contextuelles. Vous choisissez. Vous envoyez."
         },
         {
-          "icon": "👤",
+          "icon": "",
           "title": "Profil guest 360°",
           "description": "Historique séjours, préférences, anniversaires, langue. À chaque message."
         },
         {
-          "icon": "📝",
+          "icon": "",
           "title": "Templates dynamiques",
           "description": "Variables auto (nom, date, code WiFi). Multi-langue. Réutilisables."
         },
         {
-          "icon": "🌍",
+          "icon": "",
           "title": "Traduction native",
           "description": "Vous écrivez en français, il reçoit en mandarin. Et vice-versa."
         },
         {
-          "icon": "⏰",
+          "icon": "",
           "title": "Snooze & rappels",
           "description": "Pas le temps maintenant ? Mis de côté, rappelé au bon moment."
         },
         {
-          "icon": "📊",
+          "icon": "",
           "title": "SLA tracking",
           "description": "Temps de réponse moyen, taux de résolution. Par canal, par membre."
         }

@@ -6,6 +6,7 @@ import { SojoriMark } from "@/components/Logo";
 import { InFlow } from '@/components/InFlow';
 import { FaqSection } from '@/components/FaqSection';
 import { Exemple } from '@/components/refonte/Exemple';
+import { Trait } from '@/components/refonte/Trait';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
@@ -27,7 +28,7 @@ function OwnerPhone() {
       <div style={{ width: "100%", height: "100%", borderRadius: 32, background: "#0a0a10", overflow: "hidden", position: "relative", display: "flex", flexDirection: "column" }}>
         <div style={{ position: "absolute", top: 8, left: "50%", transform: "translateX(-50%)", width: 110, height: 26, borderRadius: 13, background: "#000", zIndex: 10 }} />
         <div style={{ display: "flex", justifyContent: "space-between", padding: "14px 24px 8px", fontSize: 11, color: "#fff", fontWeight: 600, fontFamily: "Geist Mono" }}>
-          <span>09:42</span><span>📶 5G ⚡</span>
+          <span>09:42</span><span>5G </span>
         </div>
         <div style={{ padding: "10px 16px 14px", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
           <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
@@ -37,7 +38,7 @@ function OwnerPhone() {
           <div style={{ width: 30, height: 30, borderRadius: "50%", background: "linear-gradient(135deg, #8b5cf6, #6366f1)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 11, fontWeight: 700, color: "#fff" }}>HM</div>
         </div>
         <div style={{ padding: "4px 16px 12px" }}>
-          <div style={{ fontSize: 11, color: "rgba(255,255,255,0.5)" }}>Bonjour Antoine 👋</div>
+          <div style={{ fontSize: 11, color: "rgba(255,255,255,0.5)" }}>Bonjour Antoine </div>
           <div style={{ fontSize: 18, fontWeight: 700, color: "#fff", marginTop: 2 }}>Riad Dar Zellige</div>
         </div>
 
@@ -97,9 +98,9 @@ function OwnerPhone() {
 
         {/* Bottom nav */}
         <div style={{ display: "flex", borderTop: "1px solid rgba(255,255,255,0.05)", padding: "10px 0 22px", background: "#070710" }}>
-          {[{ i: "🏠", l: "Home", a: 1 }, { i: "📊", l: "Stats" }, { i: "💰", l: "Revenus" }, { i: "⚙️", l: "Profil" }].map((t, i) => (
+          {[{ i: "", l: "Home", a: 1 }, { i: "", l: "Stats" }, { i: "", l: "Revenus" }, { i: "", l: "Profil" }].map((t, i) => (
             <div key={i} style={{ flex: 1, textAlign: "center" }}>
-              <div style={{ fontSize: 18, opacity: t.a ? 1 : 0.4 }}>{t.i}</div>
+              <div style={{ fontSize: 18, opacity: t.a ? 1 : 0.4 }}><Trait /></div>
               <div style={{ fontSize: 9, color: t.a ? "#f4cf5e" : "rgba(255,255,255,0.45)", marginTop: 2, fontWeight: 500 }}>{t.l}</div>
             </div>
           ))}
@@ -117,7 +118,7 @@ function MonthlyStatement() {
           <div style={{ fontSize: 11, color: "var(--text-3)", textTransform: "uppercase", letterSpacing: 1 }}>Statement</div>
           <div style={{ fontSize: 18, fontWeight: 700, marginTop: 2 }}>Mars 2026 · Riad Dar Zellige</div>
         </div>
-        <button style={{ background: "transparent", border: "1px solid var(--glass-border)", color: "var(--text-1)", padding: "7px 14px", borderRadius: 7, fontSize: 12, cursor: "pointer" }}>📥 PDF</button>
+        <button style={{ background: "transparent", border: "1px solid var(--glass-border)", color: "var(--text-1)", padding: "7px 14px", borderRadius: 7, fontSize: 12, cursor: "pointer" }}>PDF</button>
       </div>
       <div style={{ padding: 22 }}>
         {[
@@ -156,7 +157,7 @@ export default function OwnerPortalPage() {
       <div style={{ position: "relative", zIndex: 1 }}>
         <PageHeader pageTitle="Owner Portal" />
         <PageHero
-          badge="👤 Owner Portal · Pour les propriétaires"
+          badge="Owner Portal · Pour les propriétaires"
           title={<>Vos revenus.<br /><span className="gradient-text">Dans votre poche. Toujours.</span></>}
           subtitle="L&apos;app dédiée aux propriétaires. Suivi temps réel des revenus, occupation, avis. Statements mensuels automatiques. Transparence totale, en 12 langues."
           cta1="Voir la démo"
@@ -172,13 +173,13 @@ export default function OwnerPortalPage() {
                 <div style={{ fontSize: 15, color: "var(--text-2)", lineHeight: 1.6, marginBottom: 28 }}>Vos revenus du mois, vos prochaines arrivées, votre note moyenne, vos statements PDF — tout dans une app native iOS / Android.</div>
                 <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
                   {[
-                    { i: "📊", t: "Dashboard temps réel", d: "Revenus, occupation, ADR · mis à jour à la minute." },
-                    { i: "📅", t: "Calendrier de vos bookings", d: "Vue mois ou liste · arrivées passées et futures." },
-                    { i: "⭐", t: "Avis clients", d: "Tous vos avis OTA centralisés · réponses suggérées par IA." },
-                    { i: "💰", t: "Statements PDF auto", d: "Le 1er de chaque mois · viré sous 48h ouvrées." },
+                    { i: "", t: "Dashboard temps réel", d: "Revenus, occupation, ADR · mis à jour à la minute." },
+                    { i: "", t: "Calendrier de vos bookings", d: "Vue mois ou liste · arrivées passées et futures." },
+                    { i: "", t: "Avis clients", d: "Tous vos avis OTA centralisés · réponses suggérées par IA." },
+                    { i: "", t: "Statements PDF auto", d: "Le 1er de chaque mois · viré sous 48h ouvrées." },
                   ].map(c => (
                     <div key={c.t} style={{ display: "flex", gap: 14 }}>
-                      <div style={{ fontSize: 22, marginTop: 2 }}>{c.i}</div>
+                      <div style={{ fontSize: 22, marginTop: 2 }}><Trait /></div>
                       <div>
                         <div style={{ fontSize: 14, fontWeight: 600 }}>{c.t}</div>
                         <div style={{ fontSize: 13, color: "var(--text-3)", lineHeight: 1.5, marginTop: 2 }}>{c.d}</div>

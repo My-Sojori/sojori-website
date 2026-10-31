@@ -8,6 +8,7 @@ import { ScrollPaginationDots } from "@/components/shared/ScrollPaginationDots";
 import { InFlow } from '@/components/InFlow';
 import { FaqSection } from '@/components/FaqSection';
 import { Exemple } from '@/components/refonte/Exemple';
+import { Trait } from '@/components/refonte/Trait';
 
 // ========================================
 // WhatsApp Phone Component (Réutilisable)
@@ -45,7 +46,7 @@ function WhatsAppPhone({ title, subtitle, messages, time = "14:32" }: WhatsAppPh
         {/* Status Bar */}
         <div style={{display: "flex", justifyContent: "space-between", padding: "14px 24px 8px", fontSize: 11, color: "#000", fontWeight: 600, fontFamily: "var(--font-mono)"}}>
           <span>{time}</span>
-          <span>📶 5G ⚡ 87%</span>
+          <span>5G 87%</span>
         </div>
 
         {/* WhatsApp Header */}
@@ -59,7 +60,7 @@ function WhatsAppPhone({ title, subtitle, messages, time = "14:32" }: WhatsAppPh
             <div style={{color: "#fff", fontSize: 13.5, fontWeight: 600}}>{title}</div>
             <div style={{color: "rgba(255,255,255,0.8)", fontSize: 10.5}}>{subtitle}</div>
           </div>
-          <span style={{color: "#fff", fontSize: 15, opacity: 0.9}}>📞</span>
+          <span style={{color: "#fff", fontSize: 15, opacity: 0.9}}></span>
           <span style={{color: "#fff", fontSize: 15, opacity: 0.9}}>⋮</span>
         </div>
 
@@ -78,11 +79,11 @@ function WhatsAppPhone({ title, subtitle, messages, time = "14:32" }: WhatsAppPh
         {/* Input Area */}
         <div style={{background: "#f0f0f0", padding: "8px 10px", display: "flex", alignItems: "center", gap: 6, borderTop: "1px solid rgba(0,0,0,0.08)"}}>
           <div style={{flex: 1, background: "#fff", borderRadius: 22, padding: "9px 14px", color: "rgba(0,0,0,0.5)", fontSize: 12.5, display: "flex", alignItems: "center", gap: 8, border: "1px solid rgba(0,0,0,0.08)"}}>
-            <span>😊</span>
+            <span></span>
             <span>Message</span>
-            <span style={{marginLeft: "auto", opacity: 0.7}}>📎 📷</span>
+            <span style={{marginLeft: "auto", opacity: 0.7}}></span>
           </div>
-          <div style={{width: 38, height: 38, borderRadius: "50%", background: "#00a884", display: "flex", alignItems: "center", justifyContent: "center", color: "#fff", fontSize: 16}}>🎤</div>
+          <div style={{width: 38, height: 38, borderRadius: "50%", background: "#00a884", display: "flex", alignItems: "center", justifyContent: "center", color: "#fff", fontSize: 16}}><Trait /></div>
         </div>
       </div>
     </div>
@@ -94,7 +95,7 @@ function Bubble({ from, text, time, type = "text", ext, status }: Message) {
   const isAI = from === "sojori";
 
   if (type === "date") return <div style={{alignSelf: "center", background: "rgba(0,0,0,0.08)", color: "rgba(0,0,0,0.6)", fontSize: 10, padding: "4px 11px", borderRadius: 11, margin: "6px 0", fontWeight: 500}}>{text}</div>;
-  if (type === "system") return <div style={{alignSelf: "center", background: "rgba(255,217,90,0.2)", color: "#d4a017", fontSize: 10, padding: "5px 12px", borderRadius: 11, margin: "4px 0", display: "flex", alignItems: "center", gap: 5, fontWeight: 500}}>🔒 {text}</div>;
+  if (type === "system") return <div style={{alignSelf: "center", background: "rgba(255,217,90,0.2)", color: "#d4a017", fontSize: 10, padding: "5px 12px", borderRadius: 11, margin: "4px 0", display: "flex", alignItems: "center", gap: 5, fontWeight: 500}}>{text}</div>;
 
   return (
     <div style={{
@@ -107,7 +108,7 @@ function Bubble({ from, text, time, type = "text", ext, status }: Message) {
       boxShadow: "0 1px 2px rgba(0,0,0,0.15)",
       border: isAI ? "1px solid rgba(244,207,94,0.2)" : "none",
     }}>
-      {isAI && <div style={{display: "flex", alignItems: "center", gap: 4, marginBottom: 4, color: "#8a6a12", fontSize: 9, fontWeight: 600, fontFamily: "var(--font-mono)", letterSpacing: "0.6px"}}>✨ SOJORI AI</div>}
+      {isAI && <div style={{display: "flex", alignItems: "center", gap: 4, marginBottom: 4, color: "#8a6a12", fontSize: 9, fontWeight: 600, fontFamily: "var(--font-mono)", letterSpacing: "0.6px"}}>SOJORI AI</div>}
       <div style={{color: "#111", fontSize: 13, lineHeight: 1.45, whiteSpace: "pre-wrap"}}>{text}</div>
       {ext && <div style={{marginTop: 7, padding: 9, background: "rgba(0,0,0,0.05)", borderRadius: 7, fontSize: 11.5, color: "#111", lineHeight: 1.4, border: "1px solid rgba(0,0,0,0.08)"}}>{ext}</div>}
       <div style={{display: "flex", justifyContent: "flex-end", alignItems: "center", gap: 3, marginTop: 3, fontSize: 9.5, color: "#54656f"}}>
@@ -125,7 +126,7 @@ const WA_SECTION_ORDER: WaSystemId[] = ["staff", "admin", "booking", "guest"];
 function GuestMenuBlock() {
   const t = useTranslations("whatsapp");
   const [more, setMore] = useState(false);
-  const icons = ["📋", "🌍", "📅", "👥", "🔐", "🏠", "📋", "🧹", "🛎️", "🆘"];
+  const icons = ["", "", "", "", "", "", "", "", "", "🆘"];
   const keys = ["A", "B", "C", "E", "F", "G", "H", "I", "J", "K"];
 
   return (
@@ -145,7 +146,7 @@ function GuestMenuBlock() {
             return (
               <div key={key} className="wa-detail-card" style={{ display: "flex", alignItems: "center", gap: 12, padding: "10px 14px", background: "rgba(255,255,255,0.02)", border: "1px solid var(--glass-border)", borderRadius: 10 }}>
                 <div className="mono" style={{ fontSize: 12, fontWeight: 700, color: "#25D366", width: 20 }}>{menuItem.key}</div>
-                <div style={{ fontSize: 16 }}>{icons[idx]}</div>
+                <div style={{ fontSize: 16 }}><Trait /></div>
                 <div style={{ fontSize: 13.5, color: "var(--text-2)" }}>{menuItem.label}</div>
               </div>
             );
@@ -192,7 +193,7 @@ function GuestMenuBlock() {
                 }}
               >
                 <div className="mono" style={{ fontSize: 12, fontWeight: 700, color: "#25D366", width: 20 }}>{menuItem.key}</div>
-                <div style={{ fontSize: 16 }}>{icons[realIdx]}</div>
+                <div style={{ fontSize: 16 }}><Trait /></div>
                 <div style={{ fontSize: 13.5, color: "var(--text-2)" }}>{menuItem.label}</div>
               </div>
             );
@@ -235,10 +236,10 @@ function NonGuestDetails({ systemId }: { systemId: "staff" | "admin" | "booking"
           <div className="wa-flow-menu-strip">
             {[0, 1, 2, 3, 4, 5].map((idx) => {
               const feature = t.raw(`details.staff.features.${idx}`) as { label: string; detail: string };
-              const icons = ["📋", "📅", "📍", "✅", "⏱️", "🔔"];
+              const icons = ["", "", "", "", "", ""];
               return (
                 <div key={idx} className="wa-detail-card" style={{ display: "flex", gap: 12, padding: "12px 14px", background: "rgba(52,211,153,0.05)", border: "1px solid rgba(52,211,153,0.2)", borderRadius: 10 }}>
-                  <div style={{ fontSize: 18 }}>{icons[idx]}</div>
+                  <div style={{ fontSize: 18 }}><Trait /></div>
                   <div>
                     <div style={{ fontSize: 14, fontWeight: 600, color: "var(--text-1)", marginBottom: 2 }}>{feature.label}</div>
                     <div style={{ fontSize: 12, color: "var(--text-3)" }}>{feature.detail}</div>
@@ -281,12 +282,12 @@ function NonGuestDetails({ systemId }: { systemId: "staff" | "admin" | "booking"
           <div className="wa-flow-menu-strip">
             {["T", "D", "R", "M", "V", "L"].map((key, idx) => {
               const menuItem = t.raw(`details.admin.menu.${idx}`) as { key: string; label: string };
-              const icons = ["✅", "📋", "📅", "💬", "⭐", "🎯"];
+              const icons = ["", "", "", "", "", ""];
               const colors = ["#10b981", "#3b82f6", "#8b5cf6", "#f59e0b", "#f4cf5e", "#ec4899"];
               return (
                 <div key={key} className="wa-detail-card" style={{ display: "flex", alignItems: "center", gap: 12, padding: "12px 14px", background: `${colors[idx]}08`, border: `1px solid ${colors[idx]}30`, borderRadius: 10 }}>
                   <div className="mono" style={{ fontSize: 13, fontWeight: 700, color: colors[idx], width: 20 }}>{menuItem.key}</div>
-                  <div style={{ fontSize: 18 }}>{icons[idx]}</div>
+                  <div style={{ fontSize: 18 }}><Trait /></div>
                   <div style={{ fontSize: 14, color: "var(--text-2)", flex: 1 }}>{menuItem.label}</div>
                   <div style={{ width: 8, height: 8, borderRadius: "50%", background: colors[idx], boxShadow: `0 0 10px ${colors[idx]}` }} />
                 </div>
@@ -326,11 +327,11 @@ function NonGuestDetails({ systemId }: { systemId: "staff" | "admin" | "booking"
         <div className="wa-flow-menu-strip">
           {[0, 1, 2, 3, 4, 5].map((idx) => {
             const advantage = t.raw(`details.booking.advantages.${idx}`) as { label: string; detail: string };
-            const icons = ["💰", "🔄", "💳", "⚡", "📊", "🎁"];
+            const icons = ["", "", "", "", "", ""];
             const colors = ["#10b981", "#3b82f6", "#8b5cf6", "#f59e0b", "#ec4899", "#f4cf5e"];
             return (
               <div key={idx} className="wa-detail-card" style={{ display: "flex", gap: 12, padding: "12px 14px", background: `${colors[idx]}08`, border: `1px solid ${colors[idx]}30`, borderRadius: 10 }}>
-                <div style={{ fontSize: 18 }}>{icons[idx]}</div>
+                <div style={{ fontSize: 18 }}><Trait /></div>
                 <div>
                   <div style={{ fontSize: 14, fontWeight: 600, color: "var(--text-1)", marginBottom: 2 }}>{advantage.label}</div>
                   <div style={{ fontSize: 12, color: "var(--text-3)" }}>{advantage.detail}</div>
@@ -371,7 +372,7 @@ export default function WhatsAppPage() {
       id: "guest",
       label: t("systems.guest.label"),
       badge: t("systems.guest.badge"),
-      icon: "🌟",
+      icon: "",
       color: "#25D366",
       stat: t("systems.guest.stat")
     },
@@ -379,7 +380,7 @@ export default function WhatsAppPage() {
       id: "staff",
       label: t("systems.staff.label"),
       badge: t("systems.staff.badge"),
-      icon: "🔧",
+      icon: "",
       color: "#34d399",
       stat: t("systems.staff.stat")
     },
@@ -387,7 +388,7 @@ export default function WhatsAppPage() {
       id: "admin",
       label: t("systems.admin.label"),
       badge: t("systems.admin.badge"),
-      icon: "📊",
+      icon: "",
       color: "#a78bfa",
       stat: t("systems.admin.stat")
     },
@@ -395,7 +396,7 @@ export default function WhatsAppPage() {
       id: "booking",
       label: t("systems.booking.label"),
       badge: t("systems.booking.badge"),
-      icon: "🎫",
+      icon: "",
       color: "#f59e0b",
       stat: t("systems.booking.stat")
     },
@@ -691,7 +692,7 @@ export default function WhatsAppPage() {
                       gap: 8,
                     }}
                   >
-                    <span aria-hidden>{sys.icon}</span>
+                    <span aria-hidden><Trait /></span>
                     {sys.label}
                   </a>
                 );
@@ -764,10 +765,10 @@ export default function WhatsAppPage() {
             <ScrollPaginationDots itemCount={6} gap={16} peekCarousel>
               {[0, 1, 2, 3, 4, 5].map(idx => {
                 const benefit = t.raw(`benefits.items.${idx}`);
-                const icons = ["🤖", "⚡", "🔄", "📊", "🔐", "📈"];
+                const icons = ["", "", "", "", "", ""];
                 return (
                   <div key={idx} data-carousel-slide className="card" style={{padding: 22, flexShrink: 0}}>
-                    <div style={{fontSize: 32, marginBottom: 12}}>{icons[idx]}</div>
+                    <div style={{fontSize: 32, marginBottom: 12}}><Trait /></div>
                     <div style={{fontSize: 16, fontWeight: 600, marginBottom: 6}}>{benefit.title}</div>
                     <div style={{fontSize: 13, color: "var(--text-3)", lineHeight: 1.5}}>{benefit.description}</div>
                   </div>
@@ -859,7 +860,7 @@ export default function WhatsAppPage() {
                 {[0, 1, 2, 3, 4, 5, 6].map(idx => {
                   const step = t.raw(`fullCycle.steps.${idx}`);
                   const colors = ["#FF5A5F", "#8b5cf6", "#25D366", "#f4cf5e", "#06b6d4", "#8b5cf6", "#FF5A5F"];
-                  const icons = ["🏠", "📥", "💬", "🧠", "✅", "📤", "✈️"];
+                  const icons = ["", "", "", "", "", "", ""];
                   return (
                     <div key={idx} data-carousel-slide style={{position: "relative", zIndex: 1, flexShrink: 0}}>
                       <div className="card wa-fullcycle-card" style={{
@@ -879,7 +880,7 @@ export default function WhatsAppPage() {
                           justifyContent: "center",
                           fontSize: 22,
                           boxShadow: `0 6px 16px ${colors[idx]}30`
-                        }}>{icons[idx]}</div>
+                        }}><Trait /></div>
                         <div className="wa-fullcycle-title" style={{fontSize: 13, fontWeight: 700, marginBottom: 6, color: "var(--text-1)"}}>{step.title}</div>
                         <div className="wa-fullcycle-desc" style={{fontSize: 11, color: "var(--text-3)", lineHeight: 1.4, marginBottom: 10, whiteSpace: "pre-line"}}>
                           {step.description}
@@ -919,7 +920,7 @@ export default function WhatsAppPage() {
                   }}
                   aria-hidden
                 >
-                  🤖
+                  <Trait />
                 </div>
                 <div style={{flex: 1}}>
                   <div style={{fontSize: 24, fontWeight: 800, marginBottom: 8, letterSpacing: "-0.02em"}}>
@@ -931,7 +932,7 @@ export default function WhatsAppPage() {
                   <div style={{display: "flex", gap: 12, flexWrap: "wrap"}}>
                     {[0, 1, 2, 3].map(idx => {
                       const feature = t.raw(`fullCycle.autopilot.features.${idx}`);
-                      const icons = ["⚡", "🌙", "👁️", "🔔"];
+                      const icons = ["", "", "", ""];
                       const colors = ["#f59e0b", "#8b5cf6", "#06b6d4", "#ef4444"];
                       return (
                         <div
@@ -948,7 +949,7 @@ export default function WhatsAppPage() {
                             border: `1px solid ${colors[idx]}55`,
                           }}
                         >
-                          <span aria-hidden>{icons[idx]}</span>
+                          <span aria-hidden><Trait /></span>
                           <span style={{ color: "var(--text-1)" }}>{feature.label}</span>
                         </div>
                       );

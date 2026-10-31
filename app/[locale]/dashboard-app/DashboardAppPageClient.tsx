@@ -7,17 +7,18 @@ import { SojoriMark } from "@/components/Logo";
 import { InFlow } from '@/components/InFlow';
 import { FaqSection } from '@/components/FaqSection';
 import { Exemple } from '@/components/refonte/Exemple';
+import { Trait } from '@/components/refonte/Trait';
 
 const NAV = [
-  { i: '🏠', l: 'Home', active: true },
-  { i: '📅', l: 'Calendar' },
-  { i: '🎫', l: 'Reservations' },
-  { i: '📡', l: 'Channels' },
-  { i: '✨', l: 'Orchestration', badge: 'AI' },
-  { i: '👥', l: 'Tasks', badge: 7 },
-  { i: '💬', l: 'Inbox', badge: 12 },
-  { i: '📊', l: 'Analytics' },
-  { i: '⚙️', l: 'Settings' },
+  { i: '', l: 'Home', active: true },
+  { i: '', l: 'Calendar' },
+  { i: '', l: 'Reservations' },
+  { i: '', l: 'Channels' },
+  { i: '', l: 'Orchestration', badge: 'AI' },
+  { i: '', l: 'Tasks', badge: 7 },
+  { i: '', l: 'Inbox', badge: 12 },
+  { i: '', l: 'Analytics' },
+  { i: '', l: 'Settings' },
 ];
 
 function Dashboard({ dark = true }: { dark: boolean }) {
@@ -46,7 +47,7 @@ function Dashboard({ dark = true }: { dark: boolean }) {
             cursor: 'pointer',
             border: n.active ? '1px solid rgba(230,176,34,0.25)' : '1px solid transparent',
           }}>
-            <span style={{ fontSize: 12 }}>{n.i}</span>
+            <span style={{ fontSize: 12 }}><Trait /></span>
             <span style={{ flex: 1 }}>{n.l}</span>
             {n.badge && <span style={{ fontSize: 8, padding: '1px 5px', borderRadius: 999, background: typeof n.badge === 'number' ? '#dc2626' : 'rgba(109,40,217,0.14)', color: typeof n.badge === 'number' ? '#fff' : '#6d28d9', fontWeight: 700 }}>{n.badge}</span>}
           </div>
@@ -68,9 +69,9 @@ function Dashboard({ dark = true }: { dark: boolean }) {
           <div style={{ fontSize: 10, color: text3 }}>Dashboard <span style={{ margin: '0 4px' }}>›</span><span style={{ color: text }}>Home</span></div>
           <div style={{ flex: 1 }} />
           <div className="dashboard-search" style={{ background: dark ? 'rgba(255,255,255,0.05)' : '#fff', border: `1px solid ${border}`, borderRadius: 6, padding: '4px 10px', fontSize: 10, color: text3, display: 'flex', alignItems: 'center', gap: 6, width: 160 }}>
-            <span style={{ fontSize: 11 }}>🔍</span><span>Search…</span><span style={{ marginLeft: 'auto', fontSize: 8, opacity: 0.6 }}>⌘K</span>
+            <span style={{ fontSize: 11 }}></span><span>Search…</span><span style={{ marginLeft: 'auto', fontSize: 8, opacity: 0.6 }}>⌘K</span>
           </div>
-          <div style={{ position: 'relative', cursor: 'pointer', fontSize: 13 }}>🔔<span style={{ position: 'absolute', top: -3, right: -5, width: 12, height: 12, borderRadius: 6, background: '#dc2626', color: '#fff', fontSize: 7, display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 700 }}>3</span></div>
+          <div style={{ position: 'relative', cursor: 'pointer', fontSize: 13 }}><span style={{ position: 'absolute', top: -3, right: -5, width: 12, height: 12, borderRadius: 6, background: '#dc2626', color: '#fff', fontSize: 7, display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 700 }}>3</span></div>
           <button className="dashboard-cta" style={{ background: 'linear-gradient(180deg, #f4cf5e, #e6b022)', color: '#1a1408', border: 'none', padding: '5px 10px', borderRadius: 6, fontSize: 10, fontWeight: 600, cursor: 'pointer', whiteSpace: 'nowrap' }}>+ New</button>
         </div>
 
@@ -78,7 +79,7 @@ function Dashboard({ dark = true }: { dark: boolean }) {
         <div style={{ flex: 1, padding: 14, overflow: 'auto' }}>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 12, gap: 12 }}>
             <div>
-              <div style={{ fontSize: 16, fontWeight: 700, letterSpacing: '-0.02em' }}>Bonjour Ahmed 👋</div>
+              <div style={{ fontSize: 16, fontWeight: 700, letterSpacing: '-0.02em' }}>Bonjour Ahmed </div>
               <div style={{ fontSize: 10, color: text3, marginTop: 1 }}>Vous avez 3 arrivées aujourd'hui et 7 tâches en attente.</div>
             </div>
             <div className="dashboard-tabs" style={{ display: 'flex', gap: 4, fontSize: 9, color: text3 }}>
@@ -91,14 +92,14 @@ function Dashboard({ dark = true }: { dark: boolean }) {
           {/* KPI cards */}
           <div className="dashboard-kpis" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 8, marginBottom: 14 }}>
             {[
-              { k: '3', l: "Today's arrivals", trend: '+1', c: '#06b6d4', icon: '🛬' },
+              { k: '3', l: "Today's arrivals", trend: '+1', c: '#06b6d4', icon: '' },
               { k: '7', l: 'Pending tasks', trend: '2 urgent', c: '#e6b022', icon: '✓' },
-              { k: '12', l: 'Unread messages', trend: '4 new', c: '#8b5cf6', icon: '💬' },
+              { k: '12', l: 'Unread messages', trend: '4 new', c: '#8b5cf6', icon: '' },
               { k: '2,340 MAD', l: 'Revenue today', trend: '+18%', c: '#10b981', icon: '↗' },
             ].map(s => (
               <div key={s.l} style={{ background: card, border: `1px solid ${border}`, borderRadius: 8, padding: 10 }}>
                 <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 6 }}>
-                  <div style={{ width: 22, height: 22, borderRadius: 5, background: `${s.c}22`, color: s.c, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 11 }}>{s.icon}</div>
+                  <div style={{ width: 22, height: 22, borderRadius: 5, background: `${s.c}22`, color: s.c, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 11 }}><Trait /></div>
                   <div style={{ fontSize: 8, color: '#047857', fontWeight: 600 }}>{s.trend}</div>
                 </div>
                 <div style={{ fontSize: 18, fontWeight: 700, letterSpacing: '-0.02em' }}>{s.k}</div>
@@ -116,12 +117,12 @@ function Dashboard({ dark = true }: { dark: boolean }) {
               </div>
               {[
                 { t: '2 min', i: '✓', c: '#10b981', text: 'Sarah J. checked in · Riad Dar Zellige' },
-                { t: '14 min', i: '💬', c: '#06b6d4', text: 'New WhatsApp from Marco · "AC issue"' },
-                { t: '38 min', i: '🧹', c: '#8b5cf6', text: 'Sophie completed cleaning · Hôtel Tafoukt' },
-                { t: '1h', i: '📨', c: '#e6b022', text: 'Booking confirmed · Airbnb · 840 MAD' },
+                { t: '14 min', i: '', c: '#06b6d4', text: 'New WhatsApp from Marco · "AC issue"' },
+                { t: '38 min', i: '', c: '#8b5cf6', text: 'Sophie completed cleaning · Hôtel Tafoukt' },
+                { t: '1h', i: '', c: '#e6b022', text: 'Booking confirmed · Airbnb · 840 MAD' },
               ].map((a, i) => (
                 <div key={i} style={{ display: 'flex', alignItems: 'center', gap: 8, padding: '6px 0', borderTop: i ? `1px solid ${border}` : 'none' }}>
-                  <div style={{ width: 22, height: 22, borderRadius: 5, background: `${a.c}22`, color: a.c, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 10 }}>{a.i}</div>
+                  <div style={{ width: 22, height: 22, borderRadius: 5, background: `${a.c}22`, color: a.c, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 10 }}><Trait /></div>
                   <div style={{ flex: 1, fontSize: 10, lineHeight: 1.3 }}>{a.text}</div>
                   <div style={{ fontSize: 8, color: text3, fontFamily: 'var(--font-mono)', whiteSpace: 'nowrap' }}>{a.t}</div>
                 </div>
@@ -158,7 +159,7 @@ export default function DashboardAppPageClient() {
       <div style={{ position: 'relative', zIndex: 1 }}>
         <PageHeader pageTitle="Dashboard App" />
         <PageHero
-          badge="🖥️ Dashboard · L'interface principale"
+          badge="Dashboard · L'interface principale"
           title={<>Tout votre business.<br /><span className="gradient-text">Une seule vue.</span></>}
           subtitle="Le workspace post-login. Sidebar navigation, KPI cards, activity feed temps réel, arrivées du jour. Dark mode par défaut, light mode disponible."
           cta1="Voir la démo"

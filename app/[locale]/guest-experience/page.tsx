@@ -7,6 +7,7 @@ import { PageHeader, PageFooter, PageHero, StatsBar, FinalCTA } from "@/componen
 import { ScrollPaginationDots } from "@/components/shared/ScrollPaginationDots";
 import { InFlow } from '@/components/InFlow';
 import { FaqSection } from '@/components/FaqSection';
+import { Trait } from '@/components/refonte/Trait';
 
 interface Tab {
   id: string;
@@ -145,7 +146,7 @@ function WhatsAppPhone({ tab, t }: { tab: string; t: any }) {
         {/* WhatsApp Input */}
         <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, background: "#202c33", padding: "8px 12px 22px", display: "flex", gap: 8, alignItems: "center" }}>
           <div style={{ flex: 1, background: "#2a3942", borderRadius: 20, padding: "8px 14px", fontSize: 13, color: "#aab8c0" }}>{t("phone.input")}</div>
-          <div style={{ width: 40, height: 40, borderRadius: "50%", background: "#25D366", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 18 }}>🎤</div>
+          <div style={{ width: 40, height: 40, borderRadius: "50%", background: "#25D366", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 18 }}></div>
         </div>
       </div>
     </div>
@@ -157,10 +158,10 @@ export default function GuestExperiencePage() {
   const [tab, setTab] = useState("home");
 
   const TABS: Tab[] = [
-    { id: "home", l: t("tabs.home.label"), icon: "🏠" },
-    { id: "guide", l: t("tabs.guide.label"), icon: "📖" },
-    { id: "experiences", l: t("tabs.experiences.label"), icon: "✨" },
-    { id: "help", l: t("tabs.help.label"), icon: "💬" },
+    { id: "home", l: t("tabs.home.label"), icon: "" },
+    { id: "guide", l: t("tabs.guide.label"), icon: "" },
+    { id: "experiences", l: t("tabs.experiences.label"), icon: "" },
+    { id: "help", l: t("tabs.help.label"), icon: "" },
   ];
 
   return (
@@ -228,7 +229,7 @@ export default function GuestExperiencePage() {
                     border: tab === tabItem.id ? "1px solid rgba(244,207,94,0.3)" : "1px solid var(--glass-border)",
                     color: "var(--text-1)", cursor: "pointer", display: "flex", gap: 14, alignItems: "center",
                   }}>
-                    <span style={{ fontSize: 22 }}>{tabItem.icon}</span>
+                    <span style={{ fontSize: 22 }}><Trait /></span>
                     <div>
                       <div style={{ fontSize: 14, fontWeight: 600 }}>{tabItem.l}</div>
                       <div style={{ fontSize: 12, color: "var(--text-3)" }}>
@@ -255,7 +256,7 @@ export default function GuestExperiencePage() {
                 const item = t.raw(`features.items.${i}`);
                 return (
                   <div key={i} data-carousel-slide className="card" style={{ padding: 20, flexShrink: 0 }}>
-                    <div style={{ fontSize: 28, marginBottom: 10 }}>{item.icon}</div>
+                    <div style={{ fontSize: 28, marginBottom: 10 }}><Trait /></div>
                     <div style={{ fontSize: 15, fontWeight: 600, marginBottom: 4 }}>{item.title}</div>
                     <div style={{ fontSize: 12.5, color: "var(--text-3)", lineHeight: 1.5 }}>{item.description}</div>
                   </div>

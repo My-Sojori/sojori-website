@@ -505,4 +505,4 @@ html[dir='rtl'] .sj2 [class*='mono'], html[dir='rtl'] .sj2-pill--mono, html[dir=
 
 /* étiquette « Exemple » sur les maquettes chiffrées */
 .sj2-exemple-wrap { position: relative; }
-.sj2-exemple { position: absolute; top: 10px; inset-inline-end: 10px; z-index: 5; padding: 4px 12px; border-radius: 999px; border: 1px solid var(--sj-line-gold-2); background: #14120d; color: var(--sj-gold-soft); font-size: 12px; font-weight: 600; letter-spacing: 0.04em; pointer-events: none; }
+.sj2-exemple { position: absolute; top: -13px; inset-inline-end: 16px; z-index: 5; padding: 4px 12px; border-radius: 999px; border: 1px solid var(--sj-line-gold-2); background: #14120d; color: var(--sj-gold-soft); font-size: 12px; font-weight: 600; letter-spacing: 0.04em; pointer-events: none; }
