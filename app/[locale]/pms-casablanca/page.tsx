@@ -62,7 +62,7 @@ export default async function PmsPageCasablanca({ params }: { params: Promise<{ 
         <PageHeader pageTitle="PMS Hôtel Casablanca" />
 
         <PageHero
-          badge="🏙️ PMS Hôtel · Casablanca"
+          badge="PMS Hôtel · Casablanca"
           title={<>PMS hôtel à Casablanca{' '}<br /><span className="gradient-text">et orchestration des opérations</span></>}
           subtitle="Hôtels d&apos;affaires, résidences et appart-hôtels : Sojori centralise réservations et facturation entreprise, puis orchestre le ménage, la maintenance et la relation client. Fiche police au check-in et taxe de séjour incluses."
           cta1="Voir la démo"

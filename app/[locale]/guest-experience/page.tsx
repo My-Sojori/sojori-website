@@ -7,6 +7,7 @@ import { PageHeader, PageFooter, PageHero, StatsBar, FinalCTA } from "@/componen
 import { ScrollPaginationDots } from "@/components/shared/ScrollPaginationDots";
 import { InFlow } from '@/components/InFlow';
 import { FaqSection } from '@/components/FaqSection';
+import { Trait } from '@/components/refonte/Trait';
 
 interface Tab {
   id: string;
@@ -27,9 +28,9 @@ function WhatsAppPhone({ tab, t }: { tab: string; t: any }) {
           <div style={{ width: 40, height: 40, borderRadius: "50%", background: "linear-gradient(135deg, #25D366, #128C7E)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 18, fontWeight: 700, color: "#fff" }}>S</div>
           <div style={{ flex: 1 }}>
             <div style={{ fontSize: 15, fontWeight: 600, color: "#fff" }}>{t("phone.header.name")}</div>
-            <div style={{ fontSize: 11, color: "#8696a0" }}>{t("phone.header.status")}</div>
+            <div style={{ fontSize: 11, color: "#aab8c0" }}>{t("phone.header.status")}</div>
           </div>
-          <div style={{ fontSize: 20, color: "#8696a0" }}>⋮</div>
+          <div style={{ fontSize: 20, color: "#aab8c0" }}>⋮</div>
         </div>
 
         {/* WhatsApp Messages */}
@@ -42,22 +43,22 @@ function WhatsAppPhone({ tab, t }: { tab: string; t: any }) {
                   <div style={{ fontSize: 13, color: "#e9edef", lineHeight: 1.5, whiteSpace: "pre-line" }}>
                     {t("phone.home.welcome")}
                   </div>
-                  <div style={{ fontSize: 10, color: "#8696a0", marginTop: 4, textAlign: "right" }}>14:23</div>
+                  <div style={{ fontSize: 10, color: "#aab8c0", marginTop: 4, textAlign: "right" }}>14:23</div>
                 </div>
               </div>
               {/* Code & WiFi card */}
               <div style={{ marginBottom: 12 }}>
                 <div style={{ background: "#202c33", borderRadius: "0 12px 12px 12px", padding: "12px", maxWidth: "90%", display: "inline-block" }}>
                   <div style={{ background: "#2a3942", borderRadius: 8, padding: 12, marginBottom: 8 }}>
-                    <div style={{ fontSize: 11, color: "#8696a0", fontWeight: 700, letterSpacing: 0.5 }}>{t("phone.home.doorCode")}</div>
+                    <div style={{ fontSize: 11, color: "#aab8c0", fontWeight: 700, letterSpacing: 0.5 }}>{t("phone.home.doorCode")}</div>
                     <div style={{ fontSize: 24, fontWeight: 700, color: "#25D366", marginTop: 4, fontFamily: "Geist Mono" }}>{t("phone.home.doorCodeValue")}</div>
                   </div>
                   <div style={{ background: "#2a3942", borderRadius: 8, padding: 12 }}>
-                    <div style={{ fontSize: 11, color: "#8696a0", fontWeight: 700, letterSpacing: 0.5 }}>{t("phone.home.wifi")}</div>
+                    <div style={{ fontSize: 11, color: "#aab8c0", fontWeight: 700, letterSpacing: 0.5 }}>{t("phone.home.wifi")}</div>
                     <div style={{ fontSize: 14, fontWeight: 600, color: "#e9edef", marginTop: 4 }}>{t("phone.home.wifiNetwork")}</div>
-                    <div style={{ fontSize: 12, color: "#8696a0", marginTop: 2 }}>{t("phone.home.wifiPassword")}</div>
+                    <div style={{ fontSize: 12, color: "#aab8c0", marginTop: 2 }}>{t("phone.home.wifiPassword")}</div>
                   </div>
-                  <div style={{ fontSize: 10, color: "#8696a0", marginTop: 8, textAlign: "right" }}>14:23</div>
+                  <div style={{ fontSize: 10, color: "#aab8c0", marginTop: 8, textAlign: "right" }}>14:23</div>
                 </div>
               </div>
               {/* AI recommendations */}
@@ -66,13 +67,13 @@ function WhatsAppPhone({ tab, t }: { tab: string; t: any }) {
                   <div style={{ fontSize: 13, color: "#e9edef", marginBottom: 8 }}>{t("phone.home.recommendations")}</div>
                   <div style={{ background: "#2a3942", borderRadius: 8, padding: 10, marginBottom: 6 }}>
                     <div style={{ fontSize: 13, fontWeight: 600, color: "#e9edef" }}>{t("phone.home.rec1Title")}</div>
-                    <div style={{ fontSize: 11, color: "#8696a0" }}>{t("phone.home.rec1Detail")}</div>
+                    <div style={{ fontSize: 11, color: "#aab8c0" }}>{t("phone.home.rec1Detail")}</div>
                   </div>
                   <div style={{ background: "#2a3942", borderRadius: 8, padding: 10 }}>
                     <div style={{ fontSize: 13, fontWeight: 600, color: "#e9edef" }}>{t("phone.home.rec2Title")}</div>
-                    <div style={{ fontSize: 11, color: "#8696a0" }}>{t("phone.home.rec2Detail")}</div>
+                    <div style={{ fontSize: 11, color: "#aab8c0" }}>{t("phone.home.rec2Detail")}</div>
                   </div>
-                  <div style={{ fontSize: 10, color: "#8696a0", marginTop: 8, textAlign: "right" }}>14:24</div>
+                  <div style={{ fontSize: 10, color: "#aab8c0", marginTop: 8, textAlign: "right" }}>14:24</div>
                 </div>
               </div>
             </>
@@ -90,10 +91,10 @@ function WhatsAppPhone({ tab, t }: { tab: string; t: any }) {
                   ].map(g => (
                     <div key={g.title} style={{ background: "#2a3942", borderRadius: 8, padding: 10, marginBottom: 6 }}>
                       <div style={{ fontSize: 13, fontWeight: 600, color: "#e9edef" }}>{g.e} {g.title}</div>
-                      <div style={{ fontSize: 11, color: "#8696a0" }}>{g.count}</div>
+                      <div style={{ fontSize: 11, color: "#aab8c0" }}>{g.count}</div>
                     </div>
                   ))}
-                  <div style={{ fontSize: 10, color: "#8696a0", marginTop: 8, textAlign: "right" }}>14:24</div>
+                  <div style={{ fontSize: 10, color: "#aab8c0", marginTop: 8, textAlign: "right" }}>14:24</div>
                 </div>
               </div>
             </>
@@ -109,12 +110,12 @@ function WhatsAppPhone({ tab, t }: { tab: string; t: any }) {
                     { d: t("phone.experiences.booking3Date"), title: t("phone.experiences.booking3Title"), s: t("phone.experiences.booking3Status") },
                   ].map(r => (
                     <div key={r.title} style={{ background: "#2a3942", borderRadius: 8, padding: 10, marginBottom: 6 }}>
-                      <div style={{ fontSize: 11, color: "#8696a0" }}>{r.d}</div>
+                      <div style={{ fontSize: 11, color: "#aab8c0" }}>{r.d}</div>
                       <div style={{ fontSize: 13, fontWeight: 600, color: "#e9edef", marginTop: 2 }}>{r.title}</div>
                       <div style={{ fontSize: 11, color: "#25D366", marginTop: 2 }}>{r.s}</div>
                     </div>
                   ))}
-                  <div style={{ fontSize: 10, color: "#8696a0", marginTop: 8, textAlign: "right" }}>14:25</div>
+                  <div style={{ fontSize: 10, color: "#aab8c0", marginTop: 8, textAlign: "right" }}>14:25</div>
                 </div>
               </div>
             </>
@@ -134,8 +135,8 @@ function WhatsAppPhone({ tab, t }: { tab: string; t: any }) {
                       {i + 1}. {h}
                     </div>
                   ))}
-                  <div style={{ fontSize: 11, color: "#8696a0", marginTop: 8 }}>{t("phone.help.footer")}</div>
-                  <div style={{ fontSize: 10, color: "#8696a0", marginTop: 8, textAlign: "right" }}>14:26</div>
+                  <div style={{ fontSize: 11, color: "#aab8c0", marginTop: 8 }}>{t("phone.help.footer")}</div>
+                  <div style={{ fontSize: 10, color: "#aab8c0", marginTop: 8, textAlign: "right" }}>14:26</div>
                 </div>
               </div>
             </>
@@ -144,8 +145,8 @@ function WhatsAppPhone({ tab, t }: { tab: string; t: any }) {
 
         {/* WhatsApp Input */}
         <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, background: "#202c33", padding: "8px 12px 22px", display: "flex", gap: 8, alignItems: "center" }}>
-          <div style={{ flex: 1, background: "#2a3942", borderRadius: 20, padding: "8px 14px", fontSize: 13, color: "#8696a0" }}>{t("phone.input")}</div>
-          <div style={{ width: 40, height: 40, borderRadius: "50%", background: "#25D366", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 18 }}>🎤</div>
+          <div style={{ flex: 1, background: "#2a3942", borderRadius: 20, padding: "8px 14px", fontSize: 13, color: "#aab8c0" }}>{t("phone.input")}</div>
+          <div style={{ width: 40, height: 40, borderRadius: "50%", background: "#25D366", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 18 }}></div>
         </div>
       </div>
     </div>
@@ -157,10 +158,10 @@ export default function GuestExperiencePage() {
   const [tab, setTab] = useState("home");
 
   const TABS: Tab[] = [
-    { id: "home", l: t("tabs.home.label"), icon: "🏠" },
-    { id: "guide", l: t("tabs.guide.label"), icon: "📖" },
-    { id: "experiences", l: t("tabs.experiences.label"), icon: "✨" },
-    { id: "help", l: t("tabs.help.label"), icon: "💬" },
+    { id: "home", l: t("tabs.home.label"), icon: "" },
+    { id: "guide", l: t("tabs.guide.label"), icon: "" },
+    { id: "experiences", l: t("tabs.experiences.label"), icon: "" },
+    { id: "help", l: t("tabs.help.label"), icon: "" },
   ];
 
   return (
@@ -228,7 +229,7 @@ export default function GuestExperiencePage() {
                     border: tab === tabItem.id ? "1px solid rgba(244,207,94,0.3)" : "1px solid var(--glass-border)",
                     color: "var(--text-1)", cursor: "pointer", display: "flex", gap: 14, alignItems: "center",
                   }}>
-                    <span style={{ fontSize: 22 }}>{tabItem.icon}</span>
+                    <span style={{ fontSize: 22 }}><Trait /></span>
                     <div>
                       <div style={{ fontSize: 14, fontWeight: 600 }}>{tabItem.l}</div>
                       <div style={{ fontSize: 12, color: "var(--text-3)" }}>
@@ -255,7 +256,7 @@ export default function GuestExperiencePage() {
                 const item = t.raw(`features.items.${i}`);
                 return (
                   <div key={i} data-carousel-slide className="card" style={{ padding: 20, flexShrink: 0 }}>
-                    <div style={{ fontSize: 28, marginBottom: 10 }}>{item.icon}</div>
+                    <div style={{ fontSize: 28, marginBottom: 10 }}><Trait /></div>
                     <div style={{ fontSize: 15, fontWeight: 600, marginBottom: 4 }}>{item.title}</div>
                     <div style={{ fontSize: 12.5, color: "var(--text-3)", lineHeight: 1.5 }}>{item.description}</div>
                   </div>

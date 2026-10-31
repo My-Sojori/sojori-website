@@ -153,7 +153,7 @@ export default function AboutPage() {
             padding: '24px 0',
             borderTop: '1px solid var(--border)',
             borderBottom: '1px solid var(--border)',
-            background: 'rgba(255,255,255,0.4)',
+            background: 'rgba(255,255,255,0.04)',
             backdropFilter: 'blur(10px)',
             overflow: 'hidden',
             position: 'relative',
@@ -227,10 +227,10 @@ export default function AboutPage() {
               background: 'var(--glass)',
               border: '1px solid var(--glass-border)',
               backdropFilter: 'blur(20px)',
-              boxShadow: '0 1px 0 rgba(255,255,255,0.9) inset, 0 8px 24px rgba(230,176,34,0.10)',
+              boxShadow: '0 1px 0 rgba(255,255,255,0.05) inset, 0 8px 24px rgba(230,176,34,0.10)',
               marginTop: 24
             }}>
-              <div style={{ fontSize: 22 }}>🎯</div>
+              <div style={{ fontSize: 22 }}></div>
               <p style={{ margin: 0, fontSize: 15, color: 'var(--text-2)', textAlign: 'left', maxWidth: 560, lineHeight: 1.55 }}>
                 {t('mission.goalTitle')}
               </p>
@@ -241,7 +241,7 @@ export default function AboutPage() {
         {/* ORIGIN STORY — Magazine style */}
         <section style={{
           padding: '52px 32px',
-          background: 'rgba(255,255,255,0.5)',
+          background: 'rgba(255,255,255,0.05)',
           borderTop: '1px solid var(--border)',
           borderBottom: '1px solid var(--border)'
         }}>
@@ -427,7 +427,7 @@ export default function AboutPage() {
               {/* Value 1 - span 7 */}
               <div data-carousel-slide style={{
                 gridColumn: 'span 7',
-                background: 'linear-gradient(135deg, rgba(230,176,34,0.10), rgba(255,255,255,0.78))',
+                background: 'linear-gradient(135deg, rgba(230,176,34,0.10), rgba(255,255,255,0.05))',
                 backdropFilter: 'blur(20px) saturate(150%)',
                 border: '1px solid var(--glass-border)',
                 borderRadius: 24,
@@ -441,11 +441,11 @@ export default function AboutPage() {
               }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.transform = 'translateY(-4px)';
-                e.currentTarget.style.boxShadow = '0 1px 0 rgba(255,255,255,0.9) inset, 0 20px 40px -16px rgba(230,176,34,0.18)';
+                e.currentTarget.style.boxShadow = '0 1px 0 rgba(255,255,255,0.05) inset, 0 20px 40px -16px rgba(230,176,34,0.18)';
               }}
               onMouseLeave={(e) => {
                 e.currentTarget.style.transform = 'translateY(0)';
-                e.currentTarget.style.boxShadow = '0 1px 0 rgba(255,255,255,0.9) inset, 0 4px 20px rgba(26,20,8,0.04)';
+                e.currentTarget.style.boxShadow = '0 1px 0 rgba(255,255,255,0.05) inset, 0 4px 20px rgba(26,20,8,0.04)';
               }}>
                 <div style={{ fontFamily: 'var(--font-mono)', fontSize: 11, color: 'var(--text-3)', letterSpacing: 1.6, textTransform: 'uppercase' }}>
                   {t('values.value1.number')}
@@ -458,7 +458,7 @@ export default function AboutPage() {
                     {t('values.value1.description')}
                   </div>
                 </div>
-                <div style={{ position: 'absolute', top: 24, right: 24, fontSize: 32, opacity: 0.4 }}>🎯</div>
+                <div style={{ position: 'absolute', top: 24, right: 24, fontSize: 32, opacity: 0.4 }}></div>
               </div>
 
               {/* Value 2 - span 5 */}
@@ -475,15 +475,15 @@ export default function AboutPage() {
                 position: 'relative',
                 overflow: 'hidden',
                 transition: 'transform 0.3s, box-shadow 0.3s',
-                boxShadow: '0 1px 0 rgba(255,255,255,0.9) inset, 0 4px 20px rgba(26,20,8,0.04)'
+                boxShadow: '0 1px 0 rgba(255,255,255,0.05) inset, 0 4px 20px rgba(26,20,8,0.04)'
               }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.transform = 'translateY(-4px)';
-                e.currentTarget.style.boxShadow = '0 1px 0 rgba(255,255,255,0.9) inset, 0 20px 40px -16px rgba(230,176,34,0.18)';
+                e.currentTarget.style.boxShadow = '0 1px 0 rgba(255,255,255,0.05) inset, 0 20px 40px -16px rgba(230,176,34,0.18)';
               }}
               onMouseLeave={(e) => {
                 e.currentTarget.style.transform = 'translateY(0)';
-                e.currentTarget.style.boxShadow = '0 1px 0 rgba(255,255,255,0.9) inset, 0 4px 20px rgba(26,20,8,0.04)';
+                e.currentTarget.style.boxShadow = '0 1px 0 rgba(255,255,255,0.05) inset, 0 4px 20px rgba(26,20,8,0.04)';
               }}>
                 <div style={{ fontFamily: 'var(--font-mono)', fontSize: 11, color: 'var(--text-3)', letterSpacing: 1.6, textTransform: 'uppercase' }}>
                   {t('values.value2.number')}
@@ -496,7 +496,7 @@ export default function AboutPage() {
                     {t('values.value2.description')}
                   </div>
                 </div>
-                <div style={{ position: 'absolute', top: 24, right: 24, fontSize: 32, opacity: 0.4 }}>🔬</div>
+                <div style={{ position: 'absolute', top: 24, right: 24, fontSize: 32, opacity: 0.4 }}></div>
               </div>
 
               {/* Value 3 - span 5 */}
@@ -513,15 +513,15 @@ export default function AboutPage() {
                 position: 'relative',
                 overflow: 'hidden',
                 transition: 'transform 0.3s, box-shadow 0.3s',
-                boxShadow: '0 1px 0 rgba(255,255,255,0.9) inset, 0 4px 20px rgba(26,20,8,0.04)'
+                boxShadow: '0 1px 0 rgba(255,255,255,0.05) inset, 0 4px 20px rgba(26,20,8,0.04)'
               }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.transform = 'translateY(-4px)';
-                e.currentTarget.style.boxShadow = '0 1px 0 rgba(255,255,255,0.9) inset, 0 20px 40px -16px rgba(230,176,34,0.18)';
+                e.currentTarget.style.boxShadow = '0 1px 0 rgba(255,255,255,0.05) inset, 0 20px 40px -16px rgba(230,176,34,0.18)';
               }}
               onMouseLeave={(e) => {
                 e.currentTarget.style.transform = 'translateY(0)';
-                e.currentTarget.style.boxShadow = '0 1px 0 rgba(255,255,255,0.9) inset, 0 4px 20px rgba(26,20,8,0.04)';
+                e.currentTarget.style.boxShadow = '0 1px 0 rgba(255,255,255,0.05) inset, 0 4px 20px rgba(26,20,8,0.04)';
               }}>
                 <div style={{ fontFamily: 'var(--font-mono)', fontSize: 11, color: 'var(--text-3)', letterSpacing: 1.6, textTransform: 'uppercase' }}>
                   {t('values.value3.number')}
@@ -534,13 +534,13 @@ export default function AboutPage() {
                     {t('values.value3.description')}
                   </div>
                 </div>
-                <div style={{ position: 'absolute', top: 24, right: 24, fontSize: 32, opacity: 0.4 }}>🌍</div>
+                <div style={{ position: 'absolute', top: 24, right: 24, fontSize: 32, opacity: 0.4 }}></div>
               </div>
 
               {/* Value 4 - span 7 */}
               <div data-carousel-slide style={{
                 gridColumn: 'span 7',
-                background: 'linear-gradient(135deg, rgba(139,92,246,0.08), rgba(255,255,255,0.78))',
+                background: 'linear-gradient(135deg, rgba(139,92,246,0.08), rgba(255,255,255,0.05))',
                 backdropFilter: 'blur(20px) saturate(150%)',
                 border: '1px solid var(--glass-border)',
                 borderRadius: 24,
@@ -554,11 +554,11 @@ export default function AboutPage() {
               }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.transform = 'translateY(-4px)';
-                e.currentTarget.style.boxShadow = '0 1px 0 rgba(255,255,255,0.9) inset, 0 20px 40px -16px rgba(230,176,34,0.18)';
+                e.currentTarget.style.boxShadow = '0 1px 0 rgba(255,255,255,0.05) inset, 0 20px 40px -16px rgba(230,176,34,0.18)';
               }}
               onMouseLeave={(e) => {
                 e.currentTarget.style.transform = 'translateY(0)';
-                e.currentTarget.style.boxShadow = '0 1px 0 rgba(255,255,255,0.9) inset, 0 4px 20px rgba(26,20,8,0.04)';
+                e.currentTarget.style.boxShadow = '0 1px 0 rgba(255,255,255,0.05) inset, 0 4px 20px rgba(26,20,8,0.04)';
               }}>
                 <div style={{ fontFamily: 'var(--font-mono)', fontSize: 11, color: 'var(--text-3)', letterSpacing: 1.6, textTransform: 'uppercase' }}>
                   {t('values.value4.number')}
@@ -571,7 +571,7 @@ export default function AboutPage() {
                     {t('values.value4.description')}
                   </div>
                 </div>
-                <div style={{ position: 'absolute', top: 24, right: 24, fontSize: 32, opacity: 0.4 }}>⚡</div>
+                <div style={{ position: 'absolute', top: 24, right: 24, fontSize: 32, opacity: 0.4 }}></div>
               </div>
             </div>
             </ScrollPaginationDots>
@@ -796,7 +796,7 @@ export default function AboutPage() {
               gridTemplateColumns: '200px 1fr',
               gap: 40,
               alignItems: 'center',
-              boxShadow: '0 1px 0 rgba(255,255,255,0.9) inset, 0 12px 40px -20px rgba(26,20,8,0.10)'
+              boxShadow: '0 1px 0 rgba(255,255,255,0.05) inset, 0 12px 40px -20px rgba(26,20,8,0.10)'
             }}>
               <div style={{
                 width: 200,
@@ -853,7 +853,7 @@ export default function AboutPage() {
         {/* SOCIAL */}
         <section style={{
           padding: '44px 32px',
-          background: 'rgba(255,255,255,0.5)',
+          background: 'rgba(255,255,255,0.05)',
           borderTop: '1px solid var(--border)',
           borderBottom: '1px solid var(--border)'
         }}>
@@ -958,7 +958,7 @@ export default function AboutPage() {
                   justifyContent: 'center',
                   fontSize: 22,
                   flexShrink: 0
-                }}>📷</div>
+                }}></div>
                 <div style={{ flex: 1 }}>
                   <div style={{ fontSize: 16, fontWeight: 700, marginBottom: 4 }}>{t('social.instagram.title')}</div>
                   <div style={{ fontSize: 13, color: 'var(--text-3)' }}>{t('social.instagram.description')}</div>

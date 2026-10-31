@@ -23,7 +23,7 @@ export default function ConciergerieMarrakechPage() {
         <PageHeader pageTitle="Conciergerie Marrakech" />
 
         <PageHero
-          badge="💬 Conciergerie Marrakech · WhatsApp 24/7"
+          badge="Conciergerie Marrakech · WhatsApp 24/7"
           title={<>Conciergerie automatique.<br /><span className="gradient-text">Pour riads & villas Marrakech.</span></>}
           subtitle="WhatsApp Business AI trilingue FR/AR/EN. Check-in digital, réservation transport aéroport, restaurants, hammams, excursions. Guidebook interactif Médina/Palmeraie. Guests satisfaits, reviews 5 étoiles — sans personnel 24/7."
           cta1="Voir la démo WhatsApp"
@@ -38,12 +38,12 @@ export default function ConciergerieMarrakechPage() {
             </div>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 16 }}>
               {[
-                { i: '🌍', t: 'Clientèle Internationale', d: 'Guests FR/EN/AR avec attentes élevées. Besoin d\'info transport, restaurants, hammams, excursions Sahara/Atlas. Sojori traduit et répond automatiquement.' },
-                { i: '⏰', t: 'Arrivées Décalées', d: 'Vols tard le soir, arrivées 23h-minuit fréquentes. Impossible d\'avoir staff physique 24/7. WhatsApp AI gère check-in, code porte, instructions.' },
-                { i: '⭐', t: 'Reviews = Tout', d: 'Sur Booking/Airbnb, une review <4★ tue la visibilité. Conciergerie réactive = satisfaction guest = 5★. Sojori répond <2min, 24/7.' },
+                { i: '•', t: 'Clientèle Internationale', d: 'Guests FR/EN/AR avec attentes élevées. Besoin d\'info transport, restaurants, hammams, excursions Sahara/Atlas. Sojori traduit et répond automatiquement.' },
+                { i: '', t: 'Arrivées Décalées', d: 'Vols tard le soir, arrivées 23h-minuit fréquentes. Impossible d\'avoir staff physique 24/7. WhatsApp AI gère check-in, code porte, instructions.' },
+                { i: '•', t: 'Reviews = Tout', d: 'Sur Booking/Airbnb, une review <4★ tue la visibilité. Conciergerie réactive = satisfaction guest = 5★. Sojori répond <2min, 24/7.' },
               ].map(c => (
                 <div key={c.t} className="card" style={{ padding: 22 }}>
-                  <div style={{ fontSize: 28, marginBottom: 10 }}>{c.i}</div>
+                  <div aria-hidden="true" style={{ width: 28, height: 3, borderRadius: 2, background: 'var(--primary)', marginBottom: 14 }} />
                   <div style={{ fontSize: 16, fontWeight: 600, marginBottom: 4 }}>{c.t}</div>
                   <div style={{ fontSize: 13, color: 'var(--text-3)', lineHeight: 1.55 }}>{c.d}</div>
                 </div>
@@ -60,15 +60,15 @@ export default function ConciergerieMarrakechPage() {
             </div>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 16 }}>
               {[
-                { i: '🚖', t: 'Transport Aéroport', d: 'Réservation taxi aéroport Menara automatique. Guest envoie heure d\'arrivée sur WhatsApp → taxi confirmé, prix transparent (150-200 MAD). Tracking chauffeur temps réel.' },
-                { i: '🏛️', t: 'Guidebook Digital Marrakech', d: 'Recommandations quartier : Médina, Gueliz, Hivernage. Restaurants (Le Jardin, Nomad), hammams traditionnels, souks, palais. Mis à jour en continu.' },
-                { i: '🍽️', t: 'Réservations Restaurants', d: 'Guest demande resto sur WhatsApp → suggestions + réservation directe. Partenariats locaux : La Mamounia, Dar Yacout, terrasses Médina.' },
-                { i: '🏜️', t: 'Excursions & Expériences', d: 'Désert Sahara, vallée Ourika, Atlas, quad Palmeraie, cours cuisine. Tarifs négociés, réservation instantanée, commission établissement.' },
-                { i: '🔑', t: 'Check-in Digital', d: 'Code porte envoyé automatiquement J-1. Instructions WiFi, climatisation, équipements. Photos/vidéos guidage. Arrivée autonome même à minuit.' },
-                { i: '🛎️', t: 'Demandes Sur-Mesure', d: 'Épicerie livrée, baby-sitting, chauffeur privé, massages à domicile. Tout traité sur WhatsApp, facturation automatique.' },
+                { i: '•', t: 'Transport Aéroport', d: 'Réservation taxi aéroport Menara automatique. Guest envoie heure d\'arrivée sur WhatsApp → taxi confirmé, prix transparent (150-200 MAD). Tracking chauffeur temps réel.' },
+                { i: '•', t: 'Guidebook Digital Marrakech', d: 'Recommandations quartier : Médina, Gueliz, Hivernage. Restaurants (Le Jardin, Nomad), hammams traditionnels, souks, palais. Mis à jour en continu.' },
+                { i: '•', t: 'Réservations Restaurants', d: 'Guest demande resto sur WhatsApp → suggestions + réservation directe. Partenariats locaux : La Mamounia, Dar Yacout, terrasses Médina.' },
+                { i: '•', t: 'Excursions & Expériences', d: 'Désert Sahara, vallée Ourika, Atlas, quad Palmeraie, cours cuisine. Tarifs négociés, réservation instantanée, commission établissement.' },
+                { i: '•', t: 'Check-in Digital', d: 'Code porte envoyé automatiquement J-1. Instructions WiFi, climatisation, équipements. Photos/vidéos guidage. Arrivée autonome même à minuit.' },
+                { i: '•', t: 'Demandes Sur-Mesure', d: 'Épicerie livrée, baby-sitting, chauffeur privé, massages à domicile. Tout traité sur WhatsApp, facturation automatique.' },
               ].map(c => (
                 <div key={c.t} className="card" style={{ padding: 22 }}>
-                  <div style={{ fontSize: 28, marginBottom: 10 }}>{c.i}</div>
+                  <div aria-hidden="true" style={{ width: 28, height: 3, borderRadius: 2, background: 'var(--primary)', marginBottom: 14 }} />
                   <div style={{ fontSize: 16, fontWeight: 600, marginBottom: 4 }}>{c.t}</div>
                   <div style={{ fontSize: 13, color: 'var(--text-3)', lineHeight: 1.55 }}>{c.d}</div>
                 </div>
@@ -112,7 +112,7 @@ export default function ConciergerieMarrakechPage() {
             </div>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 16 }}>
               <div className="card" style={{ padding: 24, background: 'rgba(239,68,68,0.05)', borderColor: 'rgba(239,68,68,0.2)' }}>
-                <div style={{ fontSize: 14, fontWeight: 700, color: '#ef4444', marginBottom: 16, textTransform: 'uppercase', letterSpacing: 1 }}>❌ Avant (sans Sojori)</div>
+                <div style={{ fontSize: 14, fontWeight: 700, color: '#ef4444', marginBottom: 16, textTransform: 'uppercase', letterSpacing: 1 }}>Avant (sans Sojori)</div>
                 {[
                   'Personnel conciergerie 24/7 = 8000 MAD/mois',
                   'Messages guests perdus la nuit',
@@ -124,7 +124,7 @@ export default function ConciergerieMarrakechPage() {
                 ))}
               </div>
               <div className="card" style={{ padding: 24, background: 'rgba(16,185,129,0.05)', borderColor: 'rgba(16,185,129,0.2)' }}>
-                <div style={{ fontSize: 14, fontWeight: 700, color: '#10b981', marginBottom: 16, textTransform: 'uppercase', letterSpacing: 1 }}>✅ Après (avec Sojori)</div>
+                <div style={{ fontSize: 14, fontWeight: 700, color: '#10b981', marginBottom: 16, textTransform: 'uppercase', letterSpacing: 1 }}>Après (avec Sojori)</div>
                 {[
                   'WhatsApp AI 24/7 = 0 coût personnel',
                   '100% messages traités en temps réel',

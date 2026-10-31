@@ -48,8 +48,16 @@ const nextConfig: NextConfig = {
       permanent: true,
     }
 
+    // La page des tarifs est remplacée par « Votre offre » (31/10/2026) : aucun prix public. 301, l'URL ne disparaît pas.
+    const pricingRedirect = {
+      source: '/:locale(fr|en|es|pt|ar)/pricing',
+      destination: '/:locale/offre',
+      permanent: true,
+    }
+
     return [
       businessRedirect,
+      pricingRedirect,
       ...rentalPaths.map((p) => ({
         source: `/${p}`,
         destination: `${BOOK}/${p}`,

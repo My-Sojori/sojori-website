@@ -942,7 +942,7 @@ export function HeroAnimationJourney() {
               transition: 'all 0.2s ease',
             }}
           >
-            {playing ? '❚❚' : '▶'}
+            {playing ? '❚❚' : ''}
           </button>
           <button
             onClick={restart}

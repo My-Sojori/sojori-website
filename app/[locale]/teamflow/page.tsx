@@ -64,7 +64,7 @@ function StaffBoard() {
                 <div style={{ fontSize: 13, fontWeight: 600, color: 'var(--text-1)', marginBottom: 6, lineHeight: 1.3 }}>{c.task}</div>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontSize: 10, color: 'var(--text-3)', fontFamily: 'Geist Mono' }}>
                   <span>{c.time}</span>
-                  {c.photos && <span>📷 {c.photos}</span>}
+                  {c.photos && <span>{c.photos}</span>}
                 </div>
                 {c.progress !== undefined && (
                   <div style={{ marginTop: 8, height: 3, background: 'rgba(255,255,255,0.08)', borderRadius: 2, overflow: 'hidden' }}>

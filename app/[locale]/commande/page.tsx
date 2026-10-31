@@ -232,7 +232,7 @@ function CommandeContent() {
           </>
         )}
       </main>
-      <PageFooter />
+      <PageFooter bande={false} />
     </div>
   );
 }

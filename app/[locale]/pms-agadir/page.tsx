@@ -62,7 +62,7 @@ export default async function PmsPageAgadir({ params }: { params: Promise<{ loca
         <PageHeader pageTitle="PMS Hôtel Agadir" />
 
         <PageHero
-          badge="🌊 PMS Hôtel · Agadir"
+          badge="PMS Hôtel · Agadir"
           title={<>PMS hôtel à Agadir{' '}<br /><span className="gradient-text">et orchestration des opérations</span></>}
           subtitle="Hôtels balnéaires, résidences et appart-hôtels : Sojori centralise les réservations puis orchestre ménage, maintenance et relation client sur des séjours longs. Fiche police au check-in et taxe de séjour incluses."
           cta1="Voir la démo"

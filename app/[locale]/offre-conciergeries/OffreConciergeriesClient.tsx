@@ -9,16 +9,16 @@ import { trackOfferCta } from '@/lib/analytics';
    Contenu FR volontairement en dur : la cible est le Maroc francophone. */
 
 const BRIQUES = [
-  { icon: '🗂️', label: 'PMS' },
-  { icon: '🔗', label: 'Channel Manager' },
-  { icon: '📈', label: 'Prix dynamiques' },
-  { icon: '💬', label: 'WhatsApp Guest' },
-  { icon: '🌐', label: 'Booking direct' },
-  { icon: '✨', label: 'Upsell' },
-  { icon: '🧹', label: 'Staff & Ménage' },
-  { icon: '📥', label: 'Inbox unifiée' },
-  { icon: '📊', label: 'Analytics' },
-  { icon: '🏠', label: 'Portail propriétaire' },
+  { icon: '•', label: 'PMS' },
+  { icon: '•', label: 'Channel Manager' },
+  { icon: '•', label: 'Prix dynamiques' },
+  { icon: '•', label: 'WhatsApp Guest' },
+  { icon: '•', label: 'Booking direct' },
+  { icon: '•', label: 'Upsell' },
+  { icon: '•', label: 'Staff & Ménage' },
+  { icon: '•', label: 'Inbox unifiée' },
+  { icon: '•', label: 'Analytics' },
+  { icon: '•', label: 'Portail propriétaire' },
 ];
 
 const ETAPES = [
@@ -34,15 +34,15 @@ const ETAPES = [
   },
   {
     n: '3',
-    title: '2 mois gratuits — sans engagement',
+    title: 'Sans engagement',
     text: 'Vous jugez sur pièces. Si Sojori ne vous fait pas gagner de temps et d’argent, vous partez — vos données avec vous.',
   },
 ];
 
 const REASSURANCE = [
   { icon: '🇲🇦', text: 'Paiement marocain, facturation locale' },
-  { icon: '🗣️', text: 'Support WhatsApp en français et en arabe' },
-  { icon: '🔓', text: 'Sans engagement — vos données restent les vôtres' },
+  { icon: '•', text: 'Support WhatsApp en français et en arabe' },
+  { icon: '•', text: 'Sans engagement — vos données restent les vôtres' },
 ];
 
 function trackLead() {
@@ -63,7 +63,7 @@ export function OffreConciergeriesClient() {
             Offre de lancement — réservée aux 15 premières conciergeries
           </span>
           <h1 style={{ marginBottom: 18, textWrap: 'balance' }}>
-            2 mois gratuits.<br />
+            Le logiciel des conciergeries.<br />
             <span className="gradient-text">Migration offerte.</span>
           </h1>
           <p style={{ fontSize: 19, lineHeight: 1.55, color: 'var(--text-2)', maxWidth: 640, margin: '0 auto' }}>
@@ -84,7 +84,7 @@ export function OffreConciergeriesClient() {
             <Link href="/" className="btn btn-ghost btn-lg" prefetch={false}>Découvrir</Link>
           </div>
           <div className="mono" style={{ marginTop: 16, fontSize: 11, color: 'var(--text-3)', letterSpacing: 1.1 }}>
-            DÉMO 15 MIN · MIGRATION INCLUSE · 2 MOIS OFFERTS
+            DÉMO 15 MIN · MIGRATION INCLUSE
           </div>
         </div>
       </section>

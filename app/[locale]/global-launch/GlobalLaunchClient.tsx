@@ -9,16 +9,16 @@ import { trackOfferCta } from '@/lib/analytics';
    sans devise ni mention Maroc. Contenu EN volontairement en dur. */
 
 const BRIQUES = [
-  { icon: '🗂️', label: 'PMS' },
-  { icon: '🔗', label: 'Channel Manager' },
-  { icon: '📈', label: 'Dynamic pricing' },
-  { icon: '💬', label: 'WhatsApp Guest' },
-  { icon: '🌐', label: 'Direct booking' },
-  { icon: '✨', label: 'Upsell' },
-  { icon: '🧹', label: 'Staff & Cleaning' },
-  { icon: '📥', label: 'Unified inbox' },
-  { icon: '📊', label: 'Analytics' },
-  { icon: '🏠', label: 'Owner portal' },
+  { icon: '•', label: 'PMS' },
+  { icon: '•', label: 'Channel Manager' },
+  { icon: '•', label: 'Dynamic pricing' },
+  { icon: '•', label: 'WhatsApp Guest' },
+  { icon: '•', label: 'Direct booking' },
+  { icon: '•', label: 'Upsell' },
+  { icon: '•', label: 'Staff & Cleaning' },
+  { icon: '•', label: 'Unified inbox' },
+  { icon: '•', label: 'Analytics' },
+  { icon: '•', label: 'Owner portal' },
 ];
 
 const ETAPES = [
@@ -34,14 +34,14 @@ const ETAPES = [
   },
   {
     n: '3',
-    title: '2 months free — no commitment',
+    title: 'No commitment',
     text: "See it for yourself. If Sojori doesn't save you time and money, you walk away — your data with you.",
   },
 ];
 
 const REASSURANCE = [
-  { icon: '💬', text: 'WhatsApp support, real humans' },
-  { icon: '🔓', text: 'No commitment — your data stays yours' },
+  { icon: '•', text: 'WhatsApp support, real humans' },
+  { icon: '•', text: 'No commitment — your data stays yours' },
 ];
 
 function trackLead() {
@@ -62,7 +62,7 @@ export function GlobalLaunchClient() {
             Launch offer — limited early access
           </span>
           <h1 style={{ marginBottom: 18, textWrap: 'balance' }}>
-            2 months free.<br />
+            The software for property managers.<br />
             <span className="gradient-text">Migration included.</span>
           </h1>
           <p style={{ fontSize: 19, lineHeight: 1.55, color: 'var(--text-2)', maxWidth: 640, margin: '0 auto' }}>
@@ -82,7 +82,7 @@ export function GlobalLaunchClient() {
             <Link href="/" className="btn btn-ghost btn-lg">Discover</Link>
           </div>
           <div className="mono" style={{ marginTop: 16, fontSize: 11, color: 'var(--text-3)', letterSpacing: 1.1 }}>
-            15-MIN DEMO · MIGRATION INCLUDED · 2 MONTHS FREE
+            15-MIN DEMO · MIGRATION INCLUDED
           </div>
         </div>
       </section>

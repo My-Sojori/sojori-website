@@ -8,6 +8,7 @@ import { PageHeader, PageFooter, PageHero, StatsBar, FinalCTA } from "@/componen
 import { ScrollPaginationDots } from "@/components/shared/ScrollPaginationDots";
 import { InFlow } from '@/components/InFlow';
 import { FaqSection } from '@/components/FaqSection';
+import { Trait } from '@/components/refonte/Trait';
 
 interface Channel {
   id: string;
@@ -41,7 +42,7 @@ function Inbox() {
 
   const CHANNELS: Channel[] = [
     { id: "all", l: t('channels.all'), icon: "✦", count: 24 },
-    { id: "wa", l: t('channels.whatsapp'), icon: "💬", color: "#25D366", count: 12 },
+    { id: "wa", l: t('channels.whatsapp'), icon: "W", color: "#25D366", count: 12 },
     { id: "ab", l: t('channels.airbnb'), icon: "A", color: "#FF5A5F", count: 6 },
     { id: "bk", l: t('channels.booking'), icon: "B", color: "#003580", count: 4 },
     { id: "em", l: t('channels.email'), icon: "@", color: "#a78bfa", count: 2 },
@@ -68,14 +69,14 @@ function Inbox() {
           }}>
             <div style={{width: 26, height: 26, borderRadius: 6, background: c.color || "transparent", color: "#fff", fontSize: 11, fontWeight: 700, display: "flex", alignItems: "center", justifyContent: "center", margin: "0 auto"}}>{c.icon}</div>
             <div style={{fontSize: 7, color: "var(--text-3)", marginTop: 3}}>{c.l}</div>
-            {c.count > 0 && <span style={{position: "absolute", top: 2, right: 2, fontSize: 7, background: "#ef4444", color: "#fff", padding: "1px 4px", borderRadius: 999, fontWeight: 700}}>{c.count}</span>}
+            {c.count > 0 && <span style={{position: "absolute", top: 2, right: 2, fontSize: 7, background: "#dc2626", color: "#fff", padding: "1px 4px", borderRadius: 999, fontWeight: 700}}>{c.count}</span>}
           </div>
         ))}
       </div>
       <div className="inbox-threads" style={{width: 260, borderRight: "1px solid var(--glass-border)", display: "flex", flexDirection: "column"}}>
         <div style={{padding: "10px 12px", borderBottom: "1px solid var(--glass-border)"}}>
           <div style={{fontSize: 11, fontWeight: 600, marginBottom: 6}}>{t('threadList.title')}</div>
-          <div style={{background: "rgba(255,255,255,0.04)", border: "1px solid var(--glass-border)", borderRadius: 6, padding: "5px 10px", fontSize: 10, color: "var(--text-3)", display: "flex", alignItems: "center", gap: 6}}>🔍 {t('threadList.searchPlaceholder')}</div>
+          <div style={{background: "rgba(255,255,255,0.04)", border: "1px solid var(--glass-border)", borderRadius: 6, padding: "5px 10px", fontSize: 10, color: "var(--text-3)", display: "flex", alignItems: "center", gap: 6}}>{t('threadList.searchPlaceholder')}</div>
         </div>
         <div style={{flex: 1, overflowY: "auto"}}>
           {THREADS.map(t => (
@@ -86,7 +87,7 @@ function Inbox() {
               borderBottom: "1px solid rgba(255,255,255,0.03)",
             }}>
               <div style={{position: "relative", flexShrink: 0}}>
-                <div style={{width: 32, height: 32, borderRadius: "50%", background: t.avatar, fontSize: 11, fontWeight: 700, color: "#fff", display: "flex", alignItems: "center", justifyContent: "center"}}>{t.name.split(" ").map(p => p[0]).join("")}</div>
+                <div style={{width: 32, height: 32, borderRadius: "50%", background: t.avatar, fontSize: 11, fontWeight: 700, color: "#0c0b09", display: "flex", alignItems: "center", justifyContent: "center"}}>{t.name.split(" ").map(p => p[0]).join("")}</div>
                 <div style={{position: "absolute", bottom: -2, right: -2, width: 14, height: 14, borderRadius: 3, background: t.color, fontSize: 7, fontWeight: 700, color: "#fff", display: "flex", alignItems: "center", justifyContent: "center", border: "2px solid #0a0a10"}}>{CHANNELS.find(c => c.id === t.ch)?.icon}</div>
               </div>
               <div style={{flex: 1, minWidth: 0}}>
@@ -104,7 +105,7 @@ function Inbox() {
       <div className="inbox-conversation" style={{flex: 1, display: "flex", flexDirection: "column"}}>
         <div style={{padding: "10px 14px", borderBottom: "1px solid var(--glass-border)", display: "flex", alignItems: "center", justifyContent: "space-between"}}>
           <div style={{display: "flex", alignItems: "center", gap: 10}}>
-            <div style={{width: 30, height: 30, borderRadius: "50%", background: "#f59e0b", fontSize: 11, fontWeight: 700, color: "#fff", display: "flex", alignItems: "center", justifyContent: "center"}}>SJ</div>
+            <div style={{width: 30, height: 30, borderRadius: "50%", background: "#f59e0b", fontSize: 11, fontWeight: 700, color: "#0c0b09", display: "flex", alignItems: "center", justifyContent: "center"}}>SJ</div>
             <div>
               <div style={{fontSize: 11, fontWeight: 600}}>{t('conversation.header.name')}</div>
               <div style={{fontSize: 9, color: "var(--text-3)"}}>{t('conversation.header.details')}</div>
@@ -112,7 +113,7 @@ function Inbox() {
           </div>
           <div className="inbox-buttons" style={{display: "flex", gap: 4}}>
             <button style={{background: "rgba(255,255,255,0.04)", border: "1px solid var(--glass-border)", color: "var(--text-1)", padding: "4px 8px", borderRadius: 5, fontSize: 9, cursor: "pointer"}}>{t('conversation.buttons.guestProfile')}</button>
-            <button style={{background: "rgba(244,207,94,0.1)", border: "1px solid rgba(244,207,94,0.3)", color: "#f4cf5e", padding: "4px 8px", borderRadius: 5, fontSize: 9, cursor: "pointer", fontWeight: 600}}>✨ {t('conversation.buttons.aiAssist')}</button>
+            <button style={{background: "rgba(244,207,94,0.1)", border: "1px solid rgba(244,207,94,0.3)", color: "#f4cf5e", padding: "4px 8px", borderRadius: 5, fontSize: 9, cursor: "pointer", fontWeight: 600}}>{t('conversation.buttons.aiAssist')}</button>
           </div>
         </div>
         <div style={{flex: 1, padding: 14, display: "flex", flexDirection: "column", gap: 8, overflow: "auto"}}>
@@ -124,7 +125,7 @@ function Inbox() {
           ].map((m, i) => (
             <div key={i} style={{alignSelf: m.from === "them" ? "flex-start" : "flex-end", maxWidth: "70%"}}>
               <div style={{background: m.from === "them" ? "rgba(255,255,255,0.06)" : "linear-gradient(135deg, rgba(244,207,94,0.18), rgba(244,207,94,0.08))", border: m.from === "sojori" ? "1px solid rgba(244,207,94,0.3)" : "1px solid var(--glass-border)", borderRadius: m.from === "them" ? "10px 10px 10px 2px" : "10px 10px 2px 10px", padding: "8px 11px", fontSize: 11, color: "var(--text-1)", lineHeight: 1.4}}>
-                {m.from === "sojori" && <div style={{fontSize: 7, color: "#f4cf5e", fontWeight: 700, letterSpacing: 0.5, marginBottom: 3, fontFamily: "Geist Mono"}}>✨ {t('conversation.messages.aiLabel')}</div>}
+                {m.from === "sojori" && <div style={{fontSize: 7, color: "#f4cf5e", fontWeight: 700, letterSpacing: 0.5, marginBottom: 3, fontFamily: "Geist Mono"}}>{t('conversation.messages.aiLabel')}</div>}
                 {m.t}
                 <div style={{fontSize: 7, color: "var(--text-3)", marginTop: 3, textAlign: "right", fontFamily: "Geist Mono"}}>{m.time}</div>
               </div>
@@ -138,7 +139,7 @@ function Inbox() {
             ))}
           </div>
           <div style={{display: "flex", gap: 6, alignItems: "center", background: "rgba(255,255,255,0.04)", border: "1px solid var(--glass-border)", borderRadius: 8, padding: "8px 11px"}}>
-            <span style={{color: "var(--text-3)", fontSize: 12}}>📎</span>
+            <span style={{color: "var(--text-3)", fontSize: 12}}></span>
             <input placeholder={t('conversation.input.placeholder')} style={{flex: 1, background: "transparent", border: "none", color: "var(--text-1)", fontSize: 11, outline: "none"}} />
             <button style={{background: "#f4cf5e", border: "none", color: "#1a1408", width: 28, height: 28, borderRadius: 6, fontSize: 12, cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center"}}>→</button>
           </div>
@@ -237,7 +238,7 @@ export default function InboxPage() {
                 d: t(`capabilities.items.${i}.description`)
               })).map(c => (
                 <div key={c.t} data-carousel-slide className="card" style={{padding: 22, flexShrink: 0}}>
-                  <div style={{fontSize: 28, marginBottom: 10}}>{c.i}</div>
+                  <div style={{fontSize: 28, marginBottom: 10}}><Trait /></div>
                   <div style={{fontSize: 16, fontWeight: 600, marginBottom: 4}}>{c.t}</div>
                   <div style={{fontSize: 13, color: "var(--text-3)", lineHeight: 1.55}}>{c.d}</div>
                 </div>

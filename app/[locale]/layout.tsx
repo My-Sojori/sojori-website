@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, IBM_Plex_Sans_Arabic } from "next/font/google";
 import { NextIntlClientProvider } from 'next-intl';
-import { getMessages } from 'next-intl/server';
+import { getMessages, getTranslations } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import { routing } from '@/i18n/routing';
 import { AnalyticsBootstrap } from '@/components/AnalyticsBootstrap';
@@ -10,6 +10,7 @@ import { SITE_URL } from '@/lib/siteUrl';
 
 const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
 const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] });
+const plexArabic = IBM_Plex_Sans_Arabic({ variable: "--font-plex-arabic", subsets: ["arabic"], weight: ["400", "500", "600"], display: "swap" });
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -107,7 +108,10 @@ export async function generateMetadata({
     }
   };
 
-  const meta = metadataByLocale[locale] || metadataByLocale.fr;
+  const base = metadataByLocale[locale] || metadataByLocale.fr;
+  // Titre et description par défaut : ceux de l'accueil (version nuit, 31/10/2026). Les pages qui ont les leurs les gardent.
+  const tm = routing.locales.includes(locale as never) ? await getTranslations({ locale, namespace: 'refonte.home.meta' }) : null;
+  const meta = tm ? { ...base, title: tm('title'), description: tm('description') } : base;
 
   const localeMap: Record<string, string> = {
     fr: 'fr_FR',
@@ -208,65 +212,17 @@ export default async function LocaleLayout({
   // Providing all messages to the client side is the easiest way to get started
   const messages = await getMessages();
 
-  const featureListByLocale: Record<string, string[]> = {
-    fr: [
-      'PMS hôtelier',
-      'Channel Manager',
-      'Assistant WhatsApp IA',
-      'Tarification dynamique',
-      'Analytics et reporting',
-      'Gestion d’équipe',
-      'Expérience voyageur',
-    ],
-    en: [
-      'Short-term rental PMS',
-      'Channel Manager',
-      'WhatsApp AI assistant',
-      'Dynamic pricing',
-      'Analytics & reporting',
-      'Team management',
-      'Guest experience',
-    ],
-    es: [
-      'PMS alquiler turístico',
-      'Channel Manager',
-      'Asistente WhatsApp IA',
-      'Precios dinámicos',
-      'Analytics e informes',
-      'Gestión de equipos',
-      'Experiencia del huésped',
-    ],
-    pt: [
-      'PMS hoteleiro',
-      'Channel Manager',
-      'Assistente WhatsApp IA',
-      'Preços dinâmicos',
-      'Analytics e relatórios',
-      'Gestão de equipas',
-      'Experiência do hóspede',
-    ],
-    ar: [
-      'نظام إدارة الإيجار قصير المدى',
-      'Channel Manager',
-      'مساعد واتساب بالذكاء الاصطناعي',
-      'تسعير ديناميكي',
-      'تحليلات وتقارير',
-      'إدارة الفريق',
-      'تجربة الضيف',
-    ],
-  };
-
   // Résumé ~50 mots pensé pour les assistants IA (ChatGPT, Perplexity, Gemini) qui
   // cherchent "qu'est-ce que Sojori" — sojori.com est l'entité canonique
   // de l'entreprise (le logiciel) ; book.sojori.com, la marketplace grand
   // public, n'en est qu'un produit. 2026-09-11 : corrigé après la bascule
   // des domaines, ce commentaire décrivait encore l'ancienne architecture.
   const organizationDescriptionByLocale: Record<string, string> = {
-    fr: "Sojori est une entreprise technologique qui développe le moteur d'orchestration de l'hospitalité : PMS hôtelier, channel manager, conciergerie WhatsApp IA trilingue, housekeeping et maintenance, tarification dynamique et gestion des équipes terrain. Sojori inclut son propre PMS et se connecte aux PMS existants, dont Mews. Basée à Marrakech, Casablanca et Paris, Sojori équipe hôtels, riads et résidences au Maroc et en France, et édite aussi book.sojori.com, sa marketplace grand public de riads, villas et appartements.",
-    en: 'Sojori is a technology company building the hospitality orchestration engine: hotel PMS, channel manager, trilingual WhatsApp AI concierge, housekeeping and maintenance, dynamic pricing and field-team workflows. Sojori includes its own PMS and connects to existing ones, including Mews. Based in Marrakech, Casablanca and Paris, Sojori equips hotels, riads and residences across Morocco and France, and also runs book.sojori.com, its consumer marketplace for riads, villas and apartments.',
-    es: 'Sojori es una empresa tecnológica que desarrolla el motor de orquestación de la hostelería: PMS hotelero, channel manager, conserjería WhatsApp con IA, limpieza y mantenimiento, precios dinámicos y gestión de equipos. Sojori incluye su propio PMS y se conecta a los existentes, incluido Mews. Con sede en Marrakech, Casablanca y París, Sojori equipa hoteles, riads y residencias en Marruecos y Francia, y también opera book.sojori.com, su marketplace para riads, villas y apartamentos.',
-    pt: 'A Sojori é uma empresa de tecnologia que desenvolve o motor de orquestração da hotelaria: PMS hoteleiro, channel manager, conciergerie WhatsApp com IA, limpeza e manutenção, preços dinâmicos e gestão de equipas. A Sojori inclui o seu próprio PMS e liga-se aos existentes, incluindo o Mews. Sediada em Marraquexe, Casablanca e Paris, a Sojori equipa hotéis, riads e residências em Marrocos e França, e também opera o book.sojori.com, o seu marketplace de riads, villas e apartamentos.',
-    ar: 'Sojori شركة تقنية تطور برمجيات تنسيق للإيجار قصير الأجل: نظام إدارة الممتلكات، مدير القنوات، كونسييرج واتساب بالذكاء الاصطناعي، تسعير ديناميكي وإدارة الفرق الميدانية. ومقرها مراكش والدار البيضاء وباريس، وتزوّد Sojori مديري العقارات المحترفين في المغرب وفرنسا، كما تدير sojori.com، سوقها المخصص للرياض والفيلل والشقق.',
+    fr: "Sojori est un PMS et un ensemble d'agents qui travaillent sur WhatsApp pour les locations courte durée, les conciergeries, les riads et les hôtels : réservation, service client, opérations, tarification dynamique, modules WhatsApp pour le voyageur, le staff, l'admin et le propriétaire. Sojori propose son propre PMS ou travaille avec celui du client. Basée à Marrakech, Casablanca et Paris, Sojori est pensée pour le Maroc.",
+    en: "Sojori is a PMS and a set of agents that work on WhatsApp for short-term rentals, concierge companies, riads and hotels: booking, guest service, operations, dynamic pricing, and WhatsApp modules for the guest, the staff, the admin and the owner. Sojori offers its own PMS or works with the customer's. Based in Marrakech, Casablanca and Paris, Sojori is built for Morocco.",
+    es: "Sojori es un PMS y un conjunto de agentes que trabajan en WhatsApp para alquileres de corta estancia, empresas de conserjería, riads y hoteles: reservas, atención al cliente, operaciones, precios dinámicos y módulos de WhatsApp para el huésped, el equipo, el administrador y el propietario. Sojori ofrece su propio PMS o trabaja con el del cliente. Con sede en Marrakech, Casablanca y París, Sojori está pensada para Marruecos.",
+    pt: "A Sojori é um PMS e um conjunto de agentes que trabalham no WhatsApp para arrendamentos de curta duração, empresas de concierge, riads e hotéis: reservas, apoio ao cliente, operações, preços dinâmicos e módulos de WhatsApp para o hóspede, a equipa, o administrador e o proprietário. A Sojori oferece o seu próprio PMS ou trabalha com o do cliente. Sediada em Marraquexe, Casablanca e Paris, a Sojori foi pensada para Marrocos.",
+    ar: "Sojori نظام إدارة وعدد من الوكلاء يعملون عبر واتساب للإيجار قصير الأجل وشركات الكونسييرج والرياض والفنادق: الحجوزات وخدمة العملاء والعمليات والتسعير الديناميكي ووحدات واتساب للنزيل والفريق والمسؤول والمالك. تقدّم Sojori نظامها الخاص أو تعمل مع نظام العميل. ومقرها مراكش والدار البيضاء وباريس، وقد صُمّمت للمغرب.",
   };
 
   // Organization en bloc JSON-LD top-level indépendant — plus facilement
@@ -276,11 +232,8 @@ export default async function LocaleLayout({
     '@type': 'Organization',
     name: 'Sojori',
     url: SITE_URL,
-    logo: `${SITE_URL}/logo.png`,
-    slogan:
-      locale === 'en'
-        ? 'The hospitality orchestration engine'
-        : "Moteur d'orchestration de l'hospitalité",
+    logo: `${SITE_URL}/apple-icon.png`,
+    slogan: 'AI workforce for hospitality',
     description: organizationDescriptionByLocale[locale] ?? organizationDescriptionByLocale.fr,
     sameAs: [
       'https://sojori.com',
@@ -312,33 +265,18 @@ export default async function LocaleLayout({
     },
   };
 
-  const softwareApplicationJsonLd = {
+  // WebSite : nom, adresse et langues. Le SoftwareApplication (agents, FAQ) vit sur l'accueil.
+  const webSiteJsonLd = {
     '@context': 'https://schema.org',
-    '@type': 'SoftwareApplication',
+    '@type': 'WebSite',
     name: 'Sojori',
-    applicationCategory: 'BusinessApplication',
-    operatingSystem: 'Web',
-    // Référence légère vers l'Organization — le détail complet (adresse, contact,
-    // sameAs) vit uniquement dans le bloc Organization ci-dessus, pas dupliqué ici.
-    provider: {
-      '@type': 'Organization',
-      name: 'Sojori',
-      url: SITE_URL,
-    },
-    description: locale === 'en'
-      ? 'Hospitality orchestration engine for hotels, riads and residences in Marrakech, Casablanca and Paris. Channel Manager, WhatsApp AI, dynamic pricing, analytics.'
-      : locale === 'es'
-      ? 'Motor de orquestación para hoteles, riads y residencias en Marrakech, Casablanca y París. Channel Manager, WhatsApp IA, precios dinámicos, analytics.'
-      : locale === 'pt'
-      ? 'Motor de orquestração para hotéis, riads e residências em Marrakech, Casablanca e Paris. Channel Manager, WhatsApp IA, preços dinâmicos, analytics.'
-      : locale === 'ar'
-      ? 'نظام إدارة وتنسيق للمديرين العقاريين في مراكش، الدار البيضاء وباريس'
-      : 'Moteur d’orchestration pour hôtels, riads et résidences à Marrakech, Casablanca et Paris. Channel Manager, WhatsApp IA, tarification dynamique par règles, analytics.',
-    featureList: featureListByLocale[locale] ?? featureListByLocale.fr,
+    url: SITE_URL,
+    inLanguage: ['fr', 'en', 'es', 'pt', 'ar'],
+    publisher: { '@type': 'Organization', name: 'Sojori', url: SITE_URL },
   };
 
   return (
-    <html lang={locale} dir={locale === 'ar' ? 'rtl' : 'ltr'} className={`${geistSans.variable} ${geistMono.variable}`}>
+    <html lang={locale} dir={locale === 'ar' ? 'rtl' : 'ltr'} className={`${geistSans.variable} ${geistMono.variable} ${plexArabic.variable}`}>
       <head>
         <script
           type="application/ld+json"
@@ -346,7 +284,7 @@ export default async function LocaleLayout({
         />
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareApplicationJsonLd) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(webSiteJsonLd) }}
         />
         {/* Pixel Meta (retargeting ads) — PageView sur toutes les pages */}
         <script

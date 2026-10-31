@@ -151,7 +151,7 @@ function ExpiredView() {
       <ZelBg />
       <Header />
       <div style={{ maxWidth: 480, margin: '0 auto', padding: '80px 20px', textAlign: 'center', position: 'relative', zIndex: 1 }}>
-        <div style={{ fontSize: 40, marginBottom: 16 }}>⏱️</div>
+        <div style={{ fontSize: 40, marginBottom: 16 }}></div>
         <h1 style={{ fontSize: 'clamp(26px,7vw,34px)', marginBottom: 10 }}>Ce lien a expiré</h1>
         <p style={{ color: 'var(--ink2)', fontSize: 15, marginBottom: 26, lineHeight: 1.5 }}>
           Les liens d&apos;analyse sont valables 24&nbsp;heures. Refaites une demande, c&apos;est gratuit.
@@ -169,7 +169,7 @@ function ErrorView({ message }: { message: string }) {
       <ZelBg />
       <Header />
       <div style={{ maxWidth: 480, margin: '0 auto', padding: '80px 20px', textAlign: 'center', position: 'relative', zIndex: 1 }}>
-        <div style={{ fontSize: 40, marginBottom: 16 }}>⚠️</div>
+        <div style={{ fontSize: 40, marginBottom: 16 }}></div>
         <h1 style={{ fontSize: 'clamp(26px,7vw,34px)', marginBottom: 10 }}>Impossible de charger l&apos;analyse</h1>
         <p style={{ color: 'var(--ink2)', fontSize: 15, marginBottom: 26, lineHeight: 1.5 }}>{message}</p>
         <div style={{ display: 'flex', gap: 12, justifyContent: 'center', flexWrap: 'wrap' }}>

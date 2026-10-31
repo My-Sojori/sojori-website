@@ -54,7 +54,7 @@ export default function IntegrationsPage() {
     // Messagerie
     { n: 'WhatsApp Business', cat: 'msg', s: t('integrationDescriptions.whatsapp'), logo: 'W', color: '#25D366', popular: true },
     { n: 'SMS / Twilio', cat: 'msg', s: t('integrationDescriptions.sms'), logo: 'T', color: '#F22F46' },
-    { n: 'Email', cat: 'msg', s: t('integrationDescriptions.email'), logo: '✉', color: '#6366f1' },
+    { n: 'Email', cat: 'msg', s: t('integrationDescriptions.email'), logo: '•', color: '#6366f1' },
 
     // Paiements
     { n: 'Stripe', cat: 'pay', s: t('integrationDescriptions.stripe'), logo: 'S', color: '#635BFF', popular: true },
@@ -65,7 +65,7 @@ export default function IntegrationsPage() {
     { n: 'REST API', cat: 'data', s: t('integrationDescriptions.restApi'), logo: '{}', color: '#8b5cf6', popular: true },
 
     // IA & Analytics
-    { n: 'OpenAI GPT-4', cat: 'ai', s: t('integrationDescriptions.openai'), logo: '🤖', color: '#10a37f', popular: true },
+    { n: 'OpenAI GPT-4', cat: 'ai', s: t('integrationDescriptions.openai'), logo: '•', color: '#10a37f', popular: true },
     { n: 'Anthropic Claude', cat: 'ai', s: t('integrationDescriptions.claude'), logo: 'C', color: '#D97757', popular: true },
     { n: 'Google Gemini', cat: 'ai', s: t('integrationDescriptions.gemini'), logo: 'G', color: '#4285F4' },
     { n: 'Google Analytics', cat: 'ai', s: t('integrationDescriptions.analytics'), logo: 'G', color: '#4285F4' },
@@ -273,9 +273,9 @@ export default function IntegrationsPage() {
                 gap: 6,
                 alignItems: 'center'
               }}>
-                <span style={{ width: 9, height: 9, borderRadius: '50%', background: '#ef4444' }}></span>
-                <span style={{ width: 9, height: 9, borderRadius: '50%', background: '#f59e0b' }}></span>
-                <span style={{ width: 9, height: 9, borderRadius: '50%', background: '#10b981' }}></span>
+                <span style={{ width: 9, height: 9, borderRadius: '50%', background: '#dc2626' }}></span>
+                <span style={{ width: 9, height: 9, borderRadius: '50%', background: '#b45309' }}></span>
+                <span style={{ width: 9, height: 9, borderRadius: '50%', background: '#047857' }}></span>
                 <span style={{ marginLeft: 10, color: 'var(--text-3)', fontSize: 11 }}>Exemple illustratif</span>
               </div>
               <pre style={{ padding: 18, margin: 0, color: 'var(--text-2)', lineHeight: 1.6 }}>

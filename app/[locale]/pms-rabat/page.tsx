@@ -62,7 +62,7 @@ export default async function PmsPageRabat({ params }: { params: Promise<{ local
         <PageHeader pageTitle="PMS Hôtel Rabat" />
 
         <PageHero
-          badge="🏛️ PMS Hôtel · Rabat"
+          badge="PMS Hôtel · Rabat"
           title={<>PMS hôtel à Rabat{' '}<br /><span className="gradient-text">et orchestration des opérations</span></>}
           subtitle="Hôtels, riads de la médina et résidences à Rabat : Sojori centralise réservations et facturation, puis orchestre ménage, maintenance et relation client. Fiche police au check-in et taxe de séjour incluses."
           cta1="Voir la démo"

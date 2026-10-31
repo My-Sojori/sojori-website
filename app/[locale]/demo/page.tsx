@@ -124,7 +124,7 @@ function DemoPageContent() {
     const sourceParam = searchParams.get('source');
     if (sourceParam) {
       setSource(sourceParam);
-      console.log('📍 Source captured:', sourceParam);
+      console.log('Source captured:', sourceParam);
     }
   }, [searchParams]);
 
@@ -844,7 +844,7 @@ function DemoPageContent() {
                         }}
                       >
                         <span style={{ fontSize: 18, opacity: 0.85 }} aria-hidden>
-                          👤
+                          
                         </span>
                         <div>
                           <div style={{ fontSize: 12, fontWeight: 500, color: 'var(--text-3)', letterSpacing: '0.02em' }}>
@@ -1105,7 +1105,7 @@ function DemoPageContent() {
                 {calendarSkippedAlreadyBooked ? (
                   <>
                     <div style={{ fontSize: 56, marginBottom: 24 }} aria-hidden>
-                      📅
+                      
                     </div>
                     <span className="badge" style={{ marginBottom: 16, display: 'inline-block' }}>
                       <span className="badge-dot" /> {t('step4.alreadyBooked.badge')}
@@ -1201,7 +1201,7 @@ function DemoPageContent() {
                   </>
                 ) : (
                   <>
-                    <div style={{ fontSize: 56, marginBottom: 24 }}>🎉</div>
+                    <div style={{ fontSize: 56, marginBottom: 24 }}></div>
                     <h2 style={{ fontSize: 40, marginBottom: 18 }}>
                       {t('step4.confirmed.title')} <span className="gradient-text">{t('step4.confirmed.titleGradient')}</span>
                     </h2>
@@ -1224,7 +1224,7 @@ function DemoPageContent() {
                       <Link href="/" className="btn btn-primary btn-lg">
                         {t('step4.confirmed.backToHome')}
                       </Link>
-                      <Link href="/pricing" className="btn btn-ghost btn-lg">
+                      <Link href="/offre" className="btn btn-ghost btn-lg">
                         {t('step4.confirmed.viewPricing')}
                       </Link>
                     </div>
@@ -1240,17 +1240,17 @@ function DemoPageContent() {
                       }}
                     >
                       <div>
-                        <div style={{ fontSize: 28, marginBottom: 8 }}>⚡</div>
+                        <div style={{ fontSize: 28, marginBottom: 8 }}></div>
                         <div style={{ fontSize: 14, fontWeight: 600, marginBottom: 4 }}>{t('step4.confirmed.feature1Title')}</div>
                         <div style={{ fontSize: 12, color: 'var(--text-3)' }}>{t('step4.confirmed.feature1Desc')}</div>
                       </div>
                       <div>
-                        <div style={{ fontSize: 28, marginBottom: 8 }}>🎯</div>
+                        <div style={{ fontSize: 28, marginBottom: 8 }}></div>
                         <div style={{ fontSize: 14, fontWeight: 600, marginBottom: 4 }}>{t('step4.confirmed.feature2Title')}</div>
                         <div style={{ fontSize: 12, color: 'var(--text-3)' }}>{t('step4.confirmed.feature2Desc')}</div>
                       </div>
                       <div>
-                        <div style={{ fontSize: 28, marginBottom: 8 }}>💰</div>
+                        <div style={{ fontSize: 28, marginBottom: 8 }}></div>
                         <div style={{ fontSize: 14, fontWeight: 600, marginBottom: 4 }}>{t('step4.confirmed.feature3Title')}</div>
                         <div style={{ fontSize: 12, color: 'var(--text-3)' }}>{t('step4.confirmed.feature3Desc')}</div>
                       </div>
@@ -1264,17 +1264,17 @@ function DemoPageContent() {
             {(step === 1 || step === 2 || step === 3 || (step === 4 && calendarSkippedAlreadyBooked)) && (
               <div className="demo-trust-grid-3" style={{ marginTop: 50, display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 24 }}>
                 <div style={{ textAlign: 'center' }}>
-                  <div style={{ fontSize: 28, marginBottom: 8 }}>⚡</div>
+                  <div style={{ fontSize: 28, marginBottom: 8 }}></div>
                   <div style={{ fontSize: 14, fontWeight: 600, marginBottom: 4 }}>{t('trustCards.setup.title')}</div>
                   <div style={{ fontSize: 12, color: 'var(--text-3)' }}>{t('trustCards.setup.description')}</div>
                 </div>
                 <div style={{ textAlign: 'center' }}>
-                  <div style={{ fontSize: 28, marginBottom: 8 }}>🔒</div>
+                  <div style={{ fontSize: 28, marginBottom: 8 }}></div>
                   <div style={{ fontSize: 14, fontWeight: 600, marginBottom: 4 }}>{t('trustCards.secure.title')}</div>
                   <div style={{ fontSize: 12, color: 'var(--text-3)' }}>{t('trustCards.secure.description')}</div>
                 </div>
                 <div style={{ textAlign: 'center' }}>
-                  <div style={{ fontSize: 28, marginBottom: 8 }}>💰</div>
+                  <div style={{ fontSize: 28, marginBottom: 8 }}></div>
                   <div style={{ fontSize: 14, fontWeight: 600, marginBottom: 4 }}>{t('trustCards.trial.title')}</div>
                   <div style={{ fontSize: 12, color: 'var(--text-3)' }}>{t('trustCards.trial.description')}</div>
                 </div>

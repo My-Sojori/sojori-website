@@ -71,7 +71,7 @@ export default async function AltWelcomax({ params }: { params: Promise<{ locale
         <PageHeader pageTitle="Sojori vs Welcomax" />
 
         <PageHero
-          badge="🧭 Comparatif · Sojori vs Welcomax"
+          badge="Comparatif · Sojori vs Welcomax"
           title={<>Alternative à Welcomax{' '}<br /><span className="gradient-text">de la centralisation à l&apos;orchestration</span></>}
           subtitle="Welcomax propose une suite Hotel PMS, Rental PMS et Channel Manager pensée pour le marché marocain. Sojori répond à la question d&apos;après : une fois les réservations centralisées, qui coordonne ce qui suit ?"
           cta1="Voir la démo"

@@ -23,7 +23,7 @@ export default function GestionLocativeCasablancaPage() {
         <PageHeader pageTitle="Gestion Locative Casablanca" />
 
         <PageHero
-          badge="🏙️ Gestion Locative Casablanca · Solution Complète"
+          badge="Gestion Locative Casablanca · Solution Complète"
           title={<>Orchestrez votre établissement.<br /><span className="gradient-text">Depuis Casablanca.</span></>}
           subtitle="Hôtels, appart-hôtels et résidences à Casablanca : PMS complet, Channel Manager multi-OTA, Conciergerie WhatsApp 24/7, Dynamic Pricing adapté à la clientèle affaires. La solution pensée pour la capitale économique du Maroc."
           cta1="Voir la démo"
@@ -38,12 +38,12 @@ export default function GestionLocativeCasablancaPage() {
             </div>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 16 }}>
               {[
-                { i: '💼', t: 'Clientèle Affaires Dominante', d: "Premier pôle économique et financier du Maroc : sièges sociaux, banques, Casablanca Finance City. La hospitalité y répond d'abord à une demande business — séjours pro, missions, relocations — plus qu'au tourisme loisirs pur." },
-                { i: '✈️', t: 'Hub Aérien International', d: "Aéroport Mohammed V, principal point d'entrée international du pays avec de nombreuses liaisons long-courrier. Beaucoup d'arrivées tardives et de séjours courts en semaine, un rythme différent des villes balnéaires." },
-                { i: '🏢', t: 'Marché Immobilier Le Plus Dense', d: "Le plus grand parc de logements meublés du pays, concentré dans des quartiers modernes (Maarif, Gauthier, Racine, CFC). Les établissements y gèrent des portefeuilles d'appartements standardisés plutôt que des biens de charme uniques." },
+                { i: '•', t: 'Clientèle Affaires Dominante', d: "Premier pôle économique et financier du Maroc : sièges sociaux, banques, Casablanca Finance City. La hospitalité y répond d'abord à une demande business — séjours pro, missions, relocations — plus qu'au tourisme loisirs pur." },
+                { i: '•', t: 'Hub Aérien International', d: "Aéroport Mohammed V, principal point d'entrée international du pays avec de nombreuses liaisons long-courrier. Beaucoup d'arrivées tardives et de séjours courts en semaine, un rythme différent des villes balnéaires." },
+                { i: '•', t: 'Marché Immobilier Le Plus Dense', d: "Le plus grand parc de logements meublés du pays, concentré dans des quartiers modernes (Maarif, Gauthier, Racine, CFC). Les établissements y gèrent des portefeuilles d'appartements standardisés plutôt que des biens de charme uniques." },
               ].map(c => (
                 <div key={c.t} className="card" style={{ padding: 22 }}>
-                  <div style={{ fontSize: 28, marginBottom: 10 }}>{c.i}</div>
+                  <div aria-hidden="true" style={{ width: 28, height: 3, borderRadius: 2, background: 'var(--primary)', marginBottom: 14 }} />
                   <div style={{ fontSize: 16, fontWeight: 600, marginBottom: 4 }}>{c.t}</div>
                   <div style={{ fontSize: 13, color: 'var(--text-3)', lineHeight: 1.55 }}>{c.d}</div>
                 </div>
@@ -60,15 +60,15 @@ export default function GestionLocativeCasablancaPage() {
             </div>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 16 }}>
               {[
-                { i: '📋', t: 'PMS Multi-Propriétés', d: 'Calendrier unifié pour portefeuilles d\'appartements. Réservations, paiements MAD/EUR, facturation automatique, contrats digitaux — adapté aux séjours courts business autant qu\'aux vacances.', link: '/pms' as const },
-                { i: '🔄', t: 'Channel Manager Temps Réel', d: 'Synchronisation Booking.com, Expedia, Airbnb. Évitez surréservations sur des portefeuilles de dizaines d\'appartements, gérez calendrier depuis un dashboard unique.', link: '/channel-manager' as const },
-                { i: '💬', t: 'WhatsApp Conciergerie 24/7', d: 'Conciergerie automatique FR/AR/EN adaptée aux arrivées tardives fréquentes (vols long-courrier). Check-in digital, instructions d\'accès, support réactif.', link: '/whatsapp' as const },
-                { i: '💰', t: 'Dynamic Pricing Adapté', d: 'Yield management pensé pour une demande mixte affaires/loisirs : semaine vs weekend, événements professionnels, saisonnalité touristique. Optimisez RevPAR automatiquement.', link: '/dynamic-pricing' as const },
-                { i: '👥', t: 'Gestion Équipe Locale', d: 'Planification ménage sur des portefeuilles étendus, attribution tâches, suivi performances. Coordonnez plusieurs équipes sur plusieurs quartiers sans chaos WhatsApp.', link: '/teamflow' as const },
-                { i: '📊', t: 'Analytics & Reporting', d: 'Revenue par propriété, occupation, ADR, RevPAR. Export comptable mensuel. Dashboards temps réel pour piloter un portefeuille dense et professionnalisé.', link: '/analytics' as const },
+                { i: '•', t: 'PMS Multi-Propriétés', d: 'Calendrier unifié pour portefeuilles d\'appartements. Réservations, paiements MAD/EUR, facturation automatique, contrats digitaux — adapté aux séjours courts business autant qu\'aux vacances.', link: '/pms' as const },
+                { i: '•', t: 'Channel Manager Temps Réel', d: 'Synchronisation Booking.com, Expedia, Airbnb. Évitez surréservations sur des portefeuilles de dizaines d\'appartements, gérez calendrier depuis un dashboard unique.', link: '/channel-manager' as const },
+                { i: '•', t: 'WhatsApp Conciergerie 24/7', d: 'Conciergerie automatique FR/AR/EN adaptée aux arrivées tardives fréquentes (vols long-courrier). Check-in digital, instructions d\'accès, support réactif.', link: '/whatsapp' as const },
+                { i: '•', t: 'Dynamic Pricing Adapté', d: 'Yield management pensé pour une demande mixte affaires/loisirs : semaine vs weekend, événements professionnels, saisonnalité touristique. Optimisez RevPAR automatiquement.', link: '/dynamic-pricing' as const },
+                { i: '•', t: 'Gestion Équipe Locale', d: 'Planification ménage sur des portefeuilles étendus, attribution tâches, suivi performances. Coordonnez plusieurs équipes sur plusieurs quartiers sans chaos WhatsApp.', link: '/teamflow' as const },
+                { i: '•', t: 'Analytics & Reporting', d: 'Revenue par propriété, occupation, ADR, RevPAR. Export comptable mensuel. Dashboards temps réel pour piloter un portefeuille dense et professionnalisé.', link: '/analytics' as const },
               ].map(c => (
                 <div key={c.t} className="card" style={{ padding: 22 }}>
-                  <div style={{ fontSize: 28, marginBottom: 10 }}>{c.i}</div>
+                  <div aria-hidden="true" style={{ width: 28, height: 3, borderRadius: 2, background: 'var(--primary)', marginBottom: 14 }} />
                   <div style={{ fontSize: 16, fontWeight: 600, marginBottom: 4 }}>{c.t}</div>
                   <div style={{ fontSize: 13, color: 'var(--text-3)', lineHeight: 1.55, marginBottom: 12 }}>{c.d}</div>
                   <Link href={{ pathname: c.link, query: { source: 'seo-gestion-locative-casablanca' } }} style={{ fontSize: 12, color: '#f4cf5e', textDecoration: 'none', fontWeight: 600 }}>En savoir plus →</Link>

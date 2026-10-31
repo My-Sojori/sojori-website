@@ -5,6 +5,8 @@ import { PageHeader, PageFooter, PageHero, StatsBar, FinalCTA } from "@/componen
 import { SojoriMark } from "@/components/Logo";
 import { InFlow } from '@/components/InFlow';
 import { FaqSection } from '@/components/FaqSection';
+import { Exemple } from '@/components/refonte/Exemple';
+import { Trait } from '@/components/refonte/Trait';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
@@ -26,7 +28,7 @@ function OwnerPhone() {
       <div style={{ width: "100%", height: "100%", borderRadius: 32, background: "#0a0a10", overflow: "hidden", position: "relative", display: "flex", flexDirection: "column" }}>
         <div style={{ position: "absolute", top: 8, left: "50%", transform: "translateX(-50%)", width: 110, height: 26, borderRadius: 13, background: "#000", zIndex: 10 }} />
         <div style={{ display: "flex", justifyContent: "space-between", padding: "14px 24px 8px", fontSize: 11, color: "#fff", fontWeight: 600, fontFamily: "Geist Mono" }}>
-          <span>09:42</span><span>📶 5G ⚡</span>
+          <span>09:42</span><span>5G </span>
         </div>
         <div style={{ padding: "10px 16px 14px", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
           <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
@@ -36,7 +38,7 @@ function OwnerPhone() {
           <div style={{ width: 30, height: 30, borderRadius: "50%", background: "linear-gradient(135deg, #8b5cf6, #6366f1)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 11, fontWeight: 700, color: "#fff" }}>HM</div>
         </div>
         <div style={{ padding: "4px 16px 12px" }}>
-          <div style={{ fontSize: 11, color: "rgba(255,255,255,0.5)" }}>Bonjour Antoine 👋</div>
+          <div style={{ fontSize: 11, color: "rgba(255,255,255,0.5)" }}>Bonjour Antoine </div>
           <div style={{ fontSize: 18, fontWeight: 700, color: "#fff", marginTop: 2 }}>Riad Dar Zellige</div>
         </div>
 
@@ -46,7 +48,7 @@ function OwnerPhone() {
             <div style={{ fontSize: 10, color: "rgba(255,255,255,0.6)", textTransform: "uppercase", letterSpacing: 1 }}>Ce mois-ci</div>
             <div style={{ fontSize: 10, color: "#10b981", fontWeight: 600 }}>↗ +18% vs M-1</div>
           </div>
-          <div style={{ fontSize: 30, fontWeight: 700, color: "#fff", marginTop: 6, letterSpacing: "-0.02em" }}>€18,420</div>
+          <div style={{ fontSize: 30, fontWeight: 700, color: "#fff", marginTop: 6, letterSpacing: "-0.02em" }}>18,420 MAD</div>
           <div style={{ fontSize: 11, color: "rgba(255,255,255,0.55)", marginTop: 2 }}>Net après commission gestion</div>
           <div style={{ marginTop: 12, display: "flex", gap: 8 }}>
             <div style={{ flex: 1, height: 4, borderRadius: 2, background: "#f4cf5e" }} />
@@ -63,7 +65,7 @@ function OwnerPhone() {
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 8, padding: "14px 16px 0" }}>
           {[
             { l: "Occupation", v: "94%", s: "+6%", c: "#10b981" },
-            { l: "ADR", v: "€1,450", s: "+€120", c: "#06b6d4" },
+            { l: "ADR", v: "1,450 MAD", s: "+120 MAD", c: "#06b6d4" },
             { l: "Note", v: "4.92★", s: "47 avis", c: "#fbbf24" },
             { l: "Bookings", v: "12", s: "mois", c: "#a78bfa" },
           ].map((s, i) => (
@@ -79,9 +81,9 @@ function OwnerPhone() {
         <div style={{ padding: "14px 16px 0", flex: 1, overflow: "hidden" }}>
           <div style={{ fontSize: 11, color: "rgba(255,255,255,0.5)", textTransform: "uppercase", letterSpacing: 1, marginBottom: 8 }}>Prochaines arrivées</div>
           {[
-            { name: "Sarah J.", date: "Auj. 15:00", n: "€1,450" },
-            { name: "Marco R.", date: "Mer. 14:00", n: "€2,100" },
-            { name: "Emma R.", date: "Sam. 16:00", n: "€2,850" },
+            { name: "Sarah J.", date: "Auj. 15:00", n: "1,450 MAD" },
+            { name: "Marco R.", date: "Mer. 14:00", n: "2,100 MAD" },
+            { name: "Emma R.", date: "Sam. 16:00", n: "2,850 MAD" },
           ].map((b, i) => (
             <div key={i} style={{ display: "flex", alignItems: "center", gap: 10, padding: "8px 10px", background: "rgba(255,255,255,0.03)", borderRadius: 8, marginBottom: 6 }}>
               <div style={{ width: 28, height: 28, borderRadius: "50%", background: `linear-gradient(135deg, hsl(${i*70},60%,55%), hsl(${i*70+30},60%,40%))`, fontSize: 10, fontWeight: 700, color: "#fff", display: "flex", alignItems: "center", justifyContent: "center" }}>{b.name.split(" ").map(p => p[0]).join("")}</div>
@@ -96,9 +98,9 @@ function OwnerPhone() {
 
         {/* Bottom nav */}
         <div style={{ display: "flex", borderTop: "1px solid rgba(255,255,255,0.05)", padding: "10px 0 22px", background: "#070710" }}>
-          {[{ i: "🏠", l: "Home", a: 1 }, { i: "📊", l: "Stats" }, { i: "💰", l: "Revenus" }, { i: "⚙️", l: "Profil" }].map((t, i) => (
+          {[{ i: "", l: "Home", a: 1 }, { i: "", l: "Stats" }, { i: "", l: "Revenus" }, { i: "", l: "Profil" }].map((t, i) => (
             <div key={i} style={{ flex: 1, textAlign: "center" }}>
-              <div style={{ fontSize: 18, opacity: t.a ? 1 : 0.4 }}>{t.i}</div>
+              <div style={{ fontSize: 18, opacity: t.a ? 1 : 0.4 }}><Trait /></div>
               <div style={{ fontSize: 9, color: t.a ? "#f4cf5e" : "rgba(255,255,255,0.45)", marginTop: 2, fontWeight: 500 }}>{t.l}</div>
             </div>
           ))}
@@ -116,17 +118,17 @@ function MonthlyStatement() {
           <div style={{ fontSize: 11, color: "var(--text-3)", textTransform: "uppercase", letterSpacing: 1 }}>Statement</div>
           <div style={{ fontSize: 18, fontWeight: 700, marginTop: 2 }}>Mars 2026 · Riad Dar Zellige</div>
         </div>
-        <button style={{ background: "transparent", border: "1px solid var(--glass-border)", color: "var(--text-1)", padding: "7px 14px", borderRadius: 7, fontSize: 12, cursor: "pointer" }}>📥 PDF</button>
+        <button style={{ background: "transparent", border: "1px solid var(--glass-border)", color: "var(--text-1)", padding: "7px 14px", borderRadius: 7, fontSize: 12, cursor: "pointer" }}>PDF</button>
       </div>
       <div style={{ padding: 22 }}>
         {[
-          { l: "Revenu brut OTAs", v: "€24,560", d: "12 réservations · 28 nuits" },
-          { l: "Commission OTAs", v: "−€2,952", d: "Airbnb 12% · Booking 15%" },
-          { l: "Services Sojori", v: "+€1,380", d: "Transport · courses · dîners" },
+          { l: "Revenu brut OTAs", v: "24,560 MAD", d: "12 réservations · 28 nuits" },
+          { l: "Commission OTAs", v: "−2,952 MAD", d: "Airbnb 12% · Booking 15%" },
+          { l: "Services Sojori", v: "+1,380 MAD", d: "Transport · courses · dîners" },
           { l: "Ménages inclus", v: "Inclus", d: "14 ménages · gratuits" },
-          { l: "Ménages extras", v: "+€275", d: "11 ménages payants" },
-          { l: "Maintenance", v: "−€140", d: "1 intervention plomberie" },
-          { l: "Commission Gestion (15%)", v: "−€3,468", d: "Sur revenu brut" },
+          { l: "Ménages extras", v: "+275 MAD", d: "11 ménages payants" },
+          { l: "Maintenance", v: "−140 MAD", d: "1 intervention plomberie" },
+          { l: "Commission Gestion (15%)", v: "−3,468 MAD", d: "Sur revenu brut" },
         ].map((r, i) => (
           <div key={i} style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", padding: "12px 0", borderTop: i ? "1px solid rgba(255,255,255,0.04)" : "none" }}>
             <div>
@@ -138,7 +140,7 @@ function MonthlyStatement() {
         ))}
         <div style={{ padding: "18px 0 0", borderTop: "2px solid var(--glass-border)", marginTop: 8, display: "flex", justifyContent: "space-between", alignItems: "center" }}>
           <div style={{ fontSize: 14, fontWeight: 600 }}>Net à reverser</div>
-          <div className="gradient-text" style={{ fontSize: 24, fontWeight: 700, fontFamily: "Geist Mono", letterSpacing: "-0.02em" }}>€19,655</div>
+          <div className="gradient-text" style={{ fontSize: 24, fontWeight: 700, fontFamily: "Geist Mono", letterSpacing: "-0.02em" }}>19,655 MAD</div>
         </div>
         <div style={{ marginTop: 14, padding: 12, background: "rgba(16,185,129,0.08)", border: "1px solid rgba(16,185,129,0.2)", borderRadius: 8, fontSize: 12, color: "#86efac", display: "flex", alignItems: "center", gap: 8 }}>
           <span>✓</span>Virement effectué le 03/04 · Réf: SJR-MAR-RF-0042
@@ -155,7 +157,7 @@ export default function OwnerPortalPage() {
       <div style={{ position: "relative", zIndex: 1 }}>
         <PageHeader pageTitle="Owner Portal" />
         <PageHero
-          badge="👤 Owner Portal · Pour les propriétaires"
+          badge="Owner Portal · Pour les propriétaires"
           title={<>Vos revenus.<br /><span className="gradient-text">Dans votre poche. Toujours.</span></>}
           subtitle="L&apos;app dédiée aux propriétaires. Suivi temps réel des revenus, occupation, avis. Statements mensuels automatiques. Transparence totale, en 12 langues."
           cta1="Voir la démo"
@@ -171,13 +173,13 @@ export default function OwnerPortalPage() {
                 <div style={{ fontSize: 15, color: "var(--text-2)", lineHeight: 1.6, marginBottom: 28 }}>Vos revenus du mois, vos prochaines arrivées, votre note moyenne, vos statements PDF — tout dans une app native iOS / Android.</div>
                 <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
                   {[
-                    { i: "📊", t: "Dashboard temps réel", d: "Revenus, occupation, ADR · mis à jour à la minute." },
-                    { i: "📅", t: "Calendrier de vos bookings", d: "Vue mois ou liste · arrivées passées et futures." },
-                    { i: "⭐", t: "Avis clients", d: "Tous vos avis OTA centralisés · réponses suggérées par IA." },
-                    { i: "💰", t: "Statements PDF auto", d: "Le 1er de chaque mois · viré sous 48h ouvrées." },
+                    { i: "", t: "Dashboard temps réel", d: "Revenus, occupation, ADR · mis à jour à la minute." },
+                    { i: "", t: "Calendrier de vos bookings", d: "Vue mois ou liste · arrivées passées et futures." },
+                    { i: "", t: "Avis clients", d: "Tous vos avis OTA centralisés · réponses suggérées par IA." },
+                    { i: "", t: "Statements PDF auto", d: "Le 1er de chaque mois · viré sous 48h ouvrées." },
                   ].map(c => (
                     <div key={c.t} style={{ display: "flex", gap: 14 }}>
-                      <div style={{ fontSize: 22, marginTop: 2 }}>{c.i}</div>
+                      <div style={{ fontSize: 22, marginTop: 2 }}><Trait /></div>
                       <div>
                         <div style={{ fontSize: 14, fontWeight: 600 }}>{c.t}</div>
                         <div style={{ fontSize: 13, color: "var(--text-3)", lineHeight: 1.5, marginTop: 2 }}>{c.d}</div>
@@ -189,7 +191,7 @@ export default function OwnerPortalPage() {
               <div className="owner-portal-phone-wrap" style={{ display: "flex", justifyContent: "center", position: "relative" }}>
                 <div className="owner-portal-phone-glow" style={{ position: "absolute", inset: "-50px", background: "radial-gradient(circle, rgba(230,176,34,0.18), transparent 65%)", pointerEvents: "none" }} />
                 <div className="owner-portal-phone-device">
-                  <OwnerPhone />
+                  <Exemple><OwnerPhone /></Exemple>
                 </div>
               </div>
             </div>
@@ -201,7 +203,7 @@ export default function OwnerPortalPage() {
             <div className="uppercase-sm" style={{ color: "var(--text-3)", marginBottom: 12 }}>● Statement mensuel</div>
             <div style={{ fontSize: 32, fontWeight: 700, letterSpacing: "-0.02em", marginBottom: 14, maxWidth: 700 }}>Transparence <span className="gradient-text">totale</span>. Aucune surprise.</div>
             <div style={{ fontSize: 15, color: "var(--text-2)", maxWidth: 620, marginBottom: 32, lineHeight: 1.55 }}>Chaque ligne expliquée. Chaque charge justifiée. Le statement PDF arrive automatiquement le 1er du mois, et le virement est effectué sous 48h.</div>
-            <MonthlyStatement />
+            <Exemple><MonthlyStatement /></Exemple>
           </div>
         </section>
 

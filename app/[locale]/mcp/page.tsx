@@ -76,7 +76,7 @@ const FAQ = [
   },
   {
     q: "Faut-il être développeur pour l'utiliser ?",
-    a: "Non. Vous connectez Sojori à votre client IA une fois — Claude Desktop, ChatGPT, ou l'outil de votre choix compatible MCP — puis vous posez vos questions en français. C'est inclus dans l'offre Premium.",
+    a: "Non. Vous connectez Sojori à votre client IA une fois — Claude Desktop, ChatGPT, ou l'outil de votre choix compatible MCP — puis vous posez vos questions en français. Il s'ajoute à votre offre.",
   },
   {
     q: "Quels PMS concurrents proposent la même chose ?",
@@ -251,7 +251,7 @@ export default async function McpPage({ params }: { params: Promise<{ locale: st
 
         <FinalCTA
           title={<>Votre PMS, <span className="gradient-text">interrogeable.</span></>}
-          subtitle="MCP est inclus dans l'offre Premium. Voyez les tarifs, ou demandez une démonstration sur vos propres données."
+          subtitle="Le serveur MCP s'ajoute à votre offre. Composez-la, ou demandez une démonstration sur vos propres données."
         />
         <PageFooter />
       </div>
