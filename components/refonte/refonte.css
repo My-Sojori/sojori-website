@@ -774,4 +774,52 @@ html[dir='rtl'] .sj2-cal__exemple { letter-spacing: 0; font-family: var(--sj-san
   .sj2-combo__tete { padding: 12px 16px; }
   .sj2-combo__fermer { display: inline-flex; align-items: center; justify-content: center; }
   .sj2-combo__liste { flex: 1; max-height: none; padding: 4px 8px 24px; }
+
+/* ================= La salle sur téléphone : une vraie scène portrait ================= */
+.sj2-mobile { display: none; }
+@media (max-width: 979px) {
+  .sj2-scene-block { display: flex; flex-direction: column; }
+  .sj2-simulation { align-self: flex-start; }
+  .sj2-pause--bureau, .sj2-panel--journal { display: none; }
+  .sj2-histoires { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; padding-bottom: 2px; }
+  .sj2-histoires::-webkit-scrollbar { display: none; }
+  .sj2-histoire { flex: none; white-space: nowrap; }
+  .sj2-mobile { display: flex; flex-direction: column; gap: 14px; }
+  .sj2-scene-bas { margin-top: 14px; }
+  .sj2-panel--chiffres { flex: 1 1 100%; padding: 18px 16px; }
+  .sj2-chiffres { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+  .sj2-chiffre { padding: 10px; }
+  .sj2-chiffre__v { font-size: 24px; }
+  .sj2-chiffre__n { font-size: 12px; }
+}
+.sj2-courant-m { border: 1px solid var(--sj-line-2); border-radius: 18px; background: #14130f; padding: 14px 16px; display: flex; flex-direction: column; gap: 6px; min-height: 132px; }
+.sj2-courant-m.is-carte { border-color: var(--sj-terra-line); background: var(--sj-terra-bg); }
+.sj2-courant-m__carte { display: flex; flex-direction: column; gap: 10px; margin-top: 6px; }
+.sj2-courant-m__boutons { display: flex; gap: 8px; }
+.sj2-graphe-m { border: 1px solid var(--sj-line); border-radius: 24px; overflow: hidden; display: flex; justify-content: center; padding-block: 10px;
+  background-color: #0f0e0b;
+  background-image: radial-gradient(50% 60% at 50% 50%, rgba(230,176,34,0.08), rgba(15,14,11,0) 70%), linear-gradient(rgba(244,241,234,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(244,241,234,0.03) 1px, transparent 1px);
+  background-size: auto, 40px 40px, 40px 40px; }
+.sj2-scene-m { position: relative; width: 340px; height: 330px; flex: none; }
+@media (max-width: 371px) { .sj2-scene-m { zoom: 0.93; } }
+@media (max-width: 339px) { .sj2-scene-m { zoom: 0.84; } }
+.sj2-noeud--m { font-size: 12px; padding: 0 6px; line-height: 1.15; }
+.sj2-noeud--m.is-histoire { color: #d4cec1; border-color: #4a4538; }
+.sj2-noeud--m.is-dim { color: #a39c8e; }
+.sj2-noeud--hub.sj2-noeud--m { border-radius: 14px; flex-direction: row; padding: 0 6px; }
+.sj2-legende-m { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px 16px; font-size: 13px; color: var(--sj-text-3); }
+.sj2-legende-m span { display: flex; align-items: center; gap: 8px; }
+.sj2-legende-m i { width: 18px; height: 3px; border-radius: 2px; display: inline-block; }
+.sj2-pause--m { align-self: center; min-height: 44px; min-width: 148px; }
+.sj2-soon--m { position: static; text-align: center; }
+@media (prefers-reduced-motion: reduce) {
+  .sj2-lien--flux, .sj2-lien--veille, .sj2-fondu0 > *, .sj2-fondu1 > *, .sj2-carte-vous { animation: none; }
+}
+/* téléphone : les quatre exemples en grille 2 × 2 de boutons de 56 px (la description reste sur ordinateur) */
+@media (max-width: 640px) {
+  .sj2-cas { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+  .sj2-cas > :not(.sj2-cas__btn) { grid-column: 1 / -1; }
+  .sj2-cas__btn { min-height: 56px; padding: 8px 14px; border-radius: 14px; }
+  .sj2-cas__desc { display: none; }
+  .sj2-cas__size { font-size: 19px; }
 }
