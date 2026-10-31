@@ -271,14 +271,13 @@ function DemoPageContent() {
 
   /** Quatre coordonnées obligatoires (e-mail, nom, pays, téléphone) et l'accord (Tawfiq, 31/10/2026) ; le reste vient après. */
   const identite = () => ({ email: formData.email, nom: formData.fullName, paysIso: formData.paysIso, tel: formData.phone, consent: formData.consentementMessages });
+  const [tente, setTente] = useState(false);
+  const erreurs = erreursIdentite(identite());
   const handleSubmitStep1 = (e: React.FormEvent) => {
     e.preventDefault();
-    const err = erreursIdentite(identite());
-    if (err.email) { setError(t('step1.emailRequired')); return; }
-    if (err.nom) { setError(t('step1.nameRequired')); return; }
-    if (err.pays) { setError(t('step1.paysRequired')); return; }
-    if (err.tel) { setError(t('step1.phoneInvalid')); return; }
-    if (err.consent) { setError(t('step1.consentRequired')); return; }
+    setTente(true);
+    const err = erreurs;
+    if (Object.keys(err).length > 0) { setError(''); return; }
     void envoyerDemande();
   };
 
@@ -494,6 +493,8 @@ function DemoPageContent() {
     fontFamily: 'inherit'
   };
 
+  const erreurStyle: React.CSSProperties = { margin: '6px 0 0', fontSize: 13.5, color: '#f3a27f' };
+
   const labelStyle = {
     display: 'block',
     fontSize: 13,
@@ -550,7 +551,7 @@ function DemoPageContent() {
                     </div>
                   )}
 
-                    <form onSubmit={handleSubmitStep1} className="demo-mini">
+                    <form onSubmit={handleSubmitStep1} noValidate className="demo-mini">
                       <div style={{ marginBottom: 18 }}>
                         <label style={labelStyle as React.CSSProperties}>{t('step1.emailLabel')}</label>
                         <input
@@ -562,8 +563,11 @@ function DemoPageContent() {
                           value={formData.email}
                           onChange={handleChange}
                           placeholder={t('step1.emailPlaceholder')}
+                          dir="ltr"
+                          aria-invalid={tente && erreurs.email ? true : undefined}
                           style={inputStyle}
                         />
+                        {tente && erreurs.email && <p role="alert" style={erreurStyle}>{t('step1.emailRequired')}</p>}
                       </div>
                       <div style={{ marginBottom: 18 }}>
                         <label style={labelStyle as React.CSSProperties}>{t('step1.fullNameLabel')}</label>
@@ -575,14 +579,17 @@ function DemoPageContent() {
                           value={formData.fullName}
                           onChange={handleChange}
                           placeholder={t('step1.fullNamePlaceholder')}
+                          aria-invalid={tente && erreurs.nom ? true : undefined}
                           style={inputStyle}
                         />
+                        {tente && erreurs.nom && <p role="alert" style={erreurStyle}>{t('step1.nameRequired')}</p>}
                       </div>
                       <div style={{ display: 'flex', flexWrap: 'wrap', gap: 14, marginBottom: 18, alignItems: 'flex-start' }}>
                         <div className="sj2-scope" style={{ flex: '1 1 100%', minWidth: 200 }}>
                           <label style={labelStyle as React.CSSProperties} htmlFor="demo-pays">{t('step1.paysLabel')}</label>
-                          <ChampPays id="demo-pays" valeur={formData.paysIso} locale={locale} affichage="pays" libelle={t('step1.paysLabel')} textes={textesPays}
+                          <ChampPays id="demo-pays" valeur={formData.paysIso} locale={locale} affichage="pays" libelle={t('step1.paysLabel')} textes={textesPays} invalide={tente && erreurs.pays}
                             onChoisir={iso => setFormData(prev => ({ ...prev, paysIso: iso, dialIso: iso, phone: formaterNumero(prev.phone, iso) }))} />
+                          {tente && erreurs.pays && <p role="alert" style={erreurStyle}>{t('step1.paysRequired')}</p>}
                         </div>
                       </div>
                       <div style={{ marginBottom: 18 }}>
@@ -600,20 +607,23 @@ function DemoPageContent() {
                             value={formData.phone}
                             onChange={e => setFormData(prev => ({ ...prev, phone: formaterNumero(e.target.value, prev.dialIso) }))}
                             placeholder={t('step1.phonePlaceholder')}
+                            aria-invalid={tente && erreurs.tel ? true : undefined}
                             style={inputStyle}
                           />
                         </div>
+                        {tente && erreurs.tel && <p role="alert" style={erreurStyle}>{t('step1.phoneInvalid')}</p>}
                       </div>
-                      <label style={{ display: 'flex', gap: 10, alignItems: 'flex-start', fontSize: 14, color: 'var(--text-2)', marginBottom: 22, cursor: 'pointer' }}>
+                      <label style={{ display: 'flex', gap: 12, alignItems: 'center', minHeight: 44, fontSize: 14, color: 'var(--text-2)', marginBottom: tente && erreurs.consent ? 4 : 22, cursor: 'pointer' }}>
                         <input
                           type="checkbox"
-                          required
                           checked={formData.consentementMessages}
                           onChange={e => setFormData(prev => ({ ...prev, consentementMessages: e.target.checked }))}
-                          style={{ marginTop: 3, width: 18, height: 18 }}
+                          aria-invalid={tente && erreurs.consent ? true : undefined}
+                          style={{ flex: 'none', width: 22, height: 22 }}
                         />
                         <span>{t('step1.consentLabel')}</span>
                       </label>
+                      {tente && erreurs.consent && <p role="alert" style={{ ...erreurStyle, marginBottom: 18 }}>{t('step1.consentRequired')}</p>}
                       <button
                         type="submit"
                         className="btn btn-primary"

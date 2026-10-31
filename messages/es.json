@@ -1219,7 +1219,7 @@
       "titleGradient": "demo gratuita",
       "subtitle": "Cuatro datos y su solicitud de demo.",
       "emailLabel": "Correo electrónico *",
-      "emailPlaceholder": "tu@empresa.com",
+      "emailPlaceholder": "you@company.com",
       "dialLabel": "País / prefijo *",
       "dialSearchPlaceholder": "Buscar país o +34…",
       "dialNoResults": "Sin resultados",
