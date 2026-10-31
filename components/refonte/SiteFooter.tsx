@@ -12,6 +12,7 @@ const VILLES = [
 
 export function SiteFooter() {
   const t = useTranslations('refonte.footer');
+  const p = useTranslations('refonte.pages.common.links');
   return (
     <footer className="sj2-footer">
       <div className="sj2-wrap sj2-footer__grid">
@@ -35,6 +36,12 @@ export function SiteFooter() {
           <span className="sj2-eyebrow sj2-eyebrow--sm sj2-eyebrow--dim" style={{ marginBottom: 8 }}>{t('resources')}</span>
           <Link href="/analyse-concurrents" prefetch={false}>{t('competitors')}</Link>
           <Link href="/comparatif-pms-maroc" prefetch={false}>{t('compare')}</Link>
+          <Link href="/pms-maroc" prefetch={false}>{p('pmsMaroc')}</Link>
+          <Link href="/conciergerie-maroc" prefetch={false}>{p('conciergerieMaroc')}</Link>
+          <Link href="/agents" prefetch={false}>{p('agents')}</Link>
+          <Link href="/check-in-whatsapp" prefetch={false}>{p('checkin')}</Link>
+          <Link href="/fiche-de-police-maroc" prefetch={false}>{p('fichePolice')}</Link>
+          <Link href="/taxe-de-sejour-maroc" prefetch={false}>{p('taxeSejour')}</Link>
           <Link href="/orchestration" prefetch={false}>{t('orchestration')}</Link>
           <Link href="/mcp" prefetch={false}>{t('mcp')}</Link>
           <Link href="/about" prefetch={false}>{t('about')}</Link>
