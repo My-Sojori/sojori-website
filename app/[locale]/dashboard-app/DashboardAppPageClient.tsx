@@ -93,7 +93,7 @@ function Dashboard({ dark = true }: { dark: boolean }) {
               { k: '3', l: "Today's arrivals", trend: '+1', c: '#06b6d4', icon: '🛬' },
               { k: '7', l: 'Pending tasks', trend: '2 urgent', c: '#e6b022', icon: '✓' },
               { k: '12', l: 'Unread messages', trend: '4 new', c: '#8b5cf6', icon: '💬' },
-              { k: '€2,340', l: 'Revenue today', trend: '+18%', c: '#10b981', icon: '↗' },
+              { k: '2,340 MAD', l: 'Revenue today', trend: '+18%', c: '#10b981', icon: '↗' },
             ].map(s => (
               <div key={s.l} style={{ background: card, border: `1px solid ${border}`, borderRadius: 8, padding: 10 }}>
                 <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 6 }}>
@@ -117,7 +117,7 @@ function Dashboard({ dark = true }: { dark: boolean }) {
                 { t: '2 min', i: '✓', c: '#10b981', text: 'Sarah J. checked in · Riad Dar Zellige' },
                 { t: '14 min', i: '💬', c: '#06b6d4', text: 'New WhatsApp from Marco · "AC issue"' },
                 { t: '38 min', i: '🧹', c: '#8b5cf6', text: 'Sophie completed cleaning · Hôtel Tafoukt' },
-                { t: '1h', i: '📨', c: '#e6b022', text: 'Booking confirmed · Airbnb · €840' },
+                { t: '1h', i: '📨', c: '#e6b022', text: 'Booking confirmed · Airbnb · 840 MAD' },
               ].map((a, i) => (
                 <div key={i} style={{ display: 'flex', alignItems: 'center', gap: 8, padding: '6px 0', borderTop: i ? `1px solid ${border}` : 'none' }}>
                   <div style={{ width: 22, height: 22, borderRadius: 5, background: `${a.c}22`, color: a.c, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 10 }}>{a.i}</div>

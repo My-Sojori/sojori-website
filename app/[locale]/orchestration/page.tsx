@@ -285,7 +285,7 @@ export default async function OrchestrationPage({ params }: { params: Promise<{ 
               {' · '}
               <Link href={'/go-siyaha' as const} style={{ color: '#f4cf5e', textDecoration: 'none' }}>Go Siyaha</Link>
               {' · '}
-              <Link href={'/offre' as const} style={{ color: '#f4cf5e', textDecoration: 'none' }}>Tarifs</Link>
+              <Link href={'/offre' as const} style={{ color: '#f4cf5e', textDecoration: 'none' }}>Votre offre</Link>
               <br />
               Par ville :{' '}
               <Link href={'/pms-marrakech' as const} style={{ color: '#f4cf5e', textDecoration: 'none' }}>Marrakech</Link>

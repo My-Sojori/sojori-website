@@ -161,12 +161,12 @@ function HubAnimation() {
 }
 
 const SYNC_DEMO_ROWS = [
-  { ota: 'Airbnb', c: '#FF5A5F', status: 'Live', price: '€1,450', occ: '94%' },
-  { ota: 'Booking.com', c: '#003580', status: 'Live', price: '€1,495', occ: '88%' },
-  { ota: 'Vrbo', c: '#0E64A4', status: 'Live', price: '€1,470', occ: '76%' },
-  { ota: 'Expedia', c: '#FFC72C', status: 'Live', price: '€1,505', occ: '62%' },
-  { ota: 'Hotels.com', c: '#D4145A', status: 'Syncing…', price: '€1,495', occ: '54%' },
-  { ota: 'Tripadvisor', c: '#34E0A1', status: 'Live', price: '€1,480', occ: '47%' },
+  { ota: 'Airbnb', c: '#FF5A5F', status: 'Live', price: '1,450 MAD', occ: '94%' },
+  { ota: 'Booking.com', c: '#003580', status: 'Live', price: '1,495 MAD', occ: '88%' },
+  { ota: 'Vrbo', c: '#0E64A4', status: 'Live', price: '1,470 MAD', occ: '76%' },
+  { ota: 'Expedia', c: '#FFC72C', status: 'Live', price: '1,505 MAD', occ: '62%' },
+  { ota: 'Hotels.com', c: '#D4145A', status: 'Syncing…', price: '1,495 MAD', occ: '54%' },
+  { ota: 'Tripadvisor', c: '#34E0A1', status: 'Live', price: '1,480 MAD', occ: '47%' },
 ] as const;
 
 function SyncDemo() {

@@ -329,64 +329,6 @@
         }
       ]
     },
-    "pricingPreview": {
-      "badge": "Preços",
-      "title": "Sob orçamento.",
-      "subtitle": "As três ofertas continuam visíveis. O montante decide-se consigo.",
-      "tiers": [
-        {
-          "name": "BASE",
-          "tagline": "Para digitalizar.",
-          "range": "a partir de 1 alojamento",
-          "price": "",
-          "period": "",
-          "items": [
-            "PMS + calendário",
-            "Channel Manager ilimitado",
-            "Caixa de entrada unificada",
-            "WhatsApp Hóspede, Equipas, Gerente",
-            "Taxa turística"
-          ],
-          "cta": "Pedir um orçamento"
-        },
-        {
-          "name": "CONFORT",
-          "tagline": "Para orquestrar.",
-          "range": "a partir de 10 alojamentos",
-          "price": "",
-          "period": "",
-          "badge": "★ O MAIS ESCOLHIDO",
-          "items": [
-            "Tudo o Base +",
-            "WhatsApp IA 24/7 — 12 idiomas",
-            "WhatsApp Proprietário",
-            "TeamFlow — limpeza e manutenção",
-            "Motor de reservas",
-            "Smart Analytics",
-            "Suporte prioritário"
-          ],
-          "cta": "Pedir um orçamento"
-        },
-        {
-          "name": "PREMIUM",
-          "tagline": "Para ir até ao fim.",
-          "range": "a partir de 50 alojamentos",
-          "price": "",
-          "period": "",
-          "items": [
-            "Tudo o Confort +",
-            "Orquestração avançada",
-            "Reserva direta por WhatsApp",
-            "Sojori Pay",
-            "MCP AI — ChatGPT, Claude",
-            "API e webhooks · SSO"
-          ],
-          "cta": "Pedir um orçamento"
-        }
-      ],
-      "footer": "✓ Demonstração personalizada · ✓ Sem compromisso · ✓ Instalação em menos de 7 dias",
-      "quote": "Pedir um orçamento"
-    },
     "finalCTA": {
       "title": "Pronto para",
       "titleGradient": "orquestrar",
@@ -483,11 +425,11 @@
       "booking": {
         "tuesday": "Terça 10:00",
         "userRequest": "Olá, procuro um apartamento em Paris de 15 a 20 de junho para 2 pessoas",
-        "available": "Olá! 👋\n\nEncontrei *3 apartamentos disponíveis* para suas datas:\n\n🏠 *Apto Montmartre* · 65m²\n   €120/noite · 2 pessoas\n   ⭐ 4.9 (47 avaliações)\n   [Ver fotos]\n\n🏠 *Estúdio Marais* · 45m²\n   €95/noite · 2 pessoas\n   ⭐ 4.8 (32 avaliações)\n   [Ver fotos]\n\n🏠 *Loft République* · 80m²\n   €150/noite · 4 pessoas\n   ⭐ 5.0 (12 avaliações)\n   [Ver fotos]",
+        "available": "Olá! 👋\n\nEncontrei *3 apartamentos disponíveis* para suas datas:\n\n🏠 *Apto Montmartre* · 65m²\n   120 MAD/noite · 2 pessoas\n   ⭐ 4.9 (47 avaliações)\n   [Ver fotos]\n\n🏠 *Estúdio Marais* · 45m²\n   95 MAD/noite · 2 pessoas\n   ⭐ 4.8 (32 avaliações)\n   [Ver fotos]\n\n🏠 *Loft République* · 80m²\n   150 MAD/noite · 4 pessoas\n   ⭐ 5.0 (12 avaliações)\n   [Ver fotos]",
         "userInterest": "O apartamento Montmartre me interessa! Quanto é no total?",
-        "pricing": "🏠 *Apartamento Montmartre*\n5 noites · 15-20 junho 2025\n\n💰 *Tarifa*\n€120 × 5 noites = €600\nTaxa limpeza = €40\n*Total = €640*\n\n✨ Reserva direta:\n❌ Sem comissão Airbnb\n💳 Pagamento seguro\n🎁 Check-in flexível\n\n[Reservar agora]",
+        "pricing": "🏠 *Apartamento Montmartre*\n5 noites · 15-20 junho 2025\n\n💰 *Tarifa*\n120 MAD × 5 noites = 600 MAD\nTaxa limpeza = 40 MAD\n*Total = 640 MAD*\n\n✨ Reserva direta:\n❌ Sem comissão Airbnb\n💳 Pagamento seguro\n🎁 Check-in flexível\n\n[Reservar agora]",
         "userBook": "Perfeito, vou reservar!",
-        "paymentReceived": "Pagamento recebido €640 · Reserva confirmada",
+        "paymentReceived": "Pagamento recebido 640 MAD · Reserva confirmada",
         "confirmed": "🎉 *Reserva confirmada!*\n\nVocê receberá em 5 min:\n✉️ Email de confirmação\n📱 Acesso ao app hóspede\n📍 Guia Paris\n\nAnsiosos para recebê-la Sarah! 🙂"
       }
     },
@@ -587,7 +529,7 @@
         ],
         "stats": [
           {
-            "key": "€0",
+            "key": "0 MAD",
             "label": "Por equipe"
           },
           {
@@ -683,7 +625,7 @@
             "label": "Comissão"
           },
           {
-            "key": "€0",
+            "key": "0 MAD",
             "label": "Configuração"
           },
           {
@@ -856,7 +798,7 @@
     "finalCTA": {
       "title": "Ative WhatsApp.",
       "titleGradient": "Hoje mesmo.",
-      "subtitle": "4 sistemas WhatsApp incluídos a partir do plano Orchestre. Configuração em 5 minutos. Suporte técnico ilimitado."
+      "subtitle": "Módulos de WhatsApp para o hóspede, a equipa, o administrador e o proprietário. Sem desenvolvimentos."
     }
   },
   "integrations": {
@@ -1208,7 +1150,7 @@
     ],
     "finalCTA": {
       "title": "Lance WhatsApp para seus hóspedes. Em 5 minutos.",
-      "subtitle": "Incluído a partir do plano Orchestre. Nenhum desenvolvimento necessário. Seus hóspedes já têm WhatsApp."
+      "subtitle": "Sem desenvolvimentos. Os seus hóspedes já têm WhatsApp."
     }
   },
   "dynamicPricing": {
@@ -2134,7 +2076,7 @@
     "finalCTA": {
       "titleBefore": "Migre seu PMS.",
       "titleGradient": "Em 7 dias.",
-      "subtitle": "Migração desde Hostfully, Smoobu, Lodgify incluída. Onboarding guiado. 1 mês de teste grátis."
+      "subtitle": "Integração guiada. Uma demonstração nos seus próprios alojamentos."
     }
   },
   "legal": {

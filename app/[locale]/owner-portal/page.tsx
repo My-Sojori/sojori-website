@@ -46,7 +46,7 @@ function OwnerPhone() {
             <div style={{ fontSize: 10, color: "rgba(255,255,255,0.6)", textTransform: "uppercase", letterSpacing: 1 }}>Ce mois-ci</div>
             <div style={{ fontSize: 10, color: "#10b981", fontWeight: 600 }}>↗ +18% vs M-1</div>
           </div>
-          <div style={{ fontSize: 30, fontWeight: 700, color: "#fff", marginTop: 6, letterSpacing: "-0.02em" }}>€18,420</div>
+          <div style={{ fontSize: 30, fontWeight: 700, color: "#fff", marginTop: 6, letterSpacing: "-0.02em" }}>18,420 MAD</div>
           <div style={{ fontSize: 11, color: "rgba(255,255,255,0.55)", marginTop: 2 }}>Net après commission gestion</div>
           <div style={{ marginTop: 12, display: "flex", gap: 8 }}>
             <div style={{ flex: 1, height: 4, borderRadius: 2, background: "#f4cf5e" }} />
@@ -63,7 +63,7 @@ function OwnerPhone() {
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 8, padding: "14px 16px 0" }}>
           {[
             { l: "Occupation", v: "94%", s: "+6%", c: "#10b981" },
-            { l: "ADR", v: "€1,450", s: "+€120", c: "#06b6d4" },
+            { l: "ADR", v: "1,450 MAD", s: "+120 MAD", c: "#06b6d4" },
             { l: "Note", v: "4.92★", s: "47 avis", c: "#fbbf24" },
             { l: "Bookings", v: "12", s: "mois", c: "#a78bfa" },
           ].map((s, i) => (
@@ -79,9 +79,9 @@ function OwnerPhone() {
         <div style={{ padding: "14px 16px 0", flex: 1, overflow: "hidden" }}>
           <div style={{ fontSize: 11, color: "rgba(255,255,255,0.5)", textTransform: "uppercase", letterSpacing: 1, marginBottom: 8 }}>Prochaines arrivées</div>
           {[
-            { name: "Sarah J.", date: "Auj. 15:00", n: "€1,450" },
-            { name: "Marco R.", date: "Mer. 14:00", n: "€2,100" },
-            { name: "Emma R.", date: "Sam. 16:00", n: "€2,850" },
+            { name: "Sarah J.", date: "Auj. 15:00", n: "1,450 MAD" },
+            { name: "Marco R.", date: "Mer. 14:00", n: "2,100 MAD" },
+            { name: "Emma R.", date: "Sam. 16:00", n: "2,850 MAD" },
           ].map((b, i) => (
             <div key={i} style={{ display: "flex", alignItems: "center", gap: 10, padding: "8px 10px", background: "rgba(255,255,255,0.03)", borderRadius: 8, marginBottom: 6 }}>
               <div style={{ width: 28, height: 28, borderRadius: "50%", background: `linear-gradient(135deg, hsl(${i*70},60%,55%), hsl(${i*70+30},60%,40%))`, fontSize: 10, fontWeight: 700, color: "#fff", display: "flex", alignItems: "center", justifyContent: "center" }}>{b.name.split(" ").map(p => p[0]).join("")}</div>
@@ -120,13 +120,13 @@ function MonthlyStatement() {
       </div>
       <div style={{ padding: 22 }}>
         {[
-          { l: "Revenu brut OTAs", v: "€24,560", d: "12 réservations · 28 nuits" },
-          { l: "Commission OTAs", v: "−€2,952", d: "Airbnb 12% · Booking 15%" },
-          { l: "Services Sojori", v: "+€1,380", d: "Transport · courses · dîners" },
+          { l: "Revenu brut OTAs", v: "24,560 MAD", d: "12 réservations · 28 nuits" },
+          { l: "Commission OTAs", v: "−2,952 MAD", d: "Airbnb 12% · Booking 15%" },
+          { l: "Services Sojori", v: "+1,380 MAD", d: "Transport · courses · dîners" },
           { l: "Ménages inclus", v: "Inclus", d: "14 ménages · gratuits" },
-          { l: "Ménages extras", v: "+€275", d: "11 ménages payants" },
-          { l: "Maintenance", v: "−€140", d: "1 intervention plomberie" },
-          { l: "Commission Gestion (15%)", v: "−€3,468", d: "Sur revenu brut" },
+          { l: "Ménages extras", v: "+275 MAD", d: "11 ménages payants" },
+          { l: "Maintenance", v: "−140 MAD", d: "1 intervention plomberie" },
+          { l: "Commission Gestion (15%)", v: "−3,468 MAD", d: "Sur revenu brut" },
         ].map((r, i) => (
           <div key={i} style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", padding: "12px 0", borderTop: i ? "1px solid rgba(255,255,255,0.04)" : "none" }}>
             <div>
@@ -138,7 +138,7 @@ function MonthlyStatement() {
         ))}
         <div style={{ padding: "18px 0 0", borderTop: "2px solid var(--glass-border)", marginTop: 8, display: "flex", justifyContent: "space-between", alignItems: "center" }}>
           <div style={{ fontSize: 14, fontWeight: 600 }}>Net à reverser</div>
-          <div className="gradient-text" style={{ fontSize: 24, fontWeight: 700, fontFamily: "Geist Mono", letterSpacing: "-0.02em" }}>€19,655</div>
+          <div className="gradient-text" style={{ fontSize: 24, fontWeight: 700, fontFamily: "Geist Mono", letterSpacing: "-0.02em" }}>19,655 MAD</div>
         </div>
         <div style={{ marginTop: 14, padding: 12, background: "rgba(16,185,129,0.08)", border: "1px solid rgba(16,185,129,0.2)", borderRadius: 8, fontSize: 12, color: "#86efac", display: "flex", alignItems: "center", gap: 8 }}>
           <span>✓</span>Virement effectué le 03/04 · Réf: SJR-MAR-RF-0042

@@ -330,64 +330,6 @@
         }
       ]
     },
-    "pricingPreview": {
-      "badge": "Tarification",
-      "title": "Sur devis.",
-      "subtitle": "Les trois offres restent visibles. Le montant se décide avec vous.",
-      "tiers": [
-        {
-          "name": "BASE",
-          "tagline": "Pour digitaliser.",
-          "range": "à partir de 1 logement",
-          "price": "",
-          "period": "",
-          "items": [
-            "PMS + calendrier",
-            "Channel Manager illimité",
-            "Inbox unifiée",
-            "WhatsApp Voyageur, Équipes, Gérant",
-            "Taxe de séjour"
-          ],
-          "cta": "Demander un devis"
-        },
-        {
-          "name": "CONFORT",
-          "tagline": "Pour orchestrer.",
-          "range": "à partir de 10 logements",
-          "price": "",
-          "period": "",
-          "badge": "★ LE PLUS CHOISI",
-          "items": [
-            "Tout Base +",
-            "WhatsApp IA 24/7 — 12 langues",
-            "WhatsApp Propriétaire",
-            "TeamFlow — ménage & maintenance",
-            "Moteur de réservation",
-            "Smart Analytics",
-            "Support prioritaire"
-          ],
-          "cta": "Demander un devis"
-        },
-        {
-          "name": "PREMIUM",
-          "tagline": "Pour aller au bout.",
-          "range": "à partir de 50 logements",
-          "price": "",
-          "period": "",
-          "items": [
-            "Tout Confort +",
-            "Orchestration avancée",
-            "Réservation directe WhatsApp",
-            "Sojori Pay",
-            "MCP AI — ChatGPT, Claude",
-            "API & webhooks · SSO"
-          ],
-          "cta": "Demander un devis"
-        }
-      ],
-      "footer": "✓ Démo personnalisée · ✓ Sans engagement · ✓ Setup en moins de 7 jours",
-      "quote": "Demander un devis"
-    },
     "finalCTA": {
       "title": "Prêt à",
       "titleGradient": "orchestrer",
@@ -488,7 +430,7 @@
         "userInterest": "La Suite Junior m'intéresse ! C'est combien au total ?\n",
         "pricing": "🛏 *Suite Junior*\n5 nuits · 15-20 juin 2026\n\n💰 *Tarif*\n1 800 MAD × 5 nuits = 9 000 MAD\nTaxe de séjour = 250 MAD\n*Total = 9 250 MAD*\n\n✨ Réservation directe :\n❌ Pas de commission OTA\n💳 Paiement sécurisé\n🎁 Arrivée flexible\n\n[Réserver maintenant]\n",
         "userBook": "Parfait, je réserve !",
-        "paymentReceived": "Paiement reçu €640 · Réservation confirmée",
+        "paymentReceived": "Paiement reçu 640 MAD · Réservation confirmée",
         "confirmed": "🎉 *Réservation confirmée !*\n\nVous recevrez sous 5 min :\n✉️ Email de confirmation\n📱 Accès guest app\n📍 Guidebook Paris\n\nHâte de vous accueillir Sarah ! 🙂"
       }
     },
@@ -588,7 +530,7 @@
         ],
         "stats": [
           {
-            "key": "0€",
+            "key": "0 MAD",
             "label": "Par staff"
           },
           {
@@ -684,7 +626,7 @@
             "label": "Commission"
           },
           {
-            "key": "€0",
+            "key": "0 MAD",
             "label": "Setup"
           },
           {
@@ -857,7 +799,7 @@
     "finalCTA": {
       "title": "Activez WhatsApp.",
       "titleGradient": "Dès aujourd'hui.",
-      "subtitle": "4 systèmes WhatsApp inclus dès le plan Orchestre. Setup en 5 minutes. Support technique illimité."
+      "subtitle": "4 modules WhatsApp, du voyageur au propriétaire. Aucun développement requis."
     }
   },
   "integrations": {
@@ -1209,7 +1151,7 @@
     ],
     "finalCTA": {
       "title": "Lancez WhatsApp pour vos guests. En 5 minutes.",
-      "subtitle": "Inclus dès le plan Orchestre. Aucun développement requis. Vos guests ont déjà WhatsApp."
+      "subtitle": "Aucun développement requis. Vos voyageurs ont déjà WhatsApp."
     }
   },
   "dynamicPricing": {
@@ -2233,7 +2175,7 @@
     "finalCTA": {
       "titleBefore": "Migrez votre PMS.",
       "titleGradient": "En 7 jours.",
-      "subtitle": "Migration depuis Hostfully, Smoobu, Lodgify offerte. Onboarding guidé. 1 mois d'essai gratuit."
+      "subtitle": "Onboarding guidé. Une démonstration sur vos propres logements."
     }
   },
   "legal": {
