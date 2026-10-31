@@ -3806,7 +3806,7 @@
       }
     },
     "testMode": {
-      "text": "Modo de prueba: los envíos se quedan en esta pantalla y nada llega al CRM."
+      "text": "Modo de prueba: la solicitud y su cualificación se quedan en esta pantalla; las demás llamadas (franjas, cancelaciones) están desactivadas. Nada llega al CRM."
     }
   },
   "faqPages": {

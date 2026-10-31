@@ -9,6 +9,7 @@ import { BandeauTest } from '../BandeauTest';
 import { demoResponseErrorMessage, normalizeDemoBackendResponse } from '@/lib/demoApiResponse';
 import { trackDemoLead } from '@/lib/analytics';
 import { enTetesDemande } from '@/lib/demoTest';
+import { useHydrate } from '@/lib/useHydrate';
 import {
   estChoisi, estExterne, estHotel, PAR_COMPTE, PRODUITS, PROFILS, QUANDS, QUANDS_FR, resume, segmentCrm,
   SELECTION_PAR_DEFAUT, SITES, UTILISATEURS, VALEURS_RAPIDES,
@@ -39,6 +40,7 @@ export function OffreComposer() {
 
   // le formulaire en trois étapes (Tawfiq, 31/10/2026) : les quatre coordonnées d'abord (e-mail, nom, pays, téléphone, tous
   // obligatoires) ; puis « c'est envoyé » et trois questions facultatives ; puis le récapitulatif
+  const hydrate = useHydrate();
   const [etape, setEtape] = useState<1 | 2 | 3>(1);
   const [email, setEmail] = useState('');
   const [consent, setConsent] = useState(false);
@@ -290,7 +292,7 @@ export function OffreComposer() {
           </ol>
 
           {etape === 1 && (
-            <form onSubmit={continuer} noValidate className="sj2-form__champs">
+            <form method="post" action="#" onSubmit={continuer} noValidate className="sj2-form__champs">
               <strong className="sj2-form__titre">{t('form.email.title')}</strong>
               <p className="sj2-form__aide">{t('form.email.lead')}</p>
               <label htmlFor="sj2-email">{t('form.email.label')}</label>
@@ -316,7 +318,7 @@ export function OffreComposer() {
               </label>
               {tente && err.consent && <p className="sj2-erreur sj2-erreur--champ">{t('form.errors.consent')}</p>}
               {erreur && <p className="sj2-erreur" role="alert">{erreur}</p>}
-              <button type="submit" className="sj2-btn sj2-btn--lg sj2-form__envoi" disabled={statut === 'envoi'}>
+              <button type="submit" className="sj2-btn sj2-btn--lg sj2-form__envoi" disabled={statut === 'envoi' || !hydrate}>
                 {statut === 'envoi' ? t('selection.sending') : t('form.email.submit')}
               </button>
               <p className="sj2-form__note">{t('form.email.saved')}</p>
@@ -324,7 +326,7 @@ export function OffreComposer() {
           )}
 
           {etape === 2 && (
-            <form onSubmit={(e) => { e.preventDefault(); void envoyer(false); }} noValidate className="sj2-form__champs">
+            <form method="post" action="#" onSubmit={(e) => { e.preventDefault(); void envoyer(false); }} noValidate className="sj2-form__champs">
               <strong className="sj2-form__titre">{t('form.reach.title')}</strong>
               <p className="sj2-form__aide">{t('form.reach.lead')}</p>
               <label htmlFor="sj2-ville">{t('form.reach.city')}</label>
@@ -343,7 +345,7 @@ export function OffreComposer() {
               </fieldset>
 
               {erreur && <p className="sj2-erreur" role="alert">{erreur}</p>}
-              <button type="submit" className="sj2-btn sj2-btn--lg" disabled={statut === 'envoi'}>{statut === 'envoi' ? t('selection.sending') : t('form.reach.send')}</button>
+              <button type="submit" className="sj2-btn sj2-btn--lg" disabled={statut === 'envoi' || !hydrate}>{statut === 'envoi' ? t('selection.sending') : t('form.reach.send')}</button>
               <button type="button" className="sj2-lien" onClick={() => void envoyer(true)} disabled={statut === 'envoi'}>{t('form.reach.skip')}</button>
               <p className="sj2-form__note">{t('form.reach.note')}</p>
             </form>

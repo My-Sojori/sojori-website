@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { refuserEnTest } from '@/lib/demoTestServeur';
 import { normalizeDemoBackendResponse } from '@/lib/demoApiResponse';
 import { getDemoServiceBaseUrl, getDemoProxyFailureMessage } from '@/lib/getDemoServiceBaseUrl';
 import { demoProxyFetch, devFetchDetailForDemo } from '@/lib/demoProxyFetch';
@@ -11,6 +12,8 @@ import { demoProxyFetch, devFetchDetailForDemo } from '@/lib/demoProxyFetch';
  * créer. Côté backend, une liste blanche limite ce qu'il peut écrire.
  */
 export async function PATCH(request: NextRequest) {
+  const enTest = refuserEnTest(request);
+  if (enTest) return enTest;
   const token = request.nextUrl.searchParams.get('t')?.trim() || '';
   if (!token) {
     return NextResponse.json({ success: false, error: 'Lien incomplet' }, { status: 400 });

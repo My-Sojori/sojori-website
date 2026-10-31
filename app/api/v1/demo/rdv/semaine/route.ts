@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { refuserEnTest } from '@/lib/demoTestServeur';
 import { normalizeDemoBackendResponse } from '@/lib/demoApiResponse';
 import {
   getDemoServiceBaseUrl,
@@ -11,6 +12,8 @@ import { demoProxyFetch, devFetchDetailForDemo } from '@/lib/demoProxyFetch';
  * sans son nom (le jeton signé du lien envoyé par e-mail est la seule clé).
  */
 export async function GET(request: NextRequest) {
+  const enTest = refuserEnTest(request);
+  if (enTest) return enTest;
   try {
     const backendBase = getDemoServiceBaseUrl();
     const t = request.nextUrl.searchParams.get('t') || '';

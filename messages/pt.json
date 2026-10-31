@@ -3806,7 +3806,7 @@
       }
     },
     "testMode": {
-      "text": "Modo de teste: os envios ficam neste ecrã e nada chega ao CRM."
+      "text": "Modo de teste: o pedido e a sua qualificação ficam neste ecrã; as outras chamadas (horários, cancelamentos) estão desativadas. Nada chega ao CRM."
     }
   },
   "faqPages": {

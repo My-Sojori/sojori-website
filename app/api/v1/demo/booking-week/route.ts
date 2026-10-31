@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { refuserEnTest } from '@/lib/demoTestServeur';
 import { normalizeDemoBackendResponse } from '@/lib/demoApiResponse';
 import {
   getDemoServiceBaseUrl,
@@ -10,6 +11,8 @@ import { demoProxyFetch, devFetchDetailForDemo } from '@/lib/demoProxyFetch';
  * GET /api/v1/demo/booking-week — proxy → srv-crm (créneaux publics, 7 jours).
  */
 export async function GET(request: NextRequest) {
+  const enTest = refuserEnTest(request);
+  if (enTest) return enTest;
   try {
     const backendBase = getDemoServiceBaseUrl();
     const q = request.nextUrl.searchParams.toString();

@@ -14,6 +14,7 @@ import { ChampPays } from '@/components/refonte/ChampPays';
 import { normalizeDemoBackendResponse, demoResponseErrorMessage } from '@/lib/demoApiResponse';
 import { trackDemoLead, trackDemoScheduled, trackDemoQualified } from '@/lib/analytics';
 import { enTetesDemande } from '@/lib/demoTest';
+import { useHydrate } from '@/lib/useHydrate';
 import { BandeauTest } from '@/components/refonte/BandeauTest';
 
 /** API démo via routes Next.js → srv-crm (même origine que le site). */
@@ -90,6 +91,7 @@ function DemoPageContent() {
       month: 'long',
     });
 
+  const hydrate = useHydrate();
   const textesPays = { search: t('step1.dialSearchPlaceholder'), none: t('step1.dialNoResults'), close: t('step1.countryClose') };
   const [step, setStep] = useState(1);
   const [source, setSource] = useState<string>('website'); // Default source
@@ -551,7 +553,7 @@ function DemoPageContent() {
                     </div>
                   )}
 
-                    <form onSubmit={handleSubmitStep1} noValidate className="demo-mini">
+                    <form method="post" action="#" onSubmit={handleSubmitStep1} noValidate className="demo-mini">
                       <div style={{ marginBottom: 18 }}>
                         <label style={labelStyle as React.CSSProperties}>{t('step1.emailLabel')}</label>
                         <input
@@ -627,7 +629,7 @@ function DemoPageContent() {
                       <button
                         type="submit"
                         className="btn btn-primary"
-                        disabled={loading}
+                        disabled={loading || !hydrate}
                         style={{ width: '100%', padding: '16px', fontSize: 15, fontWeight: 600 }}
                       >
                         {loading ? t('step1.submitButtonLoading') : t('step1.submitButton')}
@@ -656,7 +658,7 @@ function DemoPageContent() {
                       {error}
                     </div>
                   )}
-                  <form onSubmit={envoyerType} className="demo-mini" noValidate>
+                  <form method="post" action="#" onSubmit={envoyerType} className="demo-mini" noValidate>
                     <div className="qf-pills" role="group" aria-label={t('step1.typeTitle')} style={{ marginBottom: 22 }}>
                       {ACTIVITIES.filter(item => TYPES_FORMULAIRE.includes(item.id)).map(item => (
                         <button
@@ -699,7 +701,7 @@ function DemoPageContent() {
                         <input id="demo-pms" type="text" name="pmsNom" value={formData.pmsNom} onChange={handleChange} style={inputStyle} />
                       </div>
                     )}
-                    <button type="submit" className="btn btn-primary" disabled={loading} style={{ width: '100%', padding: '16px', fontSize: 15, fontWeight: 600 }}>
+                    <button type="submit" className="btn btn-primary" disabled={loading || !hydrate} style={{ width: '100%', padding: '16px', fontSize: 15, fontWeight: 600 }}>
                       {loading ? t('step1.submitButtonLoading') : t('step1.typeSubmit')}
                     </button>
                   </form>

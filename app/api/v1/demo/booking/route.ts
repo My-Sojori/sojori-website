@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { refuserEnTest } from '@/lib/demoTestServeur';
 import { normalizeDemoBackendResponse } from '@/lib/demoApiResponse';
 import {
   getDemoServiceBaseUrl,
@@ -10,6 +11,8 @@ import { demoProxyFetch, devFetchDetailForDemo } from '@/lib/demoProxyFetch';
  * POST /api/v1/demo/booking — proxy → srv-crm (réserver un créneau démo).
  */
 export async function POST(request: NextRequest) {
+  const enTest = refuserEnTest(request);
+  if (enTest) return enTest;
   let body: unknown;
   try {
     body = await request.json();
