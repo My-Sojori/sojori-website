@@ -3914,7 +3914,7 @@
               "Paramétrable par établissement : au séjour, à la nuit, ou par personne et par nuit.",
               "Mode d'encaissement réglé par l'établissement.",
               "Calculée par voyageur et par nuit, selon le réglage de chaque logement, dans le PMS Sojori.",
-              "Pour une réservation reçue d'un canal où la taxe n'est pas incluse dans le total, Sojori repère le montant à collecter sur place."
+              "Pour une réservation reçue d'un canal où la taxe n'est pas incluse dans le total, Sojori indique le montant à encaisser sur place."
             ]
           },
           {

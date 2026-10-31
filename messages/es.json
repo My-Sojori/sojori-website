@@ -3914,7 +3914,7 @@
               "Configurable por establecimiento: por estancia, por noche, o por persona y por noche.",
               "Modo de cobro ajustado por el establecimiento.",
               "Calculada por viajero y por noche, según el ajuste de cada alojamiento, en el PMS de Sojori.",
-              "Para una reserva recibida de un canal donde la tasa no está incluida en el total, Sojori detecta el importe que debe cobrarse in situ."
+              "Para una reserva recibida de un canal donde la tasa no está incluida en el total, Sojori indica el importe que debe cobrarse in situ."
             ]
           },
           {

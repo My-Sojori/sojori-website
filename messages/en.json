@@ -3914,7 +3914,7 @@
               "Configurable for each property: per stay, per night, or per person per night.",
               "Collection mode set by the property.",
               "Calculated per guest and per night, based on each property’s setting, in the Sojori PMS.",
-              "For a booking received from a channel where the tax is not included in the total, Sojori flags the amount to collect on site."
+              "For a booking received from a channel where the tax is not included in the total, Sojori shows the amount to collect on site."
             ]
           },
           {
