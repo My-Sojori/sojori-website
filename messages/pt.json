@@ -1440,6 +1440,13 @@
         "title": "Teste gratuito de 1 mês",
         "description": "Um conselheiro responde-lhe com uma proposta."
       }
+    },
+    "sent": {
+      "title": "Enviado",
+      "lead": "Um consultor responde-lhe.",
+      "compose": "Compor a minha oferta (2 minutos)",
+      "done": "É tudo por mim",
+      "thanks": "Obrigado. Um consultor responde-lhe."
     }
   },
   "seoPages": {
@@ -3013,7 +3020,8 @@
         "titleBiens": "{n, plural, one {# propriedade} other {# propriedades}}",
         "titleChambres": "{n, plural, one {# quarto} other {# quartos}}",
         "detailBiens": "{n, plural, one {# propriedade} other {# propriedades}}",
-        "detailChambres": "{n, plural, one {# quarto} other {# quartos}}"
+        "detailChambres": "{n, plural, one {# quarto} other {# quartos}}",
+        "barCount": "{n, plural, one {# elemento} other {# elementos}}"
       },
       "faq": {
         "title": "Perguntas sobre a sua oferta",
@@ -3075,7 +3083,7 @@
           "lead": "Quatro dados e o seu pedido segue com as suas escolhas.",
           "label": "O seu e-mail",
           "consent": "Aceito ser contactado pela Sojori sobre o meu pedido.",
-          "submit": "Pedir a minha demonstração",
+          "submit": "Receber a minha proposta",
           "saved": "O seu pedido e as suas escolhas ficam guardados ao enviar.",
           "help": "Preencha os quatro campos e marque o consentimento para enviar."
         },
@@ -3110,7 +3118,12 @@
           "s2": "O senhor recebe por e-mail, em {email}, uma ligação para escolher o seu horário na agenda do consultor.",
           "s3": "Trinta minutos de demonstração, por videochamada, com a sua proposta com valores.",
           "whatsapp": "Deixe o seu WhatsApp: o seu consultor responder-lhe-á mais depressa.",
-          "addWhatsapp": "Adicionar o meu WhatsApp"
+          "addWhatsapp": "Adicionar o meu WhatsApp",
+          "alsoMeeting": "Pedir também uma reunião",
+          "meetingAsked": "Reunião pedida: um consultor responde-lhe.",
+          "s2Offer": "Recebe a sua proposta por e-mail, em {email}.",
+          "s3Offer": "Para falar com um consultor, peça também uma reunião abaixo.",
+          "s2Generic": "Recebe por e-mail uma ligação para escolher o seu horário na agenda do consultor."
         },
         "errors": {
           "email": "Indique um e-mail válido.",
@@ -3121,7 +3134,14 @@
           "partial": "O seu pedido está guardado, mas o envio dos seus dados completos falhou. Tente novamente."
         },
         "pageLoading": "A carregar…",
-        "noscript": "É necessário JavaScript para enviar o seu pedido. Escreva-nos para commercial@sojori.com."
+        "noscript": "É necessário JavaScript para enviar o seu pedido. Escreva-nos para commercial@sojori.com.",
+        "known": {
+          "title": "O seu pedido já está guardado",
+          "lead": "Em nome de {name}. A sua oferta junta-se a este mesmo pedido.",
+          "send": "Enviar a minha oferta",
+          "expired": "O seu pedido anterior não foi encontrado: indique novamente os seus dados para enviar a sua oferta.",
+          "leadNoName": "A sua oferta junta-se a este mesmo pedido."
+        }
       }
     },
     "band": {

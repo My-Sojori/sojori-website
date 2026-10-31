@@ -1440,6 +1440,13 @@
         "title": "1-month free trial",
         "description": "An advisor replies with a proposal."
       }
+    },
+    "sent": {
+      "title": "Sent",
+      "lead": "An advisor will get back to you.",
+      "compose": "Build my offer (2 minutes)",
+      "done": "That's all for me",
+      "thanks": "Thank you. An advisor will get back to you."
     }
   },
   "seoPages": {
@@ -3013,7 +3020,8 @@
         "titleBiens": "{n, plural, one {# property} other {# properties}}",
         "titleChambres": "{n, plural, one {# room} other {# rooms}}",
         "detailBiens": "{n, plural, one {# property} other {# properties}}",
-        "detailChambres": "{n, plural, one {# room} other {# rooms}}"
+        "detailChambres": "{n, plural, one {# room} other {# rooms}}",
+        "barCount": "{n, plural, one {# item} other {# items}}"
       },
       "faq": {
         "title": "Questions about your offer",
@@ -3075,7 +3083,7 @@
           "lead": "Four details, then your request goes out with your choices.",
           "label": "Your email",
           "consent": "I agree to be contacted by Sojori about my request.",
-          "submit": "Request my demo",
+          "submit": "Get my proposal",
           "saved": "Your request and your choices are saved as soon as you send.",
           "help": "Fill in the four fields and tick the consent box to send."
         },
@@ -3110,7 +3118,12 @@
           "s2": "You receive an email at {email} with a link to pick a time slot in their calendar.",
           "s3": "Thirty minutes of demo, by video call, with your quote.",
           "whatsapp": "Leave your WhatsApp: your advisor will reply faster.",
-          "addWhatsapp": "Add my WhatsApp"
+          "addWhatsapp": "Add my WhatsApp",
+          "alsoMeeting": "Also request a meeting",
+          "meetingAsked": "Meeting requested: an advisor will get back to you.",
+          "s2Offer": "You receive your proposal by email, at {email}.",
+          "s3Offer": "To talk it over with an advisor, also request a meeting below.",
+          "s2Generic": "You receive an email with a link to choose your slot in their calendar."
         },
         "errors": {
           "email": "Enter a valid email.",
@@ -3121,7 +3134,14 @@
           "partial": "Your request is saved, but sending your full details failed. Please try again."
         },
         "pageLoading": "Loading…",
-        "noscript": "JavaScript is needed to send your request. Write to us at commercial@sojori.com."
+        "noscript": "JavaScript is needed to send your request. Write to us at commercial@sojori.com.",
+        "known": {
+          "title": "Your request is already saved",
+          "lead": "In the name of {name}. Your offer is added to this same request.",
+          "send": "Send my offer",
+          "expired": "Your earlier request could not be found: enter your details again to send your offer.",
+          "leadNoName": "Your offer is added to this same request."
+        }
       }
     },
     "band": {
