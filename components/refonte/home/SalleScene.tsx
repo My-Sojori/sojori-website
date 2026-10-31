@@ -28,6 +28,16 @@ const NOEUDS: Record<Acteur, { x: number; y: number; w: number; h: number; kind:
   prospects: { x: 1058, y: 586, w: 200, h: 46, kind: 'ext' },
 };
 const IDS = Object.keys(NOEUDS) as Acteur[];
+/** Scène portrait du téléphone (repère 340 × 330) : 15 postes sur 3 colonnes × 5 rangées, Orchestration au centre. */
+const COLS = [56, 170, 284];
+const RANGS = [26, 94, 165, 236, 304];
+const NOEUDS_M: Record<Acteur, { x: number; y: number; w: number; h: number }> = {
+  voyageurs: { x: COLS[0], y: RANGS[0], w: 100, h: 36 }, staff: { x: COLS[1], y: RANGS[0], w: 100, h: 36 }, tiers: { x: COLS[2], y: RANGS[0], w: 100, h: 36 },
+  service: { x: COLS[0], y: RANGS[1], w: 100, h: 36 }, operations: { x: COLS[1], y: RANGS[1], w: 100, h: 36 }, reservation: { x: COLS[2], y: RANGS[1], w: 100, h: 36 },
+  assistant: { x: COLS[0], y: RANGS[2], w: 100, h: 36 }, hub: { x: COLS[1], y: RANGS[2], w: 104, h: 44 }, studio: { x: COLS[2], y: RANGS[2], w: 100, h: 36 },
+  tarification: { x: COLS[0], y: RANGS[3], w: 100, h: 36 }, site: { x: COLS[1], y: RANGS[3], w: 100, h: 36 }, vous: { x: COLS[2], y: RANGS[3], w: 100, h: 36 },
+  commercial: { x: COLS[0], y: RANGS[4], w: 100, h: 36 }, prospection: { x: COLS[1], y: RANGS[4], w: 100, h: 36 }, prospects: { x: COLS[2], y: RANGS[4], w: 100, h: 36 },
+};
 const AGENTS: Acteur[] = ['service', 'operations', 'reservation', 'tarification', 'studio', 'assistant', 'site', 'commercial', 'prospection'];
 const TOPO: [Acteur, Acteur][] = [
   ['voyageurs', 'service'], ['voyageurs', 'reservation'], ['staff', 'operations'], ['tiers', 'operations'],
@@ -107,13 +117,14 @@ export function SalleScene() {
   segs.forEach(([a, b]) => { if (!TOPO.some(([x, y]) => cle(x, y) === cle(a, b))) liens.push([a, b]); });
   // un lien est une courbe douce : le point de contrôle est décalé de 12 % de la longueur, sur le côté
   const r1 = (x: number) => Math.round(x * 10) / 10; // arrondi : un décimal long diffère entre le HTML serveur et le navigateur
-  const geo = (a: Acteur, b: Acteur) => {
-    const A = NOEUDS[a]; const B = NOEUDS[b];
+  const courbe = (A: { x: number; y: number }, B: { x: number; y: number }, a: Acteur, b: Acteur) => {
     const sens = a < b ? 1 : -1;
     const cx = (A.x + B.x) / 2 - (B.y - A.y) * 0.12 * sens;
     const cy = (A.y + B.y) / 2 + (B.x - A.x) * 0.12 * sens;
     return `M ${A.x} ${A.y} Q ${r1(cx)} ${r1(cy)} ${B.x} ${B.y}`;
   };
+  const geo = (a: Acteur, b: Acteur) => courbe(NOEUDS[a], NOEUDS[b], a, b);
+  const geoM = (a: Acteur, b: Acteur) => courbe(NOEUDS_M[a], NOEUDS_M[b], a, b);
 
   // l'histoire en cours : ses postes restent allumés, les autres s'estompent sans disparaître
   const hist = histoires(script);
@@ -128,6 +139,16 @@ export function SalleScene() {
     setSt((prec) => ({ cas, i: premier, dec: {}, cycles: prec.cas === cas ? prec.cycles : 0 }));
     setPauseChoisie(false);
   };
+
+  // téléphone : la rangée des histoires défile ; la puce active se recentre (sans faire bouger la page)
+  const rangee = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    const boite = rangee.current;
+    const on = boite?.querySelector<HTMLElement>('[aria-pressed="true"]');
+    if (!boite || !on || boite.scrollWidth <= boite.clientWidth) return;
+    const b = boite.getBoundingClientRect(); const o = on.getBoundingClientRect();
+    boite.scrollBy({ left: o.left + o.width / 2 - (b.left + b.width / 2), behavior: reduit ? 'auto' : 'smooth' });
+  }, [hCour, cas, reduit]);
 
   const attend = cur.type === 'carte' && st.dec[i] === undefined;
   const decider = (v: 'ok' | 'non') => () => {
@@ -161,12 +182,12 @@ export function SalleScene() {
       <div className="sj2-scene-head">
         <span className="sj2-eyebrow sj2-eyebrow--sm sj2-live"><span className="sj2-dot" />{t('label', { titre: t(`cas.${cas}.titre`) })}</span>
         <span style={{ flexGrow: 1 }} />
-        <button type="button" className="sj2-btn sj2-btn--sm sj2-btn--ghost" onClick={() => setPauseChoisie(!pause)} aria-label={pause ? t('resumeAria') : t('pauseAria')}>
+        <button type="button" className="sj2-btn sj2-btn--sm sj2-btn--ghost sj2-pause--bureau" onClick={() => setPauseChoisie(!pause)} aria-label={pause ? t('resumeAria') : t('pauseAria')}>
           {pause ? t('resume') : t('pause')}
         </button>
       </div>
 
-      <div className="sj2-histoires" role="group" aria-label={t('histoires.aria')}>
+      <div ref={rangee} className="sj2-histoires" role="group" aria-label={t('histoires.aria')}>
         {hist.map((x, k) => {
           const on = k === hCour;
           const avance = on ? Math.round(((rang + 1) / pasH.length) * 100) : k < hCour ? 100 : 0;
@@ -178,6 +199,54 @@ export function SalleScene() {
             </button>
           );
         })}
+      </div>
+
+      <div className="sj2-mobile">
+        <div key={`m${i}-${st.cycles}`} className={`sj2-courant-m sj2-fondu${i % 2}${attend ? ' is-carte' : ''}`} aria-live="polite">
+          <span className="sj2-courant__tete"><Badge label={badgeDe(i)} couleur={COULEUR[script[i].type]} /><span className="sj2-courant__rang" aria-label={`${rang + 1} / ${pasH.length}`}>{rang + 1} / {pasH.length}</span></span>
+          <span className="sj2-courant__qui">{nom(cur.de)} <span className="sj2-arrow" aria-hidden="true">→</span> {nom(cur.vers)}</span>
+          <span className="sj2-courant__texte">{texteDe(i)}</span>
+          {attend && (
+            <span className="sj2-courant-m__carte sj2-carte-vous">
+              <span className="sj2-attend__titre">{t('waiting')}</span>
+              <span className="sj2-courant-m__boutons">
+                <button type="button" className="sj2-attend__ok" onClick={decider('ok')}>{t('validate')}</button>
+                <button type="button" className="sj2-attend__non" onClick={decider('non')}>{t('dismiss')}</button>
+              </span>
+            </span>
+          )}
+        </div>
+        <div className="sj2-graphe-m" role="group" aria-label={t('regionAria')}>
+          <div className="sj2-scene-m" dir="ltr">
+            <svg className="sj2-liens" viewBox="0 0 340 330" width="340" height="330" aria-hidden="true">
+              {segs.map(([a, b]) => (
+                <path key={`${cle(a, b)}-${i}-${st.cycles}`} d={geoM(a, b)} fill="none" className="sj2-lien sj2-lien--flux" stroke={col} strokeWidth={2.5} strokeDasharray="10 4" strokeLinecap="round" />
+              ))}
+            </svg>
+            {segs.map(([a, b], k) => (
+              <div key={`${i}-${st.cycles}-${k}`} className="sj2-paquet"
+                style={{ background: col, boxShadow: `0 0 12px ${col}`, offsetPath: `path('${geoM(a, b)}')`, offsetRotate: '0deg', animation: `sj2-glisse${i % 2} 1.2s cubic-bezier(.45,.05,.35,1) ${k}s both` }} />
+            ))}
+            {IDS.map((id) => {
+              const nd = NOEUDS_M[id]; const actif = cur.de === id || cur.vers === id; const dedans = !actif && dansHistoire.has(id);
+              return (
+                <div key={id} className={`sj2-noeud sj2-noeud--m sj2-noeud--${NOEUDS[id].kind}${actif ? ' is-actif' : dedans ? ' is-histoire' : ' is-dim'}`}
+                  style={{ left: nd.x - nd.w / 2, top: nd.y - nd.h / 2, width: nd.w, height: nd.h, ...(actif ? { borderColor: col, boxShadow: `0 0 0 3px rgba(230,176,34,0.08), 0 0 22px ${col}55` } : {}) }}>
+                  <span>{nom(id)}</span>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+        <div className="sj2-legende-m">
+          <span><i style={{ background: COULEUR.whatsapp }} />{t('legend.messages')}</span>
+          <span><i style={{ background: COULEUR.ticket }} />{t('legend.agents')}</span>
+          <span><i style={{ background: COULEUR.carte }} />{t('legend.card')}</span>
+        </div>
+        <button type="button" className="sj2-btn sj2-btn--ghost sj2-pause--m" onClick={() => setPauseChoisie(!pause)} aria-label={pause ? t('resumeAria') : t('pauseAria')}>
+          {pause ? t('resume') : t('pause')}
+        </button>
+        <span className="sj2-soon sj2-soon--m">{t('soon')}</span>
       </div>
 
       <div className="sj2-graphe" role="group" aria-label={t('regionAria')}>
