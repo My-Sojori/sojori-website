@@ -86,247 +86,6 @@
       "homeButton": "← Volver al inicio"
     }
   },
-  "pricing": {
-    "hero": {
-      "badge": "● Ofertas · bajo presupuesto",
-      "title": "Tres planes.",
-      "titleGradient": "El importe, bajo presupuesto.",
-      "subtitle": "Base para digitalizar. Confort para orquestar. Premium para ir hasta el final. Sin tarifa pública."
-    },
-    "toggles": {
-      "monthly": "Mensual",
-      "annual": "Anual",
-      "annualSave": "−20%"
-    },
-    "carousel": {
-      "hint": "Desliza · 3 planes",
-      "navLabel": "Navegar entre planes",
-      "goToTier": "Mostrar {name}"
-    },
-    "calculator": {
-      "yourProperties": "Tus alojamientos",
-      "listings": "alojamientos",
-      "forListings": "Para {count} {plural}",
-      "perListing": "/alojamiento/mes",
-      "perMonth": "MAD / mes",
-      "perYear": "es decir {amount} MAD / año",
-      "billing": "facturación {period}",
-      "minimum": "Desde {count} alojamientos",
-      "unavailable": "Mínimo {count} alojamientos",
-      "periodMonthly": "mensual",
-      "periodAnnual": "anual",
-      "unitSingular": "alojamiento",
-      "unitPlural": "alojamientos"
-    },
-    "billingMonthly": "monthly",
-    "billingAnnual": "annual",
-    "tiers": {
-      "popularBadge": "El más elegido",
-      "minimumLabel": "Mínimo {count} alojamientos",
-      "base": {
-        "name": "Base",
-        "tagline": "Para digitalizar.",
-        "description": "Todo lo que hace un PMS — más las tres superficies de WhatsApp. Tus equipos y tus huéspedes ya están en WhatsApp: Sojori también.",
-        "features": {
-          "pms": "PMS multipropiedad (calendario, reservas, pagos)",
-          "channelManager": "Channel Manager ilimitado — Booking, Expedia, Airbnb",
-          "inbox": "Bandeja unificada",
-          "ownerPortal": "Portal del propietario",
-          "whatsappGuest": "WhatsApp Huésped — menú de servicios",
-          "whatsappStaff": "WhatsApp Equipos — tareas y proveedores",
-          "whatsappAdmin": "WhatsApp Gerente — el PMS en el bolsillo",
-          "rulesPricing": "Tarificación por reglas (temporada, fin de semana, estancia mínima)",
-          "cityTax": "Tasa turística",
-          "support": "Soporte por email"
-        },
-        "cta": "Elegir Base"
-      },
-      "confort": {
-        "name": "Confort",
-        "tagline": "Para orquestar.",
-        "description": "Tu huésped ya no elige de un menú: habla. La IA toma el relevo, los equipos siguen, los ingresos se ajustan.",
-        "features": {
-          "allBase": "Todo Base, +",
-          "whatsappAi": "WhatsApp IA 24/7 — 12 idiomas",
-          "whatsappOwner": "WhatsApp Propietario — informes e ingresos",
-          "teamflow": "TeamFlow — limpieza, mantenimiento, equipos",
-          "analytics": "Smart Analytics",
-          "bookingEngine": "Motor de reservas (web)",
-          "support": "Soporte prioritario"
-        },
-        "cta": "Empezar con Confort"
-      },
-      "premium": {
-        "name": "Premium",
-        "tagline": "Para ir hasta el final.",
-        "description": "La orquestación completa: los módulos se activan entre sí y tus datos se vuelven consultables por tu propia IA.",
-        "features": {
-          "allConfort": "Todo Confort, +",
-          "orchestration": "Orquestación avanzada — los módulos se activan entre sí",
-          "whatsappBooking": "Motor de reservas WhatsApp",
-          "sojoriPay": "Sojori Pay — tu huésped paga sin salir de la conversación",
-          "mcp": "MCP AI — consulta tu actividad desde ChatGPT o Claude",
-          "api": "API y webhooks · multimarca · SSO",
-          "csm": "Customer Success dedicado"
-        },
-        "cta": "Elegir Premium"
-      }
-    },
-    "addons": {
-      "badge": "● Add-ons",
-      "title": "A la carta.",
-      "titleGradient": "Mínimo 10 alojamientos.",
-      "subtitle": "Disponibles tanto en Base como en Confort. Solo pagas lo que usas.",
-      "perListing": "MAD / alojamiento / mes",
-      "onQuote": "a consultar",
-      "items": {
-        "checkin": {
-          "name": "Check-in por WhatsApp",
-          "price": "",
-          "description": "El pasaporte se lee automáticamente y la ficha policial queda preparada."
-        },
-        "concierge": {
-          "name": "Conserjería",
-          "price": "",
-          "description": "Traslados, room service, compras, excursiones — pedidos por WhatsApp."
-        },
-        "dynamicPricing": {
-          "name": "Precios dinámicos",
-          "price": "",
-          "description": "Decide el mercado, dentro de los límites que fijes."
-        },
-        "crm": {
-          "name": "CRM",
-          "price": "",
-          "description": "Tus clientes, su historial, sus preferencias."
-        },
-        "marketing": {
-          "name": "Marketing",
-          "price": "",
-          "description": "Llenar tus alojamientos — captación, contenido, campañas."
-        },
-        "b2bSales": {
-          "name": "B2B Sales",
-          "price": "",
-          "description": "El agente comercial cualifica, presupuesta, hace seguimiento y cierra."
-        }
-      }
-    },
-    "earn": {
-      "badge": "● Lo que ganas",
-      "title": "Sojori no solo cuesta.",
-      "titleGradient": "Te da ingresos.",
-      "subtitle": "Dos ingresos que antes no tenías.",
-      "items": {
-        "concierge": {
-          "percent": "10 %",
-          "name": "Conserjería",
-          "description": "Sobre cada servicio que piden tus huéspedes. El traslado al aeropuerto, la excursión, el room service: te llevas tu parte."
-        },
-        "affiliation": {
-          "percent": "5 %",
-          "name": "Afiliación",
-          "description": "Sobre cada cliente que nos traes, mientras siga con Sojori."
-        }
-      }
-    },
-    "services": {
-      "badge": "● Servicios",
-      "title": "¿Y si respondiéramos",
-      "titleGradient": "por ti?",
-      "customerService": {
-        "name": "Atención al huésped externalizada",
-        "price": "Solicitar un presupuesto",
-        "unit": "",
-        "description": "Nuestro equipo responde a tus huéspedes, en tu nombre, en todos tus canales."
-      },
-      "whiteLabel": {
-        "name": "Marca blanca WhatsApp",
-        "price": "Solicitar un presupuesto",
-        "unit": "",
-        "description": "Tu número, tu logo. Tus huéspedes solo ven tu marca."
-      }
-    },
-    "discounts": {
-      "title": "Descuentos por volumen",
-      "tiers": {
-        "small": {
-          "range": "1 – 19 alojamientos",
-          "value": "precio completo"
-        },
-        "medium": {
-          "range": "20 – 50 alojamientos",
-          "value": "−15 %"
-        },
-        "large": {
-          "range": "51 alojamientos o más",
-          "value": "−25 %"
-        }
-      },
-      "annual": "Compromiso anual: −20 % adicional."
-    },
-    "onboarding": {
-      "title": "Onboarding",
-      "description": "Migración desde tu herramienta actual, configuración del Channel Manager y de WhatsApp, ajuste de los recorridos, formación de tus equipos.",
-      "base": "Solicitar un presupuesto",
-      "confort": "Solicitar un presupuesto",
-      "premium": "Solicitar un presupuesto",
-      "oneTime": "pago único"
-    },
-    "faq": {
-      "title": "Preguntas {gradient}",
-      "titleGradient": "frecuentes.",
-      "badge": "● FAQ",
-      "questions": {
-        "whyMad": {
-          "q": "¿Por qué no publican una tarifa?",
-          "a": "Cada explotación tiene un perímetro distinto. El presupuesto parte de sus alojamientos, sus canales y lo que conecta de verdad."
-        },
-        "minimum": {
-          "q": "¿Por qué un mínimo de alojamientos en Confort y Premium?",
-          "a": "Confort requiere 10 alojamientos, Premium 50. Por debajo, la orquestación cuesta más de lo que aporta: con dos o tres alojamientos sigues pudiendo gestionarlo tú sin perder nada. Base no tiene mínimo."
-        },
-        "engagement": {
-          "q": "¿Hay permanencia?",
-          "a": "La duración se decide en el presupuesto. Nada se firma antes de tener el importe."
-        },
-        "onboarding": {
-          "q": "¿Cómo funciona el onboarding?",
-          "a": "Migración desde su herramienta actual, configuración del Channel Manager y de WhatsApp Cloud API, ajuste de los recorridos, formación de sus equipos. De 5 a 7 días laborables. El importe de la puesta en marcha va en el presupuesto."
-        },
-        "concierge": {
-          "q": "¿Cómo funciona el 10 % de conserjería?",
-          "a": "Tu huésped pide un traslado, una excursión o room service desde WhatsApp. El partner lo ejecuta y tú te llevas el 10 % del servicio. Son ingresos que hoy no capturas: ahora haces la llamada y el cliente paga directamente al conductor."
-        },
-        "addons": {
-          "q": "¿Los add-ons son obligatorios?",
-          "a": "No. Se activan por separado, en Base igual que en Confort, con un mínimo de 10 alojamientos cada uno. Puedes empezar sin ellos y añadirlos cuando surja la necesidad."
-        },
-        "whatsappCost": {
-          "q": "¿El coste de WhatsApp está incluido?",
-          "a": "Sí, las conversaciones de servicio están incluidas en la suscripción. Solo las campañas de marketing de gran volumen se refacturan al coste de Meta, sin margen."
-        },
-        "changeTier": {
-          "q": "¿Puedo cambiar de plan a mitad de año?",
-          "a": "Sí, en ambos sentidos y sin coste. La facturación se ajusta a prorrata desde el mes siguiente."
-        },
-        "keepPms": {
-          "q": "¿Y si mantengo mi PMS actual?",
-          "a": "Es posible: Sojori se integra con tu PMS existente y orquesta por encima. Entonces pierdes el sentido de la capa base, así que lo hablamos caso por caso."
-        },
-        "freeTrial": {
-          "q": "¿Hay prueba gratuita?",
-          "a": "El primer mes es gratis en todos los planes, sin tarjeta. La migración va incluida en el onboarding."
-        }
-      }
-    },
-    "finalCTA": {
-      "title": "¿Listo para orquestar? {gradient}",
-      "titleGradient": "Primer mes gratis.",
-      "subtitle": "Migración incluida en el onboarding. Sin tarjeta para la prueba. Puesta en marcha en menos de 7 días."
-    },
-    "quote": "Solicitar un presupuesto"
-  },
   "home": {
     "hero": {
       "badge": "● Orquestador · Hostelería",
@@ -3409,6 +3168,261 @@
         "title": "Ponga a sus agentes a trabajar.",
         "lead": "Una demostración sobre sus propios alojamientos. Usted se va con la oferta que corresponde a su parque.",
         "cta": "Solicitar una demo"
+      },
+      "meta": {
+        "title": "Sojori · PMS y agentes WhatsApp para alquiler vacacional",
+        "description": "El PMS Sojori, o el suyo. Once agentes y módulos de WhatsApp: check-in, formulario de policía, contrato, limpieza, precios. Usted decide."
+      },
+      "faq": {
+        "eyebrow": "FAQ",
+        "title": "Preguntas frecuentes",
+        "items": [
+          {
+            "q": "¿Qué es Sojori?",
+            "a": "Sojori es un PMS y un conjunto de agentes que trabajan en WhatsApp para alquileres de corta duración, empresas de conserjería, riads y hoteles. Los agentes responden a los huéspedes, coordinan al equipo de campo y preparan las decisiones que usted valida. Sojori está pensado para Marruecos."
+          },
+          {
+            "q": "¿Sojori sustituye a mi PMS?",
+            "a": "No necesariamente. Sojori ofrece su propio PMS, o trabaja con el suyo: los agentes y los módulos de WhatsApp funcionan con ambos. Los precios dinámicos siguen reservados a las propiedades gestionadas en el PMS Sojori."
+          },
+          {
+            "q": "¿Qué hacen los agentes de Sojori?",
+            "a": "Sojori ofrece un agente por función: Reservas, Atención al Cliente, Operaciones, Precios dinámicos, Asistente, Studio, Sitio web, Comercial, Prospección, Marketing y Finanzas, además de agentes de llamadas en construcción. Para cada uno, usted decide si actúa solo o si espera su aprobación."
+          },
+          {
+            "q": "¿Cómo funciona el check-in por WhatsApp, con el formulario de policía y el contrato?",
+            "a": "Sojori hace el check-in por WhatsApp: cada huésped envía la foto de su documento de identidad, que se lee automáticamente, firma en línea el contrato de estancia y elige su hora de llegada. Sojori prepara el formulario de policía de cada huésped y envía recordatorios automáticos si el registro no se ha completado."
+          },
+          {
+            "q": "¿Sojori es adecuado para empresas de conserjería y hoteles?",
+            "a": "Sí. Sojori está dirigido a empresas de conserjería, propietarios de villas y apartamentos, riads, casas de huéspedes y hoteles, primero en Marruecos. La escena «La sala» muestra una jornada tipo para una empresa de conserjería de 50 propiedades y para un hotel de 30 o de 100 habitaciones."
+          },
+          {
+            "q": "¿Cuánto cuesta Sojori?",
+            "a": "Sojori se factura por propiedad, según los agentes y los módulos que usted elija. Un asesor le envía una propuesta con precios adaptada a su parque: este sitio web no muestra ningún importe."
+          }
+        ]
+      }
+    },
+    "offre": {
+      "meta": {
+        "title": "Su oferta · Sojori",
+        "description": "Componga su oferta Sojori: el PMS Sojori o el suyo, sus agentes, sus accesos WhatsApp, su sitio web. Un asesor le responde con una propuesta con precios."
+      },
+      "hero": {
+        "eyebrow": "SU OFERTA",
+        "title": "Componga su oferta. Un asesor le responde.",
+        "lead": "Díganos el tamaño de su parque y los agentes que necesita. Recibirá una propuesta con precios, adaptada a su caso."
+      },
+      "steps": {
+        "socle": "1 · SU BASE",
+        "parc": "2 · SU PARQUE",
+        "agents": "3 · SUS AGENTES Y SUS OPCIONES",
+        "users": "4 · SUS USUARIOS",
+        "site": "5 · SU SITIO WEB",
+        "service": "6 · LA PUESTA EN MARCHA",
+        "soon": "7 · PRÓXIMAMENTE"
+      },
+      "mode": {
+        "aria": "Su sistema de gestión",
+        "sojori": {
+          "title": "Con el PMS Sojori",
+          "desc": "Alojamientos, reservas, channel manager, calendarios, inbox, informes."
+        },
+        "own": {
+          "title": "Con su PMS",
+          "desc": "Usted lo conserva. Mismas opciones, salvo los precios dinámicos."
+        }
+      },
+      "parc": {
+        "unitOne": "propiedad o habitación",
+        "unitMany": "propiedades o habitaciones",
+        "sliderAria": "Número de propiedades o de habitaciones",
+        "quickAria": "Valores rápidos"
+      },
+      "products": {
+        "pms": {
+          "name": "PMS Sojori",
+          "desc": "Alojamientos, reservas, channel manager, calendarios, inbox de las OTA compatibles, informes."
+        },
+        "whatsapp_checkin": {
+          "name": "WhatsApp Check-in",
+          "desc": "Recogida de los datos de los huéspedes, formulario de policía preparado, contrato para firmar."
+        },
+        "whatsapp_stay": {
+          "name": "WhatsApp Estancia",
+          "desc": "Guía, normas, horarios de llegada y de salida, fianza y acceso."
+        },
+        "whatsapp_concierge": {
+          "name": "WhatsApp Conserjería",
+          "desc": "Catálogo, pedidos, confirmación del proveedor y seguimiento."
+        },
+        "agent_booking": {
+          "name": "Agente de Reservas",
+          "desc": "Proceso de reserva, conversación escrita y mensajes de voz en WhatsApp."
+        },
+        "agent_guest_service": {
+          "name": "Agente de Atención al Cliente",
+          "desc": "Responde a los huéspedes en los canales conectados, con el contexto de la estancia."
+        },
+        "agent_operations": {
+          "name": "Agente de Operaciones",
+          "desc": "Entiende las instrucciones escritas o de voz del equipo y del administrador, asigna y da seguimiento a las tareas."
+        },
+        "dynamic_pricing": {
+          "name": "Precios dinámicos",
+          "desc": "Recomienda los precios y los aplica con su autorización. Solo para propiedades del PMS Sojori."
+        },
+        "agent_commercial_crm": {
+          "name": "Agente Comercial con CRM",
+          "desc": "Sigue cada operación desde la primera respuesta hasta la firma: presupuesto, recordatorios, contrato."
+        },
+        "agent_prospecting": {
+          "name": "Agente de Prospección",
+          "desc": "Encuentra y califica nuevos clientes según sus criterios, y luego pasa el relevo al comercial."
+        },
+        "agent_marketing": {
+          "name": "Agente de Marketing",
+          "desc": "Prepara sus campañas y sus contenidos, que usted valida."
+        },
+        "agent_finance": {
+          "name": "Agente de Finanzas",
+          "desc": "Prepara el seguimiento de sus cuentas y de sus pagos, que usted valida."
+        },
+        "blocked": "No disponible con su PMS: los precios dinámicos solo se aplican a las propiedades del PMS Sojori.",
+        "forAccount": "para su cuenta"
+      },
+      "users": {
+        "intro": "Cada cuenta incluye un usuario de Agente Studio. Los accesos de WhatsApp del equipo, del administrador y de los propietarios se cuentan por persona y por rol.",
+        "studio": {
+          "name": "Agente Studio",
+          "role": "usuario de Agente Studio",
+          "info": "1 incluido en cada cuenta"
+        },
+        "staff": {
+          "name": "WhatsApp Equipo",
+          "role": "acceso de equipo",
+          "info": "por persona"
+        },
+        "admin": {
+          "name": "WhatsApp Admin",
+          "role": "acceso de administrador",
+          "info": "por persona"
+        },
+        "owner": {
+          "name": "WhatsApp Propietario",
+          "role": "acceso de propietario",
+          "info": "por persona"
+        },
+        "remove": "Quitar: {role}",
+        "add": "Añadir: {role}"
+      },
+      "site": {
+        "aria": "Su sitio web",
+        "none": {
+          "name": "Sin sitio web",
+          "desc": "Usted ya tiene el suyo."
+        },
+        "template": {
+          "name": "Sitio de plantilla",
+          "desc": "Un sitio sencillo con sus colores."
+        },
+        "ai": {
+          "name": "Agente de Sitio web",
+          "desc": "Creado y mantenido por el agente, dentro de un alcance definido con usted."
+        },
+        "custom": {
+          "name": "A medida",
+          "desc": "Llave en mano, alojamiento aparte."
+        },
+        "lineTemplate": "Sitio de plantilla",
+        "lineAi": "Agente de Sitio web",
+        "lineCustom": "Sitio a medida",
+        "lineDetail": "1 sitio"
+      },
+      "service": {
+        "onboarding": {
+          "name": "Onboarding estándar",
+          "desc": "Una vez por cuenta. Añadir un módulo más tarde no lo repite.",
+          "detail": "una vez por cuenta"
+        },
+        "branding": {
+          "name": "Branding de WhatsApp",
+          "desc": "Su nombre y su logotipo en el número, un número a la vez.",
+          "detail": "{n, plural, one {# número} other {# números}}",
+          "remove": "Quitar un número",
+          "add": "Añadir un número"
+        },
+        "connection": {
+          "name": "Conexión específica",
+          "desc": "Una herramienta o un PMS por conectar que aún no es compatible.",
+          "detail": "a estudiar con usted"
+        }
+      },
+      "soon": {
+        "intro": "Las llamadas en directo por WhatsApp están en construcción, sin fecha prometida. Díganos cuáles le interesan: se le avisará en primer lugar.",
+        "agent_booking_call": {
+          "name": "Agente de Reservas Call",
+          "desc": "Toma una reserva por voz, en directo por WhatsApp."
+        },
+        "agent_guest_service_call": {
+          "name": "Agente de Atención al Cliente Call",
+          "desc": "Responde a un huésped que llama."
+        },
+        "agent_staff_call": {
+          "name": "Llamadas al equipo",
+          "desc": "El Agente de Operaciones llama a su equipo."
+        },
+        "interested": "Me interesa",
+        "interestedOn": "✓ Me interesa",
+        "detail": "próximamente · le interesa"
+      },
+      "selection": {
+        "aria": "Su selección",
+        "eyebrow": "SU SELECCIÓN",
+        "title": "{n, plural, one {# propiedad o habitación} other {# propiedades o habitaciones}}",
+        "withSojori": "Con el PMS Sojori",
+        "withOwn": "Con su PMS",
+        "empty": "Elija al menos un agente o una opción.",
+        "detailQty": "{n, plural, one {# propiedad o habitación} other {# propiedades o habitaciones}}",
+        "detailSeat": "{n} × {role}",
+        "name": "Su nombre",
+        "email": "Su correo electrónico",
+        "phone": "Su número de WhatsApp (opcional)",
+        "dial": "Prefijo del país",
+        "consent": "Acepto que me contacten por correo electrónico o por WhatsApp en relación con mi solicitud.",
+        "submit": "Recibir mi propuesta o una demo",
+        "sending": "Enviando…",
+        "slot": "Un asesor le propondrá después un horario para la demostración.",
+        "note": "Un asesor le responde con una propuesta con precios, adaptada a su parque.",
+        "errorName": "Indique su nombre.",
+        "errorEmail": "Indique una dirección de correo electrónico válida.",
+        "errorConsent": "Marque la casilla para que podamos responderle.",
+        "errorGeneric": "No se pudo completar el envío. Compruebe su conexión e inténtelo de nuevo.",
+        "successTitle": "Gracias, su solicitud ha sido enviada.",
+        "successText": "Un asesor le responderá con una propuesta con precios y le propondrá un horario para la demostración.",
+        "again": "Modificar mi selección"
+      },
+      "faq": {
+        "title": "Preguntas sobre su oferta",
+        "items": [
+          {
+            "q": "¿Cómo se construye una oferta de Sojori?",
+            "a": "Sojori compone la oferta con usted en cinco elecciones: la base (el PMS Sojori o el suyo), el tamaño del parque, los agentes y los accesos de WhatsApp, el sitio web y la puesta en marcha. Cada opción se activa propiedad por propiedad."
+          },
+          {
+            "q": "¿Qué recibo después de mi solicitud?",
+            "a": "Un asesor de Sojori le responde con una propuesta con precios adaptada a su parque, y le ofrece una demostración con sus propios alojamientos."
+          },
+          {
+            "q": "¿Puedo conservar mi PMS actual?",
+            "a": "Sí. Sojori trabaja con el PMS Sojori o con el suyo. Con su PMS, los agentes y los módulos de WhatsApp siguen disponibles; los precios dinámicos siguen reservados a las propiedades del PMS Sojori."
+          },
+          {
+            "q": "¿Puedo activar solo una parte de los agentes?",
+            "a": "Sí. Usted elige los agentes y los módulos que necesita, propiedad por propiedad, y añade otros más tarde sin repetir la puesta en marcha."
+          }
+        ]
       }
     }
   }

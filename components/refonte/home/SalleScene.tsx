@@ -168,7 +168,7 @@ export function SalleScene() {
           })}
 
           <div className="sj2-courant">
-            <span className="sj2-courant__tete"><Badge k={i} /><span className="sj2-courant__qui">{nom(cur.de)} <span aria-hidden="true">→</span> {nom(cur.vers)}</span></span>
+            <span className="sj2-courant__tete"><Badge k={i} /><span className="sj2-courant__qui">{nom(cur.de)} <span className="sj2-arrow" aria-hidden="true">→</span> {nom(cur.vers)}</span></span>
             <span className="sj2-courant__texte">{texteDe(i)}</span>
           </div>
 
@@ -198,7 +198,7 @@ export function SalleScene() {
             {journal.map((k) => (
               <li key={`${st.cycles}-${k}`} className="sj2-journal__ligne">
                 <Badge k={k} />
-                <span className="sj2-journal__qui">{nom(script[k].de)} <span aria-hidden="true">→</span> {nom(script[k].vers)}</span>
+                <span className="sj2-journal__qui">{nom(script[k].de)} <span className="sj2-arrow" aria-hidden="true">→</span> {nom(script[k].vers)}</span>
                 <span className="sj2-journal__texte">{texteDe(k)}</span>
               </li>
             ))}

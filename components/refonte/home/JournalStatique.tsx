@@ -17,7 +17,7 @@ export function JournalStatique() {
       <ol>
         {script.map((e, k) => (
           <li key={k}>
-            <strong>{nom(e.de)} → {nom(e.vers)}</strong> ({e.etat ? t(`etat.${e.etat}`) : t(`badge.${e.type}`)}) : {t(`step.${cleTexte(e, 'ok')}`, e.params ?? {})}
+            <strong>{nom(e.de)} <span className="sj2-arrow" aria-hidden="true">→</span> {nom(e.vers)}</strong> ({e.etat ? t(`etat.${e.etat}`) : t(`badge.${e.type}`)}) : {t(`step.${cleTexte(e, 'ok')}`, e.params ?? {})}
           </li>
         ))}
       </ol>

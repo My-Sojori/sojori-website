@@ -1224,7 +1224,7 @@ function DemoPageContent() {
                       <Link href="/" className="btn btn-primary btn-lg">
                         {t('step4.confirmed.backToHome')}
                       </Link>
-                      <Link href="/pricing" className="btn btn-ghost btn-lg">
+                      <Link href="/offre" className="btn btn-ghost btn-lg">
                         {t('step4.confirmed.viewPricing')}
                       </Link>
                     </div>

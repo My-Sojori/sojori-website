@@ -21,7 +21,7 @@ const PATHS = [
   '/owner-portal',
   '/dashboard-app',
   '/guest-experience',
-  '/pricing',
+  '/offre',
   '/integrations',
   '/about',
   '/demo',
@@ -75,8 +75,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
       entries.push({
         url: `${baseUrl}/${locale}${suffix}`,
         lastModified: new Date(),
-        changeFrequency: path === '/' || path === '/pricing' ? 'weekly' : 'weekly',
-        priority: path === '/' ? 1 : path === '/pricing' || path === '/demo' ? 0.95 : 0.85,
+        changeFrequency: 'weekly',
+        priority: path === '/' ? 1 : path === '/offre' || path === '/demo' ? 0.95 : 0.85,
       });
     }
   }

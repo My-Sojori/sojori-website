@@ -61,7 +61,7 @@ function useProductMenu(): MenuGroup[] {
       { l: t('analytics'), h: '/analytics', d: t('analyticsDesc') },
     ]},
     { group: t('company'), items: [
-      { l: t('pricing'), h: '/pricing', d: t('pricingDesc') },
+      { l: t('pricing'), h: '/offre', d: t('pricingDesc') },
       { l: t('comparatif'), h: '/comparatif-pms-maroc', d: t('comparatifDesc') },
       { l: t('about'), h: '/about', d: t('aboutDesc') },
     ]},
@@ -183,7 +183,7 @@ export function PageHeader({ pageTitle }: { pageTitle?: string }) {
             {t('product')} <span style={{ fontSize: 9, marginLeft: 4, opacity: 0.7 }}>▼</span>
           </button>
           <Link href="/whatsapp" className="btn btn-ghost" style={{ padding: '8px 14px', fontSize: 13 }} prefetch={false}>{t('whatsapp')}</Link>
-          <Link href="/pricing" className="btn btn-ghost" style={{ padding: '8px 14px', fontSize: 13 }} prefetch={false}>{t('pricing')}</Link>
+          <Link href="/offre" className="btn btn-ghost" style={{ padding: '8px 14px', fontSize: 13 }} prefetch={false}>{t('pricing')}</Link>
           <Link href="/integrations" className="btn btn-ghost" style={{ padding: '8px 14px', fontSize: 13 }} prefetch={false}>{t('integrations')}</Link>
           <Link href="/about" className="btn btn-ghost" style={{ padding: '8px 14px', fontSize: 13 }} prefetch={false}>{t('about')}</Link>
           <LanguageSwitcher />
@@ -406,7 +406,7 @@ export function PageHeader({ pageTitle }: { pageTitle?: string }) {
               </Link>
 
               <Link
-                href="/pricing"
+                href="/offre"
                 onClick={handleMobileLinkClick}
                 style={{
                   padding: '14px 16px',
