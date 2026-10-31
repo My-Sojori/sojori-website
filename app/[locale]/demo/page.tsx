@@ -6,7 +6,8 @@ import { useTranslations, useMessages, useLocale } from 'next-intl';
 import { BackgroundEffects } from '@/components/BackgroundEffects';
 import { PageHeader, PageFooter } from '@/components/SharedComponents';
 import { Link } from '@/i18n/routing';
-import { QualificationForm, type FollowUpQuestion, type QualificationPayload } from '@/components/demo/QualificationForm';
+import dynamic from 'next/dynamic';
+import type { FollowUpQuestion, QualificationPayload } from '@/components/demo/QualificationForm';
 import { ACTIVITIES } from '@/lib/demoQualification';
 import { champsIdentite, erreursIdentite, paysInitial } from '@/lib/refonte/identiteDemande';
 import { dialDeIso, formaterNumero, nomCrm } from '@/lib/refonte/pays';
@@ -16,6 +17,9 @@ import { trackDemoLead, trackDemoScheduled, trackDemoQualified } from '@/lib/ana
 import { enTetesDemande } from '@/lib/demoTest';
 import { useHydrate } from '@/lib/useHydrate';
 import { BandeauTest } from '@/components/refonte/BandeauTest';
+
+/** Le questionnaire n'est utile qu'à l'étape 3 : chargé à la demande, hors du JavaScript de la première étape (hydratation plus rapide sur téléphone). */
+const QualificationForm = dynamic(() => import('@/components/demo/QualificationForm').then(m => m.QualificationForm), { ssr: false });
 
 /** API démo via routes Next.js → srv-crm (même origine que le site). */
 const DEMO_API = '/api/v1/demo';
@@ -554,6 +558,7 @@ function DemoPageContent() {
                   )}
 
                     <form method="post" action="#" onSubmit={handleSubmitStep1} noValidate className="demo-mini">
+                      <noscript><p role="alert" style={{ padding: 14, borderRadius: 8, background: 'rgba(239,68,68,0.15)', color: '#fca5a5', fontSize: 14, marginBottom: 18 }}>{t('step1.noscript')}</p></noscript>
                       <div style={{ marginBottom: 18 }}>
                         <label style={labelStyle as React.CSSProperties}>{t('step1.emailLabel')}</label>
                         <input
@@ -632,7 +637,7 @@ function DemoPageContent() {
                         disabled={loading || !hydrate}
                         style={{ width: '100%', padding: '16px', fontSize: 15, fontWeight: 600 }}
                       >
-                        {loading ? t('step1.submitButtonLoading') : t('step1.submitButton')}
+                        {!hydrate ? t('step1.pageLoading') : loading ? t('step1.submitButtonLoading') : t('step1.submitButton')}
                       </button>
                       <p style={{ fontSize: 11, color: 'var(--text-3)', textAlign: 'center', marginTop: 16 }}>
                         {t('step1.disclaimer')}
@@ -702,7 +707,7 @@ function DemoPageContent() {
                       </div>
                     )}
                     <button type="submit" className="btn btn-primary" disabled={loading || !hydrate} style={{ width: '100%', padding: '16px', fontSize: 15, fontWeight: 600 }}>
-                      {loading ? t('step1.submitButtonLoading') : t('step1.typeSubmit')}
+                      {!hydrate ? t('step1.pageLoading') : loading ? t('step1.submitButtonLoading') : t('step1.typeSubmit')}
                     </button>
                   </form>
                 </div>

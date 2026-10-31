@@ -293,6 +293,7 @@ export function OffreComposer() {
 
           {etape === 1 && (
             <form method="post" action="#" onSubmit={continuer} noValidate className="sj2-form__champs">
+              <noscript><p className="sj2-erreur" role="alert">{t('form.noscript')}</p></noscript>
               <strong className="sj2-form__titre">{t('form.email.title')}</strong>
               <p className="sj2-form__aide">{t('form.email.lead')}</p>
               <label htmlFor="sj2-email">{t('form.email.label')}</label>
@@ -319,7 +320,7 @@ export function OffreComposer() {
               {tente && err.consent && <p className="sj2-erreur sj2-erreur--champ">{t('form.errors.consent')}</p>}
               {erreur && <p className="sj2-erreur" role="alert">{erreur}</p>}
               <button type="submit" className="sj2-btn sj2-btn--lg sj2-form__envoi" disabled={statut === 'envoi' || !hydrate}>
-                {statut === 'envoi' ? t('selection.sending') : t('form.email.submit')}
+                {!hydrate ? t('form.pageLoading') : statut === 'envoi' ? t('selection.sending') : t('form.email.submit')}
               </button>
               <p className="sj2-form__note">{t('form.email.saved')}</p>
             </form>
@@ -345,7 +346,7 @@ export function OffreComposer() {
               </fieldset>
 
               {erreur && <p className="sj2-erreur" role="alert">{erreur}</p>}
-              <button type="submit" className="sj2-btn sj2-btn--lg" disabled={statut === 'envoi' || !hydrate}>{statut === 'envoi' ? t('selection.sending') : t('form.reach.send')}</button>
+              <button type="submit" className="sj2-btn sj2-btn--lg" disabled={statut === 'envoi' || !hydrate}>{!hydrate ? t('form.pageLoading') : statut === 'envoi' ? t('selection.sending') : t('form.reach.send')}</button>
               <button type="button" className="sj2-lien" onClick={() => void envoyer(true)} disabled={statut === 'envoi'}>{t('form.reach.skip')}</button>
               <p className="sj2-form__note">{t('form.reach.note')}</p>
             </form>

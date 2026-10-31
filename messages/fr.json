@@ -1281,7 +1281,9 @@
       "pmsOwn": "Avec mon PMS",
       "pmsWhich": "Lequel ? (facultatif)",
       "otherLabel": "Précisez (facultatif)",
-      "typeSubmit": "Continuer →"
+      "typeSubmit": "Continuer →",
+      "pageLoading": "Chargement…",
+      "noscript": "JavaScript est nécessaire pour envoyer votre demande. Écrivez-nous à commercial@sojori.com."
     },
     "step2": {
       "badge": "Étape 2/4 · Horaire",
@@ -3117,7 +3119,9 @@
           "phone": "Indiquez un numéro valide.",
           "consent": "Cochez l’accord pour envoyer.",
           "partial": "Votre demande est enregistrée, mais l’envoi de vos coordonnées complètes a échoué. Réessayez."
-        }
+        },
+        "pageLoading": "Chargement…",
+        "noscript": "JavaScript est nécessaire pour envoyer votre demande. Écrivez-nous à commercial@sojori.com."
       }
     },
     "band": {
