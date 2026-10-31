@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useLocale, useTranslations } from 'next-intl';
 import { useRouter } from '@/i18n/routing';
 import { champsIdentite, erreursIdentite, paysInitial } from '@/lib/refonte/identiteDemande';
@@ -67,7 +67,26 @@ export function OffreComposer() {
   const [demande, setDemande] = useState<{ id: string; jeton: string } | null>(null);
   const [rdvDemande, setRdvDemande] = useState(false);
   const [erreur, setErreur] = useState('');
+  // téléphone : la barre « Votre sélection » reste en bas tant que le panneau de la demande n'est pas à l'écran
+  const panneau = useRef<HTMLElement>(null);
+  const [panneauVu, setPanneauVu] = useState(false);
+  useEffect(() => {
+    const el = panneau.current;
+    if (!el || typeof IntersectionObserver === 'undefined') return;
+    const o = new IntersectionObserver(([e]) => setPanneauVu(e.isIntersecting), { threshold: 0.15 });
+    o.observe(el);
+    return () => o.disconnect();
+  }, []);
   const [statut, setStatut] = useState<'libre' | 'envoi'>('libre');
+  // envoi lancé depuis la barre (panneau hors écran) : le « Merci » ou l'erreur sont dans le panneau, on y amène le visiteur
+  useEffect(() => {
+    const el = panneau.current;
+    if (!el || (etape !== 3 && !erreur)) return;
+    const r = el.getBoundingClientRect();
+    if (r.top >= 0 && r.top < window.innerHeight * 0.6) return;
+    const calme = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
+    el.scrollIntoView({ behavior: calme ? 'auto' : 'smooth', block: 'start' });
+  }, [etape, erreur]);
 
   // la demande créée sur /demo (lue après l'hydratation) ; l'ancienne adresse /offre#contact mène à /demo
   useEffect(() => {
@@ -303,7 +322,7 @@ export function OffreComposer() {
       </div>
 
       {/* la sélection et le formulaire en trois étapes */}
-      <aside id="contact" className="sj2-offre__selection" aria-label={t('selection.aria')}>
+      <aside ref={panneau} id="contact" className="sj2-offre__selection" aria-label={t('selection.aria')}>
         <div className="sj2-selection__tete">
           <span className="sj2-eyebrow sj2-eyebrow--sm sj2-eyebrow--dim">{t('selection.eyebrow')}</span>
           <span className="sj2-selection__titre">{t(`selection.title${unite}`, { n: s.n })}</span>
@@ -387,6 +406,22 @@ export function OffreComposer() {
           )}
         </div>
       </aside>
+      {etape === 1 && !panneauVu && (
+        <div className="sj2-barre-selection" role="region" aria-label={t('selection.barAria')}>
+          <span className="sj2-barre-selection__texte">
+            <strong>{t('selection.aria')}</strong>
+            <span>{t('selection.barCount', { n: lignes.length })}</span>
+          </span>
+          <button
+            type="button"
+            className="sj2-btn"
+            disabled={statut === 'envoi' || !hydrate}
+            onClick={() => { if (connue) void envoyerConnue(); else panneau.current?.scrollIntoView({ behavior: 'smooth', block: 'start' }); }}
+          >
+            {connue ? t('form.known.send') : t('form.email.submit')}
+          </button>
+        </div>
+      )}
     </div>
   );
 }

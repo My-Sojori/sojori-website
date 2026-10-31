@@ -3020,7 +3020,9 @@
         "titleBiens": "{n, plural, one {# propiedad} other {# propiedades}}",
         "titleChambres": "{n, plural, one {# habitación} other {# habitaciones}}",
         "detailBiens": "{n, plural, one {# propiedad} other {# propiedades}}",
-        "detailChambres": "{n, plural, one {# habitación} other {# habitaciones}}"
+        "detailChambres": "{n, plural, one {# habitación} other {# habitaciones}}",
+        "barCount": "{n, plural, one {# elemento} other {# elementos}}",
+        "barAria": "Resumen de su selección"
       },
       "faq": {
         "title": "Preguntas sobre su oferta",
