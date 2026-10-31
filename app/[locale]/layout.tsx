@@ -236,7 +236,6 @@ export default async function LocaleLayout({
     slogan: 'AI workforce for hospitality',
     areaServed: { '@type': 'Country', name: 'Morocco' },
     foundingDate: '2025',
-    founder: { '@type': 'Person', name: 'Tawfiq Gouach', jobTitle: 'Founder', sameAs: ['https://www.linkedin.com/in/tawfiq-gouach-77158a21/'] },
     description: organizationDescriptionByLocale[locale] ?? organizationDescriptionByLocale.fr,
     sameAs: [
       'https://sojori.com',
