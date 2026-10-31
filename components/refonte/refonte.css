@@ -512,3 +512,20 @@ html[dir='rtl'] .sj2 [class*='mono'], html[dir='rtl'] .sj2-pill--mono, html[dir=
 .sj2-choix__type { font-family: var(--sj-mono); font-size: 12px; letter-spacing: 0.1em; color: var(--sj-text-4); }
 .sj2-choix--profil[aria-pressed='true'] .sj2-choix__type { color: var(--sj-gold); }
 html[dir='rtl'] .sj2-choix__type { letter-spacing: 0; font-family: var(--sj-sans); }
+/* ================= LOT 6 : pages de recherche ================= */
+.sj2-hero--seo { padding-block: 24px; }
+.sj2-seo__tete { display: flex; flex-direction: column; gap: 22px; padding-block: 40px 48px; }
+.sj2-h1--seo { font-size: clamp(34px, 4.8vw, 66px); line-height: 1.02; max-width: 960px; text-wrap: balance; }
+.sj2-reponse { max-width: 820px; border: 1px solid var(--sj-line-gold); border-radius: 22px; background: var(--sj-surface-gold); padding: 22px 26px; display: flex; flex-direction: column; gap: 8px; }
+.sj2-reponse p { font-size: 19px; line-height: 1.5; color: var(--sj-text); text-wrap: pretty; }
+.sj2-seo__corps { padding-block: 24px 24px; display: flex; flex-direction: column; gap: 56px; }
+.sj2-seo__section { display: flex; flex-direction: column; gap: 16px; max-width: 900px; }
+.sj2-h2--seo { font-size: clamp(26px, 3vw, 40px); letter-spacing: -0.035em; line-height: 1.08; text-wrap: balance; }
+.sj2-coches--seo { margin-top: 4px; }
+.sj2-aconfirmer { background: transparent; color: var(--sj-gold-soft); border: 1px dashed var(--sj-line-gold-2); border-radius: 6px; padding: 0 6px; font-weight: 600; }
+.sj2-related { display: flex; flex-direction: column; gap: 10px; }
+.sj2-related ul { display: flex; flex-wrap: wrap; gap: 8px; }
+.sj2-related a { display: inline-flex; align-items: center; min-height: 44px; padding: 0 16px; border: 1px solid var(--sj-line-2); border-radius: 999px; color: var(--sj-text-2); font-size: 15px; }
+.sj2-related a:hover { border-color: #6b6455; color: var(--sj-text); }
+.sj2-band__liens { margin-top: 18px; display: flex; flex-wrap: wrap; gap: 8px 20px; font-size: 14.5px; }
+.sj2-band__liens a { color: var(--sj-text-3); text-decoration: underline; text-underline-offset: 3px; min-height: 44px; display: inline-flex; align-items: center; }
