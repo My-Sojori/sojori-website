@@ -1,20 +1,12 @@
 'use client';
 
 import { useEffect, useLayoutEffect, useRef, useState } from 'react';
+import { useTranslations } from 'next-intl';
 import { BackgroundEffects } from '@/components/BackgroundEffects';
 import { PageHeader, PageFooter, PageHero, StatsBar, FinalCTA } from '@/components/SharedComponents';
 import { ScrollPaginationDots } from '@/components/shared/ScrollPaginationDots';
 import { InFlow } from '@/components/InFlow';
 import { FaqSection } from '@/components/FaqSection';
-
-const CHANNEL_MANAGER_BENEFITS = [
-  { i: '•', t: 'Une seule source de vérité', d: 'Disponibilités, prix et réservations de vos canaux au même endroit, par connecteur.' },
-  { i: '•', t: 'Une seule interface', d: 'Vous modifiez à un endroit ; les changements partent vers vos canaux par le connecteur.' },
-  { i: '•', t: 'Un seul flux de réservations', d: 'Les réservations des canaux arrivent avec vos réservations directes.' },
-  { i: '•', t: 'Prix couplés à la tarification', d: 'Couplé à la tarification dynamique : les prix que vous validez partent vers vos canaux.' },
-  { i: '•', t: 'Reporting unifié', d: 'Vos données dans un seul tableau de bord, comparables par canal.' },
-  { i: '•', t: 'Hôtels : Mews', d: 'Pour un hôtel, Sojori se connecte aussi à Mews.' },
-] as const;
 
 const OTAS = [
   { n: 'Airbnb', c: '#FF5A5F' }, { n: 'Booking.com', c: '#003580' }, { n: 'Vrbo', c: '#0E64A4' },
@@ -157,6 +149,16 @@ function HubAnimation() {
 }
 
 export default function ChannelManagerPageClient() {
+  const tb = useTranslations('pageBodies.channel-manager');
+  const CHANNEL_MANAGER_BENEFITS = [
+    { i: '•', t: tb('k001'), d: tb('k002') },
+    { i: '•', t: tb('k003'), d: tb('k004') },
+    { i: '•', t: tb('k005'), d: tb('k006') },
+    { i: '•', t: tb('k007'), d: tb('k008') },
+    { i: '•', t: tb('k009'), d: tb('k010') },
+    { i: '•', t: tb('k011'), d: tb('k012') },
+  ] as const;
+
   return (
     <>
       <style jsx global>{`
@@ -205,27 +207,27 @@ export default function ChannelManagerPageClient() {
       `}</style>
       <BackgroundEffects />
       <div style={{ position: 'relative', zIndex: 1 }}>
-        <PageHeader pageTitle="Channel Manager" />
+        <PageHeader pageTitle={tb('k013')} />
         <PageHero
-          badge="Channel Manager · Distribution unifiée"
-          title={<>Vos canaux.<br /><span className="gradient-text">Une seule source de vérité.</span></>}
-          subtitle="Reliez vos canaux par connecteur : Airbnb, Booking.com, Vrbo et Expedia. Disponibilités, prix et réservations au même endroit."
-          cta1="Voir la démo"
-          cta2="Parler à un expert"
+          badge={tb('k014')}
+          title={<>{tb('k015')}<br /><span className="gradient-text">{tb('k016')}</span></>}
+          subtitle={tb('k017')}
+          cta1={tb('k018')}
+          cta2={tb('k019')}
         />
 
         <section style={{ padding: '20px 32px 100px' }}>
           <div style={{ maxWidth: 1200, margin: '0 auto' }}>
-            <div className="uppercase-sm" style={{ color: 'var(--text-3)', textAlign: 'center', marginBottom: 12 }}>● Sojori au centre · Vos canaux</div>
-            <div style={{ fontSize: 32, fontWeight: 700, letterSpacing: '-0.02em', textAlign: 'center', maxWidth: 700, margin: '0 auto 40px' }}>Une seule mise à jour. <span style={{ color: '#f4cf5e' }}>Envoyée à vos canaux.</span></div>
+            <div className="uppercase-sm" style={{ color: 'var(--text-3)', textAlign: 'center', marginBottom: 12 }}>{tb('k020')}</div>
+            <div style={{ fontSize: 32, fontWeight: 700, letterSpacing: '-0.02em', textAlign: 'center', maxWidth: 700, margin: '0 auto 40px' }}>{tb('k021')}<span style={{ color: '#f4cf5e' }}>{tb('k022')}</span></div>
             <HubAnimation />
           </div>
         </section>
 
         <section style={{ padding: '40px 32px 80px', borderTop: '1px solid var(--glass-border)' }}>
           <div style={{ maxWidth: 1200, margin: '0 auto' }}>
-            <div className="uppercase-sm" style={{ color: 'var(--text-3)', marginBottom: 12 }}>● Bénéfices</div>
-            <div style={{ fontSize: 32, fontWeight: 700, letterSpacing: '-0.02em', marginBottom: 32, maxWidth: 700 }}>Pourquoi un channel manager <span className="gradient-text">relié au PMS</span>.</div>
+            <div className="uppercase-sm" style={{ color: 'var(--text-3)', marginBottom: 12 }}>{tb('k023')}</div>
+            <div style={{ fontSize: 32, fontWeight: 700, letterSpacing: '-0.02em', marginBottom: 32, maxWidth: 700 }}>{tb('k024')}<span className="gradient-text">{tb('k025')}</span>.</div>
             <ScrollPaginationDots
               itemCount={CHANNEL_MANAGER_BENEFITS.length}
               gap={14}
@@ -246,38 +248,38 @@ export default function ChannelManagerPageClient() {
         </section>
 
         <InFlow
-          domain="Ventes & revenu"
+          domain={tb('k026')}
           domainColor="#10b981"
-          self="Le channel manager distribue vos disponibilités et vos tarifs vers vos canaux, par connecteur."
-          upstream={[{ label: 'Inventaire du PMS', href: '/pms' }, { label: 'Prix recalculé', href: '/dynamic-pricing' }, { label: 'Chambre remise à blanc', href: '/teamflow' }]}
-          downstream={[{ label: 'Réservation enregistrée', href: '/pms' }, { label: 'Mix canaux', href: '/analytics' }, { label: 'Séquence client', href: '/guest-experience' }]}
+          self={tb('k027')}
+          upstream={[{ label: tb('k028'), href: '/pms' }, { label: tb('k029'), href: '/dynamic-pricing' }, { label: tb('k030'), href: '/teamflow' }]}
+          downstream={[{ label: tb('k031'), href: '/pms' }, { label: tb('k032'), href: '/analytics' }, { label: tb('k033'), href: '/guest-experience' }]}
         />
 
         <FaqSection
-          badge="Channel Manager"
-          title="Questions fréquentes"
+          badge={tb('k034')}
+          title={tb('k035')}
           items={[
   {
-    "q": "Quels canaux sont reliés ?",
-    "a": "Airbnb, Booking.com, Vrbo et Expedia, par connecteur, et Mews pour les hôtels. Les disponibilités et les tarifs partent vers les canaux ; les réservations reviennent dans le même flux que vos réservations directes."
+    "q": tb('k036'),
+    "a": tb('k037')
   },
   {
-    "q": "Comment limiter les doubles réservations ?",
-    "a": "L'inventaire reste tenu par le PMS, qui fait autorité, et le channel manager distribue depuis cette source unique. C'est en haute saison que cela compte le plus : à taux d'occupation élevé, aucune chambre de secours ne permet de rattraper une erreur."
+    "q": tb('k038'),
+    "a": tb('k039')
   },
   {
-    "q": "Peut-on mesurer ce que rapporte chaque canal ?",
-    "a": "Oui, c'est la question qui compte davantage que le volume brut. Le reporting sépare le revenu par canal, ce qui permet d'arbitrer où pousser le direct plutôt que de subir le mix existant."
+    "q": tb('k040'),
+    "a": tb('k041')
   },
   {
-    "q": "Faut-il abandonner notre channel manager actuel ?",
-    "a": "Pas nécessairement. Selon les possibilités d'interfaçage, Sojori peut s'ajouter à l'existant. Parlons-en avant d'envisager une migration : c'est souvent le point sur lequel une décision hâtive coûte cher."
+    "q": tb('k042'),
+    "a": tb('k043')
   }
 ]}
         />
 
 
-        <FinalCTA title={<>Connectez vos canaux. <span className="gradient-text">Sans changer vos habitudes.</span></>} subtitle="Mise en route guidée. Reprise depuis votre channel manager actuel accompagnée. 1 mois d'essai gratuit." />
+        <FinalCTA title={<>{tb('k044')}<span className="gradient-text">{tb('k045')}</span></>} subtitle={tb('k046')} />
         <PageFooter />
       </div>
     </>
