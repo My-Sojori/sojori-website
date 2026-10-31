@@ -68,7 +68,7 @@ function Inbox() {
           }}>
             <div style={{width: 26, height: 26, borderRadius: 6, background: c.color || "transparent", color: "#fff", fontSize: 11, fontWeight: 700, display: "flex", alignItems: "center", justifyContent: "center", margin: "0 auto"}}>{c.icon}</div>
             <div style={{fontSize: 7, color: "var(--text-3)", marginTop: 3}}>{c.l}</div>
-            {c.count > 0 && <span style={{position: "absolute", top: 2, right: 2, fontSize: 7, background: "#ef4444", color: "#fff", padding: "1px 4px", borderRadius: 999, fontWeight: 700}}>{c.count}</span>}
+            {c.count > 0 && <span style={{position: "absolute", top: 2, right: 2, fontSize: 7, background: "#dc2626", color: "#fff", padding: "1px 4px", borderRadius: 999, fontWeight: 700}}>{c.count}</span>}
           </div>
         ))}
       </div>
@@ -86,7 +86,7 @@ function Inbox() {
               borderBottom: "1px solid rgba(255,255,255,0.03)",
             }}>
               <div style={{position: "relative", flexShrink: 0}}>
-                <div style={{width: 32, height: 32, borderRadius: "50%", background: t.avatar, fontSize: 11, fontWeight: 700, color: "#fff", display: "flex", alignItems: "center", justifyContent: "center"}}>{t.name.split(" ").map(p => p[0]).join("")}</div>
+                <div style={{width: 32, height: 32, borderRadius: "50%", background: t.avatar, fontSize: 11, fontWeight: 700, color: "#0c0b09", display: "flex", alignItems: "center", justifyContent: "center"}}>{t.name.split(" ").map(p => p[0]).join("")}</div>
                 <div style={{position: "absolute", bottom: -2, right: -2, width: 14, height: 14, borderRadius: 3, background: t.color, fontSize: 7, fontWeight: 700, color: "#fff", display: "flex", alignItems: "center", justifyContent: "center", border: "2px solid #0a0a10"}}>{CHANNELS.find(c => c.id === t.ch)?.icon}</div>
               </div>
               <div style={{flex: 1, minWidth: 0}}>
@@ -104,7 +104,7 @@ function Inbox() {
       <div className="inbox-conversation" style={{flex: 1, display: "flex", flexDirection: "column"}}>
         <div style={{padding: "10px 14px", borderBottom: "1px solid var(--glass-border)", display: "flex", alignItems: "center", justifyContent: "space-between"}}>
           <div style={{display: "flex", alignItems: "center", gap: 10}}>
-            <div style={{width: 30, height: 30, borderRadius: "50%", background: "#f59e0b", fontSize: 11, fontWeight: 700, color: "#fff", display: "flex", alignItems: "center", justifyContent: "center"}}>SJ</div>
+            <div style={{width: 30, height: 30, borderRadius: "50%", background: "#f59e0b", fontSize: 11, fontWeight: 700, color: "#0c0b09", display: "flex", alignItems: "center", justifyContent: "center"}}>SJ</div>
             <div>
               <div style={{fontSize: 11, fontWeight: 600}}>{t('conversation.header.name')}</div>
               <div style={{fontSize: 9, color: "var(--text-3)"}}>{t('conversation.header.details')}</div>

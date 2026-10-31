@@ -92,7 +92,7 @@ export function CompetitiveIntel() {
                 </div>
                 <div style={{ padding: 16, background: 'rgba(255,255,255,0.03)', borderRadius: 8 }}>
                   <div style={{ fontSize: 11, color: 'var(--text-3)', marginBottom: 4 }}>{t('avgCompOcc')}</div>
-                  <div style={{ fontSize: 24, fontWeight: 700, color: '#8b5cf6', fontFamily: 'var(--font-mono)' }}>
+                  <div style={{ fontSize: 24, fontWeight: 700, color: '#a78bfa', fontFamily: 'var(--font-mono)' }}>
                     {avgCompOcc}%
                   </div>
                 </div>
@@ -165,7 +165,7 @@ export function CompetitiveIntel() {
                   <div style={{ padding: 14, background: 'rgba(139,92,246,0.08)', border: '1px solid rgba(139,92,246,0.25)', borderRadius: 8 }}>
                     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 8, flexWrap: 'wrap', gap: 8 }}>
                       <span style={{ fontSize: 13, fontWeight: 500 }}>{t('revenueRank')}</span>
-                      <span style={{ fontSize: 18, fontWeight: 700, color: '#8b5cf6' }}>#2</span>
+                      <span style={{ fontSize: 18, fontWeight: 700, color: '#a78bfa' }}>#2</span>
                     </div>
                     <div style={{ fontSize: 11, color: 'var(--text-3)' }}>
                       {t('rankDescription')}

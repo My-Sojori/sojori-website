@@ -25,7 +25,7 @@ function Dashboard({ dark = true }: { dark: boolean }) {
   const border = dark ? 'rgba(255,255,255,0.08)' : 'rgba(0,0,0,0.08)';
   const text = dark ? '#fff' : '#0f0f14';
   const text2 = dark ? 'rgba(255,255,255,0.72)' : 'rgba(15,15,20,0.7)';
-  const text3 = dark ? 'rgba(255,255,255,0.52)' : 'rgba(15,15,20,0.5)';
+  const text3 = dark ? 'rgba(255,255,255,0.52)' : 'rgba(15,15,20,0.72)';
   const sidebarBg = dark ? '#08080b' : '#f0ede5';
 
   return (
@@ -47,7 +47,7 @@ function Dashboard({ dark = true }: { dark: boolean }) {
           }}>
             <span style={{ fontSize: 12 }}>{n.i}</span>
             <span style={{ flex: 1 }}>{n.l}</span>
-            {n.badge && <span style={{ fontSize: 8, padding: '1px 5px', borderRadius: 999, background: typeof n.badge === 'number' ? '#ef4444' : 'rgba(139,92,246,0.25)', color: typeof n.badge === 'number' ? '#fff' : '#a78bfa', fontWeight: 700 }}>{n.badge}</span>}
+            {n.badge && <span style={{ fontSize: 8, padding: '1px 5px', borderRadius: 999, background: typeof n.badge === 'number' ? '#dc2626' : 'rgba(109,40,217,0.14)', color: typeof n.badge === 'number' ? '#fff' : '#6d28d9', fontWeight: 700 }}>{n.badge}</span>}
           </div>
         ))}
         <div style={{ flex: 1 }} />
@@ -69,7 +69,7 @@ function Dashboard({ dark = true }: { dark: boolean }) {
           <div className="dashboard-search" style={{ background: dark ? 'rgba(255,255,255,0.05)' : '#fff', border: `1px solid ${border}`, borderRadius: 6, padding: '4px 10px', fontSize: 10, color: text3, display: 'flex', alignItems: 'center', gap: 6, width: 160 }}>
             <span style={{ fontSize: 11 }}>🔍</span><span>Search…</span><span style={{ marginLeft: 'auto', fontSize: 8, opacity: 0.6 }}>⌘K</span>
           </div>
-          <div style={{ position: 'relative', cursor: 'pointer', fontSize: 13 }}>🔔<span style={{ position: 'absolute', top: -3, right: -5, width: 12, height: 12, borderRadius: 6, background: '#ef4444', color: '#fff', fontSize: 7, display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 700 }}>3</span></div>
+          <div style={{ position: 'relative', cursor: 'pointer', fontSize: 13 }}>🔔<span style={{ position: 'absolute', top: -3, right: -5, width: 12, height: 12, borderRadius: 6, background: '#dc2626', color: '#fff', fontSize: 7, display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 700 }}>3</span></div>
           <button className="dashboard-cta" style={{ background: 'linear-gradient(180deg, #f4cf5e, #e6b022)', color: '#1a1408', border: 'none', padding: '5px 10px', borderRadius: 6, fontSize: 10, fontWeight: 600, cursor: 'pointer', whiteSpace: 'nowrap' }}>+ New</button>
         </div>
 
@@ -98,7 +98,7 @@ function Dashboard({ dark = true }: { dark: boolean }) {
               <div key={s.l} style={{ background: card, border: `1px solid ${border}`, borderRadius: 8, padding: 10 }}>
                 <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 6 }}>
                   <div style={{ width: 22, height: 22, borderRadius: 5, background: `${s.c}22`, color: s.c, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 11 }}>{s.icon}</div>
-                  <div style={{ fontSize: 8, color: '#10b981', fontWeight: 600 }}>{s.trend}</div>
+                  <div style={{ fontSize: 8, color: '#047857', fontWeight: 600 }}>{s.trend}</div>
                 </div>
                 <div style={{ fontSize: 18, fontWeight: 700, letterSpacing: '-0.02em' }}>{s.k}</div>
                 <div style={{ fontSize: 9, color: text3, marginTop: 1 }}>{s.l}</div>

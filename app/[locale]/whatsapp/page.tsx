@@ -106,12 +106,12 @@ function Bubble({ from, text, time, type = "text", ext, status }: Message) {
       boxShadow: "0 1px 2px rgba(0,0,0,0.15)",
       border: isAI ? "1px solid rgba(244,207,94,0.2)" : "none",
     }}>
-      {isAI && <div style={{display: "flex", alignItems: "center", gap: 4, marginBottom: 4, color: "#f4cf5e", fontSize: 9, fontWeight: 600, fontFamily: "var(--font-mono)", letterSpacing: "0.6px"}}>✨ SOJORI AI</div>}
+      {isAI && <div style={{display: "flex", alignItems: "center", gap: 4, marginBottom: 4, color: "#8a6a12", fontSize: 9, fontWeight: 600, fontFamily: "var(--font-mono)", letterSpacing: "0.6px"}}>✨ SOJORI AI</div>}
       <div style={{color: "#111", fontSize: 13, lineHeight: 1.45, whiteSpace: "pre-wrap"}}>{text}</div>
       {ext && <div style={{marginTop: 7, padding: 9, background: "rgba(0,0,0,0.05)", borderRadius: 7, fontSize: 11.5, color: "#111", lineHeight: 1.4, border: "1px solid rgba(0,0,0,0.08)"}}>{ext}</div>}
-      <div style={{display: "flex", justifyContent: "flex-end", alignItems: "center", gap: 3, marginTop: 3, fontSize: 9.5, color: "#667781"}}>
+      <div style={{display: "flex", justifyContent: "flex-end", alignItems: "center", gap: 3, marginTop: 3, fontSize: 9.5, color: "#54656f"}}>
         <span>{time}</span>
-        {isUser && <span style={{color: status === "read" ? "#53bdeb" : "#667781"}}>✓✓</span>}
+        {isUser && <span style={{color: status === "read" ? "#53bdeb" : "#54656f"}}>✓✓</span>}
       </div>
     </div>
   );

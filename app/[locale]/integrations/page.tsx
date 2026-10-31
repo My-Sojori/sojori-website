@@ -273,9 +273,9 @@ export default function IntegrationsPage() {
                 gap: 6,
                 alignItems: 'center'
               }}>
-                <span style={{ width: 9, height: 9, borderRadius: '50%', background: '#ef4444' }}></span>
-                <span style={{ width: 9, height: 9, borderRadius: '50%', background: '#f59e0b' }}></span>
-                <span style={{ width: 9, height: 9, borderRadius: '50%', background: '#10b981' }}></span>
+                <span style={{ width: 9, height: 9, borderRadius: '50%', background: '#dc2626' }}></span>
+                <span style={{ width: 9, height: 9, borderRadius: '50%', background: '#b45309' }}></span>
+                <span style={{ width: 9, height: 9, borderRadius: '50%', background: '#047857' }}></span>
                 <span style={{ marginLeft: 10, color: 'var(--text-3)', fontSize: 11 }}>Exemple illustratif</span>
               </div>
               <pre style={{ padding: 18, margin: 0, color: 'var(--text-2)', lineHeight: 1.6 }}>

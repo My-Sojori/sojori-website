@@ -49,7 +49,7 @@ export function PortfolioOverview() {
     { name: 'Riad Atlas Prestige', city: 'Marrakech', zone: 'Hivernage', adr: 1450, occ: 58, revenue: 42300, color: '#ef4444' },
     { name: 'Villa Jardin Secret', city: 'Marrakech', zone: 'Palmeraie', adr: 2100, occ: 51, revenue: 53900, color: '#10b981' },
     { name: 'Hôtel Tafoukt', city: 'Agadir', zone: 'Front de mer', adr: 1150, occ: 72, revenue: 57400, color: '#3b82f6' },
-    { name: 'Maison d’hôtes Kasbah', city: 'Rabat', zone: 'Oudayas', adr: 860, occ: 68, revenue: 40700, color: '#8b5cf6' },
+    { name: 'Maison d’hôtes Kasbah', city: 'Rabat', zone: 'Oudayas', adr: 860, occ: 68, revenue: 40700, color: '#a78bfa' },
     { name: 'Dar Gueliz Moderne', city: 'Marrakech', zone: 'Gueliz', adr: 980, occ: 45, revenue: 19800, color: '#f59e0b' },
   ];
 
@@ -77,7 +77,7 @@ export function PortfolioOverview() {
           <div className="portfolio-summary-cards" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 16, marginBottom: 24 }}>
             <div className="card" style={{ padding: 20, background: 'rgba(139,92,246,0.08)', border: '1px solid rgba(139,92,246,0.25)' }}>
               <div style={{ fontSize: 11, color: 'var(--text-3)', marginBottom: 4 }}>{t('totalProperties')}</div>
-              <div style={{ fontSize: 32, fontWeight: 700, color: '#8b5cf6' }}>{portfolioListings.length}</div>
+              <div style={{ fontSize: 32, fontWeight: 700, color: '#a78bfa' }}>{portfolioListings.length}</div>
               <div style={{ fontSize: 11, color: 'var(--text-3)', marginTop: 4 }}>2 {t('cities')}</div>
             </div>
 
