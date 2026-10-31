@@ -3207,7 +3207,7 @@
     "offre": {
       "meta": {
         "title": "A sua oferta Sojori · PMS e agentes WhatsApp à medida",
-        "description": "Componha a sua oferta Sojori: o PMS Sojori ou o seu, agentes, acessos WhatsApp, site. Um consultor responde-lhe com uma proposta com valores."
+        "description": "Componha a sua oferta Sojori: o PMS Sojori ou o seu, agentes, acesso WhatsApp, site. Um consultor responde com uma proposta com valores."
       },
       "hero": {
         "eyebrow": "A SUA OFERTA",
@@ -3427,21 +3427,34 @@
       "form": {
         "stepsAria": "Etapas do seu pedido",
         "step": {
-          "you": "O senhor",
-          "activity": "A sua atividade"
+          "email": "O seu e-mail",
+          "prepare": "Prepare a sua demonstração",
+          "sent": "Enviado"
         },
-        "next": "Continuar",
-        "back": "Voltar",
-        "send": "Enviar o meu pedido",
-        "phone": "O seu número de WhatsApp",
-        "dial": "Indicativo do país",
-        "dialOption": "{dial} ({country})",
-        "help": {
-          "name": "Falta o seu nome.",
-          "email": "Verifique o seu e-mail.",
-          "phone": "O seu número de WhatsApp, sem o 0 inicial.",
-          "consent": "Assinale a autorização para ser contactado.",
-          "activity": "Bastam três respostas: o que é, quando começar e, se quiser, a cidade."
+        "email": {
+          "title": "Peça a sua demonstração",
+          "lead": "O seu e-mail basta para começar. Depois, algumas perguntas facultativas para preparar a demonstração.",
+          "label": "E-mail profissional",
+          "consent": "Aceito ser contactado pela Sojori a respeito da minha demonstração.",
+          "submit": "Pedir a minha demonstração",
+          "saved": "O seu pedido fica registado desde esta etapa.",
+          "help": "Indique um e-mail válido e assinale a autorização para continuar."
+        },
+        "prepare": {
+          "title": "Para preparar a sua demonstração",
+          "lead": "Recebido. Quanto mais nos disser, mais a demonstração se parecerá com o seu dia a dia. Tudo é facultativo.",
+          "name": "Nome e apelido",
+          "country": "País",
+          "countryOther": "O seu país",
+          "phone": "Número de WhatsApp",
+          "phoneHint": "recomendado",
+          "dial": "Indicativo do país",
+          "dialOption": "{dial} ({country})",
+          "otherCountry": "Outro país",
+          "city": "A sua cidade",
+          "send": "Enviar",
+          "skip": "Saltar esta etapa",
+          "noCommitment": "Sem compromisso. As suas respostas servem apenas para preparar a demonstração."
         },
         "segment": {
           "title": "O senhor é",
@@ -3449,7 +3462,7 @@
           "proprietaire": "Proprietário",
           "hotel": "Hotel",
           "riad_maison_hotes": "Riad / casa de hóspedes",
-          "residence_aparthotel": "Residência / apartamento turístico",
+          "residence_aparthotel": "Residência / apartamentos turísticos",
           "agence_immobiliere": "Agência imobiliária"
         },
         "tool": {
@@ -3461,7 +3474,8 @@
           "pmsName": "Nome do seu PMS (facultativo)"
         },
         "priorities": {
-          "title": "As suas prioridades (no máximo duas)",
+          "title": "O que quer resolver primeiro",
+          "hint": "no máximo duas",
           "answer": "Responder aos hóspedes",
           "staff": "Coordenar a equipa",
           "checkin": "Check-in e formulário de polícia",
@@ -3470,22 +3484,18 @@
           "owners": "Acompanhar os proprietários"
         },
         "when": {
-          "title": "Quando começar?",
+          "title": "Quando quer começar?",
           "month": "Este mês",
           "quarter": "Nos próximos 3 meses",
           "looking": "Estou a informar-me"
         },
-        "city": "A sua cidade (facultativo)",
-        "recap": {
-          "title": "O SEU PEDIDO",
-          "segment": "O senhor é",
-          "size": "Dimensão",
-          "tool": "Ferramenta atual",
-          "priorities": "Prioridades",
-          "when": "Arranque",
-          "toSpecify": "a especificar",
-          "sizeValueBiens": "{n, plural, one {# propriedade} other {# propriedades}}",
-          "sizeValueChambres": "{n, plural, one {# quarto} other {# quartos}}"
+        "sent": {
+          "title": "Enviado.",
+          "s1": "Um consultor Sojori recebe o seu pedido e prepara a demonstração para o seu caso.",
+          "s2": "Receberá por e-mail, em {email}, uma ligação para escolher o seu horário na agenda do consultor.",
+          "s3": "Trinta minutos de demonstração, por videochamada, sobre o seu estabelecimento.",
+          "more": "Mais duas respostas e a demonstração será feita à sua medida.",
+          "complete": "Completar"
         }
       }
     },

@@ -3207,7 +3207,7 @@
     "offre": {
       "meta": {
         "title": "Su oferta Sojori · PMS y agentes WhatsApp a medida",
-        "description": "Componga su oferta Sojori: el PMS Sojori o el suyo, agentes, acceso WhatsApp, sitio web. Un asesor le responde con una propuesta con precios."
+        "description": "Componga su oferta Sojori: el PMS de Sojori o el suyo, agentes, acceso a WhatsApp, sitio web. Un asesor le responde con una propuesta con precios."
       },
       "hero": {
         "eyebrow": "SU OFERTA",
@@ -3425,23 +3425,36 @@
         ]
       },
       "form": {
-        "stepsAria": "Etapas de su solicitud",
+        "stepsAria": "Pasos de su solicitud",
         "step": {
-          "you": "Usted",
-          "activity": "Su actividad"
+          "email": "Su correo electrónico",
+          "prepare": "Prepare su demo",
+          "sent": "Enviado"
         },
-        "next": "Continuar",
-        "back": "Volver",
-        "send": "Enviar mi solicitud",
-        "phone": "Su número de WhatsApp",
-        "dial": "Prefijo del país",
-        "dialOption": "{dial} ({country})",
-        "help": {
-          "name": "Falta su nombre.",
-          "email": "Revise su correo electrónico.",
-          "phone": "Su número de WhatsApp, sin el 0 inicial.",
-          "consent": "Marque la casilla para que podamos volver a contactarle.",
-          "activity": "Bastan tres respuestas: qué es usted, cuándo empezar y la ciudad, si lo desea."
+        "email": {
+          "title": "Solicite su demo",
+          "lead": "Basta con su correo electrónico para empezar. Después, unas preguntas opcionales para preparar la demo.",
+          "label": "Correo electrónico profesional",
+          "consent": "Acepto que Sojori se ponga en contacto conmigo sobre mi demo.",
+          "submit": "Solicitar mi demo",
+          "saved": "Su solicitud queda registrada desde este paso.",
+          "help": "Indique un correo electrónico válido y marque la casilla de aceptación para continuar."
+        },
+        "prepare": {
+          "title": "Para preparar su demo",
+          "lead": "Recibido. Cuanto más nos cuente, más se parecerá la demo a su día a día. Todo es opcional.",
+          "name": "Nombre y apellidos",
+          "country": "País",
+          "countryOther": "Su país",
+          "phone": "Número de WhatsApp",
+          "phoneHint": "recomendado",
+          "dial": "Prefijo del país",
+          "dialOption": "{dial} ({country})",
+          "otherCountry": "Otro país",
+          "city": "Su ciudad",
+          "send": "Enviar",
+          "skip": "Omitir este paso",
+          "noCommitment": "Sin compromiso. Sus respuestas solo sirven para preparar la demo."
         },
         "segment": {
           "title": "Usted es",
@@ -3461,7 +3474,8 @@
           "pmsName": "Nombre de su PMS (opcional)"
         },
         "priorities": {
-          "title": "Sus prioridades (dos como máximo)",
+          "title": "Lo que quiere resolver primero",
+          "hint": "máximo dos",
           "answer": "Responder a los huéspedes",
           "staff": "Coordinar al equipo",
           "checkin": "Check-in y formulario de policía",
@@ -3470,22 +3484,18 @@
           "owners": "Dar seguimiento a los propietarios"
         },
         "when": {
-          "title": "¿Cuándo desea empezar?",
+          "title": "¿Cuándo quiere empezar?",
           "month": "Este mes",
           "quarter": "En los próximos 3 meses",
           "looking": "Me estoy informando"
         },
-        "city": "Su ciudad (opcional)",
-        "recap": {
-          "title": "SU SOLICITUD",
-          "segment": "Usted es",
-          "size": "Tamaño",
-          "tool": "Herramienta actual",
-          "priorities": "Prioridades",
-          "when": "Inicio",
-          "toSpecify": "por precisar",
-          "sizeValueBiens": "{n, plural, one {# propiedad} other {# propiedades}}",
-          "sizeValueChambres": "{n, plural, one {# habitación} other {# habitaciones}}"
+        "sent": {
+          "title": "Enviado.",
+          "s1": "Un asesor de Sojori recibe su solicitud y prepara la demo para su caso.",
+          "s2": "Recibirá por correo electrónico, en {email}, un enlace para elegir su horario en su agenda.",
+          "s3": "Treinta minutos de demo, por videollamada, sobre su establecimiento.",
+          "more": "Dos respuestas más y la demo se hará a su medida.",
+          "complete": "Completar"
         }
       }
     },

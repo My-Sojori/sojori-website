@@ -490,3 +490,15 @@ html[dir='rtl'] .sj2 [class*='mono'], html[dir='rtl'] .sj2-pill--mono, html[dir=
 .sj2-h2--band { font-size: clamp(28px, 3.4vw, 44px); line-height: 1.05; letter-spacing: -0.04em; }
 .sj2-band__actions { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
 @media (max-width: 640px) { .sj2-band__actions { width: 100%; flex-direction: column; align-items: stretch; } .sj2-band__actions .sj2-btn { width: 100%; } }
+/* formulaire en trois étapes */
+.sj2-pas--3 { grid-template-columns: repeat(3, 1fr); }
+.sj2-pas--3 li { font-size: 12.5px; }
+.sj2-form__titre { font-size: 19px; letter-spacing: -0.02em; }
+.sj2-hint { font-style: normal; font-weight: 400; color: var(--sj-text-4); }
+.sj2-lien { background: transparent; border: 0; color: var(--sj-text-2); text-decoration: underline; text-underline-offset: 3px; min-height: 44px; font-size: 15px; }
+.sj2-lien:hover { color: var(--sj-text); }
+.sj2-form select { appearance: auto; }
+.sj2-merci__etapes { display: flex; flex-direction: column; gap: 14px; width: 100%; }
+.sj2-merci__etapes li { display: flex; gap: 12px; align-items: flex-start; font-size: 15.5px; color: var(--sj-text-2); }
+.sj2-merci__n { flex: none; width: 28px; height: 28px; border-radius: 50%; border: 1.5px solid var(--sj-gold); color: var(--sj-gold); font-weight: 700; font-size: 14px; display: inline-flex; align-items: center; justify-content: center; }
+.sj2-merci__plus { border-top: 1px solid var(--sj-line-gold); padding-top: 14px; width: 100%; display: flex; flex-direction: column; gap: 10px; align-items: flex-start; }
