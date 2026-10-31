@@ -46,7 +46,7 @@ function PriceCalendar() {
             }}>
               {valid && <>
                 <div style={{ fontSize: 10, color: 'var(--text-3)', fontFamily: 'var(--font-mono)' }}>{d}</div>
-                <div style={{ fontSize: 11, fontWeight: 600, color: color || 'var(--text-1)', fontFamily: 'var(--font-mono)' }}>{adj}€</div>
+                <div style={{ fontSize: 11, fontWeight: 600, color: color || 'var(--text-1)', fontFamily: 'var(--font-mono)' }}>{adj} MAD</div>
               </>}
             </div>
           );
@@ -145,7 +145,7 @@ function RevenueChart() {
           return (
             <g key={i}>
               <circle cx={x} cy={h - pad - (p.with / max) * (h - pad * 2)} r="5" fill="#f4cf5e" stroke="#0a0a0a" strokeWidth="2" />
-              <text x={x} y={h - pad - (p.with / max) * (h - pad * 2) - 12} fontSize="11" fill="#f4cf5e" textAnchor="middle" fontFamily="Geist Mono" fontWeight="600">{p.with}k€</text>
+              <text x={x} y={h - pad - (p.with / max) * (h - pad * 2) - 12} fontSize="11" fill="#f4cf5e" textAnchor="middle" fontFamily="Geist Mono" fontWeight="600">{p.with}k MAD</text>
             </g>
           );
         })}
