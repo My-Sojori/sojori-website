@@ -2637,6 +2637,876 @@
         "sub": "You decide, your agents do the rest. The Sojori PMS, or your own: eleven agents and WhatsApp modules plug into it. Watch a typical day in a concierge company or a hotel.",
         "seeAgents": "See the agents at work",
         "demo": "Request a demo"
+      },
+      "scene": {
+        "label": "THE ROOM · {titre}",
+        "pause": "Pause",
+        "resume": "Resume",
+        "pauseAria": "Pause the animation",
+        "resumeAria": "Resume the animation",
+        "chooseLabel": "CHOOSE YOUR PROPERTY TYPE",
+        "chooseAria": "Choose a property type",
+        "regionAria": "The agents’ room: who talks to whom, live",
+        "cas": {
+          "conc": {
+            "type": "Concierge company",
+            "size": "50 properties",
+            "desc": "Apartments and villas. A field staff, property owners.",
+            "titre": "CONCIERGE COMPANY · 50 PROPERTIES",
+            "unites": "properties occupied",
+            "staff": "Field staff",
+            "tiers": "Owners · providers",
+            "prospects": "Prospects · agencies"
+          },
+          "h30": {
+            "type": "Hotel",
+            "size": "30 rooms",
+            "desc": "A front desk, a housekeeper, shuttles.",
+            "titre": "HOTEL · 30 ROOMS",
+            "unites": "rooms occupied",
+            "staff": "Front desk · housekeeper",
+            "tiers": "Shuttles · providers",
+            "prospects": "Prospects · companies"
+          },
+          "h100": {
+            "type": "Hotel",
+            "size": "100 rooms",
+            "desc": "Several teams, arrival peaks.",
+            "titre": "HOTEL · 100 ROOMS",
+            "unites": "rooms occupied",
+            "staff": "Front desk · housekeeper",
+            "tiers": "Shuttles · providers",
+            "prospects": "Prospects · companies"
+          }
+        },
+        "actor": {
+          "voyageurs": "Guests",
+          "service": "Guest Service Agent",
+          "operations": "Operations Agent",
+          "reservation": "Booking Agent",
+          "tarification": "Dynamic pricing",
+          "assistant": "Assistant Agent",
+          "studio": "Studio Agent",
+          "site": "Website Agent",
+          "commercial": "Sales Agent",
+          "prospection": "Prospecting Agent",
+          "hub": "Orchestration",
+          "vous": "You"
+        },
+        "badge": {
+          "whatsapp": "MESSAGE",
+          "ticket": "BETWEEN AGENTS",
+          "carte": "CARD TO APPROVE"
+        },
+        "etat": {
+          "open": "REQUEST OPEN",
+          "closed": "REQUEST CLOSED",
+          "applied": "SETTING APPLIED",
+          "executed": "ACTION DONE"
+        },
+        "waiting": "Waiting for you",
+        "validate": "Approve",
+        "dismiss": "Dismiss",
+        "legend": {
+          "messages": "Messages (WhatsApp, email)",
+          "agents": "Between agents",
+          "card": "Card to approve"
+        },
+        "soon": "Coming soon, under construction: Booking Agent Call · Guest Service Agent Call · calls to staff",
+        "journalTitle": "THE EXCHANGES, NEWEST FIRST",
+        "numbersTitle": "TODAY · {type} OF {size}",
+        "numbers": {
+          "arrivals": "arrivals",
+          "departures": "departures",
+          "guestRequests": "guest requests",
+          "exchanges": "exchanges between agents, live",
+          "cards": "cards you have approved"
+        },
+        "numbersNote": "Typical day: 75% occupancy, average stay of 2.5 nights. Properties, rooms and first names are fictional. The last two figures count what you have just seen.",
+        "fullDay": "The whole typical day, exchange by exchange",
+        "fullDayIntro": "The same day, as a list: who talks to whom, and what you approve.",
+        "step": {
+          "concPlan": "Plan for the day: {arrivees} arrivals, {departs} departures across {n} properties.",
+          "concAsk": "Hello, where is the key to Riad Amana?",
+          "concOpen": "Who is welcoming guests at Riad Amana at 15:00?",
+          "concStaff": "Salma, welcome at Riad Amana at 15:00.",
+          "concStaffReply": "I am on site. (voice message)",
+          "concClose": "Salma is welcoming at 15:00.",
+          "concGuest": "Salma will be waiting for you at 15:00 in front of the riad.",
+          "concOwnerAsk": "Block my villa from the 20th to the 25th.",
+          "concOwnerCard": "An owner requests a block, Villa Palmeraie, from the 20th to the 25th. Do you approve?",
+          "concOwnerReplyOk": "Villa Palmeraie blocked from the 20th to the 25th.",
+          "concOwnerReplyNon": "Request declined by your manager.",
+          "concBookAsk": "Available from the 12th to the 16th, for two?",
+          "concBookCard": "Direct booking ready: Studio Hivernage, 4 nights. Do you approve?",
+          "concBookReplyOk": "Your booking is confirmed.",
+          "concBookReplyNon": "Sorry, those dates are no longer available.",
+          "concSiteCard": "The Villa Palmeraie page is ready. Here is the preview. Do you approve?",
+          "concProsp1": "Hello, do you manage apartments in Casablanca? A 15-minute call?",
+          "concProsp2": "Yes, call me on Thursday.",
+          "concProsp3": "Casablanca agency qualified, meeting on Thursday.",
+          "concQuote": "Quote ready for the Casablanca agency. Do you approve?",
+          "asstAsk": "Who is free tomorrow morning?",
+          "asstOpen": "Who is free tomorrow morning?",
+          "asstClose": "Salma and Youssef.",
+          "asstAnswer": "Salma and Youssef are free. Shall I assign the cleaning to Salma?",
+          "studioAsk": "Add Salma to the cleaning team.",
+          "studioCard": "Card prepared: 1 change. Do you approve?",
+          "studioAppliedOk": "Salma has been added to the cleaning team.",
+          "studioAppliedNon": "Nothing has changed.",
+          "siteDoneOk": "Page published on your website.",
+          "siteDoneNon": "Page not published.",
+          "tarifCard": "The weekend of the 14th is in high demand. I suggest a higher price.",
+          "tarifDoneOk": "Price applied on your channels.",
+          "tarifDoneNon": "Nothing applied.",
+          "quoteDoneOk": "Quote sent.",
+          "quoteDoneNon": "Quote not sent.",
+          "hotPlan": "Plan for the day: {departs} departures, {recouches} stayovers, {femmes} housekeepers.",
+          "hotStaff": "Cleaning plan sent to {femmes} housekeepers. Room {r1} first.",
+          "hotAsk": "Room {r1}: can I arrive before 12:00?",
+          "hotOpen": "Room {r1} ready before 12:00?",
+          "hotStaffReply": "Room {r1} done. (voice message)",
+          "hotClose": "Room {r1} ready at 11:40.",
+          "hotGuest": "Your room is ready from 11:40.",
+          "hotWelcome": "{arrivees} welcome messages go out at once, one per arrival.",
+          "hotBookAsk": "I would like to book 3 nights, direct.",
+          "hotBookCard": "Direct booking ready: room {r2}, 3 nights. Do you approve?",
+          "hotBookReplyOk": "Your booking is confirmed.",
+          "hotBookReplyNon": "Sorry, this room is no longer available.",
+          "hotShuttle": "Airport shuttle at 14:20: confirmed? ({navettes} shuttles today)",
+          "hotShuttleOk": "Confirmed.",
+          "hotShuttleClose": "Shuttle confirmed for 14:20.",
+          "hotSiteCard": "The “Seminars” page is ready. Here is the preview. Do you approve?",
+          "hotProsp1": "Hello, do you organize seminars in Marrakech? We have rooms.",
+          "hotProsp2": "Yes, for 20 people in March.",
+          "hotProsp3": "Company qualified: seminar for 20 people in March.",
+          "hotQuote": "Quote ready for the March seminar. Do you approve?"
+        }
+      },
+      "agents": {
+        "eyebrow": "02 · THE AGENTS",
+        "title": "Every rental job has its own agent. And each one gives you time back.",
+        "lead": "They work on the same stay, the same property, the same team. You choose the ones you need, property by property.",
+        "chooseAria": "Choose an agent",
+        "kpi": {
+          "guest": "saved per week on guest messages",
+          "field": "saved per week on field coordination",
+          "fast": "to answer a guest, 24 hours a day",
+          "share": "of requests handled without you",
+          "valueHours": "≈ {h} h",
+          "valueFast": "< 1 min",
+          "valueShare": "≈ 70%",
+          "note": "Estimate for a {type} of {size}: 2 min per guest request, 3 min per coordination task, 70% of requests handled by the agent. To be confirmed against your own measurements. No result is guaranteed."
+        },
+        "labels": {
+          "promise": "THE PROMISE · ESTIMATE",
+          "example": "A TYPICAL EXCHANGE",
+          "talksTo": "TALKS TO",
+          "who": {
+            "traveler": "Guest",
+            "team": "Your team",
+            "staff": "Staff",
+            "admin": "Admin",
+            "you": "You",
+            "prospects": "Prospects",
+            "clients": "Clients"
+          }
+        },
+        "status": {
+          "available": "Available",
+          "included": "Included",
+          "soon": "Coming soon"
+        },
+        "defaultNote": "You decide what goes out on its own and what waits for your approval.",
+        "list": {
+          "booking": {
+            "name": "Booking Agent",
+            "resume": "Takes booking requests on WhatsApp, by text or voice message, all the way to the booking.",
+            "points": [
+              "The full booking journey, in a single offer.",
+              "Understands written messages and voice messages.",
+              "Availability, prices, booking creation, payment when required."
+            ],
+            "talks": [
+              "traveler"
+            ],
+            "q": "Available from the 12th to the 16th, for two?",
+            "r": "Yes. Here is the price for 4 nights and the link to confirm.",
+            "promise": "No request goes unanswered: every message becomes a quote, day or night.",
+            "kpiValue": "≈ 70%",
+            "kpiText": "of booking requests handled without you"
+          },
+          "service": {
+            "name": "Guest Service Agent",
+            "resume": "Answers guest questions on the connected channels, with the context of their stay.",
+            "points": [
+              "Answers on every connected channel.",
+              "Knows the stay: dates, property, instructions.",
+              "Hands over to a human when needed."
+            ],
+            "talks": [
+              "traveler",
+              "team"
+            ],
+            "q": "What is the wifi password?",
+            "r": "It is in your arrival guide. I am sending it to you here.",
+            "promise": "You only answer the questions that call for your judgment.",
+            "kpiValue": "≈ {h} h",
+            "kpiText": "saved per week on guest messages"
+          },
+          "operations": {
+            "name": "Operations Agent",
+            "resume": "Understands written or voice instructions from staff and admins, then acts within their permissions.",
+            "points": [
+              "Understands written and voice messages from staff and admins.",
+              "Creates, assigns and tracks tasks, according to permissions.",
+              "Follows each task through to completion: cleaning, welcome, departure."
+            ],
+            "talks": [
+              "staff",
+              "admin"
+            ],
+            "q": "“Cleaning finished, room 2.”",
+            "r": "Closed. Next task: welcome at 15:00.",
+            "promise": "A voice message is enough: the task is created, assigned and followed through to the end.",
+            "kpiValue": "≈ {h} h",
+            "kpiText": "saved per week on field coordination"
+          },
+          "pricing": {
+            "name": "Dynamic pricing",
+            "resume": "Recommends prices and applies them only when you allow it. No guaranteed revenue.",
+            "points": [
+              "Recommends prices based on your rules and demand.",
+              "Applies prices on your channels, with your approval.",
+              "Only for properties managed in the Sojori PMS."
+            ],
+            "talks": [
+              "you"
+            ],
+            "q": "The weekend of the 14th is in high demand. I suggest a higher price.",
+            "r": "Approve. → Applied on your channels.",
+            "promise": "You stop watching the calendar: the agent does it, you approve.",
+            "kpiValue": "≈ 2 h",
+            "kpiText": "less per week spent watching prices",
+            "note": "You approve every change, or you let the agent act on its own within your limits."
+          },
+          "assistant": {
+            "name": "Assistant Agent",
+            "resume": "Your entry point. You ask a question about your portfolio, it reads, answers, and hands over to the right agent.",
+            "points": [
+              "Answers about your properties, your teams and your stays.",
+              "Reads what it needs before answering, never guessing.",
+              "Hands the request to the agent for the job: Studio, Operations, Booking."
+            ],
+            "talks": [
+              "you",
+              "admin"
+            ],
+            "q": "Who is free tomorrow morning?",
+            "r": "Salma and Youssef. Shall I assign the cleaning to Salma?",
+            "promise": "You ask the question, it finds the answer across your whole portfolio.",
+            "kpiValue": "< 10 s",
+            "kpiText": "to get an answer about your portfolio",
+            "note": "It reads your data; to write, it goes through a card that you approve."
+          },
+          "studio": {
+            "name": "Studio Agent",
+            "resume": "You set up Sojori by chatting: your properties, your team, your rules. Every change arrives as a card.",
+            "points": [
+              "You configure by conversation, with no forms.",
+              "It only sets up the Sojori features you have subscribed to.",
+              "One user included in every account."
+            ],
+            "talks": [
+              "you",
+              "admin"
+            ],
+            "q": "Add Salma to the Riad Amana cleaning team.",
+            "r": "Card prepared: 1 change. Do you approve?",
+            "promise": "You set up in one sentence what used to mean going through your screens.",
+            "kpiValue": "≈ 5 min",
+            "kpiText": "for a complete setup",
+            "note": "Nothing is applied without your click on the card."
+          },
+          "site": {
+            "name": "Website Agent",
+            "resume": "A website for your properties, built and kept up to date by the agent from your catalog. A simple template is also available.",
+            "points": [
+              "Built by the agent, from your catalog.",
+              "Maintained by the agent, within a scope defined with you.",
+              "Custom turnkey website, hosted separately."
+            ],
+            "talks": [
+              "traveler",
+              "you"
+            ],
+            "q": "Add my new villa to the website.",
+            "r": "Done. Here is the preview to approve.",
+            "promise": "Your website follows your catalog without you touching it.",
+            "kpiValue": "≈ 1 day",
+            "kpiText": "to put a new page online",
+            "note": "You approve the preview before anything goes online."
+          },
+          "commercial": {
+            "name": "Sales Agent",
+            "resume": "Follows each deal from the first reply to the signature: quotes, follow-ups, contract. A built-in CRM.",
+            "points": [
+              "A CRM: every contact, every deal, every deadline.",
+              "Prepares quotes and contracts, which you approve.",
+              "Follows up at the right time, from your salesperson’s email inbox."
+            ],
+            "talks": [
+              "you",
+              "prospects",
+              "clients"
+            ],
+            "q": "Where does the Casablanca agency deal stand?",
+            "r": "Quote sent. Waiting for signature.",
+            "promise": "No deal is lost for lack of follow-up.",
+            "kpiValue": "Every",
+            "kpiText": "deal followed up on time"
+          },
+          "prospecting": {
+            "name": "Prospecting Agent",
+            "resume": "Finds and qualifies new clients, then hands the deal over to the Sales Agent.",
+            "points": [
+              "Searches by your criteria: country, client type, size.",
+              "Prepares the first messages, you decide what goes out.",
+              "Hands the qualified deal to the Sales Agent, with the full context."
+            ],
+            "talks": [
+              "you",
+              "prospects"
+            ],
+            "q": "12 agencies match your criteria.",
+            "r": "Keep the first 5. Prepare a message.",
+            "promise": "Your pipeline fills up while you run your stays.",
+            "kpiValue": "≈ 20",
+            "kpiText": "qualified prospects per week"
+          },
+          "marketingFinance": {
+            "name": "Marketing Agent · Finance Agent",
+            "resume": "Two specialized agents, scoped with you according to your needs: campaigns on one side, accounts on the other.",
+            "points": [
+              "Marketing Agent: prepares your campaigns, you approve.",
+              "Finance Agent: prepares your account follow-ups, you approve.",
+              "Each assignment is scoped with you, with no double billing."
+            ],
+            "talks": [
+              "you"
+            ],
+            "q": "Prepare the December campaign.",
+            "r": "Draft ready. Would you like to approve it?",
+            "promise": "What prepares itself, you only have to approve.",
+            "kpiValue": "≈ 8 h",
+            "kpiText": "saved per month on marketing and accounts"
+          },
+          "calls": {
+            "name": "Calling Agents",
+            "resume": "The same agent, but by voice, live on WhatsApp. Not yet available to buy, no date promised.",
+            "points": [
+              "Booking Agent Call: takes a booking by voice.",
+              "Guest Service Agent Call: answers a guest who calls.",
+              "Calls to staff: the Operations Agent calls your team."
+            ],
+            "talks": [
+              "traveler",
+              "staff"
+            ],
+            "q": "(incoming call) Hello, I would like to book.",
+            "r": "Hello, with pleasure. For which dates?",
+            "promise": "The phone no longer rings into the void.",
+            "kpiValue": "Coming soon",
+            "kpiText": "under construction, no date promised",
+            "note": "A call is a live voice in real time, not to be confused with a voice message, which is already supported."
+          }
+        }
+      },
+      "modules": {
+        "eyebrow": "03 · THE MODULES",
+        "title": "The WhatsApp modules: a way in for every person.",
+        "lead": "Nobody installs an app. The guest, the staff, the admin and the owner write or send a voice message, just as they already do. Behind the scenes, the agents pass the request along.",
+        "chooseAria": "Choose a module",
+        "wiredTo": "CONNECTED TO",
+        "chatAria": "Example conversation",
+        "brand": "Sojori",
+        "note": "Built for Morocco: police registration form prepared, stay contract signed online, Moroccan payment, in French, in Arabic and in the guest’s language.",
+        "for": {
+          "traveler": "For the guest",
+          "staff": "For your staff",
+          "admin": "For you and your admins",
+          "owner": "For your owners"
+        },
+        "list": {
+          "checkin": {
+            "name": "WhatsApp Check-in",
+            "status": "Check-in · online",
+            "resume": "The guest checks in on WhatsApp before arriving, in their own language, with no app and no paper form.",
+            "points": [
+              "Each guest of the stay checks in, one by one.",
+              "Photo of the ID document, read automatically.",
+              "Police registration form prepared for each guest.",
+              "Stay contract to sign online.",
+              "Arrival time chosen by the guest.",
+              "Automatic reminder if check-in is not done.",
+              "Access codes sent only once check-in is done, if you choose so."
+            ],
+            "agents": [
+              "Guest Service Agent",
+              "Operations Agent"
+            ],
+            "chat": [
+              {
+                "from": "sojori",
+                "text": "Hello Sarah, welcome to Riad Amana. Please check in for your stay: guests, ID documents, contract, arrival time."
+              },
+              {
+                "from": "guest",
+                "text": "[passport photo]"
+              },
+              {
+                "from": "sojori",
+                "text": "Thank you, it has been read. Your contract is ready: sign here."
+              },
+              {
+                "from": "guest",
+                "text": "Signed. I will arrive around 16:00."
+              },
+              {
+                "from": "sojori",
+                "text": "Perfect. Your access codes will arrive on the day of your arrival."
+              }
+            ]
+          },
+          "stay": {
+            "name": "WhatsApp Stay",
+            "status": "Your stay · online",
+            "resume": "Everything the guest needs during their stay, in a WhatsApp menu, at any hour.",
+            "points": [
+              "Welcome message and arrival guide.",
+              "Access and codes, address and directions.",
+              "Property and wifi.",
+              "House rules and practical information.",
+              "Deposit, according to your rules.",
+              "Cleaning request during the stay.",
+              "Departure: time, instructions, departure confirmation.",
+              "Review request after the stay."
+            ],
+            "agents": [
+              "Guest Service Agent"
+            ],
+            "chat": [
+              {
+                "from": "sojori",
+                "text": "How can I help you?\n1 · Access and codes\n2 · Property and wifi\n3 · House rules\n4 · Cleaning request\n5 · Talk to someone"
+              },
+              {
+                "from": "guest",
+                "text": "2"
+              },
+              {
+                "from": "sojori",
+                "text": "The wifi is called “Riad Amana”. The password is in your guide, I am sending it to you here."
+              },
+              {
+                "from": "guest",
+                "text": "Thank you!"
+              }
+            ]
+          },
+          "concierge": {
+            "name": "WhatsApp Concierge",
+            "status": "Concierge · online",
+            "resume": "Your services for sale on WhatsApp: the guest orders, the provider confirms, the agent follows through to the end.",
+            "points": [
+              "Your catalog of services, on your terms.",
+              "Transfers, hammam, meals, excursions: whatever you offer.",
+              "Order in a few messages.",
+              "Confirmation by the provider.",
+              "Follow-up until the service is delivered.",
+              "No subscription imposed on providers."
+            ],
+            "agents": [
+              "Guest Service Agent",
+              "Operations Agent"
+            ],
+            "chat": [
+              {
+                "from": "guest",
+                "text": "A hammam tomorrow at 18:00, for two?"
+              },
+              {
+                "from": "sojori",
+                "text": "With pleasure. I am asking the provider."
+              },
+              {
+                "from": "sojori",
+                "text": "It is confirmed for tomorrow at 18:00."
+              },
+              {
+                "from": "guest",
+                "text": "Perfect, thank you."
+              }
+            ]
+          },
+          "staff": {
+            "name": "WhatsApp Staff",
+            "status": "Operations Agent · online",
+            "resume": "Your team receives its tasks and replies on WhatsApp, in writing or by voice message. No app, no training.",
+            "points": [
+              "Today’s tasks and schedule, in real time.",
+              "Start or finish a task with one message or voice message.",
+              "Before and after photos of the cleaning.",
+              "Location sharing on arrival on site.",
+              "Directions to each property.",
+              "Urgent alerts: guest locked out, problem reported."
+            ],
+            "agents": [
+              "Operations Agent"
+            ],
+            "chat": [
+              {
+                "from": "sojori",
+                "text": "Hello Salma, 3 tasks today.\n1 · Clean room 204 before 15:00\n2 · Stayover cleaning room 118\n3 · Welcome at Riad Amana at 16:00"
+              },
+              {
+                "from": "guest",
+                "text": "(voice message 0:06) I am starting 204."
+              },
+              {
+                "from": "guest",
+                "text": "[2 photos]"
+              },
+              {
+                "from": "sojori",
+                "text": "Cleaning of 204 completed, thank you. Next task: room 118."
+              }
+            ]
+          },
+          "admin": {
+            "name": "WhatsApp Admin",
+            "status": "Assistant Agent · online",
+            "resume": "You run your business from your phone, without opening the dashboard.",
+            "points": [
+              "Tasks to assign.",
+              "Arrival and departure declarations.",
+              "Today’s bookings.",
+              "Guest messages waiting for you to take over.",
+              "Reviews to reply to.",
+              "Booking requests.",
+              "Cards to approve sent by your agents."
+            ],
+            "agents": [
+              "Assistant Agent",
+              "Operations Agent"
+            ],
+            "chat": [
+              {
+                "from": "guest",
+                "text": "What is waiting for me?"
+              },
+              {
+                "from": "sojori",
+                "text": "3 tasks to assign, 2 arrival declarations, 7 messages, 2 reviews to reply to."
+              },
+              {
+                "from": "guest",
+                "text": "The messages."
+              },
+              {
+                "from": "sojori",
+                "text": "Most urgent: the air conditioning in the junior suite. Shall I put you in touch with the guest?"
+              }
+            ]
+          },
+          "owner": {
+            "name": "WhatsApp Owner",
+            "status": "Your manager · online",
+            "resume": "Your owners follow their properties on WhatsApp, without calling you.",
+            "points": [
+              "Their properties and the reports available.",
+              "Occupancy and revenue.",
+              "Blocking the property, according to the agreement made with you.",
+              "No app to install."
+            ],
+            "agents": [
+              "Assistant Agent"
+            ],
+            "chat": [
+              {
+                "from": "guest",
+                "text": "How did the month go?"
+              },
+              {
+                "from": "sojori",
+                "text": "Your monthly report is ready: occupancy and revenue for your properties."
+              },
+              {
+                "from": "guest",
+                "text": "Block my villa from the 20th to the 25th."
+              },
+              {
+                "from": "sojori",
+                "text": "Request passed to your manager for approval."
+              }
+            ]
+          }
+        }
+      },
+      "three": {
+        "aria": "What you choose",
+        "socle": {
+          "eyebrow": "1 · THE FOUNDATION",
+          "title": "The Sojori PMS, or yours.",
+          "sub": "The PMS, the channel manager and dynamic pricing →"
+        },
+        "agents": {
+          "eyebrow": "2 · THE AGENTS",
+          "title": "Eleven agents, one per job.",
+          "sub": "See the agents →"
+        },
+        "modules": {
+          "eyebrow": "3 · THE MODULES",
+          "title": "The WhatsApp modules that plug into them.",
+          "sub": "See the modules →"
+        }
+      },
+      "socle": {
+        "eyebrow": "01 · THE FOUNDATION",
+        "title": "The Sojori PMS, or yours.",
+        "lead": "The agents and the modules work on both. You do not have to change everything to get started.",
+        "pmsTitle": "THE SOJORI PMS INCLUDES",
+        "pms": [
+          {
+            "name": "Unified calendar",
+            "desc": "All your properties, a single calendar. Month, week and day views."
+          },
+          {
+            "name": "Channel manager",
+            "desc": "Real-time channel sync, two-way iCal, overbooking protection."
+          },
+          {
+            "name": "Inbox",
+            "desc": "Messages from compatible OTAs, in one place."
+          },
+          {
+            "name": "Automated payments",
+            "desc": "Payment collected at booking, refund in one click."
+          },
+          {
+            "name": "Invoices and contracts",
+            "desc": "Generated automatically, signed online, archived."
+          },
+          {
+            "name": "Financial dashboard",
+            "desc": "Revenue, expenses, margin per property. Monthly accounting export."
+          },
+          {
+            "name": "Tourist tax",
+            "desc": "Calculated and collected automatically."
+          },
+          {
+            "name": "Owner Portal",
+            "desc": "Your owners follow revenue and occupancy, with secure delegated access."
+          },
+          {
+            "name": "Field teams",
+            "desc": "Assignment based on availability, notifications, before and after cleaning photos, real-time tracking."
+          },
+          {
+            "name": "Dashboard",
+            "desc": "Today’s arrivals, real-time indicators, activity feed."
+          }
+        ],
+        "ownTitle": "OR WITH YOUR PMS",
+        "own": [
+          "You keep your PMS.",
+          "The same agents, the same WhatsApp modules.",
+          "Without dynamic pricing, which stays reserved for the Sojori PMS.",
+          "The connector is qualified with you before starting."
+        ],
+        "pricing": {
+          "eyebrow": "DYNAMIC PRICING · WITH THE SOJORI PMS",
+          "title": "The right price, every night. You stay in control.",
+          "lead": "The agent reads demand and your rules, suggests prices and pushes them to your channels when you allow it. No guaranteed revenue: you remain the decision-maker.",
+          "points": [
+            "Rules by month, by day, by event and by occupancy.",
+            "Prices pushed to your channels.",
+            "Long-stay and last-minute discounts, under your control.",
+            "Calendar and coefficients visible, no black box.",
+            "Every change approved by you, or applied on its own within your limits.",
+            "Support during setup."
+          ],
+          "weekAria": "Example: the week as seen by the agent",
+          "weekTitle": "THE WEEK AS SEEN BY THE AGENT",
+          "days": [
+            {
+              "d": "Mon",
+              "r": "quiet"
+            },
+            {
+              "d": "Tue",
+              "r": "normal"
+            },
+            {
+              "d": "Wed",
+              "r": "normal"
+            },
+            {
+              "d": "Thu",
+              "r": "last minute"
+            },
+            {
+              "d": "Fri",
+              "r": "weekend"
+            },
+            {
+              "d": "Sat",
+              "r": "event"
+            },
+            {
+              "d": "Sun",
+              "r": "long stay"
+            }
+          ],
+          "arrows": {
+            "up": "higher price",
+            "down": "lower price",
+            "same": "price unchanged"
+          },
+          "cardTitle": "Card to approve · Dynamic pricing",
+          "cardText": "The weekend of the 14th is in higher demand than usual. I suggest a higher price for Friday and Saturday."
+        }
+      },
+      "stay": {
+        "eyebrow": "04 · A STAY",
+        "title": "From booking to departure, seven steps. You only see the one that is stuck.",
+        "lead": "Each step has its agent and its deadline. As long as everything moves forward, nothing is asked of you. When a step runs late, a line appears in your dashboard, with its cause.",
+        "pick": "CHOOSE A STEP",
+        "stepsAria": "The seven steps of a stay",
+        "whoTitle": "WHO HANDLES IT",
+        "seeTitle": "WHAT YOU SEE",
+        "blockOn": "And if it gets stuck?",
+        "blockOff": "Back to the normal case",
+        "overdue": "Overdue · for you",
+        "why": "Why: {cause}",
+        "nothing": "Nothing to do for this step.",
+        "nothingText": "It shows as in order, upcoming or handled. Your dashboard only shows you what needs your decision.",
+        "state": {
+          "ok": "in order",
+          "now": "in progress",
+          "late": "overdue",
+          "next": "upcoming"
+        },
+        "list": [
+          {
+            "name": "Check-in",
+            "agent": "WhatsApp Check-in",
+            "what": "The guest sends their information on WhatsApp. Sojori prepares the police registration form and the contract to sign.",
+            "msg": "Hello Sarah, we are missing an ID document for your stay.",
+            "blockTitle": "ID documents are missing",
+            "blockCause": "the guest did not reply to the reminder",
+            "blockAction": "Call the guest"
+          },
+          {
+            "name": "Arrival time",
+            "agent": "Guest Service Agent",
+            "what": "The agent asks the guest for their arrival time and passes it on to the team.",
+            "msg": "What time do you expect to arrive tomorrow?",
+            "blockTitle": "The arrival time has not been chosen",
+            "blockCause": "the guest did not reply",
+            "blockAction": "Contact the guest"
+          },
+          {
+            "name": "Messages",
+            "agent": "WhatsApp Stay",
+            "what": "Welcome message, guide, instructions, schedules, access and deposit, according to your rules.",
+            "msg": "Welcome to Riad Amana. Here is your arrival guide.",
+            "blockTitle": "The welcome message has not gone out",
+            "blockCause": "the booking has no WhatsApp number",
+            "blockAction": "Add the WhatsApp number"
+          },
+          {
+            "name": "Preparation",
+            "agent": "Operations Agent",
+            "what": "Cleaning and equipment: the agent assigns the team member, tracks the task and closes it.",
+            "msg": "Salma, clean room 2 before 15:00. Can you confirm?",
+            "blockTitle": "The cleaning has no team member",
+            "blockCause": "nobody is available in this time slot",
+            "blockAction": "Complete the team"
+          },
+          {
+            "name": "Welcome",
+            "agent": "Operations Agent",
+            "what": "A team member welcomes the guest. The agent confirms they are there.",
+            "msg": "Youssef, welcome at 15:00 at Riad Amana.",
+            "blockTitle": "Nobody to welcome the guest",
+            "blockCause": "no team member is assigned",
+            "blockAction": "Assign a team member"
+          },
+          {
+            "name": "During the stay",
+            "agent": "Guest Service · Concierge",
+            "what": "Questions, service requests, providers: the agent answers and follows through until confirmation.",
+            "msg": "I am booking the hammam for 18:00. I will confirm as soon as it is approved.",
+            "blockTitle": "A request is waiting for an answer",
+            "blockCause": "the provider has not confirmed",
+            "blockAction": "Remind the provider"
+          },
+          {
+            "name": "Departure",
+            "agent": "Operations Agent",
+            "what": "Departure signal, departure cleaning, deposit: the agent follows through until the stay is closed.",
+            "msg": "Thank you for your stay, Sarah. Could you confirm your departure?",
+            "blockTitle": "No departure signal",
+            "blockCause": "the guest has not confirmed their departure",
+            "blockAction": "Contact the guest"
+          }
+        ]
+      },
+      "control": {
+        "eyebrow": "05 · YOU STAY IN CONTROL",
+        "title": "The agent suggests. You approve.",
+        "cards": [
+          {
+            "title": "You set the autonomy",
+            "text": "For each agent, you choose: it acts on its own, or it prepares a card and waits for your click."
+          },
+          {
+            "title": "Every action is logged",
+            "text": "Permissions checked, duplicates avoided, full log. “The Room” shows who did what, when, and for which request."
+          },
+          {
+            "title": "A human stays in the loop",
+            "text": "When the agent is unsure, it hands over to you or your team, with the context already gathered."
+          }
+        ]
+      },
+      "offer": {
+        "eyebrow": "06 · YOUR OFFER",
+        "title": "An offer sized to your portfolio.",
+        "lead": "You activate what you need, property by property: the agents, the WhatsApp options, the website. An advisor replies with a tailored proposal.",
+        "steps": [
+          {
+            "name": "1 · Your foundation",
+            "desc": "The Sojori PMS, or yours. The agents work on both."
+          },
+          {
+            "name": "2 · Your portfolio",
+            "desc": "The number of properties or rooms. Each option is activated property by property."
+          },
+          {
+            "name": "3 · Your agents",
+            "desc": "The ones you need, plus your WhatsApp access and your website."
+          }
+        ],
+        "studioNote": "One Studio Agent user is included in every account.",
+        "cta": "Build my offer"
+      },
+      "demo": {
+        "title": "Put your agents to work.",
+        "lead": "A demonstration on your own properties. You leave with the offer that fits your portfolio.",
+        "cta": "Request a demo"
       }
     }
   }

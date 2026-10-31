@@ -1,5 +1,8 @@
 import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/routing';
+import { CasChooser } from './CasChooser';
+import { SalleScene } from './SalleScene';
+import { JournalStatique } from './JournalStatique';
 
 /** Le H1 porte la ligne de mots-clés et le slogan : un seul H1, lisible sans JavaScript. */
 export function Hero() {
@@ -19,6 +22,11 @@ export function Hero() {
               <Link href={{ pathname: '/offre', hash: 'contact' }} className="sj2-btn sj2-btn--ghost">{t('demo')}</Link>
             </div>
           </div>
+          <CasChooser />
+        </div>
+        <div id="salle" className="sj2-salle">
+          <SalleScene />
+          <JournalStatique />
         </div>
       </div>
     </section>
