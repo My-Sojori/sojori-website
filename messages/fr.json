@@ -3803,6 +3803,9 @@
         "title": "Mettez vos agents au travail.",
         "cta": "Composer mon offre"
       }
+    },
+    "testMode": {
+      "text": "Mode test : les envois restent dans cet écran, rien n'arrive au CRM."
     }
   },
   "faqPages": {

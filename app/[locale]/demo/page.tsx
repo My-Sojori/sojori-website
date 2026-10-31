@@ -13,6 +13,8 @@ import { dialDeIso, formaterNumero, nomCrm } from '@/lib/refonte/pays';
 import { ChampPays } from '@/components/refonte/ChampPays';
 import { normalizeDemoBackendResponse, demoResponseErrorMessage } from '@/lib/demoApiResponse';
 import { trackDemoLead, trackDemoScheduled, trackDemoQualified } from '@/lib/analytics';
+import { enTetesDemande } from '@/lib/demoTest';
+import { BandeauTest } from '@/components/refonte/BandeauTest';
 
 /** API démo via routes Next.js → srv-crm (même origine que le site). */
 const DEMO_API = '/api/v1/demo';
@@ -287,7 +289,7 @@ function DemoPageContent() {
     try {
       const response = await fetch(`${DEMO_API}/request`, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: enTetesDemande({ 'Content-Type': 'application/json' }),
         body: JSON.stringify({
           email: formData.email.trim(),
           ...champsIdentite(identite(), formData.dialIso),
@@ -321,7 +323,8 @@ function DemoPageContent() {
       setDemoRequestId(String(newId));
       setQualificationToken(String(data.data?.qualificationToken ?? ''));
       setCalendarSkippedAlreadyBooked(false);
-      trackDemoLead(source);
+      // Mode test (aperçus) : aucune conversion publicitaire.
+      if (!(data.data as { test?: boolean } | undefined)?.test) trackDemoLead(source);
       setStep(STEP_TYPE);
     } catch (err: unknown) {
       const msg = err instanceof Error ? err.message : t('errors.submitStep1');
@@ -344,7 +347,7 @@ function DemoPageContent() {
     try {
       const res = await fetch(`${DEMO_API}/request/${demoRequestId}/qualify`, {
         method: 'PATCH',
-        headers: { 'Content-Type': 'application/json' },
+        headers: enTetesDemande({ 'Content-Type': 'application/json' }),
         body: JSON.stringify({
           qualificationToken,
           ...champsIdentite(identite(), formData.dialIso),
@@ -380,7 +383,7 @@ function DemoPageContent() {
     try {
       const bookRes = await fetch(`${DEMO_API}/booking`, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: enTetesDemande({ 'Content-Type': 'application/json' }),
         body: JSON.stringify({
           demoRequestId,
           slotId: selectedSlot.id,
@@ -420,7 +423,7 @@ function DemoPageContent() {
         `${DEMO_API}/request/follow-up-by-token?t=${encodeURIComponent(appointmentToken)}`,
         {
           method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
+          headers: enTetesDemande({ 'Content-Type': 'application/json' }),
           body: JSON.stringify(payload),
         },
       );
@@ -444,7 +447,7 @@ function DemoPageContent() {
     try {
       const qualRes = await fetch(`${DEMO_API}/request/${demoRequestId}/qualify`, {
         method: 'PATCH',
-        headers: { 'Content-Type': 'application/json' },
+        headers: enTetesDemande({ 'Content-Type': 'application/json' }),
         body: JSON.stringify({ ...payload, qualificationToken }),
       });
       let qualRaw: unknown;
@@ -458,7 +461,7 @@ function DemoPageContent() {
         throw new Error(demoResponseErrorMessage(qualData) || t('errors.qualify'));
       }
 
-      trackDemoQualified(source);
+      if (!(qualData as { data?: { test?: boolean } }).data?.test) trackDemoQualified(source);
       setStep(4);
     } catch (err: unknown) {
       setError(err instanceof Error ? err.message : 'Une erreur est survenue. Veuillez réessayer.');
@@ -508,6 +511,7 @@ function DemoPageContent() {
         <section className="demo-page-section" style={{ padding: '80px 32px 100px', minHeight: '80vh' }}>
           <div style={{ maxWidth: 800, margin: '0 auto' }}>
 
+            <BandeauTest />
             {/* STEP 1: Simple Form (Email + Phone) */}
             {step === 1 && (
               <>
@@ -575,7 +579,7 @@ function DemoPageContent() {
                         />
                       </div>
                       <div style={{ display: 'flex', flexWrap: 'wrap', gap: 14, marginBottom: 18, alignItems: 'flex-start' }}>
-                        <div style={{ flex: '1 1 100%', minWidth: 200 }}>
+                        <div className="sj2-scope" style={{ flex: '1 1 100%', minWidth: 200 }}>
                           <label style={labelStyle as React.CSSProperties} htmlFor="demo-pays">{t('step1.paysLabel')}</label>
                           <ChampPays id="demo-pays" valeur={formData.paysIso} locale={locale} affichage="pays" libelle={t('step1.paysLabel')} textes={textesPays}
                             onChoisir={iso => setFormData(prev => ({ ...prev, paysIso: iso, dialIso: iso, phone: formaterNumero(prev.phone, iso) }))} />
@@ -583,7 +587,7 @@ function DemoPageContent() {
                       </div>
                       <div style={{ marginBottom: 18 }}>
                         <label style={labelStyle as React.CSSProperties} htmlFor="demo-tel">{t('step1.phoneLabel')}</label>
-                        <div className="sj2-tel">
+                        <div className="sj2-tel sj2-scope">
                           <ChampPays id="demo-dial" valeur={formData.dialIso} locale={locale} affichage="indicatif" libelle={t('step1.dialLabel')} textes={textesPays}
                             onChoisir={iso => setFormData(prev => ({ ...prev, dialIso: iso, phone: formaterNumero(prev.phone, iso) }))} />
                           <input
@@ -1129,7 +1133,7 @@ function DemoPageContent() {
                             try {
                               const res = await fetch(`${DEMO_API}/appointment/cancel-by-demo`, {
                                 method: 'POST',
-                                headers: { 'Content-Type': 'application/json' },
+                                headers: enTetesDemande({ 'Content-Type': 'application/json' }),
                                 body: JSON.stringify({ appointmentId: selectedSlot.id, demoRequestId, isReschedule: true }),
                               });
                               const raw: unknown = await res.json();
@@ -1158,7 +1162,7 @@ function DemoPageContent() {
                             try {
                               const res = await fetch(`${DEMO_API}/appointment/cancel-by-demo`, {
                                 method: 'POST',
-                                headers: { 'Content-Type': 'application/json' },
+                                headers: enTetesDemande({ 'Content-Type': 'application/json' }),
                                 body: JSON.stringify({ appointmentId: selectedSlot.id, demoRequestId }),
                               });
                               const raw: unknown = await res.json();

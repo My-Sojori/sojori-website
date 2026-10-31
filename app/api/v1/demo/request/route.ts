@@ -5,6 +5,7 @@ import {
   getDemoProxyFailureMessage,
 } from '@/lib/getDemoServiceBaseUrl';
 import { demoProxyFetch, devFetchDetailForDemo } from '@/lib/demoProxyFetch';
+import { modeTest } from '@/lib/demoTestServeur';
 
 /**
  * POST /api/v1/demo/request
@@ -16,6 +17,11 @@ export async function POST(request: NextRequest) {
     body = await request.json();
   } catch {
     return NextResponse.json({ success: false, error: 'Corps JSON invalide' }, { status: 400 });
+  }
+
+  // Mode test (aperçus et local, jamais en production) : on répond sans appeler le CRM.
+  if (modeTest(request)) {
+    return NextResponse.json({ success: true, message: 'test', data: { id: 'f'.repeat(24), qualificationToken: 'test', test: true } }, { status: 201 });
   }
 
   try {

@@ -3803,6 +3803,9 @@
         "title": "Put your agents to work.",
         "cta": "Build my offer"
       }
+    },
+    "testMode": {
+      "text": "Test mode: submissions stay on this screen and nothing reaches the CRM."
     }
   },
   "faqPages": {

@@ -825,3 +825,10 @@ html[dir='rtl'] .sj2-cal__exemple { letter-spacing: 0; font-family: var(--sj-san
   .sj2-cas__desc { display: none; }
   .sj2-cas__size { font-size: 19px; }
 }
+.sj2-bandeau-test { margin: 0 0 14px; padding: 10px 14px; border: 1px dashed var(--sj-line-gold-2); border-radius: 12px; background: #1b170b; color: var(--sj-gold-soft); font-size: 14px; }
+
+/* Les pages qui ne sont pas sous `.sj2` (la demande de démo) : les variables dont ont besoin le choix du pays et le bandeau de test */
+.sj2-scope { --sj-bg: #0c0b09; --sj-line: #26231c; --sj-line-2: #38342a; --sj-line-gold-2: #6a5420; --sj-gold: #e6b022; --sj-gold-soft: #f4cf5e; --sj-text: #f4f1ea; --sj-text-3: #bdb6a8; --sj-terra-text: #f3a27f; }
+.sj2-tel { direction: ltr; }
+.sj2-combo__texte { unicode-bidi: plaintext; }
+.sj2-combo--indicatif .sj2-combo__texte { direction: ltr; unicode-bidi: isolate; text-align: start; }

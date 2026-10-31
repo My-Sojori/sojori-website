@@ -3803,6 +3803,9 @@
         "title": "Ponga a sus agentes a trabajar.",
         "cta": "Armar mi oferta"
       }
+    },
+    "testMode": {
+      "text": "Modo de prueba: los envíos se quedan en esta pantalla y nada llega al CRM."
     }
   },
   "faqPages": {

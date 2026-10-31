@@ -5,8 +5,10 @@ import { useLocale, useTranslations } from 'next-intl';
 import { champsIdentite, erreursIdentite, paysInitial } from '@/lib/refonte/identiteDemande';
 import { formaterNumero } from '@/lib/refonte/pays';
 import { ChampPays } from '../ChampPays';
+import { BandeauTest } from '../BandeauTest';
 import { demoResponseErrorMessage, normalizeDemoBackendResponse } from '@/lib/demoApiResponse';
 import { trackDemoLead } from '@/lib/analytics';
+import { enTetesDemande } from '@/lib/demoTest';
 import {
   estChoisi, estExterne, estHotel, PAR_COMPTE, PRODUITS, PROFILS, QUANDS, QUANDS_FR, resume, segmentCrm,
   SELECTION_PAR_DEFAUT, SITES, UTILISATEURS, VALEURS_RAPIDES,
@@ -102,19 +104,20 @@ export function OffreComposer() {
       if (!courante) {
         const r = await fetch(`${DEMO_API}/request`, {
           method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
+          headers: enTetesDemande({ 'Content-Type': 'application/json' }),
           body: JSON.stringify({ email: email.trim(), ...champsIdentite(ident, dialIso), consentementMessages: true, source: 'website-offre', langue: locale }),
         });
         const data = normalizeDemoBackendResponse(await r.json().catch(() => ({}))) as { success?: boolean; data?: { id?: string; qualificationToken?: string } };
         if (data.success !== true || !data.data?.id) throw new Error(demoResponseErrorMessage(data) || 'request');
         courante = { id: String(data.data.id), jeton: data.data.qualificationToken ?? '' };
         setDemande(courante);
-        trackDemoLead('website-offre');
+        // Mode test (aperçus) : aucune conversion publicitaire.
+        if (!(data.data as { test?: boolean } | undefined)?.test) trackDemoLead('website-offre');
       }
       try {
         const r2 = await fetch(`${DEMO_API}/request/${courante.id}/qualify`, {
           method: 'PATCH',
-          headers: { 'Content-Type': 'application/json' },
+          headers: enTetesDemande({ 'Content-Type': 'application/json' }),
           body: JSON.stringify({ qualificationToken: courante.jeton, ...champsIdentite(ident, dialIso), ...corpsSelection() }),
         });
         const d2 = normalizeDemoBackendResponse(await r2.json().catch(() => ({}))) as { success?: boolean };
@@ -140,7 +143,7 @@ export function OffreComposer() {
     try {
       const r = await fetch(`${DEMO_API}/request/${demande.id}/qualify`, {
         method: 'PATCH',
-        headers: { 'Content-Type': 'application/json' },
+        headers: enTetesDemande({ 'Content-Type': 'application/json' }),
         body: JSON.stringify({
           qualificationToken: demande.jeton,
           ...corpsSelection(),
@@ -276,6 +279,7 @@ export function OffreComposer() {
         ) : <p className="sj2-selection__vide">{t('selection.empty')}</p>}
 
         <div className="sj2-form">
+          <BandeauTest />
           <ol className="sj2-pas sj2-pas--3" aria-label={t('form.stepsAria')}>
             {(['email', 'reach', 'sent'] as const).map((k, i) => (
               <li key={k} aria-current={etape === i + 1 ? 'step' : undefined} className={etape >= i + 1 ? 'is-on' : ''}>
