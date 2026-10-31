@@ -6316,7 +6316,51 @@
       "k025": "Sí, con una vista consolidada y el detalle por sitio. Es lo que piden las explotaciones con varios sitios.",
       "k026": "Su dashboard, ",
       "k027": "listo para usar.",
-      "k028": "Importación de las OTA y puesta en marcha guiada."
+      "k028": "Importación de las OTA y puesta en marcha guiada.",
+      "mock": {
+        "nav": {
+          "home": "Inicio",
+          "calendar": "Calendario",
+          "reservations": "Reservas",
+          "channels": "Canales",
+          "orchestration": "Orquestación",
+          "tasks": "Tareas",
+          "inbox": "Mensajes",
+          "analytics": "Analítica",
+          "settings": "Ajustes",
+          "ai": "IA"
+        },
+        "crumb": "Panel",
+        "search": "Buscar…",
+        "new": "+ Nuevo",
+        "hello": "Hola {name}",
+        "sub": "{arrivals, plural, one {Tiene # llegada hoy} other {Tiene # llegadas hoy}} y {tasks, plural, one {# tarea pendiente} other {# tareas pendientes}}.",
+        "today": "Hoy",
+        "week": "Semana",
+        "month": "Mes",
+        "kpi": {
+          "arrivals": "Llegadas de hoy",
+          "tasks": "Tareas pendientes",
+          "messages": "Mensajes sin leer",
+          "revenue": "Ingresos de hoy",
+          "urgent": "{n} urgentes",
+          "newMsgs": "{n} nuevos"
+        },
+        "activity": {
+          "title": "Actividad reciente",
+          "all": "Ver todo →",
+          "min": "{n} min",
+          "hour": "{n} h",
+          "a1": "{who} ha hecho el check-in · {prop}",
+          "a2": "Nuevo WhatsApp de {who} · «Problema con el aire acondicionado»",
+          "a3": "{who} ha terminado la limpieza · {prop}",
+          "a4": "Reserva confirmada · Airbnb · {amount}"
+        },
+        "arrivals": {
+          "title": "Llegadas de hoy",
+          "guests": "{n, plural, one {# huésped} other {# huéspedes}}"
+        }
+      }
     }
   },
   "inFlow": {
