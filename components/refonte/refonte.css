@@ -650,4 +650,9 @@ html[dir='rtl'] .sj2-tabs__groupe { letter-spacing: 0; font-family: var(--sj-san
   .sj2-tabs__groupe { display: none; }
   .sj2-tab--grand { min-height: 0; }
 }
+/* pied de page : réseaux et contact (cibles ≥ 44 px, icônes SVG en ligne) */
+.sj2-footer__contact { flex: 0 1 240px; }
+.sj2-footer__social { gap: 10px; }
+.sj2-footer__social svg { flex: none; }
+.sj2-footer__note { font-size: 13.5px; color: var(--sj-text-3); }
 
