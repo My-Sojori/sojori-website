@@ -798,6 +798,8 @@ button[style*="rgba(255,255,255,0.18)"] {
   /* Prevent horizontal overflow */
   html, body {
     overflow-x: hidden;
+    /* `clip` ne crée pas de conteneur de défilement : l'en-tête `position: sticky` reste collé en haut. */
+    overflow-x: clip;
   }
 
   /* Ensure images/media are responsive */
