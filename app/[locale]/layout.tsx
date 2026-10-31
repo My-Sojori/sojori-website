@@ -280,17 +280,23 @@ export default async function LocaleLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(webSiteJsonLd) }}
         />
-        {/* Scripts de mesure (Meta, Google) : chargés une fois la page chargée et le navigateur au repos (au plus 3 s après),
-            pour ne pas retarder l'hydratation sur téléphone. Les appels `fbq` et `gtag` faits avant sont mis en file. */}
+        {/* Pixel Meta (retargeting ads) — PageView sur toutes les pages */}
         <script
           dangerouslySetInnerHTML={{
-            __html: `(function(w,d){var q=function(f){var run=function(){(w.requestIdleCallback||function(c){setTimeout(c,300)})(f,{timeout:3000})};d.readyState==='complete'?run():w.addEventListener('load',run)};var add=function(u,a){var s=d.createElement('script');s.src=u;s.async=true;(d.head||d.documentElement).appendChild(s)};!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[]}(w,d);w.fbq('init','1039671441788657');w.fbq('track','PageView');w.dataLayer=w.dataLayer||[];w.gtag=function(){w.dataLayer.push(arguments)};w.gtag('js',new Date());w.gtag('config','G-KCVTT735EZ');q(function(){add('https://connect.facebook.net/en_US/fbevents.js');add('https://www.googletagmanager.com/gtag/js?id=G-KCVTT735EZ')})})(window,document);`,
+            __html: `!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','1039671441788657');fbq('track','PageView');`,
           }}
         />
         <noscript>
           <img height="1" width="1" style={{ display: 'none' }} alt=""
             src="https://www.facebook.com/tr?id=1039671441788657&ev=PageView&noscript=1" />
         </noscript>
+        {/* Google Analytics 4 — pageview + dataLayer pour tous les événements custom */}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-KCVTT735EZ" />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-KCVTT735EZ');`,
+          }}
+        />
       </head>
       {/* Aurora Soft — light theme. NE PAS mettre bg-bg-0 ni text-white ici. */}
       <body className="antialiased">
