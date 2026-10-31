@@ -1,7 +1,8 @@
 "use client";
 
 import { BackgroundEffects } from "@/components/BackgroundEffects";
-import { PageHeader, PageFooter, PageHero, StatsBar, FinalCTA } from "@/components/SharedComponents";
+import { useTranslations } from 'next-intl';
+import { PageHeader, PageFooter, PageHero, FinalCTA } from "@/components/SharedComponents";
 import { Link } from '@/i18n/routing';
 import { SojoriMark } from "@/components/Logo";
 import { InFlow } from '@/components/InFlow';
@@ -153,24 +154,25 @@ function Dashboard({ dark = true }: { dark: boolean }) {
 }
 
 export default function DashboardAppPageClient() {
+  const tb = useTranslations('pageBodies.dashboard-app');
   return (
     <>
       <BackgroundEffects />
       <div style={{ position: 'relative', zIndex: 1 }}>
-        <PageHeader pageTitle="Dashboard App" />
+        <PageHeader pageTitle={tb('k001')} />
         <PageHero
-          badge="Dashboard · L'interface principale"
-          title={<>Tout votre business.<br /><span className="gradient-text">Une seule vue.</span></>}
-          subtitle="Le workspace post-login. Sidebar navigation, KPI cards, fil d’activité à jour, arrivées du jour. Dark mode par défaut, light mode disponible."
-          cta1="Voir la démo"
-          cta2="Essai gratuit"
+          badge={tb('k002')}
+          title={<>{tb('k003')}<br /><span className="gradient-text">{tb('k004')}</span></>}
+          subtitle={tb('k005')}
+          cta1={tb('k006')}
+          cta2={tb('k007')}
         />
 
         <section style={{ padding: '20px 32px 80px' }}>
           <div style={{ maxWidth: 1320, margin: '0 auto', display: 'flex', flexDirection: 'column', gap: 28 }}>
-            <div className="uppercase-sm" style={{ color: 'var(--text-3)', textAlign: 'center' }}>● Dark mode (par défaut)</div>
+            <div className="uppercase-sm" style={{ color: 'var(--text-3)', textAlign: 'center' }}>{tb('k008')}</div>
             <Exemple><Dashboard dark={true} /></Exemple>
-            <div className="uppercase-sm" style={{ color: 'var(--text-3)', textAlign: 'center', marginTop: 30 }}>○ Light mode</div>
+            <div className="uppercase-sm" style={{ color: 'var(--text-3)', textAlign: 'center', marginTop: 30 }}>{tb('k009')}</div>
             <Exemple><Dashboard dark={false} /></Exemple>
           </div>
         </section>
@@ -237,39 +239,33 @@ export default function DashboardAppPageClient() {
           }
         `}</style>
 
-        <StatsBar stats={[
-          { k: '<2min', l: 'Prise en main' },
-          { k: '42k+', l: 'Réservations gérées' },
-          { k: '9 modules', l: 'Tout-en-un' }
-        ]} />
-
         <InFlow
-          domain="Opérations"
+          domain={tb('k010')}
           domainColor="#8b5cf6"
-          self="Le tableau de bord montre l'état réel de l'exploitation, au moment où vous regardez."
-          upstream={[{ label: 'Arrivées et départs', href: '/pms' }, { label: 'Avancement des équipes', href: '/teamflow' }, { label: 'Messages en attente', href: '/inbox' }]}
-          downstream={[{ label: 'Arbitrage de priorité', href: '/teamflow' }, { label: 'Décision de prix', href: '/dynamic-pricing' }]}
+          self={tb('k011')}
+          upstream={[{ label: tb('k012'), href: '/pms' }, { label: tb('k013'), href: '/teamflow' }, { label: tb('k014'), href: '/inbox' }]}
+          downstream={[{ label: tb('k015'), href: '/teamflow' }, { label: tb('k016'), href: '/dynamic-pricing' }]}
         />
 
         <FaqSection
           badge="Pilotage"
-          title="Questions fréquentes"
+          title={tb('k017')}
           items={[
   {
-    "q": "Qu'est-ce que je vois en ouvrant le tableau de bord ?",
-    "a": "L'état réel de l'exploitation au moment où vous regardez : arrivées et départs du jour, chambres prêtes ou en cours, messages en attente, incidents ouverts. Pas un rapport de la veille."
+    "q": tb('k018'),
+    "a": tb('k019')
   },
   {
-    "q": "Est-ce accessible à distance ?",
-    "a": "Oui, depuis un navigateur, sur téléphone comme sur ordinateur. Rien à installer — c'est un des écarts avec les solutions installées sur site, qui vivent dans l'établissement."
+    "q": tb('k020'),
+    "a": tb('k021')
   },
   {
-    "q": "Peut-on arbitrer depuis le tableau de bord ?",
-    "a": "Oui. Une arrivée anticipée peut faire remonter une chambre en priorité, une chambre libérée peut être remise en vente. L'intérêt n'est pas de regarder, mais de décider là où l'information est."
+    "q": tb('k022'),
+    "a": tb('k023')
   },
   {
-    "q": "Plusieurs établissements sur un même écran ?",
-    "a": "Oui, avec une vue consolidée et le détail par site. C'est ce que demandent les exploitations multi-sites, où la coordination redevient manuelle dès que les outils sont cloisonnés."
+    "q": tb('k024'),
+    "a": tb('k025')
   }
 ]}
         />
@@ -277,8 +273,8 @@ export default function DashboardAppPageClient() {
 
 
         <FinalCTA
-          title={<>Votre dashboard. <span className="gradient-text">En 5 minutes.</span></>}
-          subtitle="Setup instantané. Import OTAs en un clic. Onboarding guidé."
+          title={<>{tb('k026')}<span className="gradient-text">{tb('k027')}</span></>}
+          subtitle={tb('k028')}
         />
 
         <PageFooter />
