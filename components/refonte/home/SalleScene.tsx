@@ -140,6 +140,7 @@ export function SalleScene() {
 
   return (
     <div className="sj2-scene-block">
+      <span className="sj2-pill sj2-pill--mono sj2-simulation">{t('simulation')}</span>
       <div className="sj2-scene-head">
         <span className="sj2-eyebrow sj2-eyebrow--sm sj2-live"><span className="sj2-dot" />{t('label', { titre: t(`cas.${cas}.titre`) })}</span>
         <span style={{ flexGrow: 1 }} />

@@ -594,3 +594,7 @@ html[dir='rtl'] .sj2-rapport__marque { letter-spacing: 0; }
 .sj2-related a:hover { border-color: #6b6455; color: var(--sj-text); }
 .sj2-band__liens { margin-top: 18px; display: flex; flex-wrap: wrap; gap: 8px 20px; font-size: 14.5px; }
 .sj2-band__liens a { color: var(--sj-text-3); text-decoration: underline; text-underline-offset: 3px; min-height: 44px; display: inline-flex; align-items: center; }
+
+/* ================= Lot « Vérité » : la scène est une simulation ================= */
+.sj2-simulation { margin-bottom: 12px; border-color: var(--sj-line-gold-2); min-height: 28px; }
+.sj2-control-lead { margin-top: 12px; }

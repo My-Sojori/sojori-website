@@ -43,7 +43,7 @@
       "dynamicPricing": "Dynamic Pricing",
       "dynamicPricingDesc": "Rules & calendar",
       "analytics": "Smart Analytics",
-      "analyticsDesc": "Real-time metrics",
+      "analyticsDesc": "Up-to-date metrics",
       "whatsappBot": "WhatsApp Bot",
       "whatsappBotDesc": "AI & guest journey",
       "inbox": "Unified Inbox",
@@ -364,7 +364,7 @@
       "staff": {
         "label": "WhatsApp Staff",
         "badge": "Team",
-        "stat": "Real-time"
+        "stat": "Up to date"
       },
       "admin": {
         "label": "WhatsApp Admin",
@@ -384,7 +384,7 @@
       },
       "staff": {
         "title": "Sojori Staff",
-        "subtitle": "Real-time planning & tasks"
+        "subtitle": "Schedule & tasks through the day"
       },
       "admin": {
         "title": "Sojori Admin",
@@ -500,11 +500,11 @@
       "staff": {
         "title": "WhatsApp Staff",
         "titleGradient": "Coordination",
-        "description": "Your team (cleaning, maintenance, concierge) receives their tasks, schedule and notifications in real-time on WhatsApp. No app or training needed.",
+        "description": "Your team (cleaning, maintenance, concierge) receives their tasks, schedule and notifications on WhatsApp, kept up to date through the day. No app or training needed.",
         "featuresTitle": "Features",
         "features": [
           {
-            "label": "Real-time assigned tasks",
+            "label": "Tasks assigned through the day",
             "detail": "Check-in, cleaning, maintenance"
           },
           {
@@ -534,7 +534,7 @@
             "label": "Per staff"
           },
           {
-            "key": "Real-time",
+            "key": "Up to date",
             "label": "Notifications"
           },
           {
@@ -609,7 +609,7 @@
           },
           {
             "label": "Instant confirmation",
-            "detail": "Real-time availability"
+            "detail": "Up-to-date availability"
           },
           {
             "label": "Dynamic pricing",
@@ -648,11 +648,11 @@
         },
         {
           "title": "Instant Response",
-          "description": "Less than 2 seconds · No waiting · Guaranteed satisfaction"
+          "description": "Less than 2 seconds · No waiting"
         },
         {
           "title": "Auto Sync",
-          "description": "Real-time updates · Instant notifications"
+          "description": "Up-to-date information · WhatsApp notifications"
         },
         {
           "title": "Integrated Analytics",
@@ -800,6 +800,36 @@
       "title": "Activate WhatsApp.",
       "titleGradient": "Today.",
       "subtitle": "WhatsApp modules for the guest, the staff, the admin and the owner. No development required."
+    },
+    "faq": {
+      "badge": "WhatsApp",
+      "title": "Frequently asked questions",
+      "items": [
+        {
+          "q": "Why WhatsApp rather than an app?",
+          "a": "Because your guests and your teams already use it. A housekeeper will not install a business app, and neither will a traveling guest. WhatsApp removes the hurdle: no account to create, nothing to download, no forgotten password."
+        },
+        {
+          "q": "Does the assistant answer guests on its own?",
+          "a": "It handles routine requests and suggests replies for the rest. You set what goes out automatically and what goes through approval. The level of autonomy is yours: we do not assume an AI should handle everything without human oversight."
+        },
+        {
+          "q": "Do I need a WhatsApp Business number?",
+          "a": "Yes, the property uses its own business number through the WhatsApp Business API. Setting it up is part of the rollout."
+        },
+        {
+          "q": "In which languages do teams receive their tasks?",
+          "a": "In French or Arabic, depending on what each person actually uses. It is a point often overlooked: a tool that only the front desk understands leaves the field outside the system, when the field is what executes."
+        },
+        {
+          "q": "Can the police form be collected through WhatsApp?",
+          "a": "Yes. The guest fills it in before arrival and attaches their ID document, as part of the digital check-in. You get complete data without typing at the desk. Declaring to the authorities remains your own procedure."
+        },
+        {
+          "q": "What happens if a guest writes at night?",
+          "a": "The assistant answers routine requests at any hour and escalates the rest according to your rules. The point is not to reply fast for the sake of it, but for every request to be handled or escalated, without waiting for the morning."
+        }
+      ]
     }
   },
   "integrations": {
@@ -886,12 +916,12 @@
       "badge": "TeamFlow · Staff Management",
       "title": "Your field team.",
       "titleGradient": "Orchestrated. Not managed.",
-      "subtitle": "Auto-assignment based on availability and geolocation. WhatsApp + in-app notifications. Pre/post check photos. Real-time tracking and KPIs per member.",
+      "subtitle": "Auto-assignment based on availability and geolocation. WhatsApp + in-app notifications. Pre/post check photos. Tracking through the day and KPIs per member.",
       "cta1": "Watch demo",
       "cta2": "Invite my team"
     },
     "board": {
-      "sectionBadge": "● Real-time Kanban board",
+      "sectionBadge": "● Up-to-date Kanban board",
       "sectionTitle": "Who does what.",
       "sectionTitleGradient": "Now.",
       "columns": {
@@ -964,7 +994,7 @@
         },
         {
           "icon": "",
-          "title": "Real-time tracking",
+          "title": "Tracking through the day",
           "description": "Duration of each task. Comparable. Optimizable. Without micromanagement."
         },
         {
@@ -1946,7 +1976,7 @@
     },
     "channelManager": {
       "title": "Channel Manager | Multi-OTA sync",
-      "description": "Unified distribution: Airbnb, Booking, Vrbo and more. Real-time calendar and rates, anti-overbooking."
+      "description": "Channel manager: your channels (Airbnb, Booking, Vrbo and more) linked through connectors; availability, rates and bookings in one place."
     },
     "analytics": {
       "title": "Analytics | Hospitality BI",
@@ -2038,7 +2068,7 @@
     },
     "integrations": {
       "title": "Sojori integrations | Booking, Expedia, Airbnb, WhatsApp & API",
-      "description": "Sojori connectors and API: Airbnb, Booking.com, Expedia, Vrbo, WhatsApp Business, accounting. Real-time sync."
+      "description": "Sojori connectors and API: Airbnb, Booking.com, Expedia, Vrbo, WhatsApp Business, accounting. Sync through connectors."
     },
     "pricing": {
       "title": "Sojori plans | Quote on request",
@@ -2118,7 +2148,7 @@
       "Lyon duplex"
     ],
     "sectionCalendar": {
-      "eyebrow": "● Multi-property calendar in real time",
+      "eyebrow": "● Multi-property calendar, kept up to date",
       "title": "Overview.",
       "titleGradient": "At a glance."
     },
@@ -2134,7 +2164,7 @@
       },
       {
         "title": "Automated payments",
-        "desc": "Stripe + bank transfers. Charge on booking, one-click refunds."
+        "desc": "Stripe + bank transfers. Online payment, refunds from the booking."
       },
       {
         "title": "Invoices & contracts",
@@ -2145,12 +2175,12 @@
         "desc": "Revenue, costs, margin per property. Monthly accounting export."
       },
       {
-        "title": "Tourist tax automation",
-        "desc": "Calculated, collected, filed. Multi-city, multi-country."
+        "title": "Tourist tax calculation",
+        "desc": "Calculated per guest and per night, based on each property’s setting."
       },
       {
-        "title": "2-way iCal sync",
-        "desc": "With your channel manager + direct Airbnb/Booking. No double entry."
+        "title": "Sync through connectors",
+        "desc": "Availability, rates and bookings from your channels in one place, through connectors."
       }
     ],
     "stats": [
@@ -2175,6 +2205,36 @@
       "titleBefore": "Migrate your PMS.",
       "titleGradient": "In 7 days.",
       "subtitle": "Guided onboarding. A demo on your own listings."
+    },
+    "faq": {
+      "badge": "Hotel PMS",
+      "title": "Frequently asked questions",
+      "items": [
+        {
+          "q": "Is the Sojori PMS mandatory?",
+          "a": "No. Sojori includes its own PMS for a property that does not have one, but it also connects to existing PMSs, including Mews. You can therefore add the orchestration layer without touching your booking system: it is often the shortest way to measure what it brings."
+        },
+        {
+          "q": "Does it handle the Moroccan police form?",
+          "a": "Sojori takes care of the form: the guest fills it in and signs it before arrival from WhatsApp, with their ID document, as part of the digital check-in. You get complete data without typing at the desk. Declaring to the authorities remains the property’s own procedure."
+        },
+        {
+          "q": "How is the tourist tax calculated?",
+          "a": "It is set per property: an amount per guest and per night. Sojori calculates the amount; collection follows the mode you set."
+        },
+        {
+          "q": "Can I manage several properties?",
+          "a": "Yes, with a consolidated view and rules specific to each site. This is usually where a PMS designed for a single property reaches its limit: shared teams, priority trade-offs between sites, overall reporting."
+        },
+        {
+          "q": "What happens to our booking history?",
+          "a": "Data migration is handled during onboarding. It is the longest step of the rollout, and the one to scope first, more than the installation itself."
+        },
+        {
+          "q": "How long until we are operational?",
+          "a": "A few days for a single property. What takes time is not going live but migrating the history and setting up your rules: cleaning cadences, pricing, approval paths."
+        }
+      ]
     }
   },
   "legal": {
@@ -2345,9 +2405,9 @@
         "resume": "Resume",
         "pauseAria": "Pause the animation",
         "resumeAria": "Resume the animation",
-        "chooseLabel": "CHOOSE YOUR PROPERTY TYPE",
+        "chooseLabel": "EXAMPLE DAYS · PICK ONE",
         "chooseAria": "Choose a property type",
-        "regionAria": "The agents’ room: who talks to whom, live",
+        "regionAria": "The agents’ room: who talks to whom, in this simulation",
         "cas": {
           "conc": {
             "type": "Concierge company",
@@ -2420,7 +2480,7 @@
           "arrivals": "arrivals",
           "departures": "departures",
           "guestRequests": "guest requests",
-          "exchanges": "exchanges between agents, live",
+          "exchanges": "exchanges between agents in this simulation",
           "cards": "cards you have approved"
         },
         "numbersNote": "Typical day: 75% occupancy, average stay of 2.5 nights. Properties, rooms and first names are fictional. The last two figures count what you have just seen.",
@@ -2482,7 +2542,8 @@
           "hotProsp2": "Yes, for 20 people in March.",
           "hotProsp3": "Company qualified: seminar for 20 people in March.",
           "hotQuote": "Quote ready for the March seminar. Do you approve?"
-        }
+        },
+        "simulation": "Simulation · fictional data"
       },
       "agents": {
         "eyebrow": "02 · THE AGENTS",
@@ -2533,7 +2594,7 @@
             ],
             "q": "Available from the 12th to the 16th, for two?",
             "r": "Yes. Here is the price for 4 nights and the link to confirm.",
-            "promise": "No request goes unanswered: every message becomes a quote, day or night.",
+            "promise": "Every request gets a reply, a quote or a card to approve, day or night.",
             "kpiValue": "≈ 70%",
             "kpiText": "of booking requests handled without you"
           },
@@ -2689,8 +2750,8 @@
             "name": "Marketing Agent · Finance Agent",
             "resume": "Two specialized agents, scoped with you according to your needs: campaigns on one side, accounts on the other.",
             "points": [
-              "Marketing Agent: prepares your campaigns, you approve.",
-              "Finance Agent: prepares your account follow-ups, you approve.",
+              "Marketing Agent: prepares your campaigns and content; you approve before anything goes out.",
+              "Finance Agent: prepares the follow-up of your accounts; you approve.",
               "Each assignment is scoped with you, with no double billing."
             ],
             "talks": [
@@ -2855,7 +2916,7 @@
             "status": "Operations Agent · online",
             "resume": "Your team receives its tasks and replies on WhatsApp, in writing or by voice message. No app, no training.",
             "points": [
-              "Today’s tasks and schedule, in real time.",
+              "Today’s tasks and schedule, kept up to date through the day.",
               "Start or finish a task with one message or voice message.",
               "Before and after photos of the cleaning.",
               "Location sharing on arrival on site.",
@@ -2984,7 +3045,7 @@
           },
           {
             "name": "Channel manager",
-            "desc": "Real-time channel sync, two-way iCal, overbooking protection."
+            "desc": "Sync with your channels through connectors: availability, rates and bookings in one place."
           },
           {
             "name": "Inbox",
@@ -2992,7 +3053,7 @@
           },
           {
             "name": "Automated payments",
-            "desc": "Payment collected at booking, refund in one click."
+            "desc": "Online payment, refunds from the booking."
           },
           {
             "name": "Invoices and contracts",
@@ -3004,7 +3065,7 @@
           },
           {
             "name": "Tourist tax",
-            "desc": "Calculated and collected automatically."
+            "desc": "Calculated per guest and per night, based on each property’s setting."
           },
           {
             "name": "Owner Portal",
@@ -3012,11 +3073,11 @@
           },
           {
             "name": "Field teams",
-            "desc": "Assignment based on availability, notifications, before and after cleaning photos, real-time tracking."
+            "desc": "Assignment based on availability, notifications, photos before and after cleaning, tracking through the day."
           },
           {
             "name": "Dashboard",
-            "desc": "Today’s arrivals, real-time indicators, activity feed."
+            "desc": "Today’s arrivals, up-to-date indicators, activity feed."
           }
         ],
         "ownTitle": "OR WITH YOUR PMS",
@@ -3167,21 +3228,22 @@
       },
       "control": {
         "eyebrow": "05 · YOU STAY IN CONTROL",
-        "title": "The agent suggests. You approve.",
+        "title": "You set the rules. Your agents act within them.",
         "cards": [
           {
-            "title": "You set the autonomy",
-            "text": "For each agent, you choose: it acts on its own, or it prepares a card and waits for your click."
+            "title": "It acts alone, within your limits",
+            "text": "What you have authorized goes out without waiting: a reply to a guest, a task assigned to the cleaning team."
           },
           {
-            "title": "Every action is logged",
-            "text": "Permissions checked, duplicates avoided, full log. “The Room” shows who did what, when, and for which request."
+            "title": "It prepares a card, you click",
+            "text": "A block, a price, a quote: the agent prepares a validation card and waits for your click before acting."
           },
           {
-            "title": "A human stays in the loop",
-            "text": "When the agent is unsure, it hands over to you or your team, with the context already gathered."
+            "title": "It escalates the exception",
+            "text": "When the agent is unsure or a problem goes beyond its job, it hands over to you or your team, with the context already gathered."
           }
-        ]
+        ],
+        "lead": "Every action is logged: permissions checked, duplicates avoided, full log. “The Room” shows who did what, when, and for which request."
       },
       "offer": {
         "eyebrow": "06 · YOUR OFFER",
@@ -3572,11 +3634,11 @@
             "text": "The Sojori PMS brings together in one tool what a concierge company, a riad or a hotel needs every day.",
             "points": [
               "A unified calendar for all properties, in month, week and day views.",
-              "A channel manager: real-time channel sync, two-way iCal, anti-overbooking.",
+              "A channel manager: sync with your channels through connectors, availability, rates and bookings in one place.",
               "An inbox that gathers messages from compatible OTAs.",
               "Automated payments, invoices and contracts generated and signed online.",
               "A financial dashboard: revenue, expenses, margin per property, monthly accounting export.",
-              "Tourist tax, calculated and collected automatically.",
+              "Tourist tax, calculated per guest and per night, based on each property’s setting.",
               "An Owner Portal so owners can follow revenue and occupancy.",
               "Field teams: assignment based on availability, notifications, photos before and after cleaning."
             ]
@@ -3617,7 +3679,7 @@
           },
           {
             "q": "Does the Sojori PMS include a channel manager?",
-            "a": "Yes. The Sojori channel manager syncs channels in real time, exchanges iCal calendars in both directions and prevents double bookings."
+            "a": "Yes. The Sojori channel manager syncs your channels through connectors: availability, rates and bookings are in one place."
           },
           {
             "q": "How much does the Sojori PMS cost?",
@@ -3839,20 +3901,20 @@
       "taxeSejour": {
         "meta": {
           "title": "Tourist tax in Morocco: what Sojori calculates",
-          "description": "Guide: the tourist tax in Morocco and how Sojori configures, calculates and collects it. Rates and rules are to be confirmed."
+          "description": "Guide: the tourist tax in Morocco and how Sojori configures and calculates it. Rates and rules are to be confirmed."
         },
         "kicker": "GUIDE · TOURIST TAX",
         "title": "Tourist tax in Morocco: what Sojori calculates.",
-        "answer": "Sojori calculates and collects the tourist tax for each property according to the mode you configure. The rates and rules of the tourist tax in Morocco are to be confirmed with an official source.",
+        "answer": "Sojori calculates the tourist tax for each property, per guest and per night, based on the setting you choose; collection follows the mode you set. The rates and rules of the tourist tax in Morocco are to be confirmed with an official source.",
         "sections": [
           {
             "title": "What Sojori does",
             "text": "The tourist tax is set for each property, then calculated on each booking.",
             "points": [
               "Configurable for each property: per stay, per night, or per person per night.",
-              "Collection mode chosen by the property.",
-              "Calculated and collected automatically in the Sojori PMS.",
-              "For a booking received from a channel where the tax is not included in the total, Sojori flags the amount to collect on site."
+              "Collection mode set by the property.",
+              "Calculated per guest and per night, based on each property’s setting, in the Sojori PMS.",
+              "For a booking received from a channel where the tax is not included in the total, Sojori shows the amount to collect on site."
             ]
           },
           {
@@ -3872,8 +3934,8 @@
             "a": "Sojori calculates the tourist tax according to the mode you configure: per stay, per night, or per person per night. The official amounts and rules are to be confirmed with an official source."
           },
           {
-            "q": "Does Sojori collect the tourist tax?",
-            "a": "Yes, the Sojori PMS calculates and collects the tourist tax automatically. For a channel that does not include it in the total, Sojori shows the amount to collect on site."
+            "q": "Does Sojori calculate the tourist tax?",
+            "a": "Sojori calculates the amount, per guest and per night, based on each property’s setting; collection follows the mode you set."
           },
           {
             "q": "Does Sojori remit the tax to the authorities?",
