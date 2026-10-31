@@ -2073,8 +2073,8 @@
     "home": {
       "hero": {
         "keywords": "PMS e agentes de WhatsApp para arrendamento de curta duração e hotéis",
-        "sub": "O senhor decide, os seus agentes fazem o resto. O PMS Sojori, ou o seu: onze agentes e módulos de WhatsApp ligam-se a ele. Veja um dia típico numa conciergerie ou num hotel.",
-        "seeAgents": "Ver os agentes a trabalhar",
+        "sub": "O senhor decide, os seus agentes fazem o resto: respondem aos viajantes, coordenam a sua equipa e preparam as suas decisões no WhatsApp. Com o PMS da Sojori, ou com o seu.",
+        "seeAgents": "Ver um dia com a Sojori",
         "demo": "Pedir uma demonstração"
       },
       "scene": {
@@ -2083,10 +2083,20 @@
         "resume": "Retomar",
         "pauseAria": "Pausar a animação",
         "resumeAria": "Retomar a animação",
-        "chooseLabel": "EXEMPLOS DE DIA TIPO · ESCOLHA UM",
+        "chooseLabel": "EXEMPLOS DE DIA TIPO · À SUA ESCOLHA",
         "chooseAria": "Escolher um estabelecimento",
         "regionAria": "A sala dos agentes: quem fala com quem, nesta simulação",
         "cas": {
+          "riad": {
+            "type": "Riad",
+            "size": "8 quartos",
+            "desc": "Uma equipa pequena, viajantes de todo o mundo.",
+            "titre": "RIAD · 8 QUARTOS",
+            "unites": "quartos ocupados",
+            "staff": "Receção · limpeza",
+            "tiers": "Transfers · prestadores",
+            "prospects": "Agências de viagens"
+          },
           "conc": {
             "type": "Empresa de concierge",
             "size": "50 propriedades",
@@ -2200,19 +2210,19 @@
           "tarifDoneNon": "Nada foi aplicado.",
           "quoteDoneOk": "Orçamento enviado.",
           "quoteDoneNon": "Orçamento não enviado.",
-          "hotPlan": "Plano do dia: {departs} partidas, {recouches} limpezas de estadia, {femmes} camareiras.",
-          "hotStaff": "Plano de limpeza enviado a {femmes} camareiras. Quarto {r1} em primeiro lugar.",
+          "hotPlan": "Plano do dia: {departs, plural, one {# partida} other {# partidas}}, {recouches, plural, one {# limpeza de estadia} other {# limpezas de estadia}}, {femmes, plural, one {# camareira} other {# camareiras}}.",
+          "hotStaff": "Plano de limpeza enviado a {femmes, plural, one {# camareira} other {# camareiras}}. Quarto {r1} em primeiro lugar.",
           "hotAsk": "Quarto {r1}: chegada possível antes das 12:00?",
           "hotOpen": "Quarto {r1} pronto antes das 12:00?",
           "hotStaffReply": "Quarto {r1} feito. (mensagem de voz)",
           "hotClose": "Quarto {r1} pronto às 11:40.",
           "hotGuest": "O seu quarto está pronto a partir das 11:40.",
-          "hotWelcome": "{arrivees} mensagens de boas-vindas partem de uma só vez, uma por chegada.",
+          "hotWelcome": "{arrivees, plural, one {# mensagem de boas-vindas parte à chegada.} other {# mensagens de boas-vindas partem de uma só vez, uma por chegada.}}",
           "hotBookAsk": "Gostaria de reservar 3 noites, diretamente.",
           "hotBookCard": "Reserva direta pronta: quarto {r2}, 3 noites. Aprova?",
           "hotBookReplyOk": "A sua reserva está confirmada.",
           "hotBookReplyNon": "Lamentamos, este quarto já não está disponível.",
-          "hotShuttle": "Transfer do aeroporto às 14:20: confirmado? ({navettes} transfers hoje)",
+          "hotShuttle": "Transfer do aeroporto às 14:20: confirmado? ({navettes, plural, one {# transfer hoje} other {# transfers hoje}})",
           "hotShuttleOk": "Confirmado.",
           "hotShuttleClose": "Transfer confirmado para as 14:20.",
           "hotSiteCard": "A página «Seminários» está pronta. Eis a pré-visualização. Aprova?",
@@ -2221,20 +2231,30 @@
           "hotProsp3": "Empresa qualificada: seminário de 20 pessoas em março.",
           "hotQuote": "Orçamento pronto para o seminário de março. Aprova?"
         },
-        "simulation": "Simulação · dados fictícios"
+        "simulation": "Simulação · dados fictícios",
+        "histoires": {
+          "aria": "As histórias do dia",
+          "arrivee": "Uma chegada",
+          "proprio": "Um proprietário",
+          "resa": "Uma reserva",
+          "equipe": "A sua equipa",
+          "site": "O seu site, os seus preços",
+          "client": "Um novo cliente",
+          "menage": "A limpeza da manhã",
+          "arriveeAvance": "Uma chegada antecipada",
+          "navette": "Um transfer"
+        }
       },
       "agents": {
-        "eyebrow": "02 · OS AGENTES",
+        "eyebrow": "03 · OS AGENTES",
         "title": "Cada ofício do alojamento tem o seu agente. E cada um devolve-lhe tempo.",
-        "lead": "Trabalham sobre a mesma estadia, o mesmo alojamento, a mesma equipa. Escolhe os que lhe fazem falta, propriedade a propriedade.",
+        "lead": "Três agentes fazem andar a estadia. Os outros juntam-se quando for preciso.",
         "chooseAria": "Escolher um agente",
         "kpi": {
           "guest": "ganhas por semana nas mensagens dos hóspedes",
           "field": "ganhas por semana na coordenação do terreno",
-          "fast": "para responder a um hóspede, 24 h por dia",
           "share": "dos pedidos tratados sem o senhor",
           "valueHours": "≈ {h} h",
-          "valueFast": "< 1 min",
           "valueShare": "≈ 70 %",
           "note": "Estimativa para {type} de {size}: 2 min por pedido de hóspede, 3 min por tarefa de coordenação, 70 % dos pedidos tratados pelo agente. A confirmar com as suas medições. Nenhum resultado é garantido."
         },
@@ -2250,7 +2270,8 @@
             "you": "O senhor",
             "prospects": "Potenciais clientes",
             "clients": "Clientes"
-          }
+          },
+          "promiseOption": "A PROMESSA"
         },
         "status": {
           "available": "Disponível",
@@ -2273,7 +2294,8 @@
             "r": "Sim. Eis o preço para 4 noites e a ligação para confirmar.",
             "promise": "Cada pedido recebe uma resposta, um orçamento ou um cartão para validar, de dia ou de noite.",
             "kpiValue": "≈ 70 %",
-            "kpiText": "dos pedidos de reserva tratados sem o senhor"
+            "kpiText": "dos pedidos de reserva tratados sem o senhor",
+            "question": "Quem trata dos meus pedidos de reserva?"
           },
           "service": {
             "name": "Agente de Apoio ao Cliente",
@@ -2291,7 +2313,8 @@
             "r": "Está no seu guia de chegada. Envio-a aqui.",
             "promise": "Só responde às perguntas que pedem o seu critério.",
             "kpiValue": "≈ {h} h",
-            "kpiText": "ganhas por semana nas mensagens dos hóspedes"
+            "kpiText": "ganhas por semana nas mensagens dos hóspedes",
+            "question": "Quem responde ao viajante, e quando assumo eu?"
           },
           "operations": {
             "name": "Agente de Operações",
@@ -2309,7 +2332,8 @@
             "r": "Fechado. Próxima tarefa: receção às 15:00.",
             "promise": "Basta uma mensagem de voz: a tarefa é criada, atribuída e acompanhada até ao fim.",
             "kpiValue": "≈ {h} h",
-            "kpiText": "ganhas por semana na coordenação do terreno"
+            "kpiText": "ganhas por semana na coordenação do terreno",
+            "question": "Como é que a minha equipa recebe e acompanha o trabalho?"
           },
           "pricing": {
             "name": "Preços dinâmicos",
@@ -2459,10 +2483,12 @@
             "kpiText": "a juntar à sua oferta",
             "note": "Uma chamada é uma voz em tempo real, a não confundir com uma mensagem de voz, já suportada."
           }
-        }
+        },
+        "groupMain": "A ESTADIA, DIA A DIA",
+        "groupMore": "PARA IR MAIS LONGE"
       },
       "modules": {
-        "eyebrow": "03 · OS MÓDULOS",
+        "eyebrow": "05 · OS MÓDULOS",
         "title": "Os módulos WhatsApp: uma porta de entrada para cada pessoa.",
         "lead": "Ninguém instala uma aplicação. O hóspede, a equipa, o admin e o proprietário escrevem ou enviam uma mensagem de voz, como já fazem. Por trás, os agentes passam o pedido entre si.",
         "chooseAria": "Escolher um módulo",
@@ -2701,7 +2727,7 @@
         },
         "agents": {
           "eyebrow": "2 · OS AGENTES",
-          "title": "Onze agentes, um por ofício.",
+          "title": "Um agente por função.",
           "sub": "Ver os agentes →"
         },
         "modules": {
@@ -2711,7 +2737,7 @@
         }
       },
       "socle": {
-        "eyebrow": "01 · A BASE",
+        "eyebrow": "02 · A BASE",
         "title": "O PMS Sojori, ou o seu.",
         "lead": "Os agentes e os módulos funcionam com ambos. Não tem de mudar tudo para começar.",
         "pmsTitle": "O PMS SOJORI INCLUI",
@@ -2814,10 +2840,14 @@
           },
           "cardTitle": "Cartão a aprovar · Preços dinâmicos",
           "cardText": "O fim de semana do dia 14 tem mais procura do que o habitual. Proponho um preço mais alto para sexta-feira e sábado."
+        },
+        "capture": {
+          "alt": "Calendário da Sojori: reservas de vários alojamentos ao longo de um mês (conta de teste).",
+          "caption": "O calendário do PMS da Sojori, numa conta de teste."
         }
       },
       "stay": {
-        "eyebrow": "04 · UMA ESTADIA",
+        "eyebrow": "01 · UMA ESTADIA",
         "title": "Da reserva à partida, sete etapas. O senhor só vê a que bloqueia.",
         "lead": "Cada etapa tem o seu agente e o seu prazo. Enquanto tudo avança, nada lhe é pedido. Quando uma etapa ultrapassa o prazo, aparece uma linha no seu painel, com a respetiva causa.",
         "pick": "ESCOLHA UMA ETAPA",
@@ -2903,7 +2933,7 @@
         ]
       },
       "control": {
-        "eyebrow": "05 · O CONTROLO É SEU",
+        "eyebrow": "04 · O CONTROLO É SEU",
         "title": "O senhor define as regras. Os seus agentes agem dentro desse quadro.",
         "cards": [
           {

@@ -2,7 +2,8 @@
 
 import { useId, useRef, useState } from 'react';
 
-type Item = { id: string; title: string; sub?: string };
+/** `question` : une ligne sous le titre ; `groupe` : l'intitulé du lot (les items d'un même lot se suivent). */
+type Item = { id: string; title: string; sub?: string; question?: string; groupe?: string };
 
 /**
  * Onglets accessibles dont TOUS les panneaux sont dans le HTML (les fermés portent `hidden`) :
@@ -21,6 +22,12 @@ export function Tabs({ label, items, panels, orientation = 'vertical', className
     setActif(n);
     refs.current[n]?.focus();
   };
+  // les items se regroupent par lot, dans l'ordre ; les intitulés de lot sont décoratifs (la liste reste une suite d'onglets)
+  const lots: { groupe?: string; ks: number[] }[] = [];
+  items.forEach((it, k) => {
+    const dernier = lots[lots.length - 1];
+    if (dernier && dernier.groupe === it.groupe) dernier.ks.push(k); else lots.push({ groupe: it.groupe, ks: [k] });
+  });
   const surTouche = (e: React.KeyboardEvent, k: number) => {
     const suiv = orientation === 'vertical' ? 'ArrowDown' : 'ArrowRight';
     const prec = orientation === 'vertical' ? 'ArrowUp' : 'ArrowLeft';
@@ -33,23 +40,34 @@ export function Tabs({ label, items, panels, orientation = 'vertical', className
   return (
     <div className={`sj2-tabs sj2-tabs--${orientation} ${className}`}>
       <div role="tablist" aria-label={label} aria-orientation={orientation} className="sj2-tabs__list">
-        {items.map((it, k) => (
-          <button
-            key={it.id}
-            ref={(el) => { refs.current[k] = el; }}
-            type="button"
-            role="tab"
-            id={`${base}-t${k}`}
-            aria-selected={actif === k}
-            aria-controls={`${base}-p${k}`}
-            tabIndex={actif === k ? 0 : -1}
-            className="sj2-tab"
-            onClick={() => setActif(k)}
-            onKeyDown={(e) => surTouche(e, k)}
-          >
-            <span className="sj2-tab__title">{it.title}</span>
-            {it.sub && <span className="sj2-tab__sub">{it.sub}</span>}
-          </button>
+        {lots.map((lot, n) => (
+            <div key={n} role="presentation" className={`sj2-tabs__lot${lot.groupe ? ` sj2-tabs__lot--${n === 0 ? 'principal' : 'plus'}` : ''}`}>
+              {lot.groupe && <span className="sj2-tabs__groupe" aria-hidden="true">{lot.groupe}</span>}
+              <div role="presentation" className="sj2-tabs__lot-liste">
+                {lot.ks.map((k) => {
+                  const it = items[k];
+                  return (
+                    <button
+                      key={it.id}
+                      ref={(el) => { refs.current[k] = el; }}
+                      type="button"
+                      role="tab"
+                      id={`${base}-t${k}`}
+                      aria-selected={actif === k}
+                      aria-controls={`${base}-p${k}`}
+                      tabIndex={actif === k ? 0 : -1}
+                      className={`sj2-tab${it.question ? ' sj2-tab--grand' : ''}`}
+                      onClick={() => setActif(k)}
+                      onKeyDown={(e) => surTouche(e, k)}
+                    >
+                      <span className="sj2-tab__title">{it.title}</span>
+                      {it.question && <span className="sj2-tab__question">{it.question}</span>}
+                      {it.sub && <span className="sj2-tab__sub">{it.sub}</span>}
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
         ))}
       </div>
       <div className="sj2-tabs__panels">

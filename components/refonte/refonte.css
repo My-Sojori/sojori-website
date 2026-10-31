@@ -607,6 +607,57 @@ html[dir='rtl'] .sj2-rapport__marque { letter-spacing: 0; }
 /* téléphone Admin : même verticalité que les autres (400 à 430 px) ; les échanges de la conversation restent lisibles pour les lecteurs d'écran */
 .sj2-phone--court { min-height: 410px; max-height: 430px; overflow: hidden; }
 .sj2-phone--court .sj2-bubble { position: absolute; width: 1px; height: 1px; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; }
+/* ================= La salle v2 : des histoires, des liens courbes qui vivent ================= */
+.sj2-histoires { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+.sj2-histoire { position: relative; overflow: hidden; min-height: 44px; display: inline-flex; align-items: center; gap: 8px; padding: 0 16px; border-radius: 12px; border: 1px solid var(--sj-line); background: #12110d; color: var(--sj-text); font-size: 14px; font-weight: 500; }
+.sj2-histoire:hover { border-color: #4e3d1e; }
+.sj2-histoire[aria-pressed='true'] { border-color: var(--sj-line-gold-2); background: #1b170b; }
+.sj2-histoire__num { font-family: var(--sj-mono); font-size: 12px; color: var(--sj-text-3); }
+.sj2-histoire[aria-pressed='true'] .sj2-histoire__num { color: var(--sj-gold); }
+.sj2-histoire__barre { position: absolute; inset-block-end: 0; inset-inline-start: 0; height: 3px; background: var(--sj-gold); transition: width 0.6s ease; }
+html[dir='rtl'] .sj2-histoire__num { letter-spacing: 0; font-family: var(--sj-sans); }
+
+.sj2-liens { position: absolute; inset: 0; z-index: 1; pointer-events: none; }
+@keyframes sj2-coule { to { stroke-dashoffset: -28; } }
+.sj2-lien--flux { animation: sj2-coule 0.9s linear infinite; }
+.sj2-lien--veille { animation: sj2-coule 6s linear infinite; }
+.sj2-paquet { left: 0; top: 0; margin: -6px 0 0 -6px; }
+@keyframes sj2-glisse0 { 0% { offset-distance: 0%; opacity: 0; } 10% { opacity: 1; } 90% { opacity: 1; } 100% { offset-distance: 100%; opacity: 0; } }
+@keyframes sj2-glisse1 { 0% { offset-distance: 0%; opacity: 0; } 10% { opacity: 1; } 90% { opacity: 1; } 100% { offset-distance: 100%; opacity: 0; } }
+.sj2-noeud { transition: opacity 0.6s ease, border-color 0.4s ease, background-color 0.4s ease, box-shadow 0.4s ease; }
+.sj2-noeud.is-dim { border-color: #2e2b22; background: rgba(18, 17, 13, 0.5); color: #a39c8e; }
+
+/* le sous-titre change en fondu (le cadre garde sa place), la carte à valider glisse */
+@keyframes sj2-fondu0 { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+@keyframes sj2-fondu1 { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+.sj2-fondu0 > * { animation: sj2-fondu0 0.45s ease both; }
+.sj2-fondu1 > * { animation: sj2-fondu1 0.45s ease both; }
+@keyframes sj2-entre-carte { from { opacity: 0; transform: translateX(16px); } to { opacity: 1; transform: none; } }
+.sj2-carte-vous { animation: sj2-entre-carte 0.4s ease both; }
+.sj2-courant__rang { margin-inline-start: auto; font-family: var(--sj-mono); font-size: 12px; color: var(--sj-text-3); }
+html[dir='rtl'] .sj2-courant__rang { letter-spacing: 0; font-family: var(--sj-sans); }
+@media (prefers-reduced-motion: reduce) { .sj2-paquet { display: none; } .sj2-histoire__barre { transition: none; } }
+
+/* ================= Accueil v2 : trois agents en avant, le reste « pour aller plus loin » ================= */
+.sj2-tabs__lot { display: flex; flex-direction: column; gap: 10px; }
+.sj2-tabs__lot + .sj2-tabs__lot { margin-top: 18px; }
+.sj2-tabs__lot-liste { display: flex; flex-direction: column; gap: 8px; }
+.sj2-tabs__groupe { font-family: var(--sj-mono); font-size: 12px; letter-spacing: 0.08em; color: var(--sj-text-3); }
+html[dir='rtl'] .sj2-tabs__groupe { letter-spacing: 0; font-family: var(--sj-sans); }
+.sj2-tab--grand { min-height: 72px; flex-direction: column; align-items: flex-start; gap: 2px; padding: 12px 18px; border-radius: 16px; text-align: start; }
+.sj2-tab__question { font-size: 13.5px; color: var(--sj-text-3); line-height: 1.35; font-weight: 400; }
+.sj2-tab[aria-selected='true'] .sj2-tab__question { color: var(--sj-text-2); }
+@media (min-width: 760px) { .sj2-tabs--vertical .sj2-tabs__lot--plus .sj2-tabs__lot-liste { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.sj2-capture { margin: 0 0 28px; border: 1px solid var(--sj-line); border-radius: 22px; overflow: hidden; background: #0f0e0b; }
+.sj2-capture img { display: block; width: 100%; height: auto; }
+.sj2-capture figcaption { padding: 10px 16px; font-size: 13.5px; color: var(--sj-text-3); border-top: 1px solid var(--sj-line); }
+/* sur petit écran, les onglets restent une rangée qui défile : les lots disparaissent visuellement */
+@media (max-width: 900px) {
+  .sj2-tabs__lot, .sj2-tabs__lot-liste { display: contents; }
+  .sj2-tabs__lot + .sj2-tabs__lot { margin-top: 0; }
+  .sj2-tabs__groupe { display: none; }
+  .sj2-tab--grand { min-height: 0; }
+}
 /* pied de page : réseaux et contact (cibles ≥ 44 px, icônes SVG en ligne) */
 .sj2-footer__contact { flex: 0 1 240px; }
 .sj2-footer__social { gap: 10px; }
