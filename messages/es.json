@@ -1440,6 +1440,13 @@
         "title": "Prueba gratuita de 1 mes",
         "description": "Un asesor le responde con una propuesta."
       }
+    },
+    "sent": {
+      "title": "Enviado",
+      "lead": "Un asesor le responde.",
+      "compose": "Componer mi oferta (2 minutos)",
+      "done": "Eso es todo por mi parte",
+      "thanks": "Gracias. Un asesor le responde."
     }
   },
   "seoPages": {
@@ -3075,7 +3082,7 @@
           "lead": "Cuatro datos y su solicitud sale con sus elecciones.",
           "label": "Su correo electrónico",
           "consent": "Acepto que Sojori se ponga en contacto conmigo en relación con mi solicitud.",
-          "submit": "Solicitar mi demo",
+          "submit": "Recibir mi propuesta",
           "saved": "Su solicitud y sus elecciones quedan guardadas al enviar.",
           "help": "Rellene los cuatro campos y marque el consentimiento para enviar."
         },
@@ -3110,7 +3117,12 @@
           "s2": "Recibirá por correo electrónico, en {email}, un enlace para elegir su horario en su agenda.",
           "s3": "Treinta minutos de demo, por videollamada, con su propuesta con precios.",
           "whatsapp": "Déjenos su WhatsApp: su asesor le responderá más rápido.",
-          "addWhatsapp": "Añadir mi WhatsApp"
+          "addWhatsapp": "Añadir mi WhatsApp",
+          "alsoMeeting": "Solicitar también una reunión",
+          "meetingAsked": "Reunión solicitada: un asesor le responde.",
+          "s2Offer": "Recibe su propuesta por correo, en {email}.",
+          "s3Offer": "Para hablarlo con un asesor, solicite también una reunión más abajo.",
+          "s2Generic": "Recibe por correo un enlace para elegir su franja en su agenda."
         },
         "errors": {
           "email": "Indique un correo válido.",
@@ -3121,7 +3133,14 @@
           "partial": "Su solicitud está guardada, pero falló el envío de sus datos completos. Inténtelo de nuevo."
         },
         "pageLoading": "Cargando…",
-        "noscript": "Se necesita JavaScript para enviar su solicitud. Escríbanos a commercial@sojori.com."
+        "noscript": "Se necesita JavaScript para enviar su solicitud. Escríbanos a commercial@sojori.com.",
+        "known": {
+          "title": "Su solicitud ya está guardada",
+          "lead": "A nombre de {name}. Su oferta se añade a esta misma solicitud.",
+          "send": "Enviar mi oferta",
+          "expired": "No se encuentra su solicitud anterior: indique de nuevo sus datos para enviar su oferta.",
+          "leadNoName": "Su oferta se añade a esta misma solicitud."
+        }
       }
     },
     "band": {

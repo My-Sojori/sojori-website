@@ -10,7 +10,7 @@ export function DemoCta() {
           <h2 className="sj2-h2 sj2-h2--demo">{t('title')}</h2>
           <p className="sj2-lead">{t('lead')}</p>
         </div>
-        <Link href={{ pathname: '/offre', hash: 'contact' }} className="sj2-btn sj2-btn--lg" prefetch={false}>{t('cta')}</Link>
+        <Link href="/demo" className="sj2-btn sj2-btn--lg" prefetch={false}>{t('cta')}</Link>
       </div>
     </section>
   );

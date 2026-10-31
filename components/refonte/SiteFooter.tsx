@@ -102,7 +102,7 @@ export function SiteFooter() {
           <span className="sj2-footer__note">{t('emailLabel')}</span>
           <ul>
             <li><a href={`mailto:${EMAIL}`}><bdi dir="ltr">{EMAIL}</bdi></a></li>
-            <li><Link href={{ pathname: '/offre', hash: 'contact' }} prefetch={false}>{t('demo')}</Link></li>
+            <li><Link href="/demo" prefetch={false}>{t('demo')}</Link></li>
           </ul>
         </div>
         <div className="sj2-footer__legal">

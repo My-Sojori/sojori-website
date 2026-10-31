@@ -19,7 +19,7 @@ export function Hero() {
             <p className="sj2-hero__sub">{t('sub')}</p>
             <div className="sj2-hero__cta">
               <Link href={{ pathname: '/', hash: 'salle' }} className="sj2-btn">{t('seeAgents')}</Link>
-              <Link href={{ pathname: '/offre', hash: 'contact' }} className="sj2-btn sj2-btn--ghost">{t('demo')}</Link>
+              <Link href="/demo" className="sj2-btn sj2-btn--ghost">{t('demo')}</Link>
             </div>
           </div>
           <CasChooser />

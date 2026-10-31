@@ -37,7 +37,7 @@ export async function AboutPage({ locale }: { locale: string }) {
             <h1 id="sj2-about-h1" className="sj2-h1 sj2-h1--seo">{t('hero.title')}</h1>
             <p className="sj2-lead sj2-about__chapeau">{t('hero.lead')}</p>
             <div className="sj2-hero__cta">
-              <Link href={{ pathname: '/offre', hash: 'contact' }} className="sj2-btn" prefetch={false}>{t('hero.demo')}</Link>
+              <Link href="/demo" className="sj2-btn" prefetch={false}>{t('hero.demo')}</Link>
               <Link href={{ pathname: '/', hash: 'salle' }} className="sj2-btn sj2-btn--ghost" prefetch={false}>{t('hero.day')}</Link>
             </div>
           </div>
