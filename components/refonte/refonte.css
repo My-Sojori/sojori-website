@@ -671,7 +671,9 @@ html[dir='rtl'] .sj2-tabs__groupe { letter-spacing: 0; font-family: var(--sj-san
 .sj2-principes li p { color: var(--sj-text-2); font-size: 16.5px; line-height: 1.55; text-wrap: pretty; }
 html[dir='rtl'] .sj2-principes__num { font-family: var(--sj-sans); }
 @media (max-width: 760px) { .sj2-principes li { grid-template-columns: 40px minmax(0, 1fr); } .sj2-principes li p { grid-column: 2; } }
-.sj2-reperes { margin-top: 36px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr)); gap: 14px; }
+.sj2-reperes { margin-top: 36px; display: grid; grid-template-columns: 1fr; gap: 14px; }
+@media (min-width: 640px) { .sj2-reperes { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (min-width: 1200px) { .sj2-reperes { grid-template-columns: repeat(5, minmax(0, 1fr)); } }
 .sj2-repere { display: flex; flex-direction: column; gap: 8px; padding: 22px 24px; }
 .sj2-repere dd { margin: 0; font-size: 20px; font-weight: 600; letter-spacing: -0.02em; line-height: 1.25; color: var(--sj-text); text-wrap: balance; }
 .sj2-equipe { margin-top: 36px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(340px, 100%), 1fr)); gap: 16px; }
