@@ -1,4 +1,6 @@
+import Image from 'next/image';
 import { useTranslations } from 'next-intl';
+import { CAPTURE_CALENDRIER } from '@/lib/refonte/captures';
 
 const SENS: ('same' | 'up' | 'down')[] = ['down', 'same', 'same', 'down', 'up', 'up', 'same'];
 const FLECHE = { up: '↑', down: '↓', same: '→' };
@@ -16,6 +18,12 @@ export function Socle() {
         <h2 id="sj2-socle-h" className="sj2-h2">{t('title')}</h2>
         <p className="sj2-lead">{t('lead')}</p>
       </div>
+      {CAPTURE_CALENDRIER && (
+        <figure className="sj2-capture">
+          <Image src={CAPTURE_CALENDRIER.src} width={CAPTURE_CALENDRIER.width} height={CAPTURE_CALENDRIER.height} alt={t('capture.alt')} sizes="(max-width: 1200px) 100vw, 1176px" />
+          <figcaption>{t('capture.caption')}</figcaption>
+        </figure>
+      )}
       <div className="sj2-socle__grille">
         <div className="sj2-card sj2-card--gold sj2-socle__pms">
           <span className="sj2-eyebrow sj2-eyebrow--sm">{t('pmsTitle')}</span>
