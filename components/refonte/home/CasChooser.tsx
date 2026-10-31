@@ -10,6 +10,7 @@ export function CasChooser() {
   return (
     <div role="group" aria-label={t('chooseAria')} className="sj2-cas">
       <span className="sj2-eyebrow sj2-eyebrow--sm sj2-eyebrow--dim">{t('chooseLabel')}</span>
+      <div className="sj2-cas__rangee">
       {CAS_IDS.map((id) => (
         <button key={id} type="button" className="sj2-cas__btn" aria-pressed={cas === id} onClick={() => setCas(id)}>
           <span className="sj2-cas__name">
@@ -19,6 +20,7 @@ export function CasChooser() {
           <span className="sj2-cas__desc">{t(`cas.${id}.desc`)}</span>
         </button>
       ))}
+      </div>
     </div>
   );
 }

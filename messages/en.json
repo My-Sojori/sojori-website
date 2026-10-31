@@ -3663,7 +3663,8 @@
         "studio": "Studio",
         "apartment": "Apt.",
         "suite": "Suite"
-      }
+      },
+      "scrollHint": "Scroll →"
     },
     "about": {
       "meta": {

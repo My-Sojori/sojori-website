@@ -71,6 +71,16 @@ export function SalleScene() {
   const reduit = useSyncExternalStore(abonnerRM, lireRM, () => false);
   const pause = pauseChoisie ?? reduit;
   const attentes = useRef(0);
+  // la lecture ne tourne que si la salle est à l'écran (économie de batterie sur téléphone)
+  const bloc = useRef<HTMLDivElement>(null);
+  const [vue, setVue] = useState(false);
+  useEffect(() => {
+    const el = bloc.current;
+    if (!el || typeof IntersectionObserver === 'undefined') { setVue(true); return; }
+    const o = new IntersectionObserver(([e]) => setVue(e.isIntersecting), { threshold: 0.15 });
+    o.observe(el);
+    return () => o.disconnect();
+  }, []);
 
   const taille = TAILLES[cas];
   const c = chiffresDe(taille);
@@ -92,10 +102,10 @@ export function SalleScene() {
   }, [cas]);
 
   useEffect(() => {
-    if (pause) return;
+    if (pause || !vue) return;
     const h = setInterval(avancer, VITESSE);
     return () => clearInterval(h);
-  }, [pause, cas, avancer]);
+  }, [pause, vue, cas, avancer]);
 
   const i = Math.min(st.i, script.length - 1);
   const cur = script[i];
@@ -177,7 +187,7 @@ export function SalleScene() {
 
 
   return (
-    <div className="sj2-scene-block">
+    <div ref={bloc} className="sj2-scene-block">
       <span className="sj2-pill sj2-pill--mono sj2-simulation">{t('simulation')}</span>
       <div className="sj2-scene-head">
         <span className="sj2-eyebrow sj2-eyebrow--sm sj2-live"><span className="sj2-dot" />{t('label', { titre: t(`cas.${cas}.titre`) })}</span>
