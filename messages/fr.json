@@ -2840,10 +2840,6 @@
           },
           "cardTitle": "Carte à valider · Tarification dynamique",
           "cardText": "Le week-end du 14 est plus demandé que d’habitude. Je propose un prix plus haut pour vendredi et samedi."
-        },
-        "capture": {
-          "alt": "Calendrier Sojori : les réservations de plusieurs logements sur un mois (compte de test).",
-          "caption": "Le calendrier du PMS Sojori, sur un compte de test."
         }
       },
       "stay": {
@@ -3707,6 +3703,30 @@
       "footer": {
         "brand": "SOJORI",
         "text": "Données du PMS · généré automatiquement"
+      }
+    },
+    "calendar": {
+      "aria": "Exemple de calendrier unifié Sojori : huit logements sur deux semaines, avec les réservations de chaque source.",
+      "viewMulti": "Vue multi",
+      "viewSingle": "Vue simple",
+      "range": "{start} – {end} {month}",
+      "property": "LOGEMENT",
+      "owner": "Propriétaire",
+      "cleaning": "Ménage",
+      "nights": "{n} n",
+      "note": "Données fictives, pour illustrer le calendrier unifié. Tous vos logements, toutes vos sources, un seul calendrier.",
+      "source": {
+        "airbnb": "Airbnb",
+        "booking": "Booking.com",
+        "direct": "Direct Sojori",
+        "bloque": "Bloqué"
+      },
+      "type": {
+        "riad": "Riad",
+        "villa": "Villa",
+        "studio": "Studio",
+        "apartment": "Appart.",
+        "suite": "Suite"
       }
     }
   },
