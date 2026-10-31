@@ -417,7 +417,7 @@
       },
       "admin": {
         "monday": "Monday 3:00pm",
-        "dashboard": "Hello Marc 👋\n\n*🎯 Dashboard*\n\nType the corresponding letter:\n\n*T* - Pending tasks (3)\n*D* - Arrival/departure declarations (2)\n*R* - Check-in/out reservations (5)\n*M* - Guest messages (7)\n*V* - Reviews to respond (2)\n*L* - Booking requests (4)",
+        "dashboard": "Hello Karim\n\n*🎯 Dashboard*\n\nType the corresponding letter:\n\n*T* - Pending tasks (3)\n*D* - Arrival/departure declarations (2)\n*R* - Check-in/out reservations (5)\n*M* - Guest messages (7)\n*V* - Reviews to respond (2)\n*L* - Booking requests (4)",
         "userCommand": "M",
         "messagesList": "💬 *Pending messages (7)*\n\n1. Sarah · Montmartre Apt\n   \"WiFi code?\" · 15 min ago\n   [Reply]\n\n2. Marco · Barcelona Villa\n   \"AC doesn't work\" · 32 min ago\n   [URGENT]\n\n3. Emma · Marais Studio\n   \"Late checkout possible?\" · 1h ago\n   [Reply]",
         "userChoice": "I'll take Marco as priority",
@@ -3880,6 +3880,65 @@
             "a": "[to be confirmed]: Sojori calculates and tracks the tax; the declaration and remittance procedures are to be confirmed."
           }
         ]
+      }
+    },
+    "report": {
+      "aria": "Example of a morning report received on WhatsApp: 30 fictional properties, 12 arrivals, 9 departures, 14 stayovers, 7-day occupancy 82%, ADR 950 MAD, RevPAR 780 MAD, month revenue 412,000 MAD.",
+      "eyebrow": "YOUR MORNING REPORT",
+      "title": "{n} properties",
+      "date": "Fri 30 Oct",
+      "caption": "Good morning Karim, here is your morning report.",
+      "pct": "{n}%",
+      "moves": {
+        "arrivals": "arrivals",
+        "departures": "departures",
+        "stayovers": "stayovers"
+      },
+      "kpi": {
+        "occ": {
+          "title": "7-DAY OCCUPANCY",
+          "value": "82%",
+          "unit": "actual sellable capacity"
+        },
+        "adr": {
+          "title": "ADR TODAY",
+          "value": "950",
+          "unit": "MAD / night sold"
+        },
+        "revpar": {
+          "title": "7-DAY REVPAR",
+          "value": "780",
+          "unit": "MAD / available unit"
+        },
+        "revenue": {
+          "title": "OCTOBER REVENUE",
+          "value": "412,000",
+          "unit": "MAD accommodation, month to date"
+        }
+      },
+      "types": {
+        "title": "BY TYPE",
+        "riads": "Riads",
+        "villas": "Villas",
+        "apartments": "Apartments",
+        "studios": "Studios",
+        "adr": "ADR {adr}"
+      },
+      "days": {
+        "title": "OCCUPANCY · NEXT 7 DAYS",
+        "list": [
+          "Fri 30",
+          "Sat 31",
+          "Sun 01",
+          "Mon 02",
+          "Tue 03",
+          "Wed 04",
+          "Thu 05"
+        ]
+      },
+      "footer": {
+        "brand": "SOJORI",
+        "text": "PMS data · generated automatically"
       }
     }
   }

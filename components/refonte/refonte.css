@@ -512,6 +512,71 @@ html[dir='rtl'] .sj2 [class*='mono'], html[dir='rtl'] .sj2-pill--mono, html[dir=
 .sj2-choix__type { font-family: var(--sj-mono); font-size: 12px; letter-spacing: 0.1em; color: var(--sj-text-4); }
 .sj2-choix--profil[aria-pressed='true'] .sj2-choix__type { color: var(--sj-gold); }
 html[dir='rtl'] .sj2-choix__type { letter-spacing: 0; font-family: var(--sj-sans); }
+/* ================= « Point du matin » : rapport admin reçu sur WhatsApp (exemple) ================= */
+.sj2-rapport { position: relative; margin: 0; container-type: inline-size;
+  background-color: #0c0b09; color: var(--sj-text); border-radius: 12px; overflow: hidden; width: 100%;
+  background-image: radial-gradient(60% 40% at 90% 0%, rgba(230,176,34,0.14), rgba(12,11,9,0) 70%), linear-gradient(rgba(244,241,234,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(244,241,234,0.03) 1px, transparent 1px);
+  background-size: auto, 24px 24px, 24px 24px; }
+/* le contenu est dans un enfant : les unités cqw se calculent sur le conteneur parent, pas sur lui-même */
+.sj2-rapport__in { --u: calc(100cqw / 800); display: flex; flex-direction: column; gap: max(10px, calc(var(--u) * 22)); padding: max(12px, calc(var(--u) * 44)) max(12px, calc(var(--u) * 44)) max(10px, calc(var(--u) * 32)); }
+.sj2-rapport__exemple { position: absolute; top: 8px; inset-inline-end: 8px; z-index: 2; padding: 2px 9px; border-radius: 999px; border: 1px solid #4e3d1e; background: #14120d; color: #e6b022; font-family: var(--sj-mono); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; }
+html[dir='rtl'] .sj2-rapport__exemple { letter-spacing: 0; font-family: var(--sj-sans); text-transform: none; }
+.sj2-rapport__tete { display: flex; flex-direction: column; gap: 3px; }
+.sj2-rapport__eyebrow { font-family: var(--sj-mono); font-size: max(11px, calc(var(--u) * 14)); letter-spacing: 0.2em; color: #e6b022; text-transform: uppercase; }
+html[dir='rtl'] .sj2-rapport__eyebrow { letter-spacing: 0; font-family: var(--sj-sans); text-transform: none; }
+.sj2-rapport__titre { font-size: max(20px, calc(var(--u) * 52)); font-weight: 600; letter-spacing: -0.04em; line-height: 1.05; }
+html[dir='rtl'] .sj2-rapport__titre { letter-spacing: 0; }
+.sj2-rapport__date { font-size: max(12px, calc(var(--u) * 20)); color: #bdb6a8; }
+.sj2-rapport__filet { display: block; height: 2px; border-radius: 2px; background: linear-gradient(90deg, #e6b022, rgba(230,176,34,0)); }
+html[dir='rtl'] .sj2-rapport__filet { background: linear-gradient(270deg, #e6b022, rgba(230,176,34,0)); }
+.sj2-rapport__mouvements { display: flex; flex-wrap: wrap; gap: max(5px, calc(var(--u) * 10)); }
+.sj2-rapport__mouvements li { display: inline-flex; align-items: center; gap: max(5px, calc(var(--u) * 10)); min-height: max(26px, calc(var(--u) * 48)); padding-inline: max(9px, calc(var(--u) * 18)); border-radius: 999px; border: 1px solid #38342a; background: #12110d; font-size: max(12px, calc(var(--u) * 19)); color: #d4cec1; white-space: nowrap; }
+.sj2-rapport__mouvements svg { width: max(12px, calc(var(--u) * 20)); height: max(12px, calc(var(--u) * 20)); flex: none; }
+.sj2-rapport__mouvements strong { color: var(--sj-text); font-weight: 600; }
+.sj2-rapport__kpis { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: max(6px, calc(var(--u) * 12)); }
+.sj2-rapport__kpi { border: 1px solid #26231c; border-radius: max(10px, calc(var(--u) * 18)); background: #12110d; padding: max(8px, calc(var(--u) * 18)) max(10px, calc(var(--u) * 20)); display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.sj2-rapport__kpi-titre { font-family: var(--sj-mono); font-size: max(11px, calc(var(--u) * 12.5)); letter-spacing: 0.1em; color: #a39c8e; text-transform: uppercase; }
+html[dir='rtl'] .sj2-rapport__kpi-titre { letter-spacing: 0; font-family: var(--sj-sans); text-transform: none; }
+.sj2-rapport__kpi-valeur { white-space: nowrap; font-size: max(18px, calc(var(--u) * 44)); font-weight: 600; letter-spacing: -0.04em; line-height: 1.05; color: var(--sj-text); font-variant-numeric: tabular-nums; }
+.sj2-rapport__kpi-valeur.is-or { color: #e6b022; }
+.sj2-rapport__kpi-unite { font-size: max(11px, calc(var(--u) * 15)); color: #bdb6a8; }
+.sj2-rapport__bloc { display: flex; flex-direction: column; gap: max(6px, calc(var(--u) * 10)); }
+.sj2-rapport__label { font-family: var(--sj-mono); font-size: max(11px, calc(var(--u) * 12.5)); letter-spacing: 0.14em; color: #a39c8e; text-transform: uppercase; }
+html[dir='rtl'] .sj2-rapport__label { letter-spacing: 0; font-family: var(--sj-sans); text-transform: none; }
+.sj2-rapport__type { display: grid; grid-template-columns: minmax(0, max(70px, calc(var(--u) * 170))) minmax(0, 1fr) auto; align-items: center; gap: max(6px, calc(var(--u) * 16)); }
+.sj2-rapport__type-nom { font-size: max(12px, calc(var(--u) * 18)); font-weight: 600; }
+.sj2-rapport__piste { display: block; height: max(6px, calc(var(--u) * 10)); border-radius: 6px; background: #221f19; overflow: hidden; }
+.sj2-rapport__piste span { display: block; height: 100%; border-radius: 6px; background: linear-gradient(90deg, #b8881a, #e6b022); }
+html[dir='rtl'] .sj2-rapport__piste span { background: linear-gradient(270deg, #b8881a, #e6b022); }
+.sj2-rapport__type-val { font-size: max(11px, calc(var(--u) * 16)); color: #d4cec1; text-align: end; white-space: nowrap; }
+.sj2-rapport__type-val strong { color: var(--sj-text); }
+.sj2-rapport__jours { --zh: max(120px, calc(var(--u) * 170)); display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: max(4px, calc(var(--u) * 10)); align-items: start; }
+/* Zone de barres à hauteur fixe : chaque barre vaut son pourcentage de cette zone, alignée en bas ; le libellé a une hauteur fixe sous la zone. */
+.sj2-rapport__jour { display: flex; flex-direction: column; gap: 6px; }
+.sj2-rapport__zone { height: var(--zh); display: flex; flex-direction: column; justify-content: flex-end; gap: 4px; }
+.sj2-rapport__jour-pct { font-size: max(11px, calc(var(--u) * 14)); font-weight: 600; color: #e6b022; text-align: center; white-space: nowrap; }
+.sj2-rapport__barre { display: block; width: 100%; flex: none; height: calc(var(--p) / 100 * (var(--zh) - 22px)); border-radius: 6px 6px 2px 2px; background: linear-gradient(180deg, #f4cf5e, #b8881a); }
+.sj2-rapport__jour-nom { font-size: max(11px, calc(var(--u) * 14)); color: #a39c8e; text-align: center; line-height: 1.15; min-height: 2.3em; }
+.sj2-rapport__pied { margin-top: auto; display: flex; justify-content: space-between; align-items: center; gap: 8px; border-top: 1px solid #26231c; padding-top: max(8px, calc(var(--u) * 14)); font-size: max(11px, calc(var(--u) * 14)); color: #a39c8e; }
+.sj2-rapport__marque { font-family: var(--sj-mono); letter-spacing: 0.2em; color: #e6b022; }
+html[dir='rtl'] .sj2-rapport__marque { letter-spacing: 0; }
+.sj2-rapport-bulle { display: flex; flex-direction: column; gap: 6px; align-self: flex-start; width: 94%; border-radius: 14px 14px 14px 4px; padding: 4px 4px 8px; }
+.sj2-rapport-bulle--night { background: #1c1a15; }
+.sj2-rapport-bulle--wa { background: #fff; box-shadow: 0 1px 1px rgba(0,0,0,0.13); border-radius: 8px 8px 8px 0; }
+.sj2-rapport-bulle__legende { padding-inline: 8px; font-size: 14px; line-height: 1.4; }
+.sj2-rapport-bulle--night .sj2-rapport-bulle__legende { color: var(--sj-text); }
+.sj2-rapport-bulle--wa .sj2-rapport-bulle__legende { color: #111b21; font-size: 12px; }
+
+/* dans une bulle de téléphone : les types passent sur deux lignes, les barres des 7 jours restent sous les KPI */
+@container (max-width: 440px) {
+  .sj2-rapport__jours { --zh: 120px; }
+  .sj2-rapport__type { grid-template-columns: minmax(0, 1fr) auto; grid-template-areas: 'nom val' 'piste piste'; row-gap: 4px; }
+  .sj2-rapport__type-nom { grid-area: nom; }
+  .sj2-rapport__type-val { grid-area: val; }
+  .sj2-rapport__piste { grid-area: piste; }
+  .sj2-rapport__kpi-titre { letter-spacing: 0.04em; }
+  .sj2-rapport__pied { flex-wrap: wrap; }
+}
 /* ================= LOT 6 : pages de recherche ================= */
 .sj2-hero--seo { padding-block: 24px; }
 .sj2-seo__tete { display: flex; flex-direction: column; gap: 22px; padding-block: 40px 48px; }
