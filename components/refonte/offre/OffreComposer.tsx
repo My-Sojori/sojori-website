@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useMemo, useState } from 'react';
+import { useMemo, useState, useSyncExternalStore } from 'react';
 import { useLocale, useTranslations } from 'next-intl';
 import { PHONE_DIAL_ROWS } from '@/lib/phoneDialCodesData';
 import { PAYS_DEMO } from '@/lib/demoQualification';
@@ -40,7 +40,7 @@ export function OffreComposer() {
   const [nom, setNom] = useState('');
   const [pays, setPays] = useState('');
   const [paysAutre, setPaysAutre] = useState('');
-  const [iso, setIso] = useState('MA');
+  const [isoChoisi, setIso] = useState<string | null>(null);
   const [tel, setTel] = useState('');
   const [segment, setSegment] = useState<SegmentId | null>(null);
   const [outil, setOutil] = useState<OutilId | null>(null);
@@ -52,11 +52,13 @@ export function OffreComposer() {
   const [erreur, setErreur] = useState('');
   const [statut, setStatut] = useState<'libre' | 'envoi'>('libre');
 
-  // +212 par défaut ; +33 pour un navigateur en fr-FR sur la page française.
-  useEffect(() => {
-    try { if (locale === 'fr' && /^fr-FR/i.test(navigator.language)) setIso('FR'); } catch { /* garde le Maroc */ }
-  }, [locale]);
-
+  // +212 par défaut ; +33 pour un navigateur en fr-FR sur la page française (lu sans effet : faux côté serveur).
+  const isoDefaut = useSyncExternalStore(
+    () => () => {},
+    () => { try { return locale === 'fr' && /^fr-FR/i.test(navigator.language) ? 'FR' : 'MA'; } catch { return 'MA'; } },
+    () => 'MA',
+  );
+  const iso = isoChoisi ?? isoDefaut;
   const dial = PHONE_DIAL_ROWS.find((r) => r.iso === iso)?.dial ?? '+212';
   const nomPays = useMemo(() => {
     let noms: Intl.DisplayNames | null = null;

@@ -1,6 +1,6 @@
 'use client';
 
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState, useSyncExternalStore } from 'react';
 import { useTranslations } from 'next-intl';
 import { chiffresDe, TAILLES, type CasId } from '@/lib/refonte/journee';
 import { scenario, cleTexte, type Acteur, type Canal } from '@/lib/refonte/scenario';
@@ -36,34 +36,38 @@ const TOPO: [Acteur, Acteur][] = [
 ];
 const COULEUR: Record<Canal, string> = { whatsapp: '#5fcb8c', ticket: '#e6b022', carte: '#d97f55' };
 
-type Etat = { i: number; dec: Record<number, 'ok' | 'non'>; cycles: number };
+type Etat = { cas: CasId; i: number; dec: Record<number, 'ok' | 'non'>; cycles: number };
+const debut = (cas: CasId): Etat => ({ cas, i: 0, dec: {}, cycles: 0 });
+
+/** Mouvement réduit : lu sans effet (pas d'état recopié), faux côté serveur. */
+const RM = '(prefers-reduced-motion: reduce)';
+const abonnerRM = (cb: () => void) => {
+  try { const m = window.matchMedia(RM); m.addEventListener('change', cb); return () => m.removeEventListener('change', cb); } catch { return () => {}; }
+};
+const lireRM = () => { try { return window.matchMedia(RM).matches; } catch { return false; } };
+
+function Badge({ label, couleur }: { label: string; couleur: string }) {
+  return <span className="sj2-badge" style={{ borderColor: `${couleur}66`, color: couleur }}>{label}</span>;
+}
 
 export function SalleScene() {
   const t = useTranslations('refonte.home.scene');
   const { cas } = useCas();
-  const [st, setSt] = useState<Etat>({ i: 0, dec: {}, cycles: 0 });
-  const [pause, setPause] = useState(false);
+  const [brut, setSt] = useState<Etat>(() => debut('conc'));
+  // Un autre établissement : on repart du début (état dérivé, pas d'effet).
+  const st = brut.cas === cas ? brut : debut(cas);
+  const [pauseChoisie, setPauseChoisie] = useState<boolean | null>(null);
+  const reduit = useSyncExternalStore(abonnerRM, lireRM, () => false);
+  const pause = pauseChoisie ?? reduit;
   const attentes = useRef(0);
 
   const taille = TAILLES[cas];
   const c = chiffresDe(taille);
   const script = scenario(cas, c);
 
-  // Un autre établissement : on repart du début.
-  useEffect(() => {
-    attentes.current = 0;
-    setSt({ i: 0, dec: {}, cycles: 0 });
-  }, [cas]);
-
-  // Mouvement réduit : l'animation démarre en pause (la liste complète reste dans la page).
-  useEffect(() => {
-    try {
-      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) setPause(true);
-    } catch { /* pas de matchMedia : on laisse tourner */ }
-  }, []);
-
   const avancer = useCallback(() => {
-    setSt((s) => {
+    setSt((prec) => {
+      const s = prec.cas === cas ? prec : debut(cas);
       const sc = scenario(cas, chiffresDe(TAILLES[cas]));
       const cur = sc[s.i];
       if (cur.type === 'carte' && s.dec[s.i] === undefined) {
@@ -72,7 +76,7 @@ export function SalleScene() {
         return s;
       }
       attentes.current = 0;
-      return s.i + 1 >= sc.length ? { i: 0, dec: {}, cycles: s.cycles + 1 } : { ...s, i: s.i + 1 };
+      return s.i + 1 >= sc.length ? { ...debut(cas), cycles: s.cycles + 1 } : { ...s, i: s.i + 1 };
     });
   }, [cas]);
 
@@ -111,7 +115,7 @@ export function SalleScene() {
   const attend = cur.type === 'carte' && st.dec[i] === undefined;
   const decider = (v: 'ok' | 'non') => () => {
     attentes.current = 0;
-    setSt((s) => ({ ...s, dec: { ...s.dec, [i]: v }, i: Math.min(script.length - 1, i + 1) }));
+    setSt((prec) => { const s = prec.cas === cas ? prec : debut(cas); return { ...s, dec: { ...s.dec, [i]: v }, i: Math.min(script.length - 1, i + 1) }; });
   };
 
   // chiffres du jour
@@ -132,16 +136,14 @@ export function SalleScene() {
   const journal: number[] = [];
   for (let k = i; k >= 0 && journal.length < 6; k--) journal.push(k);
 
-  const Badge = ({ k }: { k: number }) => (
-    <span className="sj2-badge" style={{ borderColor: `${COULEUR[script[k].type]}66`, color: COULEUR[script[k].type] }}>{badgeDe(k)}</span>
-  );
+
 
   return (
     <div className="sj2-scene-block">
       <div className="sj2-scene-head">
         <span className="sj2-eyebrow sj2-eyebrow--sm sj2-live"><span className="sj2-dot" />{t('label', { titre: t(`cas.${cas}.titre`) })}</span>
         <span style={{ flexGrow: 1 }} />
-        <button type="button" className="sj2-btn sj2-btn--sm sj2-btn--ghost" onClick={() => setPause((p) => !p)} aria-label={pause ? t('resumeAria') : t('pauseAria')}>
+        <button type="button" className="sj2-btn sj2-btn--sm sj2-btn--ghost" onClick={() => setPauseChoisie(!pause)} aria-label={pause ? t('resumeAria') : t('pauseAria')}>
           {pause ? t('resume') : t('pause')}
         </button>
       </div>
@@ -168,7 +170,7 @@ export function SalleScene() {
           })}
 
           <div className="sj2-courant">
-            <span className="sj2-courant__tete"><Badge k={i} /><span className="sj2-courant__qui">{nom(cur.de)} <span className="sj2-arrow" aria-hidden="true">→</span> {nom(cur.vers)}</span></span>
+            <span className="sj2-courant__tete"><Badge label={badgeDe(i)} couleur={COULEUR[script[i].type]} /><span className="sj2-courant__qui">{nom(cur.de)} <span className="sj2-arrow" aria-hidden="true">→</span> {nom(cur.vers)}</span></span>
             <span className="sj2-courant__texte">{texteDe(i)}</span>
           </div>
 
@@ -197,7 +199,7 @@ export function SalleScene() {
           <ol className="sj2-journal">
             {journal.map((k) => (
               <li key={`${st.cycles}-${k}`} className="sj2-journal__ligne">
-                <Badge k={k} />
+                <Badge label={badgeDe(k)} couleur={COULEUR[script[k].type]} />
                 <span className="sj2-journal__qui">{nom(script[k].de)} <span className="sj2-arrow" aria-hidden="true">→</span> {nom(script[k].vers)}</span>
                 <span className="sj2-journal__texte">{texteDe(k)}</span>
               </li>
