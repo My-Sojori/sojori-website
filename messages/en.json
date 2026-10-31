@@ -2635,10 +2635,6 @@
           },
           "cardTitle": "Card to approve · Dynamic pricing",
           "cardText": "The weekend of the 14th is in higher demand than usual. I suggest a higher price for Friday and Saturday."
-        },
-        "capture": {
-          "alt": "Sojori calendar: bookings for several properties over a month (test account).",
-          "caption": "The Sojori PMS calendar, on a test account."
         }
       },
       "stay": {
@@ -3502,6 +3498,30 @@
       "footer": {
         "brand": "SOJORI",
         "text": "PMS data · generated automatically"
+      }
+    },
+    "calendar": {
+      "aria": "Example of the unified Sojori calendar: eight properties over two weeks, with the bookings from each source.",
+      "viewMulti": "Multi view",
+      "viewSingle": "Single view",
+      "range": "{month} <days>{start} – {end}</days>",
+      "property": "PROPERTY",
+      "owner": "Owner",
+      "cleaning": "Cleaning",
+      "nights": "<num>{n}</num> n",
+      "note": "Fictional data, to illustrate the unified calendar. All your properties, all your sources, one calendar.",
+      "source": {
+        "airbnb": "Airbnb",
+        "booking": "Booking.com",
+        "direct": "Sojori Direct",
+        "bloque": "Blocked"
+      },
+      "type": {
+        "riad": "Riad",
+        "villa": "Villa",
+        "studio": "Studio",
+        "apartment": "Apt.",
+        "suite": "Suite"
       }
     },
     "about": {
