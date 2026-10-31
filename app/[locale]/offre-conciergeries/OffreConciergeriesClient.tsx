@@ -9,16 +9,16 @@ import { trackOfferCta } from '@/lib/analytics';
    Contenu FR volontairement en dur : la cible est le Maroc francophone. */
 
 const BRIQUES = [
-  { icon: '🗂️', label: 'PMS' },
-  { icon: '🔗', label: 'Channel Manager' },
-  { icon: '📈', label: 'Prix dynamiques' },
-  { icon: '💬', label: 'WhatsApp Guest' },
-  { icon: '🌐', label: 'Booking direct' },
-  { icon: '✨', label: 'Upsell' },
-  { icon: '🧹', label: 'Staff & Ménage' },
-  { icon: '📥', label: 'Inbox unifiée' },
-  { icon: '📊', label: 'Analytics' },
-  { icon: '🏠', label: 'Portail propriétaire' },
+  { icon: '•', label: 'PMS' },
+  { icon: '•', label: 'Channel Manager' },
+  { icon: '•', label: 'Prix dynamiques' },
+  { icon: '•', label: 'WhatsApp Guest' },
+  { icon: '•', label: 'Booking direct' },
+  { icon: '•', label: 'Upsell' },
+  { icon: '•', label: 'Staff & Ménage' },
+  { icon: '•', label: 'Inbox unifiée' },
+  { icon: '•', label: 'Analytics' },
+  { icon: '•', label: 'Portail propriétaire' },
 ];
 
 const ETAPES = [
@@ -41,8 +41,8 @@ const ETAPES = [
 
 const REASSURANCE = [
   { icon: '🇲🇦', text: 'Paiement marocain, facturation locale' },
-  { icon: '🗣️', text: 'Support WhatsApp en français et en arabe' },
-  { icon: '🔓', text: 'Sans engagement — vos données restent les vôtres' },
+  { icon: '•', text: 'Support WhatsApp en français et en arabe' },
+  { icon: '•', text: 'Sans engagement — vos données restent les vôtres' },
 ];
 
 function trackLead() {

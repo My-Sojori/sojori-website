@@ -9,16 +9,16 @@ import { trackOfferCta } from '@/lib/analytics';
    sans devise ni mention Maroc. Contenu EN volontairement en dur. */
 
 const BRIQUES = [
-  { icon: '🗂️', label: 'PMS' },
-  { icon: '🔗', label: 'Channel Manager' },
-  { icon: '📈', label: 'Dynamic pricing' },
-  { icon: '💬', label: 'WhatsApp Guest' },
-  { icon: '🌐', label: 'Direct booking' },
-  { icon: '✨', label: 'Upsell' },
-  { icon: '🧹', label: 'Staff & Cleaning' },
-  { icon: '📥', label: 'Unified inbox' },
-  { icon: '📊', label: 'Analytics' },
-  { icon: '🏠', label: 'Owner portal' },
+  { icon: '•', label: 'PMS' },
+  { icon: '•', label: 'Channel Manager' },
+  { icon: '•', label: 'Dynamic pricing' },
+  { icon: '•', label: 'WhatsApp Guest' },
+  { icon: '•', label: 'Direct booking' },
+  { icon: '•', label: 'Upsell' },
+  { icon: '•', label: 'Staff & Cleaning' },
+  { icon: '•', label: 'Unified inbox' },
+  { icon: '•', label: 'Analytics' },
+  { icon: '•', label: 'Owner portal' },
 ];
 
 const ETAPES = [
@@ -40,8 +40,8 @@ const ETAPES = [
 ];
 
 const REASSURANCE = [
-  { icon: '💬', text: 'WhatsApp support, real humans' },
-  { icon: '🔓', text: 'No commitment — your data stays yours' },
+  { icon: '•', text: 'WhatsApp support, real humans' },
+  { icon: '•', text: 'No commitment — your data stays yours' },
 ];
 
 function trackLead() {

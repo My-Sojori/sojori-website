@@ -7,6 +7,7 @@ import { PageHeader, PageFooter, PageHero, StatsBar, FinalCTA, SectionHead } fro
 import { ScrollPaginationDots } from "@/components/shared/ScrollPaginationDots";
 import { InFlow } from '@/components/InFlow';
 import { FaqSection } from '@/components/FaqSection';
+import { Exemple } from '@/components/refonte/Exemple';
 
 // ========================================
 // WhatsApp Phone Component (Réutilisable)
@@ -739,7 +740,7 @@ export default function WhatsAppPage() {
                         filter: "blur(40px)",
                       }}
                     />
-                    <WhatsAppPhone title={title} subtitle={subtitle} messages={msgs} />
+                    <Exemple><WhatsAppPhone title={title} subtitle={subtitle} messages={msgs} /></Exemple>
                   </div>
 
                   <div className="wa-split-copy">

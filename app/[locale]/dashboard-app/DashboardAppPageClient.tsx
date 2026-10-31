@@ -6,6 +6,7 @@ import { Link } from '@/i18n/routing';
 import { SojoriMark } from "@/components/Logo";
 import { InFlow } from '@/components/InFlow';
 import { FaqSection } from '@/components/FaqSection';
+import { Exemple } from '@/components/refonte/Exemple';
 
 const NAV = [
   { i: '🏠', l: 'Home', active: true },
@@ -167,9 +168,9 @@ export default function DashboardAppPageClient() {
         <section style={{ padding: '20px 32px 80px' }}>
           <div style={{ maxWidth: 1320, margin: '0 auto', display: 'flex', flexDirection: 'column', gap: 28 }}>
             <div className="uppercase-sm" style={{ color: 'var(--text-3)', textAlign: 'center' }}>● Dark mode (par défaut)</div>
-            <Dashboard dark={true} />
+            <Exemple><Dashboard dark={true} /></Exemple>
             <div className="uppercase-sm" style={{ color: 'var(--text-3)', textAlign: 'center', marginTop: 30 }}>○ Light mode</div>
-            <Dashboard dark={false} />
+            <Exemple><Dashboard dark={false} /></Exemple>
           </div>
         </section>
 

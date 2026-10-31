@@ -71,7 +71,7 @@ export default async function AltCloudbeds({ params }: { params: Promise<{ local
         <PageHeader pageTitle="Sojori vs Cloudbeds" />
 
         <PageHero
-          badge="🌍 Comparatif · Sojori vs Cloudbeds"
+          badge="Comparatif · Sojori vs Cloudbeds"
           title={<>Alternative à Cloudbeds{' '}<br /><span className="gradient-text">pour l&apos;hôtellerie marocaine</span></>}
           subtitle="Cloudbeds est une plateforme internationale solide. La question n&apos;est pas sa qualité, mais si une solution conçue pour 150 pays répond aux contraintes d&apos;un riad de la médina. Comparatif factuel."
           cta1="Voir la démo"

@@ -539,7 +539,7 @@ function LegacyPageFooter() {
               {tFooter('tagline')}
             </p>
             <div className="sj-page-footer-locations" style={{ marginTop: 16, fontSize: 11, color: 'var(--text-3)', fontFamily: 'var(--font-mono)' }}>
-              📍 Paris · Casablanca
+              Paris · Casablanca
             </div>
           </div>
           <div

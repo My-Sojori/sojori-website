@@ -15,7 +15,7 @@ type PageProps = {
   searchParams: Promise<{ k?: string | string[] }>;
 };
 
-/** ⚠️ TEMPORAIRE — page lab privée, à supprimer après QA / Claude Design. */
+/** TEMPORAIRE — page lab privée, à supprimer après QA / Claude Design. */
 export default async function LabPage({ searchParams }: PageProps) {
   const raw = (await searchParams).k;
   const k = Array.isArray(raw) ? raw[0] : raw;

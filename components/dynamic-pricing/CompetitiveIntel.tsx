@@ -77,7 +77,7 @@ export function CompetitiveIntel() {
             {/* Comp Set Analysis */}
             <div className="card" style={{ padding: 24 }}>
               <div style={{ fontSize: 16, fontWeight: 600, marginBottom: 20, display: 'flex', alignItems: 'center', gap: 8, flexWrap: 'wrap' }}>
-                🎯 {t('compSet')}
+                {t('compSet')}
                 <span style={{ fontSize: 11, padding: '2px 8px', borderRadius: 12, background: 'rgba(139,92,246,0.2)', color: '#a78bfa' }}>
                   {comps.length} {t('comps')}
                 </span>
@@ -112,7 +112,7 @@ export function CompetitiveIntel() {
                     <div style={{ flex: 1 }}>
                       <div style={{ fontSize: 13, fontWeight: 600, marginBottom: 4 }}>{comp.name}</div>
                       <div style={{ fontSize: 11, color: 'var(--text-3)', display: 'flex', alignItems: 'center', gap: 10, flexWrap: 'wrap' }}>
-                        <span>⭐ {comp.rating} ({comp.reviews})</span>
+                        <span>{comp.rating} ({comp.reviews})</span>
                         <span>• {comp.bedrooms} BR</span>
                         <span>• {comp.distance} km</span>
                       </div>
@@ -138,7 +138,7 @@ export function CompetitiveIntel() {
             <div>
               <div className="card" style={{ padding: 24, marginBottom: 16 }}>
                 <div style={{ fontSize: 16, fontWeight: 600, marginBottom: 16 }}>
-                  📊 {t('yourPosition')}
+                  {t('yourPosition')}
                 </div>
 
                 <div style={{ display: 'grid', gap: 14 }}>
@@ -177,7 +177,7 @@ export function CompetitiveIntel() {
               {/* Share Reports */}
               <div className="card" style={{ padding: 24, background: 'linear-gradient(135deg, rgba(139,92,246,0.1) 0%, rgba(59,130,246,0.05) 100%)' }}>
                 <div style={{ fontSize: 16, fontWeight: 600, marginBottom: 12 }}>
-                  🔗 {t('shareReports')}
+                  {t('shareReports')}
                 </div>
                 <p style={{ fontSize: 12, color: 'var(--text-3)', marginBottom: 16, lineHeight: 1.6 }}>
                   {t('shareDescription')}

@@ -23,7 +23,7 @@ export function PropertyTable() {
     <div className="card analytics-table" style={{padding: 0, overflow: "hidden"}}>
       <div style={{padding: "14px 22px", borderBottom: "1px solid var(--glass-border)", display: "flex", justifyContent: "space-between", alignItems: "center"}}>
         <div style={{fontSize: 14, fontWeight: 600}}>Performance par propriété · Mars 2025</div>
-        <button style={{background: "transparent", border: "1px solid var(--glass-border)", color: "var(--text-1)", padding: "6px 12px", borderRadius: 6, fontSize: 11, cursor: "pointer"}}>📥 Export CSV</button>
+        <button style={{background: "transparent", border: "1px solid var(--glass-border)", color: "var(--text-1)", padding: "6px 12px", borderRadius: 6, fontSize: 11, cursor: "pointer"}}>Export CSV</button>
       </div>
       <div style={{overflowX: "auto", WebkitOverflowScrolling: "touch"}}>
         <div style={{display: "grid", gridTemplateColumns: "2fr 1fr 1fr 1fr 1fr 1fr 1fr", gap: 12, padding: "12px 22px", fontSize: 10, color: "var(--text-3)", textTransform: "uppercase", letterSpacing: 1, borderBottom: "1px solid rgba(255,255,255,0.04)", minWidth: 800}}>

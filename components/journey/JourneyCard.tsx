@@ -100,7 +100,7 @@ function StarsBurst({ active }: { active: boolean }) {
           opacity: 0,
           animation: `star-pop 0.5s ${i * 0.08}s forwards`,
           textShadow: '0 0 8px #facc15',
-        }}>⭐</span>
+        }}></span>
       ))}
       <style>{`@keyframes star-pop {
         0% { opacity: 0; transform: scale(0) translateY(8px); }

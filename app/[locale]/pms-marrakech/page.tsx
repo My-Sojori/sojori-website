@@ -62,7 +62,7 @@ export default async function PmsPageMarrakech({ params }: { params: Promise<{ l
         <PageHeader pageTitle="PMS Hôtel Marrakech" />
 
         <PageHero
-          badge="🏛️ PMS Hôtel · Marrakech"
+          badge="PMS Hôtel · Marrakech"
           title={<>PMS hôtel à Marrakech{' '}<br /><span className="gradient-text">et orchestration des opérations</span></>}
           subtitle="Hôtels de charme, riads de la médina et maisons d&apos;hôtes : Sojori centralise le planning et les réservations, puis orchestre ce qui suit — ménage, maintenance, messages clients, tarification. Fiche police au check-in et taxe de séjour incluses."
           cta1="Voir la démo"

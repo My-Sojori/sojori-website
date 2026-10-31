@@ -62,7 +62,7 @@ export default async function PmsPageTanger({ params }: { params: Promise<{ loca
         <PageHeader pageTitle="PMS Hôtel Tanger" />
 
         <PageHero
-          badge="⛵ PMS Hôtel · Tanger"
+          badge="PMS Hôtel · Tanger"
           title={<>PMS hôtel à Tanger{' '}<br /><span className="gradient-text">et orchestration des opérations</span></>}
           subtitle="Hôtels, riads de la médina et résidences en bord de mer : Sojori centralise les réservations puis orchestre ménage, maintenance et relation client, y compris en plein pic estival. Fiche police au check-in et taxe de séjour incluses."
           cta1="Voir la démo"

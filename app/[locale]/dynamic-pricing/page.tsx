@@ -9,6 +9,7 @@ import { MarketIntelligence } from '@/components/dynamic-pricing/MarketIntellige
 import { PortfolioOverview } from '@/components/dynamic-pricing/PortfolioOverview';
 import { CompetitiveIntel } from '@/components/dynamic-pricing/CompetitiveIntel';
 import { FaqSection } from '@/components/FaqSection';
+import { Exemple } from '@/components/refonte/Exemple';
 
 function PriceCalendar() {
   const t = useTranslations('dynamicPricing.calendar');
@@ -67,7 +68,7 @@ function PriceFactors() {
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, minmax(0, 1fr))', gap: 12 }}>
           {factorsList.map(f => (
             <div key={f.label} data-carousel-slide className="card" style={{ padding: 18, display: 'flex', gap: 14, alignItems: 'flex-start' }}>
-              <div style={{ fontSize: 28, flexShrink: 0 }}>{f.icon}</div>
+              <div aria-hidden="true" style={{ width: 4, alignSelf: 'stretch', minHeight: 28, borderRadius: 2, background: 'var(--primary)', flexShrink: 0 }} />
               <div style={{ flex: 1, minWidth: 0 }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 4 }}>
                   <div style={{ fontSize: 15, fontWeight: 600 }}>{f.label}</div>
@@ -81,7 +82,7 @@ function PriceFactors() {
       </ScrollPaginationDots>
       <div className="card" style={{ padding: 20, marginTop: 16, background: 'rgba(139,92,246,0.08)', border: '1px solid rgba(139,92,246,0.25)' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
-          <div style={{ fontSize: 24 }}>{comingSoon.icon}</div>
+          <div aria-hidden="true" style={{ width: 28, height: 3, borderRadius: 2, background: 'var(--primary)' }} />
           <div style={{ flex: 1 }}>
             <div style={{ fontSize: 14, fontWeight: 600, marginBottom: 2 }}>{comingSoon.title}</div>
             <div style={{ fontSize: 12, color: 'var(--text-3)' }}>{comingSoon.description}</div>
@@ -247,7 +248,7 @@ export default function DynamicPricingPage() {
           cta2={tHero('cta2')}
         />
 
-        <MarketIntelligence />
+        <Exemple><MarketIntelligence /></Exemple>
 
         <section style={{ padding: '12px 32px 44px' }}>
           <div style={{ maxWidth: 1200, margin: '0 auto' }}>
@@ -258,7 +259,7 @@ export default function DynamicPricingPage() {
               {tCalSection('title').split(tCalSection('titleHighlight'))[1]}.
             </div>
             <p style={{ textAlign: 'center', fontSize: 13, color: 'var(--text-3)', maxWidth: 560, margin: '0 auto 32px' }}>{tCalSection('subtitle')}</p>
-            <PriceCalendar />
+            <Exemple><PriceCalendar /></Exemple>
           </div>
         </section>
 
@@ -274,8 +275,8 @@ export default function DynamicPricingPage() {
           </div>
         </section>
 
-        <PortfolioOverview />
-        <CompetitiveIntel />
+        <Exemple><PortfolioOverview /></Exemple>
+        <Exemple><CompetitiveIntel /></Exemple>
 
         <section style={{ padding: '24px 32px 44px', borderTop: '1px solid var(--glass-border)' }}>
           <div style={{ maxWidth: 1100, margin: '0 auto' }}>
@@ -285,7 +286,7 @@ export default function DynamicPricingPage() {
               <span className="gradient-text">{tRevenue('titleHighlight')}</span>
             </div>
             <p style={{ fontSize: 13, color: 'var(--text-3)', marginBottom: 24, maxWidth: 720 }}>{tRevenue('subtitle')}</p>
-            <RevenueChart />
+            <Exemple><RevenueChart /></Exemple>
             <ScrollPaginationDots itemCount={impactCards.length} gap={14} peekCarousel className="sj-peek-sm" style={{ marginTop: 24 }}>
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, minmax(0, 1fr))', gap: 16 }}>
                 {impactCards.map(s => (

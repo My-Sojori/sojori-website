@@ -109,7 +109,7 @@
       "subtitle": "The modules work. The AI decides. WhatsApp simplifies.",
       "closing": "You pilot.",
       "modules": {
-        "icon": "⚙️",
+        "icon": "•",
         "title": "The modules work",
         "sub": "The foundation.",
         "items": [
@@ -122,7 +122,7 @@
         "cta": "See modules"
       },
       "orchestration": {
-        "icon": "🧠",
+        "icon": "•",
         "title": "The AI decides",
         "sub": "The engine.",
         "badge": "SIGNATURE",
@@ -136,7 +136,7 @@
         "cta": "See the engine in action"
       },
       "whatsapp": {
-        "icon": "💬",
+        "icon": "•",
         "title": "WhatsApp simplifies",
         "sub": "The surface.",
         "items": [
@@ -149,7 +149,7 @@
       }
     },
     "whatsappCase": {
-      "badge": "💬 Real use case",
+      "badge": "Real use case",
       "title": "Your guests speak.",
       "titleGradient": "Sojori responds.",
       "subtitle": "Sarah (USA) books via Airbnb for an apartment in Paris. Sojori AI handles everything, 24/7, in English.",
@@ -162,27 +162,27 @@
         "actions": [
           {
             "t": "D-7",
-            "icon": "📨",
+            "icon": "•",
             "text": "Welcome message sent"
           },
           {
             "t": "D-3",
-            "icon": "🔐",
+            "icon": "•",
             "text": "Passport scan via AI · KYC validated"
           },
           {
             "t": "D+2",
-            "icon": "🔧",
+            "icon": "•",
             "text": "AC maintenance · staff auto-notified"
           },
           {
             "t": "D+4",
-            "icon": "🚗",
+            "icon": "•",
             "text": "Airport transport organized"
           },
           {
             "t": "D+1",
-            "icon": "⭐",
+            "icon": "•",
             "text": "Review request · 5★ obtained"
           }
         ]
@@ -209,7 +209,7 @@
       "subtitle": "Six native modules. Designed to work together, never one without the other.",
       "features": [
         {
-          "icon": "🖥️",
+          "icon": "•",
           "title": "Dashboard App",
           "items": [
             "Unified sidebar navigation",
@@ -222,7 +222,7 @@
           "comingSoon": "Dedicated page coming soon"
         },
         {
-          "icon": "📡",
+          "icon": "•",
           "title": "Channel Manager",
           "items": [
             "OTAs via channel manager (real-time sync)",
@@ -235,7 +235,7 @@
           "comingSoon": "Dedicated page coming soon"
         },
         {
-          "icon": "💬",
+          "icon": "•",
           "title": "WhatsApp AI Bot",
           "items": [
             "AI available on WhatsApp (configurable)",
@@ -248,7 +248,7 @@
           "comingSoon": "Dedicated page coming soon"
         },
         {
-          "icon": "📈",
+          "icon": "•",
           "title": "Dynamic Pricing",
           "items": [
             "Rules by month, day, events, occupancy",
@@ -261,7 +261,7 @@
           "comingSoon": "Dedicated page coming soon"
         },
         {
-          "icon": "👤",
+          "icon": "•",
           "title": "Owner Portal",
           "items": [
             "Owner portal (web)",
@@ -274,7 +274,7 @@
           "comingSoon": "Dedicated page coming soon"
         },
         {
-          "icon": "👥",
+          "icon": "•",
           "title": "TeamFlow (Staff Management)",
           "items": [
             "Auto-assignment based on availability",
@@ -289,7 +289,7 @@
       ]
     },
     "socialProof": {
-      "badge": "⭐ They trust us",
+      "badge": "They trust us",
       "title": "Properties already orchestrating.",
       "testimonials": [
         {
@@ -343,7 +343,7 @@
   "whatsapp": {
     "pageTitle": "WhatsApp Systems",
     "hero": {
-      "badge": "💬 WhatsApp · At the heart of Sojori",
+      "badge": "WhatsApp · At the heart of Sojori",
       "title": "4 WhatsApp systems.",
       "titleGradient": "One unified platform.",
       "subtitle": "Sojori uses WhatsApp as the main channel to communicate with your guests, your team, and to let you manage your business from your phone. No app to download. Just WhatsApp."
@@ -358,22 +358,22 @@
     "systems": {
       "guest": {
         "label": "WhatsApp Guest",
-        "badge": "💬 Travelers",
+        "badge": "Travelers",
         "stat": "87% autonomous"
       },
       "staff": {
         "label": "WhatsApp Staff",
-        "badge": "👷 Team",
+        "badge": "Team",
         "stat": "Real-time"
       },
       "admin": {
         "label": "WhatsApp Admin",
-        "badge": "🎯 PMS Light",
+        "badge": "PMS Light",
         "stat": "6 functions"
       },
       "booking": {
         "label": "Direct Booking",
-        "badge": "💰 No OTA",
+        "badge": "No OTA",
         "stat": "0% commission"
       }
     },
@@ -637,7 +637,7 @@
       }
     },
     "benefits": {
-      "badge": "💎 Benefits",
+      "badge": "Benefits",
       "title": "Everything from WhatsApp.",
       "titleGradient": "Zero complexity.",
       "subtitle": "One single app everyone knows. No training, no new software to install.",
@@ -669,7 +669,7 @@
       ]
     },
     "useCases": {
-      "badge": "✨ Use cases",
+      "badge": "Use cases",
       "title": "What Sojori does",
       "titleGradient": "automatically.",
       "subtitle": "Complex workflows orchestrated by AI, without human intervention.",
@@ -717,7 +717,7 @@
       ]
     },
     "fullCycle": {
-      "badge": "🔄 Full cycle",
+      "badge": "Full cycle",
       "title": "Airbnb → Sojori → WhatsApp + AI →",
       "titleGradient": "Automatic response",
       "subtitle": "The message arrives from Airbnb or Booking.com, goes through AI WhatsApp with translation, PM validation, then returns automatically to the original platform. The entire cycle in seconds.",
@@ -738,7 +738,7 @@
           "message": "PM Interface"
         },
         {
-          "title": "AI + 🌍",
+          "title": "AI + ",
           "description": "Analysis + Translation\nto your language",
           "message": "FR: \"Where WiFi?\"\n→ \"Code: XXX\""
         },
@@ -805,7 +805,7 @@
   "integrations": {
     "pageTitle": "Integrations",
     "hero": {
-      "badge": "🔌 API-first · Infinitely extensible",
+      "badge": "API-first · Infinitely extensible",
       "title": "Sojori integrates",
       "titleGradient": "with your ecosystem.",
       "subtitle": "Native integrations (Rentals United, Channex, Minut, Chekin, Hostaway, etc.). Everything else: REST API, webhooks, or no-code tools via HTTP. No vendor lock-in.",
@@ -883,7 +883,7 @@
   "teamflow": {
     "pageTitle": "TeamFlow",
     "hero": {
-      "badge": "👥 TeamFlow · Staff Management",
+      "badge": "TeamFlow · Staff Management",
       "title": "Your field team.",
       "titleGradient": "Orchestrated. Not managed.",
       "subtitle": "Auto-assignment based on availability and geolocation. WhatsApp + in-app notifications. Pre/post check photos. Real-time tracking and KPIs per member.",
@@ -943,22 +943,22 @@
       "sectionTitle": "Everything a field team needs.",
       "items": [
         {
-          "icon": "⚡",
+          "icon": "•",
           "title": "Auto-assignment",
           "description": "Algorithm matching availability + geolocation + skills. Task assigned in <2 sec."
         },
         {
-          "icon": "📲",
+          "icon": "•",
           "title": "Native WhatsApp",
           "description": "No app to install. Tasks received on WhatsApp + photos returned."
         },
         {
-          "icon": "📷",
+          "icon": "•",
           "title": "Pre/post photos",
           "description": "Before/after each cleaning. Auto-archived. Disputes resolved in 30 sec."
         },
         {
-          "icon": "📍",
+          "icon": "•",
           "title": "GPS check-in",
           "description": "Staff validates on-site presence. Anti-fraud, anti-no-show."
         },
@@ -968,7 +968,7 @@
           "description": "Duration of each task. Comparable. Optimizable. Without micromanagement."
         },
         {
-          "icon": "⭐",
+          "icon": "•",
           "title": "Guest ratings",
           "description": "Mapped to the member who did the cleaning. Performance bonus."
         }
@@ -1001,7 +1001,7 @@
   "guestExperience": {
     "pageTitle": "Guest Experience",
     "hero": {
-      "badge": "💬 Guest Experience · 100% WhatsApp",
+      "badge": "Guest Experience · 100% WhatsApp",
       "title": "Zero app. Zero download. 100% WhatsApp.",
       "subtitle": "Your travelers receive everything via WhatsApp: door code, WiFi, AI guidebook, bookings. No app to download, no account to create. Just their phone number.",
       "cta1": "Watch demo",
@@ -1090,42 +1090,42 @@
       "title": "Everything a traveler needs. In WhatsApp.",
       "items": [
         {
-          "icon": "💬",
+          "icon": "•",
           "title": "100% WhatsApp",
           "description": "No app to download, no account"
         },
         {
-          "icon": "🔑",
+          "icon": "•",
           "title": "Auto door code",
           "description": "Sent on arrival day, expires at check-out"
         },
         {
-          "icon": "📶",
+          "icon": "•",
           "title": "Instant WiFi",
           "description": "Network + password in the conversation"
         },
         {
-          "icon": "🤖",
+          "icon": "•",
           "title": "24/7 AI Bot",
           "description": "Answers questions in 12 languages"
         },
         {
-          "icon": "📍",
+          "icon": "•",
           "title": "Personalized guidebook",
           "description": "AI-generated recommendations"
         },
         {
-          "icon": "🎁",
+          "icon": "•",
           "title": "Built-in upsell",
           "description": "Late check-out, experiences, transfers"
         },
         {
-          "icon": "📞",
+          "icon": "•",
           "title": "Human support",
           "description": "Escalate to your team in 1 click"
         },
         {
-          "icon": "⭐",
+          "icon": "•",
           "title": "Automatic reviews",
           "description": "Post-stay request + OTA redirect"
         }
@@ -1157,7 +1157,7 @@
   "dynamicPricing": {
     "pageTitle": "Dynamic Pricing",
     "hero": {
-      "badge": "📈 Dynamic Pricing · Intelligent pricing",
+      "badge": "Dynamic Pricing · Intelligent pricing",
       "title": "The right price.",
       "titleGradient": "At the right time.",
       "subtitle": "Sojori combines real market data with flexible rules to optimize your rates. Track competitors, analyze demand across Marrakech & Paris, and maximize revenue across your portfolio.",
@@ -1193,31 +1193,31 @@
       "titleHighlight": "maximize your revenue",
       "list": [
         {
-          "icon": "📅",
+          "icon": "•",
           "label": "Monthly seasonality",
           "description": "Coefficient per month · Configurable high/low season",
           "impact": "Variable"
         },
         {
-          "icon": "📆",
+          "icon": "•",
           "label": "Day of week",
           "description": "Coefficient per day · Customizable Mon-Sun",
           "impact": "Variable"
         },
         {
-          "icon": "🎉",
+          "icon": "•",
           "label": "Configured events",
           "description": "School holidays, special events · Manual config",
           "impact": "Configurable"
         },
         {
-          "icon": "📊",
+          "icon": "•",
           "label": "Occupancy rate",
           "description": "Price adjusted according to calendar fill",
           "impact": "Variable"
         },
         {
-          "icon": "🛏️",
+          "icon": "•",
           "label": "Length of stay",
           "description": "Coefficient based on number of nights booked",
           "impact": "Configurable"
@@ -1230,7 +1230,7 @@
         }
       ],
       "comingSoon": {
-        "icon": "🚀",
+        "icon": "•",
         "title": "Coming soon: Automatic Supply & Demand",
         "description": "Dynamic adjustment based on real-time market analysis"
       }
@@ -1326,17 +1326,17 @@
       "active": "Active",
       "benefits": [
         {
-          "icon": "📊",
+          "icon": "•",
           "title": "Multi-property comparison",
           "description": "Compare ADR, occupancy, and revenue across all your listings in real-time"
         },
         {
-          "icon": "🎯",
+          "icon": "•",
           "title": "Zone performance",
           "description": "Understand which neighborhoods and cities drive the best returns"
         },
         {
-          "icon": "⚡",
+          "icon": "•",
           "title": "Quick optimization",
           "description": "Identify underperforming properties and adjust pricing instantly"
         }
@@ -1362,31 +1362,31 @@
       "shareDescription": "Generate shareable links with occupancy by zone, ADR trends, supply growth charts, and pacing forecasts. Perfect for owner reports and investment decisions.",
       "shareTypes": [
         {
-          "icon": "📊",
+          "icon": "•",
           "label": "Market analysis by city & zone"
         },
         {
-          "icon": "📈",
+          "icon": "•",
           "label": "Competitive positioning report"
         },
         {
-          "icon": "💰",
+          "icon": "•",
           "label": "Revenue opportunity assessment"
         }
       ],
       "insights": [
         {
-          "icon": "🎯",
+          "icon": "•",
           "title": "Position strategically",
           "description": "Know exactly where you stand vs. competitors in pricing and performance"
         },
         {
-          "icon": "📡",
+          "icon": "•",
           "title": "Track in real-time",
           "description": "Market data refreshed continuously from listings and booking channels"
         },
         {
-          "icon": "🔗",
+          "icon": "•",
           "title": "Share with stakeholders",
           "description": "Generate professional reports for property owners, investors, and partners"
         }
@@ -1805,7 +1805,7 @@
       "subtitle": "Three quick questions, or skip: your request is already saved.",
       "skipAll": "Skip, I'm done",
       "appointmentLabel": "Appointment:",
-      "basicInfoTitle": "📋 Basic information",
+      "basicInfoTitle": "Basic information",
       "fullNameLabel": "Full name *",
       "fullNamePlaceholder": "Your name",
       "companyLabel": "Company *",
@@ -1827,7 +1827,7 @@
         "Residence",
         "Other"
       ],
-      "currentToolsTitle": "🛠️ Current tools",
+      "currentToolsTitle": "Current tools",
       "currentPMSLabel": "Current PMS",
       "currentPMSPlaceholder": "e.g., Lodgify, Smoobu, Excel...",
       "currentChannelManagerLabel": "Current Channel Manager",
@@ -1836,7 +1836,7 @@
       "currentDynamicPricingPlaceholder": "e.g., PriceLabs, Beyond, Manual...",
       "currentWhatsAppLabel": "Guest communication",
       "currentWhatsAppPlaceholder": "e.g., Manual WhatsApp, Email...",
-      "needsTitle": "🎯 Your needs",
+      "needsTitle": "Your needs",
       "timelineLabel": "When would you like to launch Sojori? *",
       "timelinePlaceholder": "Select...",
       "timelineOptions": {
@@ -2100,7 +2100,7 @@
   "pmsPage": {
     "pageTitle": "PMS",
     "hero": {
-      "badge": "📋 PMS · Property management system",
+      "badge": "PMS · Property management system",
       "titleLine1": "All your properties.",
       "titleGradient": "One calendar.",
       "subtitle": "Multi-property bookings, automated payments, invoicing, digital contracts. The nerve centre of your operations — clean, fast, quiet.",
@@ -3543,7 +3543,8 @@
       "title": "Put your agents to work.",
       "text": "Build your offer: the Sojori PMS or your own, your agents, your WhatsApp access. An advisor replies with a quote.",
       "cta": "Build my offer",
-      "home": "See the Sojori home page"
+      "home": "See the Sojori home page",
+      "example": "Example"
     }
   }
 }

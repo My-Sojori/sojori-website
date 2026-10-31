@@ -5,6 +5,7 @@ import { PageHeader, PageFooter, PageHero, StatsBar, FinalCTA } from "@/componen
 import { SojoriMark } from "@/components/Logo";
 import { InFlow } from '@/components/InFlow';
 import { FaqSection } from '@/components/FaqSection';
+import { Exemple } from '@/components/refonte/Exemple';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
@@ -189,7 +190,7 @@ export default function OwnerPortalPage() {
               <div className="owner-portal-phone-wrap" style={{ display: "flex", justifyContent: "center", position: "relative" }}>
                 <div className="owner-portal-phone-glow" style={{ position: "absolute", inset: "-50px", background: "radial-gradient(circle, rgba(230,176,34,0.18), transparent 65%)", pointerEvents: "none" }} />
                 <div className="owner-portal-phone-device">
-                  <OwnerPhone />
+                  <Exemple><OwnerPhone /></Exemple>
                 </div>
               </div>
             </div>
@@ -201,7 +202,7 @@ export default function OwnerPortalPage() {
             <div className="uppercase-sm" style={{ color: "var(--text-3)", marginBottom: 12 }}>● Statement mensuel</div>
             <div style={{ fontSize: 32, fontWeight: 700, letterSpacing: "-0.02em", marginBottom: 14, maxWidth: 700 }}>Transparence <span className="gradient-text">totale</span>. Aucune surprise.</div>
             <div style={{ fontSize: 15, color: "var(--text-2)", maxWidth: 620, marginBottom: 32, lineHeight: 1.55 }}>Chaque ligne expliquée. Chaque charge justifiée. Le statement PDF arrive automatiquement le 1er du mois, et le virement est effectué sous 48h.</div>
-            <MonthlyStatement />
+            <Exemple><MonthlyStatement /></Exemple>
           </div>
         </section>
 

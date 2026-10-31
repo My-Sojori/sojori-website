@@ -502,3 +502,7 @@ html[dir='rtl'] .sj2 [class*='mono'], html[dir='rtl'] .sj2-pill--mono, html[dir=
 .sj2-merci__etapes li { display: flex; gap: 12px; align-items: flex-start; font-size: 15.5px; color: var(--sj-text-2); }
 .sj2-merci__n { flex: none; width: 28px; height: 28px; border-radius: 50%; border: 1.5px solid var(--sj-gold); color: var(--sj-gold); font-weight: 700; font-size: 14px; display: inline-flex; align-items: center; justify-content: center; }
 .sj2-merci__plus { border-top: 1px solid var(--sj-line-gold); padding-top: 14px; width: 100%; display: flex; flex-direction: column; gap: 10px; align-items: flex-start; }
+
+/* étiquette « Exemple » sur les maquettes chiffrées */
+.sj2-exemple-wrap { position: relative; }
+.sj2-exemple { position: absolute; top: 10px; inset-inline-end: 10px; z-index: 5; padding: 4px 12px; border-radius: 999px; border: 1px solid var(--sj-line-gold-2); background: #14120d; color: var(--sj-gold-soft); font-size: 12px; font-weight: 600; letter-spacing: 0.04em; pointer-events: none; }
