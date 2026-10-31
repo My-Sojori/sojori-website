@@ -9,8 +9,6 @@ const PATHS = [
   // l'indexation. reel-capture reste exclue : elle porte un noindex.
   '/analyse-concurrents',
   '/global-launch',
-  '/global-launch-express',
-  '/offre-conciergeries-express',
   '/pms',
   '/channel-manager',
   '/whatsapp',
@@ -32,9 +30,7 @@ const PATHS = [
   '/integrations',
   '/about',
   '/demo',
-  '/demo/rdv',
   '/offre-conciergeries',
-  '/brand',
   '/gestion-locative-marrakech',
   '/conciergerie-marrakech',
   '/gestion-locative-casablanca',

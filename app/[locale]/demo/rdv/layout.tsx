@@ -9,12 +9,16 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'seoPages' });
-  return generateSEO({
-    title: t('demoRdv.title'),
-    description: t('demoRdv.description'),
-    path: `/${locale}/demo/rdv`,
-    locale,
-  });
+  return {
+    ...generateSEO({
+      title: t('demoRdv.title'),
+      description: t('demoRdv.description'),
+      path: `/${locale}/demo/rdv`,
+      locale,
+    }),
+    // Page de rendez-vous à lien personnel : ni indexée, ni dans le sitemap.
+    robots: { index: false, follow: false },
+  };
 }
 
 export default function DemoRdvLayout({ children }: { children: React.ReactNode }) {

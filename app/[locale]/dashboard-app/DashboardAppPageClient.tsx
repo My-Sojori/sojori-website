@@ -240,8 +240,7 @@ export default function DashboardAppPageClient() {
         <StatsBar stats={[
           { k: '<2min', l: 'Prise en main' },
           { k: '42k+', l: 'Réservations gérées' },
-          { k: '9 modules', l: 'Tout-en-un' },
-          { k: '99.97%', l: 'Uptime' }
+          { k: '9 modules', l: 'Tout-en-un' }
         ]} />
 
         <InFlow

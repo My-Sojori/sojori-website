@@ -8,6 +8,8 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     title: t('brand.title'),
     description: t('brand.description'),
     alternates: { canonical: `/${locale}/brand` },
+    // Document interne (charte) : ni indexé, ni dans le sitemap.
+    robots: { index: false, follow: false },
   };
 }
 
