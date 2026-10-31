@@ -598,3 +598,13 @@ html[dir='rtl'] .sj2-rapport__marque { letter-spacing: 0; }
 /* ================= Lot « Vérité » : la scène est une simulation ================= */
 .sj2-simulation { margin-bottom: 12px; border-color: var(--sj-line-gold-2); min-height: 28px; }
 .sj2-control-lead { margin-top: 12px; }
+
+/* « Point du matin » en version courte : un fondu de 40 px vers le fond de la bulle suggère la suite */
+.sj2-rapport-bulle--night { --bulle-fond: #1c1a15; }
+.sj2-rapport-bulle--wa { --bulle-fond: #fff; }
+.sj2-rapport--court { border-radius: 12px 12px 0 0; }
+.sj2-rapport--court::after { content: ''; position: absolute; inset-inline: 0; bottom: 0; height: 40px; background: linear-gradient(to bottom, rgba(12, 11, 9, 0), var(--bulle-fond, #1c1a15)); pointer-events: none; }
+/* téléphone Admin : même verticalité que les autres (400 à 430 px) ; les échanges de la conversation restent lisibles pour les lecteurs d'écran */
+.sj2-phone--court { min-height: 410px; max-height: 430px; overflow: hidden; }
+.sj2-phone--court .sj2-bubble { position: absolute; width: 1px; height: 1px; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; }
+
