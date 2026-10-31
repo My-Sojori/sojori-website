@@ -405,8 +405,8 @@
           "description": "Historique complet · Performance tracking · Insights clients"
         },
         {
-          "title": "Sécurité des données",
-          "description": "Données chiffrées · Hébergé en France (Paris)"
+          "title": "Hébergement",
+          "description": "Hébergé sur Google Cloud, région de Paris"
         },
         {
           "title": "Suivi continu",
@@ -1208,203 +1208,6 @@
       "subtitle": "WhatsApp, Booking, Expedia, Airbnb, email — tous en un. Mise en route guidée, OAuth sécurisé."
     }
   },
-  "about": {
-    "pageTitle": "À propos",
-    "hero": {
-      "badge": "À propos de Sojori",
-      "titlePart1": "L'",
-      "titleGradient": "orchestrateur intelligent",
-      "titlePart2": "que les hôteliers",
-      "titlePart3": "méritent.",
-      "description": "Les hôteliers méritent mieux que des outils qui gèrent uniquement calendriers et paiements. Sojori répond au besoin d'",
-      "descriptionStrong": "orchestration",
-      "descriptionEnd": " : coordonner chaque interaction, anticiper chaque besoin, au bon moment.",
-      "ctaDemo": "Demander une démo →",
-      "ctaContact": "Nous contacter",
-      "stats": {
-        "launch": {
-          "value": "2025",
-          "label": "année de lancement"
-        },
-        "cities": {
-          "value": "2 villes",
-          "label": "Paris · Casablanca"
-        },
-        "multiCountry": {
-          "value": "Multi-pays déjà adopté",
-          "label": "FR · ES · PT · MA"
-        }
-      }
-    },
-    "marquee": {
-      "items": [
-        "PARIS",
-        "CASABLANCA",
-        "FRANCE",
-        "ESPAGNE",
-        "PORTUGAL",
-        "MAROC",
-        "PMS",
-        "Channel Manager",
-        "WhatsApp AI",
-        "Orchestration"
-      ]
-    },
-    "mission": {
-      "badge": "Notre mission",
-      "title": "Orchestrer chaque détail du ",
-      "titleGradient": "parcours client",
-      "titleEnd": ".",
-      "subtitle": "Comme le ferait le meilleur concierge.",
-      "goalTitle": "Pas seulement gérer des réservations. Mais coordonner chaque interaction, anticiper chaque besoin, orchestrer chaque moment — avec la précision d'un concierge 5 étoiles."
-    },
-    "origin": {
-      "badge": "Pourquoi Sojori existe",
-      "title": "Le ",
-      "titleGradient": "problème",
-      "titleEnd": " qu'on résout.",
-      "chapters": {
-        "ch1": {
-          "number": "i.",
-          "title": "L'écart entre l'ambition et les outils.",
-          "p1": "Les hôteliers veulent offrir ",
-          "p1Strong": "une expérience exceptionnelle",
-          "p1End": " : hospitalité, sens du détail, anticipation des besoins.",
-          "p2": "Mais les PMS classiques se limitent à gérer ",
-          "p2Strong": "calendriers et paiements",
-          "p2End": " — sans coordonner l'expérience."
-        },
-        "ch2": {
-          "number": "ii.",
-          "title": "Le besoin d'orchestration, pas d'automation.",
-          "p1": "Les PMS classiques gèrent le calendrier, les réservations, les paiements — mais ils ",
-          "p1Strong": "ne coordonnent rien",
-          "p1End": ".",
-          "p2": "Le marché a besoin d'un orchestrateur : une plateforme qui sait qu'un message de bienvenue doit partir J-7, qu'un code porte doit être généré 4h avant le check-in, que le ménage doit être vérifié avant 14h."
-        },
-        "ch3": {
-          "number": "iii.",
-          "title": "Les PMS automatisent. Sojori ",
-          "titleGradient": "orchestre",
-          "titleEnd": ".",
-          "p1": "C'est la différence entre un robot qui suit des règles et un ",
-          "p1Strong": "chef d'orchestre",
-          "p1End": " qui coordonne chaque instrument au bon moment.",
-          "commitmentLabel": "Notre engagement :",
-          "commitment": " que vous n'ayez plus jamais à courir derrière un check-in, un ménage, ou un message non envoyé. On orchestre — vous accueillez."
-        }
-      }
-    },
-    "values": {
-      "badge": "Nos valeurs",
-      "title": "Ce qui nous ",
-      "titleStrong": "guide",
-      "titleEnd": ".",
-      "subtitle": "Quatre principes qu'on relit à chaque feature, à chaque embauche, à chaque décision produit.",
-      "value1": {
-        "number": "01 — Priorité",
-        "title": "Hôteliers ",
-        "titleStrong": "d'abord",
-        "titleEnd": ".",
-        "description": "On construit pour ceux qui se lèvent à 6h pour gérer un check-in. Pas pour les slides VC."
-      },
-      "value2": {
-        "number": "02 — Méthode",
-        "title": "Orchestration, pas ",
-        "titleStrong": "l'automatisation",
-        "titleEnd": ".",
-        "description": "Les PMS classiques automatisent. Nous orchestrons. Chaque tâche, au bon moment, à la bonne personne."
-      },
-      "value3": {
-        "number": "03 — Géographie",
-        "title": "Présence ",
-        "titleStrong": "locale",
-        "titleEnd": ".",
-        "description": "Offices à Paris & Casablanca. Clients en France, Espagne, Portugal, Maroc. Sojori s'adapte aux règles, langues, usages de chaque marché."
-      },
-      "value4": {
-        "number": "04 — Rythme",
-        "title": "Livrer vite, ",
-        "titleStrong": "itérer plus vite",
-        "titleEnd": ".",
-        "description": "Le marché bouge vite. On livre chaque semaine, on écoute, on améliore. Chaque feedback de host devient une feature, pas un ticket dans Jira."
-      }
-    },
-    "timeline": {
-      "badge": "Notre parcours",
-      "title": "D'une vision à ",
-      "titleStrong": "une plateforme",
-      "titleEnd": ".",
-      "subtitle": "Créée en 2024, lancée en 2025, en expansion multi-pays.",
-      "milestones": {
-        "2024": {
-          "year": "2024",
-          "label": "Création",
-          "description": "Sojori est créée pour répondre au besoin d'orchestration dans l'hospitalité. L'objectif : aller au-delà des PMS classiques en coordonnant chaque étape du séjour, de l'arrivée au départ."
-        },
-        "2025": {
-          "year": "2025",
-          "label": "Lancement",
-          "description": "Sojori est lancé. Premiers établissements adoptent la plateforme pour orchestrer leurs opérations quotidiennes."
-        },
-        "today": {
-          "year": "Today",
-          "label": "Expansion",
-          "description": "Des clients dans différents pays utilisent Sojori. Nous continuons d'améliorer le produit avec leur feedback — semaine après semaine."
-        }
-      }
-    },
-    "founder": {
-      "badge": "L'équipe",
-      "title": "Qui construit ",
-      "titleStrong": "Sojori",
-      "titleEnd": ".",
-      "subtitle": "Une équipe construisant la plateforme d'orchestration de demain.",
-      "name": "Tawfiq Gouach",
-      "role": "CEO & Founder",
-      "bio": "Entrepreneur tech basé entre ",
-      "bioStrong": "Paris & Casablanca",
-      "bioEnd": ". Dirige le développement de la plateforme d'orchestration Sojori.",
-      "linkedinCta": "→ Voir le profil LinkedIn"
-    },
-    "social": {
-      "badge": "Nous suivre",
-      "title": "Rejoignez la ",
-      "titleStrong": "communauté",
-      "titleEnd": ".",
-      "linkedin": {
-        "title": "LinkedIn",
-        "description": "Suivez nos actualités"
-      },
-      "instagram": {
-        "title": "Instagram",
-        "description": "Découvrez nos coulisses"
-      }
-    },
-    "bigStats": {
-      "badge": "En chiffres",
-      "stat1": {
-        "value": "2025",
-        "label": "Année de lancement"
-      },
-      "stat2": {
-        "value": "2 villes",
-        "label": "Paris & Casablanca"
-      },
-      "stat3": {
-        "value": "Multi-pays",
-        "label": "Déjà adopté"
-      }
-    },
-    "finalCTA": {
-      "title": "Prêt à ",
-      "titleStrong": "orchestrer comme jamais",
-      "titleEnd": " ?",
-      "subtitle": "Découvrez comment Sojori transforme la gestion quotidienne de votre établissement.",
-      "ctaDemo": "Demander une démo →",
-      "ctaHome": "← Retour homepage"
-    }
-  },
   "demo": {
     "pageTitle": "Demander une démo",
     "errors": {
@@ -1624,17 +1427,13 @@
       }
     },
     "trustCards": {
-      "setup": {
-        "title": "Setup rapide",
-        "description": "Déployé en moins de 7 jours"
-      },
       "secure": {
-        "title": "100% sécurisé",
-        "description": "Conforme RGPD · Hébergé en France"
+        "title": "Hébergement",
+        "description": "Hébergé sur Google Cloud, région de Paris"
       },
       "trial": {
-        "title": "Sans engagement",
-        "description": "1 mois d'essai gratuit"
+        "title": "1 mois d'essai gratuit",
+        "description": "Un conseiller vous répond avec une proposition."
       }
     }
   },
@@ -1722,10 +1521,6 @@
     "teamflow": {
       "title": "Gestion staff Marrakech | Équipes riads & villas Maroc",
       "description": "Ménage, recouche et maintenance déclenchés sur les événements réels du séjour. Missions envoyées sur WhatsApp en français ou en arabe, sans application à installer."
-    },
-    "about": {
-      "title": "À propos de Sojori | L'orchestrateur de l'hospitalité",
-      "description": "Sojori développe le moteur d'orchestration de l'hospitalité : expérience client, opérations et revenu, pour hôtels et riads au Maroc et en France."
     },
     "demo": {
       "title": "Demander une démo Sojori · PMS et agents WhatsApp",
@@ -3708,31 +3503,131 @@
         "brand": "SOJORI",
         "text": "Données du PMS · généré automatiquement"
       }
+    },
+    "about": {
+      "meta": {
+        "title": "À propos de Sojori · AI workforce for hospitality",
+        "description": "Sojori donne aux conciergeries, hôtels et riads des agents qui répondent aux voyageurs, coordonnent l’équipe et préparent vos décisions sur WhatsApp."
+      },
+      "hero": {
+        "kicker": "À PROPOS DE SOJORI",
+        "title": "Une équipe d’agents pour celles et ceux qui accueillent.",
+        "lead": "Sojori donne aux conciergeries, aux hôtels et aux riads des agents qui répondent aux voyageurs, coordonnent l’équipe et préparent les décisions, sur WhatsApp. Avec le PMS Sojori, ou avec le vôtre. Vous décidez, vos agents font le reste.",
+        "demo": "Demander une démo",
+        "day": "Voir une journée avec Sojori"
+      },
+      "why": {
+        "eyebrow": "01 · POURQUOI SOJORI",
+        "title": "Le métier se joue dans les messages. Les outils, eux, s’arrêtaient au calendrier.",
+        "text": "Un séjour, c’est une suite de messages : le voyageur qui demande la clé, l’équipe qui confirme le ménage, le propriétaire qui bloque une date. Sojori met un agent derrière chaque métier pour que ces échanges avancent, et vous montre seulement ce qui demande votre décision.",
+        "cards": [
+          {
+            "tag": "SUR WHATSAPP",
+            "title": "Là où sont déjà vos voyageurs et votre équipe.",
+            "text": "Personne n’installe d’application. Le voyageur, le staff, l’admin et le propriétaire écrivent ou envoient un vocal, comme ils le font déjà."
+          },
+          {
+            "tag": "UN AGENT PAR MÉTIER",
+            "title": "Réservation, service client, opérations, et les autres.",
+            "text": "Chaque agent connaît son métier et passe la demande au bon collègue. Les échanges restent tracés."
+          },
+          {
+            "tag": "VOUS GARDEZ LA MAIN",
+            "title": "Vous fixez les règles.",
+            "text": "Un agent agit seul dans ce que vous avez autorisé, prépare une carte à valider, ou vous passe la main."
+          }
+        ]
+      },
+      "principles": {
+        "eyebrow": "02 · NOS PRINCIPES",
+        "title": "Ce que nous nous imposons.",
+        "items": [
+          {
+            "title": "Rien d’inventé.",
+            "text": "Nos gains sont des estimations, avec leurs hypothèses affichées."
+          },
+          {
+            "title": "Pensé pour le Maroc.",
+            "text": "Fiche de police au check-in, contrat de séjour signé en ligne, paiement marocain, et cinq langues : français, arabe, anglais, espagnol, portugais."
+          },
+          {
+            "title": "Le terrain d’abord.",
+            "text": "Nous construisons pour les personnes qui gèrent un départ à 7 h et une arrivée à minuit, et nous améliorons Sojori à partir de leurs retours."
+          },
+          {
+            "title": "Vos données restent les vôtres.",
+            "text": "Hébergé sur Google Cloud, région de Paris. Vous pouvez garder votre PMS : Sojori s’y branche par connecteur."
+          }
+        ]
+      },
+      "facts": {
+        "eyebrow": "03 · REPÈRES",
+        "title": "Sojori en quelques faits.",
+        "items": [
+          {
+            "label": "CRÉATION",
+            "value": "2025"
+          },
+          {
+            "label": "NOTRE ÉQUIPE",
+            "value": "Marrakech, Casablanca, Paris"
+          },
+          {
+            "label": "NOS CLIENTS",
+            "value": "Maroc, France, Espagne, Portugal"
+          },
+          {
+            "label": "HÉBERGEMENT",
+            "value": "Sur Google Cloud, région de Paris"
+          },
+          {
+            "label": "LANGUES",
+            "value": "Français, arabe, anglais, espagnol, portugais"
+          },
+          {
+            "label": "PAIEMENT",
+            "value": "Paiement marocain accepté"
+          }
+        ]
+      },
+      "team": {
+        "eyebrow": "04 · L’ÉQUIPE",
+        "title": "Qui construit Sojori.",
+        "role": "FONDATEUR",
+        "bio": "Il dirige la conception de Sojori, du PMS aux agents.",
+        "linkedin": "Son profil LinkedIn",
+        "agentsTitle": "Et une équipe d’agents qui travaille avec nous."
+      },
+      "faq": {
+        "eyebrow": "FAQ",
+        "title": "Questions fréquentes",
+        "items": [
+          {
+            "q": "Qu’est-ce que Sojori, en une phrase ?",
+            "a": "Sojori est une équipe d’agents pour la location courte durée et l’hôtellerie : ils répondent aux voyageurs, coordonnent votre équipe et préparent vos décisions sur WhatsApp. Vous fixez ce qu’ils font seuls et ce qui attend votre accord."
+          },
+          {
+            "q": "En quoi est-ce différent d’un PMS ?",
+            "a": "Un PMS tient l’état des séjours : réservations, chambres, factures. Les agents de Sojori travaillent sur ces séjours : ils échangent avec le voyageur et l’équipe, et ouvrent les tâches. Sojori inclut son PMS, et se connecte aussi à votre PMS par connecteur."
+          },
+          {
+            "q": "Où Sojori est-il présent ?",
+            "a": "L’équipe de Sojori travaille depuis Marrakech, Casablanca et Paris. Les clients sont au Maroc, en France, en Espagne et au Portugal, et le site existe en cinq langues : français, arabe, anglais, espagnol et portugais."
+          },
+          {
+            "q": "À qui s’adresse Sojori ?",
+            "a": "Aux conciergeries, aux hôtels, aux riads, aux maisons d’hôtes et aux résidences. Les agents prennent leur valeur quand il y a des flux à coordonner : équipes, arrivées, plusieurs canaux. Une démonstration permet de voir si Sojori convient à votre établissement."
+          }
+        ]
+      },
+      "final": {
+        "title": "Mettez vos agents au travail.",
+        "cta": "Composer mon offre"
+      }
     }
   },
   "faqPages": {
     "title": "Questions fréquentes",
-    "about": {
-      "badge": "Sojori",
-      "items": [
-        {
-          "q": "Qu'est-ce que Sojori, en une phrase ?",
-          "a": "Le moteur d'orchestration de l'hospitalité : il orchestre l'expérience client, les opérations et le revenu d'un établissement, en connectant les systèmes, les clients, les équipes et les partenaires."
-        },
-        {
-          "q": "En quoi est-ce différent d'un PMS ?",
-          "a": "Un PMS enregistre l'état d'un séjour ; un orchestrateur déclenche ce qui doit en découler. Sojori inclut son propre PMS, mais se connecte aussi aux PMS existants — vous n'avez pas à remplacer l'existant pour orchestrer."
-        },
-        {
-          "q": "Où Sojori est-il présent ?",
-          "a": "Le Maroc d'abord — Marrakech, Casablanca, Rabat, Tanger, Agadir — puis la France. Ce n'est pas un hasard : la fiche de police, la taxe de séjour et l'arabe comme langue de travail sont natifs, là où une plateforme internationale les traite comme des cas particuliers."
-        },
-        {
-          "q": "À qui s'adresse Sojori ?",
-          "a": "Aux hôtels, riads, maisons d'hôtes et résidences. L'orchestration prend sa valeur quand il y a des flux à coordonner — équipes, arrivées simultanées, plusieurs canaux. Pour un très petit établissement tenu par deux personnes, un bon PMS peut suffire."
-        }
-      ]
-    },
     "alternative-cloudbeds": {
       "badge": "Sojori vs Cloudbeds",
       "items": [
