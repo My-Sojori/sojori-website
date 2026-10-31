@@ -599,6 +599,14 @@ html[dir='rtl'] .sj2-rapport__marque { letter-spacing: 0; }
 .sj2-simulation { margin-bottom: 12px; border-color: var(--sj-line-gold-2); min-height: 28px; }
 .sj2-control-lead { margin-top: 12px; }
 
+/* « Point du matin » en version courte : un fondu de 40 px vers le fond de la bulle suggère la suite */
+.sj2-rapport-bulle--night { --bulle-fond: #1c1a15; }
+.sj2-rapport-bulle--wa { --bulle-fond: #fff; }
+.sj2-rapport--court { border-radius: 12px 12px 0 0; }
+.sj2-rapport--court::after { content: ''; position: absolute; inset-inline: 0; bottom: 0; height: 40px; background: linear-gradient(to bottom, rgba(12, 11, 9, 0), var(--bulle-fond, #1c1a15)); pointer-events: none; }
+/* téléphone Admin : même verticalité que les autres (400 à 430 px) ; les échanges de la conversation restent lisibles pour les lecteurs d'écran */
+.sj2-phone--court { min-height: 410px; max-height: 430px; overflow: hidden; }
+.sj2-phone--court .sj2-bubble { position: absolute; width: 1px; height: 1px; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; }
 /* ================= La salle v2 : des histoires, des liens courbes qui vivent ================= */
 .sj2-histoires { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
 .sj2-histoire { position: relative; overflow: hidden; min-height: 44px; display: inline-flex; align-items: center; gap: 8px; padding: 0 16px; border-radius: 12px; border: 1px solid var(--sj-line); background: #12110d; color: var(--sj-text); font-size: 14px; font-weight: 500; }
@@ -681,4 +689,9 @@ html[dir='rtl'] .sj2-principes__num { font-family: var(--sj-sans); }
 .sj2-about__contact ul { display: flex; flex-direction: column; list-style: none; margin: 0; padding: 0; }
 .sj2-about__contact a { display: inline-flex; align-items: center; min-height: 44px; color: var(--sj-text-2); }
 .sj2-about__contact a:hover { color: var(--sj-text); }
+/* pied de page : une liste par colonne, sous un titre de niveau 2 */
+.sj2-footer__col ul { display: flex; flex-direction: column; gap: 2px; margin: 0; padding: 0; list-style: none; }
+.sj2-footer .sj2-footer__titre { margin: 0 0 8px; font-weight: inherit; color: var(--sj-text-3); }
+/* liens légaux : zone cliquable de 44 px sans changer la taille du texte */
+.sj2-footer__legal a { display: inline-flex; align-items: center; min-height: 44px; }
 

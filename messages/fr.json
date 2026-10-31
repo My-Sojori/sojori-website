@@ -1863,7 +1863,11 @@
       "contact": "Contact",
       "emailLabel": "Écrire à l’équipe commerciale",
       "demo": "Demander une démo",
-      "newTab": "(s’ouvre dans un nouvel onglet)"
+      "newTab": "(s’ouvre dans un nouvel onglet)",
+      "guides": "Guides",
+      "company": "Sojori",
+      "modules": "Les modules WhatsApp",
+      "mcpDev": "MCP (pour les développeurs)"
     },
     "home": {
       "hero": {

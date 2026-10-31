@@ -1863,7 +1863,11 @@
       "contact": "تواصلوا معنا",
       "emailLabel": "راسلوا الفريق التجاري",
       "demo": "اطلبوا عرضًا تجريبيًا",
-      "newTab": "(يُفتح في تبويب جديد)"
+      "newTab": "(يُفتح في تبويب جديد)",
+      "guides": "أدلة",
+      "company": "Sojori",
+      "modules": "وحدات WhatsApp",
+      "mcpDev": "MCP (للمطورين)"
     },
     "home": {
       "hero": {

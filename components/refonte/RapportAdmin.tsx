@@ -19,12 +19,15 @@ const TYPES = [
 ] as const;
 const JOURS = [78, 91, 95, 72, 68, 70, 84];
 
-export function RapportAdmin() {
+/** `court` : l'en-tête, les trois pastilles et les deux premiers chiffres, puis un fondu vers le fond de la bulle ; la version complète reste le défaut. */
+export type VarianteRapport = 'complet' | 'court';
+
+export function RapportAdmin({ variant = 'complet' }: { variant?: VarianteRapport }) {
   const t = useTranslations('refonte.report');
   const ex = useTranslations('refonte.band');
   const jours = t.raw('days.list') as string[];
   return (
-    <figure className="sj2 sj2--chrome sj2-rapport" aria-label={t('aria')}>
+    <figure className={`sj2 sj2--chrome sj2-rapport${variant === 'court' ? ' sj2-rapport--court' : ''}`} aria-label={t('aria')}>
       <span className="sj2-rapport__exemple">{ex('example')}</span>
       <div className="sj2-rapport__in">
       <div className="sj2-rapport__tete">
@@ -44,7 +47,7 @@ export function RapportAdmin() {
       </ul>
 
       <div className="sj2-rapport__kpis">
-        {KPIS.map((k) => (
+        {(variant === 'court' ? KPIS.slice(0, 2) : KPIS).map((k) => (
           <div key={k.cle} className="sj2-rapport__kpi">
             <span className="sj2-rapport__kpi-titre">{t(`kpi.${k.cle}.title`)}</span>
             <span className={`sj2-rapport__kpi-valeur${k.or ? ' is-or' : ''}`}>{t(`kpi.${k.cle}.value`)}</span>
@@ -53,6 +56,8 @@ export function RapportAdmin() {
         ))}
       </div>
 
+      {variant === 'complet' && (
+        <>
       <div className="sj2-rapport__bloc">
         <span className="sj2-rapport__label">{t('types.title')}</span>
         {TYPES.map((x) => (
@@ -83,17 +88,19 @@ export function RapportAdmin() {
         <span className="sj2-rapport__marque">{t('footer.brand')}</span>
         <span>{t('footer.text')}</span>
       </div>
+        </>
+      )}
       </div>
     </figure>
   );
 }
 
 /** La carte dans une bulle de message WhatsApp, avec sa légende (« Bonjour Karim, voici votre point du matin. »). */
-export function RapportBulle({ theme }: { theme: 'night' | 'wa' }) {
+export function RapportBulle({ theme, variant = 'complet' }: { theme: 'night' | 'wa'; variant?: VarianteRapport }) {
   const t = useTranslations('refonte.report');
   return (
     <div className={`sj2-rapport-bulle sj2-rapport-bulle--${theme}`}>
-      <RapportAdmin />
+      <RapportAdmin variant={variant} />
       <p className="sj2-rapport-bulle__legende">{t('caption')}</p>
     </div>
   );
