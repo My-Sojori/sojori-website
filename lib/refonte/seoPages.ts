@@ -10,16 +10,26 @@ export const SEO_PAGES = {
   checkin: '/check-in-whatsapp',
   fichePolice: '/fiche-de-police-maroc',
   taxeSejour: '/taxe-de-sejour-maroc',
+  factureElectronique: '/facture-electronique-maroc',
 } as const;
 export type SeoPageId = keyof typeof SEO_PAGES;
 
 /**
- * Les deux guides réglementaires restent dans le code mais ne sortent pas (ni sitemap, ni lien, ni llms) tant que
+ * Les deux articles (fiche de police, facture électronique) sont publiés (index, follow) ; le guide de la taxe de séjour reste caché (ni sitemap, ni lien, ni llms) tant que
  * leurs champs « [à confirmer] » ne sont pas remplis : aucune page publique ne sort avec un « à confirmer » visible.
  * Pour les publier d'un seul coup : passer ces deux valeurs à true.
  */
 export const PUBLIE: Record<SeoPageId, boolean> = {
-  pmsMaroc: true, conciergerieMaroc: true, agents: true, checkin: true, fichePolice: false, taxeSejour: false,
+  pmsMaroc: true, conciergerieMaroc: true, agents: true, checkin: true, fichePolice: true, taxeSejour: false, factureElectronique: true,
+};
+
+/**
+ * Les articles d'information sourcés : un lien par source quand une adresse officielle est connue, `null` sinon
+ * (on cite alors le titre et la date, sans inventer d'adresse). Même ordre que `sources` dans les messages.
+ */
+export const ARTICLES: Partial<Record<SeoPageId, (string | null)[]>> = {
+  fichePolice: ['https://www.stdn.ma', null, null, null, null, null],
+  factureElectronique: ['https://www.finances.gov.ma/Publication/dgi/2021/cgi2021-fr.pdf', null, null, null],
 };
 
 export async function seoMetadata(id: SeoPageId, locale: string): Promise<Metadata> {

@@ -9,8 +9,8 @@ export const dynamic = 'force-static';
 
 type PageSeo = { title: string; answer: string; sections: { title: string; text?: string; points?: string[] }[]; faq: { q: string; a: string }[] };
 type Pages = Record<string, PageSeo | unknown>;
-const PAGES = ['pmsMaroc', 'conciergerieMaroc', 'agents', 'checkin']; // les deux guides (fichePolice, taxeSejour) restent hors llms tant qu'ils ont des « à confirmer »
-const URLS: Record<string, string> = { pmsMaroc: 'pms-maroc', conciergerieMaroc: 'conciergerie-maroc', agents: 'agents', checkin: 'check-in-whatsapp', fichePolice: 'fiche-de-police-maroc', taxeSejour: 'taxe-de-sejour-maroc' };
+const PAGES = ['pmsMaroc', 'conciergerieMaroc', 'agents', 'checkin', 'fichePolice', 'factureElectronique']; // le guide de la taxe de séjour reste hors llms tant qu'il a des « à confirmer »
+const URLS: Record<string, string> = { pmsMaroc: 'pms-maroc', conciergerieMaroc: 'conciergerie-maroc', agents: 'agents', checkin: 'check-in-whatsapp', fichePolice: 'fiche-de-police-maroc', factureElectronique: 'facture-electronique-maroc', taxeSejour: 'taxe-de-sejour-maroc' };
 
 type Home = {
   hero: { keywords: string; sub: string };

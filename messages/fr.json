@@ -3106,7 +3106,14 @@
           "taxeSejour": "Taxe de séjour au Maroc",
           "channelManager": "Channel manager",
           "dynamicPricing": "Tarification dynamique",
-          "comparatif": "Comparatif des PMS au Maroc"
+          "comparatif": "Comparatif des PMS au Maroc",
+          "factureElectronique": "Facture électronique au Maroc"
+        },
+        "article": {
+          "notice": "Article d’information. Les règles peuvent évoluer : vérifiez auprès de l’administration compétente avant toute décision.",
+          "updatedLabel": "Mis à jour le",
+          "sources": "Sources",
+          "tableCaption": "Tableau"
         }
       },
       "pmsMaroc": {
@@ -3339,51 +3346,89 @@
       },
       "fichePolice": {
         "meta": {
-          "title": "Fiche de police au Maroc : ce que prépare Sojori",
-          "description": "Guide : la fiche de police au Maroc et ce que Sojori prépare sur WhatsApp pour chaque voyageur. Les points réglementaires sont à confirmer."
+          "title": "Fiche de police au Maroc : déclaration STDN · Sojori",
+          "description": "Fiche de police et déclaration STDN au Maroc : délai avant 8 h, inscription, import Excel, archivage d'un an, et ce que fait Sojori au check-in."
         },
         "kicker": "GUIDE · FICHE DE POLICE",
-        "title": "Fiche de police au Maroc : ce que Sojori prépare.",
-        "answer": "Sojori prépare la fiche de police de chaque voyageur à partir des informations qu'il envoie sur WhatsApp, avec sa pièce d'identité. La déclaration aux autorités reste la démarche de l'établissement.",
+        "title": "Fiche de police au Maroc : ce qu'il faut savoir.",
+        "answer": "Au Maroc, les établissements d'hébergement déclarent chaque jour, avant 8 h, les arrivées, les nuitées et les départs de leurs clients sur le portail stdn.ma, et archivent les bulletins individuels pendant un an. Sojori fait signer la fiche de police en ligne pendant le check-in WhatsApp et garde les fiches en PDF ; la déclaration reste la démarche de l'établissement.",
+        "updated": "31 octobre 2026",
         "sections": [
           {
-            "title": "Ce que fait Sojori",
-            "text": "Le voyageur remplit sa fiche avant son arrivée, depuis WhatsApp. Sojori prépare les données et les garde dans le séjour.",
+            "title": "Les textes",
+            "text": "La déclaration des clients repose sur trois textes.",
             "points": [
-              "Chaque voyageur du séjour s'enregistre, un par un.",
-              "La photo de la pièce d'identité est lue automatiquement.",
-              "La fiche est préparée pour chaque voyageur et signée en ligne.",
-              "Une relance automatique part si la fiche n'est pas faite.",
-              "Dans un hôtel, la réception peut contrôler l'identité sur place ; l'envoi des codes d'accès peut être lié à l'enregistrement."
+              "La loi 80-14 sur les établissements d'hébergement touristique et les autres formes d'hébergement touristique, articles 36 à 38 : l'exploitant déclare les arrivées et les nuitées de ses clients (Bulletin officiel n° 6404 du 15 octobre 2015).",
+              "Le décret 2-15-865 du 9 juin 2016 fixe la télédéclaration et le modèle du bulletin individuel (Bulletin officiel n° 6485).",
+              "L'arrêté conjoint 3171-16 du 10 février 2017 fixe l'inscription et le certificat.",
+              "Une circulaire conjointe des ministères de l'Intérieur et du Tourisme, de février 2024, a relancé la généralisation de la télédéclaration ; 3 414 établissements étaient inscrits à fin mai 2024 (Le Matin, 13 juin 2024)."
             ]
           },
           {
-            "title": "Ce que Sojori ne fait pas",
-            "text": "Sojori prépare les données, il ne fait pas la déclaration à votre place : la démarche auprès des autorités reste celle de l'établissement."
+            "title": "S'inscrire sur STDN",
+            "text": "L'inscription se fait en ligne sur www.stdn.ma, puis par un dossier physique déposé à la DGSN ou à la GR dans les 30 jours. Un certificat d'authentification est ensuite remis.",
+            "points": [
+              "L'autorisation d'exploitation.",
+              "Le registre du commerce.",
+              "La CNIE ou le titre de séjour.",
+              "La décision de classement.",
+              "La fiche de pré-inscription."
+            ]
           },
           {
-            "title": "Le cadre réglementaire",
-            "text": "Les points suivants relèvent de la réglementation marocaine et ne sont pas encore vérifiés par Sojori. Ils seront publiés après vérification auprès d'une source officielle.",
+            "title": "Déclarer chaque jour",
+            "text": "La télédéclaration remplace le dépôt des bulletins individuels auprès de la DGSN ou de la GR, le registre de la clientèle et la déclaration manuelle des nuitées.",
             "points": [
-              "Texte de référence et obligations de l'établissement : [à confirmer].",
-              "Qui doit remplir une fiche (chaque adulte, mineurs accompagnés) : [à confirmer].",
-              "Informations obligatoires sur la fiche : [à confirmer].",
-              "Durée de conservation et modalités de transmission : [à confirmer]."
+              "Le délai : chaque jour avant 8 h, déclarer les arrivées, les nuitées et les départs sur www.stdn.ma.",
+              "Deux façons de déclarer : saisir les bulletins un à un, ou importer un fichier Excel (le modèle officiel se télécharge dans l'« Espace pratique »).",
+              "Un jour sans client : déclarer « zéro nuitée ».",
+              "Plateforme en panne : déposer les bulletins à la DGSN ou à la GR avant 8 h, puis les saisir dans les 72 h après le retour du service.",
+              "La déclaration en ligne a la même valeur juridique que le papier. Un retard ou une absence de déclaration expose aux sanctions prévues à l'article 48 de la loi 80-14.",
+              "Transition : tant que la DGSN ou la GR ne vous en a pas dispensé, continuez à déposer les bulletins ; le registre est visé le 1er de chaque mois."
+            ]
+          },
+          {
+            "title": "Garder les bulletins un an",
+            "text": "Les bulletins individuels sont archivés pendant un an et présentés à la DGSN ou à la GR sur demande."
+          },
+          {
+            "title": "Et pour un appartement loué à la nuit ?",
+            "text": "Le guide officiel vise les établissements classés. Pour un appartement loué à la nuit, l'obligation exacte dépend du statut du bien. Renseignez-vous auprès de la préfecture ou du commissariat de votre ville."
+          },
+          {
+            "title": "Ce que fait Sojori",
+            "text": "Sojori prend en charge la fiche de chaque voyageur au moment du check-in. La déclaration à STDN reste la démarche de l'établissement.",
+            "points": [
+              "Le voyageur remplit et signe sa fiche de police en ligne pendant le check-in WhatsApp, avec ses pièces d'identité.",
+              "Vous pouvez bloquer l'envoi des codes d'accès tant que la fiche n'est pas complète.",
+              "Les fiches signées sont gardées en PDF avec la réservation : utile pour l'archivage d'un an."
             ]
           }
         ],
+        "sources": [
+          "Guide officiel STDN, ministère du Tourisme et ministère de l'Intérieur (portail www.stdn.ma)",
+          "Loi 80-14, Bulletin officiel n° 6404 du 15 octobre 2015",
+          "Décret 2-15-865 du 9 juin 2016, Bulletin officiel n° 6485",
+          "Arrêté conjoint 3171-16 du 10 février 2017",
+          "Le Matin, 13 juin 2024",
+          "Page hébergement du ministère du Tourisme (mtaess.gov.ma)"
+        ],
         "faq": [
           {
-            "q": "Comment faire la fiche de police d'un voyageur au Maroc ?",
-            "a": "Avec Sojori, le voyageur envoie sa pièce d'identité sur WhatsApp avant son arrivée et signe sa fiche en ligne ; Sojori prépare la fiche de chaque voyageur. Les obligations réglementaires exactes sont à confirmer auprès d'une source officielle."
+            "q": "À quelle heure faut-il déclarer les clients sur STDN ?",
+            "a": "D'après le guide officiel STDN, la déclaration des arrivées, des nuitées et des départs se fait chaque jour avant 8 h sur www.stdn.ma."
           },
           {
-            "q": "Sojori fait-il la déclaration aux autorités ?",
-            "a": "Non. Sojori prépare les données de la fiche de police ; la déclaration aux autorités reste la démarche de l'établissement."
+            "q": "Combien de temps garder les bulletins individuels ?",
+            "a": "Les bulletins individuels sont archivés pendant un an et présentés à la DGSN ou à la GR sur demande."
           },
           {
-            "q": "Peut-on faire la fiche de police sur WhatsApp ?",
-            "a": "Oui : avec le module WhatsApp Check-in de Sojori, la collecte se fait dans la conversation WhatsApp du voyageur, sans application ni papier."
+            "q": "Qui fait la déclaration à STDN ?",
+            "a": "La déclaration à STDN est la démarche de l’établissement. Sojori fait remplir et signer la fiche de police en ligne pendant le check-in WhatsApp, et garde les fiches en PDF avec la réservation."
+          },
+          {
+            "q": "Que faire si la plateforme STDN est en panne ?",
+            "a": "D'après le guide officiel, on dépose les bulletins à la DGSN ou à la GR avant 8 h, puis on les saisit dans les 72 h après le retour du service."
           }
         ]
       },
@@ -3429,6 +3474,92 @@
           {
             "q": "Sojori reverse-t-il la taxe aux autorités ?",
             "a": "[à confirmer] : Sojori calcule et suit la taxe ; les modalités de déclaration et de reversement sont à confirmer."
+          }
+        ]
+      },
+      "factureElectronique": {
+        "meta": {
+          "title": "Facture électronique au Maroc : ce qu'il faut savoir",
+          "description": "La facture électronique au Maroc : base légale, principe de la clearance, calendrier rapporté par la presse, et ce que fait Sojori aujourd'hui."
+        },
+        "kicker": "GUIDE · FACTURE ÉLECTRONIQUE",
+        "title": "La facture électronique au Maroc : ce qu'il faut savoir.",
+        "answer": "Au Maroc, la facture électronique repose sur l'article 145-IX du Code général des impôts et sur un modèle de « clearance » : la facture est validée par la Direction générale des impôts avant d'être transmise au client. Selon la presse, le décret d'application n'était pas publié au Bulletin officiel en avril 2026 ; vérifiez la situation auprès de l'administration.",
+        "updated": "31 octobre 2026",
+        "sections": [
+          {
+            "title": "Ce que c'est",
+            "text": "La facture électronique est une facture émise par voie électronique, selon des modalités que la réglementation doit fixer. Le modèle retenu au Maroc est la « clearance » : la Direction générale des impôts (DGI) valide la facture avant qu'elle ne soit transmise au client."
+          },
+          {
+            "title": "La base légale",
+            "points": [
+              "L'article 145-IX du Code général des impôts, introduit par la loi de finances 2018, prévoit la facturation électronique, avec des modalités fixées par voie réglementaire.",
+              "Selon Médias24 (18 avril 2026), le décret d'application n'était pas publié au Bulletin officiel."
+            ]
+          },
+          {
+            "title": "Qui est concerné, et quand (selon la presse)",
+            "text": "Le calendrier ci-dessous est rapporté par la presse (Le360 / Challenge, 3 juin 2026). La date réelle d'entrée en vigueur n'est pas confirmée, et le seuil applicable à une conciergerie ou à un hôtel n'est pas établi à ce jour.",
+            "table": {
+              "head": [
+                "Phase",
+                "Entreprises concernées, selon la presse"
+              ],
+              "rows": [
+                [
+                  "2026",
+                  "Grandes entreprises (chiffre d'affaires supérieur à 200 millions de dirhams, environ 1 655 entreprises), d'abord pour les marchés publics (B2G) puis entre entreprises (B2B)"
+                ],
+                [
+                  "2027-2028",
+                  "PME et entreprises de taille intermédiaire"
+                ],
+                [
+                  "Après 2028",
+                  "Très petites entreprises"
+                ]
+              ]
+            },
+            "points": [
+              "Un outil public gratuit est annoncé pour les petites structures ; les autres passeraient par des prestataires agréés (Le360 / Challenge, 3 juin 2026)."
+            ]
+          },
+          {
+            "title": "Ce que vous pouvez préparer dès maintenant",
+            "text": "Une facture validée avant son envoi suppose des données justes au moment de l'émission.",
+            "points": [
+              "Des données de réservation propres : client, dates du séjour, montants, TVA.",
+              "Une numérotation continue des factures.",
+              "Un seul outil qui fait foi pour les réservations et les factures."
+            ]
+          },
+          {
+            "title": "Ce que fait Sojori aujourd'hui",
+            "text": "Sojori garde des données de séjour propres et génère vos factures PDF. Le raccordement à la plateforme de la DGI se fera quand le décret sera publié.",
+            "points": [
+              "Sojori génère une facture PDF par réservation, à partir des données du PMS."
+            ]
+          }
+        ],
+        "sources": [
+          "Code général des impôts, article 145-IX (Direction générale des impôts, édition 2021)",
+          "Le Matin, 20 novembre 2024",
+          "Médias24, 18 avril 2026, entretien avec Younès Idrissi Kaitouni, directeur général des impôts",
+          "Le360 / Challenge, 3 juin 2026"
+        ],
+        "faq": [
+          {
+            "q": "Qu'est-ce que la clearance pour la facture électronique ?",
+            "a": "La clearance est le modèle retenu au Maroc : la Direction générale des impôts valide la facture avant qu'elle ne soit transmise au client."
+          },
+          {
+            "q": "La facture électronique est-elle déjà obligatoire au Maroc ?",
+            "a": "Elle est prévue par l'article 145-IX du Code général des impôts, mais selon la presse le décret d'application n'était pas publié en avril 2026. Le calendrier rapporté par la presse commence par les grandes entreprises ; vérifiez auprès de l'administration."
+          },
+          {
+            "q": "Sojori fait-il la facture électronique ?",
+            "a": "Sojori génère une facture PDF par réservation à partir des données du PMS. Le raccordement à la plateforme de la DGI se fera quand le décret sera publié."
           }
         ]
       }

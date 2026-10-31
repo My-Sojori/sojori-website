@@ -71,6 +71,8 @@ l'établissement.
 - [Owner Portal](https://sojori.com/fr/owner-portal) : reporting pour les propriétaires
 - [Dashboard App](https://sojori.com/fr/dashboard-app) : pilotage de l'exploitation
 - [Intégrations](https://sojori.com/fr/integrations) : connecteurs et API
+- [Fiche de police au Maroc](https://sojori.com/fr/fiche-de-police-maroc) : article d'information sourcé : déclaration quotidienne sur STDN, inscription, archivage, et ce que fait Sojori au check-in
+- [Facture électronique au Maroc](https://sojori.com/fr/facture-electronique-maroc) : article d'information sourcé : base légale, principe de la clearance, calendrier rapporté par la presse
 - [À propos](https://sojori.com/fr/about) : le positionnement « AI workforce for hospitality », les principes et l'équipe ; création en 2025, équipe à Marrakech, Casablanca et Paris, clients au Maroc, en France, en Espagne et au Portugal
 
 ## Par ville

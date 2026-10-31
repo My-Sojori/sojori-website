@@ -4,19 +4,29 @@ import { Shell } from '../Shell';
 import { Faq } from '../Faq';
 import { JsonLd } from '../JsonLd';
 import { OfferBand } from '../OfferBand';
-import { SEO_PAGES, type SeoPageId } from '@/lib/refonte/seoPages';
+import { ARTICLES, SEO_PAGES, type SeoPageId } from '@/lib/refonte/seoPages';
 import { SITE_URL } from '@/lib/siteUrl';
 
-type Section = { title: string; text?: string; points?: string[] };
+type Section = { title: string; text?: string; points?: string[]; table?: { head: string[]; rows: string[][] } };
+
+/** Les noms de journaux latins : isolés (<bdi>) pour que l'arabe ne mélange pas leurs parenthèses et leurs dates. */
+const NOMS_LATINS = /(Le360 \/ Challenge|Le Matin|Médias24)/;
+function Latins({ texte }: { texte: string }) {
+  return (
+    <>
+      {texte.split(NOMS_LATINS).map((p, i) => (i % 2 === 1 ? <bdi key={i} lang="fr">{p}</bdi> : <span key={i}>{p}</span>))}
+    </>
+  );
+}
 
 /** Met en évidence les points réglementaires encore « à confirmer » : ils ne doivent pas passer pour des faits. */
 function Texte({ texte, jeton }: { texte: string; jeton: string }) {
-  if (!texte.includes(jeton)) return <>{texte}</>;
+  if (!texte.includes(jeton)) return <Latins texte={texte} />;
   const parts = texte.split(jeton);
   return (
     <>
       {parts.map((p, i) => (
-        <span key={i}>{p}{i < parts.length - 1 && <mark className="sj2-aconfirmer">{jeton}</mark>}</span>
+        <span key={i}><Latins texte={p} />{i < parts.length - 1 && <mark className="sj2-aconfirmer">{jeton}</mark>}</span>
       ))}
     </>
   );
@@ -26,6 +36,7 @@ const LIENS: Record<string, { href: string }> = {
   home: { href: '/' }, offer: { href: '/offre' },
   pmsMaroc: { href: '/pms-maroc' }, conciergerieMaroc: { href: '/conciergerie-maroc' }, agents: { href: '/agents' },
   checkin: { href: '/check-in-whatsapp' }, fichePolice: { href: '/fiche-de-police-maroc' }, taxeSejour: { href: '/taxe-de-sejour-maroc' },
+  factureElectronique: { href: '/facture-electronique-maroc' },
   channelManager: { href: '/channel-manager' }, dynamicPricing: { href: '/dynamic-pricing' }, comparatif: { href: '/comparatif-pms-maroc' },
 };
 
@@ -39,6 +50,9 @@ export async function SeoPage({ id, locale, related }: { id: SeoPageId; locale: 
   const sections = t.raw('sections') as Section[];
   const faq = t.raw('faq') as { q: string; a: string }[];
   const jeton = c('toConfirm');
+  const sourcesUrl = ARTICLES[id];
+  const sources = sourcesUrl ? (t.raw('sources') as string[]) : [];
+  const miseAJour = sourcesUrl ? t('updated') : '';
   const url = `${SITE_URL}/${locale}${SEO_PAGES[id]}`;
 
   return (
@@ -52,6 +66,12 @@ export async function SeoPage({ id, locale, related }: { id: SeoPageId; locale: 
               <span className="sj2-eyebrow sj2-eyebrow--sm sj2-eyebrow--dim">{c('answerLabel')}</span>
               <p><Texte texte={t('answer')} jeton={jeton} /></p>
             </div>
+            {sourcesUrl && (
+              <p className="sj2-notice" role="note">
+                <strong>{c('article.notice')}</strong>
+                <span>{c('article.updatedLabel')} <time dateTime="2026-10-31">{miseAJour}</time></span>
+              </p>
+            )}
             <div className="sj2-hero__cta">
               <Link href="/offre" className="sj2-btn" prefetch={false}>{c('links.offer')}</Link>
               <Link href="/" className="sj2-btn sj2-btn--ghost" prefetch={false}>{c('links.home')}</Link>
@@ -64,6 +84,15 @@ export async function SeoPage({ id, locale, related }: { id: SeoPageId; locale: 
             <section key={s.title} className="sj2-seo__section">
               <h2 className="sj2-h2 sj2-h2--seo">{s.title}</h2>
               {s.text && <p className="sj2-lead"><Texte texte={s.text} jeton={jeton} /></p>}
+              {s.table && (
+                <div className="sj2-table-wrap">
+                  <table className="sj2-table">
+                    <caption className="sj2-sr">{s.title}</caption>
+                    <thead><tr>{s.table.head.map((h) => <th key={h} scope="col">{h}</th>)}</tr></thead>
+                    <tbody>{s.table.rows.map((r) => <tr key={r[0]}>{r.map((cell, i) => (i === 0 ? <th key={i} scope="row">{cell}</th> : <td key={i}>{cell}</td>))}</tr>)}</tbody>
+                  </table>
+                </div>
+              )}
               {s.points && (
                 <ul className="sj2-coches sj2-coches--seo">
                   {s.points.map((x) => <li key={x}><span aria-hidden="true" className="sj2-coche">✓</span><span><Texte texte={x} jeton={jeton} /></span></li>)}
@@ -71,6 +100,18 @@ export async function SeoPage({ id, locale, related }: { id: SeoPageId; locale: 
               )}
             </section>
           ))}
+          {sourcesUrl && (
+            <section className="sj2-seo__section sj2-sources" aria-labelledby="sj2-sources-h">
+              <h2 id="sj2-sources-h" className="sj2-h2 sj2-h2--seo">{c('article.sources')}</h2>
+              <ol>
+                {sources.map((label, i) => (
+                  <li key={label}>
+                    {sourcesUrl[i] ? <a href={sourcesUrl[i] as string} target="_blank" rel="noopener noreferrer"><Latins texte={label} /></a> : <Latins texte={label} />}
+                  </li>
+                ))}
+              </ol>
+            </section>
+          )}
           <nav className="sj2-related" aria-label={c('related')}>
             <span className="sj2-eyebrow sj2-eyebrow--sm sj2-eyebrow--dim">{c('related')}</span>
             <ul>
@@ -94,6 +135,20 @@ export async function SeoPage({ id, locale, related }: { id: SeoPageId; locale: 
         isPartOf: { '@type': 'WebSite', name: 'Sojori', url: SITE_URL },
         about: { '@type': 'SoftwareApplication', name: 'Sojori', applicationCategory: 'BusinessApplication' },
       }} />
+      {sourcesUrl && (
+        <JsonLd data={{
+          '@context': 'https://schema.org',
+          '@type': 'Article',
+          headline: t('title'),
+          description: t('meta.description'),
+          datePublished: '2026-10-31',
+          dateModified: '2026-10-31',
+          inLanguage: locale,
+          mainEntityOfPage: url,
+          author: { '@type': 'Organization', name: 'Sojori', url: SITE_URL },
+          publisher: { '@type': 'Organization', name: 'Sojori', url: SITE_URL },
+        }} />
+      )}
       <JsonLd data={{
         '@context': 'https://schema.org',
         '@type': 'BreadcrumbList',
