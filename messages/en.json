@@ -6337,7 +6337,51 @@
       "k025": "Yes, with a consolidated view and detail by site. This is what multi-site operations ask for.",
       "k026": "Your dashboard, ",
       "k027": "ready to use.",
-      "k028": "OTA import and guided onboarding."
+      "k028": "OTA import and guided onboarding.",
+      "mock": {
+        "nav": {
+          "home": "Home",
+          "calendar": "Calendar",
+          "reservations": "Reservations",
+          "channels": "Channels",
+          "orchestration": "Orchestration",
+          "tasks": "Tasks",
+          "inbox": "Inbox",
+          "analytics": "Analytics",
+          "settings": "Settings",
+          "ai": "AI"
+        },
+        "crumb": "Dashboard",
+        "search": "Search…",
+        "new": "+ New",
+        "hello": "Hello {name}",
+        "sub": "{arrivals, plural, one {You have # arrival today} other {You have # arrivals today}} and {tasks, plural, one {# pending task} other {# pending tasks}}.",
+        "today": "Today",
+        "week": "Week",
+        "month": "Month",
+        "kpi": {
+          "arrivals": "Today's arrivals",
+          "tasks": "Pending tasks",
+          "messages": "Unread messages",
+          "revenue": "Revenue today",
+          "urgent": "{n} urgent",
+          "newMsgs": "{n} new"
+        },
+        "activity": {
+          "title": "Recent activity",
+          "all": "View all →",
+          "min": "{n} min",
+          "hour": "{n} h",
+          "a1": "{who} checked in · {prop}",
+          "a2": "New WhatsApp from {who} · “Air-conditioning issue”",
+          "a3": "{who} completed cleaning · {prop}",
+          "a4": "Booking confirmed · Airbnb · {amount}"
+        },
+        "arrivals": {
+          "title": "Today's arrivals",
+          "guests": "{n, plural, one {# guest} other {# guests}}"
+        }
+      }
     }
   },
   "inFlow": {
