@@ -129,7 +129,8 @@ export function OffreComposer() {
    * profil : sinon le CRM garde ce que /demo lui a déjà donné (« Autre : Auberge », PMS « Cloudbeds »…).
    */
   const corpsSelection = (intention: Intention, ancienne?: DemandeEnCours | null) => {
-    const profilModifie = !ancienne || (profilInitial !== null && s.profil !== profilInitial);
+    // /demo ne demande plus le type ni le PMS : sans segment déjà connu du CRM, c'est le profil choisi ici qui les donne
+    const profilModifie = !ancienne || !ancienne.segment || (profilInitial !== null && s.profil !== profilInitial);
     const type = ancienne?.typeLibelle ? [`Type déclaré : ${ancienne.typeLibelle}${ancienne.typeAutre ? ` — ${ancienne.typeAutre}` : ''}.`] : [];
     return {
       intent: intention,

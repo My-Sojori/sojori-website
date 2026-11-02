@@ -2996,8 +2996,8 @@
         "aria": "Votre sélection",
         "eyebrow": "VOTRE SÉLECTION",
         "title": "{n, plural, one {# bien ou chambre} other {# biens ou chambres}}",
-        "withSojori": "Avec le PMS Sojori",
-        "withOwn": "Avec votre PMS",
+        "withSojori": "Vous n'avez pas de PMS",
+        "withOwn": "Vous avez déjà un PMS",
         "empty": "Choisissez au moins un agent ou une option.",
         "detailQty": "{n, plural, one {# bien ou chambre} other {# biens ou chambres}}",
         "detailSeat": "{n} × {role}",
@@ -3053,22 +3053,22 @@
         },
         "conc_sojori": {
           "type": "CONCIERGERIE",
-          "socle": "Avec le PMS Sojori",
+          "socle": "Vous n'avez pas de PMS",
           "desc": "Logements, réservations, channel manager, calendriers, inbox, rapports."
         },
         "conc_ext": {
           "type": "CONCIERGERIE",
-          "socle": "Avec votre PMS",
+          "socle": "Vous avez déjà un PMS",
           "desc": "Vous le gardez. Mêmes agents et modules WhatsApp."
         },
         "hotel_sojori": {
           "type": "HÔTEL OU RIAD",
-          "socle": "Avec le PMS Sojori",
+          "socle": "Vous n'avez pas de PMS",
           "desc": "Chambres, réservations, channel manager, réception, rapports."
         },
         "hotel_ext": {
           "type": "HÔTEL OU RIAD",
-          "socle": "Avec votre PMS",
+          "socle": "Vous avez déjà un PMS",
           "desc": "Vous le gardez. Mêmes agents et modules WhatsApp."
         }
       },
