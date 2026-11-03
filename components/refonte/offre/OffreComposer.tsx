@@ -124,12 +124,13 @@ export function OffreComposer() {
   const cas = [t(`profile.label.${hotel ? 'hotel' : 'conc'}`), t(`selection.detail${unite}`, { n: s.n }), ...choisis].join(', ');
 
   /**
-   * Le résumé de la sélection : il part en UN seul `qualify` (le CRM remplace `expectations` à chaque appel), l'intention et le type
-   * déclaré sur /demo en tête. Le segment et le PMS ne partent que si /offre les fixe (visite directe) ou si le visiteur a changé de
-   * profil : sinon le CRM garde ce que /demo lui a déjà donné (« Autre : Auberge », PMS « Cloudbeds »…).
+   * Le résumé de la sélection : il part en UN seul `qualify` (le CRM remplace `expectations` à chaque appel), l'intention en tête
+   * (et le type déclaré, s'il existe). /demo ne demande plus ni le type ni le PMS : le segment et le PMS partent donc depuis le profil
+   * choisi ici (visite directe, demande de /demo sans segment, ou profil changé) ; sinon le CRM garde ce qu'il a déjà.
    */
   const corpsSelection = (intention: Intention, ancienne?: DemandeEnCours | null) => {
-    const profilModifie = !ancienne || (profilInitial !== null && s.profil !== profilInitial);
+    // /demo ne demande plus le type ni le PMS : sans segment déjà connu du CRM, c'est le profil choisi ici qui les donne
+    const profilModifie = !ancienne || !ancienne.segment || (profilInitial !== null && s.profil !== profilInitial);
     const type = ancienne?.typeLibelle ? [`Type déclaré : ${ancienne.typeLibelle}${ancienne.typeAutre ? ` — ${ancienne.typeAutre}` : ''}.`] : [];
     return {
       intent: intention,

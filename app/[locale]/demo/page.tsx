@@ -5,10 +5,9 @@ import { useSearchParams } from 'next/navigation';
 import { useTranslations, useMessages, useLocale } from 'next-intl';
 import { BackgroundEffects } from '@/components/BackgroundEffects';
 import { PageHeader, PageFooter } from '@/components/SharedComponents';
-import { Link } from '@/i18n/routing';
+import { Link, useRouter } from '@/i18n/routing';
 import dynamic from 'next/dynamic';
 import type { FollowUpQuestion, QualificationPayload } from '@/components/demo/QualificationForm';
-import { ACTIVITIES } from '@/lib/demoQualification';
 import { champsIdentite, erreursIdentite, paysInitial } from '@/lib/refonte/identiteDemande';
 import { dialDeIso, formaterNumero, nomCrm } from '@/lib/refonte/pays';
 import { ChampPays } from '@/components/refonte/ChampPays';
@@ -16,7 +15,7 @@ import { normalizeDemoBackendResponse, demoResponseErrorMessage } from '@/lib/de
 import { trackDemoLead, trackDemoScheduled, trackDemoQualified } from '@/lib/analytics';
 import { enTetesDemande } from '@/lib/demoTest';
 import { useHydrate } from '@/lib/useHydrate';
-import { garderDemande, LIBELLE_INTENTION, oublierDemande } from '@/lib/refonte/demandeEnCours';
+import { garderDemande } from '@/lib/refonte/demandeEnCours';
 import { BandeauTest } from '@/components/refonte/BandeauTest';
 
 /** Le questionnaire n'est utile qu'à l'étape 3 : chargé à la demande, hors du JavaScript de la première étape (hydratation plus rapide sur téléphone). */
@@ -28,17 +27,8 @@ const DEMO_API = '/api/v1/demo';
 /** Le calendrier staff est coupé : le mini-formulaire enchaîne sur le questionnaire. */
 const PRISE_DE_RENDEZ_VOUS = false;
 
-/** L'écran « type d'établissement et PMS » : entre l'identité (étape 1) et le questionnaire facultatif (étape 3). */
-const STEP_TYPE = 5;
-
-/** L'écran « C'est envoyé » : deux suites (composer l'offre, ou fin). Plus de questions après l'envoi (Tawfiq, 31/10/2026). */
-const STEP_ENVOYE = 6;
-
 /** Taille du compte, en chambres ou en biens selon le type (Tawfiq, 30/10/2026). */
 const TRANCHES = ['1-5', '6-20', '21-50', '51-100', '100-200', '200+'];
-
-/** Les types du petit formulaire (Tawfiq, 29/10/2026) : conciergerie, hôtel, riad / maison d'hôtes, villa / appartement, autre. */
-const TYPES_FORMULAIRE = ['conciergerie', 'hotel', 'riad', 'villa', 'autre'];
 
 /** Tag BCP 47 pour `Intl` (aligné sur les locales du site). */
 const BOOKING_INTL_LOCALE: Record<string, string> = {
@@ -100,7 +90,7 @@ function DemoPageContent() {
     });
 
   const hydrate = useHydrate();
-  const [termine, setTermine] = useState(false);
+  const router = useRouter();
   const textesPays = { search: t('step1.dialSearchPlaceholder'), none: t('step1.dialNoResults'), close: t('step1.countryClose') };
   const [step, setStep] = useState(1);
   const [source, setSource] = useState<string>('website'); // Default source
@@ -110,10 +100,6 @@ function DemoPageContent() {
     // Le pays proposé selon la langue de la page ; l'indicatif du téléphone le suit (et se change à part).
     paysIso: paysInitial(locale),
     dialIso: paysInitial(locale),
-    // Écran « type d'établissement » : le PMS (Sojori ou le sien) et, pour « Autre », la précision.
-    pmsChoix: '' as '' | 'sojori' | 'own',
-    pmsNom: '',
-    activiteAutre: '',
     ville: '',
     email: '',
     phone: '',
@@ -276,10 +262,6 @@ function DemoPageContent() {
     };
   }, [step, demoRequestId]);
 
-  const choisirActivite = (id: string) => {
-    setFormData(prev => ({ ...prev, activity: id, taille: '' }));
-  };
-
   /** Quatre coordonnées obligatoires (e-mail, nom, pays, téléphone) et l'accord (Tawfiq, 31/10/2026) ; le reste vient après. */
   const identite = () => ({ email: formData.email, nom: formData.fullName, paysIso: formData.paysIso, tel: formData.phone, consent: formData.consentementMessages });
   const [tente, setTente] = useState(false);
@@ -292,8 +274,12 @@ function DemoPageContent() {
     void envoyerDemande();
   };
 
-  /** Écran 1 → la demande existe dès ici (e-mail, nom, pays, téléphone) ; puis l'écran du type d'établissement. */
+  /** Une demande déjà créée n'est jamais renvoyée : le bouton reste inactif jusqu'à l'arrivée sur /offre. */
+  const demandeCreee = useRef(false);
+
+  /** Écran 1 → la demande existe dès ici (e-mail, nom, pays, téléphone) ; le visiteur passe aussitôt à /offre. */
   const envoyerDemande = async () => {
+    if (demandeCreee.current) return;
     setError('');
     setLoading(true);
     try {
@@ -337,49 +323,16 @@ function DemoPageContent() {
       garderDemande({ id: String(newId), jeton: String(data.data?.qualificationToken ?? ''), prenom: formData.fullName.trim().split(/\s+/)[0] ?? '', activiteId: '', typeLibelle: '', segment: '', currentPMS: '', typeAutre: '', dejaDemo: true });
       // Mode test (aperçus) : aucune conversion publicitaire.
       if (!(data.data as { test?: boolean } | undefined)?.test) trackDemoLead(source);
-      setStep(STEP_TYPE);
+      // Plus d'écran intermédiaire : la demande est créée, le visiteur compose son offre (la page /offre ne redemande rien).
+      demandeCreee.current = true;
+      router.push('/offre');
     } catch (err: unknown) {
       const msg = err instanceof Error ? err.message : t('errors.submitStep1');
       setError(msg);
       console.error('Error submitting step 1:', err);
     } finally {
-      setLoading(false);
-    }
-  };
-
-  /** Écran 2 (obligatoire) : le type d'établissement et le PMS partent en `qualify` ; puis « C'est envoyé » et les questions facultatives. */
-  const envoyerType = async (e: React.FormEvent) => {
-    e.preventDefault();
-    const activite = ACTIVITIES.find(item => item.id === formData.activity);
-    if (!activite) { setError(t('step1.activityRequired')); return; }
-    if (!formData.pmsChoix) { setError(t('step1.pmsRequired')); return; }
-    if (!demoRequestId) { setError(t('errors.invalidResponse')); setStep(1); return; }
-    setError('');
-    setLoading(true);
-    try {
-      const res = await fetch(`${DEMO_API}/request/${demoRequestId}/qualify`, {
-        method: 'PATCH',
-        headers: enTetesDemande({ 'Content-Type': 'application/json' }),
-        body: JSON.stringify({
-          qualificationToken,
-          ...champsIdentite(identite(), formData.dialIso),
-          // L'activité dans les mots du CRM : l'agent de prospection s'en sert pour choisir le commercial.
-          ...(activite.crmSegment ? { segment: activite.crmSegment } : {}),
-          currentPMS: formData.pmsChoix === 'sojori' ? 'Sojori' : (formData.pmsNom.trim().slice(0, 80) || 'Garde son PMS actuel'),
-          intent: 'demo',
-          // L'intention en tête (le CRM ne lit pas encore `intent`) puis, pour « Autre », la précision du visiteur.
-          expectations: [LIBELLE_INTENTION.demo, ...(activite.id === 'autre' && formData.activiteAutre.trim() ? [`Type : ${formData.activiteAutre.trim().slice(0, 120)}`] : [])].join('\n'),
-        }),
-      });
-      const raw = normalizeDemoBackendResponse(await res.json().catch(() => ({}))) as { success?: boolean; error?: string };
-      if (raw.success !== true) throw new Error(demoResponseErrorMessage(raw) || t('errors.qualify'));
-      const pmsEnvoye = formData.pmsChoix === 'sojori' ? 'Sojori' : (formData.pmsNom.trim().slice(0, 80) || 'Garde son PMS actuel');
-      garderDemande({ id: demoRequestId, jeton: qualificationToken, prenom: formData.fullName.trim().split(/\s+/)[0] ?? '', activiteId: activite.id, typeLibelle: activite.label, segment: activite.crmSegment, currentPMS: pmsEnvoye, typeAutre: activite.id === 'autre' ? formData.activiteAutre.trim().slice(0, 120) : '', dejaDemo: true });
-      setStep(STEP_ENVOYE);
-    } catch (err: unknown) {
-      setError(err instanceof Error ? err.message : t('errors.qualify'));
-    } finally {
-      setLoading(false);
+      // la demande créée : le bouton reste inactif pendant la navigation (sinon un 2e clic créerait un 2e lead)
+      if (!demandeCreee.current) setLoading(false);
     }
   };
 
@@ -656,92 +609,6 @@ function DemoPageContent() {
                     </form>
                 </div>
               </>
-            )}
-
-            {/* ÉCRAN « TYPE D'ÉTABLISSEMENT ET PMS » : obligatoire, juste après l'identité */}
-            {step === STEP_TYPE && (
-              <div className="demo-step-in">
-                <div style={{ textAlign: 'center', marginBottom: 36 }}>
-                  <span className="badge" style={{ marginBottom: 20 }}>
-                    <span className="badge-dot"></span> {t('step1.badge')}
-                  </span>
-                  <h2 style={{ marginBottom: 12, fontSize: 34, textWrap: 'balance' }}>{t('step1.typeTitle')}</h2>
-                  <p style={{ fontSize: 16, color: 'var(--text-2)', maxWidth: 560, margin: '0 auto' }}>{t('step1.typeSubtitle')}</p>
-                </div>
-                <div className="glass demo-glass-panel" style={{ padding: 40, borderRadius: 16 }}>
-                  {error && (
-                    <div role="alert" style={{ padding: 16, borderRadius: 8, background: 'rgba(239,68,68,0.15)', border: '1px solid rgba(239,68,68,0.3)', marginBottom: 20, color: '#fca5a5', fontSize: 14 }}>
-                      {error}
-                    </div>
-                  )}
-                  <form method="post" action="#" onSubmit={envoyerType} className="demo-mini" noValidate>
-                    <div className="qf-pills" role="group" aria-label={t('step1.typeTitle')} style={{ marginBottom: 22 }}>
-                      {ACTIVITIES.filter(item => TYPES_FORMULAIRE.includes(item.id)).map(item => (
-                        <button
-                          key={item.id}
-                          type="button"
-                          disabled={loading}
-                          aria-pressed={formData.activity === item.id}
-                          onClick={() => choisirActivite(item.id)}
-                          className={formData.activity === item.id ? 'qf-pill qf-pill-on' : 'qf-pill'}
-                        >
-                          {t(`step1.activities.${item.id}`)}
-                        </button>
-                      ))}
-                    </div>
-                    {formData.activity === 'autre' && (
-                      <div style={{ marginBottom: 22 }}>
-                        <label style={labelStyle as React.CSSProperties} htmlFor="demo-autre">{t('step1.otherLabel')}</label>
-                        <input id="demo-autre" type="text" name="activiteAutre" value={formData.activiteAutre} onChange={handleChange} style={inputStyle} />
-                      </div>
-                    )}
-                    <h3 style={{ fontSize: 18, marginBottom: 12 }}>{t('step1.pmsTitle')}</h3>
-                    <div className="demo-pms-choix" role="group" aria-label={t('step1.pmsTitle')} style={{ marginBottom: 18 }}>
-                      {(['sojori', 'own'] as const).map(v => (
-                        <button
-                          key={v}
-                          type="button"
-                          disabled={loading}
-                          aria-pressed={formData.pmsChoix === v}
-                          onClick={() => setFormData(prev => ({ ...prev, pmsChoix: v }))}
-                          className={formData.pmsChoix === v ? 'qf-pill qf-pill-on' : 'qf-pill'}
-                          style={{ flex: '1 1 200px', minHeight: 64, fontSize: 16, fontWeight: 600 }}
-                        >
-                          {t(v === 'sojori' ? 'step1.pmsSojori' : 'step1.pmsOwn')}
-                        </button>
-                      ))}
-                    </div>
-                    {formData.pmsChoix === 'own' && (
-                      <div style={{ marginBottom: 22 }}>
-                        <label style={labelStyle as React.CSSProperties} htmlFor="demo-pms">{t('step1.pmsWhich')}</label>
-                        <input id="demo-pms" type="text" name="pmsNom" value={formData.pmsNom} onChange={handleChange} style={inputStyle} />
-                      </div>
-                    )}
-                    <button type="submit" className="btn btn-primary" disabled={loading || !hydrate} style={{ width: '100%', padding: '16px', fontSize: 15, fontWeight: 600 }}>
-                      {!hydrate ? t('step1.pageLoading') : loading ? t('step1.submitButtonLoading') : t('step1.typeSubmit')}
-                    </button>
-                  </form>
-                </div>
-              </div>
-            )}
-
-            {/* « C'EST ENVOYÉ » : deux suites, sans question */}
-            {step === STEP_ENVOYE && (
-              <div className="demo-step-in" style={{ textAlign: 'center' }}>
-                <span className="badge" style={{ marginBottom: 20 }}>
-                  <span className="badge-dot"></span> {t('step1.badge')}
-                </span>
-                <h1 style={{ marginBottom: 14, textWrap: 'balance' }}>{t('sent.title')}</h1>
-                <p style={{ fontSize: 18, lineHeight: 1.6, color: 'var(--text-2)', maxWidth: 560, margin: '0 auto 32px' }}>
-                  {termine ? t('sent.thanks') : t('sent.lead')}
-                </p>
-                {!termine && (
-                  <div className="glass demo-glass-panel demo-sent-actions" style={{ padding: 28, borderRadius: 16, maxWidth: 520, margin: '0 auto', display: 'flex', flexDirection: 'column', gap: 12 }}>
-                    <Link href="/offre" className="btn btn-primary" style={{ minHeight: 52, display: 'flex', alignItems: 'center', justifyContent: 'center', textAlign: 'center', padding: '12px 18px', lineHeight: 1.3, whiteSpace: 'normal', fontSize: 16, fontWeight: 600 }}>{t('sent.compose')}</Link>
-                    <button type="button" className="btn" style={{ minHeight: 52, fontSize: 15, fontWeight: 600, background: 'transparent', color: 'var(--text-1)', border: '1px solid var(--glass-border)', borderRadius: 10, padding: '12px 18px' }} onClick={() => { oublierDemande(); setTermine(true); }}>{t('sent.done')}</button>
-                  </div>
-                )}
-              </div>
             )}
 
             {/* STEP 2 : choix du créneau (semaine à partir de demain, fuseau Paris / backend) */}
@@ -1108,7 +975,6 @@ function DemoPageContent() {
                     initialCountryCode={dialDeIso(formData.dialIso)}
                     initialNumberOfProperties={formData.taille || undefined}
                     initialCountry={nomCrm(formData.paysIso)}
-                    initialCurrentPMS={formData.pmsChoix === 'sojori' ? 'Sojori' : formData.pmsChoix === 'own' ? (formData.pmsNom.trim() || 'Garde son PMS actuel') : undefined}
                     initialFullName={formData.fullName.trim() || undefined}
                     initialCity={formData.ville.trim() || undefined}
                     compact
@@ -1302,7 +1168,7 @@ function DemoPageContent() {
           </div>
         </section>
 
-        <PageFooter bande={step !== STEP_ENVOYE} />
+        <PageFooter />
       </div>
 
     </>

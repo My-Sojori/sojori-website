@@ -1275,10 +1275,10 @@
       "nameRequired": "Enter your name.",
       "countryClose": "Close",
       "emailRequired": "Enter a valid email.",
-      "pmsRequired": "Say which PMS you use.",
-      "pmsTitle": "Which PMS?",
-      "pmsSojori": "With the Sojori PMS",
-      "pmsOwn": "With my own PMS",
+      "pmsRequired": "Say whether you have a PMS.",
+      "pmsTitle": "Do you have a PMS?",
+      "pmsSojori": "I don't have a PMS",
+      "pmsOwn": "I already have a PMS",
       "pmsWhich": "Which one? (optional)",
       "otherLabel": "Please specify (optional)",
       "typeSubmit": "Continue →",
@@ -2996,8 +2996,8 @@
         "aria": "Your selection",
         "eyebrow": "YOUR SELECTION",
         "title": "{n, plural, one {# property or room} other {# properties or rooms}}",
-        "withSojori": "With the Sojori PMS",
-        "withOwn": "With your PMS",
+        "withSojori": "You don't have a PMS",
+        "withOwn": "You already have a PMS",
         "empty": "Choose at least one agent or option.",
         "detailQty": "{n, plural, one {# property or room} other {# properties or rooms}}",
         "detailSeat": "{n} × {role}",
@@ -3053,22 +3053,22 @@
         },
         "conc_sojori": {
           "type": "CONCIERGE COMPANY",
-          "socle": "With the Sojori PMS",
+          "socle": "You don't have a PMS",
           "desc": "Properties, bookings, channel manager, calendars, inbox, reports."
         },
         "conc_ext": {
           "type": "CONCIERGE COMPANY",
-          "socle": "With your PMS",
+          "socle": "You already have a PMS",
           "desc": "You keep it. Same agents and WhatsApp modules."
         },
         "hotel_sojori": {
           "type": "HOTEL OR RIAD",
-          "socle": "With the Sojori PMS",
+          "socle": "You don't have a PMS",
           "desc": "Rooms, bookings, channel manager, front desk, reports."
         },
         "hotel_ext": {
           "type": "HOTEL OR RIAD",
-          "socle": "With your PMS",
+          "socle": "You already have a PMS",
           "desc": "You keep it. Same agents and WhatsApp modules."
         }
       },

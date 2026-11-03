@@ -1275,10 +1275,10 @@
       "nameRequired": "أدخلوا اسمكم.",
       "countryClose": "إغلاق",
       "emailRequired": "أدخلوا بريدًا إلكترونيًا صحيحًا.",
-      "pmsRequired": "حدّدوا النظام الذي تستخدمونه.",
-      "pmsTitle": "بأي نظام PMS؟",
-      "pmsSojori": "مع نظام PMS من Sojori",
-      "pmsOwn": "مع نظامي PMS الخاص",
+      "pmsRequired": "حدّدوا هل لديكم نظام PMS.",
+      "pmsTitle": "هل لديكم نظام PMS؟",
+      "pmsSojori": "ليس لديّ نظام PMS",
+      "pmsOwn": "لديّ نظام PMS بالفعل",
       "pmsWhich": "أيّ نظام؟ (اختياري)",
       "otherLabel": "حدّدوا (اختياري)",
       "typeSubmit": "متابعة ←",
@@ -2996,8 +2996,8 @@
         "aria": "اختياركم",
         "eyebrow": "اختياركم",
         "title": "{n, plural, zero {# وحدة أو غرفة} one {# وحدة أو غرفة} two {# وحدة أو غرفة} few {# وحدات أو غرف} many {# وحدة أو غرفة} other {# وحدة أو غرفة}}",
-        "withSojori": "مع PMS الخاص بـSojori",
-        "withOwn": "مع PMS الخاص بكم",
+        "withSojori": "ليس لديكم نظام PMS",
+        "withOwn": "لديكم نظام PMS بالفعل",
         "empty": "اختاروا وكيلًا أو خيارًا واحدًا على الأقل.",
         "detailQty": "{n, plural, zero {# وحدة أو غرفة} one {# وحدة أو غرفة} two {# وحدة أو غرفة} few {# وحدات أو غرف} many {# وحدة أو غرفة} other {# وحدة أو غرفة}}",
         "detailSeat": "{n} × {role}",
@@ -3053,22 +3053,22 @@
         },
         "conc_sojori": {
           "type": "شركة كونسييرج",
-          "socle": "مع PMS من Sojori",
+          "socle": "ليس لديكم نظام PMS",
           "desc": "الوحدات، الحجوزات، مدير القنوات، التقويمات، صندوق الرسائل، التقارير."
         },
         "conc_ext": {
           "type": "شركة كونسييرج",
-          "socle": "مع PMS الخاص بك",
+          "socle": "لديكم نظام PMS بالفعل",
           "desc": "تحتفظ به. الوكلاء ووحدات WhatsApp نفسها."
         },
         "hotel_sojori": {
           "type": "فندق أو رياض",
-          "socle": "مع PMS من Sojori",
+          "socle": "ليس لديكم نظام PMS",
           "desc": "الغرف، الحجوزات، مدير القنوات، الاستقبال، التقارير."
         },
         "hotel_ext": {
           "type": "فندق أو رياض",
-          "socle": "مع PMS الخاص بك",
+          "socle": "لديكم نظام PMS بالفعل",
           "desc": "تحتفظ به. الوكلاء ووحدات WhatsApp نفسها."
         }
       },
