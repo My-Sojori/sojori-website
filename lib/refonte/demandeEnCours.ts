@@ -22,18 +22,25 @@ export type DemandeEnCours = {
 
 const CLE = 'sojori.demande';
 
+/** Copie en mémoire du module : sans sessionStorage (navigation privée), elle survit au passage /demo → /offre (navigation sans rechargement). */
+let enMemoire: DemandeEnCours | null = null;
+
 export function lireDemande(): DemandeEnCours | null {
   try {
     const brut = window.sessionStorage.getItem(CLE);
-    if (!brut) return null;
-    const d = JSON.parse(brut) as Partial<DemandeEnCours>;
-    return d && typeof d.id === 'string' && typeof d.jeton === 'string' ? (d as DemandeEnCours) : null;
-  } catch { return null; }
+    if (brut) {
+      const d = JSON.parse(brut) as Partial<DemandeEnCours>;
+      if (d && typeof d.id === 'string' && typeof d.jeton === 'string') return d as DemandeEnCours;
+    }
+  } catch { /* stockage indisponible ou illisible : la copie en mémoire prend le relais */ }
+  return enMemoire;
 }
 export function garderDemande(d: DemandeEnCours) {
-  try { window.sessionStorage.setItem(CLE, JSON.stringify(d)); } catch { /* sans stockage : la demande reste en mémoire de la page */ }
+  enMemoire = d;
+  try { window.sessionStorage.setItem(CLE, JSON.stringify(d)); } catch { /* sans stockage : la copie en mémoire du module suffit pour /demo → /offre */ }
 }
 export function oublierDemande() {
+  enMemoire = null;
   try { window.sessionStorage.removeItem(CLE); } catch { /* sans effet */ }
 }
 

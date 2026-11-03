@@ -274,8 +274,12 @@ function DemoPageContent() {
     void envoyerDemande();
   };
 
-  /** Écran 1 → la demande existe dès ici (e-mail, nom, pays, téléphone) ; puis l'écran du type d'établissement. */
+  /** Une demande déjà créée n'est jamais renvoyée : le bouton reste inactif jusqu'à l'arrivée sur /offre. */
+  const demandeCreee = useRef(false);
+
+  /** Écran 1 → la demande existe dès ici (e-mail, nom, pays, téléphone) ; le visiteur passe aussitôt à /offre. */
   const envoyerDemande = async () => {
+    if (demandeCreee.current) return;
     setError('');
     setLoading(true);
     try {
@@ -320,13 +324,15 @@ function DemoPageContent() {
       // Mode test (aperçus) : aucune conversion publicitaire.
       if (!(data.data as { test?: boolean } | undefined)?.test) trackDemoLead(source);
       // Plus d'écran intermédiaire : la demande est créée, le visiteur compose son offre (la page /offre ne redemande rien).
+      demandeCreee.current = true;
       router.push('/offre');
     } catch (err: unknown) {
       const msg = err instanceof Error ? err.message : t('errors.submitStep1');
       setError(msg);
       console.error('Error submitting step 1:', err);
     } finally {
-      setLoading(false);
+      // la demande créée : le bouton reste inactif pendant la navigation (sinon un 2e clic créerait un 2e lead)
+      if (!demandeCreee.current) setLoading(false);
     }
   };
 
