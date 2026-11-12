@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { fichePrerempli, formaterMontant } from '@/lib/contratFichePrerempli';
 import { normalizeDemoBackendResponse } from '@/lib/demoApiResponse';
 import { SignaturePad } from './SignaturePad';
 
@@ -43,14 +44,11 @@ export type Abonnement = {
     representant: { nom: string; fonction: string };
   };
   champsClient: Array<{ cle: string; libelle: string; requis: boolean }>;
+  /** Ce que le CRM sait déjà du client : pré-remplit la fiche (jamais le nom ni la fonction du signataire). */
+  champsInitiaux?: Record<string, string>;
+  /** La langue du contrat figé (fr ou en) ; absente pour un contrat d'avant la règle : français. */
+  langue?: 'fr' | 'en';
 };
-
-/** « 1 450 € », « 26,10 € » ; en MAD au dirham pour un contrat d'avant. */
-function montant(n: number, devise: string): string {
-  if (devise !== 'EUR') return `${Math.round(n).toLocaleString('fr-FR')} MAD`;
-  const centimes = Math.round(n * 100) % 100 !== 0;
-  return `${n.toLocaleString('fr-FR', { minimumFractionDigits: centimes ? 2 : 0, maximumFractionDigits: centimes ? 2 : 0 })} €`;
-}
 
 /** Un texte d'article en paragraphes ; une ligne « - … » devient une puce (même règle que le PDF). */
 function paragraphes(texte: string): Array<{ puces: boolean; lignes: string[] }> {
@@ -110,7 +108,8 @@ export function ContratAbonnement({
   const a = abonnement;
   const b = a.bonDeCommande;
   const v = a.vendeur;
-  const [fiche, setFiche] = useState<Record<string, string>>({});
+  const montant = (n: number, devise: string) => formaterMontant(n, devise, a.langue);
+  const [fiche, setFiche] = useState<Record<string, string>>(() => fichePrerempli(a.champsClient, a.champsInitiaux));
   const [png, setPng] = useState<string | null>(null);
   const [accepte, setAccepte] = useState(false);
   const [enCours, setEnCours] = useState(false);
