@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { fichePrerempli, formaterMontant } from '@/lib/contratFichePrerempli';
+import { textesPage } from '@/lib/contratPageTextes';
 import { normalizeDemoBackendResponse } from '@/lib/demoApiResponse';
 import { SignaturePad } from './SignaturePad';
 
@@ -48,6 +49,16 @@ export type Abonnement = {
   champsInitiaux?: Record<string, string>;
   /** La langue du contrat figé (fr ou en) ; absente pour un contrat d'avant la règle : français. */
   langue?: 'fr' | 'en';
+  /**
+   * Le contrat déjà mis en texte par srv-crm dans sa langue (lignes du bon de commande traduites, mots du catalogue
+   * connu) : la page préfère ces lignes à celles, brutes, du bon de commande.
+   */
+  rendu?: {
+    synthese?: { offre?: string; nombre?: string };
+    annexe?: { lignes?: Array<{ designation: string; note?: string }> };
+  };
+  /** Le contrat type validé dont il est tiré : sa page HTML complète, lue dans un cadre isolé. */
+  contratType?: { famille: string; langue: string; version: number; titre: string; html: string } | null;
 };
 
 /** Un texte d'article en paragraphes ; une ligne « - … » devient une puce (même règle que le PDF). */
@@ -109,6 +120,9 @@ export function ContratAbonnement({
   const b = a.bonDeCommande;
   const v = a.vendeur;
   const montant = (n: number, devise: string) => formaterMontant(n, devise, a.langue);
+  const tx = textesPage(a.langue);
+  const htmlContrat = a.contratType?.html?.trim() || '';
+  const lignesRendues = a.rendu?.annexe?.lignes ?? [];
   const [fiche, setFiche] = useState<Record<string, string>>(() => fichePrerempli(a.champsClient, a.champsInitiaux));
   const [png, setPng] = useState<string | null>(null);
   const [accepte, setAccepte] = useState(false);
@@ -135,9 +149,9 @@ export function ContratAbonnement({
       });
       const r = normalizeDemoBackendResponse(await res.json()) as { success?: boolean; error?: string };
       if (r.success) await onSigne();
-      else setErreur(r.error || 'Signature impossible.');
+      else setErreur(r.error || tx.erreurSignature);
     } catch {
-      setErreur('Erreur réseau. Réessayez.');
+      setErreur(tx.erreurReseau);
     } finally {
       setEnCours(false);
     }
@@ -145,9 +159,9 @@ export function ContratAbonnement({
 
   const sojori = [
     v.raisonSociale,
-    v.rc ? `RC n° ${v.rc}` : '',
-    v.ice ? `ICE n° ${v.ice}` : '',
-    v.adresse ? `siège : ${v.adresse}` : '',
+    v.rc ? tx.rc(v.rc) : '',
+    v.ice ? tx.ice(v.ice) : '',
+    v.adresse ? tx.siegeSojori(v.adresse) : '',
   ]
     .filter(Boolean)
     .join(', ');
@@ -155,57 +169,70 @@ export function ContratAbonnement({
   return (
     <>
       <h1 style={{ fontSize: 28, fontWeight: 800, color: '#1c1917', margin: '0 0 6px' }}>
-        {signe ? 'Contrat signé' : a.titre}
+        {signe ? tx.signe : a.titre}
       </h1>
       <p style={{ fontSize: 14, color: '#78716c', margin: '0 0 24px' }}>
-        Référence {reference} · conditions générales, version {a.cgVersion}
+        {tx.reference(reference, a.cgVersion)}
       </p>
 
+      {htmlContrat ? (
+        <div style={carte} data-testid="contrat-type-html">
+          <h2 style={titreCarte}>{tx.contratComplet}</h2>
+          {/* La page du contrat type, rendue par srv-crm : lecture seule, aucun script, aucune navigation. */}
+          <iframe
+            title={a.contratType?.titre || a.titre}
+            sandbox=""
+            srcDoc={htmlContrat}
+            style={{ width: '100%', height: 720, border: '1px solid #e7e5e4', borderRadius: 10, background: '#fff' }}
+          />
+        </div>
+      ) : (
+        <>
       <div style={carte}>
-        <h2 style={titreCarte}>Les parties</h2>
+        <h2 style={titreCarte}>{tx.parties}</h2>
         <p style={{ fontSize: 14.5, color: '#44403c', lineHeight: 1.65, margin: '0 0 10px' }}>
-          <strong>Sojori</strong> — {sojori}, représentée par {v.representant.nom || '…'}, {v.representant.fonction || '…'}.
+          <strong>Sojori</strong> — {tx.sojoriLigne(sojori, v.representant.nom, v.representant.fonction)}
         </p>
         <p style={{ fontSize: 14.5, color: '#44403c', lineHeight: 1.65, margin: 0 }}>
-          <strong>Le Client</strong> — {signe ? signePar ?? '' : 'les informations que vous remplissez ci-dessous.'}
+          <strong>{tx.clientLabel}</strong> — {signe ? signePar ?? '' : tx.clientInfos}
         </p>
       </div>
 
       <div style={carte}>
-        <h2 style={titreCarte}>Bon de commande n° {b.numero}</h2>
+        <h2 style={titreCarte}>{tx.bonDeCommande(b.numero)}</h2>
         <p style={{ fontSize: 14, color: '#78716c', margin: '0 0 12px' }}>
-          Formule {b.formule} · {b.nombre} {b.unite} · prix hors taxes, en {b.devise === 'EUR' ? 'euros' : 'dirhams'}
+          {tx.resume(a.rendu?.synthese?.offre ?? b.formule, a.rendu?.synthese?.nombre ?? `${b.nombre} ${b.unite}`, b.devise === 'EUR' ? 'EUR' : 'MAD')}
         </p>
-        {b.lignes.map((l) => (
+        {b.lignes.map((l, i) => (
           <div key={l.designation} style={{ padding: '10px 0', borderBottom: '1px solid #f5f0e6' }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', gap: 16 }}>
-              <span style={{ fontSize: 14.5, color: '#1c1917' }}>{l.designation}</span>
+              <span style={{ fontSize: 14.5, color: '#1c1917' }}>{lignesRendues[i]?.designation ?? l.designation}</span>
               <span style={{ fontSize: 14.5, color: '#44403c', whiteSpace: 'nowrap' }}>{montant(l.montant, b.devise)}</span>
             </div>
             <div style={{ fontSize: 12.5, color: '#78716c', marginTop: 2 }}>
               {l.quantite} × {montant(l.prixUnitaire, b.devise)}
-              {l.note ? ` · ${l.note}` : ''}
+              {l.note ? ` · ${lignesRendues[i]?.note ?? l.note}` : ''}
             </div>
           </div>
         ))}
         <div style={{ display: 'flex', justifyContent: 'space-between', paddingTop: 14, fontSize: 16.5, fontWeight: 800, color: '#1c1917' }}>
-          <span>Total mensuel HT</span>
+          <span>{tx.totalMensuel}</span>
           <span>{montant(b.mensuelHt, b.devise)}</span>
         </div>
         {b.fraisUniques.map((f) => (
           <div key={f.libelle} style={{ display: 'flex', justifyContent: 'space-between', paddingTop: 8, fontSize: 14.5, color: '#44403c' }}>
-            <span>{f.libelle} — une seule fois</span>
-            <span>{f.montant > 0 ? montant(f.montant, b.devise) : 'Offert'}</span>
+            <span>{tx.uneSeuleFois(f.libelle)}</span>
+            <span>{f.montant > 0 ? montant(f.montant, b.devise) : tx.offert}</span>
           </div>
         ))}
         {b.remise ? (
           <div style={{ display: 'flex', justifyContent: 'space-between', paddingTop: 8, fontSize: 14.5, color: '#44403c' }}>
-            <span>Remise{b.remise.pct ? ` (${b.remise.pct} %)` : ''}</span>
+            <span>{tx.remise(b.remise.pct)}</span>
             <span>- {montant(b.remise.montant, b.devise)}</span>
           </div>
         ) : null}
         <p style={{ fontSize: 13, color: '#78716c', margin: '12px 0 0' }}>
-          TVA {b.tvaPct} % en sus. Mensuel, sans engagement. Vous ajoutez ou changez d’options à tout moment, sans nouveau contrat.
+          {tx.conditions(b.tvaPct)}
         </p>
       </div>
 
@@ -234,25 +261,27 @@ export function ContratAbonnement({
           </div>
         ))}
       </div>
+        </>
+      )}
 
       {signe ? (
         <div style={{ ...carte, background: '#f0f9f7', borderColor: '#1e5b57' }}>
           <p style={{ fontSize: 16, fontWeight: 700, color: '#1e5b57', margin: '0 0 8px' }}>
-            Signé{signePar ? ` par ${signePar}` : ''}, contre-signé par Sojori
+            {tx.signeParLabel(signePar)}
           </p>
           <p style={{ fontSize: 14, color: '#44403c', lineHeight: 1.6, margin: '0 0 14px' }}>
-            Merci. Votre exemplaire signé par les deux parties, avec son certificat de signature :
+            {tx.merci}
           </p>
           <a
             href={`${API}/contract/pdf?t=${encodeURIComponent(token)}`}
             style={{ display: 'inline-block', padding: '12px 20px', background: '#e6b022', color: '#1c1917', fontWeight: 800, borderRadius: 11, textDecoration: 'none' }}
           >
-            Télécharger le contrat signé (PDF)
+            {tx.telecharger}
           </a>
         </div>
       ) : (
         <div style={carte}>
-          <h2 style={titreCarte}>Vos informations</h2>
+          <h2 style={titreCarte}>{tx.vosInfos}</h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: 12 }}>
             {a.champsClient.map((c) => (
               <label key={c.cle} style={{ display: 'block', fontSize: 13, color: '#57534e' }}>
@@ -268,21 +297,20 @@ export function ContratAbonnement({
             ))}
           </div>
 
-          <h2 style={{ ...titreCarte, margin: '24px 0 10px' }}>Votre signature</h2>
+          <h2 style={{ ...titreCarte, margin: '24px 0 10px' }}>{tx.votreSignature}</h2>
           <SignaturePad onChange={setPng} />
 
           <label style={{ display: 'flex', gap: 10, alignItems: 'flex-start', fontSize: 14, color: '#57534e', lineHeight: 1.55, margin: '18px 0 18px', cursor: 'pointer' }}>
             <input type="checkbox" checked={accepte} onChange={(e) => setAccepte(e.target.checked)} style={{ marginTop: 3, width: 17, height: 17, cursor: 'pointer' }} />
             <span>
-              J’ai lu le bon de commande et les conditions générales, et je les accepte. Ma signature électronique
-              est enregistrée avec sa date, son heure et mon adresse IP.
+              {tx.consentement}
             </span>
           </label>
 
           {manquant ? (
-            <p style={{ fontSize: 13, color: '#78716c', margin: '0 0 12px' }}>À remplir : {manquant.libelle.replace('de l’agence', 'de votre société').toLocaleLowerCase('fr-FR')}.</p>
+            <p style={{ fontSize: 13, color: '#78716c', margin: '0 0 12px' }}>{tx.aRemplir(manquant.libelle.replace('de l’agence', 'de votre société').toLocaleLowerCase(tx.locale))}</p>
           ) : !png ? (
-            <p style={{ fontSize: 13, color: '#78716c', margin: '0 0 12px' }}>Dessinez votre signature dans le cadre.</p>
+            <p style={{ fontSize: 13, color: '#78716c', margin: '0 0 12px' }}>{tx.dessinez}</p>
           ) : null}
           {erreur && <p style={{ fontSize: 14, color: '#c4483a', margin: '0 0 14px' }}>{erreur}</p>}
 
@@ -303,10 +331,10 @@ export function ContratAbonnement({
               fontFamily: 'inherit',
             }}
           >
-            {enCours ? 'Signature en cours…' : 'Signer le contrat'}
+            {enCours ? tx.signatureEnCours : tx.signer}
           </button>
           <p style={{ fontSize: 12, color: '#a8a29e', textAlign: 'center', margin: '12px 0 0' }}>
-            Lien personnel — ne le transférez pas.
+            {tx.lienPersonnel}
           </p>
         </div>
       )}
