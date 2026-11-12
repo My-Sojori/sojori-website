@@ -19,3 +19,21 @@ export function fichePrerempli(
   }
   return fiche;
 }
+
+/**
+ * Un montant du contrat dans la convention de SA langue (`abonnement.langue`, posée par srv-crm) : « 1 450 € » /
+ * « 64 180 MAD » en français, « €1,450 » / « MAD 64,180 » en anglais. Les centimes seulement s'ils comptent
+ * (« 26,10 € », « €26.10 »). Langue absente (contrat d'avant la règle) : le français d'avant, au dirham près en MAD.
+ */
+export function formaterMontant(n: number, devise: string, langue?: string | null): string {
+  const en = langue === 'en';
+  const locale = en ? 'en-GB' : 'fr-FR';
+  const euro = devise === 'EUR';
+  const centimes = euro && Math.round(n * 100) % 100 !== 0;
+  const texte = (euro ? n : Math.round(n)).toLocaleString(locale, {
+    minimumFractionDigits: centimes ? 2 : 0,
+    maximumFractionDigits: centimes ? 2 : 0,
+  });
+  if (en) return euro ? `€${texte}` : `MAD ${texte}`;
+  return euro ? `${texte} €` : `${texte} MAD`;
+}
