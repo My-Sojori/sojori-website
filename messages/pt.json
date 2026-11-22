@@ -1955,15 +1955,15 @@
         },
         "actor": {
           "voyageurs": "Hóspedes",
-          "service": "Agente de Apoio ao Cliente",
-          "operations": "Agente de Operações",
-          "reservation": "Agente de Reservas",
-          "tarification": "Preços dinâmicos",
-          "assistant": "Agente Assistente",
-          "studio": "Agente Studio",
+          "service": "Rececionista IA",
+          "operations": "Housekeeping IA",
+          "reservation": "Reservas IA",
+          "tarification": "Tarifas IA",
+          "assistant": "Sojori",
+          "studio": "Configuração IA",
           "site": "Agente de Site",
-          "commercial": "Agente Comercial",
-          "prospection": "Agente de Prospeção",
+          "commercial": "Vendas IA (fecho)",
+          "prospection": "Vendas IA (prospeção)",
           "hub": "Orquestração",
           "vous": "O senhor"
         },
@@ -2105,7 +2105,7 @@
         "defaultNote": "O senhor decide o que segue sozinho e o que aguarda a sua aprovação.",
         "list": {
           "booking": {
-            "name": "Agente de Reservas",
+            "name": "Reservas IA",
             "resume": "Recebe os pedidos de reserva no WhatsApp, em texto ou em mensagem de voz, até à reserva.",
             "points": [
               "Percurso de reserva completo, numa só oferta.",
@@ -2123,7 +2123,7 @@
             "question": "Quem trata dos meus pedidos de reserva?"
           },
           "service": {
-            "name": "Agente de Apoio ao Cliente",
+            "name": "Rececionista IA",
             "resume": "Responde às perguntas dos hóspedes nos canais ligados, com o contexto da estadia.",
             "points": [
               "Responde em todos os canais ligados.",
@@ -2142,7 +2142,7 @@
             "question": "Quem responde ao viajante, e quando assumo eu?"
           },
           "operations": {
-            "name": "Agente de Operações",
+            "name": "Housekeeping IA",
             "resume": "Compreende as instruções escritas ou de voz da equipa e do admin, e age dentro das suas permissões.",
             "points": [
               "Compreende as mensagens escritas e de voz da equipa e do admin.",
@@ -2161,7 +2161,7 @@
             "question": "Como é que a minha equipa recebe e acompanha o trabalho?"
           },
           "pricing": {
-            "name": "Preços dinâmicos",
+            "name": "Tarifas IA",
             "resume": "Recomenda os preços e só os aplica quando o senhor autoriza. Nenhuma receita garantida.",
             "points": [
               "Recomenda preços segundo as suas regras e a procura.",
@@ -2179,7 +2179,7 @@
             "note": "Aprova cada alteração, ou autoriza o agente a agir sozinho dentro dos seus limites."
           },
           "assistant": {
-            "name": "Agente Assistente",
+            "name": "Sojori",
             "resume": "O seu ponto de entrada. Faz uma pergunta sobre a sua carteira, ele lê, responde e passa o assunto ao agente certo.",
             "points": [
               "Responde sobre os seus alojamentos, equipas e estadias.",
@@ -2198,7 +2198,7 @@
             "note": "Lê os seus dados; para escrever, passa por um cartão que o senhor aprova."
           },
           "studio": {
-            "name": "Agente Studio",
+            "name": "Configuração IA",
             "resume": "Configura o Sojori conversando: os seus alojamentos, a sua equipa, as suas regras. Cada alteração chega sob a forma de cartão.",
             "points": [
               "Configura por conversa, sem formulários.",
@@ -2236,7 +2236,7 @@
             "note": "Aprova a pré-visualização antes de qualquer publicação."
           },
           "commercial": {
-            "name": "Agente Comercial",
+            "name": "Vendas IA (fecho)",
             "resume": "Acompanha cada negócio, da primeira resposta à assinatura: orçamento, follow-ups, contrato. Um CRM integrado.",
             "points": [
               "Um CRM: cada contacto, cada negócio, cada prazo.",
@@ -2255,12 +2255,12 @@
             "kpiText": "negócio acompanhado a tempo"
           },
           "prospecting": {
-            "name": "Agente de Prospeção",
-            "resume": "Encontra e qualifica novos clientes, e depois passa o negócio ao Agente Comercial.",
+            "name": "Vendas IA (prospeção)",
+            "resume": "Encontra e qualifica novos clientes, e depois passa o negócio a Vendas IA (fecho).",
             "points": [
               "Pesquisa segundo os seus critérios: país, tipo de cliente, dimensão.",
               "Prepara as primeiras mensagens, o senhor decide o que segue.",
-              "Passa o negócio qualificado ao Agente Comercial, com todo o contexto."
+              "Passa o negócio qualificado a Vendas IA (fecho), com todo o contexto."
             ],
             "talks": [
               "you",
@@ -2273,11 +2273,11 @@
             "kpiText": "potenciais clientes qualificados por semana"
           },
           "marketingFinance": {
-            "name": "Agente de Marketing · Agente de Finanças",
+            "name": "Marketing IA · Contabilidade IA",
             "resume": "Dois agentes especializados, definidos consigo conforme a necessidade: as campanhas de um lado, as contas do outro.",
             "points": [
-              "Agente de Marketing: prepara as suas campanhas e os seus conteúdos; o senhor valida antes de qualquer divulgação.",
-              "Agente de Finanças: prepara o acompanhamento das suas contas; o senhor valida.",
+              "Marketing IA: prepara as suas campanhas e os seus conteúdos; o senhor valida antes de qualquer divulgação.",
+              "Contabilidade IA: prepara o acompanhamento das suas contas; o senhor valida.",
               "Cada missão é definida consigo, sem dupla faturação."
             ],
             "talks": [
@@ -2342,8 +2342,8 @@
               "Códigos de acesso enviados só depois do registo, se assim o escolher."
             ],
             "agents": [
-              "Agente de Apoio ao Cliente",
-              "Agente de Operações"
+              "Rececionista IA",
+              "Housekeeping IA"
             ],
             "chat": [
               {
@@ -2383,7 +2383,7 @@
               "Pedido de avaliação após a estadia."
             ],
             "agents": [
-              "Agente de Apoio ao Cliente"
+              "Rececionista IA"
             ],
             "chat": [
               {
@@ -2417,8 +2417,8 @@
               "Nenhuma subscrição imposta aos prestadores."
             ],
             "agents": [
-              "Agente de Apoio ao Cliente",
-              "Agente de Operações"
+              "Rececionista IA",
+              "Housekeeping IA"
             ],
             "chat": [
               {
@@ -2441,7 +2441,7 @@
           },
           "staff": {
             "name": "WhatsApp Equipa",
-            "status": "Agente de Operações · online",
+            "status": "Housekeeping IA · online",
             "resume": "A sua equipa recebe as tarefas e responde no WhatsApp, por escrito ou por mensagem de voz. Sem aplicação, sem formação.",
             "points": [
               "Tarefas do dia e planeamento, atualizados ao longo do dia.",
@@ -2452,7 +2452,7 @@
               "Alertas urgentes: hóspede bloqueado, problema comunicado."
             ],
             "agents": [
-              "Agente de Operações"
+              "Housekeeping IA"
             ],
             "chat": [
               {
@@ -2475,7 +2475,7 @@
           },
           "admin": {
             "name": "WhatsApp Admin",
-            "status": "Agente Assistente · online",
+            "status": "Sojori · online",
             "resume": "Gere a sua atividade a partir do telemóvel, sem abrir o painel de controlo.",
             "points": [
               "Tarefas a atribuir.",
@@ -2487,8 +2487,8 @@
               "Cartões a aprovar enviados pelos seus agentes."
             ],
             "agents": [
-              "Agente Assistente",
-              "Agente de Operações"
+              "Sojori",
+              "Housekeeping IA"
             ],
             "chat": [
               {
@@ -2520,7 +2520,7 @@
               "Nenhuma aplicação a instalar."
             ],
             "agents": [
-              "Agente Assistente"
+              "Sojori"
             ],
             "chat": [
               {
@@ -2663,7 +2663,7 @@
             "down": "preço mais baixo",
             "same": "preço inalterado"
           },
-          "cardTitle": "Cartão a aprovar · Preços dinâmicos",
+          "cardTitle": "Cartão a aprovar · Tarifas IA",
           "cardText": "O fim de semana do dia 14 tem mais procura do que o habitual. Proponho um preço mais alto para sexta-feira e sábado."
         }
       },
@@ -2699,7 +2699,7 @@
           },
           {
             "name": "Hora de chegada",
-            "agent": "Agente de Apoio ao Cliente",
+            "agent": "Rececionista IA",
             "what": "O agente pergunta a hora de chegada ao hóspede e transmite-a à equipa.",
             "msg": "A que horas pensa chegar amanhã?",
             "blockTitle": "A hora de chegada não foi escolhida",
@@ -2717,7 +2717,7 @@
           },
           {
             "name": "Preparação",
-            "agent": "Agente de Operações",
+            "agent": "Housekeeping IA",
             "what": "Limpeza e equipamento: o agente atribui o colaborador, acompanha a tarefa e fecha-a.",
             "msg": "Salma, limpeza do quarto 2 antes das 15:00. Confirmas?",
             "blockTitle": "A limpeza não tem colaborador",
@@ -2726,7 +2726,7 @@
           },
           {
             "name": "Receção",
-            "agent": "Agente de Operações",
+            "agent": "Housekeeping IA",
             "what": "Um colaborador recebe o hóspede. O agente confirma que está presente.",
             "msg": "Youssef, receção às 15:00 no Riad Amana.",
             "blockTitle": "Ninguém para receber",
@@ -2735,7 +2735,7 @@
           },
           {
             "name": "Durante a estadia",
-            "agent": "Apoio ao Cliente · Concierge",
+            "agent": "Rececionista IA",
             "what": "Perguntas, pedidos de serviços, prestadores: o agente responde e acompanha até à confirmação.",
             "msg": "Reservo o hammam para as 18:00. Confirmo assim que estiver validado.",
             "blockTitle": "Um pedido aguarda resposta",
@@ -2744,7 +2744,7 @@
           },
           {
             "name": "Partida",
-            "agent": "Agente de Operações",
+            "agent": "Housekeeping IA",
             "what": "Sinal de partida, limpeza de saída, caução: o agente acompanha até ao fecho da estadia.",
             "msg": "Obrigado pela sua estadia, Sarah. Pode confirmar a sua partida?",
             "blockTitle": "Nenhum sinal de partida",
@@ -2790,7 +2790,7 @@
             "desc": "Aqueles de que precisa, mais os seus acessos WhatsApp e o seu site."
           }
         ],
-        "studioNote": "Um utilizador do Agente Studio está incluído em cada conta.",
+        "studioNote": "Um utilizador de Configuração IA está incluído em cada conta.",
         "cta": "Compor a minha oferta"
       },
       "demo": {
@@ -2816,7 +2816,7 @@
           },
           {
             "q": "O que fazem os agentes da Sojori?",
-            "a": "A Sojori propõe um agente por área: Reservas, Apoio ao Cliente, Operações, Preços dinâmicos, Assistente, Studio, Site, Comercial, Prospeção, Marketing e Finanças, além de agentes de chamadas propostos como opção. Para cada um, o senhor define se age sozinho ou se aguarda o seu acordo."
+            "a": "A Sojori propõe um agente por área: Rececionista IA, Reservas IA, Coordenador IA, Housekeeping IA, Tarifas IA, Marketing IA, Vendas IA, Contabilidade IA, Relatórios IA, Configuração IA e o Agente de Site, além de agentes de chamadas propostos como opção. Para cada um, o senhor define se age sozinho ou se aguarda o seu acordo."
           },
           {
             "q": "Como funciona o check-in no WhatsApp, com o formulário de polícia e o contrato?",
@@ -2879,35 +2879,35 @@
           "desc": "Catálogo, pedidos, confirmação do prestador e acompanhamento."
         },
         "agent_booking": {
-          "name": "Agente de Reservas",
+          "name": "Reservas IA",
           "desc": "Percurso de reserva, conversa escrita e mensagens de voz no WhatsApp."
         },
         "agent_guest_service": {
-          "name": "Agente de Apoio ao Cliente",
+          "name": "Rececionista IA",
           "desc": "Responde aos hóspedes nos canais ligados, com o contexto da estadia."
         },
         "agent_operations": {
-          "name": "Agente de Operações",
+          "name": "Housekeeping IA",
           "desc": "Compreende as instruções escritas ou de voz da equipa e do admin, atribui e acompanha as tarefas."
         },
         "dynamic_pricing": {
-          "name": "Preços dinâmicos",
+          "name": "Tarifas IA",
           "desc": "Recomenda os preços e aplica-os com a sua autorização. Para propriedades do PMS Sojori."
         },
         "agent_commercial_crm": {
-          "name": "Agente Comercial com CRM",
+          "name": "Vendas IA com CRM",
           "desc": "Acompanha cada negócio, da primeira resposta à assinatura: orçamento, reativações, contrato."
         },
         "agent_prospecting": {
-          "name": "Agente de Prospeção",
+          "name": "Vendas IA (prospeção)",
           "desc": "Encontra e qualifica novos clientes segundo os seus critérios e passa depois o testemunho ao comercial."
         },
         "agent_marketing": {
-          "name": "Agente de Marketing",
+          "name": "Marketing IA",
           "desc": "Prepara as suas campanhas e os seus conteúdos, que o senhor valida."
         },
         "agent_finance": {
-          "name": "Agente de Finanças",
+          "name": "Contabilidade IA",
           "desc": "Prepara o acompanhamento das suas contas e dos seus pagamentos, que o senhor valida."
         },
         "blocked": "Com o PMS Sojori.",
@@ -2926,10 +2926,10 @@
         }
       },
       "users": {
-        "intro": "Um utilizador Agente Studio está incluído em cada conta. Os acessos WhatsApp da equipa, do admin e dos proprietários contam-se por pessoa e por função.",
+        "intro": "Um utilizador Configuração IA está incluído em cada conta. Os acessos WhatsApp da equipa, do admin e dos proprietários contam-se por pessoa e por função.",
         "studio": {
-          "name": "Agente Studio",
-          "role": "utilizador Agente Studio",
+          "name": "Configuração IA",
+          "role": "utilizador Configuração IA",
           "info": "1 incluído em cada conta"
         },
         "staff": {
@@ -3261,11 +3261,11 @@
             "title": "O que uma empresa de concierge delega nos agentes",
             "text": "Cada função da empresa de concierge tem o seu agente, e o senhor define se age sozinho ou se aguarda a sua aprovação.",
             "points": [
-              "O Agente de Reservas recebe os pedidos de reserva no WhatsApp, em texto ou em mensagem de voz.",
-              "O Agente de Apoio ao Cliente responde aos hóspedes com o contexto da estadia.",
-              "O Agente de Operações compreende as mensagens escritas ou de voz da equipa e acompanha as tarefas até ao fecho.",
-              "O Agente Assistente responde às suas perguntas sobre o parque e passa a mão ao agente em causa.",
-              "O Agente Studio configura a Sojori em conversa: cada alteração chega sob a forma de um cartão para aprovar."
+              "O agente Reservas IA recebe os pedidos de reserva no WhatsApp, em texto ou em mensagem de voz.",
+              "Rececionista IA responde aos hóspedes com o contexto da estadia.",
+              "Housekeeping IA compreende as mensagens escritas ou de voz da equipa e acompanha as tarefas até ao fecho.",
+              "Sojori responde às suas perguntas sobre o parque e passa a mão ao agente em causa.",
+              "Configuração IA configura a Sojori em conversa: cada alteração chega sob a forma de um cartão para aprovar."
             ]
           },
           {
@@ -3320,14 +3320,14 @@
             "title": "Uma equipa de agentes, um por função",
             "text": "Os agentes trabalham sobre a mesma estadia, o mesmo alojamento e a mesma equipa.",
             "points": [
-              "Agente de Reservas: pedidos de reserva no WhatsApp, até à reserva.",
-              "Agente de Apoio ao Cliente: respostas aos hóspedes, com o contexto da estadia.",
-              "Agente de Operações: instruções escritas ou de voz da equipa e do administrador, tarefas acompanhadas até ao fecho.",
-              "Preços dinâmicos: preços recomendados segundo as suas regras e a procura, aplicados apenas com a sua autorização.",
-              "Agente Assistente: o seu ponto de entrada no parque, lê, responde e passa a mão.",
-              "Agente Studio: o senhor configura a Sojori em conversa, cada alteração chega sob a forma de um cartão.",
+              "Reservas IA: pedidos de reserva no WhatsApp, até à reserva.",
+              "Rececionista IA: respostas aos hóspedes, com o contexto da estadia.",
+              "Housekeeping IA: instruções escritas ou de voz da equipa e do administrador, tarefas acompanhadas até ao fecho.",
+              "Tarifas IA: preços recomendados segundo as suas regras e a procura, aplicados apenas com a sua autorização.",
+              "Sojori: o seu ponto de entrada no parque, lê, responde e passa a mão.",
+              "Configuração IA: o senhor configura a Sojori em conversa, cada alteração chega sob a forma de um cartão.",
               "Agente de Site: um site para as suas propriedades, criado e mantido a partir do seu catálogo.",
-              "Agente Comercial com CRM, Agente de Prospeção, Agente de Marketing e Agente de Finanças: os agentes especializados.",
+              "Vendas IA com CRM, Vendas IA (prospeção), Marketing IA e Contabilidade IA: os agentes especializados.",
               "Agentes de Chamadas: por voz, propostos como opção."
             ]
           },
@@ -3337,7 +3337,7 @@
           },
           {
             "title": "Como os agentes falam entre si",
-            "text": "A cena « La salle » da página inicial mostra quem fala com quem durante um dia tipo: o hóspede escreve, o Agente de Apoio ao Cliente abre um pedido, o Agente de Operações entrega-o à equipa e a resposta volta ao hóspede. Um cartão para aprovar chega-lhe quando uma decisão lhe cabe."
+            "text": "A cena « La salle » da página inicial mostra quem fala com quem durante um dia tipo: o hóspede escreve, Rececionista IA abre um pedido, Housekeeping IA entrega-o à equipa e a resposta volta ao hóspede. Um cartão para aprovar chega-lhe quando uma decisão lhe cabe."
           },
           {
             "title": "Os ganhos são estimativas",
@@ -3351,7 +3351,7 @@
           },
           {
             "q": "O que fazem os agentes Sojori?",
-            "a": "A Sojori oferece um agente por função: Reservas, Apoio ao Cliente, Operações, Preços dinâmicos, Assistente, Studio, Site, Comercial, Prospeção, Marketing e Finanças. Os agentes de chamadas, que funcionam por voz, são propostos como opção."
+            "a": "A Sojori oferece um agente por função: Rececionista IA, Reservas IA, Coordenador IA, Housekeeping IA, Tarifas IA, Marketing IA, Vendas IA, Contabilidade IA, Relatórios IA, Configuração IA e o Agente de Site. Os agentes de chamadas, que funcionam por voz, são propostos como opção."
           },
           {
             "q": "Um agente pode agir sem a minha aprovação?",
@@ -3387,7 +3387,7 @@
           },
           {
             "title": "O que o senhor vê",
-            "text": "O registo é uma etapa da estadia acompanhada pelo Agente de Apoio ao Cliente e pelo Agente de Operações. Enquanto avança, nada lhe é pedido. Quando ultrapassa o prazo, surge uma linha no seu painel com a respetiva causa, por exemplo « faltam os documentos de identificação: o cliente não respondeu ao lembrete »."
+            "text": "O registo é uma etapa da estadia acompanhada por Rececionista IA e por Housekeeping IA. Enquanto avança, nada lhe é pedido. Quando ultrapassa o prazo, surge uma linha no seu painel com a respetiva causa, por exemplo « faltam os documentos de identificação: o cliente não respondeu ao lembrete »."
           },
           {
             "title": "Para quem",
@@ -5315,7 +5315,7 @@
       "k024": "Concierge WhatsApp",
       "k025": "Concierge automático FR/AR/EN adaptado às chegadas charter em grupo e às estadias longas dos residentes de inverno. Check-in digital, apoio reativo durante todo o ano.",
       "k026": "Preços dinâmicos sazonais",
-      "k027": "Yield management pensado para a dupla época de Agadir: pico de verão com famílias, época de inverno de longa duração. Acompanhe o RevPAR e ajuste os seus preços com o agente de preços: o senhor valida.",
+      "k027": "Yield management pensado para a dupla época de Agadir: pico de verão com famílias, época de inverno de longa duração. Acompanhe o RevPAR e ajuste os seus preços com Tarifas IA: o senhor valida.",
       "k028": "Gestão da equipa local",
       "k029": "Planeamento de limpeza adaptado às rotações rápidas da época alta, atribuição de tarefas, acompanhamento de desempenho. Coordene as suas equipas sem o caos do WhatsApp.",
       "k030": "Analytics e relatórios",
@@ -5368,7 +5368,7 @@
       "k024": "Concierge WhatsApp",
       "k025": "Concierge automático FR/AR/EN adaptado às chegadas tardias frequentes (voos de longo curso). Check-in digital, instruções de acesso, apoio reativo.",
       "k026": "Preços dinâmicos adaptados",
-      "k027": "Yield management pensado para uma procura mista de negócios e lazer: semana versus fim de semana, eventos profissionais, sazonalidade turística. Acompanhe o RevPAR e ajuste os seus preços com o agente de preços: o senhor valida.",
+      "k027": "Yield management pensado para uma procura mista de negócios e lazer: semana versus fim de semana, eventos profissionais, sazonalidade turística. Acompanhe o RevPAR e ajuste os seus preços com Tarifas IA: o senhor valida.",
       "k028": "Gestão da equipa local",
       "k029": "Planeamento de limpeza em carteiras extensas, atribuição de tarefas, acompanhamento de desempenho. Coordene várias equipas em vários bairros sem o caos do WhatsApp.",
       "k030": "Analytics e relatórios",
@@ -5420,7 +5420,7 @@
       "k024": "Concierge WhatsApp",
       "k025": "WhatsApp Business API. Concierge automático FR/AR/EN. Check-in digital, reserva de transporte, mercearia, experiências. Viajantes acompanhados antes, durante e depois da estadia.",
       "k026": "Preços dinâmicos locais",
-      "k027": "Yield management adaptado a Marraquexe: eventos (Maratona, festivais), épocas turísticas, feriados marroquinos. Acompanhe o RevPAR e ajuste os seus preços com o agente de preços: o senhor valida.",
+      "k027": "Yield management adaptado a Marraquexe: eventos (Maratona, festivais), épocas turísticas, feriados marroquinos. Acompanhe o RevPAR e ajuste os seus preços com Tarifas IA: o senhor valida.",
       "k028": "Gestão da equipa local",
       "k029": "Planeamento de limpeza, atribuição de tarefas de concierge, acompanhamento de desempenho. Coordene empregadas de limpeza, guardas e manutenção — sem mensagens dispersas.",
       "k030": "Analytics e relatórios",
@@ -5467,7 +5467,7 @@
       "k024": "Concierge WhatsApp",
       "k025": "Concierge automático em FR/AR/EN, adaptado a estadias curtas e missões profissionais. Check-in digital, instruções de acesso, apoio rápido.",
       "k026": "Preços dinâmicos adaptados",
-      "k027": "Yield management pensado para uma procura mais regular do que a de um destino de praia: missões profissionais durante a semana, turismo cultural ao fim de semana. Acompanhe o RevPAR e ajuste os seus preços com o agente de preços: o senhor valida.",
+      "k027": "Yield management pensado para uma procura mais regular do que a de um destino de praia: missões profissionais durante a semana, turismo cultural ao fim de semana. Acompanhe o RevPAR e ajuste os seus preços com Tarifas IA: o senhor valida.",
       "k028": "Gestão da equipa local",
       "k029": "Planeamento da limpeza em carteiras de apartamentos de gama alta, atribuição de tarefas, acompanhamento do desempenho. Coordene as suas equipas sem o caos do WhatsApp.",
       "k030": "Analytics e relatórios",
@@ -5519,7 +5519,7 @@
       "k024": "Concierge WhatsApp",
       "k025": "Concierge automático em FR/AR/ES/EN, adaptado a uma clientela multilingue de fronteira. Check-in digital, instruções de acesso para a medina, apoio rápido.",
       "k026": "Preços dinâmicos adaptados",
-      "k027": "Yield management pensado para a sazonalidade específica de Tânger: verão, operação Marhaba (regresso em massa dos MRE), excursões de um dia. Acompanhe o RevPAR e ajuste os seus preços com o agente de preços: o senhor valida.",
+      "k027": "Yield management pensado para a sazonalidade específica de Tânger: verão, operação Marhaba (regresso em massa dos MRE), excursões de um dia. Acompanhe o RevPAR e ajuste os seus preços com Tarifas IA: o senhor valida.",
       "k028": "Gestão da equipa local",
       "k029": "Planeamento da limpeza tanto em imóveis da medina como em residências modernas, atribuição de tarefas, acompanhamento do desempenho. Coordene as suas equipas sem o caos do WhatsApp.",
       "k030": "Analytics e relatórios",

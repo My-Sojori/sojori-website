@@ -1955,15 +1955,15 @@
         },
         "actor": {
           "voyageurs": "Voyageurs",
-          "service": "Agent Service client",
-          "operations": "Agent Opérations",
-          "reservation": "Agent Réservation",
-          "tarification": "Tarification dynamique",
-          "assistant": "Agent Assistant",
-          "studio": "Agent Studio",
+          "service": "Réceptionniste IA",
+          "operations": "Gouvernante IA",
+          "reservation": "Réservations IA",
+          "tarification": "Tarification IA",
+          "assistant": "Sojori",
+          "studio": "Paramétrage IA",
           "site": "Agent Site web",
-          "commercial": "Agent Commercial",
-          "prospection": "Agent Prospection",
+          "commercial": "Ventes IA (closing)",
+          "prospection": "Ventes IA (prospection)",
           "hub": "Orchestration",
           "vous": "Vous"
         },
@@ -2105,7 +2105,7 @@
         "defaultNote": "Vous décidez de ce qui part tout seul et de ce qui attend votre accord.",
         "list": {
           "booking": {
-            "name": "Agent Réservation",
+            "name": "Réservations IA",
             "resume": "Prend les demandes de réservation sur WhatsApp, en texte comme en message vocal, jusqu’à la réservation.",
             "points": [
               "Parcours de réservation complet, dans une seule offre.",
@@ -2123,7 +2123,7 @@
             "question": "Qui traite mes demandes de réservation ?"
           },
           "service": {
-            "name": "Agent Service client",
+            "name": "Réceptionniste IA",
             "resume": "Répond aux questions des voyageurs sur les canaux connectés, avec le contexte de leur séjour.",
             "points": [
               "Répond sur tous les canaux connectés.",
@@ -2142,7 +2142,7 @@
             "question": "Qui répond au voyageur, et quand je reprends ?"
           },
           "operations": {
-            "name": "Agent Opérations",
+            "name": "Gouvernante IA",
             "resume": "Comprend les instructions écrites ou vocales du staff et de l’admin, puis agit dans le cadre de leurs droits.",
             "points": [
               "Comprend les messages écrits et vocaux du staff et de l’admin.",
@@ -2161,7 +2161,7 @@
             "question": "Comment mon équipe reçoit et suit le travail ?"
           },
           "pricing": {
-            "name": "Tarification dynamique",
+            "name": "Tarification IA",
             "resume": "Recommande les prix et les applique seulement quand vous l’autorisez. Aucun revenu garanti.",
             "points": [
               "Recommande des prix selon vos règles et la demande.",
@@ -2179,7 +2179,7 @@
             "note": "Vous validez chaque changement, ou vous autorisez l’agent à agir seul dans vos limites."
           },
           "assistant": {
-            "name": "Agent Assistant",
+            "name": "Sojori",
             "resume": "Votre point d’entrée. Vous posez une question sur votre parc, il lit, répond, et passe la main à l’agent concerné.",
             "points": [
               "Répond sur vos logements, vos équipes et vos séjours.",
@@ -2198,7 +2198,7 @@
             "note": "Il lit vos données ; pour écrire, il passe par une carte que vous validez."
           },
           "studio": {
-            "name": "Agent Studio",
+            "name": "Paramétrage IA",
             "resume": "Vous réglez Sojori en discutant : vos logements, votre équipe, vos règles. Chaque changement arrive sous forme de carte.",
             "points": [
               "Vous configurez par la conversation, sans formulaire.",
@@ -2236,7 +2236,7 @@
             "note": "Vous validez l’aperçu avant toute mise en ligne."
           },
           "commercial": {
-            "name": "Agent Commercial",
+            "name": "Ventes IA (closing)",
             "resume": "Suit chaque affaire de la première réponse à la signature : devis, relances, contrat. Un CRM intégré.",
             "points": [
               "Un CRM : chaque contact, chaque affaire, chaque échéance.",
@@ -2255,12 +2255,12 @@
             "kpiText": "affaire relancée à temps"
           },
           "prospecting": {
-            "name": "Agent Prospection",
-            "resume": "Trouve et qualifie de nouveaux clients, puis passe l’affaire à l’Agent Commercial.",
+            "name": "Ventes IA (prospection)",
+            "resume": "Trouve et qualifie de nouveaux clients, puis passe l’affaire à Ventes IA (closing).",
             "points": [
               "Cherche selon vos critères : pays, type de client, taille.",
               "Prépare les premiers messages, vous décidez de ce qui part.",
-              "Passe l’affaire qualifiée à l’Agent Commercial, avec tout le contexte."
+              "Passe l’affaire qualifiée à Ventes IA (closing), avec tout le contexte."
             ],
             "talks": [
               "you",
@@ -2273,11 +2273,11 @@
             "kpiText": "prospects qualifiés par semaine"
           },
           "marketingFinance": {
-            "name": "Agent Marketing · Agent Finance",
+            "name": "Marketing IA · Comptabilité IA",
             "resume": "Deux agents spécialisés, cadrés avec vous selon votre besoin : les campagnes d’un côté, les comptes de l’autre.",
             "points": [
-              "Agent Marketing : prépare vos campagnes et vos contenus ; vous validez avant toute diffusion.",
-              "Agent Finance : prépare le suivi de vos comptes ; vous validez.",
+              "Marketing IA : prépare vos campagnes et vos contenus ; vous validez avant toute diffusion.",
+              "Comptabilité IA : prépare le suivi de vos comptes ; vous validez.",
               "Chaque mission est cadrée avec vous, sans double facturation."
             ],
             "talks": [
@@ -2342,8 +2342,8 @@
               "Codes d’accès envoyés seulement une fois l’enregistrement fait, si vous le choisissez."
             ],
             "agents": [
-              "Agent Service client",
-              "Agent Opérations"
+              "Réceptionniste IA",
+              "Gouvernante IA"
             ],
             "chat": [
               {
@@ -2383,7 +2383,7 @@
               "Demande d’avis après le séjour."
             ],
             "agents": [
-              "Agent Service client"
+              "Réceptionniste IA"
             ],
             "chat": [
               {
@@ -2417,8 +2417,8 @@
               "Aucun abonnement imposé aux prestataires."
             ],
             "agents": [
-              "Agent Service client",
-              "Agent Opérations"
+              "Réceptionniste IA",
+              "Gouvernante IA"
             ],
             "chat": [
               {
@@ -2441,7 +2441,7 @@
           },
           "staff": {
             "name": "WhatsApp Staff",
-            "status": "Agent Opérations · en ligne",
+            "status": "Gouvernante IA · en ligne",
             "resume": "Votre équipe reçoit ses tâches et répond sur WhatsApp, par écrit ou par message vocal. Sans application, sans formation.",
             "points": [
               "Tâches du jour et planning, à jour au fil de la journée.",
@@ -2452,7 +2452,7 @@
               "Alertes urgentes : voyageur bloqué, problème signalé."
             ],
             "agents": [
-              "Agent Opérations"
+              "Gouvernante IA"
             ],
             "chat": [
               {
@@ -2475,7 +2475,7 @@
           },
           "admin": {
             "name": "WhatsApp Admin",
-            "status": "Agent Assistant · en ligne",
+            "status": "Sojori · en ligne",
             "resume": "Vous pilotez votre activité depuis votre téléphone, sans ouvrir le tableau de bord.",
             "points": [
               "Tâches à affecter.",
@@ -2487,8 +2487,8 @@
               "Cartes à valider envoyées par vos agents."
             ],
             "agents": [
-              "Agent Assistant",
-              "Agent Opérations"
+              "Sojori",
+              "Gouvernante IA"
             ],
             "chat": [
               {
@@ -2520,7 +2520,7 @@
               "Aucune application à installer."
             ],
             "agents": [
-              "Agent Assistant"
+              "Sojori"
             ],
             "chat": [
               {
@@ -2663,7 +2663,7 @@
             "down": "prix plus bas",
             "same": "prix inchangé"
           },
-          "cardTitle": "Carte à valider · Tarification dynamique",
+          "cardTitle": "Carte à valider · Tarification IA",
           "cardText": "Le week-end du 14 est plus demandé que d’habitude. Je propose un prix plus haut pour vendredi et samedi."
         }
       },
@@ -2699,7 +2699,7 @@
           },
           {
             "name": "Heure d’arrivée",
-            "agent": "Agent Service client",
+            "agent": "Réceptionniste IA",
             "what": "L’agent demande l’heure d’arrivée au voyageur et la transmet à l’équipe.",
             "msg": "À quelle heure pensez-vous arriver demain ?",
             "blockTitle": "L’heure d’arrivée n’est pas choisie",
@@ -2717,7 +2717,7 @@
           },
           {
             "name": "Préparation",
-            "agent": "Agent Opérations",
+            "agent": "Gouvernante IA",
             "what": "Ménage et équipement : l’agent affecte l’équipier, suit la tâche et la clôture.",
             "msg": "Salma, ménage chambre 2 avant 15:00. Tu confirmes ?",
             "blockTitle": "Le ménage n’a pas d’équipier",
@@ -2726,7 +2726,7 @@
           },
           {
             "name": "Accueil",
-            "agent": "Agent Opérations",
+            "agent": "Gouvernante IA",
             "what": "Un équipier accueille le voyageur. L’agent confirme qu’il est là.",
             "msg": "Youssef, accueil à 15:00 au Riad Amana.",
             "blockTitle": "Personne pour accueillir",
@@ -2735,7 +2735,7 @@
           },
           {
             "name": "Pendant le séjour",
-            "agent": "Service client · Conciergerie",
+            "agent": "Réceptionniste IA",
             "what": "Questions, demandes de services, prestataires : l’agent répond et suit jusqu’à la confirmation.",
             "msg": "Je réserve le hammam pour 18:00. Je vous confirme dès que c’est validé.",
             "blockTitle": "Une demande attend une réponse",
@@ -2744,7 +2744,7 @@
           },
           {
             "name": "Départ",
-            "agent": "Agent Opérations",
+            "agent": "Gouvernante IA",
             "what": "Signal de départ, ménage de départ, caution : l’agent suit jusqu’à la clôture du séjour.",
             "msg": "Merci pour votre séjour, Sarah. Pouvez-vous confirmer votre départ ?",
             "blockTitle": "Aucun signal de départ",
@@ -2790,7 +2790,7 @@
             "desc": "Ceux dont vous avez besoin, plus vos accès WhatsApp et votre site."
           }
         ],
-        "studioNote": "Un utilisateur Agent Studio est inclus dans chaque compte.",
+        "studioNote": "Un utilisateur Paramétrage IA est inclus dans chaque compte.",
         "cta": "Composer mon offre"
       },
       "demo": {
@@ -2816,7 +2816,7 @@
           },
           {
             "q": "Que font les agents Sojori ?",
-            "a": "Sojori propose un agent par métier : Réservation, Service client, Opérations, Tarification dynamique, Assistant, Studio, Site web, Commercial, Prospection, Marketing et Finance, ainsi que des agents d’appels proposés en option. Pour chacun, vous réglez s’il agit seul ou s’il attend votre accord."
+            "a": "Sojori propose un agent par métier : Réceptionniste IA, Réservations IA, Coordinateur IA, Gouvernante IA, Tarification IA, Marketing IA, Ventes IA, Comptabilité IA, Reporting IA, Paramétrage IA et l’Agent Site web, ainsi que des agents d’appels proposés en option. Pour chacun, vous réglez s’il agit seul ou s’il attend votre accord."
           },
           {
             "q": "Comment fonctionne le check-in WhatsApp, avec la fiche de police et le contrat ?",
@@ -2879,35 +2879,35 @@
           "desc": "Catalogue, commandes, confirmation du prestataire et suivi."
         },
         "agent_booking": {
-          "name": "Agent Réservation",
+          "name": "Réservations IA",
           "desc": "Parcours de réservation, conversation écrite et messages vocaux sur WhatsApp."
         },
         "agent_guest_service": {
-          "name": "Agent Service client",
+          "name": "Réceptionniste IA",
           "desc": "Répond aux voyageurs sur les canaux connectés, avec le contexte du séjour."
         },
         "agent_operations": {
-          "name": "Agent Opérations",
+          "name": "Gouvernante IA",
           "desc": "Comprend les instructions écrites ou vocales du staff et de l’admin, affecte et suit les tâches."
         },
         "dynamic_pricing": {
-          "name": "Tarification dynamique",
+          "name": "Tarification IA",
           "desc": "Recommande les prix et les applique avec votre autorisation. Pour les biens du PMS Sojori."
         },
         "agent_commercial_crm": {
-          "name": "Agent Commercial avec CRM",
+          "name": "Ventes IA avec CRM",
           "desc": "Suit chaque affaire de la première réponse à la signature : devis, relances, contrat."
         },
         "agent_prospecting": {
-          "name": "Agent Prospection",
+          "name": "Ventes IA (prospection)",
           "desc": "Trouve et qualifie de nouveaux clients selon vos critères, puis passe la main au commercial."
         },
         "agent_marketing": {
-          "name": "Agent Marketing",
+          "name": "Marketing IA",
           "desc": "Prépare vos campagnes et vos contenus, que vous validez."
         },
         "agent_finance": {
-          "name": "Agent Finance",
+          "name": "Comptabilité IA",
           "desc": "Prépare vos suivis de comptes et de paiements, que vous validez."
         },
         "blocked": "Avec le PMS Sojori.",
@@ -2926,10 +2926,10 @@
         }
       },
       "users": {
-        "intro": "Un utilisateur Agent Studio est inclus dans chaque compte. Les accès WhatsApp du staff, de l’admin et des propriétaires se comptent par personne et par rôle.",
+        "intro": "Un utilisateur Paramétrage IA est inclus dans chaque compte. Les accès WhatsApp du staff, de l’admin et des propriétaires se comptent par personne et par rôle.",
         "studio": {
-          "name": "Agent Studio",
-          "role": "utilisateur Agent Studio",
+          "name": "Paramétrage IA",
+          "role": "utilisateur Paramétrage IA",
           "info": "1 inclus dans chaque compte"
         },
         "staff": {
@@ -3261,11 +3261,11 @@
             "title": "Ce qu'une conciergerie délègue aux agents",
             "text": "Chaque métier de la conciergerie a son agent, et vous réglez s'il agit seul ou s'il attend votre accord.",
             "points": [
-              "L'Agent Réservation prend les demandes de réservation sur WhatsApp, en texte comme en message vocal.",
-              "L'Agent Service client répond aux voyageurs avec le contexte de leur séjour.",
-              "L'Agent Opérations comprend les messages écrits ou vocaux du staff et suit les tâches jusqu'à leur clôture.",
-              "L'Agent Assistant répond à vos questions sur le parc et passe la main à l'agent concerné.",
-              "L'Agent Studio règle Sojori en discutant : chaque changement arrive sous forme de carte à valider."
+              "L’agent Réservations IA prend les demandes de réservation sur WhatsApp, en texte comme en message vocal.",
+              "Réceptionniste IA répond aux voyageurs avec le contexte de leur séjour.",
+              "Gouvernante IA comprend les messages écrits ou vocaux du staff et suit les tâches jusqu'à leur clôture.",
+              "Sojori répond à vos questions sur le parc et passe la main à l'agent concerné.",
+              "Paramétrage IA règle Sojori en discutant : chaque changement arrive sous forme de carte à valider."
             ]
           },
           {
@@ -3320,14 +3320,14 @@
             "title": "Une équipe d'agents, un par métier",
             "text": "Les agents travaillent sur le même séjour, le même logement et la même équipe.",
             "points": [
-              "Agent Réservation : demandes de réservation sur WhatsApp, jusqu'à la réservation.",
-              "Agent Service client : réponses aux voyageurs, avec le contexte de leur séjour.",
-              "Agent Opérations : instructions écrites ou vocales du staff et de l'admin, tâches suivies jusqu'à leur clôture.",
-              "Tarification dynamique : prix recommandés selon vos règles et la demande, appliqués seulement avec votre autorisation.",
-              "Agent Assistant : votre point d'entrée sur le parc, il lit, répond et passe la main.",
-              "Agent Studio : vous réglez Sojori en discutant, chaque changement arrive sous forme de carte.",
+              "Réservations IA : demandes de réservation sur WhatsApp, jusqu'à la réservation.",
+              "Réceptionniste IA : réponses aux voyageurs, avec le contexte de leur séjour.",
+              "Gouvernante IA : instructions écrites ou vocales du staff et de l'admin, tâches suivies jusqu'à leur clôture.",
+              "Tarification IA : prix recommandés selon vos règles et la demande, appliqués seulement avec votre autorisation.",
+              "Sojori : votre point d'entrée sur le parc, il lit, répond et passe la main.",
+              "Paramétrage IA : vous réglez Sojori en discutant, chaque changement arrive sous forme de carte.",
               "Agent Site web : un site pour vos biens, créé et maintenu à partir de votre catalogue.",
-              "Agent Commercial avec CRM, Agent Prospection, Agent Marketing et Agent Finance : les agents spécialisés.",
+              "Ventes IA avec CRM, Ventes IA (prospection), Marketing IA et Comptabilité IA : les agents spécialisés.",
               "Agents d'appels : à la voix, proposés en option."
             ]
           },
@@ -3337,7 +3337,7 @@
           },
           {
             "title": "Comment les agents parlent entre eux",
-            "text": "La scène « La salle » de l'accueil montre qui parle à qui pendant une journée type : le voyageur écrit, l'Agent Service client ouvre une demande, l'Agent Opérations la confie au staff, puis la réponse revient au voyageur. Une carte à valider vous arrive quand une décision vous revient."
+            "text": "La scène « La salle » de l'accueil montre qui parle à qui pendant une journée type : le voyageur écrit, Réceptionniste IA ouvre une demande, Gouvernante IA la confie au staff, puis la réponse revient au voyageur. Une carte à valider vous arrive quand une décision vous revient."
           },
           {
             "title": "Les gains sont des estimations",
@@ -3351,7 +3351,7 @@
           },
           {
             "q": "Que font les agents Sojori ?",
-            "a": "Sojori propose un agent par métier : Réservation, Service client, Opérations, Tarification dynamique, Assistant, Studio, Site web, Commercial, Prospection, Marketing et Finance. Les agents d'appels, à la voix, sont proposés en option."
+            "a": "Sojori propose un agent par métier : Réceptionniste IA, Réservations IA, Coordinateur IA, Gouvernante IA, Tarification IA, Marketing IA, Ventes IA, Comptabilité IA, Reporting IA, Paramétrage IA et l’Agent Site web. Les agents d'appels, à la voix, sont proposés en option."
           },
           {
             "q": "Un agent peut-il agir sans mon accord ?",
@@ -3387,7 +3387,7 @@
           },
           {
             "title": "Ce que vous voyez",
-            "text": "L'enregistrement est une étape du séjour suivie par l'Agent Service client et l'Agent Opérations. Tant qu'elle avance, rien ne vous est demandé. Quand elle dépasse son échéance, une ligne apparaît dans votre tableau avec sa cause, par exemple « les pièces d'identité manquent : le client n'a pas répondu à la relance »."
+            "text": "L'enregistrement est une étape du séjour suivie par Réceptionniste IA et Gouvernante IA. Tant qu'elle avance, rien ne vous est demandé. Quand elle dépasse son échéance, une ligne apparaît dans votre tableau avec sa cause, par exemple « les pièces d'identité manquent : le client n'a pas répondu à la relance »."
           },
           {
             "title": "Pour qui",
@@ -5315,7 +5315,7 @@
       "k024": "WhatsApp Conciergerie",
       "k025": "Conciergerie automatique FR/AR/EN adaptée aux arrivées charter groupées et aux séjours longs des résidents hivernaux. Check-in digital, support réactif toute l'année.",
       "k026": "Dynamic Pricing Saisonnier",
-      "k027": "Yield management pensé pour la double saison d'Agadir : pic estival familles, saison hivernale longue durée. Suivez le RevPAR et ajustez vos prix avec l'agent de tarification : vous validez.",
+      "k027": "Yield management pensé pour la double saison d'Agadir : pic estival familles, saison hivernale longue durée. Suivez le RevPAR et ajustez vos prix avec Tarification IA : vous validez.",
       "k028": "Gestion Équipe Locale",
       "k029": "Planification ménage adaptée aux rotations rapides de la haute saison, attribution tâches, suivi performances. Coordonnez vos équipes sans chaos WhatsApp.",
       "k030": "Analytics & Reporting",
@@ -5368,7 +5368,7 @@
       "k024": "WhatsApp Conciergerie",
       "k025": "Conciergerie automatique FR/AR/EN adaptée aux arrivées tardives fréquentes (vols long-courrier). Check-in digital, instructions d'accès, support réactif.",
       "k026": "Dynamic Pricing Adapté",
-      "k027": "Yield management pensé pour une demande mixte affaires/loisirs : semaine vs weekend, événements professionnels, saisonnalité touristique. Suivez le RevPAR et ajustez vos prix avec l'agent de tarification : vous validez.",
+      "k027": "Yield management pensé pour une demande mixte affaires/loisirs : semaine vs weekend, événements professionnels, saisonnalité touristique. Suivez le RevPAR et ajustez vos prix avec Tarification IA : vous validez.",
       "k028": "Gestion Équipe Locale",
       "k029": "Planification ménage sur des portefeuilles étendus, attribution tâches, suivi performances. Coordonnez plusieurs équipes sur plusieurs quartiers sans chaos WhatsApp.",
       "k030": "Analytics & Reporting",
@@ -5420,7 +5420,7 @@
       "k024": "WhatsApp Conciergerie",
       "k025": "WhatsApp Business API. Conciergerie automatique FR/AR/EN. Check-in digital, réservation transport, épicerie, expériences. Des voyageurs accompagnés avant, pendant et après le séjour.",
       "k026": "Dynamic Pricing Local",
-      "k027": "Yield management adapté Marrakech : événements (Marathon, festivals), saisons touristiques, jours fériés marocains. Suivez le RevPAR et ajustez vos prix avec l'agent de tarification : vous validez.",
+      "k027": "Yield management adapté Marrakech : événements (Marathon, festivals), saisons touristiques, jours fériés marocains. Suivez le RevPAR et ajustez vos prix avec Tarification IA : vous validez.",
       "k028": "Gestion Équipe Locale",
       "k029": "Planification ménage, attribution tâches conciergerie, suivi performances. Coordonnez femmes de ménage, gardiens, maintenance — sans messages éparpillés.",
       "k030": "Analytics & Reporting",
@@ -5467,7 +5467,7 @@
       "k024": "WhatsApp Conciergerie",
       "k025": "Conciergerie automatique FR/AR/EN adaptée aux séjours courts et missions professionnelles. Check-in digital, instructions d'accès, support réactif.",
       "k026": "Dynamic Pricing Adapté",
-      "k027": "Yield management pensé pour une demande plus lissée qu'une destination balnéaire : missions professionnelles en semaine, tourisme culturel le weekend. Suivez le RevPAR et ajustez vos prix avec l'agent de tarification : vous validez.",
+      "k027": "Yield management pensé pour une demande plus lissée qu'une destination balnéaire : missions professionnelles en semaine, tourisme culturel le weekend. Suivez le RevPAR et ajustez vos prix avec Tarification IA : vous validez.",
       "k028": "Gestion Équipe Locale",
       "k029": "Planification ménage sur des portefeuilles d'appartements de standing, attribution tâches, suivi performances. Coordonnez vos équipes sans chaos WhatsApp.",
       "k030": "Analytics & Reporting",
@@ -5519,7 +5519,7 @@
       "k024": "WhatsApp Conciergerie",
       "k025": "Conciergerie automatique FR/AR/ES/EN adaptée à une clientèle multilingue frontalière. Check-in digital, instructions d'accès pour la médina, support réactif.",
       "k026": "Dynamic Pricing Adapté",
-      "k027": "Yield management pensé pour la saisonnalité spécifique de Tanger : été, opération Marhaba (retour massif des MRE), excursions à la journée. Suivez le RevPAR et ajustez vos prix avec l'agent de tarification : vous validez.",
+      "k027": "Yield management pensé pour la saisonnalité spécifique de Tanger : été, opération Marhaba (retour massif des MRE), excursions à la journée. Suivez le RevPAR et ajustez vos prix avec Tarification IA : vous validez.",
       "k028": "Gestion Équipe Locale",
       "k029": "Planification ménage sur des biens de médina comme de résidences modernes, attribution tâches, suivi performances. Coordonnez vos équipes sans chaos WhatsApp.",
       "k030": "Analytics & Reporting",
