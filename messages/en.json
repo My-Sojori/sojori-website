@@ -1955,15 +1955,15 @@
         },
         "actor": {
           "voyageurs": "Guests",
-          "service": "Guest Service Agent",
-          "operations": "Operations Agent",
-          "reservation": "Booking Agent",
-          "tarification": "Dynamic pricing",
-          "assistant": "Assistant Agent",
-          "studio": "Studio Agent",
+          "service": "AI receptionist",
+          "operations": "AI housekeeping",
+          "reservation": "AI reservations",
+          "tarification": "AI pricing",
+          "assistant": "Sojori",
+          "studio": "AI setup",
           "site": "Website Agent",
-          "commercial": "Sales Agent",
-          "prospection": "Prospecting Agent",
+          "commercial": "AI sales (closing)",
+          "prospection": "AI sales (prospecting)",
           "hub": "Orchestration",
           "vous": "You"
         },
@@ -2105,7 +2105,7 @@
         "defaultNote": "You decide what goes out on its own and what waits for your approval.",
         "list": {
           "booking": {
-            "name": "Booking Agent",
+            "name": "AI reservations",
             "resume": "Takes booking requests on WhatsApp, by text or voice message, all the way to the booking.",
             "points": [
               "The full booking journey, in a single offer.",
@@ -2123,7 +2123,7 @@
             "question": "Who handles my booking requests?"
           },
           "service": {
-            "name": "Guest Service Agent",
+            "name": "AI receptionist",
             "resume": "Answers guest questions on the connected channels, with the context of their stay.",
             "points": [
               "Answers on every connected channel.",
@@ -2142,7 +2142,7 @@
             "question": "Who answers the guest, and when do I step in?"
           },
           "operations": {
-            "name": "Operations Agent",
+            "name": "AI housekeeping",
             "resume": "Understands written or voice instructions from staff and admins, then acts within their permissions.",
             "points": [
               "Understands written and voice messages from staff and admins.",
@@ -2161,7 +2161,7 @@
             "question": "How does my team receive and follow the work?"
           },
           "pricing": {
-            "name": "Dynamic pricing",
+            "name": "AI pricing",
             "resume": "Recommends prices and applies them only when you allow it. No guaranteed revenue.",
             "points": [
               "Recommends prices based on your rules and demand.",
@@ -2179,7 +2179,7 @@
             "note": "You approve every change, or you let the agent act on its own within your limits."
           },
           "assistant": {
-            "name": "Assistant Agent",
+            "name": "Sojori",
             "resume": "Your entry point. You ask a question about your portfolio, it reads, answers, and hands over to the right agent.",
             "points": [
               "Answers about your properties, your teams and your stays.",
@@ -2198,7 +2198,7 @@
             "note": "It reads your data; to write, it goes through a card that you approve."
           },
           "studio": {
-            "name": "Studio Agent",
+            "name": "AI setup",
             "resume": "You set up Sojori by chatting: your properties, your team, your rules. Every change arrives as a card.",
             "points": [
               "You configure by conversation, with no forms.",
@@ -2236,7 +2236,7 @@
             "note": "You approve the preview before anything goes online."
           },
           "commercial": {
-            "name": "Sales Agent",
+            "name": "AI sales (closing)",
             "resume": "Follows each deal from the first reply to the signature: quotes, follow-ups, contract. A built-in CRM.",
             "points": [
               "A CRM: every contact, every deal, every deadline.",
@@ -2255,12 +2255,12 @@
             "kpiText": "deal followed up on time"
           },
           "prospecting": {
-            "name": "Prospecting Agent",
-            "resume": "Finds and qualifies new clients, then hands the deal over to the Sales Agent.",
+            "name": "AI sales (prospecting)",
+            "resume": "Finds and qualifies new clients, then hands the deal over to AI sales (closing).",
             "points": [
               "Searches by your criteria: country, client type, size.",
               "Prepares the first messages, you decide what goes out.",
-              "Hands the qualified deal to the Sales Agent, with the full context."
+              "Hands the qualified deal to AI sales (closing), with the full context."
             ],
             "talks": [
               "you",
@@ -2273,11 +2273,11 @@
             "kpiText": "qualified prospects per week"
           },
           "marketingFinance": {
-            "name": "Marketing Agent · Finance Agent",
+            "name": "AI marketing · AI accounting",
             "resume": "Two specialized agents, scoped with you according to your needs: campaigns on one side, accounts on the other.",
             "points": [
-              "Marketing Agent: prepares your campaigns and content; you approve before anything goes out.",
-              "Finance Agent: prepares the follow-up of your accounts; you approve.",
+              "AI marketing: prepares your campaigns and content; you approve before anything goes out.",
+              "AI accounting: prepares the follow-up of your accounts; you approve.",
               "Each assignment is scoped with you, with no double billing."
             ],
             "talks": [
@@ -2342,8 +2342,8 @@
               "Access codes sent only once check-in is done, if you choose so."
             ],
             "agents": [
-              "Guest Service Agent",
-              "Operations Agent"
+              "AI receptionist",
+              "AI housekeeping"
             ],
             "chat": [
               {
@@ -2383,7 +2383,7 @@
               "Review request after the stay."
             ],
             "agents": [
-              "Guest Service Agent"
+              "AI receptionist"
             ],
             "chat": [
               {
@@ -2417,8 +2417,8 @@
               "No subscription imposed on providers."
             ],
             "agents": [
-              "Guest Service Agent",
-              "Operations Agent"
+              "AI receptionist",
+              "AI housekeeping"
             ],
             "chat": [
               {
@@ -2441,7 +2441,7 @@
           },
           "staff": {
             "name": "WhatsApp Staff",
-            "status": "Operations Agent · online",
+            "status": "AI housekeeping · online",
             "resume": "Your team receives its tasks and replies on WhatsApp, in writing or by voice message. No app, no training.",
             "points": [
               "Today’s tasks and schedule, kept up to date through the day.",
@@ -2452,7 +2452,7 @@
               "Urgent alerts: guest locked out, problem reported."
             ],
             "agents": [
-              "Operations Agent"
+              "AI housekeeping"
             ],
             "chat": [
               {
@@ -2475,7 +2475,7 @@
           },
           "admin": {
             "name": "WhatsApp Admin",
-            "status": "Assistant Agent · online",
+            "status": "Sojori · online",
             "resume": "You run your business from your phone, without opening the dashboard.",
             "points": [
               "Tasks to assign.",
@@ -2487,8 +2487,8 @@
               "Cards to approve sent by your agents."
             ],
             "agents": [
-              "Assistant Agent",
-              "Operations Agent"
+              "Sojori",
+              "AI housekeeping"
             ],
             "chat": [
               {
@@ -2520,7 +2520,7 @@
               "No app to install."
             ],
             "agents": [
-              "Assistant Agent"
+              "Sojori"
             ],
             "chat": [
               {
@@ -2663,7 +2663,7 @@
             "down": "lower price",
             "same": "price unchanged"
           },
-          "cardTitle": "Card to approve · Dynamic pricing",
+          "cardTitle": "Card to approve · AI pricing",
           "cardText": "The weekend of the 14th is in higher demand than usual. I suggest a higher price for Friday and Saturday."
         }
       },
@@ -2699,7 +2699,7 @@
           },
           {
             "name": "Arrival time",
-            "agent": "Guest Service Agent",
+            "agent": "AI receptionist",
             "what": "The agent asks the guest for their arrival time and passes it on to the team.",
             "msg": "What time do you expect to arrive tomorrow?",
             "blockTitle": "The arrival time has not been chosen",
@@ -2717,7 +2717,7 @@
           },
           {
             "name": "Preparation",
-            "agent": "Operations Agent",
+            "agent": "AI housekeeping",
             "what": "Cleaning and equipment: the agent assigns the team member, tracks the task and closes it.",
             "msg": "Salma, clean room 2 before 15:00. Can you confirm?",
             "blockTitle": "The cleaning has no team member",
@@ -2726,7 +2726,7 @@
           },
           {
             "name": "Welcome",
-            "agent": "Operations Agent",
+            "agent": "AI housekeeping",
             "what": "A team member welcomes the guest. The agent confirms they are there.",
             "msg": "Youssef, welcome at 15:00 at Riad Amana.",
             "blockTitle": "Nobody to welcome the guest",
@@ -2735,7 +2735,7 @@
           },
           {
             "name": "During the stay",
-            "agent": "Guest Service · Concierge",
+            "agent": "AI receptionist",
             "what": "Questions, service requests, providers: the agent answers and follows through until confirmation.",
             "msg": "I am booking the hammam for 18:00. I will confirm as soon as it is approved.",
             "blockTitle": "A request is waiting for an answer",
@@ -2744,7 +2744,7 @@
           },
           {
             "name": "Departure",
-            "agent": "Operations Agent",
+            "agent": "AI housekeeping",
             "what": "Departure signal, departure cleaning, deposit: the agent follows through until the stay is closed.",
             "msg": "Thank you for your stay, Sarah. Could you confirm your departure?",
             "blockTitle": "No departure signal",
@@ -2790,7 +2790,7 @@
             "desc": "The ones you need, plus your WhatsApp access and your website."
           }
         ],
-        "studioNote": "One Studio Agent user is included in every account.",
+        "studioNote": "One AI setup user is included in every account.",
         "cta": "Build my offer"
       },
       "demo": {
@@ -2816,7 +2816,7 @@
           },
           {
             "q": "What do the Sojori agents do?",
-            "a": "Sojori offers one agent per role: Booking, Guest Service, Operations, Dynamic pricing, Assistant, Studio, Website, Sales, Prospecting, Marketing and Finance, plus calling agents offered as an option. For each one, you set whether it acts alone or waits for your approval."
+            "a": "Sojori offers one agent per role: AI receptionist, AI reservations, AI coordinator, AI housekeeping, AI pricing, AI marketing, AI sales, AI accounting, AI reporting, AI setup and the Website Agent, plus calling agents offered as an option. For each one, you set whether it acts alone or waits for your approval."
           },
           {
             "q": "How does WhatsApp check-in work, with the police registration form and the contract?",
@@ -2879,35 +2879,35 @@
           "desc": "Catalog, orders, provider confirmation and follow-up."
         },
         "agent_booking": {
-          "name": "Booking Agent",
+          "name": "AI reservations",
           "desc": "Booking journey, written conversation and voice messages on WhatsApp."
         },
         "agent_guest_service": {
-          "name": "Guest Service Agent",
+          "name": "AI receptionist",
           "desc": "Replies to guests on the connected channels, with the context of the stay."
         },
         "agent_operations": {
-          "name": "Operations Agent",
+          "name": "AI housekeeping",
           "desc": "Understands written or voice instructions from staff and admin, assigns and tracks tasks."
         },
         "dynamic_pricing": {
-          "name": "Dynamic pricing",
+          "name": "AI pricing",
           "desc": "Recommends prices and applies them with your approval. For Sojori PMS properties."
         },
         "agent_commercial_crm": {
-          "name": "Sales Agent with CRM",
+          "name": "AI sales with CRM",
           "desc": "Follows each deal from the first reply to signature: quote, follow-ups, contract."
         },
         "agent_prospecting": {
-          "name": "Prospecting Agent",
+          "name": "AI sales (prospecting)",
           "desc": "Finds and qualifies new clients based on your criteria, then hands over to sales."
         },
         "agent_marketing": {
-          "name": "Marketing Agent",
+          "name": "AI marketing",
           "desc": "Prepares your campaigns and content, which you approve."
         },
         "agent_finance": {
-          "name": "Finance Agent",
+          "name": "AI accounting",
           "desc": "Prepares your account and payment follow-ups, which you approve."
         },
         "blocked": "With the Sojori PMS.",
@@ -2926,10 +2926,10 @@
         }
       },
       "users": {
-        "intro": "One Studio Agent user is included in every account. WhatsApp access for staff, admin and owners is counted per person and per role.",
+        "intro": "One AI setup user is included in every account. WhatsApp access for staff, admin and owners is counted per person and per role.",
         "studio": {
-          "name": "Studio Agent",
-          "role": "Studio Agent user",
+          "name": "AI setup",
+          "role": "AI setup user",
           "info": "1 included in every account"
         },
         "staff": {
@@ -3261,11 +3261,11 @@
             "title": "What a concierge company delegates to agents",
             "text": "Each job in a concierge company has its own agent, and you set whether it acts alone or waits for your approval.",
             "points": [
-              "The Booking Agent takes booking requests on WhatsApp, by text or voice message.",
-              "The Guest Service Agent answers guests with the context of their stay.",
-              "The Operations Agent understands the staff's written or voice messages and follows tasks through to completion.",
-              "The Assistant Agent answers your questions about the portfolio and hands over to the right agent.",
-              "The Studio Agent sets up Sojori through conversation: each change arrives as a card to approve."
+              "AI reservations takes booking requests on WhatsApp, by text or voice message.",
+              "AI receptionist answers guests with the context of their stay.",
+              "AI housekeeping understands the staff's written or voice messages and follows tasks through to completion.",
+              "Sojori answers your questions about the portfolio and hands over to the right agent.",
+              "AI setup sets up Sojori through conversation: each change arrives as a card to approve."
             ]
           },
           {
@@ -3320,14 +3320,14 @@
             "title": "A team of agents, one per job",
             "text": "The agents work on the same stay, the same property and the same team.",
             "points": [
-              "Booking Agent: booking requests on WhatsApp, through to the booking.",
-              "Guest Service Agent: answers to guests, with the context of their stay.",
-              "Operations Agent: written or voice instructions from the staff and the admin, tasks followed through to completion.",
-              "Dynamic pricing: recommended prices based on your rules and demand, applied only with your authorization.",
-              "Assistant Agent: your entry point to the portfolio, it reads, answers and hands over.",
-              "Studio Agent: you set up Sojori through conversation, each change arrives as a card.",
+              "AI reservations: booking requests on WhatsApp, through to the booking.",
+              "AI receptionist: answers to guests, with the context of their stay.",
+              "AI housekeeping: written or voice instructions from the staff and the admin, tasks followed through to completion.",
+              "AI pricing: recommended prices based on your rules and demand, applied only with your authorization.",
+              "Sojori: your entry point to the portfolio, it reads, answers and hands over.",
+              "AI setup: you set up Sojori through conversation, each change arrives as a card.",
               "Website Agent: a website for your properties, created and maintained from your catalog.",
-              "Sales Agent with CRM, Prospecting Agent, Marketing Agent and Finance Agent: the specialized agents.",
+              "AI sales with CRM, AI sales (prospecting), AI marketing and AI accounting: the specialized agents.",
               "Calling Agents: by voice, offered as an option."
             ]
           },
@@ -3337,7 +3337,7 @@
           },
           {
             "title": "How the agents talk to each other",
-            "text": "The \"The room\" scene on the home page shows who talks to whom during a typical day: the guest writes, the Guest Service Agent opens a request, the Operations Agent assigns it to the staff, then the reply goes back to the guest. A card to approve reaches you when a decision is yours to make."
+            "text": "The \"The room\" scene on the home page shows who talks to whom during a typical day: the guest writes, AI receptionist opens a request, AI housekeeping assigns it to the staff, then the reply goes back to the guest. A card to approve reaches you when a decision is yours to make."
           },
           {
             "title": "Gains are estimates",
@@ -3351,7 +3351,7 @@
           },
           {
             "q": "What do Sojori agents do?",
-            "a": "Sojori offers one agent per job: Booking, Guest Service, Operations, Dynamic pricing, Assistant, Studio, Website, Sales, Prospecting, Marketing and Finance. The Calling Agents, which work by voice, are offered as an option."
+            "a": "Sojori offers one agent per job: AI receptionist, AI reservations, AI coordinator, AI housekeeping, AI pricing, AI marketing, AI sales, AI accounting, AI reporting, AI setup and the Website Agent. The Calling Agents, which work by voice, are offered as an option."
           },
           {
             "q": "Can an agent act without my approval?",
@@ -3387,7 +3387,7 @@
           },
           {
             "title": "What you see",
-            "text": "Check-in is a stay step followed by the Guest Service Agent and the Operations Agent. As long as it moves forward, nothing is asked of you. When it passes its deadline, a line appears in your dashboard with its cause, for example \"IDs are missing: the guest did not reply to the reminder\"."
+            "text": "Check-in is a stay step followed by AI receptionist and AI housekeeping. As long as it moves forward, nothing is asked of you. When it passes its deadline, a line appears in your dashboard with its cause, for example \"IDs are missing: the guest did not reply to the reminder\"."
           },
           {
             "title": "For whom",
@@ -5315,7 +5315,7 @@
       "k024": "WhatsApp Concierge",
       "k025": "Automatic FR/AR/EN concierge suited to grouped charter arrivals and the long stays of winter residents. Digital check-in, responsive support all year round.",
       "k026": "Seasonal Dynamic Pricing",
-      "k027": "Yield management designed for Agadir's double season: summer family peak, long-stay winter season. Track RevPAR and adjust your prices with the pricing agent: you approve.",
+      "k027": "Yield management designed for Agadir's double season: summer family peak, long-stay winter season. Track RevPAR and adjust your prices with AI pricing: you approve.",
       "k028": "Local Team Management",
       "k029": "Housekeeping scheduling suited to the fast turnovers of high season, task assignment, performance tracking. Coordinate your teams without the WhatsApp chaos.",
       "k030": "Analytics & Reporting",
@@ -5368,7 +5368,7 @@
       "k024": "WhatsApp Concierge",
       "k025": "Automatic FR/AR/EN concierge suited to frequent late arrivals (long-haul flights). Digital check-in, access instructions, responsive support.",
       "k026": "Suited Dynamic Pricing",
-      "k027": "Yield management designed for mixed business/leisure demand: weekday vs weekend, business events, tourist seasonality. Track RevPAR and adjust your prices with the pricing agent: you approve.",
+      "k027": "Yield management designed for mixed business/leisure demand: weekday vs weekend, business events, tourist seasonality. Track RevPAR and adjust your prices with AI pricing: you approve.",
       "k028": "Local Team Management",
       "k029": "Housekeeping scheduling across large portfolios, task assignment, performance tracking. Coordinate several teams across several neighborhoods without the WhatsApp chaos.",
       "k030": "Analytics & Reporting",
@@ -5420,7 +5420,7 @@
       "k024": "WhatsApp Concierge",
       "k025": "WhatsApp Business API. Automatic FR/AR/EN concierge. Digital check-in, transport booking, groceries, experiences. Guests looked after before, during and after the stay.",
       "k026": "Local Dynamic Pricing",
-      "k027": "Yield management suited to Marrakech: events (Marathon, festivals), tourist seasons, Moroccan public holidays. Track RevPAR and adjust your prices with the pricing agent: you approve.",
+      "k027": "Yield management suited to Marrakech: events (Marathon, festivals), tourist seasons, Moroccan public holidays. Track RevPAR and adjust your prices with AI pricing: you approve.",
       "k028": "Local Team Management",
       "k029": "Housekeeping scheduling, concierge task assignment, performance tracking. Coordinate cleaners, caretakers and maintenance, without scattered messages.",
       "k030": "Analytics & Reporting",
@@ -5467,7 +5467,7 @@
       "k024": "WhatsApp Concierge",
       "k025": "Automatic concierge in FR/AR/EN suited to short stays and business trips. Digital check-in, access instructions, responsive support.",
       "k026": "Suited Dynamic Pricing",
-      "k027": "Yield management designed for smoother demand than a beach destination: business trips during the week, cultural tourism on the weekend. Track RevPAR and adjust your prices with the pricing agent: you approve.",
+      "k027": "Yield management designed for smoother demand than a beach destination: business trips during the week, cultural tourism on the weekend. Track RevPAR and adjust your prices with AI pricing: you approve.",
       "k028": "Local Team Management",
       "k029": "Housekeeping planning for portfolios of upscale apartments, task assignment, performance tracking. Coordinate your teams without the WhatsApp chaos.",
       "k030": "Analytics & Reporting",
@@ -5519,7 +5519,7 @@
       "k024": "WhatsApp Concierge",
       "k025": "Automatic concierge in FR/AR/ES/EN suited to a multilingual border clientele. Digital check-in, access instructions for the medina, responsive support.",
       "k026": "Suited Dynamic Pricing",
-      "k027": "Yield management designed for Tangier's specific seasonality: summer, Operation Marhaba (the mass return of Moroccans living abroad), day excursions. Track RevPAR and adjust your prices with the pricing agent: you approve.",
+      "k027": "Yield management designed for Tangier's specific seasonality: summer, Operation Marhaba (the mass return of Moroccans living abroad), day excursions. Track RevPAR and adjust your prices with AI pricing: you approve.",
       "k028": "Local Team Management",
       "k029": "Housekeeping planning for medina properties as well as modern residences, task assignment, performance tracking. Coordinate your teams without the WhatsApp chaos.",
       "k030": "Analytics & Reporting",

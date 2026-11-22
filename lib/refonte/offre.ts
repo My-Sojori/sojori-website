@@ -53,12 +53,12 @@ export function estChoisi(s: Selection, id: ProduitId): boolean {
 
 const NOMS_FR: Record<ProduitId, string> = {
   pms: 'PMS Sojori', whatsapp_checkin: 'WhatsApp Check-in', whatsapp_stay: 'WhatsApp Séjour', whatsapp_concierge: 'WhatsApp Conciergerie',
-  agent_booking: 'Agent Réservation', agent_guest_service: 'Agent Service client', agent_operations: 'Agent Opérations',
-  dynamic_pricing: 'Tarification dynamique', agent_commercial_crm: 'Agent Commercial avec CRM', agent_prospecting: 'Agent Prospection',
-  agent_marketing: 'Agent Marketing', agent_finance: 'Agent Finance',
+  agent_booking: 'Réservations IA', agent_guest_service: 'Réceptionniste IA', agent_operations: 'Gouvernante IA',
+  dynamic_pricing: 'Tarification IA', agent_commercial_crm: 'Ventes IA avec CRM', agent_prospecting: 'Ventes IA (prospection)',
+  agent_marketing: 'Marketing IA', agent_finance: 'Comptabilité IA',
   agent_booking_call: 'Agent Réservation Call', agent_guest_service_call: 'Agent Service client Call', agent_staff_call: 'Appels au staff',
 };
-const SIEGES_FR: Record<UtilisateurId, string> = { studio: 'utilisateurs Agent Studio', staff: 'accès WhatsApp staff', admin: 'accès WhatsApp admin', owner: 'accès WhatsApp propriétaire' };
+const SIEGES_FR: Record<UtilisateurId, string> = { studio: 'utilisateurs Paramétrage IA', staff: 'accès WhatsApp staff', admin: 'accès WhatsApp admin', owner: 'accès WhatsApp propriétaire' };
 const SITES_FR: Record<SiteId, string> = { none: 'pas de site', template: 'site modèle', ai: 'Agent Site web', custom: 'site sur mesure' };
 
 /**
